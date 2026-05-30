@@ -1,24 +1,24 @@
 {
-  "key_insight": "Closure-level accuracy in shock solvers necessitates addressing observability issues and capturing tail-weighted distribution dynamics.",
-  "engineering_relevance": "Improving the accuracy of fluid dynamics models can lead to better simulations and predictions in various engineering applications.",
+  "key_insight": "Accurate macroscopic shock profiles do not guarantee accurate fourth-order kinetic closure, because the hard-to-observe tail-weighted moments can still carry large errors.",
+  "engineering_relevance": "For kinetic shock solvers, this means training must target the right moment projections or closure errors in heat transfer and stress predictions may persist even when density, velocity, and temperature look correct.",
   "method": [
-    "Utilized a positive macro–micro PINN approach for modeling BGK shock waves.",
-    "Incorporated a bounded exponential correction to the local Maxwellian distribution.",
-    "Validated results against independent discrete-velocity method (DVM) references."
+    "Positive macro–micro PINN with a bounded exponential correction to represent the distribution",
+    "Sparse joint anchoring of heat flux and normal stress to stabilize the nonequilibrium shock layer",
+    "Shock-local closure correction aligned with the missing tail-weighted projection"
   ],
-  "evidence_signal": "Shock-tube tests illustrated that joint anchoring of observables improves stabilization of nonequilibrium layers.",
-  "watch_item": "The model struggles with accurately recovering certain higher-order moments, specifically $R_{xx}^{cl}$, due to tail-weighting effects.",
+  "evidence_signal": "Against discrete-velocity references, the flux-locked model matched lower moments and $m_{xxx}^{cl}$ but left $R_{xx}^{cl}$ at order-unity error, which was reduced to $1.12\\times10^{-1}$ after the tailored closure correction.",
+  "watch_item": "The optional distribution-function probe losses appear diagnostic rather than constitutive, so relying on them as a training requirement may not improve the underlying closure observability.",
   "hashtags": [
     "#PhysicsInformedML",
-    "#FluidDynamics",
-    "#NeuralNetworks",
+    "#BGK",
     "#KineticTheory",
-    "#ComputationalScience"
+    "#ShockWaves",
+    "#ComputationalFluidDynamics"
   ],
   "paper_id": "2026-05-28-arxiv-tail_observability_and_fourth_order_closure_recovery_in_physics_informed_neural_networks_f",
   "paper_title": "Tail observability and fourth-order closure recovery in physics-informed neural networks for Bhatnagar-Gross-Krook normal shocks",
   "paper_date": "2026-05-28",
   "paper_category": "Physics-Informed ML",
-  "generated_at": "2026-05-30T18:36:12",
+  "generated_at": "2026-05-30T23:18:24",
   "generator": "openai"
 }

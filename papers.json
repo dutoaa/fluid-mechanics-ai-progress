@@ -27,79 +27,27 @@
     ],
     "score": 101,
     "infographic": {
-      "key_insight": "Neural operator-based surrogates can effectively model CFD-level transient analysis for helical coil steam generators in small modular reactors.",
-      "engineering_relevance": "This research enhances real-time thermal-hydraulic simulation capabilities crucial for the operation of small modular reactors.",
+      "key_insight": "A hybrid ROM-plus-neural-operator framework can learn CFD-level transient flow in an SMR helical coil steam generator, with different models excelling at either instantaneous vortical dynamics or mean-flow prediction.",
+      "engineering_relevance": "This enables faster surrogate simulations for digital twins of small modular reactors, supporting real-time thermal-hydraulic monitoring and design decisions without full CFD cost.",
       "method": [
-        "Combines reduced-order model (ROM) with neural operators for CFD analysis.",
-        "Utilizes MLP-based autoencoder for unstructured mesh and convolutional autoencoder for structured mesh data.",
-        "Implements a multi-scale technique to improve prediction accuracy."
+        "MLP autoencoder + DeepONet for unstructured-mesh CFD data (L-DeepONet)",
+        "Convolutional autoencoder + DeepONet for structured-mesh CFD data",
+        "Multi-scale augmentation and FNO variants to reduce spectral bias and compare performance"
       ],
-      "evidence_signal": "The multi-scale L-DeepONet accurately captured periodic vortex dynamics and the FNO provided reliable pressure drop estimates.",
-      "watch_item": "Care should be taken in model selection based on specific CFD data types and flow resolution requirements.",
+      "evidence_signal": "According to the abstract, the multi-scale L-DeepONet captured periodic Kármán vortex streets in velocity and pressure, while FNO variants produced reliable mean-flow and pressure-drop predictions.",
+      "watch_item": "Model choice is task-dependent: high-resolution transient vortices and averaged flow quantities are not equally well served by the same surrogate, so deployment needs careful validation for the target DT objective.",
       "hashtags": [
         "#CFD",
-        "#MachineLearning",
-        "#NeuralOperators",
+        "#NeuralOperator",
+        "#DigitalTwin",
         "#SmallModularReactors",
-        "#ThermalHydraulics"
+        "#SurrogateModel"
       ],
       "paper_id": "2026-05-28-arxiv-neural_operator_based_surrogate_model_for_cfd_helical_coil_steam_generator_in_small_modula",
       "paper_title": "Neural Operator-Based Surrogate Model for CFD:Helical Coil Steam Generator in Small Modular Reactor",
       "paper_date": "2026-05-28",
       "paper_category": "CFD Surrogates",
-      "generated_at": "2026-05-30T18:35:40",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-05-26-arxiv-cfdtwin_an_open_source_gui_and_python_toolkit_for_pod_nn_surrogate_modeling_of_ansys_fluen",
-    "arxiv_id": "2605.27725v1",
-    "date": "2026-05-26",
-    "title": "CFDTwin: An open-source GUI and Python toolkit for POD-NN surrogate modeling of ANSYS Fluent simulations",
-    "authors": "Daniel Curl, Han Hu",
-    "abstract": "High-fidelity computational fluid dynamics (CFD) is widely used for thermal-fluid design, but repeated CFD solves remain expensive for design optimization, uncertainty analysis, and digital-twin workflows. Recently, our team has demonstrated that a proper orthogonal decomposition and neural-network (POD-NN) surrogate can predict two-dimensional thermal fields in an electronics-cooling cold plate with large inference speedups while preserving physically interpretable modal structure. Reproducing and extending such workflows, however, typically requires custom scripts for parameter sampling, Fluent automation, data extraction, reduced-order model construction, neural-network training, validation, and prediction. This paper introduces CFDTwin, an open-source Python package and optional desktop graphical user interface (GUI) that packages these steps into a reusable workflow for ANSYS Fluent simulations. CFDTwin allows users to define simulation inputs and output quantities, generate design-of-experiments samples, run and resume Fluent batch simulations, train POD-NN surrogate models for scalar, surface-field, and cell-zone outputs, inspect validation metrics, and evaluate trained models at new design points without re-running Fluent. The same workflow is exposed through a scriptable Python API and a GUI, supporting reproducible studies, user-facing model validation, and automated design exploration. CFDTwin extends the prior POD-NN modeling study from a case-specific research implementation to a reusable research-software platform for CFD surrogate modeling and digital-twin development.",
-    "category": "CFD Surrogates",
-    "source": "arXiv",
-    "published": "2026-05-26T22:00:49Z",
-    "updated": "2026-05-26T22:00:49Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn",
-      "cs.LG"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2605.27725v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2605.27725v1"
-      }
-    ],
-    "score": 80,
-    "infographic": {
-      "key_insight": "CFDTwin facilitates efficient surrogate modeling for CFD simulations, enabling faster design optimization and uncertainty analysis.",
-      "engineering_relevance": "The tool significantly reduces the computational burden of thermal-fluid design workflows in engineering applications.",
-      "method": [
-        "Utilizes proper orthogonal decomposition and neural-network (POD-NN) techniques.",
-        "Provides a GUI and scriptable Python API for easy user interaction.",
-        "Supports batch simulations in ANSYS Fluent with model validation capabilities."
-      ],
-      "evidence_signal": "The tool can train POD-NN surrogate models while maintaining the physical interpretability of modal structures.",
-      "watch_item": "Users may encounter limitations in scaling the tool for extremely large or complex simulations.",
-      "hashtags": [
-        "#CFD",
-        "#SurrogateModeling",
-        "#DigitalTwin",
-        "#ANSYSFluent",
-        "#OpenSource"
-      ],
-      "paper_id": "2026-05-26-arxiv-cfdtwin_an_open_source_gui_and_python_toolkit_for_pod_nn_surrogate_modeling_of_ansys_fluen",
-      "paper_title": "CFDTwin: An open-source GUI and Python toolkit for POD-NN surrogate modeling of ANSYS Fluent simulations",
-      "paper_date": "2026-05-26",
-      "paper_category": "CFD Surrogates",
-      "generated_at": "2026-05-30T18:35:45",
+      "generated_at": "2026-05-30T23:18:05",
       "generator": "openai"
     }
   },
@@ -130,41 +78,41 @@
     ],
     "score": 77,
     "infographic": {
-      "key_insight": "The study reveals a transition in compressible flow past a rotating cylinder, highlighting complex oscillatory behaviors at critical Reynolds numbers.",
-      "engineering_relevance": "This research provides insights into fluid dynamics that are crucial for engineering applications involving rotating machinery.",
+      "key_insight": "A rapidly rotating cylinder in compressible flow shifts from periodic vortex shedding to multi-mode oscillatory behavior near Re≈5650, and ANN-based surrogates best capture the resulting nonlinear load dynamics.",
+      "engineering_relevance": "The study shows that trained machine-learning surrogates can reduce the cost of predicting aerodynamic loads and instability onset in highly nonlinear CFD problems.",
       "method": [
-        "Utilized high-fidelity numerical simulations for capturing flow characteristics.",
-        "Employed polynomial and Bayesian regression for modeling nonlinear dependencies.",
-        "Developed artificial neural networks as surrogate models for predictive accuracy."
+        "101 high-fidelity simulations spanning Re = 1000–6000 were used to build the dataset.",
+        "Polynomial, Bayesian spline/RBF, and ANN surrogate models were compared for lift, drag, and instability timing.",
+        "A hierarchical refinement strategy was used to improve predictions at unseen Reynolds numbers."
       ],
-      "evidence_signal": "A database of 101 high-fidelity simulations covering significant computational resources was used for model training and evaluation.",
-      "watch_item": "The polynomial regression approach may not accurately capture localized fluctuations, particularly near bifurcation points.",
+      "evidence_signal": "The database contains 101 simulations and 1 million core hours of high-fidelity CFD, with evaluation showing spline Bayesian models outperform polynomials and ANNs achieving the strongest overall predictive accuracy, especially for maximum lift and instability onset time.",
+      "watch_item": "Drag prediction remains more difficult than lift, so surrogate accuracy should be checked carefully near the bifurcation and in unseen regimes.",
       "hashtags": [
-        "#FluidDynamics",
+        "#CFD",
         "#MachineLearning",
-        "#Aerodynamics",
-        "#CFDSurrogates",
-        "#DataDrivenModeling"
+        "#SurrogateModeling",
+        "#FluidDynamics",
+        "#CompressibleFlow"
       ],
       "paper_id": "2026-05-26-arxiv-supervised_machine_learning_of_compressible_flow_past_a_rotating_cylinder",
       "paper_title": "Supervised machine learning of compressible flow past a rotating cylinder",
       "paper_date": "2026-05-26",
       "paper_category": "CFD Surrogates",
-      "generated_at": "2026-05-30T18:35:49",
+      "generated_at": "2026-05-30T23:18:08",
       "generator": "openai"
     }
   },
   {
-    "id": "2026-05-25-arxiv-deep_learning_based_algebraic_reynolds_stress_closures_for_rans_simulations_of_turbulent_f",
-    "arxiv_id": "2605.26358v1",
-    "date": "2026-05-25",
-    "title": "Deep Learning-based Algebraic Reynolds Stress Closures for RANS Simulations of Turbulent Flows",
-    "authors": "Daniel Dehtyriov, Jonathan F. MacArt, Justin Sirignano",
-    "abstract": "Turbulence is ubiquitous in engineering and science, yet direct simulation is prohibitively expensive. The Reynolds-averaged Navier-Stokes (RANS) equations provide savings exceeding ten orders of magnitude but introduce unclosed terms (the closure problem). Offline-trained machine-learning (ML) closures suffer distribution shift in predictive simulations, while ML methods that bypass the governing equations struggle to generalise from scarce high-fidelity data. We develop a physics-derived deep learning closure model for RANS, the Deep Algebraic Reynolds Stress Model (DARSM), which can be trained on small datasets and accurately generalise across Reynolds numbers, to unseen geometries, and to different flow regimes. A neural network maps flow invariants to empirical parameters in an implicit algebraic Reynolds stress equation, derived from the Reynolds stress transport equations under the weak-equilibrium assumption, imposing physics-based structure on the ML closure. End-to-end optimisation through the governing PDEs and the coupled implicit closure eliminates distribution shift, but both unrolled and implicit automatic differentiation fail on the stiff coupled solver. We derive adjoint equations that exploit the solver's implicit-explicit structure for efficient optimisation. On canonical square-duct and periodic-hill benchmarks, DARSM reduces average test velocity error over baseline RANS by $2$-$4\\times$ across Reynolds number, geometries, and flow regimes, with peak case-level reductions of $12\\times$. The model trained on attached, anisotropy-dominated flows (square duct) accurately generalises without retraining to separated flows (periodic hills), a regime change in the underlying physics. DARSM also outperforms five established ML methods: offline training, tensor-basis neural networks, field-inversion machine learning, DeepONets, and physics-informed neural networks.",
-    "category": "Physics-Informed ML",
+    "id": "2026-05-26-arxiv-cfdtwin_an_open_source_gui_and_python_toolkit_for_pod_nn_surrogate_modeling_of_ansys_fluen",
+    "arxiv_id": "2605.27725v1",
+    "date": "2026-05-26",
+    "title": "CFDTwin: An open-source GUI and Python toolkit for POD-NN surrogate modeling of ANSYS Fluent simulations",
+    "authors": "Daniel Curl, Han Hu",
+    "abstract": "High-fidelity computational fluid dynamics (CFD) is widely used for thermal-fluid design, but repeated CFD solves remain expensive for design optimization, uncertainty analysis, and digital-twin workflows. Recently, our team has demonstrated that a proper orthogonal decomposition and neural-network (POD-NN) surrogate can predict two-dimensional thermal fields in an electronics-cooling cold plate with large inference speedups while preserving physically interpretable modal structure. Reproducing and extending such workflows, however, typically requires custom scripts for parameter sampling, Fluent automation, data extraction, reduced-order model construction, neural-network training, validation, and prediction. This paper introduces CFDTwin, an open-source Python package and optional desktop graphical user interface (GUI) that packages these steps into a reusable workflow for ANSYS Fluent simulations. CFDTwin allows users to define simulation inputs and output quantities, generate design-of-experiments samples, run and resume Fluent batch simulations, train POD-NN surrogate models for scalar, surface-field, and cell-zone outputs, inspect validation metrics, and evaluate trained models at new design points without re-running Fluent. The same workflow is exposed through a scriptable Python API and a GUI, supporting reproducible studies, user-facing model validation, and automated design exploration. CFDTwin extends the prior POD-NN modeling study from a case-specific research implementation to a reusable research-software platform for CFD surrogate modeling and digital-twin development.",
+    "category": "CFD Surrogates",
     "source": "arXiv",
-    "published": "2026-05-25T22:05:33Z",
-    "updated": "2026-05-25T22:05:33Z",
+    "published": "2026-05-26T22:00:49Z",
+    "updated": "2026-05-26T22:00:49Z",
     "primary_category": "physics.flu-dyn",
     "categories": [
       "physics.flu-dyn",
@@ -173,36 +121,36 @@
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2605.26358v1"
+        "url": "https://arxiv.org/abs/2605.27725v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2605.26358v1"
+        "url": "https://arxiv.org/pdf/2605.27725v1"
       }
     ],
-    "score": 77,
+    "score": 75,
     "infographic": {
-      "key_insight": "The Deep Algebraic Reynolds Stress Model (DARSM) successfully addresses the closure problem in RANS simulations using a physics-informed deep learning approach.",
-      "engineering_relevance": "DARSM enables accurate turbulence predictions across varying Reynolds numbers and geometries while significantly improving computational efficiency.",
+      "key_insight": "CFDTwin turns a case-specific POD-NN CFD surrogate workflow into an open-source Python toolkit and GUI for reusable ANSYS Fluent automation, training, and prediction.",
+      "engineering_relevance": "It helps engineers reduce repeated CFD cost in design optimization, uncertainty analysis, and digital-twin workflows while keeping surrogate models interpretable.",
       "method": [
-        "Deep learning model trained on small datasets to derive algebraic Reynolds stress closures.",
-        "Utilizes adjoint equations for efficient end-to-end optimisation under implicit-explicit solver structure.",
-        "Generalises effectively to different flow regimes without the need for retraining."
+        "Generates design-of-experiments samples and launches/resumes Fluent batch simulations.",
+        "Extracts simulation outputs and builds POD-NN surrogate models for scalar, surface-field, and cell-zone quantities.",
+        "Provides Python API and GUI tools to validate models and predict new design points without rerunning Fluent."
       ],
-      "evidence_signal": "DARSM achieves a reduction in average test velocity error over baseline RANS by 2-4 times across multiple scenarios.",
-      "watch_item": "The reliance on implicit-explicit solver structures may induce challenges in implementation and optimization.",
+      "evidence_signal": "The abstract reports prior POD-NN results that predicted 2D thermal fields in an electronics-cooling cold plate with large inference speedups while preserving modal structure.",
+      "watch_item": "Practical performance will depend on the quality of sampled CFD data, the chosen reduced-order basis, and how well the trained surrogate generalizes beyond the design space.",
       "hashtags": [
-        "#DeepLearning",
-        "#FluidMechanics",
-        "#Turbulence",
-        "#RANS",
-        "#PhysicsInformedML"
+        "#CFD",
+        "#SurrogateModeling",
+        "#PODNN",
+        "#ANSYSFluent",
+        "#DigitalTwin"
       ],
-      "paper_id": "2026-05-25-arxiv-deep_learning_based_algebraic_reynolds_stress_closures_for_rans_simulations_of_turbulent_f",
-      "paper_title": "Deep Learning-based Algebraic Reynolds Stress Closures for RANS Simulations of Turbulent Flows",
-      "paper_date": "2026-05-25",
-      "paper_category": "Physics-Informed ML",
-      "generated_at": "2026-05-30T18:35:53",
+      "paper_id": "2026-05-26-arxiv-cfdtwin_an_open_source_gui_and_python_toolkit_for_pod_nn_surrogate_modeling_of_ansys_fluen",
+      "paper_title": "CFDTwin: An open-source GUI and Python toolkit for POD-NN surrogate modeling of ANSYS Fluent simulations",
+      "paper_date": "2026-05-26",
+      "paper_category": "CFD Surrogates",
+      "generated_at": "2026-05-30T23:18:10",
       "generator": "openai"
     }
   },
@@ -233,79 +181,79 @@
     ],
     "score": 74,
     "infographic": {
-      "key_insight": "GALÆXI is an architecture-agnostic, high-order framework enabling efficient simulations of compressible turbulent flows on heterogeneous GPU hardware.",
-      "engineering_relevance": "This framework facilitates the integration of advanced computational fluid dynamics in various industrial applications by supporting multiple GPU vendors.",
+      "key_insight": "GALÆXI is an architecture-agnostic, GPU-accelerated high-order DGSEM framework that enables scalable compressible-flow simulations across NVIDIA and AMD hardware.",
+      "engineering_relevance": "It helps CFD teams run production-scale turbulent-flow simulations efficiently on heterogeneous supercomputers without rewriting algorithms for each GPU vendor.",
       "method": [
-        "Utilizes a discontinuous Galerkin spectral element method (DGSEM) for CFD simulations.",
-        "Interfaces Fortran code with CUDA C++ for NVIDIA and HIP C++ for AMD to achieve GPU acceleration.",
-        "Achieves strong and weak scaling on GPU hardware for large simulations."
+        "Implemented a high-order discontinuous Galerkin spectral element method (DGSEM) on unstructured hexahedral grids.",
+        "Bridged Fortran code to vendor-specific GPU backends using CUDA C++ for NVIDIA and HIP C++ for AMD.",
+        "Verified accuracy with manufactured solutions and validated flow physics on compressible Taylor-Green-vortex and airfoil LES cases."
       ],
-      "evidence_signal": "The framework was verified against manufactured solutions, confirming its expected order of convergence and achieving a parallel efficiency of 82.6% with 67.1 billion degrees of freedom.",
-      "watch_item": "The need for ongoing compatibility with multiple GPU vendors may complicate future updates or optimization efforts.",
+      "evidence_signal": "The abstract reports rigorous convergence verification, agreement with reference Taylor-Green-vortex solutions, near-ideal strong/weak scaling, and a 67.1B-DOF run on 65,536 AMD MI250X devices at 82.6% parallel efficiency.",
+      "watch_item": "Performance and portability depend on maintaining two backend implementations, which can increase software complexity and tuning effort across GPU vendors.",
       "hashtags": [
-        "#ComputationalFluidDynamics",
-        "#GPUAcceleration",
+        "#CFD",
+        "#DGSEM",
+        "#GPUComputing",
         "#Turbulence",
-        "#HighOrderMethods",
-        "#OpenSource"
+        "#HPC"
       ],
       "paper_id": "2026-05-27-arxiv-an_architecture_agnostic_high_order_discontinuous_galerkin_framework_for_compressible_flow",
       "paper_title": "An Architecture-Agnostic High-Order Discontinuous Galerkin Framework for Compressible Flows",
       "paper_date": "2026-05-27",
       "paper_category": "Turbulence",
-      "generated_at": "2026-05-30T18:35:56",
+      "generated_at": "2026-05-30T23:18:13",
       "generator": "openai"
     }
   },
   {
-    "id": "2026-05-23-arxiv-high_fidelity_modeling_of_full_scale_pressurized_water_reactor_flow_fields_for_machine_lea",
-    "arxiv_id": "2605.24763v1",
-    "date": "2026-05-23",
-    "title": "High-fidelity Modeling of Full-scale Pressurized Water Reactor Flow Fields for Machine Learning Applications",
-    "authors": "Logan A. Burnett, Hyungjun Kim, Hsien-Cheng Chou, Arsha Witoelar, Robert A. Brewster, Benoit Forget",
-    "abstract": "This work presents a high-fidelity computational fluid dynamics (CFD) and data-driven modeling framework for assembly-level flow characterization in a four-loop pressurized water reactor (PWR). A full lower-plenum and core-inlet domain was constructed using publicly available geometry and operating conditions, enabling transient simulations with pump-induced swirl boundary conditions. The results show that cold-leg swirl and lower-plenum transport generate strongly heterogeneous assembly-wise inlet flow distributions, particularly near the lower core region, while axial resistance and mixing progressively homogenize the flow at higher elevations. These physics-informed datasets were subsequently used to evaluate machine learning (ML) applications for partial field reconstruction and short-term autoregressive prediction. A 3D convolutional-based inpainting model successfully recon-structed missing assembly-level mass flow rates from partial observations, with errors concentrated in the highly turbulent base (bottom) layer and diminishing significantly in upper layers. Comparative analysis across multiple ML models demon-strates that spatially aware architectures, particularly ConvLSTM, significantly outperform sequence-based (LSTM) and operator-learning (DeepONet) approaches by effectively capturing coupled spatio-temporal dynamics. The study also high-lights key challenges, including the sensitivity of inlet flow predictions to turbulence and mesh resolution, as well as the absence of full-scale experimental validation data. Despite these limitations, the results remain consistent with expected physical behavior. Overall, this work establishes high-fidelity CFD as a critical foundation for developing data-driven surrogates, sparse sensing strategies, and future multiphysics coupling frameworks.",
-    "category": "CFD Surrogates",
+    "id": "2026-05-25-arxiv-deep_learning_based_algebraic_reynolds_stress_closures_for_rans_simulations_of_turbulent_f",
+    "arxiv_id": "2605.26358v1",
+    "date": "2026-05-25",
+    "title": "Deep Learning-based Algebraic Reynolds Stress Closures for RANS Simulations of Turbulent Flows",
+    "authors": "Daniel Dehtyriov, Jonathan F. MacArt, Justin Sirignano",
+    "abstract": "Turbulence is ubiquitous in engineering and science, yet direct simulation is prohibitively expensive. The Reynolds-averaged Navier-Stokes (RANS) equations provide savings exceeding ten orders of magnitude but introduce unclosed terms (the closure problem). Offline-trained machine-learning (ML) closures suffer distribution shift in predictive simulations, while ML methods that bypass the governing equations struggle to generalise from scarce high-fidelity data. We develop a physics-derived deep learning closure model for RANS, the Deep Algebraic Reynolds Stress Model (DARSM), which can be trained on small datasets and accurately generalise across Reynolds numbers, to unseen geometries, and to different flow regimes. A neural network maps flow invariants to empirical parameters in an implicit algebraic Reynolds stress equation, derived from the Reynolds stress transport equations under the weak-equilibrium assumption, imposing physics-based structure on the ML closure. End-to-end optimisation through the governing PDEs and the coupled implicit closure eliminates distribution shift, but both unrolled and implicit automatic differentiation fail on the stiff coupled solver. We derive adjoint equations that exploit the solver's implicit-explicit structure for efficient optimisation. On canonical square-duct and periodic-hill benchmarks, DARSM reduces average test velocity error over baseline RANS by $2$-$4\\times$ across Reynolds number, geometries, and flow regimes, with peak case-level reductions of $12\\times$. The model trained on attached, anisotropy-dominated flows (square duct) accurately generalises without retraining to separated flows (periodic hills), a regime change in the underlying physics. DARSM also outperforms five established ML methods: offline training, tensor-basis neural networks, field-inversion machine learning, DeepONets, and physics-informed neural networks.",
+    "category": "Physics-Informed ML",
     "source": "arXiv",
-    "published": "2026-05-23T22:50:23Z",
-    "updated": "2026-05-23T22:50:23Z",
-    "primary_category": "cs.LG",
+    "published": "2026-05-25T22:05:33Z",
+    "updated": "2026-05-25T22:05:33Z",
+    "primary_category": "physics.flu-dyn",
     "categories": [
-      "cs.LG",
-      "physics.flu-dyn"
+      "physics.flu-dyn",
+      "cs.LG"
     ],
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2605.24763v1"
+        "url": "https://arxiv.org/abs/2605.26358v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2605.24763v1"
+        "url": "https://arxiv.org/pdf/2605.26358v1"
       }
     ],
-    "score": 71,
+    "score": 72,
     "infographic": {
-      "key_insight": "High-fidelity CFD modeling reveals complex flow dynamics in pressurized water reactors that can be effectively predicted using machine learning techniques.",
-      "engineering_relevance": "Understanding flow behavior in PWRs is essential for safety and efficiency in nuclear engineering applications.",
+      "key_insight": "DARSM combines a physics-derived algebraic Reynolds-stress model with a neural network that predicts closure parameters, improving RANS accuracy and generalization without abandoning the governing equations.",
+      "engineering_relevance": "It offers a practical path to faster, more reliable turbulent-flow simulation for design workflows where high-fidelity CFD is too expensive.",
       "method": [
-        "Constructed a full lower-plenum and core-inlet domain using CFD simulations.",
-        "Implemented machine learning approaches for flow reconstruction and prediction.",
-        "Utilized a 3D convolutional inpainting model to address missing data in flow rates."
+        "Maps flow invariants to empirical parameters in an implicit algebraic Reynolds stress equation.",
+        "Derives the closure from Reynolds stress transport equations under a weak-equilibrium assumption.",
+        "Uses custom adjoint equations to optimize the coupled PDE-closure system efficiently."
       ],
-      "evidence_signal": "Spatially aware ML models, particularly ConvLSTM, significantly improve prediction accuracy over traditional LSTM methods.",
-      "watch_item": "The sensitivity of predictions to turbulence and mesh resolution remains a concern due to the lack of full-scale experimental validation data.",
+      "evidence_signal": "Across square-duct and periodic-hill benchmarks, the model cuts average test velocity error by 2–4× versus baseline RANS, with up to 12× improvement in individual cases.",
+      "watch_item": "Training and deployment depend on a stiff coupled solver and custom adjoints, so implementation complexity and solver robustness are important practical concerns.",
       "hashtags": [
-        "#ComputationalFluidDynamics",
-        "#MachineLearning",
-        "#NuclearEngineering",
-        "#PressurizedWaterReactor",
-        "#DataDrivenModeling"
+        "#TurbulenceModeling",
+        "#RANS",
+        "#PhysicsInformedML",
+        "#DeepLearning",
+        "#CFD"
       ],
-      "paper_id": "2026-05-23-arxiv-high_fidelity_modeling_of_full_scale_pressurized_water_reactor_flow_fields_for_machine_lea",
-      "paper_title": "High-fidelity Modeling of Full-scale Pressurized Water Reactor Flow Fields for Machine Learning Applications",
-      "paper_date": "2026-05-23",
-      "paper_category": "CFD Surrogates",
-      "generated_at": "2026-05-30T18:35:59",
+      "paper_id": "2026-05-25-arxiv-deep_learning_based_algebraic_reynolds_stress_closures_for_rans_simulations_of_turbulent_f",
+      "paper_title": "Deep Learning-based Algebraic Reynolds Stress Closures for RANS Simulations of Turbulent Flows",
+      "paper_date": "2026-05-25",
+      "paper_category": "Physics-Informed ML",
+      "generated_at": "2026-05-30T23:18:15",
       "generator": "openai"
     }
   },
@@ -337,27 +285,27 @@
     ],
     "score": 70,
     "infographic": {
-      "key_insight": "Neural operator surrogates significantly accelerate Bayesian inverse design in CFD by reducing inference time while maintaining posterior accuracy.",
-      "engineering_relevance": "The integration of neural operators aids in efficient aerodynamic geometry inference, crucial for practical engineering applications.",
+      "key_insight": "Neural operator surrogates can replace expensive CFD solves inside Bayesian MCMC inverse design while preserving posterior geometry and uncertainty structure.",
+      "engineering_relevance": "This enables practical uncertainty-aware aerodynamic inverse design with orders-of-magnitude faster turnaround, making Bayesian CFD workflows more usable for design optimization and decision-making.",
       "method": [
-        "Embedded neural operator surrogates within MCMC inference loop.",
-        "Used cubic B-splines for stable uncertainty estimates.",
-        "Substituted a Deep Operator Network for the CFD solver in No-U-Turn Sampler."
+        "Formulate Bayesian inverse design for quasi-1D nozzle flow using sparse flow observations and geometry priors.",
+        "Replace the CFD solver with a Deep Operator Network inside a No-U-Turn Sampler while keeping the likelihood, priors, and sampling settings fixed.",
+        "Compare a surrogate-based posterior against the CFD reference and also test a direct inverse neural operator for single-shot reconstruction."
       ],
-      "evidence_signal": "Surrogate-based inference matched the posterior geometry and uncertainty trends of traditional CFD reference across various observation regimes.",
-      "watch_item": "The effect of surrogate models on posterior structure in shock-dominated flows remains an area for further investigation.",
+      "evidence_signal": "Across sparse to fully observed regimes, the surrogate reproduces posterior geometry and uncertainty trends of the CFD baseline while reducing total inference time to under one second, exceeding a three-order-of-magnitude speedup.",
+      "watch_item": "Posterior quality depends strongly on geometry parameterization, so surrogate acceleration may still fail or become misleading if the inverse problem is poorly conditioned or shock-dominated flows are not well represented.",
       "hashtags": [
-        "#CFD",
-        "#BayesianInference",
+        "#BayesianInverseDesign",
         "#NeuralOperators",
-        "#Aerodynamics",
-        "#SurrogateModels"
+        "#CFD",
+        "#UncertaintyQuantification",
+        "#AIAerodynamics"
       ],
       "paper_id": "2026-05-25-arxiv-accelerating_bayesian_inverse_design_in_computational_fluid_dynamics_using_neural_operator",
       "paper_title": "Accelerating Bayesian inverse design in computational fluid dynamics using neural operators",
       "paper_date": "2026-05-25",
       "paper_category": "CFD Surrogates",
-      "generated_at": "2026-05-30T18:36:02",
+      "generated_at": "2026-05-30T23:18:17",
       "generator": "openai"
     }
   },
@@ -388,27 +336,27 @@
     ],
     "score": 70,
     "infographic": {
-      "key_insight": "The transformer-based dual-attention neural-operator framework significantly improves 3D wind field predictions over complex mountainous terrain.",
-      "engineering_relevance": "This framework facilitates rapid wind resource assessment crucial for renewable energy deployment and weather modeling.",
+      "key_insight": "A transformer-based dual-attention neural operator can predict steady 3D wind fields over complex mountainous terrain much faster than CFD while better capturing localized flow gradients.",
+      "engineering_relevance": "This provides a practical surrogate for wind resource assessment and terrain-aware atmospheric modeling, reducing dependence on expensive mesh generation and iterative solvers.",
       "method": [
-        "Utilizes a transformer-based architecture with dual-attention mechanisms.",
-        "Employs both point-based (mesh-free) and graph-based neural-operator architectures.",
-        "Trained on a diverse CFD-generated dataset encompassing various terrain geometries and inflow conditions."
+        "Builds on two neural-operator instantiations: Patch-solver (point-based, mesh-free) and Patch-GTO (graph-based).",
+        "Uses transformer-style dual attention to focus on sharp, terrain-induced wind variations.",
+        "Trained on large CFD-generated datasets and tested for zero-shot transfer to real mountainous sites, with sparse observational data optionally fused in."
       ],
-      "evidence_signal": "The framework outperformed existing neural operator baselines by 10% in relative error and showed substantial improvements with minimal observational data input.",
-      "watch_item": "The model's performance may vary in extremely complex terrains beyond the training dataset.",
+      "evidence_signal": "The abstract reports about 10% lower relative error than existing neural-operator baselines, and adding only 1% sparse observations cuts error by 16.89% versus the no-data model and by 32.75% versus advanced baselines on unseen terrains.",
+      "watch_item": "Performance depends on high-quality CFD training data and may degrade when terrain complexity or inflow conditions fall outside the training distribution.",
       "hashtags": [
+        "#AIforCFD",
         "#NeuralOperators",
-        "#WindFieldPrediction",
+        "#WindForecasting",
         "#ComputationalFluidDynamics",
-        "#MachineLearning",
-        "#RenewableEnergy"
+        "#MountainTerrain"
       ],
       "paper_id": "2026-05-25-arxiv-transformer_based_neural_operators_for_3d_wind_field_prediction_over_complex_mountainous_t",
       "paper_title": "Transformer-based Neural Operators for 3D Wind Field Prediction over Complex Mountainous Terrain",
       "paper_date": "2026-05-25",
       "paper_category": "CFD Surrogates",
-      "generated_at": "2026-05-30T18:36:05",
+      "generated_at": "2026-05-30T23:18:20",
       "generator": "openai"
     }
   },
@@ -440,27 +388,27 @@
     ],
     "score": 66,
     "infographic": {
-      "key_insight": "Intense gusts trigger complex non-equilibrium dynamics in wall-bounded turbulence, significantly increasing the occurrence of extreme near-wall events.",
-      "engineering_relevance": "Understanding these mechanisms is crucial for designing robust flow control systems for unmanned aerial vehicles in unsteady atmospheric conditions.",
+      "key_insight": "Transient gust forcing drives wall turbulence into a non-equilibrium state, shifting energy toward low-frequency coherent structures and sharply increasing extreme near-wall events.",
+      "engineering_relevance": "The results help predict and mitigate unsteady aerodynamic loads on UAVs and other wall-bounded flow systems operating in gusty atmospheric conditions.",
       "method": [
-        "Direct numerical simulations (DNS) to analyze turbulence dynamics.",
-        "Use of spectral and continuous wavelet analyses to investigate energy redistribution.",
-        "Two-step conditional averaging technique to examine triggering mechanisms."
+        "Direct numerical simulations (DNS) under Gaussian-type cyclostationary gust forcing",
+        "Spectral and continuous wavelet analysis of turbulent structure evolution",
+        "Two-step conditional averaging for rare backflow and extreme wall-shear events"
       ],
-      "evidence_signal": "High-amplitude gusts were found to suppress high-frequency fluctuations and reorganize turbulent energy into low-frequency coherent structures.",
-      "watch_item": "The study's findings may vary under different atmospheric conditions not covered in the simulations.",
+      "evidence_signal": "The abstract reports a frequency lock between coherent structures and gust forcing with only 2.4% deviation, and up to an order-of-magnitude rise in extreme event probability under severe forcing.",
+      "watch_item": "The findings are based on DNS and a specific Gaussian-type transient forcing model, so transferability to real atmospheric gust spectra and higher-Re industrial flows should be validated.",
       "hashtags": [
         "#Turbulence",
-        "#FluidMechanics",
-        "#Aerodynamics",
-        "#NumericalSimulation",
-        "#UnmannedAerialVehicles"
+        "#DNS",
+        "#WallShear",
+        "#ExtremeEvents",
+        "#FlowControl"
       ],
       "paper_id": "2026-05-27-arxiv-triggering_of_extreme_events_and_coherent_structure_modulation_in_wall_turbulence_under_cy",
       "paper_title": "Triggering of extreme events and coherent-structure modulation in wall-turbulence under cyclostationary forces",
       "paper_date": "2026-05-27",
       "paper_category": "Turbulence",
-      "generated_at": "2026-05-30T18:36:09",
+      "generated_at": "2026-05-30T23:18:22",
       "generator": "openai"
     }
   },
@@ -491,27 +439,27 @@
     ],
     "score": 65,
     "infographic": {
-      "key_insight": "Closure-level accuracy in shock solvers necessitates addressing observability issues and capturing tail-weighted distribution dynamics.",
-      "engineering_relevance": "Improving the accuracy of fluid dynamics models can lead to better simulations and predictions in various engineering applications.",
+      "key_insight": "Accurate macroscopic shock profiles do not guarantee accurate fourth-order kinetic closure, because the hard-to-observe tail-weighted moments can still carry large errors.",
+      "engineering_relevance": "For kinetic shock solvers, this means training must target the right moment projections or closure errors in heat transfer and stress predictions may persist even when density, velocity, and temperature look correct.",
       "method": [
-        "Utilized a positive macro–micro PINN approach for modeling BGK shock waves.",
-        "Incorporated a bounded exponential correction to the local Maxwellian distribution.",
-        "Validated results against independent discrete-velocity method (DVM) references."
+        "Positive macro–micro PINN with a bounded exponential correction to represent the distribution",
+        "Sparse joint anchoring of heat flux and normal stress to stabilize the nonequilibrium shock layer",
+        "Shock-local closure correction aligned with the missing tail-weighted projection"
       ],
-      "evidence_signal": "Shock-tube tests illustrated that joint anchoring of observables improves stabilization of nonequilibrium layers.",
-      "watch_item": "The model struggles with accurately recovering certain higher-order moments, specifically $R_{xx}^{cl}$, due to tail-weighting effects.",
+      "evidence_signal": "Against discrete-velocity references, the flux-locked model matched lower moments and $m_{xxx}^{cl}$ but left $R_{xx}^{cl}$ at order-unity error, which was reduced to $1.12\\times10^{-1}$ after the tailored closure correction.",
+      "watch_item": "The optional distribution-function probe losses appear diagnostic rather than constitutive, so relying on them as a training requirement may not improve the underlying closure observability.",
       "hashtags": [
         "#PhysicsInformedML",
-        "#FluidDynamics",
-        "#NeuralNetworks",
+        "#BGK",
         "#KineticTheory",
-        "#ComputationalScience"
+        "#ShockWaves",
+        "#ComputationalFluidDynamics"
       ],
       "paper_id": "2026-05-28-arxiv-tail_observability_and_fourth_order_closure_recovery_in_physics_informed_neural_networks_f",
       "paper_title": "Tail observability and fourth-order closure recovery in physics-informed neural networks for Bhatnagar-Gross-Krook normal shocks",
       "paper_date": "2026-05-28",
       "paper_category": "Physics-Informed ML",
-      "generated_at": "2026-05-30T18:36:12",
+      "generated_at": "2026-05-30T23:18:24",
       "generator": "openai"
     }
   },
@@ -542,27 +490,27 @@
     ],
     "score": 63,
     "infographic": {
-      "key_insight": "FEALPy.CFD is a high-performance, cross-platform solver for incompressible Navier-Stokes equations that maximizes hardware utilization across multiple computational backends.",
-      "engineering_relevance": "It simplifies the development of computational fluid dynamics solutions, enabling efficient engineering applications and research.",
+      "key_insight": "FEALPy.CFD is a backend-agnostic, open-source Navier–Stokes solver that improves portability and performance across CPU/GPU hardware with minimal code changes.",
+      "engineering_relevance": "It lowers the barrier to high-performance CFD development by providing modular, reusable components for building and testing incompressible flow solvers across heterogeneous systems.",
       "method": [
-        "Backend-agnostic design for seamless CPU/GPU switching.",
-        "Highly modular architecture with composable components for various discretization schemes.",
-        "Supports multiple computational backends including NumPy, PyTorch, and JAX."
+        "Supports multiple backends: NumPy, PyTorch, and JAX",
+        "Enables seamless CPU/GPU switching with minimal code modification",
+        "Provides modular spatial discretization components for new algorithms"
       ],
-      "evidence_signal": "Numerical schemes validated on benchmark cases achieved their theoretical orders of convergence.",
-      "watch_item": "Potential complexity in backend management may introduce overhead in performance tuning.",
+      "evidence_signal": "Benchmark validation shows the implemented numerical schemes achieve their expected theoretical convergence orders, and backend selection delivers efficiency gains on suitable hardware.",
+      "watch_item": "Performance and usability gains may depend on the chosen backend and the maturity of each backend's numerical and GPU support.",
       "hashtags": [
-        "#ComputationalFluidDynamics",
+        "#CFD",
         "#NavierStokes",
-        "#OpenSource",
         "#HighPerformanceComputing",
-        "#FEALPy"
+        "#OpenSource",
+        "#GPUComputing"
       ],
       "paper_id": "2026-05-25-arxiv-a_high_performance_cross_platform_open_source_solver_for_the_incompressible_navier_stokes",
       "paper_title": "A High-Performance, Cross-Platform Open-Source Solver for the Incompressible Navier-Stokes Equations in FEALPy",
       "paper_date": "2026-05-25",
       "paper_category": "Turbulence",
-      "generated_at": "2026-05-30T18:36:16",
+      "generated_at": "2026-05-30T23:18:26",
       "generator": "openai"
     }
   },
@@ -594,27 +542,27 @@
     ],
     "score": 57,
     "infographic": {
-      "key_insight": "Parametric subharmonic instability (PSI) can generate small-scale turbulence in ocean bottom boundary layers due to adjustments in wave frequency from baroclinic flows.",
-      "engineering_relevance": "Understanding PSI may improve our ability to predict near-bottom mixing processes in marine environments.",
+      "key_insight": "In sloping ocean bottom boundary layers, baroclinic shear can lower the minimum internal-wave frequency enough for near-inertial waves to undergo parametric subharmonic instability (PSI), transferring wave energy into small-scale turbulence and mixing.",
+      "engineering_relevance": "This identifies a plausible near-bottom mixing mechanism that matters for predicting boundary-layer turbulence, tracer transport, and parameterizations over sloping topography.",
       "method": [
-        "Linear stability analysis of the bottom boundary layer.",
-        "Nonlinear simulations to assess the growth rate of PSI.",
-        "Evaluation of energy sources including wave shear and buoyancy production."
+        "Linear stability analysis of PSI in a baroclinic bottom boundary layer",
+        "Nonlinear simulations to test growth rates and energy pathways",
+        "Assessment of how stratification and slope Burger number control instability"
       ],
-      "evidence_signal": "PSI's growth rate is influenced by the vertical stratification of the bottom boundary layer and the slope Burger number.",
-      "watch_item": "The increasing importance of geostrophic shear production as flows approach marginal stability may complicate predictions.",
+      "evidence_signal": "The abstract reports agreement between linear stability theory and nonlinear simulations, showing PSI growth depends on vertical stratification and slope Burger number and that wave shear production is the dominant energy source.",
+      "watch_item": "The instability appears sensitive to local stratification, bottom slope, and flow state, so it may only occur in specific near-bottom conditions rather than as a universal mixing mechanism.",
       "hashtags": [
-        "#OceanEngineering",
-        "#FluidMechanics",
-        "#Turbulence",
-        "#ParametricInstability",
-        "#MarineScience"
+        "#OceanMixing",
+        "#InternalWaves",
+        "#BoundaryLayer",
+        "#Submesoscale",
+        "#Turbulence"
       ],
       "paper_id": "2026-05-27-arxiv-parametric_subharmonic_instability_in_the_ocean_bottom_boundary_layer",
       "paper_title": "Parametric Subharmonic Instability in the Ocean Bottom Boundary Layer",
       "paper_date": "2026-05-27",
       "paper_category": "Turbulence",
-      "generated_at": "2026-05-30T18:36:20",
+      "generated_at": "2026-05-30T23:18:29",
       "generator": "openai"
     }
   },
@@ -646,27 +594,27 @@
     ],
     "score": 57,
     "infographic": {
-      "key_insight": "Quantum computing shows promise in efficiently simulating fluid dynamics at high Reynolds numbers using a novel quantum-circuit implementation.",
-      "engineering_relevance": "This research opens avenues for using quantum algorithms in complex fluid simulations, which could significantly enhance predictive capabilities in engineering applications.",
+      "key_insight": "The paper shows that obstacle-flow CFD with non-periodic boundaries can be mapped into a quantum-circuit-friendly linear solver using Carleman-linearized LBM, block-encoding, and QSVT.",
+      "engineering_relevance": "This suggests a path toward scalable quantum fluid simulation workflows for complex geometries, with qubit and gate costs growing only logarithmically with lattice size in the demonstrated setup.",
       "method": [
-        "Implementation of a quantum algorithm for 2D linearized fluid flow around obstacles.",
-        "Utilization of block-encoding of the linear-system matrix and quantum singular value transformation (QSVT).",
-        "Incorporation of boundary conditions as sparse matrix operations using index-value encoding."
+        "Carleman-linearize the lattice Boltzmann formulation for 2D linearized flow around an obstacle.",
+        "Encode the sparse linear-system matrix via block-encoding and solve it with QSVT.",
+        "Implement inflow, outflow, and no-slip boundaries using sparse matrix operations with index-value encoding."
       ],
-      "evidence_signal": "The study demonstrates logarithmic scaling of qubits and gates with the number of lattice points, indicating potential in quantum-computational fluid dynamics.",
-      "watch_item": "Practical implementation of non-periodic boundary conditions remains a challenge.",
+      "evidence_signal": "The abstract reports a circuit implementation demonstration and claims logarithmic scaling of qubits and gates with the number of lattice points.",
+      "watch_item": "The approach is demonstrated for a linearized obstacle-flow case, so practical performance, noise tolerance, and extension to fully nonlinear high-Re flows remain to be validated.",
       "hashtags": [
         "#QuantumComputing",
-        "#FluidDynamics",
-        "#LatticeBoltzmann",
-        "#ComputationalEngineering",
-        "#QuantumSimulation"
+        "#CFD",
+        "#LatticeBoltzmannMethod",
+        "#QSVT",
+        "#FluidSimulation"
       ],
       "paper_id": "2026-05-27-arxiv-a_demonstration_of_quantum_circuit_implementation_for_obstacle_flow_using_carleman_lineari",
       "paper_title": "A Demonstration of Quantum Circuit Implementation for Obstacle Flow Using Carleman-Linearized Lattice Boltzmann Method",
       "paper_date": "2026-05-27",
       "paper_category": "Turbulence",
-      "generated_at": "2026-05-30T18:36:22",
+      "generated_at": "2026-05-30T23:18:31",
       "generator": "openai"
     }
   },
@@ -697,79 +645,27 @@
     ],
     "score": 56,
     "infographic": {
-      "key_insight": "The proposed framework enhances PIV data by utilizing unlabelled probe data to improve flow estimation accuracy and temporal consistency.",
-      "engineering_relevance": "This method is crucial for advancing pressure field reconstruction in aerodynamics applications with limited data acquisition.",
+      "key_insight": "Unlabelled high-frequency probe data can be used semi-supervisedly to improve time-resolved flow reconstruction from sparse PIV snapshots, especially for physically consistent temporal gradients.",
+      "engineering_relevance": "The method can reduce experimental burden while improving velocity and pressure estimation in aerodynamic flows where PIV is too slow to capture full dynamics.",
       "method": [
-        "Enrich original PIV dataset using an advection model.",
-        "Employ semi-supervised learning to leverage unlabelled probe data.",
-        "Train neural networks to predict temporal coefficients and their derivatives."
+        "Enrich sparse PIV training data by time-marching a simple advection model.",
+        "Train two neural networks: one for POD temporal coefficients and one for their time derivatives.",
+        "Use unlabelled probe samples plus least-squares regularization to enforce temporal consistency."
       ],
-      "evidence_signal": "The approach significantly improves accuracy and temporal smoothness in velocity reconstruction based on synthetic and experimental data.",
-      "watch_item": "The effectiveness heavily relies on the assumptions of the advection model and the quality of unlabelled probe data.",
+      "evidence_signal": "Validated on synthetic turbulent channel flow and experimental airfoil wake PIV, where unlabelled probe data improved reconstruction accuracy and temporal smoothness, leading to better pressure estimates.",
+      "watch_item": "Performance may depend on how well the advection model and probe coverage match the true flow physics; poor mismatch could weaken consistency enforcement.",
       "hashtags": [
         "#FluidMechanics",
-        "#MachineLearning",
-        "#DataScience",
         "#Aerodynamics",
-        "#PIV"
+        "#SemiSupervisedLearning",
+        "#POD",
+        "#PressureReconstruction"
       ],
       "paper_id": "2026-05-27-arxiv-data_efficient_semi_supervised_learning_for_flow_estimation_using_unlabelled_probe_data",
       "paper_title": "Data-efficient semi-supervised learning for flow estimation using unlabelled probe data",
       "paper_date": "2026-05-27",
       "paper_category": "Aerodynamics",
-      "generated_at": "2026-05-30T18:36:26",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-05-26-arxiv-lagrangian_ellipsoid_diagnostics_for_stochastic_hydrodynamics_source_sink_modeling_of_defo",
-    "arxiv_id": "2605.27606v1",
-    "date": "2026-05-26",
-    "title": "Lagrangian Ellipsoid Diagnostics for Stochastic Hydrodynamics: Source--Sink Modeling of Deforming Particle Clouds",
-    "authors": "Michael Chertkov",
-    "abstract": "We propose the Lowner--John deform-cloud scheme as a Lagrangian diagnostic for incompressible stochastic flows with an inertial range. A volume-filled particle cloud is released at the ultraviolet scale and summarized at each time by two objects: the inertia tensor of its minimum-volume enclosing ellipsoid and the velocity gradient coarse-grained over that ellipsoid. We test the scheme on a two-dimensional isotropic incompressible Gaussian--Holder finite-time-correlated velocity field with Kolmogorov exponent, generated spectrally with Ornstein--Uhlenbeck Fourier modes. The resulting empirical train shows a broadly fluctuating but statistically saturated ellipsoid aspect ratio, a clear scale dependence of the perceived gradient, and an approximately ordinary tensor-level strain--vorticity balance. We then formulate reduced modeling of the train as physics-informed generator identification. In intrinsic variables describing scale, aspect ratio, strain amplitude, vorticity, and strain--ellipsoid alignment, the aspect-ratio dynamics separates into an aligned-strain source and a Lowner--John residual. The final open-box closure models strain and vorticity as scale-dependent stochastic drivers, represents alignment by a stationary von--Mises bias, and closes the residual by a scale-dependent affine feedback. Thus the observed aspect-ratio saturation is not merely fitted; it is explained as a balance between persistent strain alignment and geometric relaxation of the enclosing ellipsoid. The construction provides a portable route from particle-cloud data to interpretable finite-dimensional stochastic dynamics for future turbulent-flow applications.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-05-26T19:23:35Z",
-    "updated": "2026-05-26T19:23:35Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn",
-      "nlin.CD"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2605.27606v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2605.27606v1"
-      }
-    ],
-    "score": 56,
-    "infographic": {
-      "key_insight": "The Lowner–John deform-cloud scheme provides a Lagrangian diagnostic for incompressible stochastic flows, revealing crucial dynamical balances in particle clouds.",
-      "engineering_relevance": "This method aids in understanding turbulent flows, which is essential for improving designs in fluid mechanics applications.",
-      "method": [
-        "Implemented on a two-dimensional isotropic incompressible fluid using spectrally generated velocity fields.",
-        "Utilizes minimum-volume enclosing ellipsoids to analyze particle cloud dynamics.",
-        "Incorporates physics-informed generator identification for reduced modeling."
-      ],
-      "evidence_signal": "The empirical results indicated a broadly fluctuating yet statistically saturated ellipsoid aspect ratio and a clear scale dependence of the velocity gradient.",
-      "watch_item": "The approach needs careful implementation to ensure accurate representation of real-world turbulent dynamics.",
-      "hashtags": [
-        "#FluidMechanics",
-        "#Turbulence",
-        "#ComputationalScience",
-        "#StochasticDynamics",
-        "#ParticleClouds"
-      ],
-      "paper_id": "2026-05-26-arxiv-lagrangian_ellipsoid_diagnostics_for_stochastic_hydrodynamics_source_sink_modeling_of_defo",
-      "paper_title": "Lagrangian Ellipsoid Diagnostics for Stochastic Hydrodynamics: Source--Sink Modeling of Deforming Particle Clouds",
-      "paper_date": "2026-05-26",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-05-30T18:36:29",
+      "generated_at": "2026-05-30T23:18:33",
       "generator": "openai"
     }
   },
@@ -800,27 +696,27 @@
     ],
     "score": 55,
     "infographic": {
-      "key_insight": "The reformulated simplified lattice Boltzmann method (SLBM) enhances numerical stability and accuracy for high Reynolds number simulations.",
-      "engineering_relevance": "This method provides an efficient tool for simulating incompressible flows with improved fidelity.",
+      "key_insight": "The paper reformulates SLBM into a predictor-corrector scheme that removes modified-equation errors while keeping the method simple and more stable for incompressible flows.",
+      "engineering_relevance": "This improves accuracy, dissipation/dispersion control, and robustness for high-Reynolds-number CFD on relatively coarse grids.",
       "method": [
-        "Utilizes a generalized SLBM formulation with tunable high-order parameters.",
-        "Employs a predictor-corrector strategy with finite-difference discretization.",
-        "Achieves second order accuracy while resolving fine vortex structures on coarse grids."
+        "Generalized SLBM formulation exposes intrinsic deviations and truncation errors in the macroscopic equations.",
+        "Predictor step uses tunable high-order SLBM parameters to control numerical dissipation and dispersion.",
+        "Corrector step applies finite-difference discretization of the BGK-LBM reference macroscopic equation."
       ],
-      "evidence_signal": "Linear wave analysis and validation against complex numerical examples demonstrate improved dispersion and dissipation performance.",
-      "watch_item": "The potential complexity of tuning high-order parameters may pose challenges in practical implementations.",
+      "evidence_signal": "The approach is supported by linear wave analysis and numerical examples showing preserved second-order accuracy, better dissipation/dispersion behavior, and improved stability.",
+      "watch_item": "Performance depends on choosing the tunable high-order parameters correctly, so implementation may require careful calibration across flow regimes.",
       "hashtags": [
-        "#ComputationalFluidDynamics",
         "#LatticeBoltzmannMethod",
+        "#ComputationalFluidDynamics",
+        "#Turbulence",
         "#NumericalStability",
-        "#IncompressibleFlows",
-        "#TurbulenceSimulation"
+        "#HighReynoldsNumber"
       ],
       "paper_id": "2026-05-28-arxiv-revisit_the_simplified_lattice_boltzmann_method_dissipation_dispersion_and_stability",
       "paper_title": "Revisit the simplified lattice Boltzmann method: dissipation, dispersion and stability",
       "paper_date": "2026-05-28",
       "paper_category": "Turbulence",
-      "generated_at": "2026-05-30T18:36:32",
+      "generated_at": "2026-05-30T23:18:35",
       "generator": "openai"
     }
   },
@@ -852,27 +748,27 @@
     ],
     "score": 54,
     "infographic": {
-      "key_insight": "Shear-induced depletion and alignment in bacterial flows are unified as manifestations of a single active phase-space topology.",
-      "engineering_relevance": "This research provides a predictive framework for understanding bacterial transport in low-Reynolds-number flows, improving engineering designs in microfluidic systems.",
+      "key_insight": "Shear-driven bacterial depletion and alignment arise from one active phase-space topology, revealing a hydrodynamic locking mechanism with mean-drift invariance rather than a simple local-shear effect.",
+      "engineering_relevance": "The theory provides a predictive framework for designing and interpreting microfluidic systems that control bacterial transport, mixing, and wall interactions in low-Re low-scale flows.",
       "method": [
-        "Developed an analytical hydrodynamic model from first principles.",
-        "Utilized the method of images to characterize flow-wall coupling.",
-        "Enforced consistent no-flux boundary conditions."
+        "Analytical hydrodynamic model with consistent no-flux boundary conditions",
+        "Method of images to capture flow–wall coupling",
+        "Phase-space analysis to unify depletion, alignment, and mean drift"
       ],
-      "evidence_signal": "The model quantitatively reproduces measured bacterial distributions validated against microfluidic experiments.",
-      "watch_item": "Potential challenges in extrapolating findings to more complex biological systems or varying environmental conditions.",
+      "evidence_signal": "The model is validated against microfluidic experiments across multiple bacterial species and shear geometries, from 1D to fully 3D flows, and quantitatively reproduces measured distributions.",
+      "watch_item": "The framework is developed for low-Reynolds-number microfluidic settings, so extrapolation to dense suspensions, strong turbulence, or complex biological interactions may require additional modeling.",
       "hashtags": [
-        "#FluidMechanics",
         "#ActiveMatter",
-        "#BacterialTransport",
         "#Microfluidics",
-        "#ScientificResearch"
+        "#BacterialTransport",
+        "#LowReynoldsNumber",
+        "#PhaseSpaceTopology"
       ],
       "paper_id": "2026-05-28-arxiv-active_phase_space_topology_unifies_depletion_and_alignment_in_bacterial_flows",
       "paper_title": "Active phase-space topology unifies depletion and alignment in bacterial flows",
       "paper_date": "2026-05-28",
       "paper_category": "Turbulence",
-      "generated_at": "2026-05-30T18:36:36",
+      "generated_at": "2026-05-30T23:18:38",
       "generator": "openai"
     }
   },
@@ -903,78 +799,79 @@
     ],
     "score": 51,
     "infographic": {
-      "key_insight": "The developed model effectively represents the interplay between gravity waves and wind farm wakes in boundary-layer dynamics.",
-      "engineering_relevance": "This research aids in optimizing wind farm design by more accurately modeling environmental interactions.",
+      "key_insight": "The paper presents a reduced-order model that captures two-way coupling between wind-farm wakes and gravity waves through a dynamic boundary condition at the capping inversion.",
+      "engineering_relevance": "This provides a computationally efficient way to predict how atmospheric stratification alters farm-scale blockage and wake recovery, which is useful for wind-farm design and performance assessment.",
       "method": [
-        "Linearization of non-hydrostatic Boussinesq equations.",
-        "Mixed spectral-finite-difference discretisation for computational efficiency.",
-        "Dynamic boundary conditions at the capping inversion for coupling effects."
+        "Linearize the non-hydrostatic Boussinesq equations for the boundary layer and free atmosphere.",
+        "Use a dynamic coupling condition at the capping inversion to exchange pressure and wave effects between regions.",
+        "Apply a mixed spectral–finite-difference discretization to retain vertical structure with low computational cost."
       ],
-      "evidence_signal": "Model comparisons with large-eddy simulations demonstrate accurate reproduction of wind-farm dynamics and gravity-wave effects.",
-      "watch_item": "The model's assumptions may limit its applicability in highly variable atmospheric conditions.",
+      "evidence_signal": "The model was evaluated against large-eddy simulations and reproduced both internal wind-farm flow and large-scale gravity-wave effects.",
+      "watch_item": "Because it relies on linearization and reduced-order assumptions, accuracy may degrade for strongly nonlinear stratification, complex terrain, or conditions outside the modeled boundary-layer regime.",
       "hashtags": [
-        "#FluidMechanics",
         "#WindEnergy",
         "#GravityWaves",
+        "#BoundaryLayer",
         "#Turbulence",
-        "#ComputationalModeling"
+        "#ReducedOrderModel"
       ],
       "paper_id": "2026-05-28-arxiv-two_way_coupling_of_gravity_waves_and_wind_farm_wakes_a_reduced_order_boundary_layer_model",
       "paper_title": "Two-way coupling of gravity waves and wind farm wakes: a reduced-order boundary-layer model",
       "paper_date": "2026-05-28",
       "paper_category": "Turbulence",
-      "generated_at": "2026-05-30T18:36:39",
+      "generated_at": "2026-05-30T23:18:40",
       "generator": "openai"
     }
   },
   {
-    "id": "2026-05-26-arxiv-direct_numerical_simulation_of_vertical_axis_wind_turbine_near_wake_dynamics",
-    "arxiv_id": "2605.27626v1",
+    "id": "2026-05-26-arxiv-lagrangian_ellipsoid_diagnostics_for_stochastic_hydrodynamics_source_sink_modeling_of_defo",
+    "arxiv_id": "2605.27606v1",
     "date": "2026-05-26",
-    "title": "Direct Numerical Simulation of Vertical-Axis Wind Turbine Near-Wake Dynamics",
-    "authors": "Harry Dunn, Mohsen Lahooti",
-    "abstract": "Geometrically-resolved Direct Numerical Simulations of vertical-axis wind turbines are presented. Simulations were performed using the spectral/hp element method framework Nektar++ with a moving reference frame formulation. Three turbine geometries are considered with one, two and three blades. The full dynamic stall process is resolved, including the formation of large-scale vortices, the separation from the blade, and interaction with the near wake. Increasing blade number introduces blade-vortex interactions that interact with the dynamic stall process. For the three-bladed configuration, these interactions coincide with the early phase of dynamic stall during which the laminar separation bubble develops, and the resulting dynamic stall vortex is reduced in size. Further, the DNS outcomes identified a novel complementary mechanism, where direct vortex impingement causes the premature breakup of the dynamic stall vortices. With the dynamic stall vortex a defining feature of the VAWT near-wake, its accelerated breakdown removes the flow structures that distinguish the VAWT wake from that of a bluff body. Hence the near-wake transitions more rapidly towards bluff-body dynamics, with shear-layer-associated recovery. Self-similarity analysis is extended into the near-wake to quantify this transition, capturing the downstream rate at which the wake loses its dependence on blade-generated coherent structures and collapses onto a self-similar solution. Blade number is shown to be more influential than tip-speed ratio in setting the rate of this transition. The results have implications for closely-spaced turbine arrays and coupled-pair configurations, where the inflow experienced by a downstream rotor is shown to be blade-number-dependent.",
+    "title": "Lagrangian Ellipsoid Diagnostics for Stochastic Hydrodynamics: Source--Sink Modeling of Deforming Particle Clouds",
+    "authors": "Michael Chertkov",
+    "abstract": "We propose the Lowner--John deform-cloud scheme as a Lagrangian diagnostic for incompressible stochastic flows with an inertial range. A volume-filled particle cloud is released at the ultraviolet scale and summarized at each time by two objects: the inertia tensor of its minimum-volume enclosing ellipsoid and the velocity gradient coarse-grained over that ellipsoid. We test the scheme on a two-dimensional isotropic incompressible Gaussian--Holder finite-time-correlated velocity field with Kolmogorov exponent, generated spectrally with Ornstein--Uhlenbeck Fourier modes. The resulting empirical train shows a broadly fluctuating but statistically saturated ellipsoid aspect ratio, a clear scale dependence of the perceived gradient, and an approximately ordinary tensor-level strain--vorticity balance. We then formulate reduced modeling of the train as physics-informed generator identification. In intrinsic variables describing scale, aspect ratio, strain amplitude, vorticity, and strain--ellipsoid alignment, the aspect-ratio dynamics separates into an aligned-strain source and a Lowner--John residual. The final open-box closure models strain and vorticity as scale-dependent stochastic drivers, represents alignment by a stationary von--Mises bias, and closes the residual by a scale-dependent affine feedback. Thus the observed aspect-ratio saturation is not merely fitted; it is explained as a balance between persistent strain alignment and geometric relaxation of the enclosing ellipsoid. The construction provides a portable route from particle-cloud data to interpretable finite-dimensional stochastic dynamics for future turbulent-flow applications.",
     "category": "Turbulence",
     "source": "arXiv",
-    "published": "2026-05-26T19:46:52Z",
-    "updated": "2026-05-26T19:46:52Z",
+    "published": "2026-05-26T19:23:35Z",
+    "updated": "2026-05-26T19:23:35Z",
     "primary_category": "physics.flu-dyn",
     "categories": [
-      "physics.flu-dyn"
+      "physics.flu-dyn",
+      "nlin.CD"
     ],
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2605.27626v1"
+        "url": "https://arxiv.org/abs/2605.27606v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2605.27626v1"
+        "url": "https://arxiv.org/pdf/2605.27606v1"
       }
     ],
-    "score": 50,
+    "score": 51,
     "infographic": {
-      "key_insight": "Increasing the number of blades on vertical-axis wind turbines significantly influences near-wake dynamics and the dynamic stall process.",
-      "engineering_relevance": "Understanding these interactions is crucial for optimizing turbine performance in closely-spaced turbine arrays.",
+      "key_insight": "A deforming particle cloud can be reduced to an ellipsoid-based Lagrangian state whose aspect-ratio evolution is driven by a balance between aligned strain forcing and geometric relaxation.",
+      "engineering_relevance": "This offers a compact, interpretable diagnostic and reduced-order model for tracking coherent deformation in stochastic incompressible flows and turbulence applications.",
       "method": [
-        "Geometrically-resolved Direct Numerical Simulations performed using Nektar++.",
-        "Moving reference frame formulation utilized for simulating three turbine geometries.",
-        "Focus on large-scale vortices and interactions during the dynamic stall process."
+        "Release a volume-filled particle cloud and summarize it by the minimum-volume enclosing ellipsoid and its inertia tensor.",
+        "Coarse-grain the local velocity gradient over the ellipsoid to extract scale, strain, vorticity, and alignment variables.",
+        "Identify a physics-informed stochastic generator with a source–sink decomposition, using scale-dependent drivers and a residual feedback closure."
       ],
-      "evidence_signal": "DNS outcomes reveal that blade number significantly affects the breakdown of dynamic stall vortices and the transition to bluff-body dynamics.",
-      "watch_item": "The findings may vary under different operational conditions not tested in this study.",
+      "evidence_signal": "In 2D isotropic incompressible Gaussian-H\"older finite-time-correlated synthetic flow data, the ellipsoid aspect ratio saturated statistically while the perceived gradient showed clear scale dependence and the strain–vorticity balance remained approximately ordinary.",
+      "watch_item": "The closure is calibrated on synthetic 2D data, so transfer to 3D turbulent flows or real measurements may require re-tuning and validation of the alignment and residual models.",
       "hashtags": [
         "#Turbulence",
-        "#WindEnergy",
-        "#NumericalSimulation",
-        "#FluidDynamics",
-        "#DynamicStall"
+        "#LagrangianDynamics",
+        "#StochasticFlows",
+        "#ReducedOrderModeling",
+        "#ComputationalFluidDynamics"
       ],
-      "paper_id": "2026-05-26-arxiv-direct_numerical_simulation_of_vertical_axis_wind_turbine_near_wake_dynamics",
-      "paper_title": "Direct Numerical Simulation of Vertical-Axis Wind Turbine Near-Wake Dynamics",
+      "paper_id": "2026-05-26-arxiv-lagrangian_ellipsoid_diagnostics_for_stochastic_hydrodynamics_source_sink_modeling_of_defo",
+      "paper_title": "Lagrangian Ellipsoid Diagnostics for Stochastic Hydrodynamics: Source--Sink Modeling of Deforming Particle Clouds",
       "paper_date": "2026-05-26",
       "paper_category": "Turbulence",
-      "generated_at": "2026-05-30T18:36:42",
+      "generated_at": "2026-05-30T23:18:42",
       "generator": "openai"
     }
   },
@@ -1005,27 +902,129 @@
     ],
     "score": 48,
     "infographic": {
-      "key_insight": "Transverse liquid n-heptane jets can effectively initiate and stabilize oblique detonation waves in a confined combustor.",
-      "engineering_relevance": "Understanding the dynamics of oblique detonation waves has significant implications for advanced propulsion systems and combustion technologies.",
+      "key_insight": "A transverse liquid n-heptane jet can initiate and stabilize an oblique detonation wave only within a narrow momentum window, with too little jet momentum failing to ignite and too much momentum destabilizing the detonation.",
+      "engineering_relevance": "The results define a practical control map for scramjet-like combustors, showing how jet momentum and inlet-pressure fluctuations can be tuned to maintain stable detonation-based combustion.",
       "method": [
-        "Computational investigation of jet-to-inflow momentum ratio (J)",
-        "Analysis of various jet strengths and their effects on detonation wave formation",
-        "Dynamic-stabilization mapping through phase-dependent combustion mode transitions"
+        "Computational study of a confined model combustor with liquid n-heptane inflow and a transverse liquid n-heptane jet",
+        "Systematic variation of the jet-to-inflow momentum ratio, J, under steady and oscillatory inlet-pressure conditions",
+        "Identification of combustion regimes from the resulting shock/detonation structures"
       ],
-      "evidence_signal": "The study shows that a moderate jet can create a standing detonation wave system, while excessive jet momentum destabilizes the ODW.",
-      "watch_item": "Care must be taken with jet momentum levels, as excessive input can lead to instability and loss of detonation control.",
+      "evidence_signal": "The abstract reports regime transitions across multiple jet strengths, from no ODW to local near-normal detonation, standing ODW systems, wall-coupled ODW-Mach-stem configurations, and eventual detonation expulsion under excessive jet momentum.",
+      "watch_item": "The stabilization mechanism appears to have a finite operating window, so the jet can lose effectiveness when momentum is too high or pressure fluctuations push the system outside the admissible regime.",
       "hashtags": [
-        "#Combustion",
-        "#Detonation",
-        "#FluidMechanics",
-        "#ComputationalScience",
-        "#Engineering"
+        "#ObliqueDetonation",
+        "#LiquidFuelCombustion",
+        "#TransverseJet",
+        "#ScramjetCombustion",
+        "#ComputationalFluidDynamics"
       ],
       "paper_id": "2026-05-27-arxiv-liquid_fueled_oblique_detonation_stabilized_by_a_transverse_jet",
       "paper_title": "Liquid-fueled Oblique Detonation Stabilized by a Transverse Jet",
       "paper_date": "2026-05-27",
       "paper_category": "Turbulence",
-      "generated_at": "2026-05-30T18:36:46",
+      "generated_at": "2026-05-30T23:18:45",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-05-28-arxiv-the_role_of_interfacial_tension_in_direct_numerical_simulations_of_drop_film_interaction_f",
+    "arxiv_id": "2605.30082v1",
+    "date": "2026-05-28",
+    "title": "The Role of Interfacial Tension in Direct Numerical Simulations of Drop-Film Interaction for Immiscible Fluids",
+    "authors": "Rishi Dhar, David Gösele, Paul Saumet, Bernhard Weigand, Kathrin Schulte",
+    "abstract": "Many experimental studies have reported variations in interfacial tension. Isolating all the geometric and fluid material parameters and varying the interfacial tension can be useful to check their influence. Numerical investigations using Free Surface 3D (FS3D), have been conducted to compare varying values of interfacial tension and evaluate the sensitivity. A grid independence study compared the compound crown height of a splash to determine the required resolution for validation. A qualitative validation showed FS3D could correctly capture the impact morphology while varying the viscosity ratio of the drop and film liquid when compared to the experimental results. A quantitative validation for a water drop impacting onto an oil film shows a good match for the crown heights of the numerical and experimental data. The same setup was then extended to study the variation of interfacial tension, where the deviation of the overall compound crown height and spreading diameter of the internal crowns was compared. Results revealed minor changes in the compound crown height and spreading diameter of the drop liquid, but the internal crown composition showed significant differences. In order to run FS3D efficiently on the new supercomputer Hunter, which has a new APU architecture-based system, extensive work had to be done. To adapt to the new hardware architecture, large parts of FS3D have been ported to utilise the AMD Instinct MI300A accelerated processing units (APUs) at HLRS using OpenMP. Implementation of Umpire memory pools improved performance for larger workloads per APU. The GPU-accelerated code achieves a 4 times speedup compared to CPU-only execution on the same hardware. Strong and weak scaling tests have been conducted, showing good strong scaling for up to 4 APUs, and linear weak scaling for up to 512 APUs, resulting in a total of 4096**3 cells for the first time.",
+    "category": "Aerodynamics",
+    "source": "arXiv",
+    "published": "2026-05-28T15:28:53Z",
+    "updated": "2026-05-28T15:28:53Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2605.30082v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2605.30082v1"
+      }
+    ],
+    "score": 47,
+    "infographic": {
+      "key_insight": "Varying interfacial tension only mildly changes the overall crown height and spreading diameter in drop-film impacts, but it strongly alters the internal crown composition.",
+      "engineering_relevance": "The study helps predict splash morphology in immiscible-fluid impacts and shows how FS3D can be efficiently run on modern APU-based supercomputers for large-scale direct numerical simulations.",
+      "method": [
+        "Used FS3D direct numerical simulations to isolate interfacial tension effects in drop-on-film impacts.",
+        "Performed grid independence checks using compound crown height as the resolution criterion.",
+        "Validated against experiments for impact morphology and crown heights, then extended the setup to interfacial-tension variation."
+      ],
+      "evidence_signal": "The simulations matched experimental crown heights well in water-drop-on-oil-film validation, and scaling tests showed 4x speedup on MI300A APUs with good strong scaling to 4 APUs and linear weak scaling to 512 APUs.",
+      "watch_item": "Internal crown structure is sensitive to interfacial tension, so conclusions about splash composition may depend on accurate interface modeling and sufficient resolution.",
+      "hashtags": [
+        "#FluidMechanics",
+        "#DirectNumericalSimulation",
+        "#InterfacialTension",
+        "#DropImpact",
+        "#HPC"
+      ],
+      "paper_id": "2026-05-28-arxiv-the_role_of_interfacial_tension_in_direct_numerical_simulations_of_drop_film_interaction_f",
+      "paper_title": "The Role of Interfacial Tension in Direct Numerical Simulations of Drop-Film Interaction for Immiscible Fluids",
+      "paper_date": "2026-05-28",
+      "paper_category": "Aerodynamics",
+      "generated_at": "2026-05-30T23:18:47",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-05-28-arxiv-jet_coronation_coexistence_of_compressible_and_incompressible_dynamics",
+    "arxiv_id": "2605.29328v1",
+    "date": "2026-05-28",
+    "title": "Jet coronation: Coexistence of compressible and incompressible dynamics",
+    "authors": "H. Watanabe, K. Hashimoto, W. K. A. Worby, A. Kiyama, L. Kahouadji, O. K. Matar",
+    "abstract": "This paper is associated with a poster winner of a 2025 American Physical Society's Division of Fluid Dynamics (DFD) Gallery of Fluid Motion Award for work presented at the DFD Gallery of Fluid Motion. The original poster is available online at the Gallery of Fluid Motion, https://gfm.aps.org/meetings/dfd-2025/692e39e5a7f805227b16fe9e",
+    "category": "AI Fluid Mechanics",
+    "source": "arXiv",
+    "published": "2026-05-28T04:04:38Z",
+    "updated": "2026-05-28T04:04:38Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2605.29328v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2605.29328v1"
+      }
+    ],
+    "score": 45,
+    "infographic": {
+      "key_insight": "The work highlights a jet regime where compressible and incompressible dynamics coexist, revealing that both flow descriptions can matter in the same physical system.",
+      "engineering_relevance": "Understanding this mixed-flow behavior can improve modeling and design of high-speed jets, where accurate prediction of density and velocity fluctuations is important.",
+      "method": [
+        "Analyzed jet behavior for signatures of both compressible and incompressible motion.",
+        "Compared flow structures to identify where each dynamical regime dominates.",
+        "Presented the findings as part of a Gallery of Fluid Motion poster visualization."
+      ],
+      "evidence_signal": "The abstract indicates this is a poster-based visualization study from the APS DFD Gallery of Fluid Motion rather than a numerical benchmark or dataset-driven evaluation.",
+      "watch_item": "Because the abstract provides only a poster summary, the quantitative scope and generalizability of the reported flow regime separation are unclear.",
+      "hashtags": [
+        "#FluidMechanics",
+        "#JetFlow",
+        "#CompressibleFlow",
+        "#IncompressibleFlow",
+        "#CFD"
+      ],
+      "paper_id": "2026-05-28-arxiv-jet_coronation_coexistence_of_compressible_and_incompressible_dynamics",
+      "paper_title": "Jet coronation: Coexistence of compressible and incompressible dynamics",
+      "paper_date": "2026-05-28",
+      "paper_category": "AI Fluid Mechanics",
+      "generated_at": "2026-05-30T23:18:49",
       "generator": "openai"
     }
   }
