@@ -155,10 +155,10 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2605.27626v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-26-arxiv-direct_numerical_simulation_of_vertical_axis_wind_turbine_near_wake_dynamics_infographic.json
 
-## 20. A hybrid Volume of Fluid Phase-Field method for Direct Numerical Simulations of soluble surfactant-laden interfacial flows
+## 20. Liquid-fueled Oblique Detonation Stabilized by a Transverse Jet
 
-- Date: 2026-05-26
-- Category: Multiphase Flow
-- arXiv: https://arxiv.org/abs/2605.27534v1
-- PDF: https://arxiv.org/pdf/2605.27534v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-26-arxiv-a_hybrid_volume_of_fluid_phase_field_method_for_direct_numerical_simulations_of_soluble_su_infographic.json
+- Date: 2026-05-27
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2605.27871v1
+- PDF: https://arxiv.org/pdf/2605.27871v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-27-arxiv-liquid_fueled_oblique_detonation_stabilized_by_a_transverse_jet_infographic.json
