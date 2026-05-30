@@ -67,15 +67,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2605.25679v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-25-arxiv-transformer_based_neural_operators_for_3d_wind_field_prediction_over_complex_mountainous_t_infographic.json
 
-## 9. Performance Evaluation of RANS-Based Turbulence Models in Predicting Turbulent Non-Premixed Swirling Combustion within a Realistic Can Combustor
-
-- Date: 2026-05-19
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2605.19994v1
-- PDF: https://arxiv.org/pdf/2605.19994v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-19-arxiv-performance_evaluation_of_rans_based_turbulence_models_in_predicting_turbulent_non_premixe_infographic.json
-
-## 10. Triggering of extreme events and coherent-structure modulation in wall-turbulence under cyclostationary forces
+## 9. Triggering of extreme events and coherent-structure modulation in wall-turbulence under cyclostationary forces
 
 - Date: 2026-05-27
 - Category: Turbulence
@@ -83,7 +75,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2605.27792v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-27-arxiv-triggering_of_extreme_events_and_coherent_structure_modulation_in_wall_turbulence_under_cy_infographic.json
 
-## 11. Tail observability and fourth-order closure recovery in physics-informed neural networks for Bhatnagar-Gross-Krook normal shocks
+## 10. Tail observability and fourth-order closure recovery in physics-informed neural networks for Bhatnagar-Gross-Krook normal shocks
 
 - Date: 2026-05-28
 - Category: Physics-Informed ML
@@ -91,15 +83,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2605.29211v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-28-arxiv-tail_observability_and_fourth_order_closure_recovery_in_physics_informed_neural_networks_f_infographic.json
 
-## 12. Physics-Informed Graph Neural Network Surrogates for Turbulent Nanoparticle Dispersion in Dental Clinical Environments
-
-- Date: 2026-05-19
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2605.19589v1
-- PDF: https://arxiv.org/pdf/2605.19589v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-19-arxiv-physics_informed_graph_neural_network_surrogates_for_turbulent_nanoparticle_dispersion_in_infographic.json
-
-## 13. A High-Performance, Cross-Platform Open-Source Solver for the Incompressible Navier-Stokes Equations in FEALPy
+## 11. A High-Performance, Cross-Platform Open-Source Solver for the Incompressible Navier-Stokes Equations in FEALPy
 
 - Date: 2026-05-25
 - Category: Turbulence
@@ -107,23 +91,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2605.25403v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-25-arxiv-a_high_performance_cross_platform_open_source_solver_for_the_incompressible_navier_stokes_infographic.json
 
-## 14. Realizability-Constrained Machine Learning for Turbulence Closures in Wake Flows
-
-- Date: 2026-05-12
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2605.12304v1
-- PDF: https://arxiv.org/pdf/2605.12304v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-12-arxiv-realizability_constrained_machine_learning_for_turbulence_closures_in_wake_flows_infographic.json
-
-## 15. Magnetohydrodynamics Simulations
-
-- Date: 2026-05-18
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2605.19057v1
-- PDF: https://arxiv.org/pdf/2605.19057v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-18-arxiv-magnetohydrodynamics_simulations_infographic.json
-
-## 16. Parametric Subharmonic Instability in the Ocean Bottom Boundary Layer
+## 12. Parametric Subharmonic Instability in the Ocean Bottom Boundary Layer
 
 - Date: 2026-05-27
 - Category: Turbulence
@@ -131,7 +99,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2605.28555v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-27-arxiv-parametric_subharmonic_instability_in_the_ocean_bottom_boundary_layer_infographic.json
 
-## 17. A Demonstration of Quantum Circuit Implementation for Obstacle Flow Using Carleman-Linearized Lattice Boltzmann Method
+## 13. A Demonstration of Quantum Circuit Implementation for Obstacle Flow Using Carleman-Linearized Lattice Boltzmann Method
 
 - Date: 2026-05-27
 - Category: Turbulence
@@ -139,7 +107,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2605.28135v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-27-arxiv-a_demonstration_of_quantum_circuit_implementation_for_obstacle_flow_using_carleman_lineari_infographic.json
 
-## 18. Data-efficient semi-supervised learning for flow estimation using unlabelled probe data
+## 14. Data-efficient semi-supervised learning for flow estimation using unlabelled probe data
 
 - Date: 2026-05-27
 - Category: Aerodynamics
@@ -147,7 +115,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2605.28245v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-27-arxiv-data_efficient_semi_supervised_learning_for_flow_estimation_using_unlabelled_probe_data_infographic.json
 
-## 19. Lagrangian Ellipsoid Diagnostics for Stochastic Hydrodynamics: Source--Sink Modeling of Deforming Particle Clouds
+## 15. Lagrangian Ellipsoid Diagnostics for Stochastic Hydrodynamics: Source--Sink Modeling of Deforming Particle Clouds
 
 - Date: 2026-05-26
 - Category: Turbulence
@@ -155,10 +123,42 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2605.27606v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-26-arxiv-lagrangian_ellipsoid_diagnostics_for_stochastic_hydrodynamics_source_sink_modeling_of_defo_infographic.json
 
-## 20. HiLiftAeroML: High-Fidelity Computational Fluid Dynamics Dataset for High-Lift Aircraft Aerodynamics
+## 16. Revisit the simplified lattice Boltzmann method: dissipation, dispersion and stability
 
-- Date: 2026-05-19
+- Date: 2026-05-28
 - Category: Turbulence
-- arXiv: https://arxiv.org/abs/2605.19565v1
-- PDF: https://arxiv.org/pdf/2605.19565v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-19-arxiv-hiliftaeroml_high_fidelity_computational_fluid_dynamics_dataset_for_high_lift_aircraft_aer_infographic.json
+- arXiv: https://arxiv.org/abs/2605.29887v1
+- PDF: https://arxiv.org/pdf/2605.29887v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-28-arxiv-revisit_the_simplified_lattice_boltzmann_method_dissipation_dispersion_and_stability_infographic.json
+
+## 17. Active phase-space topology unifies depletion and alignment in bacterial flows
+
+- Date: 2026-05-28
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2605.29333v1
+- PDF: https://arxiv.org/pdf/2605.29333v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-28-arxiv-active_phase_space_topology_unifies_depletion_and_alignment_in_bacterial_flows_infographic.json
+
+## 18. Two-way coupling of gravity waves and wind farm wakes: a reduced-order boundary-layer model
+
+- Date: 2026-05-28
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2605.30077v1
+- PDF: https://arxiv.org/pdf/2605.30077v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-28-arxiv-two_way_coupling_of_gravity_waves_and_wind_farm_wakes_a_reduced_order_boundary_layer_model_infographic.json
+
+## 19. Direct Numerical Simulation of Vertical-Axis Wind Turbine Near-Wake Dynamics
+
+- Date: 2026-05-26
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2605.27626v1
+- PDF: https://arxiv.org/pdf/2605.27626v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-26-arxiv-direct_numerical_simulation_of_vertical_axis_wind_turbine_near_wake_dynamics_infographic.json
+
+## 20. A hybrid Volume of Fluid Phase-Field method for Direct Numerical Simulations of soluble surfactant-laden interfacial flows
+
+- Date: 2026-05-26
+- Category: Multiphase Flow
+- arXiv: https://arxiv.org/abs/2605.27534v1
+- PDF: https://arxiv.org/pdf/2605.27534v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-26-arxiv-a_hybrid_volume_of_fluid_phase_field_method_for_direct_numerical_simulations_of_soluble_su_infographic.json
