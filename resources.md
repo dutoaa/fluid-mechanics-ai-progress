@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-06-05
+Generated: 2026-06-07
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. A high-order Fourier Continuation (FC)-based spectral incompressible Smoothed Particle Hydrodynamics (ISPH) scheme for general boundary conditions in wall-bounded domains
@@ -35,7 +35,15 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.06313v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-04-arxiv-wall_shear_stress_reconstruction_from_concentration_differentiable_physics_and_physics_inf_infographic.json
 
-## 5. Stochastic Multiscale Reconstruction of Lagrangian Turbulence via Guided Diffusion Models
+## 5. End-to-end optimization of subgrid scale models for discontinuous spectral element schemes based on the discrete adjoint method
+
+- Date: 2026-05-31
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.01150v1
+- PDF: https://arxiv.org/pdf/2606.01150v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-31-arxiv-end_to_end_optimization_of_subgrid_scale_models_for_discontinuous_spectral_element_schemes_infographic.json
+
+## 6. Stochastic Multiscale Reconstruction of Lagrangian Turbulence via Guided Diffusion Models
 
 - Date: 2026-06-04
 - Category: Turbulence
@@ -43,7 +51,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.05783v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-04-arxiv-stochastic_multiscale_reconstruction_of_lagrangian_turbulence_via_guided_diffusion_models_infographic.json
 
-## 6. Statistical orientation and distribution of columnar ice crystals in turbulent flows
+## 7. Statistical orientation and distribution of columnar ice crystals in turbulent flows
 
 - Date: 2026-06-04
 - Category: Turbulence
@@ -51,7 +59,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.06374v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-04-arxiv-statistical_orientation_and_distribution_of_columnar_ice_crystals_in_turbulent_flows_infographic.json
 
-## 7. Turbulence-based parametrization of animal flight
+## 8. Turbulence-based parametrization of animal flight
 
 - Date: 2026-06-04
 - Category: Aerodynamics
@@ -59,7 +67,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.06269v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-04-arxiv-turbulence_based_parametrization_of_animal_flight_infographic.json
 
-## 8. Deep reinforcement learning with spatial and temporal awareness for active boundary control of buoyancy-driven convection
+## 9. Deep reinforcement learning with spatial and temporal awareness for active boundary control of buoyancy-driven convection
 
 - Date: 2026-06-04
 - Category: Turbulence
@@ -67,21 +75,13 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.06191v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-04-arxiv-deep_reinforcement_learning_with_spatial_and_temporal_awareness_for_active_boundary_contro_infographic.json
 
-## 9. Uncovering Turbulent Dynamics in Stenotic Flows from 4D-flow MRI Measurements via Resolvent Analysis and Data Assimilation
+## 10. Uncovering Turbulent Dynamics in Stenotic Flows from 4D-flow MRI Measurements via Resolvent Analysis and Data Assimilation
 
 - Date: 2026-06-02
 - Category: Turbulence
 - arXiv: https://arxiv.org/abs/2606.03838v1
 - PDF: https://arxiv.org/pdf/2606.03838v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-02-arxiv-uncovering_turbulent_dynamics_in_stenotic_flows_from_4d_flow_mri_measurements_via_resolven_infographic.json
-
-## 10. End-to-end optimization of subgrid scale models for discontinuous spectral element schemes based on the discrete adjoint method
-
-- Date: 2026-05-31
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.01150v1
-- PDF: https://arxiv.org/pdf/2606.01150v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-05-31-arxiv-end_to_end_optimization_of_subgrid_scale_models_for_discontinuous_spectral_element_schemes_infographic.json
 
 ## 11. An experimental study on the heat transport in porous media convection
 
