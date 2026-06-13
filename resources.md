@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-06-12
+Generated: 2026-06-13
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Data-driven surrogate models for forecasting experimentally measured fluid flows
@@ -51,23 +51,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.10919v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-09-arxiv-topological_origin_of_flow_distributions_in_disordered_porous_media_infographic.json
 
-## 7. Ultimate regime in Rayleigh-Darcy Convection
-
-- Date: 2026-06-11
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.13505v1
-- PDF: https://arxiv.org/pdf/2606.13505v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-11-arxiv-ultimate_regime_in_rayleigh_darcy_convection_infographic.json
-
-## 8. Spectrally Regularized Latent Flow Matching for Turbulence Generation
-
-- Date: 2026-06-10
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.11691v1
-- PDF: https://arxiv.org/pdf/2606.11691v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-10-arxiv-spectrally_regularized_latent_flow_matching_for_turbulence_generation_infographic.json
-
-## 9. Semi-local transformation for compressible wall turbulence via elliptic equations
+## 7. Semi-local transformation for compressible wall turbulence via elliptic equations
 
 - Date: 2026-06-08
 - Category: Turbulence
@@ -75,7 +59,31 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.09322v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-08-arxiv-semi_local_transformation_for_compressible_wall_turbulence_via_elliptic_equations_infographic.json
 
-## 10. Explicit Quantum Circuit Simulation of Nonlinear 1-Dimensional Fluid with Carleman-linearized Boltzmann Method
+## 8. Ultimate regime in Rayleigh-Darcy Convection
+
+- Date: 2026-06-11
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.13505v1
+- PDF: https://arxiv.org/pdf/2606.13505v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-11-arxiv-ultimate_regime_in_rayleigh_darcy_convection_infographic.json
+
+## 9. Duty-cycle modulation of the self-sustaining process by spanwise wall oscillation
+
+- Date: 2026-06-11
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.13207v1
+- PDF: https://arxiv.org/pdf/2606.13207v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-11-arxiv-duty_cycle_modulation_of_the_self_sustaining_process_by_spanwise_wall_oscillation_infographic.json
+
+## 10. Spectrally Regularized Latent Flow Matching for Turbulence Generation
+
+- Date: 2026-06-10
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.11691v1
+- PDF: https://arxiv.org/pdf/2606.11691v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-10-arxiv-spectrally_regularized_latent_flow_matching_for_turbulence_generation_infographic.json
+
+## 11. Explicit Quantum Circuit Simulation of Nonlinear 1-Dimensional Fluid with Carleman-linearized Boltzmann Method
 
 - Date: 2026-06-11
 - Category: Turbulence
@@ -83,7 +91,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.12770v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-11-arxiv-explicit_quantum_circuit_simulation_of_nonlinear_1_dimensional_fluid_with_carleman_lineari_infographic.json
 
-## 11. Two pathways to diapycnal mixing in strongly stratified flows with no initial vertical shear
+## 12. Two pathways to diapycnal mixing in strongly stratified flows with no initial vertical shear
 
 - Date: 2026-06-10
 - Category: Turbulence
@@ -91,7 +99,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.12627v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-10-arxiv-two_pathways_to_diapycnal_mixing_in_strongly_stratified_flows_with_no_initial_vertical_she_infographic.json
 
-## 12. Dynamical large deviations and long-range correlations for local weak wave turbulence
+## 13. Dynamical large deviations and long-range correlations for local weak wave turbulence
 
 - Date: 2026-06-10
 - Category: Turbulence
@@ -99,7 +107,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.12624v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-10-arxiv-dynamical_large_deviations_and_long_range_correlations_for_local_weak_wave_turbulence_infographic.json
 
-## 13. Symmetric structure-preserving discretization of N-phase incompressible fluid mixtures with arbitrary density ratios
+## 14. Symmetric structure-preserving discretization of N-phase incompressible fluid mixtures with arbitrary density ratios
 
 - Date: 2026-06-10
 - Category: Multiphase Flow
@@ -107,21 +115,13 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.12256v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-10-arxiv-symmetric_structure_preserving_discretization_of_n_phase_incompressible_fluid_mixtures_wit_infographic.json
 
-## 14. On the Modelling of the Hydrodynamic Drag of Mangroves
+## 15. On the Modelling of the Hydrodynamic Drag of Mangroves
 
 - Date: 2026-06-10
 - Category: CFD Surrogates
 - arXiv: https://arxiv.org/abs/2606.11653v1
 - PDF: https://arxiv.org/pdf/2606.11653v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-10-arxiv-on_the_modelling_of_the_hydrodynamic_drag_of_mangroves_infographic.json
-
-## 15. Duty-cycle modulation of the self-sustaining process by spanwise wall oscillation
-
-- Date: 2026-06-11
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.13207v1
-- PDF: https://arxiv.org/pdf/2606.13207v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-11-arxiv-duty_cycle_modulation_of_the_self_sustaining_process_by_spanwise_wall_oscillation_infographic.json
 
 ## 16. No need to stay positive: a practical approach to direct numerical simulations of elastic turbulence
 

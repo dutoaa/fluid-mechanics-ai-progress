@@ -24,29 +24,29 @@
         "url": "https://arxiv.org/pdf/2606.10848v2"
       }
     ],
-    "score": 86,
+    "score": 91,
     "infographic": {
-      "key_insight": "Experimentally trained surrogate models can forecast cylinder-wake evolution faster than real time, but their accuracy degrades when transient features, noise, and missing observations dominate.",
-      "engineering_relevance": "These models are promising for flow control and other engineering tasks where quick predictions are needed from imperfect experimental measurements.",
+      "key_insight": "Experimentally trained surrogate models can forecast cylinder-wake evolution faster than real time, but they are most reliable only over short horizons and for low-frequency flow structures.",
+      "engineering_relevance": "This supports practical flow-control and monitoring workflows where quick approximate predictions are valuable, while also highlighting the risk of degraded performance when measurements are noisy, sparse, or incomplete.",
       "method": [
-        "Train FCNNs, U-Nets, Fourier neural operators, and DMD-based models on 2D, 2-component PIV wake data.",
-        "Test extended-horizon forecasting at fixed Re = 590.",
-        "Evaluate robustness across Re = 230 to 2920 to probe effects of increasing turbulence and 3D behavior."
+        "Trained fully convolutional neural networks, U-Nets, Fourier neural operators, and DMD-based surrogates.",
+        "Used two-dimensional, two-component PIV measurements of subcritical cylinder wakes.",
+        "Tested both long-horizon forecasting at fixed Re = 590 and multi-Re training from Re = 230 to 2920."
       ],
-      "evidence_signal": "The abstract reports meaningful short-term forecasts and faster-than-real-time evaluation, but lower fidelity for high-frequency content and transient structures under noisy or incomplete inputs.",
-      "watch_item": "Do not assume good long-horizon accuracy from sparse or noisy measurements, especially for higher-Re flows where unobserved 3D effects grow.",
+      "evidence_signal": "The abstract reports meaningful short-term predictions and faster-than-real-time evaluation, but reduced preservation of transient features and high-frequency energy under imperfect observations.",
+      "watch_item": "Performance may drop substantially when extending to more turbulent, three-dimensional, or partially observed flows, so deployment should be cautious outside the measured regime.",
       "hashtags": [
         "#FluidDynamics",
         "#SurrogateModels",
-        "#MachineLearning",
-        "#CFD",
-        "#PIV"
+        "#NeuralOperators",
+        "#PIV",
+        "#FlowForecasting"
       ],
       "paper_id": "2026-06-09-arxiv-data_driven_surrogate_models_for_forecasting_experimentally_measured_fluid_flows",
       "paper_title": "Data-driven surrogate models for forecasting experimentally measured fluid flows",
       "paper_date": "2026-06-09",
       "paper_category": "CFD Surrogates",
-      "generated_at": "2026-06-13T10:32:40",
+      "generated_at": "2026-06-12T11:46:10",
       "generator": "openai"
     }
   },
@@ -76,29 +76,29 @@
         "url": "https://arxiv.org/pdf/2606.13596v1"
       }
     ],
-    "score": 68,
+    "score": 73,
     "infographic": {
-      "key_insight": "Mean-flow skew changes a turbulent mixing layer mainly in magnitude, reducing mean and turbulent quantities by up to about 40%, but leaves its core self-similar mixing-layer dynamics largely intact.",
-      "engineering_relevance": "For 3D shear-flow design, this suggests skew can weaken transport without fundamentally changing scaling laws, providing a practical benchmark for predicting free-shear mixing in realistic configurations.",
+      "key_insight": "Spanwise mean-flow skew reduces the magnitude of mixing-layer statistics, but the turbulent shear-layer dynamics and self-similar structure remain largely intact.",
+      "engineering_relevance": "For 3D shear-flow devices and models, moderate mean-flow skew can change performance levels without fundamentally altering the mixing-layer growth law or stress-shape behavior.",
       "method": [
-        "Added spanwise mean-flow deflection with turning vanes near a splitter plate trailing edge.",
-        "Measured downstream flow evolution using cross-wire anemometry.",
-        "Compared planar and skewed cases using similarity scaling, shear-layer thickness growth, Reynolds-stress profiles, and Townsend's structure parameter."
+        "Generated skewed mixing layers with turning vanes near the splitter-plate trailing edge",
+        "Measured downstream velocity fields using cross-wire anemometry",
+        "Compared planar vs skewed cases using similarity scaling, shear-layer thickness, Reynolds stresses, and Townsend’s structure parameter"
       ],
-      "evidence_signal": "Experimental results showed systematic reductions in mean and turbulent quantities under skew, while profiles still collapsed under similarity scaling and maintained near-Gaussian stress shapes.",
-      "watch_item": "The findings come from a controlled laboratory setup, so the observed invariance may not fully extend to more complex 3D flows with stronger geometry, unsteadiness, or higher skew.",
+      "evidence_signal": "Across the experiments, skewed cases showed systematic reductions in mean and turbulent quantities of up to about 40%, while similarity collapse, near-linear thickness growth, and near-Gaussian stress profiles were preserved.",
+      "watch_item": "The result is experimentally specific to the tested skewing method and flow conditions, so broader 3D shear-flow designs may not preserve the same invariances.",
       "hashtags": [
         "#Turbulence",
         "#MixingLayer",
         "#ShearFlow",
         "#ExperimentalFluidMechanics",
-        "#CFDValidation"
+        "#ThreeDimensionalFlow"
       ],
       "paper_id": "2026-06-11-arxiv-effects_of_mean_flow_skew_on_turbulent_shear_layers_part_ii_experimental_investigation",
       "paper_title": "Effects of mean flow skew on turbulent shear layers. Part II. Experimental investigation",
       "paper_date": "2026-06-11",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-13T10:32:42",
+      "generated_at": "2026-06-12T11:46:12",
       "generator": "openai"
     }
   },
@@ -128,29 +128,29 @@
         "url": "https://arxiv.org/pdf/2606.09963v1"
       }
     ],
-    "score": 68,
+    "score": 73,
     "infographic": {
-      "key_insight": "GeoABC makes neural operators boundary-aware by using geometry-conditioned anisotropic corrections that treat tangential and normal near-wall physics differently.",
-      "engineering_relevance": "This improves aerodynamic surrogate fidelity where it matters most for design—near solid walls—helping replace expensive CFD with more reliable predictions.",
+      "key_insight": "GeoABC uses boundary geometry to inject anisotropic, direction-aware corrections into neural operator features so models better capture near-wall aerodynamic physics.",
+      "engineering_relevance": "This improves surrogate CFD accuracy where it matters most for design—near solid surfaces—helping predict pressure and flow behavior more reliably for airfoils and cars.",
       "method": [
-        "Inject boundary geometry into intermediate neural-operator features",
-        "Apply direction-aware correction at the wall: tangential propagation vs normal constraint",
-        "Act as a structural prior compatible with multiple backbone models"
+        "Condition boundary correction on geometry to distinguish tangential flow propagation from normal wall constraints.",
+        "Apply the correction inside intermediate neural operator representations rather than using geometry only as static input.",
+        "Works as a plug-in framework across multiple neural operator backbones."
       ],
-      "evidence_signal": "Across 2D airfoil and 3D car benchmarks, GeoABC reduced near-boundary relative L2 error by about 38% on average.",
-      "watch_item": "Performance gains depend on accurate boundary geometry and may require careful integration with different neural-operator backbones.",
+      "evidence_signal": "On 2D airfoil and 3D car benchmarks, GeoABC reduced near-boundary relative L2 error by about 38% on average.",
+      "watch_item": "Performance gains depend on accurate boundary geometry and may add implementation complexity when integrating with different neural operator architectures.",
       "hashtags": [
         "#CFD",
         "#NeuralOperators",
         "#Aerodynamics",
-        "#BoundaryLayer",
-        "#ScientificMachineLearning"
+        "#BoundaryLayers",
+        "#ScientificML"
       ],
       "paper_id": "2026-06-08-arxiv-geometry_aware_anisotropic_boundary_correction_for_aerodynamic_simulation",
       "paper_title": "Geometry-Aware Anisotropic Boundary Correction for Aerodynamic Simulation",
       "paper_date": "2026-06-08",
       "paper_category": "CFD Surrogates",
-      "generated_at": "2026-06-13T10:32:45",
+      "generated_at": "2026-06-12T11:46:15",
       "generator": "openai"
     }
   },
@@ -179,29 +179,29 @@
         "url": "https://arxiv.org/pdf/2606.09044v1"
       }
     ],
-    "score": 66,
+    "score": 71,
     "infographic": {
-      "key_insight": "A hybrid β-VAE-GAN plus sensor-conditioned Transformer can learn a compact, physically interpretable latent model of near-wall turbulence and forecast its intermittent dynamics far beyond the initial observation window.",
-      "engineering_relevance": "This provides a practical CFD surrogate for wall-bounded flows, enabling reduced-cost long-horizon prediction from sparse sensors while preserving key turbulent energy and regeneration-cycle behavior.",
+      "key_insight": "A hybrid β-VAE-GAN plus sensor-conditioned Transformer can compress and forecast intermittent near-wall turbulence from sparse measurements with physically interpretable latent modes.",
+      "engineering_relevance": "The approach offers a computationally efficient surrogate for wall-bounded CFD, enabling long-horizon flow prediction and reduced-order monitoring with limited sensor input.",
       "method": [
-        "β-VAE-GAN compresses full flow fields into a low-dimensional latent space.",
-        "A sensor-conditioned Transformer predicts latent evolution over time.",
-        "Easy Attention and AdaLN-Zero reduce attention cost and condition forecasts on measurements."
+        "β-VAE-GAN compresses flow fields into a 4D latent space.",
+        "Easy Attention replaces standard self-attention for lower-cost temporal forecasting.",
+        "AdaLN-Zero conditions the Transformer on sparse sensor measurements."
       ],
-      "evidence_signal": "On the Minimal Flow Unit at Reτ=200, the model reconstructs 87% of turbulent kinetic energy in a 4D latent space and achieves 82% TKE reconstruction with forecasts sustained over 17,288 t+ from only 128 t+ of initialization data.",
-      "watch_item": "Rare extreme-amplitude events are attenuated, suggesting the low-dimensional bottleneck may underrepresent intermittent outliers.",
+      "evidence_signal": "On the Minimal Flow Unit at Reτ = 200 and y+ = 14, the model recovers 87% of turbulent kinetic energy in the latent space and achieves 82% end-to-end reconstruction over forecasts spanning 17,288 t+ from a 128 t+ initialization window.",
+      "watch_item": "Rare, high-amplitude events are attenuated because the compact latent bottleneck favors the most recurrent flow states.",
       "hashtags": [
-        "#CFD",
-        "#Turbulence",
+        "#CFDSurrogates",
         "#ReducedOrderModeling",
-        "#DeepLearning",
-        "#SurrogateModel"
+        "#Turbulence",
+        "#Transformer",
+        "#VariationalAutoencoder"
       ],
       "paper_id": "2026-06-08-arxiv-a_hybrid_generative_reduced_order_model_for_the_minimal_flow_unit",
       "paper_title": "A Hybrid Generative Reduced-Order Model for the Minimal Flow Unit",
       "paper_date": "2026-06-08",
       "paper_category": "CFD Surrogates",
-      "generated_at": "2026-06-13T10:32:48",
+      "generated_at": "2026-06-12T11:46:17",
       "generator": "openai"
     }
   },
@@ -230,29 +230,29 @@
         "url": "https://arxiv.org/pdf/2606.12302v1"
       }
     ],
-    "score": 63,
+    "score": 68,
     "infographic": {
-      "key_insight": "Additively manufactured porous wall lattices can delay hydrogen flame flashback, with the coarsest lattice giving the strongest improvement via wall cooling from mixture seepage.",
-      "engineering_relevance": "Porous, 3D-printed nozzle walls offer a practical design lever for safer hydrogen combustors by improving flashback resistance without strongly altering the overall flow field.",
+      "key_insight": "Additively manufactured porous wall lattices can increase hydrogen flame flashback resistance, with the coarsest structure giving the strongest benefit by cooling the wall and delaying flashback.",
+      "engineering_relevance": "Lattice-designed metal nozzles offer a practical passive strategy for safer hydrogen combustors without substantially changing the overall flow field or flame shape.",
       "method": [
-        "Tested five combustor nozzle configurations with different wall lattice geometries.",
-        "Used pure hydrogen at atmospheric pressure over varying equivalence ratios and Reynolds numbers (9,000–12,000).",
-        "Combined flow-field measurements, flame imaging, and spectral proper orthogonal decomposition to track transition to flashback."
+        "Powder-bed-fusion metal nozzles with body-centered-cubic wall lattices were fabricated with varied volume fraction and strut diameter.",
+        "Hydrogen jet-flame combustor tests were run at atmospheric conditions across multiple equivalence ratios and Reynolds numbers (9,000–12,000).",
+        "Flow-field measurements, flame imaging, and spectral proper orthogonal decomposition were used to diagnose flashback precursors and flame dynamics."
       ],
-      "evidence_signal": "The abstract reports only minor changes in flow and flame shape across configurations, but a coarser porous wall noticeably improved flashback resistance relative to a solid wall.",
-      "watch_item": "The mitigation benefit appears tied to specific lattice porosity and cooling effects, so manufacturability, pressure drop, and durability must be validated before deployment.",
+      "evidence_signal": "Across five combustor configurations, wall modifications had only minor effects on flow and flame shape, but the coarsest porous wall notably improved flashback resistance versus a solid wall.",
+      "watch_item": "The mitigation benefit appears tied to specific porous-structure geometry and cooling through the wall, so manufacturability, durability, and performance trade-offs need validation before implementation.",
       "hashtags": [
         "#HydrogenCombustion",
-        "#FlashbackMitigation",
+        "#Flashback",
         "#AdditiveManufacturing",
-        "#PorousMedia",
+        "#LatticeStructures",
         "#Turbulence"
       ],
       "paper_id": "2026-06-10-arxiv-effect_of_additively_manufactured_wall_lattice_structures_on_flashback_limits_in_a_hydroge",
       "paper_title": "Effect of Additively Manufactured Wall Lattice Structures on Flashback Limits in a Hydrogen Jet Flame Combustor",
       "paper_date": "2026-06-10",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-13T10:32:50",
+      "generated_at": "2026-06-12T11:46:20",
       "generator": "openai"
     }
   },
@@ -283,29 +283,132 @@
         "url": "https://arxiv.org/pdf/2606.10919v1"
       }
     ],
-    "score": 61,
+    "score": 66,
     "infographic": {
-      "key_insight": "Flow-rate statistics in disordered porous media are governed by local topological splitting and merging, leading pore-body fluxes to follow a Gamma distribution that also determines throat fluxes.",
-      "engineering_relevance": "This provides a compact, geometry-based way to predict transport in porous media from minimal structural information, improving design and analysis of filters, catalysts, and subsurface flows.",
+      "key_insight": "Local flow splitting and merging in disordered porous media create a pore-scale flow-rate distribution that is Gamma-shaped and topologically constrained by the network geometry.",
+      "engineering_relevance": "The model enables fast prediction of flow heterogeneity in porous materials from minimal geometric information, which is useful for filtration, reactive transport, and permeability design.",
       "method": [
-        "Built a pore-network model for steady Stokes flow in 2D disordered arrays of circular obstacles",
-        "Included local flow-rate correlations arising from flow splitting and merging",
-        "Linked the Gamma distribution parameter to geometric variability, especially the coefficient of variation of pore-throat widths"
+        "Built a pore-network model for steady Stokes flow in 2D disordered arrays of circular obstacles.",
+        "Derived the pore-body flow-rate distribution as a Gamma distribution and related throat flows to it through local flow correlations.",
+        "Linked the Gamma parameters to simple geometry, especially the coefficient of variation of pore throat widths."
       ],
-      "evidence_signal": "The theory is validated against computational fluid dynamics simulations and outperforms prior mean-field models that ignore local flow-rate correlations.",
-      "watch_item": "The result is derived for steady Stokes flow in two-dimensional disordered obstacle arrays, so care is needed when extending it to inertial, transient, or strongly three-dimensional porous systems.",
+      "evidence_signal": "The theory agrees closely with computational fluid dynamics simulations and outperforms prior mean-field models that ignore local flow-rate correlations.",
+      "watch_item": "The framework is developed for steady 2D Stokes flow in disordered obstacle arrays, so care is needed when extending it to inertial, transient, or strongly three-dimensional porous flows.",
       "hashtags": [
         "#PorousMedia",
         "#StokesFlow",
         "#PoreNetworkModel",
-        "#GammaDistribution",
+        "#FlowDistribution",
         "#ComputationalFluidDynamics"
       ],
       "paper_id": "2026-06-09-arxiv-topological_origin_of_flow_distributions_in_disordered_porous_media",
       "paper_title": "Topological origin of flow distributions in disordered porous media",
       "paper_date": "2026-06-09",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-13T10:32:52",
+      "generated_at": "2026-06-12T11:46:23",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-11-arxiv-ultimate_regime_in_rayleigh_darcy_convection",
+    "arxiv_id": "2606.13505v1",
+    "date": "2026-06-11",
+    "title": "Ultimate regime in Rayleigh-Darcy Convection",
+    "authors": "Garima Varshney, Anikesh Pal, Narsimha Reddy Rapaka",
+    "abstract": "DNS of Rayleigh-Darcy convection in a 3D porous domain is performed at Ra $\\in [10^3, 10^6]$ to investigate heat-transfer scaling, thermal boundary-layer dynamics, and flow-structure evolution in the unexplored ultimate regime. The Nu exhibits an approximately linear dependence on Ra throughout the investigated range. However, a distinct change in slope is observed at $Ra \\approx 4\\times10^5$, indicating the onset of the ultimate regime. For $Ra \\leq 2.5\\times10^5$, our scaling is 6.25% lower than that reported by \\cite{hewitt2014high}, while for $Ra \\geq 4\\times10^5$ our results are within 1.24% of the extrapolated ultimate-regime prediction of \\cite{pirozzoli2021towards}. Analysis of thermal structure reveals formation of near-wall protoplumes that merge into large-scale columnar megaplumes. With increasing Ra, the size of the protoplumes decreases, whereas the numbers increase, thus enhancing boundary-layer convection and heat transport. The thermal boundary-layer thickness scales as ~ Ra^{-1} and ~ Nu^{-1}, corroborating the persistence of linear heat-transfer scaling in the ultimate regime. The thermal dissipation is found to be increasingly shifting from the boundary layer to the bulk with increasing $Ra$, further indicating that the finer protoplumes efficiently transport heat from walls to bulk. The flow structures are quantified using the dominant length scale using the mean wavenumber ($\\overline{k}$). It exhibits linear variation with $Ra$ for near-wall structures, with a higher slope in the ultimate regime, signifying finer protoplumes. At the mid-plane, a weaker scaling suggests that the megaplumes also become finer with increasing $Ra$ in the ultimate regime, thus leading to efficient heat transport in the bulk.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-06-11T15:53:31Z",
+    "updated": "2026-06-11T15:53:31Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.13505v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.13505v1"
+      }
+    ],
+    "score": 65,
+    "infographic": {
+      "key_insight": "Rayleigh-Darcy convection enters an ultimate heat-transfer regime near Ra ≈ 4×10^5, where increasingly fine near-wall protoplumes drive nearly linear Nu–Ra scaling.",
+      "engineering_relevance": "The result helps predict heat transport in porous media systems such as geothermal reservoirs, packed beds, and thermal insulation under very high driving forces.",
+      "method": [
+        "3D direct numerical simulation of Rayleigh-Darcy convection in a porous domain",
+        "Parameter sweep over Ra from 10^3 to 10^6",
+        "Analyze Nu scaling, thermal boundary-layer thickness, dissipation partition, and dominant flow length scales"
+      ],
+      "evidence_signal": "The abstract reports an approximately linear Nu increase across the full Ra range, with a slope change at Ra ≈ 4×10^5 and agreement within 1.24% of the extrapolated ultimate-regime prediction at high Ra.",
+      "watch_item": "The identified ultimate-regime onset is based on DNS within a finite Ra window, so extrapolation beyond 10^6 should be treated cautiously.",
+      "hashtags": [
+        "#RayleighDarcy",
+        "#PorousMedia",
+        "#HeatTransfer",
+        "#DirectNumericalSimulation",
+        "#UltimateRegime"
+      ],
+      "paper_id": "2026-06-11-arxiv-ultimate_regime_in_rayleigh_darcy_convection",
+      "paper_title": "Ultimate regime in Rayleigh-Darcy Convection",
+      "paper_date": "2026-06-11",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-06-12T11:46:31",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-10-arxiv-spectrally_regularized_latent_flow_matching_for_turbulence_generation",
+    "arxiv_id": "2606.11691v1",
+    "date": "2026-06-10",
+    "title": "Spectrally Regularized Latent Flow Matching for Turbulence Generation",
+    "authors": "Khalid Rafiq, Aditya G. Nair",
+    "abstract": "Latent diffusion and flow matching have emerged as leading approaches for synthetic turbulence generation, yet they systematically under-represent dissipation-range amplitudes. We introduce a latent flow matching framework with a spectrally regularized compression stage that directly targets this failure mode. On a 256^2 DNS dataset at Re_f \\approx 2250, replacing an MSE-trained VAE with a zone-weighted log-spectral objective raises deep-dissipation retained spectral power from 25% to 94% in reconstruction and from 20% to 79% in unconditional generation. The improved latent representation also yields a substantially better sampling cost-fidelity tradeoff: the MSE-trained latent space imposes a fundamental quality ceiling near DD bias -0.70 that no integrator or step-count can overcome, while the spectrally regularized latent space reaches DD bias -0.117 at just 20 function evaluations. Mechanistically, encoder-decoder swap experiments show that the improvement is driven primarily by encoder-induced latent reorganization rather than decoder capacity, while a support-amplitude decomposition reveals that MSE-trained models behave as conservative suppression models, minimizing pointwise error by attenuating intermittent high-wavenumber structure. Both pipelines recover the second-order structure function and the correct sign of S_3, indicating the correct cascade direction without explicit supervision. A small residual gap in the magnitude of S_3 suggests that phase-coherent triadic organization remains a complementary axis to amplitude fidelity for future generative turbulence models.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-06-10T06:09:51Z",
+    "updated": "2026-06-10T06:09:51Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.11691v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.11691v1"
+      }
+    ],
+    "score": 61,
+    "infographic": {
+      "key_insight": "A spectrally regularized latent compression stage dramatically improves flow-matching turbulence generation by preserving dissipation-range structure that standard MSE-trained VAEs tend to suppress.",
+      "engineering_relevance": "This yields a much better fidelity-vs-sampling-cost tradeoff for synthetic turbulence surrogates, enabling more accurate generation with far fewer function evaluations.",
+      "method": [
+        "Replace the MSE-trained VAE with a spectrally regularized latent compressor using a zone-weighted log-spectral loss.",
+        "Train a latent flow matching model on the compressed representation for unconditional turbulence generation.",
+        "Use encoder-decoder and support-amplitude ablations to isolate whether improvements come from latent organization or decoder capacity."
+      ],
+      "evidence_signal": "On a 256^2 DNS dataset at Re_f ≈ 2250, deep-dissipation retained spectral power improves from 25% to 94% in reconstruction and from 20% to 79% in unconditional generation, with DD bias reaching -0.117 at 20 function evaluations.",
+      "watch_item": "The model still shows a residual gap in the magnitude of S_3, indicating that phase-coherent triadic organization remains unresolved.",
+      "hashtags": [
+        "#TurbulenceGeneration",
+        "#FlowMatching",
+        "#LatentDiffusion",
+        "#SpectralRegularization",
+        "#ComputationalFluidDynamics"
+      ],
+      "paper_id": "2026-06-10-arxiv-spectrally_regularized_latent_flow_matching_for_turbulence_generation",
+      "paper_title": "Spectrally Regularized Latent Flow Matching for Turbulence Generation",
+      "paper_date": "2026-06-10",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-06-12T11:46:33",
       "generator": "openai"
     }
   },
@@ -336,41 +439,249 @@
     ],
     "score": 61,
     "infographic": {
-      "key_insight": "The paper defines semi-local wall coordinates and transformed velocities with elliptic equations, so compressibility and wall heat transfer are built into the transformation before extracting wall-normal profiles.",
-      "engineering_relevance": "This gives a more physically consistent inner scaling for high-speed and thermally driven wall-bounded flows, improving comparison across cooled boundary layers and channel configurations.",
+      "key_insight": "The paper defines semi-local wall coordinates and projected velocities through elliptic equations, so compressibility and wall heat-transfer effects are built into the transformation before extracting wall-normal profiles.",
+      "engineering_relevance": "This gives a more physically consistent inner scaling for compressible wall turbulence, improving profile collapse and near-wall interpretation in high-speed boundary layers and channels with strong thermal asymmetry.",
       "method": [
-        "Form a semi-local wall coordinate from local density and viscosity scaling.",
-        "Solve a Helmholtz-type elliptic equation for a bounded density-induced correction to wall-normal stretching.",
-        "Use projection equations to compute transformed coordinate Y+ and projected velocity U+ from mean flow, density, viscosity, wall distance, and wall normals."
+        "Build a semi-local wall coordinate from local density and viscosity scaling.",
+        "Solve a Helmholtz-type elliptic equation to add a bounded density-driven correction to wall-normal stretching.",
+        "Use projection equations to obtain transformed coordinate Y+ and projected velocity U+ from mean flow and wall geometry."
       ],
-      "evidence_signal": "A single calibrated set of wall-layer constants from two cooled flat-plate cases was applied to zero-pressure-gradient boundary layers and to isothermal and mixed thermal-wall channels, with improved inner and buffer-layer placement reported in the abstract.",
-      "watch_item": "The approach depends on solving elliptic equations and on the chosen wall-normal/density inputs, so implementation consistency and boundary treatment may matter in complex geometries.",
+      "evidence_signal": "A single calibrated set of wall-layer constants is tested on cooled flat plates, zero-pressure-gradient boundary layers, isothermal channels, and mixed thermal-wall channels, with improved inner and buffer-layer placement reported.",
+      "watch_item": "The approach depends on solving elliptic equations with accurate mean density, viscosity, wall distance, and wall-normal data, so implementation cost and sensitivity to input-field quality are important.",
       "hashtags": [
-        "#Turbulence",
-        "#CompressibleFlow",
-        "#WallBoundedFlows",
-        "#CFD",
+        "#CompressibleTurbulence",
+        "#WallModeling",
+        "#SemiLocalScaling",
+        "#EllipticEquations",
         "#HeatTransfer"
       ],
       "paper_id": "2026-06-08-arxiv-semi_local_transformation_for_compressible_wall_turbulence_via_elliptic_equations",
       "paper_title": "Semi-local transformation for compressible wall turbulence via elliptic equations",
       "paper_date": "2026-06-08",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-13T10:32:55",
+      "generated_at": "2026-06-12T11:46:36",
       "generator": "openai"
     }
   },
   {
-    "id": "2026-06-11-arxiv-ultimate_regime_in_rayleigh_darcy_convection",
-    "arxiv_id": "2606.13505v1",
+    "id": "2026-06-11-arxiv-explicit_quantum_circuit_simulation_of_nonlinear_1_dimensional_fluid_with_carleman_lineari",
+    "arxiv_id": "2606.12770v1",
     "date": "2026-06-11",
-    "title": "Ultimate regime in Rayleigh-Darcy Convection",
-    "authors": "Garima Varshney, Anikesh Pal, Narsimha Reddy Rapaka",
-    "abstract": "DNS of Rayleigh-Darcy convection in a 3D porous domain is performed at Ra $\\in [10^3, 10^6]$ to investigate heat-transfer scaling, thermal boundary-layer dynamics, and flow-structure evolution in the unexplored ultimate regime. The Nu exhibits an approximately linear dependence on Ra throughout the investigated range. However, a distinct change in slope is observed at $Ra \\approx 4\\times10^5$, indicating the onset of the ultimate regime. For $Ra \\leq 2.5\\times10^5$, our scaling is 6.25% lower than that reported by \\cite{hewitt2014high}, while for $Ra \\geq 4\\times10^5$ our results are within 1.24% of the extrapolated ultimate-regime prediction of \\cite{pirozzoli2021towards}. Analysis of thermal structure reveals formation of near-wall protoplumes that merge into large-scale columnar megaplumes. With increasing Ra, the size of the protoplumes decreases, whereas the numbers increase, thus enhancing boundary-layer convection and heat transport. The thermal boundary-layer thickness scales as ~ Ra^{-1} and ~ Nu^{-1}, corroborating the persistence of linear heat-transfer scaling in the ultimate regime. The thermal dissipation is found to be increasingly shifting from the boundary layer to the bulk with increasing $Ra$, further indicating that the finer protoplumes efficiently transport heat from walls to bulk. The flow structures are quantified using the dominant length scale using the mean wavenumber ($\\overline{k}$). It exhibits linear variation with $Ra$ for near-wall structures, with a higher slope in the ultimate regime, signifying finer protoplumes. At the mid-plane, a weaker scaling suggests that the megaplumes also become finer with increasing $Ra$ in the ultimate regime, thus leading to efficient heat transport in the bulk.",
+    "title": "Explicit Quantum Circuit Simulation of Nonlinear 1-Dimensional Fluid with Carleman-linearized Boltzmann Method",
+    "authors": "Keita Kanno, Kazumasa Ueno, Hayato Higuchi, Morimasa Okamoto, Yuya Yoshizuru, Ryoya Ishimaru",
+    "abstract": "Quantum computation of fluid dynamics has attracted growing attention as a key application of fault-tolerant quantum computers anticipated in the coming decade, with lattice Boltzmann methods emerging as a particularly promising approach. Explicit and efficient elementary-gate-level circuit simulations, however, have so far been demonstrated only in the linear case. Here we include the leading nonlinearity through second-order Carleman linearization of the one-dimensional Boltzmann equation, and demonstrate, via explicit quantum-circuit simulation, the preparation of the final-time state using a Taylor-expansion-based ODE solver based on the quantum singular value transformation. With this construction, we analyze the gate and qubit complexities, which scale logarithmically with the grid size, the nonlinearity captured by the higher-order Carleman linearization, and the practical utility of higher-order expansions in the Taylor ODE solver. The construction provides a concrete baseline for computational cost reduction and further developments such as extensions to higher dimensions, complex geometries, and the extraction of physical quantities, towards industrially useful quantum CFD.",
     "category": "Turbulence",
     "source": "arXiv",
-    "published": "2026-06-11T15:53:31Z",
-    "updated": "2026-06-11T15:53:31Z",
+    "published": "2026-06-11T00:25:13Z",
+    "updated": "2026-06-11T00:25:13Z",
+    "primary_category": "quant-ph",
+    "categories": [
+      "quant-ph",
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.12770v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.12770v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "The paper shows that a nonlinear 1D Boltzmann fluid model can be explicitly simulated on a quantum circuit by combining second-order Carleman linearization with a Taylor-series ODE solver based on QSVT.",
+      "engineering_relevance": "It provides a concrete resource-scaling baseline for quantum CFD, indicating logarithmic dependence on grid size and a path toward more realistic fluid simulations on fault-tolerant quantum hardware.",
+      "method": [
+        "Apply second-order Carleman linearization to capture leading nonlinearity in the 1D Boltzmann equation.",
+        "Use an explicit quantum-circuit construction with a Taylor-expansion ODE solver built on quantum singular value transformation.",
+        "Analyze gate and qubit complexity, including the impact of higher-order Carleman terms and solver order."
+      ],
+      "evidence_signal": "The paper reports explicit quantum-circuit simulations and complexity analysis for preparing the final-time state, demonstrating feasibility on the nonlinear 1D Boltzmann model rather than presenting experimental fluid data.",
+      "watch_item": "The approach is still a baseline for fault-tolerant quantum hardware and its practicality may be limited by circuit depth and the cost of higher-order expansions.",
+      "hashtags": [
+        "#QuantumComputing",
+        "#FluidDynamics",
+        "#BoltzmannMethod",
+        "#QSVT",
+        "#QuantumCFD"
+      ],
+      "paper_id": "2026-06-11-arxiv-explicit_quantum_circuit_simulation_of_nonlinear_1_dimensional_fluid_with_carleman_lineari",
+      "paper_title": "Explicit Quantum Circuit Simulation of Nonlinear 1-Dimensional Fluid with Carleman-linearized Boltzmann Method",
+      "paper_date": "2026-06-11",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-06-12T11:46:38",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-10-arxiv-two_pathways_to_diapycnal_mixing_in_strongly_stratified_flows_with_no_initial_vertical_she",
+    "arxiv_id": "2606.12627v1",
+    "date": "2026-06-10",
+    "title": "Two pathways to diapycnal mixing in strongly stratified flows with no initial vertical shear",
+    "authors": "Pascale Garaud, Dante Buhl, Jason Johnstone, Arstanbek Tulekeyev, Nathan van Duker",
+    "abstract": "While vertically-sheared stratified flows have been studied extensively, their horizontally-sheared counterparts have received considerably less attention. Yet, horizontal shear instabilities remain active even when the mean Richardson number is large or even formally infinite, and can drive turbulence in strongly stratified (low Froude number) flows at sufficiently high Reynolds number. In this work, we combine linear theory with direct numerical simulations to investigate two pathways to turbulence in low Froude / high Reynolds number horizontally-sheared flow with no initial vertical shear. In the first pathway, vertical shear emerges directly from vertically-modulated eigenmodes of the primary horizontal shear instability, and becomes unstable to secondary small-scale Kelvin-Helmholtz (KH) instabilities on the buoyancy scale at sufficiently large buoyancy Reynolds number $Re_b$. In the second pathway, a vertically-invariant eigenmode of the primary horizontal shear instability initially dominates, causing the background flow to evolve nonlinearly into a long-lived time-dependent two-dimensional (columnar) vortical flow. The vortices are subsequently unstable to secondary three-dimensional hyperbolic instabilities from which vertical shear emerges, which is finally unstable to tertiary small-scale KH instabilities on the buoyancy scale at sufficiently large $Re_b$. This shows that the emergence of vertical shear driving small-scale KH instabilities is an inevitable by-product of horizontal shear instabilities in strongly stratified flows at sufficiently large $Re_b$. However, we also find that the two pathways excite different ranges of vertical scales, which results in different peak mixing efficiencies.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-06-10T19:33:10Z",
+    "updated": "2026-06-10T19:33:10Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "astro-ph.SR"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.12627v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.12627v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "In strongly stratified flows with no initial vertical shear, horizontal shear instabilities inevitably generate vertical shear and can trigger diapycnal mixing through two distinct routes: direct KH breakdown or a longer nonlinear vortex-mediated pathway.",
+      "engineering_relevance": "This identifies when and how horizontally sheared stratified flows can produce mixing, helping inform ocean, atmospheric, and geophysical flow models that need accurate subgrid turbulence and transport predictions.",
+      "method": [
+        "Linear stability analysis of horizontally sheared stratified flow",
+        "Direct numerical simulations at low Froude number and high Reynolds number",
+        "Comparison of two instability-to-mixing pathways across buoyancy Reynolds number and vertical-scale content"
+      ],
+      "evidence_signal": "The abstract reports combined linear theory and direct numerical simulations showing two distinct transition pathways and comparing their resulting vertical scales and peak mixing efficiencies.",
+      "watch_item": "The mixing pathway and efficiency depend on sufficiently large buoyancy Reynolds number, so the results may not transfer directly to lower-Re_b or less strongly stratified regimes.",
+      "hashtags": [
+        "#StratifiedFlow",
+        "#Turbulence",
+        "#DirectNumericalSimulation",
+        "#Mixing",
+        "#FluidMechanics"
+      ],
+      "paper_id": "2026-06-10-arxiv-two_pathways_to_diapycnal_mixing_in_strongly_stratified_flows_with_no_initial_vertical_she",
+      "paper_title": "Two pathways to diapycnal mixing in strongly stratified flows with no initial vertical shear",
+      "paper_date": "2026-06-10",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-06-12T11:46:41",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-10-arxiv-dynamical_large_deviations_and_long_range_correlations_for_local_weak_wave_turbulence",
+    "arxiv_id": "2606.12624v1",
+    "date": "2026-06-10",
+    "title": "Dynamical large deviations and long-range correlations for local weak wave turbulence",
+    "authors": "Brice Douet, Freddy Bouchet",
+    "abstract": "Wave turbulence describes the statistical dynamics of dispersive waves with weakly nonlinear interactions. While the classical kinetic equation captures the mean evolution of the wave spectrum, the study of its fluctuations due to finite-size effects and intermittency requires a probabilistic framework for space-time trajectories of the spectrum dynamics. Following the previous large deviation theories for wave turbulence, we develop a simplification meant for qualitative and numerical predictions of measurable quantities. We derive a new large deviation principle in the case of local wave interactions. It fully characterizes typical and rare fluctuations of the spectrum. In a joint article, we obtain a theory which is a generalised form of Macroscopic Fluctuation Theory, but with 2 conserved quantities (mass and energy). In this paper, we use it to analyse the structure of the equation for Gaussian fluctuations around out-of-equilibrium spectra. In addition to the usual equilibrium contribution, we obtain long-range correlations, which can be decomposed into 3 contributions: one is driven by the flux in the bulk and another is driven by the forcing and its possible fluctuations. In addition, these contributions are computed for the first time with a method adapted to boundary conditions where only the fluxes are fixed. The results provide a general, replicable method for analyzing wave turbulence in more complex settings. Finally, the generalization of this theory to the inhomogeneous wave turbulence provides a possible explanation to the instability of the Kolmogorov-Zakharov spectra in some 1D inhomogeneous models with 4-wave interactions such as the Majda-McLaughlin-Tabak. This work opens the discussion regarding universal and non universal properties in two-point correlation functions. This opens new range of study on the phenomena of intermittency which is partially developed here.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-06-10T19:30:40Z",
+    "updated": "2026-06-10T19:30:40Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "cond-mat.stat-mech"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.12624v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.12624v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "A new large-deviation framework for local weak wave turbulence captures both typical and rare spectrum fluctuations and reveals long-range correlations beyond classical kinetic theory.",
+      "engineering_relevance": "The theory gives engineers a practical way to predict finite-size, intermittent, and boundary-driven fluctuations in wave spectra, which is useful for modeling real dispersive wave systems.",
+      "method": [
+        "Derive a large deviation principle specialized to local wave interactions.",
+        "Analyze Gaussian fluctuations around out-of-equilibrium spectra.",
+        "Decompose long-range correlations into bulk flux and forcing-related contributions."
+      ],
+      "evidence_signal": "The abstract reports theoretical derivations and first-time calculations for fixed-flux boundary conditions, with qualitative and numerical predictions rather than a new experimental dataset.",
+      "watch_item": "Results rely on asymptotic assumptions and specialized boundary conditions, so direct transfer to strongly nonlinear or nonlocal wave systems may require additional validation.",
+      "hashtags": [
+        "#WaveTurbulence",
+        "#LargeDeviations",
+        "#Fluctuations",
+        "#LongRangeCorrelations",
+        "#StatisticalPhysics"
+      ],
+      "paper_id": "2026-06-10-arxiv-dynamical_large_deviations_and_long_range_correlations_for_local_weak_wave_turbulence",
+      "paper_title": "Dynamical large deviations and long-range correlations for local weak wave turbulence",
+      "paper_date": "2026-06-10",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-06-12T11:46:44",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-10-arxiv-symmetric_structure_preserving_discretization_of_n_phase_incompressible_fluid_mixtures_wit",
+    "arxiv_id": "2606.12256v1",
+    "date": "2026-06-10",
+    "title": "Symmetric structure-preserving discretization of N-phase incompressible fluid mixtures with arbitrary density ratios",
+    "authors": "M. F. P. ten Eikelder, A. Brunk",
+    "abstract": "Diffuse-interface models are a widely used framework for interfacial dynamics in complex fluids, in which interfaces are represented through smooth transition layers and capillary effects are encoded by a free-energy functional. For incompressible mixtures with more than two phases, however, robust computation is substantially more difficult because the numerical method should preserve the balance structure of the continuum model, maintain the saturation constraint, dissipate energy, and treat all phases symmetrically even when density ratios are arbitrary. Existing structure-preserving methods are largely developed for binary flows or for formulations that distinguish a reference phase, so a genuinely symmetric N-phase discretization remains lacking. The practical problem is therefore to construct a fully-discrete method for N-phase incompressible Navier--Stokes--Cahn--Hilliard mixture models that retains the key thermodynamic and conservation properties of the continuum equations for arbitrary density ratios. Here we propose a symmetric fully-discrete method for the N-phase incompressible Navier--Stokes--Cahn--Hilliard mixture model with arbitrary density ratios. The method yields a fully-discrete problem in which every solution satisfies exact phase volume conservation, phase mass conservation, total volume conservation, total mass conservation, and a discrete energy-dissipation law. In addition, if the volume-saturation constraint holds for the initial data, then it is preserved at every time step. We numerically verify these structure-preserving properties and demonstrate the robustness of the method in representative multiphase flow problems. The resulting scheme provides a computational framework for incompressible N-phase mixture flows with complex interfacial dynamics and arbitrary density contrasts.",
+    "category": "Multiphase Flow",
+    "source": "arXiv",
+    "published": "2026-06-10T15:58:50Z",
+    "updated": "2026-06-10T15:58:50Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA",
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.12256v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.12256v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "The paper introduces a fully discrete, symmetric N-phase incompressible Navier--Stokes--Cahn--Hilliard scheme that preserves mass, volume, saturation, and energy dissipation even for arbitrary density ratios.",
+      "engineering_relevance": "This provides a robust simulation framework for multiphase flows with strong density contrasts, where preserving thermodynamic structure is critical for reliable computational results.",
+      "method": [
+        "Symmetric discretization of the N-phase incompressible NSCH mixture model",
+        "Fully discrete formulation that enforces exact conservation and energy-dissipation properties",
+        "Designed to preserve saturation when it holds in the initial condition"
+      ],
+      "evidence_signal": "The abstract reports numerical verification of the structure-preserving properties and robustness on representative multiphase flow problems.",
+      "watch_item": "The scheme’s practical performance may depend on careful nonlinear solver and time-discretization implementation to maintain the advertised conservation properties.",
+      "hashtags": [
+        "#MultiphaseFlow",
+        "#ComputationalFluidDynamics",
+        "#StructurePreserving",
+        "#CahnHilliard",
+        "#NavierStokes"
+      ],
+      "paper_id": "2026-06-10-arxiv-symmetric_structure_preserving_discretization_of_n_phase_incompressible_fluid_mixtures_wit",
+      "paper_title": "Symmetric structure-preserving discretization of N-phase incompressible fluid mixtures with arbitrary density ratios",
+      "paper_date": "2026-06-10",
+      "paper_category": "Multiphase Flow",
+      "generated_at": "2026-06-12T11:46:46",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-10-arxiv-on_the_modelling_of_the_hydrodynamic_drag_of_mangroves",
+    "arxiv_id": "2606.11653v1",
+    "date": "2026-06-10",
+    "title": "On the Modelling of the Hydrodynamic Drag of Mangroves",
+    "authors": "Khang Ee Pang, Zhi Yung Tay",
+    "abstract": "Mangroves are increasingly promoted as nature-based solutions for coastal protection, yet many existing models neglect the vertical variation of vegetation biomass, leading to oversimplified representations of root-flow interactions. In this study, we introduce a generalised parametrisation of the mangrove vegetation profile that is applicable across multiple mangrove species and derive a wave attenuation model that explicitly accounts for the mangrove root characteristics. Based on this parametrisation, we propose a simplified mangrove representation that reproduces a prescribed drag force profile and is suitable for both computational fluid dynamics simulations and experimental fabrication. The hydrodynamic performance of the proposed model is evaluated using OpenFOAM simulations. Our results show that the wave attenuation effectiveness of mangroves is frequency-selective and species dependent. This nonlinear behaviour contrasts with classical vegetation models and reveals a previously unrecognized mechanism by which mangrove root characteristics govern coastal protection.",
+    "category": "CFD Surrogates",
+    "source": "arXiv",
+    "published": "2026-06-10T04:34:29Z",
+    "updated": "2026-06-10T04:34:29Z",
     "primary_category": "physics.flu-dyn",
     "categories": [
       "physics.flu-dyn"
@@ -378,36 +689,36 @@
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2606.13505v1"
+        "url": "https://arxiv.org/abs/2606.11653v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2606.13505v1"
+        "url": "https://arxiv.org/pdf/2606.11653v1"
       }
     ],
     "score": 60,
     "infographic": {
-      "key_insight": "Rayleigh-Darcy convection enters an ultimate heat-transfer regime around Ra 4\u0000d710^5, where finer near-wall protoplumes and bulk megaplumes drive nearly linear Nu\u0000a0f03 Ra scaling.",
-      "engineering_relevance": "For porous-media heat exchangers and geophysical flows, the result suggests that stronger forcing can keep improving heat transfer through boundary-layer thinning and plume fragmentation rather than saturating early.",
+      "key_insight": "The paper shows that mangrove wave attenuation depends strongly on vertical biomass distribution and root characteristics, so a generalized vegetation profile is needed to model drag realistically.",
+      "engineering_relevance": "It provides a simplified mangrove representation that can be used in CFD and experimental setups to design and assess nature-based coastal protection systems more accurately.",
       "method": [
-        "3D DNS of Rayleigh-Darcy convection in a porous domain",
-        "Parameter sweep over Ra = 10^3 to 10^6",
-        "Quantified Nu scaling, thermal boundary-layer thickness, dissipation partition, and dominant length scales via mean wavenumber"
+        "Generalized mangrove vegetation profile across species",
+        "Derived a wave attenuation model that explicitly includes root characteristics",
+        "Built a simplified drag-matching representation for CFD and fabrication"
       ],
-      "evidence_signal": "The abstract reports an approximately linear Nu-Ra trend across the full range, with a clear slope change near Ra \u0000 4\u0000d710^5 and agreement within 1.24% of the extrapolated ultimate-regime prediction at the highest Ra.",
-      "watch_item": "The ultimate-regime conclusion is based on DNS over a finite Ra window, so the slope change near 4\u0000d710^5 should be validated with additional higher-Ra points and sensitivity checks.",
+      "evidence_signal": "The proposed model was evaluated in OpenFOAM simulations, showing frequency-selective and species-dependent wave attenuation behavior.",
+      "watch_item": "The simplified model may be less reliable if local root geometry or species-specific biomass profiles are poorly characterized.",
       "hashtags": [
-        "#RayleighDarcy",
-        "#PorousMedia",
-        "#HeatTransfer",
-        "#DirectNumericalSimulation",
-        "#UltimateRegime"
+        "#CFD",
+        "#Mangroves",
+        "#CoastalProtection",
+        "#Hydrodynamics",
+        "#SurrogateModel"
       ],
-      "paper_id": "2026-06-11-arxiv-ultimate_regime_in_rayleigh_darcy_convection",
-      "paper_title": "Ultimate regime in Rayleigh-Darcy Convection",
-      "paper_date": "2026-06-11",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-06-13T10:32:58",
+      "paper_id": "2026-06-10-arxiv-on_the_modelling_of_the_hydrodynamic_drag_of_mangroves",
+      "paper_title": "On the Modelling of the Hydrodynamic Drag of Mangroves",
+      "paper_date": "2026-06-10",
+      "paper_category": "CFD Surrogates",
+      "generated_at": "2026-06-12T11:46:48",
       "generator": "openai"
     }
   },
@@ -438,338 +749,27 @@
     ],
     "score": 59,
     "infographic": {
-      "key_insight": "A quasi-square-wave spanwise wall oscillation reveals that drag reduction comes from phase-dependent switching of the self-sustaining process: it is suppressed during sustained Stokes strain and recovers when the strain passes through zero.",
-      "engineering_relevance": "Duty-cycle shaping of wall oscillation can outperform a sinusoidal baseline, improving gross drag reduction by 2.5 percentage points while making the causal mechanism more controllable and observable.",
+      "key_insight": "A quasi-square-wave spanwise wall oscillation exposes a phase-dependent switch in the self-sustaining process: Reversal Phases let streaks regenerate, while Displacement Phases suppress them through Stokes-strain-driven vorticity diversion.",
+      "engineering_relevance": "By redistributing the actuation timing rather than increasing actuation strength, the waveform improves gross drag reduction by 2.5 percentage points over the best sinusoidal baseline and clarifies how to design more effective wall-oscillation control.",
       "method": [
-        "Direct numerical simulation of turbulent channel flow at friction Reynolds number ~200 with spanwise wall actuation.",
-        "Use of a quasi-square-wave waveform to separate each cycle into Reversal and Displacement phases.",
-        "Phase-resolved and stochastic enstrophy-budget analysis to track SSP dynamics and vorticity redistribution."
+        "Direct Numerical Simulation of turbulent channel flow at Re_tau ≈ 200 with spanwise wall actuation",
+        "Quasi-square-wave forcing split into Reversal and Displacement Phases for phase-resolved analysis",
+        "Stochastic enstrophy-budget analysis to verify the mechanism at the governing-equation level"
       ],
-      "evidence_signal": "The abstract reports phase-resolved observations and a stochastic enstrophy-budget analysis, and notes a 2.5 percentage-point improvement in gross drag-reduction margin over the optimal sinusoidal case.",
-      "watch_item": "The result is demonstrated at moderate Reynolds number in DNS, so practical performance may depend on actuation hardware limits and how well the phase timing transfers to higher-Re flows.",
+      "evidence_signal": "The abstract reports phase-resolved DNS and enstrophy-budget results showing that Stokes strain and mean-shear production compete for a shared vorticity reservoir, yielding a 2.5-point gross drag-reduction gain over the optimal sinusoidal case.",
+      "watch_item": "The study is at moderate Reynolds number in DNS, so transferability to higher-Re flows and practical actuators may depend on actuator bandwidth and the ability to realize sharp waveform switching.",
       "hashtags": [
         "#Turbulence",
         "#DragReduction",
+        "#DNS",
         "#WallOscillation",
-        "#DirectNumericalSimulation",
         "#FlowControl"
       ],
       "paper_id": "2026-06-11-arxiv-duty_cycle_modulation_of_the_self_sustaining_process_by_spanwise_wall_oscillation",
       "paper_title": "Duty-cycle modulation of the self-sustaining process by spanwise wall oscillation",
       "paper_date": "2026-06-11",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-13T10:33:00",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-06-10-arxiv-spectrally_regularized_latent_flow_matching_for_turbulence_generation",
-    "arxiv_id": "2606.11691v1",
-    "date": "2026-06-10",
-    "title": "Spectrally Regularized Latent Flow Matching for Turbulence Generation",
-    "authors": "Khalid Rafiq, Aditya G. Nair",
-    "abstract": "Latent diffusion and flow matching have emerged as leading approaches for synthetic turbulence generation, yet they systematically under-represent dissipation-range amplitudes. We introduce a latent flow matching framework with a spectrally regularized compression stage that directly targets this failure mode. On a 256^2 DNS dataset at Re_f \\approx 2250, replacing an MSE-trained VAE with a zone-weighted log-spectral objective raises deep-dissipation retained spectral power from 25% to 94% in reconstruction and from 20% to 79% in unconditional generation. The improved latent representation also yields a substantially better sampling cost-fidelity tradeoff: the MSE-trained latent space imposes a fundamental quality ceiling near DD bias -0.70 that no integrator or step-count can overcome, while the spectrally regularized latent space reaches DD bias -0.117 at just 20 function evaluations. Mechanistically, encoder-decoder swap experiments show that the improvement is driven primarily by encoder-induced latent reorganization rather than decoder capacity, while a support-amplitude decomposition reveals that MSE-trained models behave as conservative suppression models, minimizing pointwise error by attenuating intermittent high-wavenumber structure. Both pipelines recover the second-order structure function and the correct sign of S_3, indicating the correct cascade direction without explicit supervision. A small residual gap in the magnitude of S_3 suggests that phase-coherent triadic organization remains a complementary axis to amplitude fidelity for future generative turbulence models.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-06-10T06:09:51Z",
-    "updated": "2026-06-10T06:09:51Z",
-    "primary_category": "cs.LG",
-    "categories": [
-      "cs.LG",
-      "physics.flu-dyn"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2606.11691v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2606.11691v1"
-      }
-    ],
-    "score": 56,
-    "infographic": {
-      "key_insight": "A spectrally regularized latent compression stage dramatically improves latent flow matching for turbulence by preserving dissipation-range structure that MSE-trained VAEs suppress.",
-      "engineering_relevance": "The method delivers much higher-fidelity synthetic turbulence at low sampling cost, making it more practical for surrogate generation, reduced-order modeling, and data augmentation in CFD workflows.",
-      "method": [
-        "Replace MSE-VAE compression with a zone-weighted log-spectral objective.",
-        "Train latent flow matching on the spectrally regularized latent space for unconditional turbulence generation.",
-        "Use encoder-decoder swap and support-amplitude decomposition to isolate where spectral gains originate."
-      ],
-      "evidence_signal": "On a 256^2 DNS dataset at Re_f≈2250, deep-dissipation retained spectral power improved from 25% to 94% in reconstruction and from 20% to 79% in unconditional generation, with DD bias reaching -0.117 at 20 function evaluations.",
-      "watch_item": "The paper reports a remaining deficit in the magnitude of S_3, so phase-coherent triadic organization may still limit full turbulence realism.",
-      "hashtags": [
-        "#Turbulence",
-        "#FlowMatching",
-        "#LatentDiffusion",
-        "#SpectralRegularization",
-        "#CFD"
-      ],
-      "paper_id": "2026-06-10-arxiv-spectrally_regularized_latent_flow_matching_for_turbulence_generation",
-      "paper_title": "Spectrally Regularized Latent Flow Matching for Turbulence Generation",
-      "paper_date": "2026-06-10",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-06-13T10:33:02",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-06-11-arxiv-explicit_quantum_circuit_simulation_of_nonlinear_1_dimensional_fluid_with_carleman_lineari",
-    "arxiv_id": "2606.12770v1",
-    "date": "2026-06-11",
-    "title": "Explicit Quantum Circuit Simulation of Nonlinear 1-Dimensional Fluid with Carleman-linearized Boltzmann Method",
-    "authors": "Keita Kanno, Kazumasa Ueno, Hayato Higuchi, Morimasa Okamoto, Yuya Yoshizuru, Ryoya Ishimaru",
-    "abstract": "Quantum computation of fluid dynamics has attracted growing attention as a key application of fault-tolerant quantum computers anticipated in the coming decade, with lattice Boltzmann methods emerging as a particularly promising approach. Explicit and efficient elementary-gate-level circuit simulations, however, have so far been demonstrated only in the linear case. Here we include the leading nonlinearity through second-order Carleman linearization of the one-dimensional Boltzmann equation, and demonstrate, via explicit quantum-circuit simulation, the preparation of the final-time state using a Taylor-expansion-based ODE solver based on the quantum singular value transformation. With this construction, we analyze the gate and qubit complexities, which scale logarithmically with the grid size, the nonlinearity captured by the higher-order Carleman linearization, and the practical utility of higher-order expansions in the Taylor ODE solver. The construction provides a concrete baseline for computational cost reduction and further developments such as extensions to higher dimensions, complex geometries, and the extraction of physical quantities, towards industrially useful quantum CFD.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-06-11T00:25:13Z",
-    "updated": "2026-06-11T00:25:13Z",
-    "primary_category": "quant-ph",
-    "categories": [
-      "quant-ph",
-      "physics.flu-dyn"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2606.12770v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2606.12770v1"
-      }
-    ],
-    "score": 55,
-    "infographic": {
-      "key_insight": "The paper shows that a 1D nonlinear Boltzmann fluid model can be explicitly simulated on a quantum circuit by combining second-order Carleman linearization with a QSVT-based Taylor ODE solver.",
-      "engineering_relevance": "It provides a concrete gate- and qubit-cost baseline for fault-tolerant quantum CFD, with resource scaling that is logarithmic in grid size and extensible toward more realistic fluid simulations.",
-      "method": [
-        "Apply second-order Carleman linearization to include the leading nonlinearity in the 1D Boltzmann equation.",
-        "Use a Taylor-expansion ODE solver based on quantum singular value transformation to prepare the final-time quantum state.",
-        "Analyze circuit resources and higher-order expansion utility for explicit elementary-gate-level simulation."
-      ],
-      "evidence_signal": "The abstract reports explicit quantum-circuit simulation and resource analysis, but does not mention numerical benchmarks against classical CFD data.",
-      "watch_item": "The approach is still a model-based, fault-tolerant quantum simulation baseline, so practical advantage depends on implementing higher-dimensional and physically realistic cases efficiently.",
-      "hashtags": [
-        "#QuantumCFD",
-        "#BoltzmannMethod",
-        "#CarlemanLinearization",
-        "#QSVT",
-        "#Turbulence"
-      ],
-      "paper_id": "2026-06-11-arxiv-explicit_quantum_circuit_simulation_of_nonlinear_1_dimensional_fluid_with_carleman_lineari",
-      "paper_title": "Explicit Quantum Circuit Simulation of Nonlinear 1-Dimensional Fluid with Carleman-linearized Boltzmann Method",
-      "paper_date": "2026-06-11",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-06-13T10:33:04",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-06-10-arxiv-two_pathways_to_diapycnal_mixing_in_strongly_stratified_flows_with_no_initial_vertical_she",
-    "arxiv_id": "2606.12627v1",
-    "date": "2026-06-10",
-    "title": "Two pathways to diapycnal mixing in strongly stratified flows with no initial vertical shear",
-    "authors": "Pascale Garaud, Dante Buhl, Jason Johnstone, Arstanbek Tulekeyev, Nathan van Duker",
-    "abstract": "While vertically-sheared stratified flows have been studied extensively, their horizontally-sheared counterparts have received considerably less attention. Yet, horizontal shear instabilities remain active even when the mean Richardson number is large or even formally infinite, and can drive turbulence in strongly stratified (low Froude number) flows at sufficiently high Reynolds number. In this work, we combine linear theory with direct numerical simulations to investigate two pathways to turbulence in low Froude / high Reynolds number horizontally-sheared flow with no initial vertical shear. In the first pathway, vertical shear emerges directly from vertically-modulated eigenmodes of the primary horizontal shear instability, and becomes unstable to secondary small-scale Kelvin-Helmholtz (KH) instabilities on the buoyancy scale at sufficiently large buoyancy Reynolds number $Re_b$. In the second pathway, a vertically-invariant eigenmode of the primary horizontal shear instability initially dominates, causing the background flow to evolve nonlinearly into a long-lived time-dependent two-dimensional (columnar) vortical flow. The vortices are subsequently unstable to secondary three-dimensional hyperbolic instabilities from which vertical shear emerges, which is finally unstable to tertiary small-scale KH instabilities on the buoyancy scale at sufficiently large $Re_b$. This shows that the emergence of vertical shear driving small-scale KH instabilities is an inevitable by-product of horizontal shear instabilities in strongly stratified flows at sufficiently large $Re_b$. However, we also find that the two pathways excite different ranges of vertical scales, which results in different peak mixing efficiencies.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-06-10T19:33:10Z",
-    "updated": "2026-06-10T19:33:10Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn",
-      "astro-ph.SR"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2606.12627v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2606.12627v1"
-      }
-    ],
-    "score": 55,
-    "infographic": {
-      "key_insight": "In strongly stratified flows with no initial vertical shear, horizontal shear instabilities can still generate vertical shear and trigger small-scale diapycnal mixing through two distinct turbulence pathways.",
-      "engineering_relevance": "This matters for predicting and controlling mixing in geophysical and engineering stratified flows, because horizontal shear alone can produce significant transport when the buoyancy Reynolds number is high enough.",
-      "method": [
-        "Combined linear stability theory with direct numerical simulations.",
-        "Compared two routes to turbulence: a vertically-modulated eigenmode pathway and a vertically-invariant columnar-vortex pathway.",
-        "Tracked how secondary and tertiary instabilities convert large-scale horizontal shear into buoyancy-scale Kelvin-Helmholtz mixing."
-      ],
-      "evidence_signal": "The abstract reports theory-plus-DNS evidence that the two pathways operate in low-Froude, high-Reynolds-number flows and produce different peak mixing efficiencies.",
-      "watch_item": "The mixing outcome depends on which instability pathway dominates and on the accessible vertical scales, so predictions may be sensitive to resolution and stratification regime.",
-      "hashtags": [
-        "#StratifiedFlow",
-        "#Turbulence",
-        "#ShearInstability",
-        "#KelvinHelmholtz",
-        "#Mixing"
-      ],
-      "paper_id": "2026-06-10-arxiv-two_pathways_to_diapycnal_mixing_in_strongly_stratified_flows_with_no_initial_vertical_she",
-      "paper_title": "Two pathways to diapycnal mixing in strongly stratified flows with no initial vertical shear",
-      "paper_date": "2026-06-10",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-06-13T10:33:07",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-06-10-arxiv-dynamical_large_deviations_and_long_range_correlations_for_local_weak_wave_turbulence",
-    "arxiv_id": "2606.12624v1",
-    "date": "2026-06-10",
-    "title": "Dynamical large deviations and long-range correlations for local weak wave turbulence",
-    "authors": "Brice Douet, Freddy Bouchet",
-    "abstract": "Wave turbulence describes the statistical dynamics of dispersive waves with weakly nonlinear interactions. While the classical kinetic equation captures the mean evolution of the wave spectrum, the study of its fluctuations due to finite-size effects and intermittency requires a probabilistic framework for space-time trajectories of the spectrum dynamics. Following the previous large deviation theories for wave turbulence, we develop a simplification meant for qualitative and numerical predictions of measurable quantities. We derive a new large deviation principle in the case of local wave interactions. It fully characterizes typical and rare fluctuations of the spectrum. In a joint article, we obtain a theory which is a generalised form of Macroscopic Fluctuation Theory, but with 2 conserved quantities (mass and energy). In this paper, we use it to analyse the structure of the equation for Gaussian fluctuations around out-of-equilibrium spectra. In addition to the usual equilibrium contribution, we obtain long-range correlations, which can be decomposed into 3 contributions: one is driven by the flux in the bulk and another is driven by the forcing and its possible fluctuations. In addition, these contributions are computed for the first time with a method adapted to boundary conditions where only the fluxes are fixed. The results provide a general, replicable method for analyzing wave turbulence in more complex settings. Finally, the generalization of this theory to the inhomogeneous wave turbulence provides a possible explanation to the instability of the Kolmogorov-Zakharov spectra in some 1D inhomogeneous models with 4-wave interactions such as the Majda-McLaughlin-Tabak. This work opens the discussion regarding universal and non universal properties in two-point correlation functions. This opens new range of study on the phenomena of intermittency which is partially developed here.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-06-10T19:30:40Z",
-    "updated": "2026-06-10T19:30:40Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn",
-      "cond-mat.stat-mech"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2606.12624v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2606.12624v1"
-      }
-    ],
-    "score": 55,
-    "infographic": {
-      "key_insight": "A new large-deviation framework for local weak wave turbulence captures both typical evolution and rare spectrum fluctuations, revealing long-range correlations driven by bulk flux and forcing.",
-      "engineering_relevance": "This provides a practical probabilistic tool for predicting finite-size effects, intermittency, and correlation structure in wave-turbulence systems relevant to spectral modeling and simulation.",
-      "method": [
-        "Derive a simplified large deviation principle for local wave interactions.",
-        "Analyze Gaussian fluctuations around out-of-equilibrium spectra.",
-        "Decompose long-range correlations into bulk-flux, forcing, and forcing-fluctuation contributions using flux-fixed boundary conditions."
-      ],
-      "evidence_signal": "The paper reports analytical derivations and first-time computed correlation contributions, with qualitative and numerical predictions rather than a new experimental dataset.",
-      "watch_item": "The theory is tailored to local weak interactions and flux-fixed settings, so applying it to strongly nonlinear, nonlocal, or fully inhomogeneous systems may require additional assumptions.",
-      "hashtags": [
-        "#WaveTurbulence",
-        "#LargeDeviations",
-        "#MacroscopicFluctuationTheory",
-        "#LongRangeCorrelations",
-        "#Intermittency"
-      ],
-      "paper_id": "2026-06-10-arxiv-dynamical_large_deviations_and_long_range_correlations_for_local_weak_wave_turbulence",
-      "paper_title": "Dynamical large deviations and long-range correlations for local weak wave turbulence",
-      "paper_date": "2026-06-10",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-06-13T10:33:09",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-06-10-arxiv-symmetric_structure_preserving_discretization_of_n_phase_incompressible_fluid_mixtures_wit",
-    "arxiv_id": "2606.12256v1",
-    "date": "2026-06-10",
-    "title": "Symmetric structure-preserving discretization of N-phase incompressible fluid mixtures with arbitrary density ratios",
-    "authors": "M. F. P. ten Eikelder, A. Brunk",
-    "abstract": "Diffuse-interface models are a widely used framework for interfacial dynamics in complex fluids, in which interfaces are represented through smooth transition layers and capillary effects are encoded by a free-energy functional. For incompressible mixtures with more than two phases, however, robust computation is substantially more difficult because the numerical method should preserve the balance structure of the continuum model, maintain the saturation constraint, dissipate energy, and treat all phases symmetrically even when density ratios are arbitrary. Existing structure-preserving methods are largely developed for binary flows or for formulations that distinguish a reference phase, so a genuinely symmetric N-phase discretization remains lacking. The practical problem is therefore to construct a fully-discrete method for N-phase incompressible Navier--Stokes--Cahn--Hilliard mixture models that retains the key thermodynamic and conservation properties of the continuum equations for arbitrary density ratios. Here we propose a symmetric fully-discrete method for the N-phase incompressible Navier--Stokes--Cahn--Hilliard mixture model with arbitrary density ratios. The method yields a fully-discrete problem in which every solution satisfies exact phase volume conservation, phase mass conservation, total volume conservation, total mass conservation, and a discrete energy-dissipation law. In addition, if the volume-saturation constraint holds for the initial data, then it is preserved at every time step. We numerically verify these structure-preserving properties and demonstrate the robustness of the method in representative multiphase flow problems. The resulting scheme provides a computational framework for incompressible N-phase mixture flows with complex interfacial dynamics and arbitrary density contrasts.",
-    "category": "Multiphase Flow",
-    "source": "arXiv",
-    "published": "2026-06-10T15:58:50Z",
-    "updated": "2026-06-10T15:58:50Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA",
-      "physics.flu-dyn"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2606.12256v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2606.12256v1"
-      }
-    ],
-    "score": 55,
-    "infographic": {
-      "key_insight": "The paper introduces a fully symmetric, structure-preserving discretization for N-phase incompressible Navier--Stokes--Cahn--Hilliard mixtures that works for arbitrary density ratios while exactly preserving key conservation laws and energy dissipation.",
-      "engineering_relevance": "This gives multiphase flow simulators a thermodynamically consistent numerical framework for complex interfacial dynamics without privileging a reference phase, improving robustness across many-fluid systems.",
-      "method": [
-        "Build a fully discrete N-phase NSCH scheme with symmetric treatment of all phases.",
-        "Enforce exact phase volume, phase mass, total volume, and total mass conservation.",
-        "Preserve the volume-saturation constraint and a discrete energy-dissipation law at each time step."
-      ],
-      "evidence_signal": "The abstract reports numerical verification of the structure-preserving properties and robustness on representative multiphase flow problems.",
-      "watch_item": "The method is structure-preserving by design, but practical performance will still depend on solving the resulting fully discrete system efficiently for large N and high density contrasts.",
-      "hashtags": [
-        "#MultiphaseFlow",
-        "#NavierStokes",
-        "#CahnHilliard",
-        "#StructurePreserving",
-        "#ComputationalMechanics"
-      ],
-      "paper_id": "2026-06-10-arxiv-symmetric_structure_preserving_discretization_of_n_phase_incompressible_fluid_mixtures_wit",
-      "paper_title": "Symmetric structure-preserving discretization of N-phase incompressible fluid mixtures with arbitrary density ratios",
-      "paper_date": "2026-06-10",
-      "paper_category": "Multiphase Flow",
-      "generated_at": "2026-06-13T10:33:12",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-06-10-arxiv-on_the_modelling_of_the_hydrodynamic_drag_of_mangroves",
-    "arxiv_id": "2606.11653v1",
-    "date": "2026-06-10",
-    "title": "On the Modelling of the Hydrodynamic Drag of Mangroves",
-    "authors": "Khang Ee Pang, Zhi Yung Tay",
-    "abstract": "Mangroves are increasingly promoted as nature-based solutions for coastal protection, yet many existing models neglect the vertical variation of vegetation biomass, leading to oversimplified representations of root-flow interactions. In this study, we introduce a generalised parametrisation of the mangrove vegetation profile that is applicable across multiple mangrove species and derive a wave attenuation model that explicitly accounts for the mangrove root characteristics. Based on this parametrisation, we propose a simplified mangrove representation that reproduces a prescribed drag force profile and is suitable for both computational fluid dynamics simulations and experimental fabrication. The hydrodynamic performance of the proposed model is evaluated using OpenFOAM simulations. Our results show that the wave attenuation effectiveness of mangroves is frequency-selective and species dependent. This nonlinear behaviour contrasts with classical vegetation models and reveals a previously unrecognized mechanism by which mangrove root characteristics govern coastal protection.",
-    "category": "CFD Surrogates",
-    "source": "arXiv",
-    "published": "2026-06-10T04:34:29Z",
-    "updated": "2026-06-10T04:34:29Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2606.11653v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2606.11653v1"
-      }
-    ],
-    "score": 55,
-    "infographic": {
-      "key_insight": "Mangrove drag is not uniform with height: root characteristics create a species-dependent, frequency-selective wave attenuation effect that classical vegetation models miss.",
-      "engineering_relevance": "The paper offers a simplified mangrove representation that can be used in CFD and experimental setups to better design and assess nature-based coastal protection.",
-      "method": [
-        "Generalised the vertical vegetation biomass profile across mangrove species.",
-        "Derived a wave attenuation model that explicitly includes mangrove root characteristics.",
-        "Built a simplified drag-profile-preserving model for OpenFOAM and lab fabrication."
-      ],
-      "evidence_signal": "OpenFOAM simulations were used to evaluate hydrodynamic performance and showed nonlinear, species-dependent wave attenuation.",
-      "watch_item": "The simplified representation may not capture all real-root structural variability, so species-specific calibration is likely needed.",
-      "hashtags": [
-        "#CFD",
-        "#Mangroves",
-        "#HydrodynamicDrag",
-        "#WaveAttenuation",
-        "#NatureBasedSolutions"
-      ],
-      "paper_id": "2026-06-10-arxiv-on_the_modelling_of_the_hydrodynamic_drag_of_mangroves",
-      "paper_title": "On the Modelling of the Hydrodynamic Drag of Mangroves",
-      "paper_date": "2026-06-10",
-      "paper_category": "CFD Surrogates",
-      "generated_at": "2026-06-13T10:33:14",
+      "generated_at": "2026-06-12T11:46:50",
       "generator": "openai"
     }
   },
@@ -799,29 +799,29 @@
         "url": "https://arxiv.org/pdf/2606.09468v1"
       }
     ],
-    "score": 53,
+    "score": 58,
     "infographic": {
-      "key_insight": "Chaotic elastic-turbulence dynamics can be captured even when some simulations temporarily violate the conformation-tensor positivity constraint, as long as the run remains numerically stable.",
-      "engineering_relevance": "This could substantially reduce the resolution and compute cost needed for direct numerical simulation of dilute-polymer flows, making elastic-turbulence studies more accessible.",
+      "key_insight": "Stable, physically useful elastic-turbulence simulations can be obtained even when the conformation tensor temporarily loses positive-definiteness, as long as resolution is above a minimum stability threshold.",
+      "engineering_relevance": "This could reduce the computational cost of direct numerical simulation for polymeric flows, making high-fidelity studies of elastic turbulence more accessible.",
       "method": [
-        "Simulated dilute polymer flow in a plane channel at low Reynolds number.",
-        "Compared three resolution regimes: unstable blow-up, stable-but-nonpositive, and fully positive-definite simulations.",
-        "Assessed velocity, velocity-gradient, and polymer-stretch statistics against a positive-definite reference."
+        "Simulate dilute polymer flow in a low-Re plane channel with a conformation-tensor model.",
+        "Scan numerical resolution to identify two thresholds: blow-up at low resolution and positive-definite recovery at high resolution.",
+        "Compare statistics from intermediate-resolution runs against fully positive-definite simulations."
       ],
-      "evidence_signal": "Intermediate-resolution runs stayed chaotic and stable despite local Tr(c)<3 violations, and their mid-plane statistics matched fully positive-definite simulations.",
-      "watch_item": "Local loss of positive-definiteness is still physically unclean and lower-resolution setups can fail catastrophically below the first threshold, so stability checks remain essential.",
+      "evidence_signal": "The abstract reports that intermediate stable chaotic runs with local Tr(c)<3 violations still match mid-plane statistics of velocity, velocity gradients, and polymer stretch from positive-definite simulations.",
+      "watch_item": "Local loss of positive-definiteness may still be unacceptable for quantities outside the reported mid-plane statistics, so validation is needed before using this shortcut broadly.",
       "hashtags": [
         "#ElasticTurbulence",
         "#PolymerFlow",
         "#DirectNumericalSimulation",
         "#ComputationalFluidDynamics",
-        "#NonlinearDynamics"
+        "#NumericalStability"
       ],
       "paper_id": "2026-06-08-arxiv-no_need_to_stay_positive_a_practical_approach_to_direct_numerical_simulations_of_elastic_t",
       "paper_title": "No need to stay positive: a practical approach to direct numerical simulations of elastic turbulence",
       "paper_date": "2026-06-08",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-13T10:33:16",
+      "generated_at": "2026-06-12T11:46:53",
       "generator": "openai"
     }
   },
@@ -852,21 +852,21 @@
         "url": "https://arxiv.org/pdf/2606.13422v1"
       }
     ],
-    "score": 52,
+    "score": 57,
     "infographic": {
-      "key_insight": "The paper shows that quantum priors can both compactly encode chaotic fluid/weather statistics and extract useful observables with a two-copy Bell-measurement scheme that is provably more efficient than classical full-Pauli readout.",
-      "engineering_relevance": "This suggests a near-term pathway for improving prediction workflows in turbulence and medium-range weather forecasting using quantum-informed models before fault-tolerant quantum computers exist.",
+      "key_insight": "The paper establishes a two-stage route to practical quantum advantage for chaotic dynamics: quantum priors compactly encode non-factorizable correlations, and two-copy Bell measurements extract target observables with copy cost independent of system size.",
+      "engineering_relevance": "For fluid mechanics and weather prediction, this could enable more efficient learning of invariant-measure structure and improved long-horizon forecasts from chaotic flow data.",
       "method": [
-        "Build k-indexed higher-order Q-Priors to represent k-point marginals of chaotic invariant measures on n_q = kq qubits.",
-        "Use two-copy joint Bell measurements to estimate post hoc Pauli functionals with copy cost independent of n_q.",
-        "Integrate the prior into practical workflows for turbulent channel flow and Koopman-based weather rollouts."
+        "Define k-indexed higher-order Q-Priors that store the k-point marginal of an invariant measure on n_q = kq qubits.",
+        "Use superposition and entanglement to represent spatial correlations, then recover post hoc Pauli functionals via joint Bell measurements on two copies.",
+        "Demonstrate the workflow in turbulent channel flow and ECMWF ERA5 forecasting, including a Koopman rollout guided by a diagonal Q-Prior."
       ],
-      "evidence_signal": "The abstract reports simulation and IQM superconducting-processor demonstrations, plus a weather case study showing 10–39% anomaly-correlation improvement over 48–240 h lead times.",
-      "watch_item": "The gains are shown in specific case studies and depend on quantum readout and workflow integration, so scalability and hardware noise remain key implementation risks.",
+      "evidence_signal": "The abstract reports simulation and IQM hardware validation, plus ERA5 forecast improvements of 10-39% in anomaly-correlation skill across 48-240 h lead times and reduced mean-field collapse.",
+      "watch_item": "The approach depends on constructing suitable Q-Priors and performing accurate two-copy Bell readout, so hardware noise and scalable state preparation may limit near-term deployment.",
       "hashtags": [
-        "#QuantumMachineLearning",
-        "#ComputationalFluidDynamics",
-        "#Turbulence",
+        "#QuantumML",
+        "#FluidMechanics",
+        "#ChaosPrediction",
         "#WeatherForecasting",
         "#QuantumAdvantage"
       ],
@@ -874,7 +874,7 @@
       "paper_title": "Foundations of Practical Quantum Advantage in Quantum-Informed Machine Learning for Predicting Chaos",
       "paper_date": "2026-06-11",
       "paper_category": "AI Fluid Mechanics",
-      "generated_at": "2026-06-13T10:33:18",
+      "generated_at": "2026-06-12T11:46:56",
       "generator": "openai"
     }
   },
@@ -903,29 +903,29 @@
         "url": "https://arxiv.org/pdf/2606.13336v1"
       }
     ],
-    "score": 52,
+    "score": 57,
     "infographic": {
-      "key_insight": "Data-driven equation discovery can recover liquid-film flow dynamics, but even in a best-case setting it is limited by multicollinearity and difficult early-time transients.",
-      "engineering_relevance": "The study clarifies when equation-discovery methods can support reduced-order modeling and physics inference for nonlinear film flows used in coating, heat transfer, and surface-flow applications.",
+      "key_insight": "Data-driven equation discovery can recover governing PDE structure for nonlinear liquid film flows, but identifiability becomes fragile when candidate terms are highly correlated and early-time transients dominate the residuals.",
+      "engineering_relevance": "The work clarifies when physics discovery methods are trustworthy for thin-film flow modeling, helping engineers set realistic expectations for reduced-order modeling and model calibration.",
       "method": [
-        "Curate expert-informed data for a liquid-film flow system with known asymptotic structure.",
-        "Use equation discovery to identify governing PDE terms from a monomial basis library.",
-        "Test identifiability under multi-scale dynamics and early transient behavior."
+        "Curated liquid-film flow data to create a best-case discovery setting.",
+        "Used expert-informed candidate equation libraries with monomial basis functions across multiple scales.",
+        "Tested identifiability under multi-collinearity and transient-rich dynamics."
       ],
-      "evidence_signal": "The abstract reports a best-case evaluation with carefully curated data, yet still finds residual-driven training errors and strong identifiability issues from multicollinearity.",
-      "watch_item": "Monomial basis choices and early-time transient data can make the discovered equations unstable or non-unique, so basis design and regularization are critical.",
+      "evidence_signal": "The abstract reports that even with carefully curated data and expert knowledge, the discovery process still encountered multi-collinearity and large residuals during early-time transients.",
+      "watch_item": "Monomial basis choices in multi-scale flow settings can create severe parameter non-uniqueness, so discovered equations may be unstable without stronger regularization or alternative bases.",
       "hashtags": [
-        "#AIFluidMechanics",
+        "#FluidMechanics",
         "#EquationDiscovery",
-        "#PDE",
-        "#ReducedOrderModeling",
-        "#LiquidFilms"
+        "#PhysicsInformedML",
+        "#ThinFilmFlows",
+        "#PDEs"
       ],
       "paper_id": "2026-06-11-arxiv-data_driven_equation_discovery_for_nonlinear_liquid_film_flows",
       "paper_title": "Data-Driven Equation Discovery for Nonlinear Liquid Film Flows",
       "paper_date": "2026-06-11",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-13T10:33:20",
+      "generated_at": "2026-06-12T11:46:58",
       "generator": "openai"
     }
   },
@@ -954,29 +954,29 @@
         "url": "https://arxiv.org/pdf/2606.12570v1"
       }
     ],
-    "score": 52,
+    "score": 57,
     "infographic": {
-      "key_insight": "Oscillating floating planar bodies at an air-water interface experience hydrodynamic resistance that is well described by oscillatory Stokes boundary-layer theory in the high-Womersley, small-amplitude limit.",
-      "engineering_relevance": "The work provides a practical way to extract effective added mass and damping for interfacial devices from frequency-response measurements, useful for designing and controlling floating sensors, actuators, and microfluidic systems.",
+      "key_insight": "At high Womersley number and small oscillation amplitude, the hydrodynamic resistance of a floating planar body on an air-water interface is well described by an oscillatory Stokes boundary layer with added-mass and damping effects.",
+      "engineering_relevance": "This provides a practical way to predict and measure unsteady interfacial drag for oscillating floats, sensors, and actuated devices at fluid interfaces.",
       "method": [
-        "Drive planar interfacial bodies harmonically with magnetic actuation",
-        "Measure steady-state amplitude response and phase lag across frequencies, masses, sizes, and shapes",
-        "Compare startup transients to a history-integral model for oscillatory boundary-layer development"
+        "Magnetically drive planar floating bodies into harmonic lateral oscillation.",
+        "Measure steady-state amplitude response and phase lag across frequencies, masses, sizes, and shapes.",
+        "Use frequency-response data and startup transients to extract effective added mass, damping, and history effects."
       ],
-      "evidence_signal": "The abstract reports agreement between measured frequency-response behavior and oscillatory boundary-layer theory, and also shows that transient startup dynamics are accurately predicted by a history-integral model.",
-      "watch_item": "The theory and extracted coefficients are stated to be valid primarily in the small-deformation, high-Womersley regime, so stronger interface deformation or lower-frequency cases may require more complex modeling.",
+      "evidence_signal": "The abstract reports experimental frequency-response measurements and startup transients that agree with oscillatory boundary-layer theory and a history-integral model.",
+      "watch_item": "The theory and extracted coefficients are most reliable in the small-deformation regime, so larger interfacial motions may require a more complete model.",
       "hashtags": [
         "#FluidMechanics",
-        "#UnsteadyFlows",
-        "#BoundaryLayer",
         "#Hydrodynamics",
-        "#InterfacialFlows"
+        "#InterfacialFlows",
+        "#OscillatoryFlow",
+        "#ExperimentalMechanics"
       ],
       "paper_id": "2026-06-10-arxiv-hydrodynamic_resistance_on_oscillating_planar_interfacial_bodies",
       "paper_title": "Hydrodynamic Resistance on Oscillating Planar Interfacial Bodies",
       "paper_date": "2026-06-10",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-13T10:33:23",
+      "generated_at": "2026-06-12T11:47:01",
       "generator": "openai"
     }
   },
@@ -1007,17 +1007,17 @@
         "url": "https://arxiv.org/pdf/2606.10335v1"
       }
     ],
-    "score": 51,
+    "score": 56,
     "infographic": {
-      "key_insight": "PI-MFA embeds PDE, boundary, and initial-condition physics into B-spline reconstruction so continuous flow fields are both smooth and physically consistent.",
-      "engineering_relevance": "It gives engineers a compact, differentiable surrogate for flow data that improves downstream analysis, visualization, and derived quantities when measurements or simulations are inconsistent.",
+      "key_insight": "PI-MFA adds governing-equation and boundary-condition constraints to B-spline reconstruction so continuous flow fields stay smooth while also respecting physics.",
+      "engineering_relevance": "This gives engineers a compact way to reconstruct CFD or experimental flow data for downstream analysis, differentiation, and visualization without losing physical consistency.",
       "method": [
-        "Tensor-product B-splines build a continuous multivariate field with local support.",
-        "Control points are optimized to balance data fit against PDE residuals and boundary/initial constraints.",
-        "Exact analytic spline derivatives make residual evaluation efficient without storing full-resolution fields."
+        "Tensor-product B-splines create compact, continuously differentiable flow-field approximations.",
+        "Control points are fit by optimizing data fidelity plus PDE residuals and initial/boundary-condition penalties.",
+        "Exact analytical spline derivatives are used to evaluate physics constraints efficiently."
       ],
-      "evidence_signal": "The abstract reports numerical tests on 1D convection-diffusion, 2D coupled Burgers, and 2D incompressible Navier-Stokes cases, showing lower PDE residuals, improved balance-law consistency, and better errors than standard/regularized MFA, with computational advantages over tested PINNs.",
-      "watch_item": "Performance depends on the chosen PDE constraints and data quality, so overly strong or mismatched physics terms may bias the reconstruction.",
+      "evidence_signal": "The paper reports tests on 1D convection-diffusion, 2D coupled Burgers, and 2D incompressible Navier-Stokes cases, where PI-MFA reduced PDE residuals, improved balance-law consistency, and often lowered approximation error versus standard/regularized MFA.",
+      "watch_item": "Accuracy depends on the chosen physics model and constraint weighting, so inconsistent or incomplete PDE assumptions can bias the reconstruction.",
       "hashtags": [
         "#FlowControl",
         "#PhysicsInformed",
@@ -1029,7 +1029,7 @@
       "paper_title": "A Physics-Informed B-Spline Framework for Continuous Approximation of Flow Data",
       "paper_date": "2026-06-09",
       "paper_category": "Flow Control",
-      "generated_at": "2026-06-13T10:33:25",
+      "generated_at": "2026-06-12T11:47:03",
       "generator": "openai"
     }
   }
