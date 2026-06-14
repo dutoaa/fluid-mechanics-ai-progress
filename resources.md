@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-06-13
+Generated: 2026-06-14
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Data-driven surrogate models for forecasting experimentally measured fluid flows
@@ -51,15 +51,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.10919v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-09-arxiv-topological_origin_of_flow_distributions_in_disordered_porous_media_infographic.json
 
-## 7. Semi-local transformation for compressible wall turbulence via elliptic equations
-
-- Date: 2026-06-08
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.09322v1
-- PDF: https://arxiv.org/pdf/2606.09322v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-08-arxiv-semi_local_transformation_for_compressible_wall_turbulence_via_elliptic_equations_infographic.json
-
-## 8. Ultimate regime in Rayleigh-Darcy Convection
+## 7. Ultimate regime in Rayleigh-Darcy Convection
 
 - Date: 2026-06-11
 - Category: Turbulence
@@ -67,7 +59,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.13505v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-11-arxiv-ultimate_regime_in_rayleigh_darcy_convection_infographic.json
 
-## 9. Duty-cycle modulation of the self-sustaining process by spanwise wall oscillation
+## 8. Duty-cycle modulation of the self-sustaining process by spanwise wall oscillation
 
 - Date: 2026-06-11
 - Category: Turbulence
@@ -75,13 +67,21 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.13207v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-11-arxiv-duty_cycle_modulation_of_the_self_sustaining_process_by_spanwise_wall_oscillation_infographic.json
 
-## 10. Spectrally Regularized Latent Flow Matching for Turbulence Generation
+## 9. Spectrally Regularized Latent Flow Matching for Turbulence Generation
 
 - Date: 2026-06-10
 - Category: Turbulence
 - arXiv: https://arxiv.org/abs/2606.11691v1
 - PDF: https://arxiv.org/pdf/2606.11691v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-10-arxiv-spectrally_regularized_latent_flow_matching_for_turbulence_generation_infographic.json
+
+## 10. Semi-local transformation for compressible wall turbulence via elliptic equations
+
+- Date: 2026-06-08
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.09322v1
+- PDF: https://arxiv.org/pdf/2606.09322v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-08-arxiv-semi_local_transformation_for_compressible_wall_turbulence_via_elliptic_equations_infographic.json
 
 ## 11. Explicit Quantum Circuit Simulation of Nonlinear 1-Dimensional Fluid with Carleman-linearized Boltzmann Method
 
