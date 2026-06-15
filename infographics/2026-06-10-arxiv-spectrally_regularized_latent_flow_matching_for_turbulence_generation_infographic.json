@@ -1,13 +1,13 @@
 {
-  "key_insight": "A spectrally regularized latent compression stage dramatically improves turbulence generation by preserving dissipation-range energy that standard MSE-trained latent models suppress.",
-  "engineering_relevance": "This yields a better quality–cost tradeoff for CFD surrogate generation, enabling accurate synthetic turbulence at far fewer function evaluations.",
+  "key_insight": "A spectrally regularized latent compression stage dramatically improves latent flow matching for turbulence by preserving dissipation-range amplitudes that MSE-trained VAEs suppress.",
+  "engineering_relevance": "This yields far better sample fidelity at low inference cost, making generative turbulence models more practical for reduced-order simulation and data-driven flow synthesis.",
   "method": [
-    "Train a latent flow-matching generator with a zone-weighted log-spectral objective instead of plain MSE.",
-    "Use encoder-decoder swap experiments to isolate whether performance gains come from the latent representation or the decoder.",
-    "Evaluate spectral fidelity, deep-dissipation power retention, and structure functions for both reconstruction and unconditional sampling."
+    "Replace an MSE-trained VAE with a spectrally regularized, zone-weighted log-spectral encoder-decoder.",
+    "Train latent flow matching on the improved latent space for unconditional turbulence generation.",
+    "Use encoder-decoder swap and support-amplitude analyses to isolate where spectral fidelity gains originate."
   ],
-  "evidence_signal": "On a 256^2 DNS dataset at Re_f ≈ 2250, deep-dissipation retained spectral power improved from 25% to 94% in reconstruction and from 20% to 79% in unconditional generation, with DD bias reaching -0.117 at 20 function evaluations.",
-  "watch_item": "The models still show a residual gap in the magnitude of S_3, suggesting phase-coherent triadic structure is not yet fully captured.",
+  "evidence_signal": "On a 256^2 DNS dataset at Re_f ≈ 2250, deep-dissipation retained spectral power improved from 25% to 94% in reconstruction and from 20% to 79% in generation, with DD bias improving to -0.117 at 20 function evaluations.",
+  "watch_item": "The abstract notes a residual magnitude gap in S_3, suggesting phase-coherent triadic structure is still imperfect and may limit full physical realism.",
   "hashtags": [
     "#Turbulence",
     "#FlowMatching",
@@ -19,6 +19,6 @@
   "paper_title": "Spectrally Regularized Latent Flow Matching for Turbulence Generation",
   "paper_date": "2026-06-10",
   "paper_category": "Turbulence",
-  "generated_at": "2026-06-14T10:51:30",
+  "generated_at": "2026-06-15T14:28:37",
   "generator": "openai"
 }

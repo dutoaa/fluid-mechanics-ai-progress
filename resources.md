@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-06-14
+Generated: 2026-06-15
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Data-driven surrogate models for forecasting experimentally measured fluid flows
@@ -11,7 +11,23 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.10848v2
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-09-arxiv-data_driven_surrogate_models_for_forecasting_experimentally_measured_fluid_flows_infographic.json
 
-## 2. Effects of mean flow skew on turbulent shear layers. Part II. Experimental investigation
+## 2. Collective Bubble Nucleation: Scale-Separated Hydrodynamic Control of Site Stability and Vapor Removal
+
+- Date: 2026-06-12
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.14567v1
+- PDF: https://arxiv.org/pdf/2606.14567v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-12-arxiv-collective_bubble_nucleation_scale_separated_hydrodynamic_control_of_site_stability_and_va_infographic.json
+
+## 3. Flow behind the Imperial Front Wing: comparison of results from volumetric PTV experiment and Nektar++ simulations
+
+- Date: 2026-06-12
+- Category: Aerodynamics
+- arXiv: https://arxiv.org/abs/2606.14342v1
+- PDF: https://arxiv.org/pdf/2606.14342v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-12-arxiv-flow_behind_the_imperial_front_wing_comparison_of_results_from_volumetric_ptv_experiment_a_infographic.json
+
+## 4. Effects of mean flow skew on turbulent shear layers. Part II. Experimental investigation
 
 - Date: 2026-06-11
 - Category: Turbulence
@@ -19,7 +35,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.13596v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-11-arxiv-effects_of_mean_flow_skew_on_turbulent_shear_layers_part_ii_experimental_investigation_infographic.json
 
-## 3. Geometry-Aware Anisotropic Boundary Correction for Aerodynamic Simulation
+## 5. Geometry-Aware Anisotropic Boundary Correction for Aerodynamic Simulation
 
 - Date: 2026-06-08
 - Category: CFD Surrogates
@@ -27,15 +43,39 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.09963v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-08-arxiv-geometry_aware_anisotropic_boundary_correction_for_aerodynamic_simulation_infographic.json
 
-## 4. A Hybrid Generative Reduced-Order Model for the Minimal Flow Unit
+## 6. Optimal heat transport at the edge of energy stability
 
-- Date: 2026-06-08
-- Category: CFD Surrogates
-- arXiv: https://arxiv.org/abs/2606.09044v1
-- PDF: https://arxiv.org/pdf/2606.09044v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-08-arxiv-a_hybrid_generative_reduced_order_model_for_the_minimal_flow_unit_infographic.json
+- Date: 2026-06-12
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.14138v1
+- PDF: https://arxiv.org/pdf/2606.14138v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-12-arxiv-optimal_heat_transport_at_the_edge_of_energy_stability_infographic.json
 
-## 5. Effect of Additively Manufactured Wall Lattice Structures on Flashback Limits in a Hydrogen Jet Flame Combustor
+## 7. Numerical simulations of transition and long-term response of a wind turbine airfoil
+
+- Date: 2026-06-11
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.13969v1
+- PDF: https://arxiv.org/pdf/2606.13969v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-11-arxiv-numerical_simulations_of_transition_and_long_term_response_of_a_wind_turbine_airfoil_infographic.json
+
+## 8. Scalar dissipation anomaly and scalar-gradient scaling in turbulence: A joint velocity-scalar multifractal view
+
+- Date: 2026-06-12
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.14696v1
+- PDF: https://arxiv.org/pdf/2606.14696v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-12-arxiv-scalar_dissipation_anomaly_and_scalar_gradient_scaling_in_turbulence_a_joint_velocity_scal_infographic.json
+
+## 9. Wave turbulence theory of odd fluids and solids: kinetic equations and solutions
+
+- Date: 2026-06-12
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.14583v1
+- PDF: https://arxiv.org/pdf/2606.14583v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-12-arxiv-wave_turbulence_theory_of_odd_fluids_and_solids_kinetic_equations_and_solutions_infographic.json
+
+## 10. Effect of Additively Manufactured Wall Lattice Structures on Flashback Limits in a Hydrogen Jet Flame Combustor
 
 - Date: 2026-06-10
 - Category: Turbulence
@@ -43,7 +83,15 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.12302v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-10-arxiv-effect_of_additively_manufactured_wall_lattice_structures_on_flashback_limits_in_a_hydroge_infographic.json
 
-## 6. Topological origin of flow distributions in disordered porous media
+## 11. Machine learning for rarefied gas transport in vacuum and micro/nano systems: promise, pitfalls, and a verification agenda
+
+- Date: 2026-06-12
+- Category: CFD Surrogates
+- arXiv: https://arxiv.org/abs/2606.14039v1
+- PDF: https://arxiv.org/pdf/2606.14039v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-12-arxiv-machine_learning_for_rarefied_gas_transport_in_vacuum_and_micro_nano_systems_promise_pitfa_infographic.json
+
+## 12. Topological origin of flow distributions in disordered porous media
 
 - Date: 2026-06-09
 - Category: Turbulence
@@ -51,7 +99,23 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.10919v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-09-arxiv-topological_origin_of_flow_distributions_in_disordered_porous_media_infographic.json
 
-## 7. Ultimate regime in Rayleigh-Darcy Convection
+## 13. Impact of alignments between fluctuating and mean density gradients on the scale-dependent energetics of stably stratified turbulence
+
+- Date: 2026-06-12
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.14227v1
+- PDF: https://arxiv.org/pdf/2606.14227v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-12-arxiv-impact_of_alignments_between_fluctuating_and_mean_density_gradients_on_the_scale_dependent_infographic.json
+
+## 14. Nested homogenization of xylem-inspired porous fluidic networks
+
+- Date: 2026-06-11
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.13888v1
+- PDF: https://arxiv.org/pdf/2606.13888v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-11-arxiv-nested_homogenization_of_xylem_inspired_porous_fluidic_networks_infographic.json
+
+## 15. Ultimate regime in Rayleigh-Darcy Convection
 
 - Date: 2026-06-11
 - Category: Turbulence
@@ -59,15 +123,15 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.13505v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-11-arxiv-ultimate_regime_in_rayleigh_darcy_convection_infographic.json
 
-## 8. Duty-cycle modulation of the self-sustaining process by spanwise wall oscillation
+## 16. Bacterial adhesion to curved surfaces in fluid flow
 
-- Date: 2026-06-11
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.13207v1
-- PDF: https://arxiv.org/pdf/2606.13207v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-11-arxiv-duty_cycle_modulation_of_the_self_sustaining_process_by_spanwise_wall_oscillation_infographic.json
+- Date: 2026-06-12
+- Category: Aerodynamics
+- arXiv: https://arxiv.org/abs/2606.14543v1
+- PDF: https://arxiv.org/pdf/2606.14543v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-12-arxiv-bacterial_adhesion_to_curved_surfaces_in_fluid_flow_infographic.json
 
-## 9. Spectrally Regularized Latent Flow Matching for Turbulence Generation
+## 17. Spectrally Regularized Latent Flow Matching for Turbulence Generation
 
 - Date: 2026-06-10
 - Category: Turbulence
@@ -75,15 +139,15 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.11691v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-10-arxiv-spectrally_regularized_latent_flow_matching_for_turbulence_generation_infographic.json
 
-## 10. Semi-local transformation for compressible wall turbulence via elliptic equations
+## 18. A fully GPU-based workflow for building physics emulators of hypersonic flows
 
-- Date: 2026-06-08
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.09322v1
-- PDF: https://arxiv.org/pdf/2606.09322v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-08-arxiv-semi_local_transformation_for_compressible_wall_turbulence_via_elliptic_equations_infographic.json
+- Date: 2026-06-11
+- Category: CFD Surrogates
+- arXiv: https://arxiv.org/abs/2606.13742v1
+- PDF: https://arxiv.org/pdf/2606.13742v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-11-arxiv-a_fully_gpu_based_workflow_for_building_physics_emulators_of_hypersonic_flows_infographic.json
 
-## 11. Explicit Quantum Circuit Simulation of Nonlinear 1-Dimensional Fluid with Carleman-linearized Boltzmann Method
+## 19. Explicit Quantum Circuit Simulation of Nonlinear 1-Dimensional Fluid with Carleman-linearized Boltzmann Method
 
 - Date: 2026-06-11
 - Category: Turbulence
@@ -91,74 +155,10 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.12770v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-11-arxiv-explicit_quantum_circuit_simulation_of_nonlinear_1_dimensional_fluid_with_carleman_lineari_infographic.json
 
-## 12. Two pathways to diapycnal mixing in strongly stratified flows with no initial vertical shear
+## 20. Two pathways to diapycnal mixing in strongly stratified flows with no initial vertical shear
 
 - Date: 2026-06-10
 - Category: Turbulence
 - arXiv: https://arxiv.org/abs/2606.12627v1
 - PDF: https://arxiv.org/pdf/2606.12627v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-10-arxiv-two_pathways_to_diapycnal_mixing_in_strongly_stratified_flows_with_no_initial_vertical_she_infographic.json
-
-## 13. Dynamical large deviations and long-range correlations for local weak wave turbulence
-
-- Date: 2026-06-10
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.12624v1
-- PDF: https://arxiv.org/pdf/2606.12624v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-10-arxiv-dynamical_large_deviations_and_long_range_correlations_for_local_weak_wave_turbulence_infographic.json
-
-## 14. Symmetric structure-preserving discretization of N-phase incompressible fluid mixtures with arbitrary density ratios
-
-- Date: 2026-06-10
-- Category: Multiphase Flow
-- arXiv: https://arxiv.org/abs/2606.12256v1
-- PDF: https://arxiv.org/pdf/2606.12256v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-10-arxiv-symmetric_structure_preserving_discretization_of_n_phase_incompressible_fluid_mixtures_wit_infographic.json
-
-## 15. On the Modelling of the Hydrodynamic Drag of Mangroves
-
-- Date: 2026-06-10
-- Category: CFD Surrogates
-- arXiv: https://arxiv.org/abs/2606.11653v1
-- PDF: https://arxiv.org/pdf/2606.11653v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-10-arxiv-on_the_modelling_of_the_hydrodynamic_drag_of_mangroves_infographic.json
-
-## 16. No need to stay positive: a practical approach to direct numerical simulations of elastic turbulence
-
-- Date: 2026-06-08
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.09468v1
-- PDF: https://arxiv.org/pdf/2606.09468v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-08-arxiv-no_need_to_stay_positive_a_practical_approach_to_direct_numerical_simulations_of_elastic_t_infographic.json
-
-## 17. Foundations of Practical Quantum Advantage in Quantum-Informed Machine Learning for Predicting Chaos
-
-- Date: 2026-06-11
-- Category: AI Fluid Mechanics
-- arXiv: https://arxiv.org/abs/2606.13422v1
-- PDF: https://arxiv.org/pdf/2606.13422v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-11-arxiv-foundations_of_practical_quantum_advantage_in_quantum_informed_machine_learning_for_predic_infographic.json
-
-## 18. Data-Driven Equation Discovery for Nonlinear Liquid Film Flows
-
-- Date: 2026-06-11
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.13336v1
-- PDF: https://arxiv.org/pdf/2606.13336v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-11-arxiv-data_driven_equation_discovery_for_nonlinear_liquid_film_flows_infographic.json
-
-## 19. Hydrodynamic Resistance on Oscillating Planar Interfacial Bodies
-
-- Date: 2026-06-10
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.12570v1
-- PDF: https://arxiv.org/pdf/2606.12570v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-10-arxiv-hydrodynamic_resistance_on_oscillating_planar_interfacial_bodies_infographic.json
-
-## 20. A Physics-Informed B-Spline Framework for Continuous Approximation of Flow Data
-
-- Date: 2026-06-09
-- Category: Flow Control
-- arXiv: https://arxiv.org/abs/2606.10335v1
-- PDF: https://arxiv.org/pdf/2606.10335v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-09-arxiv-a_physics_informed_b_spline_framework_for_continuous_approximation_of_flow_data_infographic.json
