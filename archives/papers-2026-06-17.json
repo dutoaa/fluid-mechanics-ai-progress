@@ -1,0 +1,1037 @@
+[
+  {
+    "id": "2026-06-13-arxiv-shipnet_a_geometric_deep_learning_surrogate_for_real_time_ship_hydrodynamics",
+    "arxiv_id": "2606.15356v1",
+    "date": "2026-06-13",
+    "title": "ShipNet: A Geometric Deep Learning Surrogate for Real-Time Ship Hydrodynamics",
+    "authors": "Kirsten Odendaal, George Drakoulas",
+    "abstract": "Accurate prediction of hydrodynamic performance is central to ship design, yet high-fidelity computational fluid dynamics remains prohibitively expensive for large-scale parametric exploration. This motivates the development of data-driven surrogate models that provide rapid approximations to hydrodynamic predictions at substantially reduced cost. We present ShipNet, a geometric deep-learning surrogate that predicts both hull-surface pressure distributions and far-field free-surface wave patterns directly from hull geometry and speed. The network employs a regularized dynamic graph convolutional backbone on hull point clouds, with a multi-head decoder for simultaneous near-body pressure and free-surface elevation outputs. Training data consist of 420 inviscid free-surface simulations generated using a potential-flow panel method for two parent yacht hulls, each parameterized into 70 variants and evaluated at three speeds. ShipNet predicts per-point pressure coefficient and two-dimensional wave elevation map using a composite loss that combines point-wise regression and image-structure terms. On a geometry-held-out test set, ShipNet achieves R^2=0.98 for hull pressure and R^2=0.91 for wave fields. Inference requires approximately 0.15s per case, yielding over a 550x speedup relative to the potential-flow solver on conventional hardware. Limitations include the restricted geometry and speed ranges and the inviscid training data, while future work will extend the model to high-fidelity viscous simulations with physics-informed regularization.",
+    "category": "CFD Surrogates",
+    "source": "arXiv",
+    "published": "2026-06-13T15:38:24Z",
+    "updated": "2026-06-13T15:38:24Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "cs.LG"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.15356v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.15356v1"
+      }
+    ],
+    "score": 89,
+    "infographic": {
+      "key_insight": "ShipNet uses geometric deep learning on hull point clouds to rapidly predict both local pressure and far-field wave patterns from ship geometry and speed.",
+      "engineering_relevance": "It enables fast design-space exploration for ship hydrodynamics, replacing expensive CFD-like simulations with near real-time surrogate predictions.",
+      "method": [
+        "Dynamic graph convolution on hull point clouds",
+        "Multi-head decoder for pressure and wave elevation",
+        "Composite loss with point-wise regression and image-structure terms"
+      ],
+      "evidence_signal": "Trained on 420 inviscid free-surface simulations from two yacht hull families, ShipNet reached R^2=0.98 for hull pressure and R^2=0.91 for wave fields, with about 0.15 s inference per case.",
+      "watch_item": "The model is limited to the narrow geometry and speed range in the training data, and it was trained on inviscid potential-flow simulations rather than viscous CFD.",
+      "hashtags": [
+        "#CFDSurrogate",
+        "#ShipHydrodynamics",
+        "#GeometricDeepLearning",
+        "#MarineEngineering",
+        "#PhysicsAI"
+      ],
+      "paper_id": "2026-06-13-arxiv-shipnet_a_geometric_deep_learning_surrogate_for_real_time_ship_hydrodynamics",
+      "paper_title": "ShipNet: A Geometric Deep Learning Surrogate for Real-Time Ship Hydrodynamics",
+      "paper_date": "2026-06-13",
+      "paper_category": "CFD Surrogates",
+      "generated_at": "2026-06-16T12:57:28",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-15-arxiv-a_validated_lbm_dataset_and_pipeline_for_surrogate_modeling_of_turbulent_3d_obstructed_cha",
+    "arxiv_id": "2606.16765v1",
+    "date": "2026-06-15",
+    "title": "A Validated LBM Dataset and Pipeline for Surrogate Modeling of Turbulent 3D Obstructed Channel Flows",
+    "authors": "Lukas Schröder, Shubham Kavane, Harald Köstler",
+    "abstract": "Evaluating neural operators for 3D turbulent flow requires validated datasets with physical benchmarks. We present a reproducible pipeline generating training data for 3D channel flows around generated geometries at Re=1,000-10,000. Our lattice Boltzmann solver with cumulant collision operators is rigorously verified against experimental measurements (Strouhal number, drag coefficients, turbulent fluctuations) with comprehensive grid convergence studies at resolution 1024x512x512. Building upon an established framework, this validated pipeline enables standardized surrogate model comparison. We outline planned systematic evaluation of Fourier Neural Operator and U-Net variants on forecasting, super-resolution, and error correction tasks, using physics-informed metrics to assess turbulent energy cascade representation. Future work will compare computational efficiency between numerical solvers and neural surrogates, exploring practical application. We seek community feedback on our validation approach, planned benchmark methodology, and evaluation priorities for neural operators in turbulent flows.",
+    "category": "CFD Surrogates",
+    "source": "arXiv",
+    "published": "2026-06-15T14:15:25Z",
+    "updated": "2026-06-15T14:15:25Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.16765v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.16765v1"
+      }
+    ],
+    "score": 74,
+    "infographic": {
+      "key_insight": "A validated lattice-Boltzmann data pipeline is being used to create reproducible 3D turbulent channel-flow benchmarks for testing neural-operator surrogates.",
+      "engineering_relevance": "This provides a standardized, physics-checked dataset and benchmark workflow for comparing CFD surrogates on forecasting, super-resolution, and error-correction tasks in turbulent flows.",
+      "method": [
+        "Generate 3D obstructed channel-flow cases with controlled geometries at Re = 1,000–10,000.",
+        "Run a cumulant-collision LBM solver and validate it against experimental Strouhal number, drag, and turbulence statistics.",
+        "Use the dataset to evaluate Fourier Neural Operators and U-Net variants with physics-informed metrics."
+      ],
+      "evidence_signal": "The abstract reports comprehensive grid-convergence studies at 1024×512×512 and validation against experimental measurements of Strouhal number, drag coefficients, and turbulent fluctuations.",
+      "watch_item": "The planned surrogate benchmarks still depend on how well the chosen metrics capture turbulent energy-cascade fidelity and fair comparison across model types.",
+      "hashtags": [
+        "#CFD",
+        "#LatticeBoltzmann",
+        "#NeuralOperators",
+        "#Turbulence",
+        "#SurrogateModeling"
+      ],
+      "paper_id": "2026-06-15-arxiv-a_validated_lbm_dataset_and_pipeline_for_surrogate_modeling_of_turbulent_3d_obstructed_cha",
+      "paper_title": "A Validated LBM Dataset and Pipeline for Surrogate Modeling of Turbulent 3D Obstructed Channel Flows",
+      "paper_date": "2026-06-15",
+      "paper_category": "CFD Surrogates",
+      "generated_at": "2026-06-16T12:57:30",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-09-arxiv-data_driven_surrogate_models_for_forecasting_experimentally_measured_fluid_flows",
+    "arxiv_id": "2606.10848v2",
+    "date": "2026-06-09",
+    "title": "Data-driven surrogate models for forecasting experimentally measured fluid flows",
+    "authors": "Peter I. Renn, Emily H. Palmer, Cong Wang, Morteza Gharib",
+    "abstract": "Data-driven modeling shows significant promise for faster-than-real-time forecasting of fluid flows. For real-world engineering applications (e.g., flow control), models must contend with limited, imperfect, and incomplete experimental measurements. In this work, we present an analysis of data-driven surrogate models trained to forecast the time-evolution of experimentally measured cylinder wakes in the subcritical vortex shedding regime. Using a dataset of two-dimensional, two-component particle image velocimetry measurements, we train fully convolutional neural networks, U-Nets, Fourier neural operators, and dynamic mode decomposition-based models to forecast the development of experimentally measured velocity fields. To characterize data-driven approaches contending with transient flow features and limited, imperfect observations, the development of predictions over extended forecast horizons is examined at a fixed Reynolds number (Re = 590). Next, models are trained at a range of Reynolds numbers (Re = 230 to Re = 2920) to investigate the impact of increasingly turbulent and three-dimensional flow phenomena, and the challenges associated with measuring them, on forecast quality. We find that experimentally trained surrogate models can provide meaningful predictions over short time horizons, propagate low-frequency dynamics over longer forecast periods, and achieve faster-than-real-time evaluation. However, the data-driven models struggle to preserve transient flow features and high-frequency energy content when faced with noisy measurements and incomplete state observations. This emphasizes the underlying challenges that remain for data-driven modeling approaches to effectively contend with fluid dynamics in real-world engineering applications, where observations are often imperfect and limited.",
+    "category": "CFD Surrogates",
+    "source": "arXiv",
+    "published": "2026-06-09T13:29:17Z",
+    "updated": "2026-06-10T14:22:17Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.10848v2"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.10848v2"
+      }
+    ],
+    "score": 71,
+    "infographic": {
+      "key_insight": "Experimentally trained surrogate models can forecast cylinder-wake dynamics quickly, but accuracy degrades as transient, high-frequency flow features become harder to infer from imperfect measurements.",
+      "engineering_relevance": "These models could enable faster-than-real-time flow prediction for control and monitoring, especially when only limited experimental data are available.",
+      "method": [
+        "Train fully convolutional neural networks, U-Nets, Fourier neural operators, and DMD-based models on PIV velocity fields.",
+        "Evaluate short- and long-horizon forecasting at fixed Re = 590.",
+        "Test robustness across a broader Reynolds-number range (Re = 230 to 2920) with noisy and incomplete observations."
+      ],
+      "evidence_signal": "On two-dimensional, two-component PIV data, the models produced meaningful short-term forecasts and propagated low-frequency dynamics, but struggled to preserve transient features and high-frequency energy over longer horizons.",
+      "watch_item": "Performance may drop sharply when measurements are noisy, incomplete, or increasingly three-dimensional, so deployment will require careful sensing and validation.",
+      "hashtags": [
+        "#FluidMechanics",
+        "#SurrogateModels",
+        "#MachineLearning",
+        "#ComputationalFluidDynamics",
+        "#FlowForecasting"
+      ],
+      "paper_id": "2026-06-09-arxiv-data_driven_surrogate_models_for_forecasting_experimentally_measured_fluid_flows",
+      "paper_title": "Data-driven surrogate models for forecasting experimentally measured fluid flows",
+      "paper_date": "2026-06-09",
+      "paper_category": "CFD Surrogates",
+      "generated_at": "2026-06-16T12:57:34",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-14-arxiv-quantum_vortex_in_a_fluid_flow_negative_effective_mass_and_a_novel_mechanism_for_turbulenc",
+    "arxiv_id": "2606.15803v1",
+    "date": "2026-06-14",
+    "title": "Quantum vortex in a fluid flow: negative effective mass and a novel mechanism for turbulence formation",
+    "authors": "S. V. Talalov",
+    "abstract": "We explore the movement of a thin, circular quantum vortex filament within an infinite cylindrical pipe. The fluid surrounding the vortex ring moves through the pipe at a non-zero velocity denoted by $v$. Our study examines the energy spectrum $E = E(p)$, where $p$ represents the total momentum of a vortex ring. We have demonstrated that the function $E(p)$ significantly depends on the velocity $v$. The discovered spectrum $E(p)$ reveals the existence of states with both negative and extremely large effective masses. We also explored the hypothesis regarding the existence of coupled vortex pairs possessing finite summary effective masses. Every pair consists of vortices that possess both positive and negative masses, with the magnitude of these masses being unrestricted. In our model, the criterion for the appearance of these states is based on comparing two numbers. The first is seen as a quantum counterpart to the Reynolds number, while the second represents its critical value for a flow with a single vortex. We also explore how this studied effect might contribute to the emergence of quantum turbulence. This study discusses a method for determining the critical Reynolds number in quantum turbulence, using the proposed model as a framework. Here, we use a new quantization technique for classical closed vortex filaments developed by the author earlier.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-06-14T13:09:02Z",
+    "updated": "2026-06-14T13:09:02Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "math-ph",
+      "quant-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.15803v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.15803v1"
+      }
+    ],
+    "score": 67,
+    "infographic": {
+      "key_insight": "A quantized vortex ring in pipe flow develops an energy spectrum that depends strongly on background flow velocity, enabling negative and very large effective masses and suggesting a new route to turbulence onset.",
+      "engineering_relevance": "The model offers a theoretical way to estimate a critical Reynolds-like threshold for quantum turbulence and to anticipate vortex states that may destabilize flow.",
+      "method": [
+        "Quantize a classical closed vortex filament using the author's earlier technique.",
+        "Analyze the vortex-ring energy spectrum E(p) as a function of total momentum p and background flow velocity v.",
+        "Compare a quantum Reynolds analogue against a critical single-vortex value to identify coupled-vortex states."
+      ],
+      "evidence_signal": "The abstract reports a theoretical spectrum analysis showing velocity-dependent states with negative and arbitrarily large effective masses, plus coupled vortex pairs with finite total mass.",
+      "watch_item": "The conclusions are model-based and depend on an idealized infinite cylindrical pipe and a specific quantization framework, so physical validation in real flows may be nontrivial.",
+      "hashtags": [
+        "#QuantumTurbulence",
+        "#VortexDynamics",
+        "#FluidMechanics",
+        "#EffectiveMass",
+        "#ComputationalScience"
+      ],
+      "paper_id": "2026-06-14-arxiv-quantum_vortex_in_a_fluid_flow_negative_effective_mass_and_a_novel_mechanism_for_turbulenc",
+      "paper_title": "Quantum vortex in a fluid flow: negative effective mass and a novel mechanism for turbulence formation",
+      "paper_date": "2026-06-14",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-06-16T12:57:37",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-15-arxiv-engine_position_effects_on_contrail_evolution_for_a_realistic_aircraft_configuration",
+    "arxiv_id": "2606.16390v1",
+    "date": "2026-06-15",
+    "title": "Engine position effects on contrail evolution for a realistic aircraft configuration",
+    "authors": "Rémy Annunziata, Nicolas Bonne, François Garnier",
+    "abstract": "This study investigates the influence of representative engine positions on contrail evolution during the vortex and dissipation regimes, using three-dimensional simulations of a realistic aircraft geometry. Large Eddy Simulations are employed, coupled with an Eulerian microphysical bulk model, and initialized using fields obtained from prior Reynolds-Averaged Navier-Stokes simulations. This approach enables a consistent transition from near-field jet-vortex interactions to far-field wake dynamics. Three engine placements are examined under two atmospheric stratifications and two relative humidity conditions. The results reveal that engine position influences the onset and evolution of vortex instabilities, alters the descent of the vortex pair, and leads to slight changes in the distribution of particles within the wake. Despite these aerodynamic differences, the microphysical properties of the contrails tend to converge over time for the parameters and configurations covered in this study. From a broader perspective, engine placement strongly influences initial contrail formation and early vortex-regime dynamics. At later stages, these differences largely disappear, as vortex dynamics and atmospheric conditions dominate over the initial dilution changes induced by engine position.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-06-15T08:20:16Z",
+    "updated": "2026-06-15T08:20:16Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.16390v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.16390v1"
+      }
+    ],
+    "score": 66,
+    "infographic": {
+      "key_insight": "Engine position mainly affects early contrail formation and vortex-regime dynamics, but its impact fades later as wake evolution becomes dominated by vortex physics and atmospheric conditions.",
+      "engineering_relevance": "Aircraft engine placement can meaningfully change near-field contrail behavior, which matters for wake modeling and contrail mitigation studies during the first stages after emission.",
+      "method": [
+        "3D Large Eddy Simulations on a realistic aircraft configuration",
+        "Coupled Eulerian bulk microphysics model for contrail evolution",
+        "Initialized from prior Reynolds-Averaged Navier-Stokes fields to capture near-field jet-vortex interaction and far-field wake dynamics"
+      ],
+      "evidence_signal": "The abstract reports comparisons across three engine positions under two atmospheric stratifications and two relative humidity conditions, showing early differences in vortex instability and descent but convergence of microphysical contrail properties over time.",
+      "watch_item": "The conclusions are limited to the specific engine placements, atmospheric stratifications, and humidity conditions tested, so broader generalization may require additional cases.",
+      "hashtags": [
+        "#ContrailScience",
+        "#LES",
+        "#WakeVortex",
+        "#AircraftDesign",
+        "#Turbulence"
+      ],
+      "paper_id": "2026-06-15-arxiv-engine_position_effects_on_contrail_evolution_for_a_realistic_aircraft_configuration",
+      "paper_title": "Engine position effects on contrail evolution for a realistic aircraft configuration",
+      "paper_date": "2026-06-15",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-06-16T12:57:40",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-14-arxiv-quantum_enhanced_markov_chain_monte_carlo_sampling_to_model_lagrangian_tracer_dispersion_i",
+    "arxiv_id": "2606.15985v1",
+    "date": "2026-06-14",
+    "title": "Quantum-enhanced Markov chain Monte Carlo sampling to model Lagrangian tracer dispersion in turbulent boundary layer",
+    "authors": "Fabian Schindler, Jörg Schumacher",
+    "abstract": "We present a quantum-enhanced Markov chain Monte Carlo (QE-MCMC) method to sample turbulent acceleration vectors from a joint target distribution that depends on all three components and height to model the transport and dispersion of massless Lagrangian tracer particles in two turbulent shear flows. A homogeneous shear flow, characterized by a uniform shear rate S, is considered as the starting point. Secondly, a turbulent boundary layer, which forms in both halves of a plane turbulent channel flow at friction Reynolds number Re_tau = 1000, is considered, where the mean shear rate S(y) varies with distance from the wall y. In this hybrid quantum-classical method, the proposal distribution Q for the first of two Metropolis-Hastings sampling substeps is constructed by a parametric quantum circuit. The algorithm generates synthetic tracer particle tracks. The resulting scaling laws for tracer-particle pair dispersion, a central quantity to probe turbulent mixing from a Lagrangian perspective, agree with a stochastic transport model consisting of coupled Langevin equations and with the classical MCMC counterpart. Differently from the classical sampling method, QE-MCMC uses a tempered target distribution. Due to the height dependence of the tracer dynamics in turbulent channel flow, an effective height-weighted spectral gap between the first and second eigenvalue of the Markov-chain transition matrix is introduced. The latter is found to significantly exceed the one of classical MCMC when sampling from a multivariate distribution with cross-correlations at the highest qubit numbers and thus resolutions. Consequently, our results support the applicability of this one-shot algorithm as a generative Lagrangian quantum-computing module, possibly embedded in a complex fluid-flow problem. Our module is found to work reliably for a relatively small number of qubits per spatial dimension of Nq <= 6.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-06-14T19:23:44Z",
+    "updated": "2026-06-14T19:23:44Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.15985v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.15985v1"
+      }
+    ],
+    "score": 66,
+    "infographic": {
+      "key_insight": "A hybrid quantum-classical MCMC sampler can generate realistic Lagrangian tracer dispersion statistics in turbulent shear flows by using a quantum circuit to propose correlated acceleration samples.",
+      "engineering_relevance": "This suggests a potential quantum generative module for turbulence and transport simulation, especially where multivariate cross-correlations make classical sampling harder.",
+      "method": [
+        "Parametric quantum circuit builds the proposal distribution for Metropolis-Hastings.",
+        "Samples turbulent acceleration vectors in a joint distribution over all 3 components plus height.",
+        "Uses a tempered target distribution and compares against classical MCMC and Langevin transport models."
+      ],
+      "evidence_signal": "The generated tracer-pair dispersion scaling laws agree with the stochastic Langevin model and classical MCMC, and the height-weighted spectral gap is larger than classical MCMC at the highest qubit/resolution settings.",
+      "watch_item": "The method is only demonstrated reliably at relatively small scale (Nq <= 6 per spatial dimension), so scalability and hardware noise remain key concerns.",
+      "hashtags": [
+        "#QuantumComputing",
+        "#MCMC",
+        "#Turbulence",
+        "#LagrangianTransport",
+        "#FluidMechanics"
+      ],
+      "paper_id": "2026-06-14-arxiv-quantum_enhanced_markov_chain_monte_carlo_sampling_to_model_lagrangian_tracer_dispersion_i",
+      "paper_title": "Quantum-enhanced Markov chain Monte Carlo sampling to model Lagrangian tracer dispersion in turbulent boundary layer",
+      "paper_date": "2026-06-14",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-06-16T12:57:42",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-15-arxiv-learning_interface_breakup_a_geometry_conditioned_latent_surrogate_for_spray_formation",
+    "arxiv_id": "2606.16587v1",
+    "date": "2026-06-15",
+    "title": "Learning Interface Breakup: A Geometry-Conditioned Latent Surrogate for Spray Formation",
+    "authors": "Julius H Ramlau, Friedrich Hastedt, Tolga Birdal, Ehecatl-Antonio del Río Chanona, Nausheen S Basha, Omar K Matar",
+    "abstract": "Designing spray nozzles requires predicting how geometry shapes transient two-phase breakup, but high-fidelity volume-of-fluid (VOF) simulations with adaptive mesh refinement (AMR) are too expensive for iterative design exploration. Standard surrogate models are also challenged by this setting because both the liquid--gas interface and the underlying adaptive discretization evolve across time and geometries. We introduce a geometry-conditioned latent surrogate trained on 797 two-phase nozzle simulations that addresses this by encoding the AMR cell-density field, rather than the full multi-channel flow state, as a compact proxy for where the solver concentrates resolution. From this representation, the model reconstructs transient density evolution and nozzle geometry, and a lightweight second stage recovers the remaining flow variables. On held-out simulations, the method accurately captures key interface dynamics while reducing inference time to 0.045 seconds per trajectory, corresponding to a speed-up of more than $6\\times10^4$ relative to Basilisk CFD. These results suggest that AMR refinement structure can serve as a compact and learnable representation for geometry-conditioned surrogate modeling of transient two-phase flows.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-06-15T11:32:36Z",
+    "updated": "2026-06-15T11:32:36Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "cs.AI",
+      "cs.LG",
+      "physics.comp-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.16587v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.16587v1"
+      }
+    ],
+    "score": 64,
+    "infographic": {
+      "key_insight": "A geometry-conditioned surrogate can learn spray breakup by using AMR refinement structure as a compact proxy for interface dynamics in transient two-phase flow.",
+      "engineering_relevance": "This enables much faster nozzle design exploration by approximating expensive VOF-VOF/AMR CFD simulations while retaining key breakup behavior.",
+      "method": [
+        "Train on 797 nozzle simulations with geometry-conditioned latent encoding.",
+        "Use AMR cell-density field as the main learned representation of where the solver refines the flow.",
+        "Reconstruct transient density/interface evolution first, then recover remaining flow variables with a lightweight second stage."
+      ],
+      "evidence_signal": "On held-out simulations, the model captures key interface dynamics and predicts each trajectory in 0.045 seconds, over 6×10^4 faster than Basilisk CFD.",
+      "watch_item": "Performance may depend on how well AMR refinement patterns generalize to new nozzle geometries and breakup regimes not seen in training.",
+      "hashtags": [
+        "#FluidDynamics",
+        "#Turbulence",
+        "#SprayFormation",
+        "#SurrogateModeling",
+        "#ComputationalScience"
+      ],
+      "paper_id": "2026-06-15-arxiv-learning_interface_breakup_a_geometry_conditioned_latent_surrogate_for_spray_formation",
+      "paper_title": "Learning Interface Breakup: A Geometry-Conditioned Latent Surrogate for Spray Formation",
+      "paper_date": "2026-06-15",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-06-16T12:57:45",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-15-arxiv-resonant_lunar_tides_of_earth_s_core_and_basal_magma_ocean",
+    "arxiv_id": "2606.16340v1",
+    "date": "2026-06-15",
+    "title": "Resonant lunar tides of Earth's core and basal magma ocean",
+    "authors": "Murray B. C. Kiernan, Hamish C. F. C. Hay, David W. Rees Jones, James F. J. Bryson, Richard F. Katz",
+    "abstract": "Earth's magnetic field is generated by fluid motion in the liquid-metal core and has been active for billions of year. However, prior to the onset of inner-core growth, the sources of mechanical power that drove the geodynamo remain uncertain. During this period, the core may have been overlain by a basal magma ocean (BMO), creating two immiscible fluid layers separated by a density interface, beneath the solid mantle. We develop a theory for lunar tides in this core--BMO system, in which the tidal potential acts on the density contrast between the two layers rather than through deformation of a bounding envelope. The resulting dynamics differ fundamentally from previous models of tidally driven core flow. In the inviscid limit, the response transitions from an equilibrium tide to an inertia--self-gravity wave as forcing frequency increases. The two regimes are separated by a resonance that occurs when the forcing frequency matches the natural frequency of the interfacial mode. The inviscid core flow is formally identical to the canonical elliptical vortex, linking the problem to the theory of elliptical instability. Finite viscosity regularises the resonance, introduces phase lag and generates oscillatory boundary layers. Combined with parameterised models of lunar recession and BMO crystallisation, the theory predicts enhanced core-boundary ellipticity, core-flow speed, magnetic Reynolds number and instability metrics, particularly near resonance. These results identify a previously unexplored mechanism for tidally driven flow in differentiated planetary bodies and show that a BMO can enhance tidal coupling to the core, potentially contributing to dynamo action.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-06-15T07:44:25Z",
+    "updated": "2026-06-15T07:44:25Z",
+    "primary_category": "physics.geo-ph",
+    "categories": [
+      "physics.geo-ph",
+      "astro-ph.EP",
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.16340v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.16340v1"
+      }
+    ],
+    "score": 62,
+    "infographic": {
+      "key_insight": "Lunar tides can resonantly drive flow in Earth’s liquid core when a basal magma ocean separates the core from the mantle, creating a new tidal-coupling mechanism distinct from classical boundary-forced tides.",
+      "engineering_relevance": "The theory helps estimate when resonant tidal forcing could amplify core flow, magnetic Reynolds number, and instability, offering a new geodynamo-relevant mechanism for differentiated planetary interiors.",
+      "method": [
+        "Developed an inviscid theory for a two-fluid core–BMO system with tidal forcing acting on the density interface.",
+        "Showed a transition from equilibrium tide to inertia–self-gravity wave response, with a resonance at the interfacial natural frequency.",
+        "Added finite-viscosity effects and coupled the model to lunar recession and BMO crystallisation parameterisations."
+      ],
+      "evidence_signal": "The paper presents analytical/theoretical predictions rather than direct experimental or simulation data, using parameterised evolutionary models to estimate tidal response and instability metrics.",
+      "watch_item": "The conclusions depend on idealised two-layer fluid assumptions and parameterised histories for lunar recession and BMO evolution, so real planetary stratification and dissipation may shift the resonance.",
+      "hashtags": [
+        "#Geodynamics",
+        "#CoreDynamics",
+        "#LunarTides",
+        "#Magnetohydrodynamics",
+        "#PlanetaryFluidDynamics"
+      ],
+      "paper_id": "2026-06-15-arxiv-resonant_lunar_tides_of_earth_s_core_and_basal_magma_ocean",
+      "paper_title": "Resonant lunar tides of Earth's core and basal magma ocean",
+      "paper_date": "2026-06-15",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-06-16T12:57:48",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-14-arxiv-coherent_structures_modeling_in_stenotic_transitional_flow_via_resolvent_analysis",
+    "arxiv_id": "2606.15820v1",
+    "date": "2026-06-14",
+    "title": "Coherent structures modeling in stenotic transitional flow via resolvent analysis",
+    "authors": "Alexandre Villié, Simon Demange, Kilian Oberleithner",
+    "abstract": "This study investigates the capability of linear modeling to characterize the transitional dynamics in an axisymmetric stenosis and attempts a low-order representation of the turbulent stresses. The transition to turbulence in stenotic flows generates wall shear stress fluctuations that strongly influence the progression of cardiovascular diseases and the risk of plaque rupture. A description of the linear mechanisms driving the forced dynamics at Reynolds number beyond transition is currently missing. Linear modeling of coherent structures is leveraged to identify the flow amplification mechanisms using the mean field from a LES at Re=4000. Global linear stability analysis reveals an unstable and sinuous stationary eigenmode that is known to destabilize the flow at lower Reynolds numbers through a weak Coanda-type wall attachment. At intermediate frequencies, resolvent analysis identifies a second amplification region within the shear-layer where the most amplified fluctuations are axisymmetric, in contrast to findings from studies at lower Reynolds numbers. The linear model is validated against SPOD. At intermediate frequencies, the optimal resolvent response mode demonstrates both high gain separation and strong alignment with the leading SPOD mode. The low-rank nature of the resolvent operator is leveraged to reconstruct the turbulent kinetic energy (TKE) and turbulent wall shear stress (tWSS) from the optimal response mode. In the immediate post-stenotic zone, axisymmetric fluctuations dominate the tWSS and exhibit low-rank dynamics. Our findings highlight that linear mechanisms effectively capture the complex post-stenotic dynamics. The successful reconstruction of turbulent quantities from mean flow data alone opens new predictive possibilities of key turbulent quantities.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-06-14T13:39:02Z",
+    "updated": "2026-06-14T13:39:02Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.15820v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.15820v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "Linear resolvent modes built from the LES mean flow can explain and reconstruct the dominant coherent structures, turbulent kinetic energy, and wall shear stress in transitional stenotic flow.",
+      "engineering_relevance": "This provides a low-order, physics-based route to predict post-stenotic hemodynamic stresses that matter for plaque rupture risk and disease progression.",
+      "method": [
+        "Global linear stability analysis of the mean flow to identify unstable modes",
+        "Resolvent analysis to find the most amplified forcing-response mechanisms across frequencies",
+        "Comparison with SPOD and low-rank reconstruction of TKE and turbulent wall shear stress"
+      ],
+      "evidence_signal": "The linear model was validated against SPOD, and the leading resolvent response showed strong alignment and high gain separation at intermediate frequencies.",
+      "watch_item": "The reconstruction is based on a LES-derived mean flow at Re=4000, so transferability to patient-specific geometries and different Reynolds numbers still needs verification.",
+      "hashtags": [
+        "#FluidMechanics",
+        "#ResolventAnalysis",
+        "#Turbulence",
+        "#Hemodynamics",
+        "#ComputationalScience"
+      ],
+      "paper_id": "2026-06-14-arxiv-coherent_structures_modeling_in_stenotic_transitional_flow_via_resolvent_analysis",
+      "paper_title": "Coherent structures modeling in stenotic transitional flow via resolvent analysis",
+      "paper_date": "2026-06-14",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-06-16T12:57:51",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-13-arxiv-sea_surface_roughness_dependence_on_ocean_wave_parameters_through_large_eddy_simulation_wi",
+    "arxiv_id": "2606.15446v1",
+    "date": "2026-06-13",
+    "title": "Sea Surface Roughness Dependence on Ocean Wave Parameters through Large Eddy Simulation with Local Subfilter Wave Drag",
+    "authors": "Hannah Hata Williams, Aditya K. Aiyer, Luc Deike, Michael E. Mueller",
+    "abstract": "Characterizing the Marine Atmospheric Boundary Layer (MABL) requires understanding the coupling between ocean waves and the turbulent atmospheric boundary layer above them. This coupling controls momentum exchange between the atmosphere and the ocean; it is of practical importance in the global climate, flow of ocean currents, ocean engineering, and offshore wind energy. Computational study of the MABL is complex because it must resolve the coupled physics of waves and turbulence over a wide range of spatial and temporal scales. This study expands on approaches for representing dynamic, local waves in Large Eddy Simulations (LES) of the MABL by developing a subfilter wave drag model to be local and scale-invariant. It explores the effects of different wave parameters (significant wave height and peak frequency of the wave energy spectrum) on the resulting momentum flux beyond monotonic relationships between surface stress through friction velocity $u_\\ast$ and wind velocity above the surface $U_{10}$. Results are compared to field data and in a discussion on how representation of the MABL and associated momentum flux need to account for both wind and wave effects.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-06-13T19:39:30Z",
+    "updated": "2026-06-13T19:39:30Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "physics.ao-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.15446v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.15446v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "A local, scale-invariant subfilter wave drag model in LES shows that ocean-wave properties can significantly alter air-sea momentum flux, not just near-surface wind speed.",
+      "engineering_relevance": "Accurately representing wave–turbulence coupling is important for climate prediction, offshore wind design, ocean circulation modeling, and marine engineering.",
+      "method": [
+        "Large Eddy Simulation of the marine atmospheric boundary layer (MABL).",
+        "Introduced a local subfilter wave drag parameterization for dynamic, unresolved wave effects.",
+        "Varied significant wave height and peak spectral frequency to assess momentum-flux sensitivity."
+      ],
+      "evidence_signal": "Model results were compared against field data and used to examine how friction velocity and surface stress depend on both wind and wave conditions.",
+      "watch_item": "The approach may be sensitive to how wave spectra and subfilter drag are parameterized, so transferability across sea states and resolutions should be checked carefully.",
+      "hashtags": [
+        "#FluidMechanics",
+        "#Turbulence",
+        "#LargeEddySimulation",
+        "#OceanWaves",
+        "#MarineAtmosphericBoundaryLayer"
+      ],
+      "paper_id": "2026-06-13-arxiv-sea_surface_roughness_dependence_on_ocean_wave_parameters_through_large_eddy_simulation_wi",
+      "paper_title": "Sea Surface Roughness Dependence on Ocean Wave Parameters through Large Eddy Simulation with Local Subfilter Wave Drag",
+      "paper_date": "2026-06-13",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-06-16T12:57:54",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-12-arxiv-multiscale_hypersonic_boundary_layer_reconstruction_via_spectral_binning_and_subdomain_wis",
+    "arxiv_id": "2606.15023v1",
+    "date": "2026-06-12",
+    "title": "Multiscale Hypersonic Boundary Layer Reconstruction via Spectral Binning and Subdomain-wise Conditional Diffusion",
+    "authors": "Hojin Kim, Dibyajyoti Chakraborty, Takahiko Toki, Carlo Scalo, Romit Maulik",
+    "abstract": "We propose a multiscale probabilistic reconstruction framework for hypersonic Couette flow, where near-wall states are inferred from limited top-wall observations using conditional diffusion model. The boundary layer is divided into overlapping wall-normal subdomains, and a single height- and Mach-conditioned Elucidating Diffusion Model (EDM) is trained jointly for M=6,7,8 to sample velocity, density, pressure, and temperature fields conditioned on a top-wall boundary slice. A soft overlap inpainting strategy assembles subdomain predictions into full-volume reconstructions while maintaining inter-subdomain continuity and small-scale variability. To improve the spectral fidelity of the generated fields, we introduce a novel bounded binned spectral power (BSP) loss that preserves high-wavenumber content while remaining numerically stable across the diffusion noise schedule. Validation against direct numerical simulation data shows that the model recovers instantaneous structures, spectra, statistical profiles, correlations, and wall quantities across all training Mach numbers, while providing spatially structured uncertainty estimates. The reconstructed Mach-conditioned profiles also collapse under the Trettel-Larsson transformation, indicating consistency with compressibility scaling. These results establish the domain decomposed conditional diffusion model with a bounded binned spectral loss as an effective probabilistic surrogate for near-wall reconstruction in hypersonic wall-bounded turbulence.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-06-12T23:40:01Z",
+    "updated": "2026-06-12T23:40:01Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "cs.LG"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.15023v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.15023v1"
+      }
+    ],
+    "score": 58,
+    "infographic": {
+      "key_insight": "A subdomain-wise conditional diffusion model can reconstruct full hypersonic boundary-layer fields from limited top-wall data while preserving multiscale structure and uncertainty.",
+      "engineering_relevance": "This offers a probabilistic surrogate for near-wall hypersonic turbulence where direct measurements are sparse, enabling better state estimation and wall-quantity prediction.",
+      "method": [
+        "Split the wall-normal boundary layer into overlapping subdomains and reconstruct each with a single Mach- and height-conditioned EDM.",
+        "Use soft overlap inpainting to stitch subdomain samples into a continuous full-field volume.",
+        "Add a bounded binned spectral power loss to retain high-wavenumber content without instability during diffusion training."
+      ],
+      "evidence_signal": "The model was validated on DNS data for Mach 6, 7, and 8, recovering instantaneous structures, spectra, statistics, correlations, wall quantities, and uncertainty patterns.",
+      "watch_item": "Performance likely depends on the quality of top-wall conditioning and careful tuning of overlap/inpainting and spectral-loss settings for stable deployment.",
+      "hashtags": [
+        "#Hypersonics",
+        "#Turbulence",
+        "#DiffusionModel",
+        "#CFD",
+        "#MachineLearning"
+      ],
+      "paper_id": "2026-06-12-arxiv-multiscale_hypersonic_boundary_layer_reconstruction_via_spectral_binning_and_subdomain_wis",
+      "paper_title": "Multiscale Hypersonic Boundary Layer Reconstruction via Spectral Binning and Subdomain-wise Conditional Diffusion",
+      "paper_date": "2026-06-12",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-06-16T12:57:56",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-14-arxiv-near_field_combustion_noise_source_dynamics_in_a_reacting_supersonic_temporal_mixing_layer",
+    "arxiv_id": "2606.15626v1",
+    "date": "2026-06-14",
+    "title": "Near-Field Combustion-Noise Source Dynamics in a Reacting Supersonic Temporal Mixing Layer",
+    "authors": "Sriram P. Kalathoor, Joseph C. Oefelein",
+    "abstract": "Compressibility and chemical reactions in reacting flows provide source mechanisms for pressure fluctuations whose signatures depend on the flow, source distribution, and acoustic environment. Bounded flows can sustain strong feedback and narrowband tones, whereas boundary-free flows more often exhibit broadband source activity distributed across frequency. Near-field combustion-noise source dynamics are examined in a supersonic reacting hydrogen-air temporal mixing layer using high-fidelity time-resolved direct numerical simulation data. Pressure, heat-release, and dilatation fields are used to identify how localized reacting structures, compressive disturbances, broadband spectral content, and burst-driven temporal organization interact. The results show weak pressure--heat-release coherence concentrated within selected low-frequency bands, with no collapse onto a single dominant mode. Combustion intermittency modulates the near-field pressure response within these bands and is accompanied by burst-driven amplitude modulation and transient trajectory sensitivity, while the overall dynamics remain broadband and bounded. A planar source-radiation-potential projection further shows moderate low-frequency angular bias associated with the heat-release source distribution. Information-theoretic measures indicate that pressure fluctuations share more statistical structure with heat release than with dilatation. The analysis characterizes source-side organization and near-field pressure response in the sampled DNS of a reacting shear layer, providing a basis for subsequent observer-based or acoustic-analogy radiation calculations.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-06-14T06:26:21Z",
+    "updated": "2026-06-14T06:26:21Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.15626v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.15626v1"
+      }
+    ],
+    "score": 55,
+    "infographic": {
+      "key_insight": "In a supersonic reacting mixing layer, near-field combustion noise is broadband and burst-driven, with weak but frequency-selective coupling between pressure and heat release rather than a single dominant acoustic mode.",
+      "engineering_relevance": "This helps guide how to predict and mitigate combustion noise in high-speed reacting flows where source intermittency and low-frequency bias matter more than tonal resonance.",
+      "method": [
+        "High-fidelity time-resolved DNS of a supersonic hydrogen-air temporal mixing layer",
+        "Joint analysis of pressure, heat-release, and dilatation fields",
+        "Spectral, source-radiation-potential, and information-theoretic measures of coupling"
+      ],
+      "evidence_signal": "The DNS shows weak pressure–heat-release coherence in selected low-frequency bands, moderate low-frequency angular bias in the source projection, and stronger statistical similarity between pressure and heat release than between pressure and dilatation.",
+      "watch_item": "The findings are near-field and source-side; translating them to far-field noise predictions will require observer-based or acoustic-analogy calculations.",
+      "hashtags": [
+        "#CombustionNoise",
+        "#SupersonicFlow",
+        "#DNS",
+        "#ReactingFlows",
+        "#Turbulence"
+      ],
+      "paper_id": "2026-06-14-arxiv-near_field_combustion_noise_source_dynamics_in_a_reacting_supersonic_temporal_mixing_layer",
+      "paper_title": "Near-Field Combustion-Noise Source Dynamics in a Reacting Supersonic Temporal Mixing Layer",
+      "paper_date": "2026-06-14",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-06-16T12:57:59",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-13-arxiv-the_extended_kdv_equation_augmented_lagrangian_and_variational_solitary_waves_with_applica",
+    "arxiv_id": "2606.15487v1",
+    "date": "2026-06-13",
+    "title": "The Extended KdV Equation: Augmented Lagrangian and Variational Solitary Waves with Applications to Dispersive Hydrodynamics",
+    "authors": "Saleh Baqer, Hamid Said",
+    "abstract": "In this work, we extend the method of averaged Lagrangian to the study of the general second-order (non-conservative) extended Korteweg--de Vries equation, known as the eKdV equation. Building on the framework introduced in [18], we construct a master (augmented) Lagrangian, modeled on Luke's Lagrangian, that incorporates the governing constraints at the appropriate asymptotic orders via the method of Lagrange multipliers. Averaging the resulting Euler-Lagrange equations in the traveling wave setting yields the existence of a (single) solitary wave solution with a $\\operatorname{sech}^2$ profile. Explicit second-order formulas are obtained for the height of the solitary wave, together with the solitary wave velocity and inverse width, in terms of a fixed amplitude parameter. A key feature of the derived expressions is their asymptotic reduction to the classical KdV results when the first-order terms are retained. To assess the robustness and utility of the variational solitonic solutions, the derived formulas are subsequently applied, via the dispersive shock equal amplitude approximation method, to estimate the height and velocity of the leading solitary wave edge of dispersive shock waves governed by the eKdV Riemann problem. Theoretical predictions for the relevant wave parameters in both the eKdV solitary wave and dispersive shock wave problems are compared with direct numerical simulations and found to be in strong agreement.",
+    "category": "CFD Surrogates",
+    "source": "arXiv",
+    "published": "2026-06-13T21:56:10Z",
+    "updated": "2026-06-13T21:56:10Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "nlin.PS"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.15487v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.15487v1"
+      }
+    ],
+    "score": 55,
+    "infographic": {
+      "key_insight": "An augmented variational framework yields second-order solitary-wave formulas for the extended KdV equation, recovering classical KdV results in the first-order limit.",
+      "engineering_relevance": "The closed-form wave-speed and amplitude relations provide a practical reduced-order tool for predicting solitary waves and dispersive shock edges in dispersive hydrodynamics.",
+      "method": [
+        "Build a master (augmented) Lagrangian modeled on Luke’s formulation",
+        "Enforce eKdV constraints with Lagrange multipliers at the correct asymptotic order",
+        "Average the Euler–Lagrange equations in a traveling-wave setting to derive a sech^2 solitary wave and explicit second-order parameter formulas"
+      ],
+      "evidence_signal": "The derived solitary-wave and dispersive-shock predictions were compared against direct numerical simulations and reported to be in strong agreement.",
+      "watch_item": "The formulas are asymptotic and tailored to the eKdV regime, so accuracy may degrade outside the assumed ordering or for strongly nonperturbative dynamics.",
+      "hashtags": [
+        "#ExtendedKdV",
+        "#VariationalMethods",
+        "#SolitaryWaves",
+        "#DispersiveShocks",
+        "#ComputationalFluidDynamics"
+      ],
+      "paper_id": "2026-06-13-arxiv-the_extended_kdv_equation_augmented_lagrangian_and_variational_solitary_waves_with_applica",
+      "paper_title": "The Extended KdV Equation: Augmented Lagrangian and Variational Solitary Waves with Applications to Dispersive Hydrodynamics",
+      "paper_date": "2026-06-13",
+      "paper_category": "CFD Surrogates",
+      "generated_at": "2026-06-16T12:58:01",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-12-arxiv-collective_bubble_nucleation_scale_separated_hydrodynamic_control_of_site_stability_and_va",
+    "arxiv_id": "2606.14567v1",
+    "date": "2026-06-12",
+    "title": "Collective Bubble Nucleation: Scale-Separated Hydrodynamic Control of Site Stability and Vapor Removal",
+    "authors": "Rameez Iqbal, Gautier Rouaze, Gio Bellone, Francesco Minola, Lenan Zhang, Zhengmao Lu",
+    "abstract": "Interactions between boiling bubbles are well known to influence departure dynamics and heat transfer, yet their role in governing nucleation stability, whether sites activate reproducibly, persist, and deactivate under changing thermal loads, remains poorly understood. Here we show that nucleation can be a collective process: neighboring sites at close spacings exhibit reduced variability and sustained activity, consistent with a non-local hydrodynamic shielding mechanism whereby neighboring bubbles slow the intervening flow, reducing convective heat removal and stabilizing vapor embryos. To isolate near-wall nucleation dynamics from bubble-scale vapor removal, we design surfaces comprising pairs of cavities, with intra-pair spacing tuned to the boundary layer scale and inter-pair separation to the departure diameter scale. While the former governs nucleation behavior, the latter governs collective vapor removal once sites are fully active, yielding transitions between excessive, promotive, and isolated departure regimes. Together these results establish a multiscale framework for designing robust, high-performance boiling surfaces.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-06-12T15:44:58Z",
+    "updated": "2026-06-12T15:44:58Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.14567v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.14567v1"
+      }
+    ],
+    "score": 55,
+    "infographic": {
+      "key_insight": "Bubble nucleation can be a collective, scale-dependent process: closely spaced sites hydrodynamically shield each other, reducing convective cooling and making activation more stable and reproducible.",
+      "engineering_relevance": "By tuning cavity spacing to separate near-wall nucleation control from bubble-scale vapor removal, engineers can design boiling surfaces that are more robust and higher performing across changing heat loads.",
+      "method": [
+        "Designed paired-cavity surfaces with intra-pair spacing set to the boundary-layer scale.",
+        "Set inter-pair separation to the departure-diameter scale to decouple nucleation from collective vapor removal.",
+        "Compared site behavior across spacings to identify excessive, promotive, and isolated departure regimes."
+      ],
+      "evidence_signal": "The abstract reports reduced variability and sustained activity at close spacings, supporting a hydrodynamic shielding mechanism that stabilizes nucleation sites.",
+      "watch_item": "The multiscale spacing strategy may be sensitive to operating conditions and geometry, so performance could shift outside the tested thermal and flow regime.",
+      "hashtags": [
+        "#BoilingHeatTransfer",
+        "#BubbleNucleation",
+        "#MultiscaleDesign",
+        "#HydrodynamicShielding",
+        "#ThermalManagement"
+      ],
+      "paper_id": "2026-06-12-arxiv-collective_bubble_nucleation_scale_separated_hydrodynamic_control_of_site_stability_and_va",
+      "paper_title": "Collective Bubble Nucleation: Scale-Separated Hydrodynamic Control of Site Stability and Vapor Removal",
+      "paper_date": "2026-06-12",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-06-16T12:58:04",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-12-arxiv-learning_turbulent_transport_via_mori_zwanzig_graph_neural_networks",
+    "arxiv_id": "2606.14918v1",
+    "date": "2026-06-12",
+    "title": "Learning turbulent transport via Mori--Zwanzig graph neural networks",
+    "authors": "André Freitas, Xander M. de Wit, Alessandro Gabbana, Michael Woodward, Federico Toschi, Yen Ting Lin",
+    "abstract": "We introduce a Mori--Zwanzig graph neural network (MZ--GNN) framework for learning reduced-order Lagrangian dynamics of tracer particles in homogeneous isotropic turbulence. The model represents particle acceleration as a finite-memory expansion over present and delayed particle-neighborhood graphs, with each memory contribution parameterized by an equivariant message-passing graph neural network. By construction, the architecture respects the relevant physical symmetries of the problem, including permutation equivariance, Galilean invariance, and equivariance under rotations and reflections. Trained on direct numerical simulation data, the model is rolled out autoregressively and evaluated on observables that are not imposed during training. We show that memory is essential for recovering the intermittent, heavy-tailed acceleration statistics, and that the learned dynamics accurately reproduce single-particle dispersion, pair-dispersion statistics, and four-particle tetrad geometry. Our results establish a physically structured, scalable route to data-driven multi-particle simulation of turbulent transport, and a template for learning reduced dynamics of correlated, symmetry-rich particle systems.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-06-12T19:53:59Z",
+    "updated": "2026-06-12T19:53:59Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "physics.comp-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.14918v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.14918v1"
+      }
+    ],
+    "score": 54,
+    "infographic": {
+      "key_insight": "A memory-augmented, symmetry-preserving graph neural network can learn reduced Lagrangian turbulent transport and recover key multi-particle statistics in homogeneous isotropic turbulence.",
+      "engineering_relevance": "This offers a scalable data-driven surrogate for turbulent particle transport, useful for fast simulation and reduced-order modeling in multiphase flow and dispersion applications.",
+      "method": [
+        "Mori--Zwanzig finite-memory expansion over present and delayed particle-neighborhood graphs",
+        "Equivariant message-passing GNN predicts acceleration while enforcing permutation, Galilean, rotational, and reflection symmetries",
+        "Autoregressive rollout used to test long-horizon dynamics and unseen observables"
+      ],
+      "evidence_signal": "Trained on direct numerical simulation data, the model reproduces intermittent acceleration tails, single-particle and pair dispersion, and four-particle tetrad geometry during evaluation.",
+      "watch_item": "Performance depends on learned memory depth and high-quality DNS training data, so extrapolation to different turbulence regimes or particle types may require retraining.",
+      "hashtags": [
+        "#Turbulence",
+        "#GraphNeuralNetworks",
+        "#MoriZwanzig",
+        "#ReducedOrderModeling",
+        "#LagrangianDynamics"
+      ],
+      "paper_id": "2026-06-12-arxiv-learning_turbulent_transport_via_mori_zwanzig_graph_neural_networks",
+      "paper_title": "Learning turbulent transport via Mori--Zwanzig graph neural networks",
+      "paper_date": "2026-06-12",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-06-16T12:58:07",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-12-arxiv-flow_behind_the_imperial_front_wing_comparison_of_results_from_volumetric_ptv_experiment_a",
+    "arxiv_id": "2606.14342v1",
+    "date": "2026-06-12",
+    "title": "Flow behind the Imperial Front Wing: comparison of results from volumetric PTV experiment and Nektar++ simulations",
+    "authors": "Isabella Fumarola, Alexandra I. Liosi, Parv Khurana, Adam Meziane, Isaac Balbolia, Sherwin J. Spencer",
+    "abstract": "High-fidelity simulations are increasingly adopted, due to advances in computational power and methods such as Direct Numerical Simulation (DNS) and hybrid Large-Eddy Simulation (LES). These approaches are particularly valuable for unsteady flows around complex geometries at high Reynolds numbers; however they still require careful experimental validation. Planar and stereo Particle Image Velocimetry (PIV) are widely used for measurements but limited by measurement-plane selection and their ability to capture vortices shapes and trajectories. This motivates the growing interest in volumetric techniques, historically difficult to implement in industrial settings. Recent advances in Particle Tracking Velocimetry (PTV) for measuring flows over large volumes make this approach suitable for validating numerical simulations of complex flows.This study compares volumetric PTV measurements against high-fidelity LES to assess the capabilities and limitations for industrial flows. The aim is to establish a benchmark PTV dataset for motorsport aerodynamics using the Shake-The-Box algorithm. The experiment was carried out in the 10x5 wind tunnel at Imperial College London equipped with a rolling road for ground effect simulation and capable of testing up to 50% scale F1 model. Volumetric PTV measurements were performed downstream of the open-source Imperial Front Wing (IFW) at Re=74896. Results are compared with planar PIV studies and implicit LES simulation using spectral h/p elements in Nektar++. This work addresses open questions in the literature concerning the wake of the IFW. Good quantitative agreement is observed in the wake topology. A previously unreported vortex is identified which has the key role of preventing the merging of other dominant structures. These results demonstrate the suitability of PTV and STB for industrial applications while providing a benchmark dataset for the IFW.",
+    "category": "Aerodynamics",
+    "source": "arXiv",
+    "published": "2026-06-12T10:52:17Z",
+    "updated": "2026-06-12T10:52:17Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.14342v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.14342v1"
+      }
+    ],
+    "score": 53,
+    "infographic": {
+      "key_insight": "Volumetric PTV with Shake-The-Box can resolve the Imperial Front Wing wake in enough detail to validate high-fidelity Nektar++ LES and reveal a previously unreported vortex structure.",
+      "engineering_relevance": "This provides a benchmark dataset and a practical validation route for motorsport aerodynamics, supporting more reliable CFD use for complex unsteady industrial flows.",
+      "method": [
+        "Volumetric Particle Tracking Velocimetry (PTV) in the 10x5 Imperial College wind tunnel",
+        "Shake-The-Box reconstruction of the wake downstream of the open-source Imperial Front Wing at Re=74896",
+        "Comparison against implicit LES in Nektar++ and prior planar PIV results"
+      ],
+      "evidence_signal": "The abstract reports good quantitative agreement in wake topology between volumetric PTV and LES, including identification of a new vortex that prevents merging of dominant structures.",
+      "watch_item": "PTV/STB remains experimentally demanding in industrial settings, so calibration, particle seeding quality, and volume coverage can strongly affect reliability.",
+      "hashtags": [
+        "#Aerodynamics",
+        "#ParticleTrackingVelocimetry",
+        "#LargeEddySimulation",
+        "#MotorsportCFD",
+        "#WindTunnel"
+      ],
+      "paper_id": "2026-06-12-arxiv-flow_behind_the_imperial_front_wing_comparison_of_results_from_volumetric_ptv_experiment_a",
+      "paper_title": "Flow behind the Imperial Front Wing: comparison of results from volumetric PTV experiment and Nektar++ simulations",
+      "paper_date": "2026-06-12",
+      "paper_category": "Aerodynamics",
+      "generated_at": "2026-06-16T12:58:09",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-11-arxiv-effects_of_mean_flow_skew_on_turbulent_shear_layers_part_ii_experimental_investigation",
+    "arxiv_id": "2606.13596v1",
+    "date": "2026-06-11",
+    "title": "Effects of mean flow skew on turbulent shear layers. Part II. Experimental investigation",
+    "authors": "Dipendra Gupta, Vedant Kumar, Johan Larsson, Gregory P. Bewley",
+    "abstract": "Planar turbulent mixing layers, formed by the interactions of two parallel streams with different velocities, have been studied far more than three dimensional (3D) turbulent mixing layers, in which the incoming streams are skewed, and not parallel. Yet many practical shear flows are 3D. Here, we develop and validate an experimental methodology to generate and characterize skewed turbulent mixing layers and to quantify how mean-flow skew modifies mixing layer dynamics. We introduce skew with a spanwise deflection of the mean flow using turning vanes mounted near the trailing edge of a splitter plate, and we use cross-wire anemometry to investigate the downstream evolution of the flow. Relative to the planar configuration, the skewed mixing layer exhibits systematic reductions in both mean and turbulent quantities, with deviations reaching approximately 40\\%. Despite these quantitative differences, the fundamental characteristics of the mixing layer remain largely unchanged. Mean-velocity profiles collapse under similarity scaling, shear-layer thicknesses retain approximately linear downstream growth, and Reynolds-stress profiles preserve their characteristic near-Gaussian form. Townsend's structure parameter, which quantifies the efficiency of turbulent momentum transport, remains approximately invariant between the planar and skewed configurations, in contrast to skewed turbulent boundary layers, wherein comparable mean flow skewing reduces the parameter by approximately 30\\%. These results indicate that mean flow skew modifies turbulent mixing layers quantitatively while exerting only a secondary influence on their underlying dynamics. This study establishes a controlled experimental framework and empirical benchmark for future investigations of three-dimensional free-shear turbulence.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-06-11T17:13:50Z",
+    "updated": "2026-06-11T17:13:50Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "physics.soc-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.13596v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.13596v1"
+      }
+    ],
+    "score": 53,
+    "infographic": {
+      "key_insight": "Introducing spanwise mean-flow skew into a turbulent mixing layer changes the magnitudes of mean and turbulent quantities, but leaves the layer’s core self-similar behavior largely intact.",
+      "engineering_relevance": "This provides a controlled experimental benchmark for predicting and designing three-dimensional free-shear flows where incoming streams are not parallel.",
+      "method": [
+        "Added skew using turning vanes mounted near the splitter-plate trailing edge",
+        "Measured downstream flow evolution with cross-wire anemometry",
+        "Compared planar and skewed mixing-layer statistics under similarity scaling"
+      ],
+      "evidence_signal": "The skewed case showed systematic reductions in mean and turbulent quantities of up to about 40%, while similarity collapse, near-linear thickness growth, and near-Gaussian Reynolds-stress shapes were preserved.",
+      "watch_item": "The results are experimental and geometry-specific, so the apparent invariance of mixing-layer structure should not be assumed to generalize to all 3D shear flows.",
+      "hashtags": [
+        "#Turbulence",
+        "#MixingLayer",
+        "#FreeShearFlow",
+        "#ExperimentalFluidMechanics",
+        "#ThreeDimensionalFlow"
+      ],
+      "paper_id": "2026-06-11-arxiv-effects_of_mean_flow_skew_on_turbulent_shear_layers_part_ii_experimental_investigation",
+      "paper_title": "Effects of mean flow skew on turbulent shear layers. Part II. Experimental investigation",
+      "paper_date": "2026-06-11",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-06-16T12:58:12",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-14-arxiv-effect_of_biofouling_on_microplastic_transport_in_a_3_d_global_eulerian_model",
+    "arxiv_id": "2606.15885v1",
+    "date": "2026-06-14",
+    "title": "Effect of Biofouling on Microplastic Transport in a 3-D Global Eulerian Model",
+    "authors": "Zih-En Tseng, Yue Wu, Chris Ruf, Dimitris Menemenlis, Yulin Pan",
+    "abstract": "Biofouling -- the occupation of microplastic (MP) surfaces by marine microbes -- alters particles' buoyancy and transport, yet its effect on the global distribution of MPs has not been well quantified. We present the first three-dimensional global Eulerian model to fully couple MP transport with biofouling, by augmenting the concentration field with an extra dimension representing the biomass attachment density on MP surfaces. This approach embeds time-dependent particle properties directly into the Eulerian concentration field, overcoming a fundamental challenge of tracking property evolution in grid-based models. Idealized simulations show that biofouling significantly reshapes the vertical distribution of MPs when two conditions are met: the particles must be sufficiently buoyant when they are clean to remain near the sea surface, and the local plankton growth rate must exceed the decay rate. In three-dimensional global simulations, biofouling substantially alters the distribution of large MPs ($\\gtrsim 10$ $μ$m): biofouled particles are transported below the mixed layer to 500 m depth, and the subtropical surface garbage patches become more dispersed with reduced peak concentrations. This dispersion is due to a subsurface transport route, where biofouled particles sink into layers with reversed current and are carried outward from the gyre centers before regaining buoyancy. Small particles ($\\lesssim 1$ $μ$m) remain unaffected as they stay effectively neutrally buoyant even when biofouled. A comparison with a global trawler dataset shows that incorporating biofouling reduces the fraction of outlying model-observation data points from 25\\% to 13\\%, demonstrating a meaningful improvement in model skill.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-06-14T16:07:51Z",
+    "updated": "2026-06-14T16:07:51Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "physics.ao-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.15885v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.15885v1"
+      }
+    ],
+    "score": 52,
+    "infographic": {
+      "key_insight": "Adding biofouling to a 3-D global Eulerian microplastic model shows that surface-clean particles can sink, disperse, and re-enter transport pathways, strongly reshaping large-microplastic distributions.",
+      "engineering_relevance": "Including time-evolving particle properties in Eulerian transport models improves prediction of microplastic accumulation zones and vertical exposure pathways, which is important for ocean monitoring and cleanup planning.",
+      "method": [
+        "Augmented the Eulerian concentration field with a new dimension for biomass attachment density on microplastic surfaces.",
+        "Coupled microplastic transport with biofouling-driven changes in buoyancy and vertical motion in a 3-D global model.",
+        "Compared idealized and global simulations across particle sizes to isolate when biofouling changes transport behavior."
+      ],
+      "evidence_signal": "Against a global trawler dataset, adding biofouling reduced outlying model-observation points from 25% to 13%, indicating better agreement with observations.",
+      "watch_item": "The effect depends on particles being initially buoyant and on local plankton growth exceeding decay, so the improvement may not generalize to all ocean regions or microplastic types.",
+      "hashtags": [
+        "#Microplastics",
+        "#Biofouling",
+        "#OceanModeling",
+        "#EulerianSimulation",
+        "#ComputationalFluidDynamics"
+      ],
+      "paper_id": "2026-06-14-arxiv-effect_of_biofouling_on_microplastic_transport_in_a_3_d_global_eulerian_model",
+      "paper_title": "Effect of Biofouling on Microplastic Transport in a 3-D Global Eulerian Model",
+      "paper_date": "2026-06-14",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-06-16T12:58:15",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-12-arxiv-optimal_heat_transport_at_the_edge_of_energy_stability",
+    "arxiv_id": "2606.14138v1",
+    "date": "2026-06-12",
+    "title": "Optimal heat transport at the edge of energy stability",
+    "authors": "Zijing Ding, Baole Wen, Hui Li",
+    "abstract": "Large heat flux is commonly associated with vigorous convection and turbulent mixing. Here, we show that this connection is not fundamental. Using a marginal energy-stability theory, we identify near-optimal convective heat transport with the saturation of an energy-stability constraint rather than with turbulence intensity. The theory selects mean temperature profiles whose fluxes closely approach the best available optimal transport states and rigorous upper bounds, predicting the asymptotic scaling $Nu\\sim0.0245Ra^{1/2}$ at large Rayleigh number. These profiles exhibit a hierarchical structure consisting of conductive inner layers, logarithmic-like intermediate layers, and a stably stratified bulk, closely mirroring optimal transport calculations and suggesting that maximal convective heat transport emerges near marginal energy stability. More strikingly, the same profiles can be converted into exact conductive states through prescribed internal thermal forcing. Direct numerical simulations show that an initially turbulent flow then relaxes to a motionless state while maintaining a large wall heat flux. Energy-stability saturation therefore provides both a physical interpretation of transport limits and a route to high-flux heat transfer without turbulence.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-06-12T05:52:41Z",
+    "updated": "2026-06-12T05:52:41Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.14138v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.14138v1"
+      }
+    ],
+    "score": 51,
+    "infographic": {
+      "key_insight": "Maximum convective heat transport is governed by marginal energy stability, not by turbulence intensity, with near-optimal flux arising at the edge of an energy-stability constraint.",
+      "engineering_relevance": "This suggests a path to high wall heat-transfer rates without sustaining turbulence, potentially enabling more efficient thermal management via designed mean profiles or internal forcing.",
+      "method": [
+        "Marginal energy-stability theory to select admissible mean temperature profiles",
+        "Comparison against optimal transport states and rigorous upper bounds",
+        "Direct numerical simulations of turbulent flows initialized toward the predicted profiles"
+      ],
+      "evidence_signal": "The abstract reports close agreement with optimal transport calculations and bounds, predicts Nu ~ 0.0245 Ra^{1/2} at large Ra, and shows turbulent flows relaxing to motionless conductive states while retaining large wall heat flux under internal forcing.",
+      "watch_item": "The conversion to exact conductive states relies on prescribed internal thermal forcing, so practical implementation may be constrained by how such forcing can be realized in real devices.",
+      "hashtags": [
+        "#HeatTransfer",
+        "#Convection",
+        "#Turbulence",
+        "#EnergyStability",
+        "#ComputationalFluidDynamics"
+      ],
+      "paper_id": "2026-06-12-arxiv-optimal_heat_transport_at_the_edge_of_energy_stability",
+      "paper_title": "Optimal heat transport at the edge of energy stability",
+      "paper_date": "2026-06-12",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-06-16T12:58:18",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-06-11-arxiv-numerical_simulations_of_transition_and_long_term_response_of_a_wind_turbine_airfoil",
+    "arxiv_id": "2606.13969v1",
+    "date": "2026-06-11",
+    "title": "Numerical simulations of transition and long-term response of a wind turbine airfoil",
+    "authors": "Thales Coelho Leite Fava, Niels Sørensen, Dan Henningson, Ardeshir Hanifi",
+    "abstract": "Numerical simulations are performed for an FFA-W3 wind-turbine airfoil corresponding to a section of the DTU 10-MW Reference Wind Turbine. Wall-resolved large-eddy simulations (LES) are carried out with Nek5000 and EllipSys at chord Reynolds number $Re_c=1\\times10^5$ and effective angle of attack $AoA=3.1^\\circ-3.3^\\circ$. A spanwise domain width of 10 percent of the chord is sufficient to reproduce the time-averaged flow and the evolution of the main disturbances. EllipSys is validated against Nek5000 for LES, showing close agreement for the mean flow and most amplified perturbations. EllipSys underpredicts the amplitude of Tollmien-Schlichting waves in the attached boundary layer, owing to higher numerical dissipation, but closely predicts the evolution of the Kelvin-Helmholtz (KH) mode in the laminar separation bubble, in agreement with parabolized stability equation (PSE) results. The mode shape is extracted using spectral proper orthogonal decomposition (SPOD), revealing the KH wavepacket forming in the separation bubble. Long-time EllipSys simulations show a slow modulation of the normal-force coefficient, with amplitude 10.5 percent and period 48 flow-through times, corresponding to $f=f^*c/U_\\infty=0.021$ and $St=f\\sin(AoA)=0.0012$. This frequency is associated with low-frequency oscillations reported in airfoil studies, although the Strouhal number is lower than previously observed and occurs at smaller angle of attack. For the DTU 10-MW turbine, the oscillation period corresponds to 7.7 blade rotations. Periodic stalling and reattachment may trigger the oscillation, while sufficiently high reverse flow on both sides of the airfoil may permit absolute instability and periodic bubble bursting.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-06-11T23:23:41Z",
+    "updated": "2026-06-11T23:23:41Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2606.13969v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2606.13969v1"
+      }
+    ],
+    "score": 51,
+    "infographic": {
+      "key_insight": "Wall-resolved LES shows that a 10% chord spanwise domain can capture the main transition physics of a wind-turbine airfoil, including a Kelvin-Helmholtz wavepacket in the laminar separation bubble and a slow low-frequency force oscillation.",
+      "engineering_relevance": "The results help validate lower-cost CFD settings for wind-turbine airfoil transition prediction and identify operating conditions where periodic stall/reattachment or bubble bursting may affect loads and fatigue.",
+      "method": [
+        "Wall-resolved LES with Nek5000 and EllipSys at Re_c = 1e5 and AoA = 3.1°–3.3°",
+        "Spectral proper orthogonal decomposition (SPOD) to extract dominant disturbance mode shapes",
+        "Comparison with parabolized stability equation (PSE) results and long-time force histories"
+      ],
+      "evidence_signal": "EllipSys matches Nek5000 closely for mean flow and most perturbation growth, while long-time simulations show a 10.5% normal-force modulation with period 48 flow-through times.",
+      "watch_item": "EllipSys underpredicts Tollmien-Schlichting wave amplitude due to higher numerical dissipation, so near-wall transition predictions may remain sensitive to solver choice and resolution.",
+      "hashtags": [
+        "#WindTurbine",
+        "#LargeEddySimulation",
+        "#Transition",
+        "#LaminarSeparationBubble",
+        "#Aerodynamics"
+      ],
+      "paper_id": "2026-06-11-arxiv-numerical_simulations_of_transition_and_long_term_response_of_a_wind_turbine_airfoil",
+      "paper_title": "Numerical simulations of transition and long-term response of a wind turbine airfoil",
+      "paper_date": "2026-06-11",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-06-16T12:58:22",
+      "generator": "openai"
+    }
+  }
+]

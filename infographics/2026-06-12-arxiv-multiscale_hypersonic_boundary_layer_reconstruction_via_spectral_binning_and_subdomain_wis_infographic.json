@@ -1,24 +1,24 @@
 {
-  "key_insight": "A subdomain-wise conditional diffusion model can reconstruct full hypersonic boundary-layer fields from limited top-wall data while preserving multiscale structure and uncertainty.",
-  "engineering_relevance": "This offers a probabilistic surrogate for near-wall hypersonic turbulence where direct measurements are sparse, enabling better state estimation and wall-quantity prediction.",
+  "key_insight": "A single Mach- and height-conditioned diffusion model can reconstruct hypersonic near-wall turbulence from sparse top-wall data by stitching overlapping wall-normal subdomains and preserving spectral content.",
+  "engineering_relevance": "This offers a probabilistic surrogate for hypersonic boundary-layer sensing and reconstruction, with potential use in reduced-observation diagnostics, uncertainty-aware modeling, and wall-adjacent flow prediction.",
   "method": [
-    "Split the wall-normal boundary layer into overlapping subdomains and reconstruct each with a single Mach- and height-conditioned EDM.",
-    "Use soft overlap inpainting to stitch subdomain samples into a continuous full-field volume.",
-    "Add a bounded binned spectral power loss to retain high-wavenumber content without instability during diffusion training."
+    "Train one conditional EDM jointly on M=6, 7, and 8 DNS data",
+    "Reconstruct overlapping wall-normal subdomains and merge them with soft inpainting for continuity",
+    "Add bounded binned spectral power loss to retain high-wavenumber structure during diffusion sampling"
   ],
-  "evidence_signal": "The model was validated on DNS data for Mach 6, 7, and 8, recovering instantaneous structures, spectra, statistics, correlations, wall quantities, and uncertainty patterns.",
-  "watch_item": "Performance likely depends on the quality of top-wall conditioning and careful tuning of overlap/inpainting and spectral-loss settings for stable deployment.",
+  "evidence_signal": "Against DNS, the model reproduces instantaneous fields, spectra, statistics, correlations, wall quantities, and Trettel-Larsson-collapsed profiles across the training Mach numbers.",
+  "watch_item": "The approach depends on good top-wall conditioning and subdomain blending, so extrapolation to unseen Mach numbers or stronger flow regimes may need retraining or careful validation.",
   "hashtags": [
     "#Hypersonics",
+    "#BoundaryLayer",
+    "#DiffusionModels",
     "#Turbulence",
-    "#DiffusionModel",
-    "#CFD",
-    "#MachineLearning"
+    "#ScientificML"
   ],
   "paper_id": "2026-06-12-arxiv-multiscale_hypersonic_boundary_layer_reconstruction_via_spectral_binning_and_subdomain_wis",
   "paper_title": "Multiscale Hypersonic Boundary Layer Reconstruction via Spectral Binning and Subdomain-wise Conditional Diffusion",
   "paper_date": "2026-06-12",
   "paper_category": "Turbulence",
-  "generated_at": "2026-06-16T12:57:56",
+  "generated_at": "2026-06-17T12:20:33",
   "generator": "openai"
 }
