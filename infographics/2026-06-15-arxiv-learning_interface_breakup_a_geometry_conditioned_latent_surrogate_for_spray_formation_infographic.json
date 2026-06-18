@@ -1,24 +1,24 @@
 {
-  "key_insight": "The paper shows that adaptive mesh refinement (AMR) cell density can act as a compact latent representation to predict spray breakup dynamics and nozzle-geometry-conditioned interface evolution.",
-  "engineering_relevance": "This enables much faster spray-nozzle design exploration by replacing expensive VOF-AMR CFD runs with a surrogate that preserves key transient two-phase breakup behavior.",
+  "key_insight": "The paper shows that AMR cell-density patterns can act as a compact latent representation for learning transient liquid–gas interface breakup across nozzle geometries.",
+  "engineering_relevance": "This enables much faster spray-nozzle design exploration by replacing expensive VOF-AMR CFD runs with a geometry-conditioned surrogate that preserves key breakup dynamics.",
   "method": [
-    "Train on 797 two-phase nozzle simulations.",
-    "Encode AMR cell-density fields instead of full flow states.",
-    "Reconstruct transient density and nozzle geometry, then use a second stage for remaining flow variables."
+    "Train on 797 Basilisk VOF-AMR nozzle simulations.",
+    "Encode the AMR cell-density field as the latent proxy for refinement structure.",
+    "Use a second-stage model to reconstruct density evolution, nozzle geometry, and other flow variables."
   ],
-  "evidence_signal": "On held-out simulations, the surrogate captures key interface dynamics and runs in 0.045 s per trajectory, over 6×10^4 faster than Basilisk CFD.",
-  "watch_item": "Because the surrogate relies on learned AMR refinement structure, performance may drop for nozzle geometries or breakup regimes outside the training distribution.",
+  "evidence_signal": "On held-out simulations, the surrogate matches key interface dynamics and runs in 0.045 s per trajectory, over 6×10^4 faster than Basilisk CFD.",
+  "watch_item": "Because the model relies on AMR refinement structure as the main signal, performance may degrade when extrapolating to nozzle designs or breakup regimes far outside the training distribution.",
   "hashtags": [
-    "#CFD",
-    "#SprayFormation",
-    "#Turbulence",
+    "#FluidMechanics",
     "#SurrogateModeling",
-    "#AMR"
+    "#VolumeOfFluid",
+    "#AdaptiveMeshRefinement",
+    "#SprayFormation"
   ],
   "paper_id": "2026-06-15-arxiv-learning_interface_breakup_a_geometry_conditioned_latent_surrogate_for_spray_formation",
   "paper_title": "Learning Interface Breakup: A Geometry-Conditioned Latent Surrogate for Spray Formation",
   "paper_date": "2026-06-15",
   "paper_category": "Turbulence",
-  "generated_at": "2026-06-17T12:20:16",
+  "generated_at": "2026-06-18T11:53:36",
   "generator": "openai"
 }
