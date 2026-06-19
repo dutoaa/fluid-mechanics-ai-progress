@@ -1,24 +1,24 @@
 {
-  "key_insight": "Inverse PINNs can estimate Manning friction reliably in some shallow-water settings, but success depends strongly on geometry, observation density, noise, and whether both depth and velocity are observed.",
-  "engineering_relevance": "This benchmark helps engineers judge when sparse-field data are sufficient for calibrating hydrodynamic models and when inverse PINN friction estimates are likely to be biased or unreliable.",
+  "key_insight": "Inverse PINNs can recover Manning friction reliably in 2D shallow-water flows with enough joint depth-velocity data, but 1D cases show a persistent bias that points to identifiability limits.",
+  "engineering_relevance": "This benchmark tells hydrodynamics practitioners when sparse, noisy field measurements are sufficient for parameter estimation and when additional sensors or model redesign are needed.",
   "method": [
-    "Train a PINN jointly for the flow field and a positive scalar Manning coefficient.",
-    "Use a two-phase strategy: fit observations first, then add the physics residual.",
-    "Benchmark recovery under varying sparsity, noise, and observed variable types in 1D and 2D shallow-water cases."
+    "Train a PINN to jointly infer the flow field and a positive scalar Manning friction coefficient.",
+    "Use a two-phase training strategy: first fit observations, then enforce shallow-water physics residuals.",
+    "Benchmark recovery under controlled changes in sparsity, noise, and observed variable type in 1D and 2D test cases."
   ],
-  "evidence_signal": "In 2D, friction error stayed below 5% with at least 10 depth and velocity observations at noise levels up to 10%, while the 1D case showed a persistent ~15% positive bias regardless of data amount.",
-  "watch_item": "The 1D benchmark suggests structural identifiability limits, so adding more sparse noisy data may not fix bias if the model setup cannot uniquely determine friction.",
+  "evidence_signal": "In the 2D case, friction errors stayed below 5% with at least 10 depth and velocity observations and noise up to 10% of the field standard deviation, while 50 observations remained stable even at 20% noise.",
+  "watch_item": "Recovery drops sharply when only one variable is observed, and the 1D case retains about 15% positive bias regardless of data density, so identifiability checks are essential before deployment.",
   "hashtags": [
+    "#PhysicsInformedML",
     "#PINNs",
     "#ShallowWaterEquations",
-    "#InverseModeling",
-    "#HydraulicCalibration",
-    "#ComputationalFluidDynamics"
+    "#Hydrodynamics",
+    "#InverseProblems"
   ],
   "paper_id": "2026-06-16-arxiv-how_sparse_and_how_noisy_systematic_benchmarking_of_inverse_physics_informed_neural_networ",
   "paper_title": "How Sparse and How Noisy? Systematic Benchmarking of Inverse Physics-Informed Neural Networks for Manning Friction Estimation in Shallow Water Equations",
   "paper_date": "2026-06-16",
   "paper_category": "Physics-Informed ML",
-  "generated_at": "2026-06-18T11:52:57",
+  "generated_at": "2026-06-19T12:10:49",
   "generator": "openai"
 }

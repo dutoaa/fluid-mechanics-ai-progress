@@ -1,24 +1,24 @@
 {
-  "key_insight": "A PINN solves the specific Couette-flow case most accurately, but a data-driven DeepONet is far better for fast, reusable prediction across changing slip and wall-speed conditions.",
-  "engineering_relevance": "The study shows that surrogate ML models can enable near-real-time fluid-flow forecasting and rapid parametric exploration where repeated high-fidelity simulation would be too slow.",
+  "key_insight": "DeepONet learns the Couette-flow solution operator across slip and wall-velocity conditions, while PINN gives the best single-case accuracy.",
+  "engineering_relevance": "The surrogate model enables near-real-time prediction of wall-slip Couette flow, which is useful for rapid design studies and control-oriented fluid dynamics applications.",
   "method": [
-    "PINN: physics-informed solver for the governing equations with dynamic wall slip.",
-    "DeepONet: trained on Crank-Nicolson-generated data to learn the solution operator over varying boundary conditions.",
-    "Benchmarking against a numerical solver to compare accuracy, generalization, and inference speed."
+    "PINN solves the governing equations for a specific parameter set using physics constraints.",
+    "DeepONet is trained on high-fidelity Crank-Nicolson data to generalize across boundary-condition variations.",
+    "Both models are benchmarked against numerical solutions for accuracy and inference speed."
   ],
-  "evidence_signal": "Reported performance includes 0.083% relative L2 error for the PINN, 0.36% mean relative error on unseen DeepONet cases, 0.88% on out-of-distribution signals, and about a 540X speedup over the numerical solver.",
-  "watch_item": "The PINN is highly case-specific and requires retraining for new conditions, while the DeepONet depends on the coverage and quality of its training data for reliable extrapolation.",
+  "evidence_signal": "From the abstract, the PINN reached 0.083% relative L2 error, while DeepONet achieved 0.36% mean error on unseen cases and 0.88% on out-of-distribution signals, with about 540× speedup over the solver.",
+  "watch_item": "DeepONet is fast, but it still depends on representative training data and may degrade when extrapolating beyond the sampled slip and velocity range.",
   "hashtags": [
     "#PhysicsInformedML",
     "#DeepONet",
     "#PINN",
     "#FluidMechanics",
-    "#SurrogateModeling"
+    "#SurrogateModel"
   ],
   "paper_id": "2026-06-16-arxiv-solution_of_the_newtonian_plane_couette_flow_with_dynamic_wall_slip_using_machine_learning",
   "paper_title": "Solution of the Newtonian plane Couette flow with dynamic wall slip using machine-learning methods",
   "paper_date": "2026-06-16",
   "paper_category": "Physics-Informed ML",
-  "generated_at": "2026-06-18T11:52:49",
+  "generated_at": "2026-06-19T12:10:34",
   "generator": "openai"
 }
