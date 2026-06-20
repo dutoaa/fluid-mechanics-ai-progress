@@ -1,23 +1,23 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-06-19
+Generated: 2026-06-20
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
-## 1. Advances in Scientific Machine Learning for Coupled Fluid Flow and Transport
-
-- Date: 2026-06-17
-- Category: Physics-Informed ML
-- arXiv: https://arxiv.org/abs/2606.19562v1
-- PDF: https://arxiv.org/pdf/2606.19562v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-17-arxiv-advances_in_scientific_machine_learning_for_coupled_fluid_flow_and_transport_infographic.json
-
-## 2. A high-fidelity numerical database for free-stream transition
+## 1. A high-fidelity numerical database for free-stream transition
 
 - Date: 2026-06-18
 - Category: Turbulence
 - arXiv: https://arxiv.org/abs/2606.20139v1
 - PDF: https://arxiv.org/pdf/2606.20139v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-18-arxiv-a_high_fidelity_numerical_database_for_free_stream_transition_infographic.json
+
+## 2. Advances in Scientific Machine Learning for Coupled Fluid Flow and Transport
+
+- Date: 2026-06-17
+- Category: Physics-Informed ML
+- arXiv: https://arxiv.org/abs/2606.19562v1
+- PDF: https://arxiv.org/pdf/2606.19562v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-17-arxiv-advances_in_scientific_machine_learning_for_coupled_fluid_flow_and_transport_infographic.json
 
 ## 3. Solution of the Newtonian plane Couette flow with dynamic wall slip using machine-learning methods
 
@@ -123,7 +123,15 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.19731v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-18-arxiv-forcing_informed_resolvent_analysis_identification_of_input_output_relations_in_self_susta_infographic.json
 
-## 16. A Validated LBM Dataset and Pipeline for Surrogate Modeling of Turbulent 3D Obstructed Channel Flows
+## 16. APU-Accelerated Large Eddy Simulation with the Discontinuous Galerkin Solver GALÆXI
+
+- Date: 2026-06-17
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.18927v1
+- PDF: https://arxiv.org/pdf/2606.18927v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-17-arxiv-apu_accelerated_large_eddy_simulation_with_the_discontinuous_galerkin_solver_gal_xi_infographic.json
+
+## 17. A Validated LBM Dataset and Pipeline for Surrogate Modeling of Turbulent 3D Obstructed Channel Flows
 
 - Date: 2026-06-15
 - Category: CFD Surrogates
@@ -131,7 +139,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.16765v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-15-arxiv-a_validated_lbm_dataset_and_pipeline_for_surrogate_modeling_of_turbulent_3d_obstructed_cha_infographic.json
 
-## 17. Hypersonic Shock-Wave/Boundary-Layer Interaction on a Three-Dimensional Expansion-Compression Geometry
+## 18. Hypersonic Shock-Wave/Boundary-Layer Interaction on a Three-Dimensional Expansion-Compression Geometry
 
 - Date: 2026-06-17
 - Category: Turbulence
@@ -139,7 +147,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.19592v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-17-arxiv-hypersonic_shock_wave_boundary_layer_interaction_on_a_three_dimensional_expansion_compress_infographic.json
 
-## 18. Planar Lagrangian transport and scalar-gradient organization in a turbulent reacting shear layer
+## 19. Planar Lagrangian transport and scalar-gradient organization in a turbulent reacting shear layer
 
 - Date: 2026-06-18
 - Category: Turbulence
@@ -147,18 +155,10 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.20352v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-18-arxiv-planar_lagrangian_transport_and_scalar_gradient_organization_in_a_turbulent_reacting_shear_infographic.json
 
-## 19. Diapycnal material transport driven by submesoscale frontogenesis
+## 20. Diapycnal material transport driven by submesoscale frontogenesis
 
 - Date: 2026-06-16
 - Category: Turbulence
 - arXiv: https://arxiv.org/abs/2606.17473v1
 - PDF: https://arxiv.org/pdf/2606.17473v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-16-arxiv-diapycnal_material_transport_driven_by_submesoscale_frontogenesis_infographic.json
-
-## 20. Pore-shape and its spatial organization control intrinsic permeability of porous media
-
-- Date: 2026-06-17
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.19098v1
-- PDF: https://arxiv.org/pdf/2606.19098v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-17-arxiv-pore_shape_and_its_spatial_organization_control_intrinsic_permeability_of_porous_media_infographic.json
