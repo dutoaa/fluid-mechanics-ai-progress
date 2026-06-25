@@ -1,0 +1,24 @@
+{
+  "key_insight": "3D Cartesian PDE solvers can be reduced exactly to repeated 1D line solves via tensor-product/Kronecker factorization, so the 3D operator is never assembled in memory.",
+  "engineering_relevance": "This turns many CFD and PDE kernels into bandwidth-efficient, parallelizable line operations with linear complexity in problem size and major savings in storage.",
+  "method": [
+    "Derive Kronecker-product forms for finite differences, compact schemes, Galerkin, spline/IGA, collocation, ADI, and separable Poisson/Helmholtz solvers.",
+    "Use multi-right-hand-side reshaping to execute sweeps as batched line kernels; exploit BLAS-3 when dense and banded/stencil kernels otherwise.",
+    "Apply sum factorization and pencil decomposition to keep high-order quadrature and distributed-memory data movement efficient."
+  ],
+  "evidence_signal": "The abstract argues analytically that for fixed stencil width or polynomial degree the compute cost is O(N), storage is O(Nx+Ny+Nz) up to bandwidth factors, and the line kernels are embarrassingly parallel.",
+  "watch_item": "Performance depends on keeping line directions contiguous and on the cost of communication/reshaping; high-order methods can still suffer if sum factorization or pencil layout is not implemented carefully.",
+  "hashtags": [
+    "#CFD",
+    "#MatrixFree",
+    "#TensorProduct",
+    "#PDEsolvers",
+    "#HPC"
+  ],
+  "paper_id": "2026-06-23-arxiv-no_3d_matrices_a_unified_tensor_product_view_of_matrix_free_cartesian_pde_solvers",
+  "paper_title": "No 3D Matrices: A Unified Tensor-Product View of Matrix-Free Cartesian PDE Solvers",
+  "paper_date": "2026-06-23",
+  "paper_category": "CFD Surrogates",
+  "generated_at": "2026-06-25T10:46:49",
+  "generator": "openai"
+}

@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-06-24
+Generated: 2026-06-25
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. A Physics-Informed Fourier-Wavelet Transformer for Multiscale Computational Fluid Dynamics Surrogate Modeling
@@ -11,7 +11,31 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.24696v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-23-arxiv-a_physics_informed_fourier_wavelet_transformer_for_multiscale_computational_fluid_dynamics_infographic.json
 
-## 2. Data-Driven Flux Parameterization for the Atmospheric Boundary Layer
+## 2. G-PINNs: Gaussian-based spatially weighted formulation for PINNs: 1D low-viscous Burgers
+
+- Date: 2026-06-24
+- Category: Physics-Informed ML
+- arXiv: https://arxiv.org/abs/2606.26013v1
+- PDF: https://arxiv.org/pdf/2606.26013v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-24-arxiv-g_pinns_gaussian_based_spatially_weighted_formulation_for_pinns_1d_low_viscous_burgers_infographic.json
+
+## 3. VesNet: Neural network accelerated solver for simulating Stokesian vesicle suspensions
+
+- Date: 2026-06-24
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.25569v1
+- PDF: https://arxiv.org/pdf/2606.25569v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-24-arxiv-vesnet_neural_network_accelerated_solver_for_simulating_stokesian_vesicle_suspensions_infographic.json
+
+## 4. Mitigating adjoint chaos in wall turbulence
+
+- Date: 2026-06-24
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.25399v1
+- PDF: https://arxiv.org/pdf/2606.25399v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-24-arxiv-mitigating_adjoint_chaos_in_wall_turbulence_infographic.json
+
+## 5. Data-Driven Flux Parameterization for the Atmospheric Boundary Layer
 
 - Date: 2026-06-23
 - Category: Turbulence
@@ -19,7 +43,31 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.24593v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-23-arxiv-data_driven_flux_parameterization_for_the_atmospheric_boundary_layer_infographic.json
 
-## 3. Towards bridging the gap between data-driven and theoretical turbulence closures in stratified flows
+## 6. Quantity-Dependent Bulk-to-Wall Observability of Surface Loading in Rarefied Hypersonic Flow over Triangular Protrusions
+
+- Date: 2026-06-24
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.25752v1
+- PDF: https://arxiv.org/pdf/2606.25752v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-24-arxiv-quantity_dependent_bulk_to_wall_observability_of_surface_loading_in_rarefied_hypersonic_fl_infographic.json
+
+## 7. Dynamic masking for boundary-aware velocity reconstruction in volumetric particle tracking with moving solids
+
+- Date: 2026-06-24
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.25748v1
+- PDF: https://arxiv.org/pdf/2606.25748v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-24-arxiv-dynamic_masking_for_boundary_aware_velocity_reconstruction_in_volumetric_particle_tracking_infographic.json
+
+## 8. Stages of turbulence generation and decay in a T-shaped mixer
+
+- Date: 2026-06-24
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.25780v1
+- PDF: https://arxiv.org/pdf/2606.25780v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-24-arxiv-stages_of_turbulence_generation_and_decay_in_a_t_shaped_mixer_infographic.json
+
+## 9. Towards bridging the gap between data-driven and theoretical turbulence closures in stratified flows
 
 - Date: 2026-06-18
 - Category: Turbulence
@@ -27,7 +75,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.20901v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-18-arxiv-towards_bridging_the_gap_between_data_driven_and_theoretical_turbulence_closures_in_strati_infographic.json
 
-## 4. A high-fidelity numerical database for free-stream transition
+## 10. A high-fidelity numerical database for free-stream transition
 
 - Date: 2026-06-18
 - Category: Turbulence
@@ -35,7 +83,15 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.20139v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-18-arxiv-a_high_fidelity_numerical_database_for_free_stream_transition_infographic.json
 
-## 5. Numerical comparison of energy- versus circulation-preserving stochastic vortex dynamics
+## 11. A Neural Surrogate Approach for Simulating Natural Convection Problems
+
+- Date: 2026-06-24
+- Category: CFD Surrogates
+- arXiv: https://arxiv.org/abs/2606.25259v1
+- PDF: https://arxiv.org/pdf/2606.25259v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-24-arxiv-a_neural_surrogate_approach_for_simulating_natural_convection_problems_infographic.json
+
+## 12. Numerical comparison of energy- versus circulation-preserving stochastic vortex dynamics
 
 - Date: 2026-06-23
 - Category: Turbulence
@@ -43,7 +99,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.24275v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-23-arxiv-numerical_comparison_of_energy_versus_circulation_preserving_stochastic_vortex_dynamics_infographic.json
 
-## 6. Prediction of Viscoelastic Droplet Impact Dynamics Using a Vision Transformer-Based Approach
+## 13. Prediction of Viscoelastic Droplet Impact Dynamics Using a Vision Transformer-Based Approach
 
 - Date: 2026-06-22
 - Category: Turbulence
@@ -51,7 +107,15 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.23940v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-22-arxiv-prediction_of_viscoelastic_droplet_impact_dynamics_using_a_vision_transformer_based_approa_infographic.json
 
-## 7. Temperature distribution measurement on three-phase contact line in liquid nitrogen using two-color temperature-sensitive paint
+## 14. No 3D Matrices: A Unified Tensor-Product View of Matrix-Free Cartesian PDE Solvers
+
+- Date: 2026-06-23
+- Category: CFD Surrogates
+- arXiv: https://arxiv.org/abs/2606.25148v1
+- PDF: https://arxiv.org/pdf/2606.25148v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-23-arxiv-no_3d_matrices_a_unified_tensor_product_view_of_matrix_free_cartesian_pde_solvers_infographic.json
+
+## 15. Temperature distribution measurement on three-phase contact line in liquid nitrogen using two-color temperature-sensitive paint
 
 - Date: 2026-06-23
 - Category: Turbulence
@@ -59,15 +123,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.24533v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-23-arxiv-temperature_distribution_measurement_on_three_phase_contact_line_in_liquid_nitrogen_using_infographic.json
 
-## 8. Advances in Scientific Machine Learning for Coupled Fluid Flow and Transport
-
-- Date: 2026-06-17
-- Category: Physics-Informed ML
-- arXiv: https://arxiv.org/abs/2606.19562v1
-- PDF: https://arxiv.org/pdf/2606.19562v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-17-arxiv-advances_in_scientific_machine_learning_for_coupled_fluid_flow_and_transport_infographic.json
-
-## 9. Scaling of the minimal energy for turbulence transition in pipe flow
+## 16. Scaling of the minimal energy for turbulence transition in pipe flow
 
 - Date: 2026-06-22
 - Category: Turbulence
@@ -75,7 +131,15 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.23269v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-22-arxiv-scaling_of_the_minimal_energy_for_turbulence_transition_in_pipe_flow_infographic.json
 
-## 10. Data assimilation of flow MRI data into RANS models with algebraic closures
+## 17. A Novel Methodology for Evaluating Positive Phase Blast Wave Loading Parameters Using High Speed Video
+
+- Date: 2026-06-24
+- Category: CFD Surrogates
+- arXiv: https://arxiv.org/abs/2606.25751v1
+- PDF: https://arxiv.org/pdf/2606.25751v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-24-arxiv-a_novel_methodology_for_evaluating_positive_phase_blast_wave_loading_parameters_using_high_infographic.json
+
+## 18. Data assimilation of flow MRI data into RANS models with algebraic closures
 
 - Date: 2026-06-22
 - Category: Turbulence
@@ -83,82 +147,18 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.23287v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-22-arxiv-data_assimilation_of_flow_mri_data_into_rans_models_with_algebraic_closures_infographic.json
 
-## 11. Aquatic locomotion by an elastically mounted flexible foil actuated by an oscillating force
+## 19. Interfacial Spectral Memory as a State Variable for Finite-Depth Salt-Finger Exchange
 
-- Date: 2026-06-23
+- Date: 2026-06-24
 - Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.24314v1
-- PDF: https://arxiv.org/pdf/2606.24314v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-23-arxiv-aquatic_locomotion_by_an_elastically_mounted_flexible_foil_actuated_by_an_oscillating_forc_infographic.json
+- arXiv: https://arxiv.org/abs/2606.26045v1
+- PDF: https://arxiv.org/pdf/2606.26045v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-24-arxiv-interfacial_spectral_memory_as_a_state_variable_for_finite_depth_salt_finger_exchange_infographic.json
 
-## 12. Continuity equations in the Generalised Lagrangian Mean theory
+## 20. Poisoning effect of ammonia on the performance and transport process of proton exchange membrane fuel cells
 
-- Date: 2026-06-22
+- Date: 2026-06-24
 - Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.23481v1
-- PDF: https://arxiv.org/pdf/2606.23481v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-22-arxiv-continuity_equations_in_the_generalised_lagrangian_mean_theory_infographic.json
-
-## 13. Eulerian Lagrangian relations in decaying two dimensional incompressible Navier Stokes fluids across initial vorticity packing and Reynolds number
-
-- Date: 2026-06-22
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.23338v2
-- PDF: https://arxiv.org/pdf/2606.23338v2
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-22-arxiv-eulerian_lagrangian_relations_in_decaying_two_dimensional_incompressible_navier_stokes_flu_infographic.json
-
-## 14. Scaling patch analysis of turbulent kinetic energy budget equation in wall-bounded flows
-
-- Date: 2026-06-22
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.23520v1
-- PDF: https://arxiv.org/pdf/2606.23520v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-22-arxiv-scaling_patch_analysis_of_turbulent_kinetic_energy_budget_equation_in_wall_bounded_flows_infographic.json
-
-## 15. Turbulence Physics Governs a Scaling Law for the Machine-Learning Predictability Ceiling in Chaotic Flow
-
-- Date: 2026-06-19
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.21538v1
-- PDF: https://arxiv.org/pdf/2606.21538v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-19-arxiv-turbulence_physics_governs_a_scaling_law_for_the_machine_learning_predictability_ceiling_i_infographic.json
-
-## 16. How is the free surface influence transported in turbulent open channel flows?
-
-- Date: 2026-06-23
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.24630v1
-- PDF: https://arxiv.org/pdf/2606.24630v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-23-arxiv-how_is_the_free_surface_influence_transported_in_turbulent_open_channel_flows_infographic.json
-
-## 17. Effects of mean flow skew on turbulent shear layers. Part I. Numerical investigation
-
-- Date: 2026-06-22
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.24012v1
-- PDF: https://arxiv.org/pdf/2606.24012v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-22-arxiv-effects_of_mean_flow_skew_on_turbulent_shear_layers_part_i_numerical_investigation_infographic.json
-
-## 18. A Methodology to Quantify Interscale Energy Transfer at Solid Boundaries
-
-- Date: 2026-06-22
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.23342v1
-- PDF: https://arxiv.org/pdf/2606.23342v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-22-arxiv-a_methodology_to_quantify_interscale_energy_transfer_at_solid_boundaries_infographic.json
-
-## 19. Non-monotonic variations in pressure drop and chaos in viscoelastic fluid flows through an ordered microporous medium
-
-- Date: 2026-06-22
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.22848v1
-- PDF: https://arxiv.org/pdf/2606.22848v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-22-arxiv-non_monotonic_variations_in_pressure_drop_and_chaos_in_viscoelastic_fluid_flows_through_an_infographic.json
-
-## 20. Bi-stable Nonlinear Energy Sinks (BNESs) for Response Mitigation and Drag Reduction of Subsea Cables Undergoing Vortex-induced Vibrations
-
-- Date: 2026-06-21
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.22638v1
-- PDF: https://arxiv.org/pdf/2606.22638v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-21-arxiv-bi_stable_nonlinear_energy_sinks_bness_for_response_mitigation_and_drag_reduction_of_subse_infographic.json
+- arXiv: https://arxiv.org/abs/2606.25992v1
+- PDF: https://arxiv.org/pdf/2606.25992v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-24-arxiv-poisoning_effect_of_ammonia_on_the_performance_and_transport_process_of_proton_exchange_me_infographic.json
