@@ -1,24 +1,24 @@
 {
-  "key_insight": "Gaussian spatial weighting in PINNs focuses training on shock-like high-gradient regions, enabling better capture of moving and stationary discontinuities without knowing their location in advance.",
-  "engineering_relevance": "This improves surrogate modeling for low-viscosity fluid flows where sharp fronts are difficult for standard PINNs, making the approach more useful for PDE-constrained engineering prediction and monitoring.",
+  "key_insight": "G-PINNs use a Gaussian spatial weighting of the PINN loss to automatically focus training on high-gradient regions, improving shock and discontinuity resolution in low-viscosity Burgers’ flows.",
+  "engineering_relevance": "This provides a practical way to capture moving or unknown shock locations in PDE-constrained models without manually specifying where the solution is steepest.",
   "method": [
-    "Assign Gaussian weights to collocation points based on the PDE residual landscape.",
-    "Dynamically emphasize high-gradient/shock regions during optimization.",
-    "Apply to 1D quasi-inviscid Burgers’ equations with stationary and moving shocks."
+    "Gaussian-based spatially weighted loss over collocation points",
+    "Adaptive emphasis on regions with large PDE residuals / gradients",
+    "Autonomous detection and tracking of moving discontinuities"
   ],
-  "evidence_signal": "In the low-viscosity case (ν = 0.0005), the method reduced relative L2 error to about 13% and 14% for stationary and moving shocks, versus 45% and 33% for standard PINNs.",
-  "watch_item": "Performance may depend on how well the Gaussian weighting is tuned and may be less straightforward to extend to more complex multidimensional shock structures.",
+  "evidence_signal": "In 1D low-viscosity Burgers’ tests (ν = 0.0005), the method reduced relative L2 error to about 13% for a stationary shock and 14% for a moving shock, versus 45% and 33% for standard PINNs.",
+  "watch_item": "Performance is demonstrated on 1D Burgers’ shock problems, so robustness on higher-dimensional or more complex flow physics still needs validation.",
   "hashtags": [
     "#PhysicsInformedNNs",
     "#BurgersEquation",
     "#ShockCapturing",
-    "#ScientificMachineLearning",
-    "#FluidMechanics"
+    "#FluidMechanicsAI",
+    "#ScientificMachineLearning"
   ],
   "paper_id": "2026-06-24-arxiv-g_pinns_gaussian_based_spatially_weighted_formulation_for_pinns_1d_low_viscous_burgers",
   "paper_title": "G-PINNs: Gaussian-based spatially weighted formulation for PINNs: 1D low-viscous Burgers",
   "paper_date": "2026-06-24",
   "paper_category": "Physics-Informed ML",
-  "generated_at": "2026-06-26T10:54:43",
+  "generated_at": "2026-06-27T10:12:37",
   "generator": "openai"
 }

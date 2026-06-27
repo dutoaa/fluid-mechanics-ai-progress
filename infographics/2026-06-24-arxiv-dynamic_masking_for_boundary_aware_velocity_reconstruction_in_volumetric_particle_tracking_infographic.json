@@ -1,24 +1,24 @@
 {
-  "key_insight": "LE-DM reconstructs volumetric PTV velocity fields with moving solid boundaries by masking the domain and enforcing signed-distance-based boundary kinematics inside a single constrained solve.",
-  "engineering_relevance": "It enables boundary-consistent, divergence-free velocity and gradient estimates near moving bodies, improving pressure and hydrodynamic force evaluation in particle-tracking experiments.",
+  "key_insight": "Dynamic masking lets particle-tracking data be reconstructed on a grid while enforcing moving solid boundaries, yielding boundary-consistent, divergence-free velocities near bodies.",
+  "engineering_relevance": "This improves pressure and hydrodynamic force estimation in volumetric PTV for flows with translating, rotating, or deforming solids.",
   "method": [
-    "Time-dependent signed-distance mask splits the grid into fluid, boundary shell, and solid interior.",
-    "Particle data, incompressibility, prescribed surface velocity, and regularization are solved together on the masked domain.",
-    "Works for stationary, translating, rotating, multiple, and deforming bodies with only a signed-distance field plus surface velocity."
+    "Use a time-dependent signed-distance field to label fluid, boundary shell, and solid regions.",
+    "Solve Lagrangian-to-Eulerian reconstruction with incompressibility and prescribed surface velocity on the masked domain.",
+    "Apply the same framework to stationary, moving, multiple, or deforming bodies with only a signed-distance field and surface velocity."
   ],
-  "evidence_signal": "Validated on an oscillating-sphere analytical case, CFD-derived synthetic tracks, and a tomographic-PTV rising-sphere experiment, with surface kinematics enforced to solver tolerance and first-cell error reduced from 14% to 3% in the analytical test.",
-  "watch_item": "Accuracy depends on having a reliable signed-distance field and prescribed surface velocity; errors in boundary motion or mask placement could degrade near-wall reconstruction.",
+  "evidence_signal": "Validated on an analytical oscillating sphere, synthetic CFD rising-sphere tracks, and a tomographic-PTV freely rising sphere experiment, with first-cell error reduced from 14% to 3% of body speed in the analytical case.",
+  "watch_item": "Performance depends on an accurate signed-distance field and prescribed surface velocity; errors in either can degrade boundary enforcement near the body.",
   "hashtags": [
     "#ParticleTrackingVelocimetry",
-    "#BoundaryAwareReconstruction",
-    "#MovingSolid",
-    "#FluidDynamics",
-    "#Turbulence"
+    "#VolumetricPTV",
+    "#FluidStructureInteraction",
+    "#BoundaryReconstruction",
+    "#ComputationalFluidDynamics"
   ],
   "paper_id": "2026-06-24-arxiv-dynamic_masking_for_boundary_aware_velocity_reconstruction_in_volumetric_particle_tracking",
   "paper_title": "Dynamic masking for boundary-aware velocity reconstruction in volumetric particle tracking with moving solids",
   "paper_date": "2026-06-24",
   "paper_category": "Turbulence",
-  "generated_at": "2026-06-26T10:55:06",
+  "generated_at": "2026-06-27T10:12:56",
   "generator": "openai"
 }

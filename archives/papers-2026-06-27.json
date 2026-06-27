@@ -26,29 +26,29 @@
         "url": "https://arxiv.org/pdf/2606.27126v1"
       }
     ],
-    "score": 98,
+    "score": 103,
     "infographic": {
-      "key_insight": "KANs are competitive aerodynamic surrogates for airfoil pressure prediction, but in this study they were slightly outperformed by a well-tuned MLP and outmatched by a GNN.",
-      "engineering_relevance": "For fast surrogate modeling in aerodynamics, KANs offer a lower-complexity option with good interpolation across Mach number and angle of attack, which can support design and analysis workflows.",
+      "key_insight": "KANs can accurately predict airfoil surface pressure and interpolate across Mach number and angle of attack, but they do not clearly outperform a well-tuned MLP and are outperformed by a GNN in this study.",
+      "engineering_relevance": "For aerodynamic surrogate modeling, KANs offer a potentially lower-complexity and faster-training alternative, but they require careful tuning and do not yet displace strong baseline architectures.",
       "method": [
-        "Compared KANs against MLPs and GNNs for predicting surface pressure distributions on subsonic and transonic airfoils.",
-        "Evaluated generalization over Mach number and angle of attack in a canonical fluid dynamics surrogate task.",
-        "Assessed model trade-offs in accuracy, complexity, and training time."
+        "Compare KANs against MLPs and GNNs on pressure-coefficient prediction for subsonic and transonic airfoils.",
+        "Evaluate interpolation capability across Mach numbers and angles of attack.",
+        "Assess accuracy, model complexity, and training cost/training stability."
       ],
-      "evidence_signal": "The abstract reports that KANs predict whole pressure-coefficient distributions well and interpolate across operating conditions, but their performance was marginally below MLPs and below GNNs, which achieved the best accuracy with longer training.",
-      "watch_item": "KAN performance was highly sensitive to hyperparameter tuning and could suffer from training instabilities.",
+      "evidence_signal": "The abstract reports that KANs perform well on full pressure-coefficient prediction and interpolation, but are marginally inferior to the best MLP and below the best GNN, which achieves top accuracy at longer training cost.",
+      "watch_item": "KAN performance is highly sensitive to hyperparameter optimization and can suffer from training instabilities.",
       "hashtags": [
         "#KAN",
         "#Aerodynamics",
         "#SurrogateModeling",
-        "#MLP",
-        "#GNN"
+        "#MachineLearning",
+        "#FluidDynamics"
       ],
       "paper_id": "2026-06-25-arxiv-kolmogorov_arnold_networks_kan_for_aerodynamic_prediction_a_comparison_with_mlps_and_gnns",
       "paper_title": "Kolmogorov Arnold networks (KAN) for aerodynamic prediction: a comparison with MLPs and GNNs",
       "paper_date": "2026-06-25",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-27T10:12:22",
+      "generated_at": "2026-06-26T10:54:29",
       "generator": "openai"
     }
   },
@@ -78,29 +78,29 @@
         "url": "https://arxiv.org/pdf/2606.24696v1"
       }
     ],
-    "score": 84,
+    "score": 89,
     "infographic": {
-      "key_insight": "A physics-informed Fourier-wavelet transformer improves multiscale CFD surrogate modeling by combining spectral encoding, PDE-residual-guided attention, and self-supervised physics pretraining to better reconstruct localized flow structures.",
-      "engineering_relevance": "The model offers a practical way to accelerate real-world fluid simulations while preserving near-body, wake-core, and far-wake dynamics needed for engineering analysis and design.",
+      "key_insight": "A physics-informed Fourier-wavelet transformer improves next-step CFD surrogate reconstruction by capturing both global flow patterns and localized multiscale structures.",
+      "engineering_relevance": "This can speed up fluid simulation workflows for real-world benchmarks while preserving physically meaningful wake and interaction features.",
       "method": [
-        "Hybrid Fourier-wavelet spectral encoding for multiscale flow representation",
-        "Physics-biased self-attention driven by PDE residual diagnostics",
-        "Self-supervised pretraining with Masked Physics Prediction and Equation Consistency Prediction"
+        "Hybrid Fourier-wavelet spectral encoding for multiscale flow representations",
+        "Physics-biased self-attention guided by PDE residual diagnostics",
+        "Self-supervised pretraining via Masked Physics Prediction and Equation Consistency Prediction"
       ],
-      "evidence_signal": "Evaluated on two real benchmarks—cylinder wake and fluid-structure interaction—the model achieved best aggregate accuracy, including 0.05875 NMSE and 0.97019 PCC on cylinder wake, and 2.70×10^-4 NMSE on FSI versus 4.02×10^-4 for the strongest baseline.",
-      "watch_item": "Performance is reported for next-step velocity-field reconstruction under a shared local protocol, so generalization to longer rollouts or different flow regimes may require additional validation.",
+      "evidence_signal": "Evaluated on cylinder-wake flow and fluid-structure interaction benchmarks, the model achieved the best reported aggregate errors, including 0.05875 NRMSE and 0.97019 Pearson correlation on cylinder wake and 2.70×10^-4 NRMSE on FSI.",
+      "watch_item": "Results come from specific benchmark settings, so generalization to other geometries, regimes, or rollout horizons may require additional validation.",
       "hashtags": [
-        "#CFD",
-        "#PhysicsInformedAI",
-        "#TransformerModel",
-        "#MultiscaleModeling",
-        "#FluidDynamics"
+        "#ComputationalFluidDynamics",
+        "#PhysicsInformedML",
+        "#FourierTransformers",
+        "#WaveletAnalysis",
+        "#SurrogateModeling"
       ],
       "paper_id": "2026-06-23-arxiv-a_physics_informed_fourier_wavelet_transformer_for_multiscale_computational_fluid_dynamics",
       "paper_title": "A Physics-Informed Fourier-Wavelet Transformer for Multiscale Computational Fluid Dynamics Surrogate Modeling",
       "paper_date": "2026-06-23",
       "paper_category": "CFD Surrogates",
-      "generated_at": "2026-06-27T10:12:25",
+      "generated_at": "2026-06-26T10:54:32",
       "generator": "openai"
     }
   },
@@ -129,29 +129,29 @@
         "url": "https://arxiv.org/pdf/2606.26953v1"
       }
     ],
-    "score": 68,
+    "score": 73,
     "infographic": {
-      "key_insight": "Premixed flames in Darcy-flow environments require a first-principles interfacial theory, revealing distinct curvature, tangential-strain, and gravity-related Markstein effects, especially when Lewis number is nonunity and heat loss is present.",
-      "engineering_relevance": "This gives a more accurate stability and propagation model for combustion in porous media and Hele-Shaw channels, where strong drag and confinement change flame behavior.",
+      "key_insight": "A first-principles hydrodynamic theory for premixed flames in Darcy-flow confinement shows that finite flame thickness, nonunity Lewis number, and heat loss modify interfacial jump conditions and introduce distinct Markstein effects, including a gravity-specific strain term.",
+      "engineering_relevance": "This provides a rigorous stability model for flame propagation in porous media and Hele-Shaw channels, improving predictions for combustion systems operating under strong confinement.",
       "method": [
-        "Used large-activation-energy asymptotics to resolve the thin-flame limit.",
-        "Applied systematic multiple-scale analysis to derive interfacial jump conditions from the governing equations.",
-        "Derived a new dispersion relation for perturbation growth under Darcy's law and compared it with the classical Clavin–Garcia form."
+        "Large-activation-energy asymptotics",
+        "Systematic multiple-scale analysis to derive interfacial jump conditions",
+        "Closed-form Markstein numbers and a new dispersion relation under Darcy's law"
       ],
-      "evidence_signal": "The abstract reports analytic derivations and explicit formulas for the jump conditions and Markstein numbers, culminating in a new stability dispersion relation rather than numerical benchmark data.",
-      "watch_item": "The theory is asymptotic and interface-based, so accuracy may degrade outside the thin-flame, large-activation-energy regime or when porous-medium effects deviate from ideal Darcy flow.",
+      "evidence_signal": "The abstract reports an analytic derivation and comparison to the classical Clavin–Garcia dispersion relation, yielding the growth law $s = (a|k| - bk^2 - d|k|^3)/(1 + c|k|)$ rather than experimental dataset validation.",
+      "watch_item": "The theory is asymptotic and relies on idealized Darcy-flow assumptions, so quantitative use may require care when flame thickness, transport-property variations, or wall effects depart from the derivation regime.",
       "hashtags": [
         "#Combustion",
-        "#DarcyFlow",
+        "#DarcyLaw",
         "#PremixedFlames",
         "#PorousMedia",
-        "#FlameStability"
+        "#HydrodynamicStability"
       ],
       "paper_id": "2026-06-25-arxiv-hydrodynamic_theory_of_premixed_flames_under_darcy_s_law_interfacial_conditions_and_effect",
       "paper_title": "Hydrodynamic theory of premixed flames under Darcy's law: Interfacial conditions and effects of nonunity Lewis number and heat loss",
       "paper_date": "2026-06-25",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-27T10:12:28",
+      "generated_at": "2026-06-26T10:54:35",
       "generator": "openai"
     }
   },
@@ -180,29 +180,29 @@
         "url": "https://arxiv.org/pdf/2606.26976v1"
       }
     ],
-    "score": 66,
+    "score": 71,
     "infographic": {
-      "key_insight": "Free-stream forcing in hypersonic blunt-body boundary layers is amplified by a two-stage mechanism: a nose-region slow-down convection that boosts streamwise vorticity by O(√R), followed by downstream lift-up that drives streamwise velocity growth to O(R).",
-      "engineering_relevance": "These receptivity mechanisms help predict and control non-modal disturbance growth in hypersonic boundary layers, which is important for transition management, thermal protection, and blunt-nose vehicle design.",
+      "key_insight": "A high-Reynolds-number asymptotic theory reveals that hypersonic blunt-body boundary layers first amplify streamwise vorticity through a slow-down convection mechanism near the nose, then produce strong downstream transient growth via lift-up.",
+      "engineering_relevance": "These receptivity mechanisms help predict and control disturbance amplification in hypersonic boundary layers, which is important for transition, heating, and vehicle design.",
       "method": [
-        "High-Reynolds-number asymptotic analysis of the receptivity process",
-        "Reduced-order model derived from the identified amplification mechanisms",
-        "Comparison against SF-HLNS simulations across the downstream evolution"
+        "High-Reynolds-number asymptotic analysis of receptivity in the nose region.",
+        "Reduced-order model for downstream evolution of non-modal perturbations.",
+        "Comparison against SF-HLNS numerical simulations for validation."
       ],
-      "evidence_signal": "The reduced model predictions agree well with shock-fitting harmonic linearised Navier–Stokes (SF-HLNS) calculations from the prior numerical framework.",
-      "watch_item": "The reduced model is asymptotic and may lose accuracy outside the high-Reynolds-number blunt-body regime or when wall temperature/nose-radius effects move away from the validated range.",
+      "evidence_signal": "The reduced model is reported to agree well with SF-HLNS calculations across the studied regime.",
+      "watch_item": "The theory is asymptotic and tied to high-Reynolds-number hypersonic blunt-body conditions, so accuracy may degrade outside that regime or for different geometries.",
       "hashtags": [
         "#Hypersonics",
-        "#BoundaryLayer",
+        "#BoundaryLayers",
         "#Receptivity",
-        "#AsymptoticAnalysis",
+        "#AsymptoticTheory",
         "#FluidMechanics"
       ],
       "paper_id": "2026-06-25-arxiv-excitation_of_non_modal_perturbations_in_hypersonic_boundary_layers_by_free_stream_forcing",
       "paper_title": "Excitation of non-modal perturbations in hypersonic boundary layers by free stream forcing. Part II: asymptotic theory and key mechanisms",
       "paper_date": "2026-06-25",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-27T10:12:31",
+      "generated_at": "2026-06-26T10:54:37",
       "generator": "openai"
     }
   },
@@ -231,29 +231,29 @@
         "url": "https://arxiv.org/pdf/2606.26374v1"
       }
     ],
-    "score": 63,
+    "score": 68,
     "infographic": {
-      "key_insight": "Channel geometry alone can strongly tune capillary-driven transport and analyte confinement in paper-based microdevices, with circular channels flowing fastest and diverging-converging channels flowing slowest.",
-      "engineering_relevance": "Geometry-guided channel design offers a simple, low-cost way to control passive fluid timing and preconcentration in paper diagnostics and other capillary microfluidic platforms.",
+      "key_insight": "Channel geometry alone can substantially tune capillary-driven flow and analyte confinement in paper-based microdevices, with circular channels moving fastest and diverging-converging channels slowest.",
+      "engineering_relevance": "Geometry-guided channel design offers a simple passive control strategy for low-cost paper microfluidics, enabling better transport timing and localized preconcentration without active pumping.",
       "method": [
-        "Tested five paper channel geometries: converging-diverging, diverging-converging, wide-to-narrow, circular, and rectangular.",
-        "Used geometry-adapted Lucas–Washburn modeling and CFD simulation to predict and compare flow behavior.",
-        "Tracked pyrene and benz[α]anthracene under UV to quantify analyte confinement, with cyclodextrin-chitosan coatings to localize retention."
+        "Fabricated five cellulose-paper channel geometries with equal area: converging-diverging, diverging-converging, wide-to-narrow, circular, and rectangular.",
+        "Tracked capillary transport using pyrene and benz[α]anthracene fluorescence under UV to quantify analyte confinement.",
+        "Used geometry-adapted Lucas–Washburn analysis plus CFD simulations calibrated to experiments and checked with mesh independence."
       ],
-      "evidence_signal": "Experiments showed flow times from 23.1 s (circular) to 65.0 s (diverging-converging), with CFD reproducing the observed velocity distributions and matching geometry-adapted Lucas–Washburn trends.",
-      "watch_item": "Results are geometry- and surface-coating-dependent, so scaling to other papers, analytes, or fabrication conditions may require re-calibration.",
+      "evidence_signal": "Measured transport times ranged from 23.1 s for circular channels to 65.0 s for diverging-converging channels, with CFD and geometry-adapted Lucas–Washburn predictions showing semi-quantitative agreement with the observed velocity distributions.",
+      "watch_item": "The reported confinement and flow behavior may depend on the specific paper substrate and cyclodextrin-functionalized chitosan coating, so direct transfer to other materials or analytes may require recalibration.",
       "hashtags": [
         "#PaperMicrofluidics",
         "#CapillaryFlow",
         "#GeometryDesign",
         "#CFD",
-        "#LabOnPaper"
+        "#PassiveTransport"
       ],
       "paper_id": "2026-06-24-arxiv-geometry_driven_passive_fluid_transport_in_paper_based_microdevices",
       "paper_title": "Geometry-Driven Passive Fluid Transport in Paper-Based Microdevices",
       "paper_date": "2026-06-24",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-27T10:12:33",
+      "generated_at": "2026-06-26T10:54:41",
       "generator": "openai"
     }
   },
@@ -282,29 +282,29 @@
         "url": "https://arxiv.org/pdf/2606.26013v1"
       }
     ],
-    "score": 61,
+    "score": 66,
     "infographic": {
-      "key_insight": "G-PINNs use a Gaussian spatial weighting of the PINN loss to automatically focus training on high-gradient regions, improving shock and discontinuity resolution in low-viscosity Burgers’ flows.",
-      "engineering_relevance": "This provides a practical way to capture moving or unknown shock locations in PDE-constrained models without manually specifying where the solution is steepest.",
+      "key_insight": "Gaussian spatial weighting in PINNs focuses training on shock-like high-gradient regions, enabling better capture of moving and stationary discontinuities without knowing their location in advance.",
+      "engineering_relevance": "This improves surrogate modeling for low-viscosity fluid flows where sharp fronts are difficult for standard PINNs, making the approach more useful for PDE-constrained engineering prediction and monitoring.",
       "method": [
-        "Gaussian-based spatially weighted loss over collocation points",
-        "Adaptive emphasis on regions with large PDE residuals / gradients",
-        "Autonomous detection and tracking of moving discontinuities"
+        "Assign Gaussian weights to collocation points based on the PDE residual landscape.",
+        "Dynamically emphasize high-gradient/shock regions during optimization.",
+        "Apply to 1D quasi-inviscid Burgers’ equations with stationary and moving shocks."
       ],
-      "evidence_signal": "In 1D low-viscosity Burgers’ tests (ν = 0.0005), the method reduced relative L2 error to about 13% for a stationary shock and 14% for a moving shock, versus 45% and 33% for standard PINNs.",
-      "watch_item": "Performance is demonstrated on 1D Burgers’ shock problems, so robustness on higher-dimensional or more complex flow physics still needs validation.",
+      "evidence_signal": "In the low-viscosity case (ν = 0.0005), the method reduced relative L2 error to about 13% and 14% for stationary and moving shocks, versus 45% and 33% for standard PINNs.",
+      "watch_item": "Performance may depend on how well the Gaussian weighting is tuned and may be less straightforward to extend to more complex multidimensional shock structures.",
       "hashtags": [
         "#PhysicsInformedNNs",
         "#BurgersEquation",
         "#ShockCapturing",
-        "#FluidMechanicsAI",
-        "#ScientificMachineLearning"
+        "#ScientificMachineLearning",
+        "#FluidMechanics"
       ],
       "paper_id": "2026-06-24-arxiv-g_pinns_gaussian_based_spatially_weighted_formulation_for_pinns_1d_low_viscous_burgers",
       "paper_title": "G-PINNs: Gaussian-based spatially weighted formulation for PINNs: 1D low-viscous Burgers",
       "paper_date": "2026-06-24",
       "paper_category": "Physics-Informed ML",
-      "generated_at": "2026-06-27T10:12:37",
+      "generated_at": "2026-06-26T10:54:43",
       "generator": "openai"
     }
   },
@@ -334,29 +334,29 @@
         "url": "https://arxiv.org/pdf/2606.25569v1"
       }
     ],
-    "score": 59,
+    "score": 64,
     "infographic": {
-      "key_insight": "VesNet uses a neural network to accelerate the most expensive vesicle self-interaction calculations in Stokes flow while preserving the physics of the full suspension solver.",
-      "engineering_relevance": "This hybrid approach enables fast, GPU-accelerated simulation of large vesicle suspensions, making high-fidelity deformable-particle modeling more practical for research and engineering workflows.",
+      "key_insight": "VesNet accelerates 2D Stokesian vesicle suspension simulation by replacing the most expensive near-field vesicle interaction calculations with a neural network while keeping physics-based solvers for the rest of the system.",
+      "engineering_relevance": "The method enables accurate, large-scale vesicle simulations on modest hardware, making high-throughput studies of deformable particle flows far more practical.",
       "method": [
-        "Approximates vesicle self-interactions, including background-flow coupling and short-range lubrication forces, with a neural network.",
-        "Keeps conventional boundary reparameterization and far-field hydrodynamics modules in the solver.",
-        "Runs on GPU for major speedups over CPU and GPU boundary-integral baselines."
+        "Neural network predicts vesicle self-interactions, including background-flow coupling and short-range lubrication forces.",
+        "Boundary reparameterization and far-field hydrodynamics remain handled by conventional numerical modules.",
+        "GPU implementation provides a hybrid physics-ML solver for vesicle suspensions in complex flows."
       ],
       "evidence_signal": "The abstract reports over 100x speedup versus a multithreaded MATLAB CPU boundary-integral solver and about 5x versus its GPU counterpart, while reproducing single-vesicle, pair, and large-suspension dynamics.",
-      "watch_item": "Accuracy and robustness may depend on how well the neural approximation generalizes across flow conditions, vesicle shapes, and near-contact lubrication regimes.",
+      "watch_item": "Performance and accuracy likely depend on the training regime and flow conditions, so generalization outside the tested 2D Stokesian settings may require retraining or careful validation.",
       "hashtags": [
-        "#FluidMechanics",
-        "#ComputationalScience",
-        "#NeuralPDEs",
-        "#GPUAcceleration",
-        "#StokesFlow"
+        "#ComputationalFluidDynamics",
+        "#MachineLearning",
+        "#StokesFlow",
+        "#VesicleDynamics",
+        "#GPUAcceleration"
       ],
       "paper_id": "2026-06-24-arxiv-vesnet_neural_network_accelerated_solver_for_simulating_stokesian_vesicle_suspensions",
       "paper_title": "VesNet: Neural network accelerated solver for simulating Stokesian vesicle suspensions",
       "paper_date": "2026-06-24",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-27T10:12:39",
+      "generated_at": "2026-06-26T10:54:46",
       "generator": "openai"
     }
   },
@@ -387,29 +387,29 @@
         "url": "https://arxiv.org/pdf/2606.27331v1"
       }
     ],
-    "score": 58,
+    "score": 63,
     "infographic": {
-      "key_insight": "A trapped non-wetting droplet in a capillary tube can be unpinned by non-resonant acoustic streaming combined with a static pressure gradient, with an optimal attenuation condition that minimizes required drive.",
-      "engineering_relevance": "This provides a design rule for lower-power acoustic mobilization of trapped fluids in porous media, with direct implications for enhanced oil recovery and downhole microfluidic control.",
+      "key_insight": "The paper shows that trapped non-wetting droplets in capillary tubes can be unpinned by non-resonant acoustic streaming, with the strongest efficiency occurring when the acoustic absorption coefficient matches half the inverse droplet distance.",
+      "engineering_relevance": "This provides a design rule for lowering transducer power while improving droplet mobilization in porous media, with direct relevance to downhole acoustic recovery and capillary-flow control.",
       "method": [
-        "Expanded the hydrodynamic equations to second order to capture bulk acoustic-wind forcing.",
-        "Derived a critical acoustic amplitude needed to overcome capillary pinning.",
-        "Included wall-boundary and thermo-viscous dissipation effects to obtain an optimum condition and transport-velocity expression."
+        "Derive a second-order hydrodynamic model for acoustic-wind force density in narrow capillaries.",
+        "Combine bulk acoustic streaming with background static pressure gradients to compute the critical amplitude needed to overcome capillary pinning.",
+        "Include wall-boundary and core thermo-viscous dissipation to identify the optimum condition α = 1/(2x₀)."
       ],
-      "evidence_signal": "The abstract reports analytical derivation plus numerical validation and comparison against legacy industrial frequency baselines.",
-      "watch_item": "The theory depends on idealized capillary geometry and attenuation matching, so performance may shift in heterogeneous formations or when material properties are poorly known.",
+      "evidence_signal": "The abstract reports analytical derivation and numerical validation, plus cross-correlation against legacy industrial frequency baselines, to support the proposed optimal operating condition.",
+      "watch_item": "The model is theoretical and idealized, so performance may shift in real porous media where geometry, fluid properties, and attenuation vary spatially.",
       "hashtags": [
         "#AcousticStreaming",
         "#CapillaryFlow",
-        "#EnhancedOilRecovery",
-        "#Microfluidics",
+        "#DropletMobilization",
+        "#PorousMedia",
         "#FluidMechanics"
       ],
       "paper_id": "2026-06-25-arxiv-unpinning_of_trapped_oil_droplets_via_non_resonant_acoustic_streaming_in_capillary_tubes",
       "paper_title": "Unpinning of trapped oil droplets via non-resonant acoustic streaming in capillary tubes",
       "paper_date": "2026-06-25",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-27T10:12:41",
+      "generated_at": "2026-06-26T10:54:49",
       "generator": "openai"
     }
   },
@@ -439,29 +439,29 @@
         "url": "https://arxiv.org/pdf/2606.26906v1"
       }
     ],
-    "score": 58,
+    "score": 63,
     "infographic": {
-      "key_insight": "Changing the weight factors in Park’s two-temperature control temperature model can noticeably alter predicted hypersonic flow and heat-transfer behavior, especially for Earth reentry conditions.",
-      "engineering_relevance": "For reacting hypersonic CFD, the choice of control-temperature weights is a modeling parameter that can materially affect stagnation-line properties and convective heat flux predictions.",
+      "key_insight": "Changing the weight factors used to compute Park’s control temperature can noticeably alter predicted hypersonic nonequilibrium flow behavior, especially for Earth reentry cases.",
+      "engineering_relevance": "This sensitivity matters for designing and validating hypersonic thermal protection systems because it can shift temperature, species, and heat-flux predictions near the shock and stagnation point.",
       "method": [
-        "Navier-Stokes simulations of reacting hypersonic flow under thermochemical non-equilibrium",
-        "Compare Park’s two-temperature model using different weight-factor sets",
-        "Apply to FIRE II (Earth, 11-species) and Mars Pathfinder (Mars, 8-species) cases"
+        "Reactive Navier-Stokes simulations of hypersonic reentry flows",
+        "Two-temperature non-equilibrium modeling with Park’s formulation",
+        "Earth (11-species) and Mars (8-species) chemistry for FIRE II and Mars Pathfinder capsules"
       ],
-      "evidence_signal": "The abstract reports differences in Mach number, temperature modes, species mass fractions, and stagnation-point convective heat flux, with strong sensitivity in FIRE II and weaker sensitivity in Mars Pathfinder.",
-      "watch_item": "Results depend on the selected weight factors and the effect is case-dependent, so the model should be calibrated carefully before using it for design or heat-load prediction.",
+      "evidence_signal": "The abstract reports comparisons of Mach number, temperature modes, mass fractions, and stagnation-point convective heat flux along the stagnation streamline, showing strong sensitivity for FIRE II but little change for Mars Pathfinder.",
+      "watch_item": "The conclusions depend on the chosen weight-factor set and may not generalize across all reentry conditions or chemistry models without further validation.",
       "hashtags": [
         "#Hypersonics",
-        "#CFD",
         "#Reentry",
-        "#ThermochemicalNonequilibrium",
-        "#Aerothermodynamics"
+        "#NonequilibriumFlow",
+        "#ThermochemicalModeling",
+        "#CFD"
       ],
       "paper_id": "2026-06-25-arxiv-influence_of_park_s_two_temperature_model_control_temperature_on_the_flow_properties_in_hy",
       "paper_title": "Influence of Park's Two-Temperature Model Control Temperature on the Flow Properties in Hypersonic Reentry Conditions",
       "paper_date": "2026-06-25",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-27T10:12:44",
+      "generated_at": "2026-06-26T10:54:52",
       "generator": "openai"
     }
   },
@@ -490,29 +490,29 @@
         "url": "https://arxiv.org/pdf/2606.25399v1"
       }
     ],
-    "score": 58,
+    "score": 63,
     "infographic": {
-      "key_insight": "A linear eddy-viscosity closure can stabilize the ensemble-averaged adjoint equations, revealing a universal wall-shear sensitivity field whose growth is governed by chaotic backward-time dynamics and structured by Orr-type and streak-like components.",
-      "engineering_relevance": "This provides a more reliable way to infer past turbulence states from wall measurements, which is useful for sensing, estimation, and control in wall-bounded flows.",
+      "key_insight": "A linear eddy-viscosity closure can regularize the chaotic backward-time adjoint in wall turbulence, enabling the mean domain of dependence of a wall-stress sensor to be predicted and revealing two universal sensitivity structures across Reynolds numbers.",
+      "engineering_relevance": "This improves our ability to infer earlier near-wall flow events from surface measurements, which is important for flow control, sensing, and state estimation in turbulent wall-bounded flows.",
       "method": [
-        "Solve the adjoint Navier–Stokes equations backward in time from a wall-sensor kernel.",
-        "Add a linear eddy-viscosity closure to the ensemble-averaged adjoint equations to suppress chaotic energy growth.",
-        "Compare predicted mean domain of dependence (DOD) with direct ensemble averaging and contrast it with the actuator domain of influence (DOI)."
+        "Solve the adjoint Navier–Stokes equations backward in time from a wall-stress measurement kernel.",
+        "Add a linear eddy-viscosity closure to the ensemble-averaged adjoint equations to suppress adjoint chaos.",
+        "Compare the predicted mean domain of dependence with ensemble-averaged adjoint realizations and with the domain of influence from forward perturbations."
       ],
-      "evidence_signal": "The abstract reports direct computation of the mean DOD and comparison against ensemble averages, along with cross-Reynolds-number behavior for wall-stress DOD/DOI.",
-      "watch_item": "The closure is applied to the ensemble-averaged adjoint field, so single-realization chaos and qualitative structure differences may still limit pointwise prediction accuracy.",
+      "evidence_signal": "The abstract reports that ensemble adjoint energy grows exponentially backward in time in individual realizations, but the closure-based mean prediction matches the ensemble average and reveals Reynolds-number-universal DOD/DOI behavior.",
+      "watch_item": "The closure is applied to the ensemble-averaged adjoint, so it may not capture full realization-level chaotic variability or all nonlinear near-wall sensitivity details.",
       "hashtags": [
-        "#WallTurbulence",
+        "#Turbulence",
         "#AdjointMethods",
-        "#FluidMechanics",
-        "#TurbulenceModeling",
-        "#FlowControl"
+        "#WallShear",
+        "#FlowControl",
+        "#CFD"
       ],
       "paper_id": "2026-06-24-arxiv-mitigating_adjoint_chaos_in_wall_turbulence",
       "paper_title": "Mitigating adjoint chaos in wall turbulence",
       "paper_date": "2026-06-24",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-27T10:12:46",
+      "generated_at": "2026-06-26T10:54:55",
       "generator": "openai"
     }
   },
@@ -541,29 +541,29 @@
         "url": "https://arxiv.org/pdf/2606.24593v2"
       }
     ],
-    "score": 58,
+    "score": 63,
     "infographic": {
-      "key_insight": "A learned linear convolution operator can parameterize atmospheric boundary layer turbulent fluxes more accurately and transparently than standard K-profile closures across stable and unstable regimes.",
-      "engineering_relevance": "This offers a practical way to improve coarse-resolution weather, climate, and engineering models by better representing momentum and heat exchange near the surface.",
+      "key_insight": "A learned convolution-based flux closure can predict atmospheric boundary layer heat and momentum transport more accurately than a standard K-profile scheme while remaining physically interpretable.",
+      "engineering_relevance": "This offers a practical path to improve coarse-resolution weather, climate, and engineering models by capturing both local and nonlocal turbulent transport across stable and unstable boundary layers.",
       "method": [
-        "Train flux closures on high-resolution LES of idealized homogeneous-surface ABL flows across multiple stability regimes.",
-        "Represent nondimensional fluxes as a linearized convolution acting on nondimensional mean temperature and velocity profiles.",
-        "Select the best first-order closure by minimizing mean squared error on both training and unseen test cases, then verify stability in a posteriori single-column simulations."
+        "Train a linearized convolution operator on LES-derived nondimensional mean profiles.",
+        "Test several first-order closure variants using temperature and velocity inputs to predict heat and momentum fluxes.",
+        "Select the best model by minimizing mean squared error on both training and unseen cases, then verify stability in single-column simulations."
       ],
-      "evidence_signal": "The abstract reports improved predictive skill over a standard K-profile closure, and the learned model remains stable while closely matching LES in posteriori single-column tests.",
-      "watch_item": "Performance is demonstrated on idealized homogeneous-surface LES cases, so generalization to complex terrain, heterogeneity, and real-world forcing needs further validation.",
+      "evidence_signal": "The abstract reports evaluation on high-resolution LES across multiple stability regimes, with performance compared against a standard K-profile closure and validated a posteriori in single-column runs.",
+      "watch_item": "Performance is demonstrated on idealized homogeneous-surface LES, so transferability to complex terrain, heterogeneity, and real-world atmospheric forcing still needs careful validation.",
       "hashtags": [
         "#AtmosphericBoundaryLayer",
-        "#TurbulenceModeling",
+        "#Turbulence",
         "#MachineLearningForPhysics",
-        "#FluxParameterization",
-        "#LES"
+        "#LargeEddySimulation",
+        "#FluxParameterization"
       ],
       "paper_id": "2026-06-23-arxiv-data_driven_flux_parameterization_for_the_atmospheric_boundary_layer",
       "paper_title": "Data-Driven Flux Parameterization for the Atmospheric Boundary Layer",
       "paper_date": "2026-06-23",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-27T10:12:49",
+      "generated_at": "2026-06-26T10:54:57",
       "generator": "openai"
     }
   },
@@ -594,29 +594,29 @@
         "url": "https://arxiv.org/pdf/2606.26830v1"
       }
     ],
-    "score": 55,
+    "score": 60,
     "infographic": {
-      "key_insight": "pyDOF is a Python library that automatically designs constrained, symmetric discrete filters—both forward and inverse—for tailored transfer functions in CFD and signal-processing workflows.",
-      "engineering_relevance": "It gives engineers a flexible way to generate custom low-pass, high-pass, band-pass, and inverse filters with controllable properties for turbulence and other computational physics applications.",
+      "key_insight": "pyDOF is a Python library that automates the constrained design of customizable discrete forward and inverse filters in physical space.",
+      "engineering_relevance": "It helps CFD and signal-processing users generate tailored filters with enforceable properties such as monotonicity, positivity, and smoothing, reducing manual filter-tuning effort.",
       "method": [
-        "Constrained optimization to shape filter transfer functions with user-specified properties such as monotonicity, positivity, and value-fixing",
-        "Adaptive stencil selection to choose filter support automatically",
-        "Van Cittert-based inverse-filter design with user-controlled reconstruction order"
+        "Uses constrained optimization to design symmetric discrete filter transfer functions.",
+        "Supports forward and inverse filters, including van Cittert inverse design with user-controlled reconstruction order.",
+        "Includes adaptive stencil selection and automatic export of coefficients to plain text files."
       ],
-      "evidence_signal": "The abstract reports a software framework and design capability, but does not present benchmark datasets or quantitative validation results.",
-      "watch_item": "Because it relies on constrained optimization and user-defined settings, filter quality and stability may depend strongly on the chosen constraints, stencil size, and reconstruction order.",
+      "evidence_signal": "The abstract reports a software framework and feature set, but does not provide quantitative benchmark results or validation data.",
+      "watch_item": "Filter quality and stability will still depend on chosen constraints, stencil size, and reconstruction order, so misuse can lead to over- or under-smoothing.",
       "hashtags": [
-        "#Turbulence",
         "#CFD",
-        "#SignalProcessing",
-        "#Python",
-        "#DigitalFilters"
+        "#Turbulence",
+        "#DigitalFiltering",
+        "#Optimization",
+        "#Python"
       ],
       "paper_id": "2026-06-25-arxiv-pydof_a_python_library_for_the_design_of_discrete_forward_and_inverse_filters",
       "paper_title": "pyDOF: a Python library for the design of discrete forward and inverse filters",
       "paper_date": "2026-06-25",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-27T10:12:51",
+      "generated_at": "2026-06-26T10:55:00",
       "generator": "openai"
     }
   },
@@ -645,29 +645,29 @@
         "url": "https://arxiv.org/pdf/2606.25752v1"
       }
     ],
-    "score": 55,
+    "score": 60,
     "infographic": {
-      "key_insight": "Rarefied hypersonic surface loading does not have one universal influence length: heat transfer is the most nonlocal, pressure is often captured within a few protrusion heights, and shear remains the hardest to identify.",
-      "engineering_relevance": "For hypersonic vehicle design, this means local wall loads near surface protrusions may require bulk-flow context, especially for predicting heating and shear on rarefied configurations.",
+      "key_insight": "Rarefied hypersonic surface loading over triangular protrusions has no single observability length: heat transfer is most nonlocal, pressure is moderately nonlocal, and shear is hardest to recover from bulk fields.",
+      "engineering_relevance": "Design and placement of sensors or surrogates for hypersonic vehicles should account for quantity-specific nonlocal support, especially when estimating heating and shear near surface protrusions.",
       "method": [
-        "DSMC data over Mach 4–8, Kn 0.1–0.8, and three triangular-protrusion orientations.",
-        "Region-to-point diagnostics using circular neighborhoods with weighted statistics, extrema, nearest-point values, and tangent-normal gradients.",
-        "Evaluate surrogate preservation with ridge regression and a closed-loop audit against wall-load profiles for $C_p$, $C_q$, and $|\\tau|$."
+        "DSMC data over Mach 4–8, Kn 0.1–0.8, and three protrusion orientations",
+        "Circular neighborhoods around wall points summarized with weighted statistics, extrema, nearest-point values, and tangent-normal gradients",
+        "Region-to-point diagnostics tested against full wall profiles using R95 and surrogate/control comparisons"
       ],
-      "evidence_signal": "Using full-domain descriptors reduced wall-profile errors from 45.5% to 13.8% for $C_p$ and from 72.6% to 12.9% for $C_q$, while $|\\tau|$ only improved from 49.1% to 31.9%.",
-      "watch_item": "The identified information length is quantity-dependent and surrogate-preservation is partial, with the largest degradation in forward-facing heat transfer and shear.",
+      "evidence_signal": "Full-domain descriptors reduced error from 45.5% to 13.8% for Cp and from 72.6% to 12.9% for Cq, while shear improved only from 49.1% to 31.9%; heat transfer showed the clearest support near order hs.",
+      "watch_item": "The observability length is quantity-dependent and geometry-dependent, so the reported thresholds may not transfer directly to other protrusion shapes or flow regimes without revalidation.",
       "hashtags": [
         "#Hypersonics",
         "#RarefiedFlow",
         "#DSMC",
-        "#HeatTransfer",
-        "#SurrogateModel"
+        "#SurfaceHeating",
+        "#PhysicsInformedML"
       ],
       "paper_id": "2026-06-24-arxiv-quantity_dependent_bulk_to_wall_observability_of_surface_loading_in_rarefied_hypersonic_fl",
       "paper_title": "Quantity-Dependent Bulk-to-Wall Observability of Surface Loading in Rarefied Hypersonic Flow over Triangular Protrusions",
       "paper_date": "2026-06-24",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-27T10:12:54",
+      "generated_at": "2026-06-26T10:55:03",
       "generator": "openai"
     }
   },
@@ -696,29 +696,29 @@
         "url": "https://arxiv.org/pdf/2606.25748v1"
       }
     ],
-    "score": 55,
+    "score": 60,
     "infographic": {
-      "key_insight": "Dynamic masking lets particle-tracking data be reconstructed on a grid while enforcing moving solid boundaries, yielding boundary-consistent, divergence-free velocities near bodies.",
-      "engineering_relevance": "This improves pressure and hydrodynamic force estimation in volumetric PTV for flows with translating, rotating, or deforming solids.",
+      "key_insight": "LE-DM reconstructs volumetric PTV velocity fields with moving solid boundaries by masking the domain and enforcing signed-distance-based boundary kinematics inside a single constrained solve.",
+      "engineering_relevance": "It enables boundary-consistent, divergence-free velocity and gradient estimates near moving bodies, improving pressure and hydrodynamic force evaluation in particle-tracking experiments.",
       "method": [
-        "Use a time-dependent signed-distance field to label fluid, boundary shell, and solid regions.",
-        "Solve Lagrangian-to-Eulerian reconstruction with incompressibility and prescribed surface velocity on the masked domain.",
-        "Apply the same framework to stationary, moving, multiple, or deforming bodies with only a signed-distance field and surface velocity."
+        "Time-dependent signed-distance mask splits the grid into fluid, boundary shell, and solid interior.",
+        "Particle data, incompressibility, prescribed surface velocity, and regularization are solved together on the masked domain.",
+        "Works for stationary, translating, rotating, multiple, and deforming bodies with only a signed-distance field plus surface velocity."
       ],
-      "evidence_signal": "Validated on an analytical oscillating sphere, synthetic CFD rising-sphere tracks, and a tomographic-PTV freely rising sphere experiment, with first-cell error reduced from 14% to 3% of body speed in the analytical case.",
-      "watch_item": "Performance depends on an accurate signed-distance field and prescribed surface velocity; errors in either can degrade boundary enforcement near the body.",
+      "evidence_signal": "Validated on an oscillating-sphere analytical case, CFD-derived synthetic tracks, and a tomographic-PTV rising-sphere experiment, with surface kinematics enforced to solver tolerance and first-cell error reduced from 14% to 3% in the analytical test.",
+      "watch_item": "Accuracy depends on having a reliable signed-distance field and prescribed surface velocity; errors in boundary motion or mask placement could degrade near-wall reconstruction.",
       "hashtags": [
         "#ParticleTrackingVelocimetry",
-        "#VolumetricPTV",
-        "#FluidStructureInteraction",
-        "#BoundaryReconstruction",
-        "#ComputationalFluidDynamics"
+        "#BoundaryAwareReconstruction",
+        "#MovingSolid",
+        "#FluidDynamics",
+        "#Turbulence"
       ],
       "paper_id": "2026-06-24-arxiv-dynamic_masking_for_boundary_aware_velocity_reconstruction_in_volumetric_particle_tracking",
       "paper_title": "Dynamic masking for boundary-aware velocity reconstruction in volumetric particle tracking with moving solids",
       "paper_date": "2026-06-24",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-27T10:12:56",
+      "generated_at": "2026-06-26T10:55:06",
       "generator": "openai"
     }
   },
@@ -747,29 +747,29 @@
         "url": "https://arxiv.org/pdf/2606.25780v1"
       }
     ],
-    "score": 54,
+    "score": 59,
     "infographic": {
-      "key_insight": "Turbulence in a T-shaped mixer develops in two stages: a near-junction jet-like region followed by a decay region with power-law dissipation and mixing that spreads from the channel center toward the walls.",
-      "engineering_relevance": "The results help predict when and how mixing becomes turbulent in T-mixers, informing design choices for chemical processing and scalar blending efficiency.",
+      "key_insight": "Turbulence in a T-shaped mixer develops in two stages: a near-junction jet-like transitional regime followed by a decay region with power-law dissipation and scalar-variance decay before relaxing to duct flow.",
+      "engineering_relevance": "These results clarify how turbulent mixing evolves in T-junction devices, helping engineers better predict mixing efficiency and design channel geometries for chemical processing.",
       "method": [
-        "Direct numerical simulations of turbulent flow in a T-shaped mixer",
+        "Direct numerical simulations of the turbulent regime in a T-shaped mixer",
         "Reynolds numbers up to Re = 2000 at Schmidt number Sc = 1",
-        "Streamwise analysis of turbulent kinetic energy, dissipation, scalar variance, and effective diffusion"
+        "Streamwise analysis of velocity, turbulent kinetic energy, dissipation, and scalar variance"
       ],
-      "evidence_signal": "The abstract reports distinct power-law decay behavior in the downstream region and time-averaged error-function scalar profiles, with exponents compared against bounded and unbounded turbulence theory.",
-      "watch_item": "The observed scaling may depend on the specific mixer geometry and the Sc = 1 condition, so extrapolation to other fluids or designs should be done cautiously.",
+      "evidence_signal": "The study reports distinct power-law exponents in the decay region, with velocity statistics matching bounded-domain decaying turbulence and scalar variance matching unbounded-turbulence behavior, supported by time-averaged scalar profiles and an effective diffusion coefficient.",
+      "watch_item": "The apparent mismatch between velocity and scalar decay laws suggests that mixing progression across the channel cross-section may complicate model transfer to other geometries or higher Schmidt-number fluids.",
       "hashtags": [
         "#Turbulence",
         "#Mixing",
-        "#DNS",
-        "#ChemicalEngineering",
-        "#FluidMechanics"
+        "#DirectNumericalSimulation",
+        "#FluidMechanics",
+        "#ChemicalEngineering"
       ],
       "paper_id": "2026-06-24-arxiv-stages_of_turbulence_generation_and_decay_in_a_t_shaped_mixer",
       "paper_title": "Stages of turbulence generation and decay in a T-shaped mixer",
       "paper_date": "2026-06-24",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-27T10:12:58",
+      "generated_at": "2026-06-26T10:55:08",
       "generator": "openai"
     }
   },
@@ -800,29 +800,29 @@
         "url": "https://arxiv.org/pdf/2606.27113v1"
       }
     ],
-    "score": 52,
+    "score": 57,
     "infographic": {
-      "key_insight": "The paper shows that relativistic detonation waves can be accurately captured with an ALE finite-volume solver and that, unlike the Newtonian case, the Zel'dovich pressure jump is nonmonotonic with mass flux.",
-      "engineering_relevance": "This matters for high-speed reactive-flow modeling in astrophysics and relativistic propulsion/energy-extraction studies, where shock tracking and stiff chemistry must be handled robustly.",
+      "key_insight": "The paper develops an ALE finite-volume solver for relativistic detonation waves and shows that relativistic pressure-jump behavior differs qualitatively from Newtonian detonations, including a nonmonotonic Zel'dovich pressure jump.",
+      "engineering_relevance": "This provides a practical numerical tool for simulating high-speed reactive relativistic flows in astrophysics and other extreme-energy systems where shock tracking and stiff reactions are difficult.",
       "method": [
-        "Second-order finite-volume ALE scheme with TVD reconstruction.",
-        "Mesh velocity chosen to match the shock speed for sharp front tracking.",
-        "Locally implicit treatment of stiff reaction source terms plus an efficient conserved-to-primitive variable conversion algorithm."
+        "Second-order ALE finite-volume scheme with TVD reconstruction",
+        "Mesh velocity set equal to the shock speed to follow the front accurately",
+        "Locally implicit treatment of stiff reaction source terms plus an efficient conserved-to-primitive recovery algorithm"
       ],
       "evidence_signal": "The solver successfully reproduces the Zel'dovich-von Neumann-Doering detonation profile up to shock Lorentz factors of about 7.",
-      "watch_item": "Accuracy and robustness depend on a nontrivial conserved-to-primitive conversion and careful handling of stiff reaction terms, which may complicate implementation.",
+      "watch_item": "The approach relies on accurate shock-speed tracking and robust primitive-variable recovery, which may become challenging for stronger shocks or more complex reaction models.",
       "hashtags": [
         "#RelativisticHydrodynamics",
         "#DetonationWaves",
-        "#ALEMethod",
-        "#FiniteVolume",
-        "#ReactiveFlows"
+        "#ALEmethods",
+        "#FiniteVolumeMethods",
+        "#ComputationalPhysics"
       ],
       "paper_id": "2026-06-25-arxiv-an_arbitrary_lagrangian_eulerian_solver_for_relativistic_detonation_waves",
       "paper_title": "An Arbitrary-Lagrangian-Eulerian solver for relativistic detonation waves",
       "paper_date": "2026-06-25",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-27T10:13:00",
+      "generated_at": "2026-06-26T10:55:12",
       "generator": "openai"
     }
   },
@@ -852,17 +852,17 @@
         "url": "https://arxiv.org/pdf/2606.25259v1"
       }
     ],
-    "score": 51,
+    "score": 56,
     "infographic": {
-      "key_insight": "A Fourier neural operator surrogate learns to correct inexpensive Boussinesq convection simulations toward high-fidelity compressible-flow behavior with a single inference step.",
-      "engineering_relevance": "This offers a practical way to reduce cost while improving accuracy in natural convection CFD workflows, especially for design studies and parametric sweeps.",
+      "key_insight": "A Fourier neural operator surrogate learns to correct inexpensive Boussinesq natural-convection simulations toward compressible-flow accuracy with a single model evaluation.",
+      "engineering_relevance": "This offers a practical CFD acceleration strategy for thermal-flow design studies where near-compressible fidelity is desired without paying the full cost of high-fidelity simulation.",
       "method": [
-        "Train on matched low-cost Boussinesq and high-fidelity compressible simulation pairs.",
-        "Use an FNO surrogate implemented and validated in FEniCSx with an implicit monolithic mixed FEM solver.",
-        "Evaluate in both 2D and 3D against COMSOL and standard benchmark problems."
+        "Generate matched low-fidelity Boussinesq and high-fidelity compressible simulation pairs.",
+        "Train a Fourier neural operator on 2D and 3D natural-convection cases.",
+        "Use parallel implicit monolithic mixed FEM solvers in FEniCSx, validated against COMSOL and literature benchmarks."
       ],
-      "evidence_signal": "The abstract reports SSIM values close to 1 across flow variables and test distributions, with mean-squared error reduced by roughly one to nearly three orders of magnitude.",
-      "watch_item": "Performance depends on the quality and coverage of paired training data, and generalization outside the sampled convection regimes may be limited.",
+      "evidence_signal": "Across all flow variables and test distributions, the surrogate reports SSIM close to 1 and mean-squared-error reductions from one to nearly three orders of magnitude relative to Boussinesq predictions.",
+      "watch_item": "Performance depends on the quality and coverage of paired training data, so extrapolation beyond the simulated flow regimes may be unreliable.",
       "hashtags": [
         "#CFD",
         "#NeuralSurrogates",
@@ -874,7 +874,7 @@
       "paper_title": "A Neural Surrogate Approach for Simulating Natural Convection Problems",
       "paper_date": "2026-06-24",
       "paper_category": "CFD Surrogates",
-      "generated_at": "2026-06-27T10:13:03",
+      "generated_at": "2026-06-26T10:55:15",
       "generator": "openai"
     }
   },
@@ -903,29 +903,29 @@
         "url": "https://arxiv.org/pdf/2606.24275v1"
       }
     ],
-    "score": 51,
+    "score": 56,
     "infographic": {
-      "key_insight": "The paper shows that in stochastic 2D vortex dynamics, choosing circulation preservation (SALT) versus energy preservation (SFLT) fundamentally changes how uncertainty is distributed across flow scales and space.",
-      "engineering_relevance": "For turbulence modeling and uncertainty quantification, the invariant you preserve determines whether stochastic effects concentrate near sharp gradients or spread more diffusely through the domain.",
+      "key_insight": "The paper shows that the choice between circulation-preserving SALT and energy-preserving SFLT fundamentally changes how stochastic uncertainty enters vortex dynamics: SALT is more scale-sensitive and localized near sharp gradients, while SFLT is smoother and more spatially diffuse.",
+      "engineering_relevance": "For turbulence and flow-uncertainty modeling, the result helps decide whether to preserve geometric structure or kinetic energy, which affects the realism and localization of stochastic forcing in simulations.",
       "method": [
-        "Compared two geometric stochastic Euler frameworks: SALT and SFLT.",
-        "Analyzed how noise scales with wavenumber, finding SALT is more sensitive to high-frequency modes.",
-        "Tested both approaches on a traveling dipole, vortex merger, and forced-damped turbulence."
+        "Compare two stochastic geometric formulations for 2D Euler: SALT and SFLT.",
+        "Analyze how each framework weights high-frequency flow components and uncertainty growth.",
+        "Test both methods on a traveling dipole, vortex merger, and forced-damped turbulence."
       ],
-      "evidence_signal": "Numerical experiments reported in the abstract show SALT localizes variance near active vorticity gradients, while SFLT produces a broader variance field across the domain.",
-      "watch_item": "The models appear to force a tradeoff between structure preservation and kinetic-energy preservation, so the choice of formulation must match the intended physical objective.",
+      "evidence_signal": "The abstract reports numerical experiments across three flow cases, showing SALT variance concentrated near active vorticity gradients and SFLT variance spread more broadly across the domain.",
+      "watch_item": "Simultaneous conservation of circulation and energy is not generally possible except for a stochastic time reparametrization, so model choice involves a fundamental tradeoff rather than a universally optimal formulation.",
       "hashtags": [
         "#Turbulence",
         "#StochasticModeling",
         "#GeometricMechanics",
         "#VortexDynamics",
-        "#UncertaintyQuantification"
+        "#ComputationalFluidDynamics"
       ],
       "paper_id": "2026-06-23-arxiv-numerical_comparison_of_energy_versus_circulation_preserving_stochastic_vortex_dynamics",
       "paper_title": "Numerical comparison of energy- versus circulation-preserving stochastic vortex dynamics",
       "paper_date": "2026-06-23",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-27T10:13:05",
+      "generated_at": "2026-06-26T10:55:17",
       "generator": "openai"
     }
   },
@@ -955,29 +955,29 @@
         "url": "https://arxiv.org/pdf/2606.23940v1"
       }
     ],
-    "score": 51,
+    "score": 56,
     "infographic": {
-      "key_insight": "A Video Vision Transformer can predict the full viscoelastic droplet impact evolution from only the first 10% to 20% of the simulation, while preserving key flow regimes and geometry.",
-      "engineering_relevance": "This offers a major reduction in droplet-impact simulation cost, making parametric studies faster for applications like spray cooling, inkjet printing, and pharmaceutical processing.",
+      "key_insight": "A Video Vision Transformer can learn to forecast the later stages of viscoelastic droplet impact from only the first 10%–20% of the simulation, while preserving key impact physics such as spreading and bouncing.",
+      "engineering_relevance": "This offers a much cheaper surrogate for droplet-impact studies relevant to spray cooling, inkjet printing, and pharmaceutical processing, cutting simulation cost by roughly 80%–90%.",
       "method": [
-        "Uses VOF volume-fraction fields as the spatiotemporal input representation.",
-        "Trains a ViViT model to extrapolate the remaining droplet dynamics after observing only the initial impact phase.",
-        "Targets both Newtonian and viscoelastic effects through parameters such as Re, We, β, and Wi."
+        "Use VOF-derived volume fraction fields as spatiotemporal input.",
+        "Train a ViViT model to predict the remaining droplet evolution after an initial short prefix of the trajectory.",
+        "Include viscoelastic controls such as solvent viscosity ratio (β) and Weissenberg number (Wi) alongside impact parameters."
       ],
-      "evidence_signal": "The abstract reports approximately 80% to 90% computational cost reduction and successful prediction of spreading and bouncing behaviors with good structural similarity.",
-      "watch_item": "Generalization to real experimental data may be limited unless training includes sufficient measured videos and parameter coverage.",
+      "evidence_signal": "The abstract reports physically consistent predictions across multiple parameter settings and prediction horizons, with preservation of geometric features and structural similarity.",
+      "watch_item": "Generalization to experimental data and unseen fluid regimes may require careful validation, since the method is trained on simulation-derived fields.",
       "hashtags": [
-        "#FluidMechanics",
-        "#MachineLearning",
-        "#VisionTransformer",
+        "#FluidDynamics",
+        "#ViscoelasticFlow",
         "#DropletImpact",
-        "#ViscoelasticFlow"
+        "#VisionTransformer",
+        "#SurrogateModel"
       ],
       "paper_id": "2026-06-22-arxiv-prediction_of_viscoelastic_droplet_impact_dynamics_using_a_vision_transformer_based_approa",
       "paper_title": "Prediction of Viscoelastic Droplet Impact Dynamics Using a Vision Transformer-Based Approach",
       "paper_date": "2026-06-22",
       "paper_category": "Turbulence",
-      "generated_at": "2026-06-27T10:13:07",
+      "generated_at": "2026-06-26T10:55:20",
       "generator": "openai"
     }
   },
@@ -1009,21 +1009,21 @@
         "url": "https://arxiv.org/pdf/2606.25148v1"
       }
     ],
-    "score": 50,
+    "score": 55,
     "infographic": {
-      "key_insight": "Three-dimensional Cartesian PDE solvers can be reduced exactly to repeated one-dimensional tensor-product line operations, so the “3D matrix” is never assembled, stored, or factored.",
-      "engineering_relevance": "This lets CFD and PDE solvers achieve linear-time scaling in the number of unknowns while improving memory efficiency and hardware throughput on real parallel machines.",
+      "key_insight": "3D Cartesian PDE operators can be treated as repeated 1D line solves along each axis, eliminating the need to assemble or store full 3D matrices.",
+      "engineering_relevance": "This enables matrix-free CFD solvers with O(N) work and low memory footprint, making high-order and production-scale Cartesian simulations more hardware-efficient.",
       "method": [
-        "Rewrite 3D operators as Kronecker/tensor products of 1D kernels.",
-        "Use batched multi-right-hand-side line sweeps and sum factorization for high-order methods.",
-        "Apply pencil decomposition for MPI-contiguous directional sweeps and separable direct Poisson/Helmholtz transforms."
+        "Kronecker-product factorization reduces 3D operators to tensor-product 1D kernels",
+        "Multi-right-hand-side reshaping turns sweeps into batched line solves; dense cases map to GEMM, sparse cases to banded/stencil kernels",
+        "Sum factorization and pencil decomposition improve high-order Galerkin throughput and parallel scalability"
       ],
-      "evidence_signal": "The abstract argues analytically that fixed stencil width or fixed polynomial degree gives O(N) compute and O(Nx+Ny+Nz) storage, with direct separable solvers adding only the expected transform cost.",
-      "watch_item": "Performance depends on exploiting axis-contiguous data layouts and efficient line-sweep implementations; poor memory layout or communication patterns can erase the theoretical gains.",
+      "evidence_signal": "The abstract synthesizes known CFD and numerical PDE techniques and analyzes their cost structure, reporting O(N) compute scaling and O(Nx+Ny+Nz) operator storage up to bandwidth constants.",
+      "watch_item": "Performance depends on maintaining axis-contiguous data layouts and efficient line-solve implementations, especially for nonuniform stencils or MPI pencil decompositions.",
       "hashtags": [
         "#CFD",
-        "#TensorProducts",
         "#MatrixFree",
+        "#TensorProducts",
         "#PDEsolvers",
         "#HighPerformanceComputing"
       ],
@@ -1031,7 +1031,7 @@
       "paper_title": "No 3D Matrices: A Unified Tensor-Product View of Matrix-Free Cartesian PDE Solvers",
       "paper_date": "2026-06-23",
       "paper_category": "CFD Surrogates",
-      "generated_at": "2026-06-27T10:13:09",
+      "generated_at": "2026-06-26T10:55:23",
       "generator": "openai"
     }
   }
