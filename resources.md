@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-06-27
+Generated: 2026-06-28
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Kolmogorov Arnold networks (KAN) for aerodynamic prediction: a comparison with MLPs and GNNs
