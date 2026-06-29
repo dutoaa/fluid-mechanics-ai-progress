@@ -1,24 +1,24 @@
 {
-  "key_insight": "VesNet uses a neural-network surrogate to accelerate expensive vesicle self-interactions in Stokes flow while preserving physically based solvers for the remaining dynamics.",
-  "engineering_relevance": "This enables practical simulation of large deformable-particle suspensions on modest hardware, which is valuable for microfluidics, soft matter, and biomedical flow modeling.",
+  "key_insight": "VesNet replaces the most expensive vesicle self-interaction calculations with a neural surrogate, enabling fast yet accurate Stokesian suspension simulation.",
+  "engineering_relevance": "This hybrid solver can make large-scale deformable-particle flow simulations practical on modest hardware, which is valuable for microfluidics, biomedical modeling, and multiphase flow design.",
   "method": [
-    "Approximates vesicle self-interactions, including background-flow coupling and short-range lubrication forces.",
-    "Keeps conventional modules for boundary reparameterization and far-field hydrodynamics.",
-    "Runs on GPU for end-to-end speedup over boundary-integral baselines."
+    "Approximates vesicle self-interactions with a neural network",
+    "Keeps conventional boundary reparameterization and far-field hydrodynamics modules",
+    "Uses GPU acceleration for end-to-end speedup"
   ],
-  "evidence_signal": "The abstract reports over 100x speedup versus a multithreaded MATLAB CPU solver and about 5x versus a GPU counterpart, while still matching key behaviors in single-vesicle, pair, and large-suspension tests.",
-  "watch_item": "Because the network replaces only selected interaction terms, accuracy may depend on the training regime and on staying within the flow and geometry conditions represented in the training data.",
+  "evidence_signal": "The abstract reports over 100x speedup versus a multithreaded MATLAB CPU boundary-integral solver and about 5x versus a GPU counterpart, while reproducing single-vesicle, pair, and many-vesicle dynamics.",
+  "watch_item": "The approach is specialized to 2D vesicle suspensions in Stokes flow, so generalization to 3D or strongly different flow regimes may require retraining or redesign.",
   "hashtags": [
     "#FluidMechanics",
-    "#StokesFlow",
-    "#NeuralPDE",
     "#ComputationalScience",
-    "#GPUAcceleration"
+    "#NeuralSurrogate",
+    "#GPUAcceleration",
+    "#StokesFlow"
   ],
   "paper_id": "2026-06-24-arxiv-vesnet_neural_network_accelerated_solver_for_simulating_stokesian_vesicle_suspensions",
   "paper_title": "VesNet: Neural network accelerated solver for simulating Stokesian vesicle suspensions",
   "paper_date": "2026-06-24",
   "paper_category": "Turbulence",
-  "generated_at": "2026-06-28T10:30:21",
+  "generated_at": "2026-06-29T12:38:37",
   "generator": "openai"
 }
