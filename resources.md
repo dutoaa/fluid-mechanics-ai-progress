@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-06-29
+Generated: 2026-06-30
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Kolmogorov Arnold networks (KAN) for aerodynamic prediction: a comparison with MLPs and GNNs
@@ -11,7 +11,31 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.27126v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-25-arxiv-kolmogorov_arnold_networks_kan_for_aerodynamic_prediction_a_comparison_with_mlps_and_gnns_infographic.json
 
-## 2. A Physics-Informed Fourier-Wavelet Transformer for Multiscale Computational Fluid Dynamics Surrogate Modeling
+## 2. Kriging and neural network models for pressure losses across perforated plates
+
+- Date: 2026-06-28
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.29628v1
+- PDF: https://arxiv.org/pdf/2606.29628v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-28-arxiv-kriging_and_neural_network_models_for_pressure_losses_across_perforated_plates_infographic.json
+
+## 3. Engineering Collective Microbial Dynamics for Sustainable Thermal Management
+
+- Date: 2026-06-26
+- Category: Aerodynamics
+- arXiv: https://arxiv.org/abs/2606.28646v1
+- PDF: https://arxiv.org/pdf/2606.28646v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-26-arxiv-engineering_collective_microbial_dynamics_for_sustainable_thermal_management_infographic.json
+
+## 4. Gappy Reconstruction of Bubbly Flows by Guided Diffusion Models
+
+- Date: 2026-06-29
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.29843v1
+- PDF: https://arxiv.org/pdf/2606.29843v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-29-arxiv-gappy_reconstruction_of_bubbly_flows_by_guided_diffusion_models_infographic.json
+
+## 5. A Physics-Informed Fourier-Wavelet Transformer for Multiscale Computational Fluid Dynamics Surrogate Modeling
 
 - Date: 2026-06-23
 - Category: CFD Surrogates
@@ -19,7 +43,55 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.24696v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-23-arxiv-a_physics_informed_fourier_wavelet_transformer_for_multiscale_computational_fluid_dynamics_infographic.json
 
-## 3. Effects of thermochemical modelling on a hypersonic shock-wave/turbulent boundary-layer interaction
+## 6. Data-driven linear analysis of turbulent flows
+
+- Date: 2026-06-26
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.28569v1
+- PDF: https://arxiv.org/pdf/2606.28569v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-26-arxiv-data_driven_linear_analysis_of_turbulent_flows_infographic.json
+
+## 7. Electrophoretic motion of a liquid droplet with Brinkman-screened internal hydrodynamics
+
+- Date: 2026-06-29
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.30515v1
+- PDF: https://arxiv.org/pdf/2606.30515v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-29-arxiv-electrophoretic_motion_of_a_liquid_droplet_with_brinkman_screened_internal_hydrodynamics_infographic.json
+
+## 8. Offline accuracy is not enough: closed-loop instability and stabilisation of a wall-sensor neural estimator in opposition control
+
+- Date: 2026-06-29
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.30484v1
+- PDF: https://arxiv.org/pdf/2606.30484v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-29-arxiv-offline_accuracy_is_not_enough_closed_loop_instability_and_stabilisation_of_a_wall_sensor_infographic.json
+
+## 9. Premixed flames in a stagnation point flow under Darcy's law
+
+- Date: 2026-06-27
+- Category: CFD Surrogates
+- arXiv: https://arxiv.org/abs/2606.28909v1
+- PDF: https://arxiv.org/pdf/2606.28909v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-27-arxiv-premixed_flames_in_a_stagnation_point_flow_under_darcy_s_law_infographic.json
+
+## 10. Exact analytical solutions for the piston effect in supercritical fluids under post-acoustic approximation -- Short-time asymptotics, thermal penetration depth and comparison with the Spacelab D-2 experiments
+
+- Date: 2026-06-29
+- Category: Aerodynamics
+- arXiv: https://arxiv.org/abs/2606.30006v1
+- PDF: https://arxiv.org/pdf/2606.30006v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-29-arxiv-exact_analytical_solutions_for_the_piston_effect_in_supercritical_fluids_under_post_acoust_infographic.json
+
+## 11. Monolithic kinetic algorithm for heterogeneous porous media systems using a continuous one-domain approach
+
+- Date: 2026-06-28
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.29619v1
+- PDF: https://arxiv.org/pdf/2606.29619v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-28-arxiv-monolithic_kinetic_algorithm_for_heterogeneous_porous_media_systems_using_a_continuous_one_infographic.json
+
+## 12. Effects of thermochemical modelling on a hypersonic shock-wave/turbulent boundary-layer interaction
 
 - Date: 2026-06-26
 - Category: Turbulence
@@ -27,15 +99,15 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.28018v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-26-arxiv-effects_of_thermochemical_modelling_on_a_hypersonic_shock_wave_turbulent_boundary_layer_in_infographic.json
 
-## 4. Excitation of non-modal perturbations in hypersonic boundary layers by free stream forcing. Part II: asymptotic theory and key mechanisms
+## 13. Sudden expansion stability thresholds modified by lateral flows
 
-- Date: 2026-06-25
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.26976v1
-- PDF: https://arxiv.org/pdf/2606.26976v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-25-arxiv-excitation_of_non_modal_perturbations_in_hypersonic_boundary_layers_by_free_stream_forcing_infographic.json
+- Date: 2026-06-29
+- Category: AI Fluid Mechanics
+- arXiv: https://arxiv.org/abs/2606.30269v1
+- PDF: https://arxiv.org/pdf/2606.30269v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-29-arxiv-sudden_expansion_stability_thresholds_modified_by_lateral_flows_infographic.json
 
-## 5. Hydrodynamic theory of premixed flames under Darcy's law: Interfacial conditions and effects of nonunity Lewis number and heat loss
+## 14. Hydrodynamic theory of premixed flames under Darcy's law: Interfacial conditions and effects of nonunity Lewis number and heat loss
 
 - Date: 2026-06-25
 - Category: Turbulence
@@ -43,122 +115,50 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.26953v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-25-arxiv-hydrodynamic_theory_of_premixed_flames_under_darcy_s_law_interfacial_conditions_and_effect_infographic.json
 
-## 6. Geometry-Driven Passive Fluid Transport in Paper-Based Microdevices
+## 15. Efficient Wall-Modeled High-Order Compact Gas-Kinetic Scheme for Compressible Turbulent Flows
 
-- Date: 2026-06-24
+- Date: 2026-06-29
 - Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.26374v1
-- PDF: https://arxiv.org/pdf/2606.26374v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-24-arxiv-geometry_driven_passive_fluid_transport_in_paper_based_microdevices_infographic.json
+- arXiv: https://arxiv.org/abs/2606.30061v1
+- PDF: https://arxiv.org/pdf/2606.30061v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-29-arxiv-efficient_wall_modeled_high_order_compact_gas_kinetic_scheme_for_compressible_turbulent_fl_infographic.json
 
-## 7. Quantitative interpretation of Brookfield DV3TLV measurements: shear rate conversion, correction factors, and applicability limits
+## 16. A second-order unified gas-kinetic wave-particle method with enhanced mesh independence for hypersonic flows
+
+- Date: 2026-06-29
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.29853v1
+- PDF: https://arxiv.org/pdf/2606.29853v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-29-arxiv-a_second_order_unified_gas_kinetic_wave_particle_method_with_enhanced_mesh_independence_fo_infographic.json
+
+## 17. Excitation of non-modal perturbations in hypersonic boundary layers by free stream forcing. Part II: asymptotic theory and key mechanisms
 
 - Date: 2026-06-25
 - Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.27524v1
-- PDF: https://arxiv.org/pdf/2606.27524v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-25-arxiv-quantitative_interpretation_of_brookfield_dv3tlv_measurements_shear_rate_conversion_correc_infographic.json
+- arXiv: https://arxiv.org/abs/2606.26976v1
+- PDF: https://arxiv.org/pdf/2606.26976v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-25-arxiv-excitation_of_non_modal_perturbations_in_hypersonic_boundary_layers_by_free_stream_forcing_infographic.json
 
-## 8. G-PINNs: Gaussian-based spatially weighted formulation for PINNs: 1D low-viscous Burgers
+## 18. Single-point statistical moments of the nonhomogeneous stochastic advection equation in the small correlation length limit
 
-- Date: 2026-06-24
-- Category: Physics-Informed ML
-- arXiv: https://arxiv.org/abs/2606.26013v1
-- PDF: https://arxiv.org/pdf/2606.26013v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-24-arxiv-g_pinns_gaussian_based_spatially_weighted_formulation_for_pinns_1d_low_viscous_burgers_infographic.json
+- Date: 2026-06-28
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.29479v1
+- PDF: https://arxiv.org/pdf/2606.29479v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-28-arxiv-single_point_statistical_moments_of_the_nonhomogeneous_stochastic_advection_equation_in_th_infographic.json
 
-## 9. Flow dynamics in a wavy channel filled with anisotropic porous material under the effect of wall slip
+## 19. The intrinsic decomposition of vorticity dynamics on an arbitrarily moving and deforming boundary
+
+- Date: 2026-06-27
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2606.28763v1
+- PDF: https://arxiv.org/pdf/2606.28763v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-27-arxiv-the_intrinsic_decomposition_of_vorticity_dynamics_on_an_arbitrarily_moving_and_deforming_b_infographic.json
+
+## 20. Flow dynamics in a wavy channel filled with anisotropic porous material under the effect of wall slip
 
 - Date: 2026-06-26
 - Category: Turbulence
 - arXiv: https://arxiv.org/abs/2606.27986v1
 - PDF: https://arxiv.org/pdf/2606.27986v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-26-arxiv-flow_dynamics_in_a_wavy_channel_filled_with_anisotropic_porous_material_under_the_effect_o_infographic.json
-
-## 10. The multifractal nature of turbulent energy dissipation
-
-- Date: 2026-06-25
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.27540v1
-- PDF: https://arxiv.org/pdf/2606.27540v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-25-arxiv-the_multifractal_nature_of_turbulent_energy_dissipation_infographic.json
-
-## 11. Observations and empirical functions for the ocean surface wave spectrum
-
-- Date: 2026-06-26
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.28165v1
-- PDF: https://arxiv.org/pdf/2606.28165v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-26-arxiv-observations_and_empirical_functions_for_the_ocean_surface_wave_spectrum_infographic.json
-
-## 12. Statistical equilibria of two-dimensional turbulent flows for generic initial vorticity fields on a sphere, calculated on the basis of the original Miller-Robert-Sommeria theory
-
-- Date: 2026-06-26
-- Category: CFD Surrogates
-- arXiv: https://arxiv.org/abs/2606.27778v1
-- PDF: https://arxiv.org/pdf/2606.27778v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-26-arxiv-statistical_equilibria_of_two_dimensional_turbulent_flows_for_generic_initial_vorticity_fi_infographic.json
-
-## 13. VesNet: Neural network accelerated solver for simulating Stokesian vesicle suspensions
-
-- Date: 2026-06-24
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.25569v1
-- PDF: https://arxiv.org/pdf/2606.25569v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-24-arxiv-vesnet_neural_network_accelerated_solver_for_simulating_stokesian_vesicle_suspensions_infographic.json
-
-## 14. Unpinning of trapped oil droplets via non-resonant acoustic streaming in capillary tubes
-
-- Date: 2026-06-25
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.27331v1
-- PDF: https://arxiv.org/pdf/2606.27331v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-25-arxiv-unpinning_of_trapped_oil_droplets_via_non_resonant_acoustic_streaming_in_capillary_tubes_infographic.json
-
-## 15. Mitigating adjoint chaos in wall turbulence
-
-- Date: 2026-06-24
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.25399v1
-- PDF: https://arxiv.org/pdf/2606.25399v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-24-arxiv-mitigating_adjoint_chaos_in_wall_turbulence_infographic.json
-
-## 16. Data-Driven Flux Parameterization for the Atmospheric Boundary Layer
-
-- Date: 2026-06-23
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.24593v2
-- PDF: https://arxiv.org/pdf/2606.24593v2
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-23-arxiv-data_driven_flux_parameterization_for_the_atmospheric_boundary_layer_infographic.json
-
-## 17. pyDOF: a Python library for the design of discrete forward and inverse filters
-
-- Date: 2026-06-25
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.26830v1
-- PDF: https://arxiv.org/pdf/2606.26830v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-25-arxiv-pydof_a_python_library_for_the_design_of_discrete_forward_and_inverse_filters_infographic.json
-
-## 18. The Allee Effect in Compressible Flows
-
-- Date: 2026-06-26
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.28260v1
-- PDF: https://arxiv.org/pdf/2606.28260v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-26-arxiv-the_allee_effect_in_compressible_flows_infographic.json
-
-## 19. Stages of turbulence generation and decay in a T-shaped mixer
-
-- Date: 2026-06-24
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.25780v1
-- PDF: https://arxiv.org/pdf/2606.25780v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-24-arxiv-stages_of_turbulence_generation_and_decay_in_a_t_shaped_mixer_infographic.json
-
-## 20. Influence of Park's Two-Temperature Model Control Temperature on the Flow Properties in Hypersonic Reentry Conditions
-
-- Date: 2026-06-25
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2606.26906v1
-- PDF: https://arxiv.org/pdf/2606.26906v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-25-arxiv-influence_of_park_s_two_temperature_model_control_temperature_on_the_flow_properties_in_hy_infographic.json
