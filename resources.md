@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-07-03
+Generated: 2026-07-04
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Self-explainable Operator Learning for Discovering Spatial Patterns in Functional Data
@@ -99,15 +99,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.01981v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-02-arxiv-energy_transfer_intermittency_and_mixing_in_shear_driven_stratified_turbulence_infographic.json
 
-## 13. Engineering Collective Microbial Dynamics for Sustainable Thermal Management
-
-- Date: 2026-06-26
-- Category: Aerodynamics
-- arXiv: https://arxiv.org/abs/2606.28646v1
-- PDF: https://arxiv.org/pdf/2606.28646v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-26-arxiv-engineering_collective_microbial_dynamics_for_sustainable_thermal_management_infographic.json
-
-## 14. Influence of wind shear and veer on power, thrust, and induction of an actuator disk
+## 13. Influence of wind shear and veer on power, thrust, and induction of an actuator disk
 
 - Date: 2026-06-29
 - Category: Turbulence
@@ -115,7 +107,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.30830v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-29-arxiv-influence_of_wind_shear_and_veer_on_power_thrust_and_induction_of_an_actuator_disk_infographic.json
 
-## 15. Fourier Neural Operators for Rayleigh-Bénard Convection
+## 14. Fourier Neural Operators for Rayleigh-Bénard Convection
 
 - Date: 2026-07-02
 - Category: CFD Surrogates
@@ -123,7 +115,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.02088v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-02-arxiv-fourier_neural_operators_for_rayleigh_b_nard_convection_infographic.json
 
-## 16. Gappy Reconstruction of Bubbly Flows by Guided Diffusion Models
+## 15. Gappy Reconstruction of Bubbly Flows by Guided Diffusion Models
 
 - Date: 2026-06-29
 - Category: Turbulence
@@ -131,7 +123,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2606.29843v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-29-arxiv-gappy_reconstruction_of_bubbly_flows_by_guided_diffusion_models_infographic.json
 
-## 17. Effect of surfactant kinetics on the wetting following the drop impact onto rough surfaces
+## 16. Effect of surfactant kinetics on the wetting following the drop impact onto rough surfaces
 
 - Date: 2026-07-02
 - Category: Turbulence
@@ -139,7 +131,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.02309v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-02-arxiv-effect_of_surfactant_kinetics_on_the_wetting_following_the_drop_impact_onto_rough_surfaces_infographic.json
 
-## 18. No evidence of vorticity production from initially irrotational turbulent gravitational collapse
+## 17. No evidence of vorticity production from initially irrotational turbulent gravitational collapse
 
 - Date: 2026-07-01
 - Category: Turbulence
@@ -147,7 +139,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.01207v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-01-arxiv-no_evidence_of_vorticity_production_from_initially_irrotational_turbulent_gravitational_co_infographic.json
 
-## 19. Visualizing Lagrangian Heat Transport Paths and Density Structures in Unsteady Heat Transfer
+## 18. Visualizing Lagrangian Heat Transport Paths and Density Structures in Unsteady Heat Transfer
 
 - Date: 2026-07-01
 - Category: Turbulence
@@ -155,10 +147,18 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.00909v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-01-arxiv-visualizing_lagrangian_heat_transport_paths_and_density_structures_in_unsteady_heat_transf_infographic.json
 
-## 20. GQL-Based Physical-Constraint-Preserving High-Order Finite Difference Schemes for Special Relativistic Hydrodynamics in Arbitrary Dimensions
+## 19. GQL-Based Physical-Constraint-Preserving High-Order Finite Difference Schemes for Special Relativistic Hydrodynamics in Arbitrary Dimensions
 
 - Date: 2026-06-30
 - Category: Turbulence
 - arXiv: https://arxiv.org/abs/2606.31992v1
 - PDF: https://arxiv.org/pdf/2606.31992v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-06-30-arxiv-gql_based_physical_constraint_preserving_high_order_finite_difference_schemes_for_special_infographic.json
+
+## 20. Lock-exchange flow regimes under low air Froude number bubble curtains
+
+- Date: 2026-07-01
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2607.00960v1
+- PDF: https://arxiv.org/pdf/2607.00960v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-01-arxiv-lock_exchange_flow_regimes_under_low_air_froude_number_bubble_curtains_infographic.json

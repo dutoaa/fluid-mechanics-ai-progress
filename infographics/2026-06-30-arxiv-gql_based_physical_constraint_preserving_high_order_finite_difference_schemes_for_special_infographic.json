@@ -1,24 +1,24 @@
 {
-  "key_insight": "The paper introduces a high-order finite-difference framework that preserves relativistic physical constraints by converting nonlinear admissibility conditions into solvable linearized limiting problems.",
-  "engineering_relevance": "It enables robust, shock-resolving special relativistic hydrodynamics simulations without numerical breakdown near strong discontinuities, even in multiple dimensions.",
+  "key_insight": "The paper introduces a high-order finite-difference framework that preserves special relativistic hydrodynamics physical constraints by converting nonlinear admissibility conditions into solvable linear inequalities and enforcing them with a flux limiter.",
+  "engineering_relevance": "This enables robust, accurate simulations of extreme relativistic flows without violating positivity or subluminal-speed constraints, which is critical for shock-dominated and astrophysical CFD applications.",
   "method": [
-    "Uses a GQL reformulation to turn positivity and subluminal-velocity constraints into families of linear inequalities.",
-    "Embeds a Zalesak-type flux-corrected transport limiter into finite-difference WENO updates on conservative variables.",
-    "Computes optimal limiter parameters non-iteratively via small eigenvalue problems using a stereographic parameterization."
+    "Uses geometric quasilinearization (GQL) to reformulate RHD constraints as linear inequalities.",
+    "Integrates a Zalesak-type flux-corrected transport limiter directly on conservative variables in a finite-difference WENO scheme.",
+    "Computes limiting parameters non-iteratively via stereographic parameterization and small symmetric eigenvalue problems."
   ],
-  "evidence_signal": "The abstract reports extensive 1D–3D benchmarks, including ultra-relativistic Riemann problems and astrophysical jets, showing stability, discontinuity resolution, and design-order accuracy on smooth flows.",
-  "watch_item": "The multidimensional limiter still relies on solving small eigenproblems and relaxed variants, so implementation cost and robustness of parameter selection need careful attention in large-scale 3D runs.",
+  "evidence_signal": "The method is validated on numerical benchmarks from 1D to 3D, including ultra-relativistic Riemann problems and astrophysical jets, showing robustness, sharp discontinuity capture, and design-order accuracy on smooth solutions.",
+  "watch_item": "The PCP guarantee relies on solving extra eigenvalue problems and special limiting formulations, so implementation cost and complexity may increase in multidimensional simulations.",
   "hashtags": [
     "#RelativisticHydrodynamics",
-    "#HighOrderMethods",
-    "#PhysicalConstraintPreserving",
     "#FiniteDifferenceWENO",
-    "#FluxCorrectedTransport"
+    "#PhysicalConstraintPreserving",
+    "#FluxLimiter",
+    "#ComputationalFluidDynamics"
   ],
   "paper_id": "2026-06-30-arxiv-gql_based_physical_constraint_preserving_high_order_finite_difference_schemes_for_special",
   "paper_title": "GQL-Based Physical-Constraint-Preserving High-Order Finite Difference Schemes for Special Relativistic Hydrodynamics in Arbitrary Dimensions",
   "paper_date": "2026-06-30",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-03T10:40:43",
+  "generated_at": "2026-07-04T10:14:39",
   "generator": "openai"
 }
