@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-07-04
+Generated: 2026-07-05
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Self-explainable Operator Learning for Discovering Spatial Patterns in Functional Data
