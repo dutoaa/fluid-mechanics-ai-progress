@@ -1,24 +1,24 @@
 {
-  "key_insight": "A PICNN can serve as the prediction step in a physics-preserving two-phase porous-media solver, then be corrected to enforce thermodynamic consistency, mass conservation, and bounded solutions.",
-  "engineering_relevance": "This offers a mesh-local, flux-based ML surrogate that is better suited than standard PINNs for porous-media flow with discontinuous permeability and interfacial flux continuity.",
+  "key_insight": "A PICNN can replace the traditional prediction solver in a physics-preserving two-phase flow scheme while still yielding energy-stable, mass-conservative, and bounds-preserving solutions.",
+  "engineering_relevance": "This provides a practical surrogate modeling strategy for porous-media flow simulation that is better suited than standard PINNs for local flux interactions and discontinuous permeability.",
   "method": [
-    "Train a physics-informed CNN on finite-volume residuals rather than pointwise PDE residuals.",
-    "Compute interfacial fluxes with TPFA using neighboring cell-centered values to approximate normal gradients.",
-    "Apply a post-processing correction to restore energy stability, mass conservation, and bounds preservation."
+    "PICNN predicts the next-state solution using finite-volume residual training.",
+    "Interfacial fluxes are computed with TPFA and two-point difference quotients between neighboring cells.",
+    "A post-processing correction enforces thermodynamic consistency, mass conservation, and variable bounds."
   ],
-  "evidence_signal": "The abstract reports numerical results showing that the finite-volume-residual PICNN can replace the traditional prediction solver within the physics-preserving framework and outperform standard PINN-style locality handling.",
-  "watch_item": "The approach depends on a carefully designed correction step and FV/TPFA discretization, so implementation quality and compatibility with complex geometries or strongly heterogeneous media may affect robustness.",
+  "evidence_signal": "The abstract reports numerical results showing that the finite-volume-residual-trained PICNN can successfully replace the conventional prediction solver within the physics-preserving framework.",
+  "watch_item": "Performance may depend on the quality of the correction step and the ability of TPFA-based residuals to remain accurate on complex heterogeneous grids.",
   "hashtags": [
     "#PhysicsInformedML",
-    "#PorousMediaFlow",
     "#TwoPhaseFlow",
-    "#FiniteVolumeMethods",
-    "#ThermodynamicConsistency"
+    "#PorousMedia",
+    "#FiniteVolumeMethod",
+    "#ScientificMachineLearning"
   ],
   "paper_id": "2026-07-01-arxiv-the_picnn_assisted_physics_preserving_scheme_for_thermodynamically_consistent_two_phase_fl",
   "paper_title": "The PICNN-Assisted Physics-Preserving Scheme for Thermodynamically Consistent Two-Phase Flow in Porous Media",
   "paper_date": "2026-07-01",
   "paper_category": "Physics-Informed ML",
-  "generated_at": "2026-07-05T10:18:04",
+  "generated_at": "2026-07-06T12:07:32",
   "generator": "openai"
 }
