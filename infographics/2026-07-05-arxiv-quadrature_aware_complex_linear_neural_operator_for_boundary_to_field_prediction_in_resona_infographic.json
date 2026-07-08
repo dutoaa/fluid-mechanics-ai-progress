@@ -1,24 +1,24 @@
 {
-  "key_insight": "The paper introduces a quadrature-aware complex-linear boundary operator that predicts acoustic pressure fields from vibrating-surface excitation while enforcing complex superposition and zero-response physics by design.",
-  "engineering_relevance": "This enables much faster and more physically consistent surrogate modeling for resonant acoustics problems where repeated boundary-driven wave simulations are too costly.",
+  "key_insight": "A quadrature-aware complex-linear neural operator can predict acoustic pressure fields from distributed boundary excitation while preserving the exact linear physics of superposition and zero response to zero input.",
+  "engineering_relevance": "This enables much faster surrogate prediction for resonant acoustics in design, control, and repeated-query workflows where many boundary-source realizations must be evaluated.",
   "method": [
-    "Maps complex normal velocity on a source surface to complex receiver pressure using learned source/receiver bases with explicit surface-quadrature contraction.",
-    "Represents the source with coordinates, normals, and quadrature weights instead of a fixed flattened input vector to preserve linearity in the excitation.",
-    "Uses MRT lattice Boltzmann solver data in a solver-agnostic boundary-to-field format and benchmarks against a complex DeepONet baseline."
+    "Uses a complex-linear boundary operator that contracts learned source and receiver bases through explicit surface quadrature.",
+    "Represents the vibrating boundary with coordinates, normals, and quadrature weights instead of a fixed flattened sensor vector.",
+    "Trained and evaluated against a 3D MRT lattice Boltzmann reference dataset with comparisons to a complex DeepONet."
   ],
-  "evidence_signal": "Across five seeds, CLBO achieved mean complex relative field error 0.184 ± 0.00771 versus 0.367 ± 0.00742 for DeepONet, with source-superposition error 1.31 × 10^-7 and about 1.83 × 10^4× faster inference than the reference calculation.",
-  "watch_item": "The strong gains depend on accurately known boundary quadrature and source geometry, so performance may degrade if source discretization or boundary representation is noisy or inconsistent.",
+  "evidence_signal": "Across five seeds, CLBO reduced mean complex relative field error to 0.184 ± 0.00771 versus 0.367 ± 0.00742 for DeepONet, with superposition error of 1.31 × 10^-7 and 1.83 × 10^4× faster inference for the reported query size.",
+  "watch_item": "The approach depends on accurate boundary quadrature and solver-to-surrogate data consistency, so performance may degrade if source discretization, geometry, or receiver placement differ substantially from training conditions.",
   "hashtags": [
+    "#FluidMechanics",
     "#Acoustics",
-    "#NeuralOperators",
-    "#CFDSurrogates",
-    "#ComplexValuedML",
-    "#PhysicsInformedAI"
+    "#NeuralOperator",
+    "#SurrogateModel",
+    "#ComputationalScience"
   ],
   "paper_id": "2026-07-05-arxiv-quadrature_aware_complex_linear_neural_operator_for_boundary_to_field_prediction_in_resona",
   "paper_title": "Quadrature-Aware Complex-Linear Neural Operator for Boundary-to-Field Prediction in Resonant Acoustics",
   "paper_date": "2026-07-05",
   "paper_category": "CFD Surrogates",
-  "generated_at": "2026-07-07T11:11:35",
+  "generated_at": "2026-07-08T10:22:02",
   "generator": "openai"
 }
