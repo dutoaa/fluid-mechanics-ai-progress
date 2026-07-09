@@ -1,24 +1,24 @@
 {
-  "key_insight": "A PINN-based, solver-agnostic training strategy can learn turbulence closures that generalize across bluff-body shapes, with the direct force model giving the strongest out-of-sample performance.",
-  "engineering_relevance": "This offers a faster path to robust RANS turbulence modeling for new geometries, reducing dependence on solver-specific inverse calibration and enabling practical training from limited PIV or DNS data.",
+  "key_insight": "A solver-agnostic PINN can learn turbulence closures that generalize across bluff-body shapes by enforcing the RANS equations directly during training.",
+  "engineering_relevance": "This enables faster screening of closure forms and more transferable CFD models, with promising out-of-sample performance for drag and mean-flow prediction.",
   "method": [
-    "Train closures by imposing the RANS residual inside a PINN via automatic differentiation.",
-    "Compare four closure forms: local stress basis, non-local stress with transported turbulent kinetic energy, learned-length-scale stress, and direct force closure.",
-    "Improve deployment stability with input-gradient smoothing and a Lipschitz constraint before freezing the model in a finite-element solver."
+    "Train closures inside a PINN using automatic differentiation to impose the RANS residual without embedding a CFD solver.",
+    "Compare four closure types: three realizability-aware Reynolds-stress models and one direct Reynolds-force model.",
+    "Add input-gradient smoothing and a Lipschitz constraint to improve coupled stability before deploying the frozen closures in a finite-element solver."
   ],
-  "evidence_signal": "The models were trained on six 2D bluff-body wakes at Re=10^4 and evaluated in-sample plus leave-one-shape-out tests; all outperformed steady SST k-ω, and the force model achieved the lowest out-of-sample mean-velocity and drag error (~8.5% drag).",
-  "watch_item": "Generalization still depends on stable solver deployment and may be sensitive to the chosen regularization and the quality/coverage of the training geometries.",
+  "evidence_signal": "The closures were trained on six 2D bluff-body wakes at Re = 10^4 and evaluated with a strict leave-one-shape-out protocol; the force model achieved the best generalization, including about 8.5% LOSO drag error.",
+  "watch_item": "Generalization depends on stable downstream deployment and the approach was demonstrated on 2D wakes, so extension to more complex 3D flows may require additional validation.",
   "hashtags": [
     "#TurbulenceModeling",
-    "#PhysicsInformedNN",
-    "#RANS",
+    "#PhysicsInformedNNs",
     "#CFD",
-    "#AIforEngineering"
+    "#RANS",
+    "#Generalization"
   ],
   "paper_id": "2026-07-05-arxiv-generalizable_turbulence_closures_across_bluff_body_shapes_by_pinn_based_solver_agnostic_t",
   "paper_title": "Generalizable turbulence closures across bluff-body shapes by PINN-based solver-agnostic training",
   "paper_date": "2026-07-05",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-08T10:21:51",
+  "generated_at": "2026-07-09T11:07:51",
   "generator": "openai"
 }

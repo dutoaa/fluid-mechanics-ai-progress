@@ -1,24 +1,24 @@
 {
-  "key_insight": "A mean-flow-based ROM can explicitly include Reynolds-stress effects in the equations of motion, improving turbulent channel-flow statistics while keeping the model low-dimensional.",
-  "engineering_relevance": "This offers a more accurate surrogate modeling route for CFD turbulence analysis and short-time prediction at moderate Reynolds number, with potential for higher-Re use cases.",
+  "key_insight": "A mean-flow-based reduced-order modeling framework can capture turbulent channel-flow statistics more faithfully by explicitly incorporating Reynolds-stress effects into the Galerkin projection.",
+  "engineering_relevance": "This offers a more accurate surrogate modeling route for turbulent CFD, improving short-time prediction and statistical reconstruction from a low-dimensional basis.",
   "method": [
-    "Build a Galerkin ROM using modes from linearized Navier–Stokes equations around the mean flow.",
-    "Project Reynolds-stress divergence through a modified modal basis informed by the mean profile.",
-    "Compare controllability, balanced truncation, and POD-based reductions for statistics and forecasting."
+    "Linearize around the turbulent mean flow and build modal bases from controllability/observability Gramians or balanced truncation.",
+    "Modify the Galerkin projection to account for the divergence of Reynolds stresses using knowledge of the mean flow.",
+    "Compare the resulting ROM against POD-Galerkin and other linearization-based bases for both statistics and forecasting."
   ],
-  "evidence_signal": "In a minimal channel at Re_tau ≈ 185, the framework matches DNS turbulence statistics and achieves short-time velocity reconstructions comparable to POD-Galerkin ROMs, with balanced truncation outperforming controllability modes.",
-  "watch_item": "The approach depends on mean-flow knowledge and modified stress projection, so performance may be sensitive to model setup and may require careful validation when moving to higher Reynolds numbers or different geometries.",
+  "evidence_signal": "In a minimal channel DNS at Re_tau ≈ 185, the framework reproduces turbulence statistics comparable to the reference and gives short-time velocity-field reconstructions, with balanced truncation outperforming controllability modes.",
+  "watch_item": "The approach depends on an accurate mean flow and careful treatment of Reynolds-stress projection, which may become more challenging as Reynolds number and flow complexity increase.",
   "hashtags": [
     "#ReducedOrderModeling",
-    "#Turbulence",
+    "#TurbulentFlow",
     "#CFD",
-    "#ChannelFlow",
-    "#FluidDynamics"
+    "#GalerkinProjection",
+    "#MeanFlow"
   ],
   "paper_id": "2026-07-03-arxiv-mean_flow_based_reduced_order_models_of_turbulent_channel_flow",
   "paper_title": "Mean-flow-based reduced-order models of turbulent channel flow",
   "paper_date": "2026-07-03",
   "paper_category": "CFD Surrogates",
-  "generated_at": "2026-07-08T10:22:06",
+  "generated_at": "2026-07-09T11:08:35",
   "generator": "openai"
 }
