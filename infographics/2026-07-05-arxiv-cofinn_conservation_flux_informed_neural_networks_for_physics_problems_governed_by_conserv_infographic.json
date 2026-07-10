@@ -1,24 +1,24 @@
 {
-  "key_insight": "CoFINN turns a CNN into a conservation-aware CFD surrogate by enforcing finite-volume flux consistency during training, rather than relying only on pixel-level errors.",
-  "engineering_relevance": "This makes fast neural flow prediction more physically reliable for compressible aerodynamics, especially when shocks and limited data make standard CNN surrogates less trustworthy.",
+  "key_insight": "CoFINN embeds finite-volume conservation laws into CNN training so flow predictions stay physically consistent, not just visually accurate.",
+  "engineering_relevance": "This makes neural surrogates more reliable for compressible aerodynamics, especially when shocks and sparse data make standard data-driven models fail.",
   "method": [
-    "Treats the CNN output as a structured finite-volume grid",
-    "Computes conservation losses from numerical fluxes instead of only image similarity",
-    "Keeps the surrogate architecture-agnostic while aligning it with CFD-style physics"
+    "Treats CNN outputs as structured finite-volume grids.",
+    "Computes conservation losses using numerical fluxes across cell faces.",
+    "Trains on physics-consistent flux balance instead of only pixel-wise error."
   ],
-  "evidence_signal": "On transonic airfoil cases at M=0.7 and Re=6×10^6, the method reduced drag prediction error by up to 34% at extreme angles of attack and by about 15% on average across the test set.",
-  "watch_item": "Accuracy gains depend on correct flux discretization and stable training; care is needed when extending to new geometries or conservation settings.",
+  "evidence_signal": "On transonic airfoil cases at M=0.7 and Re=6×10^6, the method reduced drag prediction error by up to 34% at extreme angles of attack and about 15% on average.",
+  "watch_item": "The approach depends on accurate flux discretization and may require careful implementation to remain stable and effective across different grid resolutions and flow regimes.",
   "hashtags": [
-    "#PhysicsInformedML",
+    "#PhysicsInformedAI",
     "#CFD",
-    "#NeuralNetworks",
     "#Turbulence",
-    "#AirfoilAerodynamics"
+    "#NeuralNetworks",
+    "#ConservationLaws"
   ],
   "paper_id": "2026-07-05-arxiv-cofinn_conservation_flux_informed_neural_networks_for_physics_problems_governed_by_conserv",
   "paper_title": "CoFINN: Conservation Flux Informed Neural Networks for Physics Problems Governed by Conservation Laws",
   "paper_date": "2026-07-05",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-09T11:08:08",
+  "generated_at": "2026-07-10T10:58:35",
   "generator": "openai"
 }
