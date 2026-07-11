@@ -1,24 +1,24 @@
 {
-  "key_insight": "The paper learns a single explicit reduced-order vector field by adapting radial basis functions to local attractor geometry, enabling non-intrusive modeling of chaotic flows.",
-  "engineering_relevance": "This offers a practical way to reproduce long-term statistics and reduced dynamics of turbulence-like systems without using the governing equations, which is valuable for forecasting and surrogate simulation.",
+  "key_insight": "The paper builds a non-intrusive reduced-order model for chaotic flows by adapting radial basis functions to local attractor geometry, enabling a smooth vector field that reproduces long-term statistics without using the governing equations.",
+  "engineering_relevance": "This provides a practical surrogate modeling strategy for turbulent and chaotic systems when accurate invariant measures and statistics matter more than pointwise trajectory prediction.",
   "method": [
-    "Cluster the reduced state space to capture locally varying manifold geometry.",
-    "Build a region-adapted radial basis library and fit it with one global regularized least-squares solve.",
-    "Use a kinematic corrector to stabilize trajectories that drift off the learned field."
+    "Cluster the reduced-state data to identify regions with different local manifold geometry.",
+    "Shape a radial basis function library with region-specific kernels, then fit one global regularized least-squares model.",
+    "Use a kinematic corrector only to stabilize trajectories that drift off the learned field, and track its magnitude as a trust indicator."
   ],
-  "evidence_signal": "Across Lorenz-63, Lorenz-96, Kuramoto–Sivashinsky, and quasiperiodic Kolmogorov flow, the model reproduces attractors, invariant measures, spectra, and key Lyapunov/statistical features, often matching or improving on comparison methods.",
-  "watch_item": "Because the radial basis field decays away from the training data, the method depends on the corrective term for escaped states, so robustness outside the learned region is an implementation concern.",
+  "evidence_signal": "The approach is validated on Lorenz-63, Lorenz-96, Kuramoto--Sivashinsky, and Kolmogorov flow, reproducing attractors, densities, Lyapunov exponents, energy spectra, and invariant measures, with competitive forecast horizons against neural-network and reservoir-computing baselines.",
+  "watch_item": "Because the learned radial basis field decays away from the training data, stability relies on the added corrector, so extrapolation far from the data manifold may be less trustworthy.",
   "hashtags": [
     "#ReducedOrderModeling",
     "#ChaoticFlows",
-    "#RadialBasisFunctions",
     "#Turbulence",
-    "#DataDrivenCFD"
+    "#RadialBasisFunctions",
+    "#MachineLearningForCFD"
   ],
   "paper_id": "2026-07-09-arxiv-manifold_adapted_radial_basis_functions_for_reduced_order_modelling_of_chaotic_flows",
   "paper_title": "Manifold-adapted radial basis functions for reduced-order modelling of chaotic flows",
   "paper_date": "2026-07-09",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-10T10:58:11",
+  "generated_at": "2026-07-11T09:40:55",
   "generator": "openai"
 }
