@@ -1,24 +1,24 @@
 {
-  "key_insight": "A physics-informed neural network can train turbulence closures in a solver-agnostic way, making them more generalizable across bluff-body shapes than traditional solver-coupled calibration.",
-  "engineering_relevance": "This enables fast screening and deployment of stable Reynolds-averaged Navier–Stokes closures for drag and wake prediction without embedding a CFD solver inside the training loop.",
+  "key_insight": "PINN-based, solver-agnostic training lets turbulence closures be learned directly from the RANS residual and then transferred across bluff-body shapes without tying them to a specific CFD discretization.",
+  "engineering_relevance": "This offers a fast path to screen and deploy turbulence models for industrial wake flows, with better out-of-sample performance and practical training on a single GPU or even PIV data.",
   "method": [
-    "Impose the RANS residual directly with automatic differentiation inside a PINN, removing mesh dependence and adjoint derivation.",
-    "Train four closure forms across six 2D bluff-body wakes at Re = 10^4, including stress-based and direct-force models.",
-    "Improve stability with input-gradient smoothing and a Lipschitz constraint, then test frozen models in a finite-element solver under leave-one-shape-out validation."
+    "Train closures inside a PINN using automatic differentiation of the RANS equations.",
+    "Compare four closure forms: three Reynolds-stress models with realizability constraints and one direct Reynolds-force model.",
+    "Use input-gradient smoothing and a Lipschitz constraint to improve coupled stability before freezing the closure in a finite-element solver."
   ],
-  "evidence_signal": "Across in-sample and strict leave-one-shape-out tests, all four closures beat steady SST k-ω, and the force model achieved the best generalization with about 8.5% LOSO drag error.",
-  "watch_item": "Generalization still depends on training across representative geometries, and solver stability must be verified after the network is frozen and transferred to the CFD solver.",
+  "evidence_signal": "The models were trained on six 2D bluff-body wakes at Re=10^4 and evaluated with strict leave-one-shape-out testing; the direct force model gave the best generalization and about 8.5% LOSO drag error.",
+  "watch_item": "Although the learned closures are solver-agnostic in training, they still must remain stable when deployed in a conventional CFD solver, so stability checks are essential.",
   "hashtags": [
     "#TurbulenceModeling",
-    "#PhysicsInformedNN",
+    "#PINN",
     "#CFD",
     "#RANS",
-    "#Generalization"
+    "#MachineLearning"
   ],
   "paper_id": "2026-07-05-arxiv-generalizable_turbulence_closures_across_bluff_body_shapes_by_pinn_based_solver_agnostic_t",
   "paper_title": "Generalizable turbulence closures across bluff-body shapes by PINN-based solver-agnostic training",
   "paper_date": "2026-07-05",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-11T09:40:50",
+  "generated_at": "2026-07-12T09:53:39",
   "generator": "openai"
 }

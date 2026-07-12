@@ -1,24 +1,24 @@
 {
-  "key_insight": "Steady Euler PINNs miss shocks because the loss is too weak, so the paper reformulates shock capturing as a pseudo-time evolution problem that helps shocks emerge gradually.",
-  "engineering_relevance": "This offers a more robust PINN strategy for transonic/inviscid airfoil flows where shock prediction is critical for aerodynamic design and simulation.",
+  "key_insight": "PINNs fail on airfoil shocks because steady Euler residuals are too weak, so the optimizer prefers smooth solutions; the paper fixes this by enforcing shock formation through pseudo-time evolution toward steady state.",
+  "engineering_relevance": "This makes PINNs more viable for transonic/inviscid airfoil analysis where accurate shock prediction matters for aerodynamic design and performance estimation.",
   "method": [
-    "Replace steady Euler residuals with unsteady Euler constraints by adding time-derivative terms.",
-    "Use pseudo time-stepping in the PDE loss to avoid long-horizon unsteady training issues.",
-    "Adopt a simplified Euler formulation to improve shock-capture accuracy."
+    "Reformulate steady shock capturing as an unsteady Euler evolution problem.",
+    "Add time-derivative terms and a pseudo time-stepping PDE loss to guide shocks to emerge gradually.",
+    "Use a simplified Euler formulation to improve shock-capturing accuracy."
   ],
-  "evidence_signal": "The method is validated on four forward problems with different flow conditions and geometries.",
-  "watch_item": "Training still depends on handling long-time evolution and may be sensitive to the pseudo-time formulation and network optimization settings.",
+  "evidence_signal": "The method is validated on four forward problems with different flow conditions and airfoil geometries.",
+  "watch_item": "The approach still depends on solving long pseudo-time dynamics, which may be costly and sensitive to training stability or PDE-loss design.",
   "hashtags": [
-    "#PhysicsInformedML",
-    "#PINNs",
-    "#ComputationalFluidDynamics",
+    "#PINN",
+    "#FluidMechanics",
     "#ShockCapturing",
-    "#Aerodynamics"
+    "#EulerEquations",
+    "#AirfoilAerodynamics"
   ],
   "paper_id": "2026-07-09-arxiv-physics_informed_neural_networks_for_shock_capturing_in_inviscid_flows_around_an_airfoil",
   "paper_title": "Physics-informed neural networks for shock capturing in inviscid flows around an airfoil",
   "paper_date": "2026-07-09",
   "paper_category": "Physics-Informed ML",
-  "generated_at": "2026-07-11T09:40:33",
+  "generated_at": "2026-07-12T09:53:22",
   "generator": "openai"
 }

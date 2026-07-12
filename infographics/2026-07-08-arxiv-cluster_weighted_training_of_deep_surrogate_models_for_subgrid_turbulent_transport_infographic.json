@@ -1,17 +1,17 @@
 {
-  "key_insight": "Cluster-weighted loss training helps a 3D CNN focus on difficult regions in solar turbulence data, improving subgrid Reynolds-stress prediction.",
-  "engineering_relevance": "Better surrogate models for turbulent transport can improve reduced-order modeling of solar convection and other multiscale fluid systems.",
+  "key_insight": "Cluster-weighted training focuses a deep surrogate model on high-error turbulence regimes, improving subgrid Reynolds-stress prediction over standard training.",
+  "engineering_relevance": "This offers a more accurate data-driven path for subgrid-scale closure in solar turbulence simulations, with potential transfer to other regression-heavy multiscale flows.",
   "method": [
     "Train MLP and 3D CNN surrogates on high-resolution StellarBox quiet-Sun simulations.",
-    "Use K-Means and hierarchical agglomerative clustering to identify prediction-error clusters.",
-    "Reweight the loss by cluster-specific errors to emphasize high-error regions during training."
+    "Use K-Means and Hierarchical Agglomerative Clustering to identify error-prone regions.",
+    "Weight the loss by cluster-specific prediction errors to emphasize difficult cases."
   ],
-  "evidence_signal": "Compared with prior baselines, the cluster-weighted CNN achieved 34% lower MSE and a significantly higher R2 score across heights and depths in the solar atmosphere.",
-  "watch_item": "Performance gains depend on the chosen clustering scheme and error distribution, so cluster definitions may need retuning for other datasets or flow regimes.",
+  "evidence_signal": "Compared with prior baselines, the clustered-loss CNN achieved 34% lower MSE and a higher R2 score across heights and depths in the solar atmosphere.",
+  "watch_item": "Performance gains may depend on the quality and stability of clustering, so cluster choice and weighting strategy need careful tuning to avoid biasing the model.",
   "hashtags": [
     "#Turbulence",
     "#DeepLearning",
-    "#SurrogateModeling",
+    "#SurrogateModel",
     "#SolarPhysics",
     "#ComputationalFluidDynamics"
   ],
@@ -19,6 +19,6 @@
   "paper_title": "Cluster-Weighted Training of Deep Surrogate Models for Subgrid Turbulent Transport",
   "paper_date": "2026-07-08",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-11T09:40:52",
+  "generated_at": "2026-07-12T09:53:41",
   "generator": "openai"
 }
