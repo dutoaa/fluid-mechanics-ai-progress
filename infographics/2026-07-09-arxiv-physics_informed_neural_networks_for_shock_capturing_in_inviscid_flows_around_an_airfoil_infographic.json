@@ -1,24 +1,24 @@
 {
-  "key_insight": "PINNs fail on airfoil shocks because steady Euler residuals are too weak, so the optimizer prefers smooth solutions; the paper fixes this by enforcing shock formation through pseudo-time evolution toward steady state.",
-  "engineering_relevance": "This makes PINNs more viable for transonic/inviscid airfoil analysis where accurate shock prediction matters for aerodynamic design and performance estimation.",
+  "key_insight": "PINNs miss shocks in steady inviscid airfoil flows because the steady Euler residuals are too weak to overcome neural networks’ smooth-function bias, so the model gets stuck in a smooth local minimum.",
+  "engineering_relevance": "This work offers a more reliable physics-informed route for high-speed aerodynamic simulation, especially for capturing shock structures in inviscid airfoil flows without relying on traditional CFD-only solvers.",
   "method": [
-    "Reformulate steady shock capturing as an unsteady Euler evolution problem.",
-    "Add time-derivative terms and a pseudo time-stepping PDE loss to guide shocks to emerge gradually.",
-    "Use a simplified Euler formulation to improve shock-capturing accuracy."
+    "Reformulate steady shock capturing as an unsteady relaxation process toward the steady state.",
+    "Use unsteady Euler equations with time-derivative terms to strengthen the physics loss and guide shock formation.",
+    "Embed pseudo time-stepping in the PDE loss and simplify the Euler formulation to improve shock-capture accuracy."
   ],
-  "evidence_signal": "The method is validated on four forward problems with different flow conditions and airfoil geometries.",
-  "watch_item": "The approach still depends on solving long pseudo-time dynamics, which may be costly and sensitive to training stability or PDE-loss design.",
+  "evidence_signal": "The method was validated on four forward problems with different flow conditions and geometries, showing improved shock-capturing performance in the abstract.",
+  "watch_item": "Because the approach introduces pseudo-time evolution and long-horizon unsteady constraints, training stability and scalability may still be challenging for harder 3D or high-Mach cases.",
   "hashtags": [
-    "#PINN",
-    "#FluidMechanics",
+    "#PINNs",
     "#ShockCapturing",
     "#EulerEquations",
-    "#AirfoilAerodynamics"
+    "#AeroCFD",
+    "#PhysicsInformedML"
   ],
   "paper_id": "2026-07-09-arxiv-physics_informed_neural_networks_for_shock_capturing_in_inviscid_flows_around_an_airfoil",
   "paper_title": "Physics-informed neural networks for shock capturing in inviscid flows around an airfoil",
   "paper_date": "2026-07-09",
   "paper_category": "Physics-Informed ML",
-  "generated_at": "2026-07-12T09:53:22",
+  "generated_at": "2026-07-13T11:15:35",
   "generator": "openai"
 }
