@@ -1,17 +1,17 @@
 {
-  "key_insight": "A 3D CNN can learn surrogate models for subgrid turbulent transport in quiet-Sun simulations and reconstruct Reynolds stress tensor components more accurately than classical baselines.",
-  "engineering_relevance": "This offers a data-driven alternative for improving coarse-grid solar plasma simulations where unresolved turbulence strongly affects momentum transport and energy dissipation.",
+  "key_insight": "A 3D CNN can learn subgrid turbulent transport in quiet-Sun simulations by using velocity and density fields to better reconstruct Reynolds stress tensor components than simpler ML or classic turbulence models.",
+  "engineering_relevance": "This offers a data-driven surrogate for unresolved solar plasma turbulence, which could improve coarse-grid radiative hydrodynamic simulations of the solar convection zone and lower atmosphere.",
   "method": [
-    "Train a 3D convolutional neural network on 3D velocity fields to capture spatial dependencies.",
-    "Augment inputs with velocity components and scalar plasma density features.",
-    "Compare against an MLP and physics-based Gradient and Smagorinsky models, and test logarithmic target transforms for skewed stress data."
+    "Train a 3D convolutional neural network on 3D velocity fields plus scalar plasma density features.",
+    "Predict Reynolds stress tensor components and test activation/architecture variants, including a log transform of skewed targets.",
+    "Benchmark against an MLP and physics-based Gradient and Smagorinsky models."
   ],
-  "evidence_signal": "The final 3DCNN reportedly improves average accuracy by about 31% on diagonal Reynolds stress components and about 8% on off-diagonal components versus baselines.",
-  "watch_item": "Generalization may be limited by the specific simulation regime and by sensitivity to target scaling/log transforms, so deployment should be validated on new solar conditions and resolutions.",
+  "evidence_signal": "The final 3DCNN improved reconstruction by about 31% on diagonal stress components and about 8% on off-diagonal components relative to comparison baselines.",
+  "watch_item": "Performance may depend on the specific quiet-Sun simulation regime and careful handling of strongly skewed target distributions during training and deployment.",
   "hashtags": [
     "#Turbulence",
     "#DeepLearning",
-    "#CNN",
+    "#ConvolutionalNeuralNetwork",
     "#SolarPhysics",
     "#SubgridModeling"
   ],
@@ -19,6 +19,6 @@
   "paper_title": "Developing Machine Learning Models of Subgrid Turbulent Transport for Quiet Sun 3D Radiative Hydrodynamic Simulations",
   "paper_date": "2026-07-09",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-14T10:01:45",
+  "generated_at": "2026-07-15T10:06:11",
   "generator": "openai"
 }

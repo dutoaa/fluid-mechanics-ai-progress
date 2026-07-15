@@ -1,13 +1,13 @@
 {
-  "key_insight": "A physics-informed surrogate predicts detailed chemical reaction rates from a reduced thermochemical state while enforcing non-negative entropy generation to keep the combustion evolution physically admissible.",
-  "engineering_relevance": "This approach can accelerate DNS of turbulent reacting flows by over an order of magnitude while preserving high-fidelity chemistry, making detailed combustion simulation more practical for design and analysis.",
+  "key_insight": "A thermodynamically constrained surrogate can replace expensive detailed chemical kinetics in DNS while preserving physical admissibility and accuracy.",
+  "engineering_relevance": "This enables much faster turbulent combustion simulations with reliable predictions and lower computational cost, supporting design and analysis of reacting-flow systems.",
   "method": [
-    "Replace expensive detailed source-term evaluation with an ML surrogate for reaction rates.",
-    "Constrain training with the second law of thermodynamics to enforce non-negative entropy production.",
-    "Use residual-based synthetic data augmentation to extend the model to new inlet conditions without extra DNS runs."
+    "Train a machine-learning model to predict reaction rates from a reduced thermochemical state instead of evaluating full chemistry.",
+    "Enforce the second law of thermodynamics by constraining entropy generation to be non-negative during training and time integration.",
+    "Use residual-based synthetic data augmentation to generate new training samples for unseen inlet conditions."
   ],
-  "evidence_signal": "On a 2D planar lean premixed methane-air flame interacting with turbulence, the surrogate matches detailed-chemistry results closely and delivers more than a 10× reduction in computational cost.",
-  "watch_item": "Thermodynamic constraints and synthetic augmentation improve stability, but the surrogate’s reliability may still depend on the representativeness of the original training set and careful validation at new operating conditions.",
+  "evidence_signal": "On a 2D lean premixed methane-air flame interacting with turbulence, the surrogate matches detailed-chemistry DNS with high fidelity and achieves more than an order-of-magnitude cost reduction.",
+  "watch_item": "The approach depends on the quality of the reduced state, the entropy constraint formulation, and synthetic data assumptions, which may limit transferability outside the tested combustion regime.",
   "hashtags": [
     "#CombustionML",
     "#CFDSurrogates",
@@ -19,6 +19,6 @@
   "paper_title": "Entropy-Constrained Machine Learning with Residual Data Augmentation for Modeling Chemical Kinetics",
   "paper_date": "2026-07-10",
   "paper_category": "CFD Surrogates",
-  "generated_at": "2026-07-14T10:01:42",
+  "generated_at": "2026-07-15T10:06:08",
   "generator": "openai"
 }
