@@ -1,24 +1,24 @@
 {
-  "key_insight": "Evolution Strategy can train a recurrent closed-loop wall controller directly on a large turbulent channel and achieve stronger drag reduction than prior small-box gradient-based policies.",
-  "engineering_relevance": "This suggests a more robust route to deployable active flow control for skin-friction reduction in turbulent channels, with better transfer to realistic domain sizes.",
+  "key_insight": "Evolution Strategy trained directly on a large turbulent channel learns a recurrent wall controller that avoids small-box degeneracies and cuts skin-friction drag by about 26%.",
+  "engineering_relevance": "This suggests gradient-free closed-loop control can scale better than prior MARL policies for practical turbulent drag-reduction designs in larger domains.",
   "method": [
-    "Optimize a recurrent policy with Evolution Strategy instead of gradients.",
-    "Evaluate candidate controllers on full turbulent-flow episodes using an energy-aware objective.",
-    "Train and test directly in a large channel at Re_τ ≈ 180, avoiding small-box dependence."
+    "Optimize a recurrent controller with Evolution Strategy instead of backpropagation.",
+    "Evaluate candidate policies over full flow episodes using an energy-aware objective.",
+    "Train and test directly in a large channel at Re_tau ≃ 180 with parallel policy evaluation."
   ],
-  "evidence_signal": "On the large-domain channel, the ES controller reduced skin-friction drag by about 26%, compared with 17% for GRU-MARL on a minimal box and 22% for classic opposition control.",
-  "watch_item": "Despite the performance gain, the controller design still needs careful validation for robustness, cost of parallel evaluations, and generalization to other Reynolds numbers or geometries.",
+  "evidence_signal": "The ES controller reduced drag by about 26%, outperforming GRU-MARL trained on a minimal box (17%) and slightly exceeding classic opposition control (22%).",
+  "watch_item": "Performance depends on full-episode, large-domain evaluation, so controllers trained in smaller periodic boxes may not transfer reliably and can still be sensitive to actuation degeneracies.",
   "hashtags": [
     "#TurbulenceControl",
-    "#ReinforcementLearning",
-    "#EvolutionStrategies",
     "#DragReduction",
-    "#FluidMechanics"
+    "#EvolutionStrategies",
+    "#ReinforcementLearning",
+    "#FluidDynamics"
   ],
   "paper_id": "2026-07-14-arxiv-gradient_free_learning_of_a_closed_loop_wall_controller_for_turbulent_drag_reduction",
   "paper_title": "Gradient-free learning of a closed-loop wall controller for turbulent drag reduction",
   "paper_date": "2026-07-14",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-15T10:05:48",
+  "generated_at": "2026-07-16T10:12:26",
   "generator": "openai"
 }

@@ -1,17 +1,17 @@
 {
-  "key_insight": "Physics residuals are good at telling you when a CFD surrogate is wrong, but not at telling you how to correct it.",
-  "engineering_relevance": "This enables fast surrogate CFD with an added self-auditing trust layer and a learned corrector for safer deployment on new flow cases.",
+  "key_insight": "The paper shows that steady-RANS residuals are a strong, backbone-robust signal for detecting CFD prediction errors, but they are weak as a direct correction target.",
+  "engineering_relevance": "This enables faster CFD surrogates to be paired with calibrated uncertainty and self-correction, improving trustworthiness for design and screening workflows.",
   "method": [
-    "Compute the discretized steady-RANS residual of surrogate predictions.",
-    "Use residuals for calibrated trust via split conformal prediction and deep-ensemble uncertainty.",
-    "Train a supervised deep-equilibrium corrector toward ground truth for self-correction."
+    "Compute the discretized steady-RANS residual of surrogate flow predictions as a trust indicator.",
+    "Use split-conformal calibration, combined with deep-ensemble uncertainty, to produce adaptive confidence bands.",
+    "Train a supervised deep-equilibrium corrector to improve predicted fields toward ground truth."
   ],
-  "evidence_signal": "Across three backbones and a second dataset, residual-error rank correlation stays positive (e.g., Transolver 0.625±0.019, MeshGraphNet 0.851±0.058), while conformal coverage hits 0.902±0.008 at a 0.90 target.",
-  "watch_item": "The correction benefit is backbone-dependent, and the coverage guarantee only holds under exchangeability.",
+  "evidence_signal": "Residual-error rank correlation is consistently positive across Transolver, Geo-FNO, and MeshGraphNet, generalizes to DeepCFD, and conformal coverage reaches 0.902 at a 0.90 target.",
+  "watch_item": "The correction performance depends on the backbone, and the coverage guarantee only holds under exchangeability assumptions.",
   "hashtags": [
     "#CFD",
     "#Turbulence",
-    "#PhysicsInformedAI",
+    "#PhysicsInformedML",
     "#UncertaintyQuantification",
     "#NeuralSurrogates"
   ],
@@ -19,6 +19,6 @@
   "paper_title": "NeuroForge: A Self-Correcting, Geometry-Native Neural CFD Engine with Calibrated Physics-Residual Trust",
   "paper_date": "2026-07-11",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-15T10:05:43",
+  "generated_at": "2026-07-16T10:12:23",
   "generator": "openai"
 }
