@@ -1,13 +1,13 @@
 {
-  "key_insight": "The paper shows that steady-RANS residuals are a strong, backbone-robust signal for detecting CFD prediction errors, but they are weak as a direct correction target.",
-  "engineering_relevance": "This enables faster CFD surrogates to be paired with calibrated uncertainty and self-correction, improving trustworthiness for design and screening workflows.",
+  "key_insight": "NeuroForge turns the CFD physics residual into a reliable uncertainty signal for detecting prediction errors, while showing that the same residual is a poor direct correction target.",
+  "engineering_relevance": "This enables faster CFD surrogates to self-audit their predictions and provide calibrated trust bands, which is valuable for safety-critical flow design and out-of-distribution deployment.",
   "method": [
-    "Compute the discretized steady-RANS residual of surrogate flow predictions as a trust indicator.",
-    "Use split-conformal calibration, combined with deep-ensemble uncertainty, to produce adaptive confidence bands.",
-    "Train a supervised deep-equilibrium corrector to improve predicted fields toward ground truth."
+    "Compute the discretized steady-RANS residual of surrogate flow predictions.",
+    "Use split conformal calibration plus deep-ensemble uncertainty to form adaptive trust bands.",
+    "Train a supervised deep-equilibrium corrector to improve the predicted flow fields."
   ],
-  "evidence_signal": "Residual-error rank correlation is consistently positive across Transolver, Geo-FNO, and MeshGraphNet, generalizes to DeepCFD, and conformal coverage reaches 0.902 at a 0.90 target.",
-  "watch_item": "The correction performance depends on the backbone, and the coverage guarantee only holds under exchangeability assumptions.",
+  "evidence_signal": "Across three backbones and a second dataset, residual rank correlation with field error was consistently positive, conformal coverage matched the 0.90 target at 0.902±0.008, and the learned corrector reduced MSE on all three seeds.",
+  "watch_item": "The correction gains are backbone-dependent, and the coverage guarantee only holds under exchangeability assumptions.",
   "hashtags": [
     "#CFD",
     "#Turbulence",
@@ -19,6 +19,6 @@
   "paper_title": "NeuroForge: A Self-Correcting, Geometry-Native Neural CFD Engine with Calibrated Physics-Residual Trust",
   "paper_date": "2026-07-11",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-16T10:12:23",
+  "generated_at": "2026-07-18T09:37:20",
   "generator": "openai"
 }
