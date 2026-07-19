@@ -24,29 +24,29 @@
         "url": "https://arxiv.org/pdf/2607.13866v1"
       }
     ],
-    "score": 90,
+    "score": 95,
     "infographic": {
-      "key_insight": "The paper benchmarks four operator-learning surrogates for aerodynamics and finds Bi-Stride Multi-Scale GNN and Transolver(++) to be the most promising for pressure prediction on airfoils and aircraft geometries.",
-      "engineering_relevance": "These models could reduce CFD cost for shape optimization and load analysis by rapidly approximating surface pressure distributions on complex aerodynamic configurations.",
+      "key_insight": "The paper benchmarks four operator-learning surrogate models for aerodynamics and finds Bi-Stride Multi-Scale Graph Neural Network and Transolver(++) to be the most promising for predicting pressure distributions.",
+      "engineering_relevance": "These models could reduce CFD cost for airfoil and aircraft analysis in design optimization, load estimation, and other high-fidelity aerodynamic workflows.",
       "method": [
-        "Benchmarked 4 state-of-the-art operator learning architectures",
-        "Tested on 2D airfoils with varying complexity and an industrial-scale 3D aircraft case",
-        "Evaluated shock-capturing, mesh scalability, and performance under data scarcity"
+        "Benchmarked 4 state-of-the-art operator-learning architectures",
+        "Tested on 2D airfoils of varying complexity and an industrial 3D aircraft case",
+        "Evaluated shock capturing, mesh scalability, and performance under data scarcity"
       ],
-      "evidence_signal": "The study uses two experiments spanning airfoil and aircraft geometries to compare model accuracy and robustness across challenging aerodynamics scenarios.",
-      "watch_item": "Performance may drop on discontinuous flow features and very large meshes, so deployment should be checked carefully for specific geometry and data availability.",
+      "evidence_signal": "The study compares model performance across two experiments spanning complex airfoil geometries and a full-scale aircraft configuration, focusing on surface pressure prediction.",
+      "watch_item": "Performance is benchmark-dependent, so robustness to new geometries, flow regimes, and sparse training data should be validated before deployment.",
       "hashtags": [
-        "#CFDSurrogates",
+        "#CFDsurrogates",
         "#OperatorLearning",
+        "#AeroML",
         "#DeepLearning",
-        "#Aerodynamics",
-        "#AerospaceAI"
+        "#ComputationalFluidDynamics"
       ],
       "paper_id": "2026-07-15-arxiv-evaluation_of_state_of_the_art_deep_learning_architectures_for_aerodynamical_predictions",
       "paper_title": "Evaluation of State-of-the-Art Deep Learning Architectures for Aerodynamical Predictions",
       "paper_date": "2026-07-15",
       "paper_category": "CFD Surrogates",
-      "generated_at": "2026-07-19T09:54:24",
+      "generated_at": "2026-07-18T09:36:42",
       "generator": "openai"
     }
   },
@@ -75,29 +75,29 @@
         "url": "https://arxiv.org/pdf/2607.14944v1"
       }
     ],
-    "score": 75,
+    "score": 80,
     "infographic": {
-      "key_insight": "A reduced-basis hybrid of Tensor Basis Neural Networks and Universal Differential Equations can learn frame-invariant viscoelastic constitutive laws from shear data and still capture key nonlinear flow behavior in unseen extensional and benchmark flows.",
-      "engineering_relevance": "This offers a path to digital twins for complex viscoelastic fluids that can be embedded directly into CFD solvers for more physically consistent, data-efficient rheology modeling.",
+      "key_insight": "A reduced-basis hybrid ML framework combining TBNN and UDEs can learn frame-invariant viscoelastic constitutive laws from shear data and generalize to more complex flow regimes.",
+      "engineering_relevance": "This enables data-driven digital twins for viscoelastic fluids that can be embedded directly into CFD solvers for rheology-aware prediction and design.",
       "method": [
-        "Train hybrid TBNN-UDE constitutive models on synthetic oscillatory-shear data from established viscoelastic laws.",
-        "Use a reduced tensor-basis formulation to improve physical consistency and numerical stability.",
-        "Embed the UDE in an open-source finite-volume solver so stress response is computed dynamically at runtime from local flow conditions."
+        "Train hybrid TBNN/UDE constitutive models on synthetic oscillatory shear datasets from established viscoelastic laws.",
+        "Use a reduced-dimensional tensor basis to improve physical consistency and numerical stability.",
+        "Embed the learned constitutive response into an open-source finite-volume solver for runtime evaluation from local flow conditions."
       ],
-      "evidence_signal": "The models were trained only on synthetic shear-flow datasets and then evaluated by extrapolation to unseen extensional, 2D, and 3D benchmark flows including 4:1 sudden contraction and cross-slot cases, with accuracy improving when first normal stress difference information was added.",
-      "watch_item": "Performance degrades as the test flows move further beyond the training regime, so extrapolation to strongly different flow types and high Deborah numbers remains a reliability concern.",
+      "evidence_signal": "Models were tested by extrapolating from shear-only training to extensional, 2D, and 3D benchmark flows including a sudden contraction and cross-slot, with accuracy improving when first normal stress difference information was included.",
+      "watch_item": "Performance degrades as extrapolation increases, so strong out-of-distribution flows and high Deborah numbers remain a key reliability risk.",
       "hashtags": [
-        "#ComputationalRheology",
         "#MachineLearning",
+        "#ComputationalRheology",
         "#ViscoelasticFlows",
         "#UniversalDifferentialEquations",
-        "#TensorBasisNeuralNetwork"
+        "#TensorBasisNeuralNetworks"
       ],
       "paper_id": "2026-07-16-arxiv-harnessing_machine_learning_for_hybrid_constitutive_modelling_of_viscoelastic_fluid_flows",
       "paper_title": "Harnessing Machine Learning for Hybrid Constitutive Modelling of Viscoelastic Fluid Flows in Computational Rheology",
       "paper_date": "2026-07-16",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-19T09:54:28",
+      "generated_at": "2026-07-18T09:36:45",
       "generator": "openai"
     }
   },
@@ -126,29 +126,29 @@
         "url": "https://arxiv.org/pdf/2607.15087v1"
       }
     ],
-    "score": 73,
+    "score": 78,
     "infographic": {
-      "key_insight": "Split complex-valued PINNs improve representation of amplitude and phase, reducing spectral bias and boosting accuracy on oscillatory nonlinear PDEs.",
-      "engineering_relevance": "The method offers a more accurate and flexible surrogate for forward and inverse fluid and wave problems, including challenging high-frequency and high-dimensional regimes.",
+      "key_insight": "Split complex-valued PINNs improve accuracy by learning amplitude and phase directly, reducing spectral bias on oscillatory and nonlinear PDEs.",
+      "engineering_relevance": "This gives engineers a more robust surrogate for forward simulation and inverse parameter identification in fluid dynamics and wave-dominated systems.",
       "method": [
-        "Use complex-valued network parameters and latent states.",
-        "Apply split activations separately to real and imaginary parts for stability.",
-        "Train on PDE residuals plus data/constraints for forward and inverse tasks."
+        "Represent network weights and hidden states in the complex domain.",
+        "Apply split activations separately to real and imaginary parts for stability and efficiency.",
+        "Train on physics residuals plus data/collocation constraints across forward and inverse PDE benchmarks."
       ],
-      "evidence_signal": "The paper reports broad benchmarking across Burgers, Allen-Cahn, KdV, nonlinear Schrödinger, Helmholtz, Poisson, Kovasznay flow, lid-driven cavity, Lorenz, inverse Burgers, inverse Navier-Stokes, and 3D Beltrami flow, with Beltrami reaching a relative L2 error of 4.07 × 10^-5.",
-      "watch_item": "Complex-valued modeling can add implementation complexity and performance may depend on activation choice, sampling strategy, and problem scaling.",
+      "evidence_signal": "The abstract reports broad benchmarking on Burgers, Navier–Stokes, KdV, Schrödinger, Helmholtz, Poisson, cavity flow, Lorenz, and Beltrami flow, with Beltrami reaching a relative L2 error of 4.07 × 10^-5.",
+      "watch_item": "Performance may depend on careful choice of split activation and collocation sampling, so gains are not guaranteed without tuning.",
       "hashtags": [
-        "#PINNs",
-        "#ComputationalFluidDynamics",
-        "#PhysicsInformedML",
+        "#PhysicsInformedNN",
         "#ComplexValuedNN",
-        "#ScientificAI"
+        "#FluidMechanics",
+        "#PDEs",
+        "#ScientificML"
       ],
       "paper_id": "2026-07-16-arxiv-split_complex_valued_physics_informed_neural_networks_for_forward_and_inverse_nonlinear_pd",
       "paper_title": "Split Complex-Valued Physics-Informed Neural Networks for Forward and Inverse Nonlinear PDEs",
       "paper_date": "2026-07-16",
       "paper_category": "Physics-Informed ML",
-      "generated_at": "2026-07-19T09:54:30",
+      "generated_at": "2026-07-18T09:36:48",
       "generator": "openai"
     }
   },
@@ -177,29 +177,29 @@
         "url": "https://arxiv.org/pdf/2607.13193v1"
       }
     ],
-    "score": 71,
+    "score": 76,
     "infographic": {
-      "key_insight": "A conditional diffusion model can synthesize realistic spatiotemporal turbulent flame evolution from experimental OH-PLIF and PIV data, including unseen flame transition events.",
-      "engineering_relevance": "This offers a data-driven surrogate for exploring flame dynamics in sparse experimental regimes, helping complement combustor testing and CFD studies.",
+      "key_insight": "A conditional diffusion model can generate realistic spatiotemporal turbulent flame evolution from experimental OH-PLIF and PIV data, including unseen transition events.",
+      "engineering_relevance": "This offers a data-driven surrogate for studying flame dynamics and regime transitions when experiments are sparse or expensive, complementing CFD and laboratory measurements.",
       "method": [
-        "x-prediction flow matching for conditional generation",
-        "Pixel-based spatiotemporal transformer to generate full space-time slabs",
-        "Transition synthesis via time-varying mixing of attached/detached denoising velocities"
+        "x-prediction flow matching for conditional diffusion",
+        "Pixel-based spatiotemporal transformer to generate entire flame slabs",
+        "Transition synthesis via time-varying mixing of attached and detached denoising velocities"
       ],
-      "evidence_signal": "The generated flames preserved key flame features and space-time statistics, especially at large scales, while transition synthesis produced coherent liftoff and reattachment trajectories not seen in training.",
-      "watch_item": "Performance degrades at high temporal frequencies and small spatial scales, so output quality may depend strongly on the chosen slab duration and resolution.",
+      "evidence_signal": "The generated flames preserved key features and statistical consistency across space and time, especially at large scales, and were evaluated on attached/detached states plus liftoff/reattachment transitions.",
+      "watch_item": "High temporal frequencies and small spatial scales showed deviations that depend on the generated slab length, so short-horizon fidelity may be limited.",
       "hashtags": [
         "#TurbulentFlames",
+        "#GenerativeAI",
         "#DiffusionModels",
-        "#FluidMechanicsAI",
-        "#SyntheticData",
-        "#SpatiotemporalModel"
+        "#FluidMechanics",
+        "#PhysicsInformedML"
       ],
       "paper_id": "2026-07-14-arxiv-generating_synthetic_evolution_of_turbulent_flames_with_an_experimental_data_based_spatiot",
       "paper_title": "Generating synthetic evolution of turbulent flames with an experimental data-based spatiotemporal diffusion model",
       "paper_date": "2026-07-14",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-19T09:54:32",
+      "generated_at": "2026-07-18T09:36:50",
       "generator": "openai"
     }
   },
@@ -228,29 +228,29 @@
         "url": "https://arxiv.org/pdf/2607.15155v1"
       }
     ],
-    "score": 69,
+    "score": 74,
     "infographic": {
-      "key_insight": "Early wall heat losses strongly reshape premixed flame acceleration in confined channels, promoting tulip flame formation and its distortion beyond the adiabatic case.",
-      "engineering_relevance": "For safety-critical combustors and confined hydrogen systems, accurately accounting for wall thermal coupling is essential to predict flame evolution, pressure rise, and possible flame instabilities.",
+      "key_insight": "Heat losses to the channel walls strongly alter early premixed flame propagation, promoting tulip flame formation and later distortion in confined hydrogen-air channels.",
+      "engineering_relevance": "For combustion safety and microchannel design, wall thermal management and geometry must be accounted for because they can change flame shape, speed, and stability.",
       "method": [
-        "Direct numerical simulation of fully compressible reactive Navier–Stokes equations",
-        "Detailed chemical kinetics and transport for stoichiometric hydrogen–air mixtures",
-        "Conjugate heat transfer with conductive channel walls and outer-surface losses"
+        "Direct numerical simulation of the fully compressible reactive Navier–Stokes equations.",
+        "Stoichiometric hydrogen-air chemistry with detailed transport and kinetics.",
+        "Coupled gas-phase flame dynamics with conductive heat transfer through channel walls and external heat loss models."
       ],
-      "evidence_signal": "The simulations are compared against adiabatic-wall cases and reproduce the main experimentally observed features of flame dynamics in 2D and cylindrical channels.",
-      "watch_item": "Results depend on detailed wall heat-transfer modeling and channel geometry, so predictive accuracy may change if wall properties, boundary conditions, or aspect ratio differ from the studied cases.",
+      "evidence_signal": "The simulations were compared against adiabatic-wall cases and reproduced the main experimentally observed features of flame evolution, including tulip and distorted tulip flames.",
+      "watch_item": "Results depend on high-fidelity chemistry, transport, and wall heat-transfer modeling, so simplified boundary conditions may miss important flame-structure effects.",
       "hashtags": [
+        "#Combustion",
         "#FlameDynamics",
-        "#HydrogenCombustion",
-        "#ConjugateHeatTransfer",
-        "#TulipFlame",
-        "#DNS"
+        "#HeatTransfer",
+        "#DirectNumericalSimulation",
+        "#HydrogenAir"
       ],
       "paper_id": "2026-07-16-arxiv-the_effect_of_heat_loss_during_the_early_stages_of_flame_propagation_and_tulip_flame_forma",
       "paper_title": "The Effect of Heat Loss During the Early Stages of Flame Propagation and Tulip Flame Formation",
       "paper_date": "2026-07-16",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-19T09:54:35",
+      "generated_at": "2026-07-18T09:36:52",
       "generator": "openai"
     }
   },
@@ -279,29 +279,29 @@
         "url": "https://arxiv.org/pdf/2607.14298v1"
       }
     ],
-    "score": 58,
+    "score": 63,
     "infographic": {
-      "key_insight": "Rigid fibers in a microfluidic vortex follow a simple two-part orientation dynamics: they precess with the local vorticity while aligning with the strain field, as captured by Jeffery equations plus a Burgers-vortex model.",
-      "engineering_relevance": "This provides a predictive framework for how elongated particles behave in vortex-dominated flows, useful for microfluidics, fiber suspensions, and turbulence modeling.",
+      "key_insight": "Rigid fibers in a Burgers-like microfluidic vortex follow a simple two-part orientation dynamic: they precess around the vortex axis while aligning with it under local strain, as captured by Jeffery equations.",
+      "engineering_relevance": "This provides a compact predictive framework for how elongated particles orient in vortex-dominated microflows and turbulence-relevant eddies, useful for fiber transport, sorting, and suspension modeling.",
       "method": [
-        "Microfluidic experiments on neutrally buoyant rigid fibers in a stationary vortex at moderate Reynolds number",
-        "Coupled Jeffery-orientation theory with a Burgers-vortex flow model",
-        "Compared observations with numerical simulations to test orientation and trajectory behavior"
+        "Microfluidic experiments in a streamwise stationary vortex at moderate Reynolds number",
+        "Theory based on Jeffery equations coupled with a Burgers-vortex model",
+        "Numerical simulations to compare orientation and trajectory dynamics"
       ],
-      "evidence_signal": "The abstract reports that experiments, theory, and simulations agree closely: orientation is accurately described by the coupled model, with only weak trajectory deviations from finite size and inertia.",
-      "watch_item": "The results are specific to a controlled steady vortex regime, so applicability to strongly unsteady or highly heterogeneous turbulent flows may require further validation.",
+      "evidence_signal": "The abstract reports close agreement between experiments, theory, and simulations, showing that orientation is accurately described by the coupled Jeffery/Burgers-vortex model.",
+      "watch_item": "The flow is a controlled model vortex, so behavior may differ in more heterogeneous, strongly unsteady, or fully turbulent real-world flows.",
       "hashtags": [
-        "#FluidMechanics",
+        "#FiberDynamics",
         "#Microfluidics",
-        "#FiberSuspension",
-        "#VortexDynamics",
+        "#JefferyOrbits",
+        "#BurgersVortex",
         "#Turbulence"
       ],
       "paper_id": "2026-07-15-arxiv-orientation_dynamics_of_rigid_fibers_in_a_microfluidic_burgers_like_vortex",
       "paper_title": "Orientation Dynamics of Rigid Fibers in a Microfluidic Burgers-like Vortex",
       "paper_date": "2026-07-15",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-19T09:54:37",
+      "generated_at": "2026-07-18T09:36:55",
       "generator": "openai"
     }
   },
@@ -330,29 +330,29 @@
         "url": "https://arxiv.org/pdf/2607.14796v1"
       }
     ],
-    "score": 55,
+    "score": 60,
     "infographic": {
-      "key_insight": "Randomly sampled triadic interactions in a low-density Fourier-space model still reproduce the core 2D turbulence phenomenology: inverse and direct cascades plus Richardson superdiffusion.",
-      "engineering_relevance": "This suggests reduced, anisotropic spectral models can capture essential mixing and transport behavior at lower computational cost for turbulence analysis and surrogate modeling.",
+      "key_insight": "A low-density, anisotropic triadic Fourier-space model still reproduces the hallmark 2D turbulence double cascade and Richardson pair superdiffusion.",
+      "engineering_relevance": "This suggests reduced-order spectral models can capture key turbulent transport physics while using far fewer active interactions, useful for efficient simulation and analysis.",
       "method": [
-        "Galerk in-truncated 2D Euler system with retained active/resonant triads",
-        "Compare ordered pseudo-logarithmic vs disordered Fourier-space sampling",
-        "Vary angular sampling to control anisotropy and triadic density"
+        "Sampled active resonant triads on ordered pseudo-logarithmic and disordered Fourier meshes",
+        "Varied angular sampling to tune anisotropy and triadic density",
+        "Evaluated Eulerian energy cascades and Lagrangian particle-pair dispersion"
       ],
-      "evidence_signal": "Across all configurations, the model shows a $k^{-5/3}$ inverse cascade, a $k^{-3}$ direct cascade, and pair dispersion scaling as $\\ell^2(t)\\sim t^3$ before crossing to Brownian $\\ell^2(t)\\sim t$ at long times.",
-      "watch_item": "Strong spectral anisotropy can alter vorticity organization and flux efficiency, so the method may preserve scaling laws while still biasing amplitudes and short-time transport.",
+      "evidence_signal": "Across all configurations, the model preserved a $k^{-5/3}$ inverse cascade, a $k^{-3}$ direct cascade, and pair separation scaling $?",
+      "watch_item": "Spectral anisotropy changes vorticity organization and transport efficiency, so the dispersion amplitude and cascade strength may depend strongly on the chosen triad sampling.",
       "hashtags": [
         "#Turbulence",
-        "#2DEuler",
+        "#2DFlow",
         "#InverseCascade",
         "#Superdiffusion",
-        "#SpectralMethods"
+        "#ReducedOrderModel"
       ],
       "paper_id": "2026-07-16-arxiv-exploring_2d_turbulent_properties_in_anisotropic_and_disordered_fourier_space_insights_int",
       "paper_title": "Exploring 2D turbulent properties in anisotropic and disordered Fourier space: Insights into inverse cascades and universal superdiffusion from randomly sampled triadic interaction",
       "paper_date": "2026-07-16",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-19T09:54:40",
+      "generated_at": "2026-07-18T09:36:58",
       "generator": "openai"
     }
   },
@@ -381,29 +381,29 @@
         "url": "https://arxiv.org/pdf/2607.15078v1"
       }
     ],
-    "score": 54,
+    "score": 59,
     "infographic": {
-      "key_insight": "A thermodynamically consistent manifold model can unify premixed deflagration and detonation prediction by iteratively matching the flow solver’s local thermodynamic state with the combustion manifold.",
-      "engineering_relevance": "This improves LES reliability for compressible reacting flows, making the model more useful for high-speed combustion systems such as rotating detonation engines and other supersonic combustors.",
+      "key_insight": "A thermodynamically consistent manifold model can unify premixed deflagration and detonation prediction by iteratively matching the local thermodynamic state between the combustion model and the flow solver.",
+      "engineering_relevance": "This improves predictive LES for high-speed reacting flows, including rotating detonation engines and other compressible combustion systems, where accurate temperature, radicals, and source terms are critical.",
       "method": [
-        "Manifold-based turbulent combustion model for compressible premixed flames",
-        "Iterative coupling to enforce thermodynamic consistency between model and solver",
-        "Captures temperature, radicals, and source-term profiles across deflagrative and detonative regimes"
+        "Iterative manifold coupling enforces full thermodynamic consistency with the flow solver.",
+        "Models both deflagrative and detonative regimes within one framework.",
+        "Avoids reliance on low-Mach perturbations or non-consistent ZND-only tabulations."
       ],
-      "evidence_signal": "Validated against one-dimensional cases and high-fidelity RDE-like data, where the thermodynamically consistent model outperformed existing approaches across a broad range of compressible flame regimes.",
-      "watch_item": "The iterative thermodynamic coupling may increase implementation complexity and computational cost in LES workflows.",
+      "evidence_signal": "Validated against one-dimensional and high-fidelity RDE-like data, the thermodynamically consistent model outperformed existing approaches across a broad range of compressible flame regimes.",
+      "watch_item": "The approach likely adds implementation complexity and computational cost due to the iterative consistency update, especially in large-scale LES.",
       "hashtags": [
-        "#CombustionModeling",
+        "#ComputationalFluidDynamics",
+        "#Turbulence",
+        "#Combustion",
         "#LES",
-        "#Detonation",
-        "#Deflagration",
-        "#ReactingFlows"
+        "#Detonation"
       ],
       "paper_id": "2026-07-16-arxiv-a_thermodynamically_consistent_manifold_model_for_premixed_deflagrations_detonations",
       "paper_title": "A Thermodynamically Consistent Manifold Model for Premixed Deflagrations & Detonations",
       "paper_date": "2026-07-16",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-19T09:54:42",
+      "generated_at": "2026-07-18T09:37:00",
       "generator": "openai"
     }
   },
@@ -432,17 +432,17 @@
         "url": "https://arxiv.org/pdf/2607.13496v1"
       }
     ],
-    "score": 53,
+    "score": 58,
     "infographic": {
-      "key_insight": "Passively rotating flush-mounted discs generate only a small net drag reduction, because the disc motion helps locally but the housings and covering plates add extra drag.",
-      "engineering_relevance": "The concept offers a mechanically simple, self-actuated wall-therapy idea for turbulent boundary-layer drag control, but the surrounding geometry must be carefully designed to avoid offsetting benefits.",
+      "key_insight": "Passively rotating flush-mounted discs produce a small but measurable skin-friction drag reduction, although the surrounding housings and cover plates introduce larger drag penalties that partly offset the benefit.",
+      "engineering_relevance": "The study suggests a passive, mechanically simple wall-modification concept for turbulent drag control, but it would need careful packaging to avoid roughness-induced drag increases in practical surfaces.",
       "method": [
-        "Wind-tunnel tests on a turbulent boundary layer at Reτ ≈ 880–1460",
-        "32 half-covered rotating discs arranged in a staggered flush-mounted array",
-        "Direct force measurements plus PIV and an extended Elnahhas–Johnson skin-friction identity"
+        "Wind-tunnel experiments on turbulent boundary layers with friction Reynolds numbers Reτ = 880–1460.",
+        "A test wall with 32 staggered, half-covered rotating discs mounted in cylindrical cavities.",
+        "Direct force measurements plus particle image velocimetry, interpreted using the extended Elnahhas-Johnson skin-friction identity."
       ],
-      "evidence_signal": "Experiments show about 3% drag reduction relative to stationary discs, while the added housing/plate geometry increases drag compared with a flat plate.",
-      "watch_item": "The drag benefit is modest and can be masked by roughness, clearance-gap, and covering-plate effects, so practical implementation needs very low parasitic drag.",
+      "evidence_signal": "Measured drag increased relative to a flat plate because of disc housings and cover plates, while isolating the disc motion itself gave about 3% drag reduction versus stationary discs.",
+      "watch_item": "The net benefit is sensitive to geometric details such as cavity gaps, cover-plate effects, and secondary flows, so scaling the concept without added form drag is a key challenge.",
       "hashtags": [
         "#Turbulence",
         "#DragReduction",
@@ -454,7 +454,7 @@
       "paper_title": "Turbulent boundary layers altered by passively rotating discs",
       "paper_date": "2026-07-15",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-19T09:54:44",
+      "generated_at": "2026-07-18T09:37:03",
       "generator": "openai"
     }
   },
@@ -484,29 +484,29 @@
         "url": "https://arxiv.org/pdf/2607.15239v1"
       }
     ],
-    "score": 52,
+    "score": 57,
     "infographic": {
-      "key_insight": "The paper develops a reduced-order model showing how porous drag, wall compliance, and peristaltic motion jointly control flow and pressure in a non-axisymmetric annular conduit.",
-      "engineering_relevance": "This provides a mechanistic framework for predicting cerebrospinal fluid transport in periarterial spaces where both wall deformation and porous pathways can significantly alter hydraulic resistance.",
+      "key_insight": "A reduced-order fluid-structure model shows how peristalsis, porous drag, and compliant-wall motion jointly shape flow in a non-axisymmetric annular conduit like the periarterial space.",
+      "engineering_relevance": "The model provides a mechanistic way to predict cerebrospinal fluid transport in porous, deformable channels and can guide design or interpretation of physiological flow studies.",
       "method": [
-        "Adds a Darcy–Brinkman term to represent porous-medium drag in the axial momentum equation.",
-        "Couples fluid flow with compliant outer-wall displacement in a two-way fluid–structure interaction model.",
-        "Perturbs the resistance changes from peristalsis and wall motion to reduce the system to a single nonlinear pressure PDE."
+        "Adds a Darcy–Brinkman drag term to represent porous resistance.",
+        "Couples the outer wall compliance to the fluid motion in a two-way FSI framework.",
+        "Reduces the coupled system to a single nonlinear PDE for axial pressure; small-amplitude cases admit analytical solutions."
       ],
-      "evidence_signal": "The abstract reports a reduced-order analytical framework and notes that closed-form analytical solutions are possible for small-amplitude peristaltic waves.",
-      "watch_item": "The reduced model relies on perturbative small-amplitude assumptions, so accuracy may degrade for stronger wall motion or highly nonlinear flow regimes.",
+      "evidence_signal": "The paper presents a reduced-order analytical/perturbative model and uses it for parametric studies rather than reporting new experimental data in the abstract.",
+      "watch_item": "The reduction and analytical results rely on small-amplitude perturbation assumptions, so accuracy may degrade for stronger peristalsis or large wall deformations.",
       "hashtags": [
         "#FluidMechanics",
         "#Peristalsis",
         "#PorousMedia",
-        "#FluidStructureInteraction",
-        "#ComputationalScience"
+        "#FSI",
+        "#BiomedicalEngineering"
       ],
       "paper_id": "2026-07-16-arxiv-flow_in_a_porous_non_axisymmetric_annular_conduit_coupling_wall_compliance_and_peristalsis",
       "paper_title": "Flow in a porous non-axisymmetric annular conduit: Coupling wall compliance and peristalsis",
       "paper_date": "2026-07-16",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-19T09:54:46",
+      "generated_at": "2026-07-18T09:37:06",
       "generator": "openai"
     }
   },
@@ -535,29 +535,29 @@
         "url": "https://arxiv.org/pdf/2607.13691v1"
       }
     ],
-    "score": 48,
+    "score": 53,
     "infographic": {
-      "key_insight": "The paper shows that arbitrary 2D curves and simple 3D shapes can be deterministically drawn on water surfaces by superposing transient multi-directional focused waves with curve-based sampling and amplitude correction.",
-      "engineering_relevance": "This provides a practical route to precise wave-field shaping for ocean engineering, with potential use in testing, visualization, and controlled wave generation.",
+      "key_insight": "The paper presents a deterministic way to “draw” arbitrary 2D and 3D shapes on a water surface by combining focused transient waves with curve parametrization and amplitude correction.",
+      "engineering_relevance": "This enables more precise wave-field control for ocean engineering, with potential uses in experimental basin testing, wave manipulation, and shape-specific surface generation.",
       "method": [
-        "Parameterize target shapes with Bézier curves",
-        "Sample points by equal arc length to place wave foci uniformly",
-        "Use Iterative Amplitude Correction to reduce overshoot and improve superposition"
+        "Represent target shapes with B\u0000e9zier curves or 3D geometry",
+        "Sample points at equal arc length to place wave foci consistently",
+        "Use Iterative Amplitude Correction (IAC) to reduce overshoot and improve superposition"
       ],
-      "evidence_signal": "The approach was checked against linear wave theory and SPH simulations, then demonstrated experimentally in the FloWave basin for a 2D star and 3D pyramid.",
-      "watch_item": "Accuracy may degrade for higher-amplitude waves, so nonlinear effects will need to be incorporated for robust real-world deployment.",
+      "evidence_signal": "The approach was validated with linear wave theory, SPH simulations, and physical FloWave basin experiments that reproduced targets such as a 2D star and 3D pyramid.",
+      "watch_item": "Accuracy may degrade at higher amplitudes because the method currently relies on linear theory and will need nonlinear wave modeling for stronger waves.",
       "hashtags": [
         "#FluidMechanics",
-        "#Waves",
+        "#WaveControl",
         "#OceanEngineering",
         "#SPH",
-        "#WaveControl"
+        "#ComputationalPhysics"
       ],
       "paper_id": "2026-07-15-arxiv-drawing_with_water_waves",
       "paper_title": "Drawing with water waves",
       "paper_date": "2026-07-15",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-19T09:54:49",
+      "generated_at": "2026-07-18T09:37:08",
       "generator": "openai"
     }
   },
@@ -587,29 +587,29 @@
         "url": "https://arxiv.org/pdf/2607.15199v1"
       }
     ],
-    "score": 47,
+    "score": 52,
     "infographic": {
-      "key_insight": "In long axisymmetric channels with thin electric double layers, diffusio-osmotic flow is governed strongly by channel geometry: it can be enhanced or suppressed relative to a simple cylinder, while applied pressure adds only an extra independent flow contribution.",
-      "engineering_relevance": "The results provide a geometry-aware design rule for micro- and nanofluidic devices to tune pumping, hydraulic resistance, and ionic transport using concentration gradients and channel shape.",
+      "key_insight": "In long axisymmetric channels, diffusio-osmotic flow from concentration gradients is essentially unchanged by adding a pressure drop, but channel geometry can either amplify or suppress the flow and strongly tune ionic flux.",
+      "engineering_relevance": "This gives micro- and nanofluidic designers a geometry-based way to predict, control, and separate fluid and ionic transport using channel shape and an effective cylinder approximation.",
       "method": [
-        "Theory for salt solution flow in long axisymmetric channels driven by concentration and pressure differences.",
-        "Thin diffuse-layer approximation with validity retained for large concentration drops.",
-        "Comparison of several channel geometries and introduction of an effective-cylinder approximation based on hydrodynamic resistivity."
+        "Derive transport theory for electrolyte flow in long axisymmetric channels with thin diffuse layers.",
+        "Decompose total flow into diffusio-osmotic and pressure-driven components and compute Δp(Q) relations.",
+        "Map how channel geometry affects hydrodynamic resistivity and ionic flux, including a simple equivalent-cylinder model."
       ],
-      "evidence_signal": "The abstract reports analytical calculations of flow-rate and pressure-drop curves for several axisymmetric channel shapes, showing nearly linear Δp(Q) relations with slopes that depend sensitively on geometry.",
-      "watch_item": "The model assumes thin electrostatic diffuse layers and axisymmetric long channels, so accuracy may degrade for strongly non-axisymmetric geometries or cases where the double layer is not thin compared with the local radius.",
+      "evidence_signal": "The abstract reports analytical calculations for several axisymmetric channel shapes, with nearly linear Δp(Q) curves and shape-dependent slopes, supporting the approximation and design claims.",
+      "watch_item": "The theory assumes diffuse layers are thin relative to the local channel radius, so accuracy may degrade in strongly overlapping double-layer or very small-channel regimes.",
       "hashtags": [
         "#FluidMechanics",
         "#Microfluidics",
         "#Nanofluidics",
         "#Electrokinetics",
-        "#Diffusioosmosis"
+        "#MassTransport"
       ],
       "paper_id": "2026-07-16-arxiv-diffusioosmosis_of_electrolyte_solutions_in_axisymmetric_channels",
       "paper_title": "Diffusioosmosis of electrolyte solutions in axisymmetric channels",
       "paper_date": "2026-07-16",
       "paper_category": "AI Fluid Mechanics",
-      "generated_at": "2026-07-19T09:54:51",
+      "generated_at": "2026-07-18T09:37:12",
       "generator": "openai"
     }
   },
@@ -639,29 +639,29 @@
         "url": "https://arxiv.org/pdf/2607.13856v1"
       }
     ],
-    "score": 46,
+    "score": 51,
     "infographic": {
-      "key_insight": "A stationary 1/f noise emerges when a system is governed by two widely separated cutoff frequencies and no other constant scale besides the mean amplitude, causing the spectrum to asymptotically follow 1/f in the intermediate range.",
-      "engineering_relevance": "This gives engineers a general criterion for identifying or designing systems with broadband low-frequency fluctuations, including cases in turbulence and diffusion-like dynamics.",
+      "key_insight": "A stationary 1/f noise emerges when a system is bounded by two fixed frequencies and has no other constant parameter besides the mean amplitude, leading to 1/f scaling in the intermediate range.",
+      "engineering_relevance": "This gives a general, system-independent criterion for identifying or designing processes that produce broadband flicker noise in fluid, diffusion, and other engineering systems.",
       "method": [
-        "Analytical study of the ordinary diffusion equation to derive an explicit 1/f-noise example.",
-        "Combined that result with known scaling ideas from fluid turbulence to formulate a general condition.",
-        "Used frequency-scale reasoning to identify when asymptotic 1/f behavior must appear."
+        "Analytically studied the ordinary diffusion equation.",
+        "Compared the derived spectrum with known scaling behavior in fluid turbulence.",
+        "Used the result to infer a necessary-and-sufficient condition for stationary 1/f noise."
       ],
-      "evidence_signal": "The abstract reports an analytical derivation, not a numerical benchmark or experimental dataset, as the basis for the proposed condition.",
-      "watch_item": "The condition is asymptotic and assumes stationarity and scale separation, so finite-band systems or cases with additional characteristic parameters may deviate from pure 1/f behavior.",
+      "evidence_signal": "The paper’s evidence is analytical rather than experimental: it derives a diffusion-equation example and uses it to establish the frequency-boundary condition for 1/f behavior.",
+      "watch_item": "The condition applies to stationary noise with clear low/high cutoff frequencies; real systems with nonstationarity, finite data windows, or extra controlling parameters may deviate from ideal 1/f scaling.",
       "hashtags": [
-        "#1fNoise",
+        "#1overfNoise",
         "#Turbulence",
         "#DiffusionEquation",
         "#ScalingLaw",
-        "#ComputationalScience"
+        "#FluidMechanics"
       ],
       "paper_id": "2026-07-15-arxiv-condition_for_1_f_noise_to_occur_along_with_an_example_for_a_diffusion_equation",
       "paper_title": "Condition for $1/f$ noise to occur along with an example for a diffusion equation",
       "paper_date": "2026-07-15",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-19T09:54:53",
+      "generated_at": "2026-07-18T09:37:14",
       "generator": "openai"
     }
   },
@@ -691,29 +691,81 @@
         "url": "https://arxiv.org/pdf/2607.11817v1"
       }
     ],
-    "score": 46,
+    "score": 51,
     "infographic": {
-      "key_insight": "Turbulent coherent structures are framed as universal thermodynamic responses to macroscopic energy-throughput imbalance, not as ad hoc flow features.",
-      "engineering_relevance": "A computable order parameter (Π) could help decide which turbulent flows require finer resolution and better support predictive modeling in continuously driven systems.",
+      "key_insight": "Turbulent coherent structures are framed as universal thermodynamic responses to energy-throughput imbalance, with a computable order parameter (Π) distinguishing near-equilibrium fluctuations from far-from-equilibrium dissipative structures.",
+      "engineering_relevance": "This could provide a physics-based criterion for when CFD must resolve coherent flow structures, improving model fidelity and reducing ambiguous mesh or closure choices in driven dissipative flows.",
       "method": [
-        "Use renormalized Navier–Stokes equations to connect turbulence with non-equilibrium statistical physics.",
-        "Classify coherence as either near-equilibrium-like transient adjustments or far-from-equilibrium dissipative structures.",
-        "Define and compute an effective thermodynamic order parameter (Π) to identify required flow resolution."
+        "Recasts turbulence through renormalized Navier-Stokes equations and non-equilibrium statistical physics.",
+        "Introduces an effective thermodynamic order parameter (Π) to identify coherent structures.",
+        "Classifies coherence by access to bifurcations: transient adjustment vs autonomous dissipative state."
       ],
-      "evidence_signal": "The abstract presents a theoretical framework and no numerical experiments or dataset-based evaluation.",
-      "watch_item": "The framework is conceptually strong but will need clear practical validation of Π and robust criteria for detecting topological access to bifurcations in real flows.",
+      "evidence_signal": "The abstract claims a foundational theoretical framework and a computable order parameter, but it does not report numerical experiments, datasets, or benchmark validation results.",
+      "watch_item": "The framework appears highly conceptual in the abstract, so practical adoption will depend on how Π is computed robustly and validated across real turbulent flows.",
       "hashtags": [
         "#Turbulence",
+        "#CFD",
         "#NonEquilibrium",
-        "#FluidMechanics",
         "#StatisticalPhysics",
-        "#ComputationalScience"
+        "#FluidMechanics"
       ],
       "paper_id": "2026-07-13-arxiv-coherence_as_thermodynamic_organization_toward_a_non_equilibrium_turbulence_theory",
       "paper_title": "Coherence as Thermodynamic Organization: Toward a Non-Equilibrium Turbulence Theory",
       "paper_date": "2026-07-13",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-19T09:54:55",
+      "generated_at": "2026-07-18T09:37:17",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-11-arxiv-neuroforge_a_self_correcting_geometry_native_neural_cfd_engine_with_calibrated_physics_res",
+    "arxiv_id": "2607.10333v1",
+    "date": "2026-07-11",
+    "title": "NeuroForge: A Self-Correcting, Geometry-Native Neural CFD Engine with Calibrated Physics-Residual Trust",
+    "authors": "Ali Jabbary, Kasra Ghanavati",
+    "abstract": "Machine-learning surrogates for computational fluid dynamics (CFD) predict steady flow fields orders of magnitude faster than classical solvers, but emit a single field with no built-in way to know whether to trust it -- especially out of distribution. We close the loop with the governing physics: we compute the discretised steady-RANS residual of the prediction and ask what jobs it can do. Our central finding is a two-way dissociation: the physics residual is a reliable, backbone-robust trust signal (it tells you where the prediction is wrong) but a poor correction objective (it does not tell you how to fix it). As a trust signal, the residual's per-case rank correlation with field error is consistently positive across three architecturally distinct backbones (Transolver 0.625+-0.019; grid Geo-FNO ~0.40, lifted to 0.83 by a learned corrector; MeshGraphNet 0.851+-0.058) and generalizes to a second dataset and flow regime (DeepCFD laminar bluff bodies, rho=0.77+-0.12). A split-conformal layer attains target coverage (0.902+-0.008 at the 0.90 target) and, paired with a deep-ensemble sigma, yields an input-adaptive band (ECE 0.074). As a correction objective or acceptance gate the residual fails: iteration sweeps raise the PDE residual while lowering field error. Alongside the trust layer we deploy a supervised deep-equilibrium corrector trained toward ground truth that reduces volume-field MSE on all three seeds (mse_u -9%, mse_v -21%, mse_p -25%) on the SOTA backbone; a controlled ablation zeroing the corrector's residual input matches it, so the gain is attributable to the learned correction, not residual-conditioning. We report caveats plainly: correction quality is backbone-dependent, and the coverage guarantee holds under exchangeability. The contribution is a self-auditing trust layer, the residual's two roles, and the learned self-correction it accompanies.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-07-11T14:19:51Z",
+    "updated": "2026-07-11T14:19:51Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "physics.comp-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.10333v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.10333v1"
+      }
+    ],
+    "score": 51,
+    "infographic": {
+      "key_insight": "NeuroForge turns the CFD physics residual into a reliable uncertainty signal for detecting prediction errors, while showing that the same residual is a poor direct correction target.",
+      "engineering_relevance": "This enables faster CFD surrogates to self-audit their predictions and provide calibrated trust bands, which is valuable for safety-critical flow design and out-of-distribution deployment.",
+      "method": [
+        "Compute the discretized steady-RANS residual of surrogate flow predictions.",
+        "Use split conformal calibration plus deep-ensemble uncertainty to form adaptive trust bands.",
+        "Train a supervised deep-equilibrium corrector to improve the predicted flow fields."
+      ],
+      "evidence_signal": "Across three backbones and a second dataset, residual rank correlation with field error was consistently positive, conformal coverage matched the 0.90 target at 0.902±0.008, and the learned corrector reduced MSE on all three seeds.",
+      "watch_item": "The correction gains are backbone-dependent, and the coverage guarantee only holds under exchangeability assumptions.",
+      "hashtags": [
+        "#CFD",
+        "#Turbulence",
+        "#PhysicsInformedML",
+        "#UncertaintyQuantification",
+        "#NeuralSurrogates"
+      ],
+      "paper_id": "2026-07-11-arxiv-neuroforge_a_self_correcting_geometry_native_neural_cfd_engine_with_calibrated_physics_res",
+      "paper_title": "NeuroForge: A Self-Correcting, Geometry-Native Neural CFD Engine with Calibrated Physics-Residual Trust",
+      "paper_date": "2026-07-11",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-07-18T09:37:20",
       "generator": "openai"
     }
   },
@@ -743,29 +795,29 @@
         "url": "https://arxiv.org/pdf/2607.12626v1"
       }
     ],
-    "score": 45,
+    "score": 50,
     "infographic": {
-      "key_insight": "Evolution Strategy can directly learn a recurrent wall controller on a large turbulent channel and achieve stronger drag reduction than prior learned control, avoiding the small-box degeneracies seen in gradient-based policies.",
-      "engineering_relevance": "This suggests that gradient-free, episode-level optimization can produce more robust closed-loop wall actuation strategies for practical turbulent drag-reduction systems.",
+      "key_insight": "Evolution Strategy can directly learn a recurrent wall controller on a large turbulent channel and achieve stronger drag reduction than prior gradient-based policies, reaching about 26% skin-friction reduction.",
+      "engineering_relevance": "This suggests black-box evolutionary optimisation may be a practical route to robust closed-loop flow control when gradient-based controllers overfit small domains or fall into degenerate actuation patterns.",
       "method": [
-        "Optimize a recurrent closed-loop controller with Evolution Strategy on a full-size turbulent channel at Re_τ≈180.",
-        "Evaluate each candidate policy over complete flow episodes using an energy-aware reward.",
-        "Analyze friction, Reynolds stresses, and anisotropy to compare how the controller reshapes near-wall turbulence."
+        "Recurrent closed-loop controller optimised with Evolution Strategy on a full turbulent channel at Reτ≈180.",
+        "Policies evaluated over complete flow episodes with an energy-aware objective and parallel candidate processing.",
+        "Performance compared against GRU-MARL and classical opposition control."
       ],
-      "evidence_signal": "On the large-domain test, the ES controller reduced skin-friction drag by about 26%, outperforming GRU-MARL trained on a minimal box (17%) and slightly exceeding opposition control (22%).",
-      "watch_item": "The result is demonstrated at Re_τ≈180 in simulation, so transfer to higher Reynolds numbers, different geometries, and real hardware still needs validation.",
+      "evidence_signal": "The ES controller reduced skin-friction drag by about 26%, outperforming GRU-MARL trained on a minimal box (17%) and slightly exceeding opposition control (22%), with supporting friction, Reynolds-stress, and anisotropy analyses.",
+      "watch_item": "Training and evaluation are done at Reτ≈180, so robustness, cost, and transferability to higher-Re flows and hardware must still be verified.",
       "hashtags": [
         "#TurbulenceControl",
-        "#DragReduction",
         "#ReinforcementLearning",
         "#EvolutionStrategies",
-        "#CFD"
+        "#DragReduction",
+        "#ComputationalFluidDynamics"
       ],
       "paper_id": "2026-07-14-arxiv-gradient_free_learning_of_a_closed_loop_wall_controller_for_turbulent_drag_reduction",
       "paper_title": "Gradient-free learning of a closed-loop wall controller for turbulent drag reduction",
       "paper_date": "2026-07-14",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-19T09:54:57",
+      "generated_at": "2026-07-18T09:37:23",
       "generator": "openai"
     }
   },
@@ -795,29 +847,29 @@
         "url": "https://arxiv.org/pdf/2607.11672v1"
       }
     ],
-    "score": 45,
+    "score": 50,
     "infographic": {
-      "key_insight": "ME-GNN improves fluid dynamics prediction in complex geometries by combining local graph message passing with multi-scale feature extraction.",
-      "engineering_relevance": "The method can reduce reliance on expensive high-fidelity simulations for vehicle and aerospace design workflows on large unstructured meshes.",
+      "key_insight": "ME-GNN improves fluid-dynamics prediction in complex geometries by combining multi-scale feature extraction with graph-based local message passing.",
+      "engineering_relevance": "The method can reduce reliance on expensive CFD simulations for vehicle and aerospace design workflows on large, unstructured meshes.",
       "method": [
-        "Two-step GNN message passing captures detailed local interactions on complex meshes.",
-        "Attention U-Net on uniform grids extracts both fine and coarse flow features.",
-        "K-hop subgraph sampling enables scalable training while preserving local detail."
+        "Two-step GNN message passing for detailed local fluid features",
+        "Attention U-Net on uniform grids to capture coarse-to-fine structure",
+        "K-hop subgraph sampling for scalable training on large meshes"
       ],
-      "evidence_signal": "The paper reports state-of-the-art results on three benchmarks, including relative L2 errors of 0.0196 for velocity and 0.0556 for surface pressure on ShapeNet-Car, 0.0033 NMSE on AirfRANS, and 0.1416 relative L2 on DrivAerNet pressure.",
-      "watch_item": "Performance may depend on careful subgraph construction and grid/mesh alignment, which could limit robustness across very different geometries and resolutions.",
+      "evidence_signal": "The abstract reports state-of-the-art results on three benchmarks, including L2 error 0.0196 for velocity on ShapeNet-Car, NMSE 0.0033 on AirfRANS, and L2 error 0.1416 on DrivAerNet.",
+      "watch_item": "Performance may depend on careful subgraph sampling and grid/mesh alignment, which could affect scalability and fidelity on very large or highly irregular geometries.",
       "hashtags": [
         "#FluidDynamics",
         "#GraphNeuralNetworks",
-        "#TurbulenceModeling",
-        "#SurrogateModeling",
-        "#ComputationalEngineering"
+        "#CFD",
+        "#Turbulence",
+        "#AIforEngineering"
       ],
       "paper_id": "2026-07-13-arxiv-a_multi_scale_feature_enhanced_graph_neural_network_for_fluid_dynamics_prediction_in_compl",
       "paper_title": "A multi-scale feature enhanced graph neural network for fluid dynamics prediction in complex geometries",
       "paper_date": "2026-07-13",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-19T09:55:00",
+      "generated_at": "2026-07-18T09:37:25",
       "generator": "openai"
     }
   },
@@ -847,29 +899,29 @@
         "url": "https://arxiv.org/pdf/2607.14322v1"
       }
     ],
-    "score": 42,
+    "score": 47,
     "infographic": {
-      "key_insight": "Evaporating capillary bridges between curved solids are governed by a tightly coupled thermo-fluid-adhesion process in which curvature, wettability, and thermal conductivity jointly control mass transfer and adhesion loss.",
-      "engineering_relevance": "These results inform the design of microgrippers, adhesive joints, and wetting-based handling systems where controllable capillary adhesion and evaporation-driven detachment matter.",
+      "key_insight": "Evaporation of capillary bridges between curved surfaces is governed by a coupled thermo-fluid-adhesion process, where curvature and thermal conductivity strongly control mass transfer, Marangoni circulation, and adhesion loss.",
+      "engineering_relevance": "The results inform the design of adhesive, thermal, and wetting-dependent microsystems by showing how surface curvature and material conductivity can tune capillary force and drying dynamics.",
       "method": [
-        "Computed equilibrium capillary bridge profiles with a level-set method.",
-        "Simulated transient evaporation and moving interfaces using a fully coupled ALE framework.",
-        "Quantified the roles of substrate curvature, wettability, and thermal conductivity on evaporation, Marangoni circulation, and capillary force evolution."
+        "Computed equilibrium capillary bridge shapes with a level set method.",
+        "Simulated transient evaporation using an Arbitrary Lagrangian Eulerian (ALE) framework to track the moving liquid-vapor interface.",
+        "Performed parametric studies on substrate curvature, wettability, and solid thermal conductivity."
       ],
-      "evidence_signal": "The framework was validated against published results for capillary profiles, evaporation rates, and capillary forces, with good agreement reported.",
-      "watch_item": "The conclusions rely on a coupled numerical model, so real-surface effects such as roughness, contamination, and contact-line hysteresis may alter the predicted adhesion dynamics.",
+      "evidence_signal": "The framework was validated against published results for capillary profiles, evaporation rates, and capillary forces, with good agreement.",
+      "watch_item": "The findings depend on a fully coupled numerical model, so predictive accuracy may be sensitive to interface tracking, material-property assumptions, and boundary-condition specification.",
       "hashtags": [
         "#CapillaryBridges",
         "#Evaporation",
         "#MarangoniFlow",
-        "#AdhesionDynamics",
-        "#ComputationalFluidDynamics"
+        "#InterfacialDynamics",
+        "#ThermalConductivity"
       ],
       "paper_id": "2026-07-15-arxiv-interfacial_thermo_fluid_adhesion_dynamics_of_evaporating_capillary_bridges_between_curved",
       "paper_title": "Interfacial-Thermo-Fluid-Adhesion Dynamics of Evaporating Capillary Bridges between Curved Surfaces",
       "paper_date": "2026-07-15",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-19T09:55:03",
+      "generated_at": "2026-07-18T09:37:27",
       "generator": "openai"
     }
   },
@@ -899,17 +951,17 @@
         "url": "https://arxiv.org/pdf/2607.12927v1"
       }
     ],
-    "score": 42,
+    "score": 47,
     "infographic": {
-      "key_insight": "Random, intermittent jet forcing can both mix and sharpen a salt-stratified fluid interface, with interface rise slowing as the density jump increases.",
-      "engineering_relevance": "The results help predict how stratified interfaces evolve under unsteady turbulent forcing in environmental and industrial flows where transport and mixing control performance.",
+      "key_insight": "Random, intermittent jet forcing mixes a two-layer stratified fluid while the interface can either rise and broaden or, at large density jumps, sharpen even as irreversible mixing occurs.",
+      "engineering_relevance": "The results help predict transport and entrainment across density interfaces in geophysical and industrial stratified flows where forcing is unsteady and spatially heterogeneous.",
       "method": [
-        "Two-layer salt-stratified fluid was forced by a randomly actuated synthetic jet array (RASJA).",
-        "Interface density evolution was measured using light attenuation imaging.",
-        "Background potential energy was used to assess irreversible mixing."
+        "Two-layer salt-stratified fluid experiments forced by a randomly actuated synthetic jet array (RASJA).",
+        "Interface evolution measured with the light attenuation technique.",
+        "Background potential energy used to assess irreversible mixing and compare regimes."
       ],
-      "evidence_signal": "Experiments showed that interface upward velocity decreases with density jump, and at large density differences the interface sharpened during mixing while still exhibiting comparable irreversible energy changes.",
-      "watch_item": "The findings come from laboratory-scale, two-layer stratified conditions, so direct transfer to complex natural flows may require caution.",
+      "evidence_signal": "The abstract reports that interface rise speed decreases with density jump and that both weak- and strong-jump cases show comparable irreversible energy changes despite different interface-shape evolution.",
+      "watch_item": "Because the study is laboratory-based and uses a specific random jet forcing setup, direct transfer to fully natural flows or different forcing spectra may require caution.",
       "hashtags": [
         "#FluidMechanics",
         "#Turbulence",
@@ -921,7 +973,7 @@
       "paper_title": "Mixing and sharpening at the interface of a two-layer fluid forced by random jets",
       "paper_date": "2026-07-14",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-19T09:55:05",
+      "generated_at": "2026-07-18T09:37:30",
       "generator": "openai"
     }
   },
@@ -952,81 +1004,29 @@
         "url": "https://arxiv.org/pdf/2607.15122v1"
       }
     ],
-    "score": 41,
+    "score": 46,
     "infographic": {
-      "key_insight": "A single elastic fiber in microfluidic flow can become a bistable, memory-bearing \"fluidic hysteron\" through elastohydrodynamic feedback between deformation and hydraulic resistance.",
-      "engineering_relevance": "This suggests a passive way to build flow-based memory and switching elements for microfluidic logic, adaptive fluidic circuits, and distributed sensing without relying on solid-state buckling or external control.",
+      "key_insight": "A single flexible fiber in a microfluidic channel can become a bistable “fluidic hysteron” through nonlinear flow–structure feedback, enabling memory, hysteresis, and avalanche-like switching in flow networks.",
+      "engineering_relevance": "This provides a passive, geometry-tunable way to encode and control memory in microfluidic systems, with potential uses in adaptive fluidic logic, sensing, and programmable flow routing.",
       "method": [
-        "Anchor one elastic fiber inside a microfluidic channel and drive it with viscous flow.",
-        "Use a parallel bypass channel as a geometric load line to tune bistability and hydraulic coupling.",
-        "Study arrays of fibers by varying channel geometry to observe collective switching behavior."
+        "Anchor an elastic fiber in a microfluidic channel so viscous loading deforms it.",
+        "Exploit deformation-induced changes in hydraulic resistance and flow redistribution to create bistability.",
+        "Use bypass-channel geometry to tune load-line effects and interactions across fiber arrays."
       ],
-      "evidence_signal": "The abstract reports a cusp-catastrophe onset of bistability for a single fiber and a geometry-driven transition in arrays from noninteracting Preisach-like behavior with return point memory to interacting avalanche-like switching with memory violation.",
-      "watch_item": "Because bistability and collective memory depend strongly on channel geometry and global hydraulic coupling, device behavior may be highly sensitive to fabrication tolerances and operating conditions.",
+      "evidence_signal": "The abstract reports a cusp-catastrophe onset for a single fiber and a geometry-driven transition in arrays from noninteracting Preisach behavior with return-point memory to interacting avalanching behavior with return-point memory violation.",
+      "watch_item": "Bistability and memory depend strongly on channel geometry and hydraulic coupling, so small fabrication variations could shift or eliminate the intended switching behavior.",
       "hashtags": [
         "#Microfluidics",
         "#FluidMechanics",
         "#Hysteresis",
         "#MemoryMaterials",
-        "#Elastohydrodynamics"
+        "#NonlinearDynamics"
       ],
       "paper_id": "2026-07-16-arxiv-fluidic_hysterons_and_memory_in_flow_networks",
       "paper_title": "Fluidic hysterons and memory in flow networks",
       "paper_date": "2026-07-16",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-19T09:55:07",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-15-arxiv-dynamics_of_a_microroller_under_confinement",
-    "arxiv_id": "2607.14053v1",
-    "date": "2026-07-15",
-    "title": "Dynamics of a microroller under confinement",
-    "authors": "Han Gao, Nan Xie, Zaiyi Shen, Xiaoping Hu, Shiyuan Hu, Ye Xu",
-    "abstract": "Rotating particles can translate when placed near a surface, forming microrollers with a wide range of biomedical and microfluidic applications. In this work, we investigate the dynamics of microrollers in confined microchannels with different geometries by combining experiments, numerical simulations, and scaling analysis. In constricted channels, we find that the translational velocity of a microroller decreases as it approaches the constricted region. In both rectangular and cylindrical channels, velocity reversal occurs as the characteristic channel width decreases. Using the force-free condition for free translation, we develop a systematic scaling framework that can be generalized to different channel geometries. The scaling analysis yields functional dependences of the translational velocity on the degree of confinement, which agree well with both experiments and simulations. Importantly, we demonstrate that the viscous stress generated by the far-field rotlet flow governs the observed velocity reduction and reversal, while the translational resistance resulting from the near-field shear flow suppresses translation under tight confinement. The distinct roles of these flow components revealed by our analysis may provide practical guidance for controlling microroller dynamics in confined fluid environments.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-07-15T17:23:49Z",
-    "updated": "2026-07-15T17:23:49Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn",
-      "cond-mat.soft"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.14053v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.14053v1"
-      }
-    ],
-    "score": 41,
-    "infographic": {
-      "key_insight": "Microrollers slow down in confinement and can reverse direction as channels narrow, because far-field rotlet stress and near-field shear resistance compete differently under tight geometries.",
-      "engineering_relevance": "The scaling framework can guide microchannel and biomedical device design for controlling particle transport, mixing, and targeted microroller motion under confinement.",
-      "method": [
-        "Experiments in constricted, rectangular, and cylindrical microchannels",
-        "Numerical simulations of microroller dynamics under varying confinement",
-        "Force-free scaling analysis to link velocity to channel geometry"
-      ],
-      "evidence_signal": "The abstract reports that the predicted confinement-dependent velocity trends agree well with both experiments and simulations.",
-      "watch_item": "The scaling laws may depend on the specific particle shape, surface conditions, and channel geometry, so direct transfer to other setups should be validated.",
-      "hashtags": [
-        "#Microfluidics",
-        "#Microrollers",
-        "#ConfinedFlows",
-        "#StokesFlow",
-        "#ScalingAnalysis"
-      ],
-      "paper_id": "2026-07-15-arxiv-dynamics_of_a_microroller_under_confinement",
-      "paper_title": "Dynamics of a microroller under confinement",
-      "paper_date": "2026-07-15",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-07-19T09:55:09",
+      "generated_at": "2026-07-18T09:37:33",
       "generator": "openai"
     }
   }

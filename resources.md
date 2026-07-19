@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-07-18
+Generated: 2026-07-19
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Evaluation of State-of-the-Art Deep Learning Architectures for Aerodynamical Predictions
@@ -115,15 +115,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.11817v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-13-arxiv-coherence_as_thermodynamic_organization_toward_a_non_equilibrium_turbulence_theory_infographic.json
 
-## 15. NeuroForge: A Self-Correcting, Geometry-Native Neural CFD Engine with Calibrated Physics-Residual Trust
-
-- Date: 2026-07-11
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2607.10333v1
-- PDF: https://arxiv.org/pdf/2607.10333v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-11-arxiv-neuroforge_a_self_correcting_geometry_native_neural_cfd_engine_with_calibrated_physics_res_infographic.json
-
-## 16. Gradient-free learning of a closed-loop wall controller for turbulent drag reduction
+## 15. Gradient-free learning of a closed-loop wall controller for turbulent drag reduction
 
 - Date: 2026-07-14
 - Category: Turbulence
@@ -131,7 +123,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.12626v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-14-arxiv-gradient_free_learning_of_a_closed_loop_wall_controller_for_turbulent_drag_reduction_infographic.json
 
-## 17. A multi-scale feature enhanced graph neural network for fluid dynamics prediction in complex geometries
+## 16. A multi-scale feature enhanced graph neural network for fluid dynamics prediction in complex geometries
 
 - Date: 2026-07-13
 - Category: Turbulence
@@ -139,7 +131,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.11672v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-13-arxiv-a_multi_scale_feature_enhanced_graph_neural_network_for_fluid_dynamics_prediction_in_compl_infographic.json
 
-## 18. Interfacial-Thermo-Fluid-Adhesion Dynamics of Evaporating Capillary Bridges between Curved Surfaces
+## 17. Interfacial-Thermo-Fluid-Adhesion Dynamics of Evaporating Capillary Bridges between Curved Surfaces
 
 - Date: 2026-07-15
 - Category: Turbulence
@@ -147,7 +139,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.14322v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-15-arxiv-interfacial_thermo_fluid_adhesion_dynamics_of_evaporating_capillary_bridges_between_curved_infographic.json
 
-## 19. Mixing and sharpening at the interface of a two-layer fluid forced by random jets
+## 18. Mixing and sharpening at the interface of a two-layer fluid forced by random jets
 
 - Date: 2026-07-14
 - Category: Turbulence
@@ -155,10 +147,18 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.12927v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-14-arxiv-mixing_and_sharpening_at_the_interface_of_a_two_layer_fluid_forced_by_random_jets_infographic.json
 
-## 20. Fluidic hysterons and memory in flow networks
+## 19. Fluidic hysterons and memory in flow networks
 
 - Date: 2026-07-16
 - Category: Turbulence
 - arXiv: https://arxiv.org/abs/2607.15122v1
 - PDF: https://arxiv.org/pdf/2607.15122v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-16-arxiv-fluidic_hysterons_and_memory_in_flow_networks_infographic.json
+
+## 20. Dynamics of a microroller under confinement
+
+- Date: 2026-07-15
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2607.14053v1
+- PDF: https://arxiv.org/pdf/2607.14053v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-15-arxiv-dynamics_of_a_microroller_under_confinement_infographic.json
