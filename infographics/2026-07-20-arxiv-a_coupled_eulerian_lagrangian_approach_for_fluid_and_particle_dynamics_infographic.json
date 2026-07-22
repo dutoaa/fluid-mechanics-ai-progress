@@ -1,24 +1,24 @@
 {
-  "key_insight": "A GPU-accelerated Eulerian-Lagrangian framework can accurately simulate two-dimensional turbulent fluid flow together with passive tracers and finite-inertia particles using efficient interpolation-based coupling.",
-  "engineering_relevance": "The method provides a practical single-GPU tool for studying particle transport, dispersion, and preferential concentration in incompressible turbulent flows with good scalability.",
+  "key_insight": "A GPU-accelerated one-way Eulerian-Lagrangian framework can efficiently simulate 2D incompressible fluid flow and particle transport while capturing key turbulent dispersion and inertia effects.",
+  "engineering_relevance": "The method provides a practical, modular solver for studying particle-laden turbulence with good accuracy, statistical robustness, and single-GPU efficiency.",
   "method": [
-    "Fourier pseudospectral Navier-Stokes solver with second-order Adams-Bashforth time integration",
-    "Particle trajectories advanced with fourth-order Runge-Kutta",
+    "2D incompressible Navier–Stokes solved with a Fourier pseudospectral Eulerian fluid solver and second-order Adams–Bashforth time stepping",
+    "Passive tracer and finite-inertia particle trajectories advanced with classical fourth-order Runge–Kutta",
     "Fluid-to-particle coupling via bilinear, bicubic Catmull-Rom, or bicubic B-spline interpolation"
   ],
-  "evidence_signal": "The framework was verified against analytical solutions and benchmark problems, and bilinear interpolation produced transport statistics nearly identical to higher-order schemes while remaining computationally efficient.",
-  "watch_item": "The approach is one-way coupled and limited to 2D incompressible flows, so it does not capture particle feedback on the fluid or fully 3D effects.",
+  "evidence_signal": "The framework was verified against analytical solutions and benchmark problems, and showed particle-number convergence plus similar transport statistics for bilinear and higher-order interpolation.",
+  "watch_item": "The coupling is one-way and relies on interpolation accuracy, so it may be less suitable for strongly two-way coupled particle-fluid systems or flows where subgrid particle forcing matters.",
   "hashtags": [
-    "#FluidDynamics",
-    "#Turbulence",
+    "#CFD",
+    "#LagrangianParticles",
     "#EulerianLagrangian",
-    "#ParticleTransport",
+    "#Turbulence",
     "#GPUComputing"
   ],
   "paper_id": "2026-07-20-arxiv-a_coupled_eulerian_lagrangian_approach_for_fluid_and_particle_dynamics",
   "paper_title": "A coupled Eulerian Lagrangian approach for fluid and particle dynamics",
   "paper_date": "2026-07-20",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-21T10:27:31",
+  "generated_at": "2026-07-22T10:28:29",
   "generator": "openai"
 }

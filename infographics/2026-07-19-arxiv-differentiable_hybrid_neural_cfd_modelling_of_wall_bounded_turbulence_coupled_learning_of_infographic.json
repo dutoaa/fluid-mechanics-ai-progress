@@ -1,24 +1,24 @@
 {
-  "key_insight": "A differentiable WMLES framework jointly learns subgrid-scale and wall closures end-to-end, showing that these closures must be optimized together because their effects are coupled through the resolved flow.",
-  "engineering_relevance": "The method improves turbulence prediction, generalizes across Reynolds numbers, grids, and domains, and can reduce repeated CFD tuning costs by reusing trained closures after deployment.",
+  "key_insight": "A differentiable WMLES framework can jointly learn subgrid-scale and wall closures end-to-end, improving turbulence predictions because the closures and discretization are tightly coupled.",
+  "engineering_relevance": "This enables reusable turbulence models that transfer across Reynolds numbers, grids, and domains, reducing the need to hand-tune separate wall and SGS closures for each simulation setup.",
   "method": [
-    "Hybrid-Joint couples a differentiable flow solver with two composed neural operators for SGS and wall closures.",
-    "Each closure uses a trainable neural network plus a fixed differentiable layer that preserves the structure of the conventional closure form.",
-    "Training is driven by low-order statistics, with gradients back-propagated through the full solver to optimize both closures jointly."
+    "Train SGS and wall closures together inside a differentiable flow solver.",
+    "Use a neural network plus a fixed physics-preserving layer for each closure.",
+    "Optimize only from low-order statistics while backpropagating through the coupled CFD system."
   ],
-  "evidence_signal": "Across posteriori tests on a zero-pressure-gradient turbulent boundary layer (\u0010Re_\u0002\b\b _\b\u0012 = 600--6500), the method outperforms WMLES baselines, extrapolates beyond the training range, and reproduces mean-velocity and energy-spectrum statistics.",
-  "watch_item": "Because the approach relies on differentiable solver integration and joint optimization, implementation quality, numerical stability, and solver-specific differentiation can strongly affect performance and transferability.",
+  "evidence_signal": "On a zero-pressure-gradient turbulent boundary layer, the model beats WMLES baselines across Re_θ = 600–6500, extrapolates beyond the training range, and transfers to unseen grids and domains while recovering both the log-law region and resolved spectra.",
+  "watch_item": "The approach depends on differentiable solver infrastructure and careful joint training; learning either closure alone was insufficient, so implementation and optimization stability may be nontrivial.",
   "hashtags": [
-    "#Turbulence",
-    "#WMLES",
-    "#NeuralCFD",
-    "#DifferentiableSimulation",
-    "#HybridModel"
+    "#TurbulenceModeling",
+    "#DifferentiableCFD",
+    "#WallModeledLES",
+    "#NeuralPDE",
+    "#HybridModeling"
   ],
   "paper_id": "2026-07-19-arxiv-differentiable_hybrid_neural_cfd_modelling_of_wall_bounded_turbulence_coupled_learning_of",
   "paper_title": "Differentiable Hybrid Neural-CFD Modelling of Wall-Bounded Turbulence: Coupled Learning of Subgrid-Scale and Wall Closures",
   "paper_date": "2026-07-19",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-21T10:27:25",
+  "generated_at": "2026-07-22T10:28:24",
   "generator": "openai"
 }
