@@ -1,24 +1,24 @@
 {
-  "key_insight": "Thermodynamics-informed input reparameterization (TAIR) makes neural surrogates easier to learn by replacing raw enthalpy with target-matched ideal-gas thermodynamic coordinates, so the network focuses on real-fluid deviations rather than reconstructing the full closure from scratch.",
-  "engineering_relevance": "TAIR can cut the cost of thermodynamic property evaluation in supercritical combustion solvers while improving accuracy, making data-driven closures more practical for high-fidelity reacting-flow simulation.",
+  "key_insight": "Target-aligned input reparameterization (TAIR) makes neural surrogates for real-fluid thermodynamics easier to learn by replacing raw enthalpy with thermodynamically matched ideal-gas estimates.",
+  "engineering_relevance": "This can cut the cost of real-fluid property evaluation in supercritical combustion solvers while preserving accuracy for temperature, density, and compressibility closures.",
   "method": [
-    "Temperature network: replace enthalpy with an ideal-gas constant-cp inversion-based temperature estimate.",
-    "Density and compressibility networks: replace enthalpy with an ideal-gas density estimate.",
-    "Train target-aligned surrogates to predict real-fluid T, ρ, and ψ as departures from these thermodynamic baselines."
+    "Use a constant-cp ideal-gas enthalpy inversion to generate a target-aligned temperature input for the T network.",
+    "Use ideal-gas density estimates as inputs for the density and compressibility networks.",
+    "Train surrogates to learn real-fluid departures from ideal-gas baselines instead of reconstructing the full thermodynamic closure from raw (h,p,Y)."
   ],
-  "evidence_signal": "On supercritical methane-oxygen counterflow flame data, TAIR reduced held-out RMSE by about 1.5× for T, 2.0× for ρ, and 7.5× for ψ, and generalized to an unseen strain-rate flame with gains of 3.6×, 14.5×, and 6.0×.",
-  "watch_item": "Performance depends on having a thermodynamically consistent reparameterization; mismatched target controls perform worse, so the chosen baseline must align with the predicted property and solver assumptions.",
+  "evidence_signal": "Against raw-input and cross-reparameterization controls on supercritical methane-oxygen counterflow flame data, TAIR reduced held-out RMSE by about 1.5x for T, 2.0x for ρ, and 7.5x for ψ, with even larger gains on an unseen strain-rate flame.",
+  "watch_item": "TAIR depends on the quality of the ideal-gas baseline and species constants, so mismatched thermodynamic assumptions or extrapolation beyond the augmented envelope may limit robustness.",
   "hashtags": [
     "#SupercriticalCombustion",
+    "#Thermodynamics",
     "#NeuralSurrogates",
-    "#RealFluidThermodynamics",
-    "#InputReparameterization",
+    "#RealFluidProperties",
     "#ComputationalFluidDynamics"
   ],
   "paper_id": "2026-07-21-arxiv-thermodynamics_informed_input_reparameterization_for_neural_prediction_of_real_fluid_therm",
   "paper_title": "Thermodynamics-Informed Input Reparameterization for Neural Prediction of Real-Fluid Thermodynamic Properties in Supercritical Combustion",
   "paper_date": "2026-07-21",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-22T10:28:46",
+  "generated_at": "2026-07-23T10:26:35",
   "generator": "openai"
 }
