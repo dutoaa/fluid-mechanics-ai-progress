@@ -1,24 +1,24 @@
 {
-  "key_insight": "Jointly training subgrid-scale and wall closures inside a differentiable CFD solver yields better wall-bounded turbulence predictions than fitting either closure alone.",
-  "engineering_relevance": "This approach improves WMLES robustness across Reynolds numbers, meshes, and domains while reducing the need for case-specific retraining.",
+  "key_insight": "Jointly training subgrid-scale and wall closures inside a differentiable CFD solver lets the model learn coupled turbulence physics more effectively than fitting either closure alone.",
+  "engineering_relevance": "This offers a reusable WMLES workflow that improves wall-bounded turbulence prediction, transfers across Reynolds numbers and meshes, and can reduce the need for case-specific tuning.",
   "method": [
-    "Hybrid neural-CFD framework with end-to-end backpropagation through the flow solver",
-    "Two composed closures: neural network + fixed differentiable layer for SGS and wall modeling",
-    "Training uses only low-order statistics, then reuses the learned closures across cases"
+    "Hybrid neural--CFD framework with end-to-end backpropagation through the flow solver",
+    "Two composed closures: neural network + fixed differentiable layer for SGS and wall physics",
+    "Trained only on low-order statistics, then reused without retraining across multiple test cases"
   ],
-  "evidence_signal": "Across a posteriori tests at Re_theta = 600-6500, the method outperforms WMLES baselines, extrapolates beyond the training Reynolds number range, and transfers to unseen grids and domains while matching mean velocity and energy spectra.",
-  "watch_item": "Because the gains depend on differentiable solver integration and joint optimization, implementation complexity and solver/closure coupling may limit straightforward adoption.",
+  "evidence_signal": "On zero-pressure-gradient turbulent boundary layers, the method outperformed WMLES baselines across Re_theta = 600–6500, transferred to unseen grids/domains, and recovered mean-velocity and spectral trends not directly trained on.",
+  "watch_item": "Because the gains rely on joint optimization inside a differentiable solver, implementation complexity and solver/mesh dependence may limit easy adoption in existing WMLES codes.",
   "hashtags": [
     "#Turbulence",
     "#WMLES",
     "#DifferentiableCFD",
     "#NeuralOperators",
-    "#WallModeling"
+    "#WallBoundedFlows"
   ],
   "paper_id": "2026-07-19-arxiv-differentiable_hybrid_neural_cfd_modelling_of_wall_bounded_turbulence_coupled_learning_of",
   "paper_title": "Differentiable Hybrid Neural-CFD Modelling of Wall-Bounded Turbulence: Coupled Learning of Subgrid-Scale and Wall Closures",
   "paper_date": "2026-07-19",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-24T10:22:03",
+  "generated_at": "2026-07-25T09:51:50",
   "generator": "openai"
 }

@@ -1,24 +1,24 @@
 {
-  "key_insight": "The paper turns 2D Stokes flow in irregular domains into a boundary-only algebraic problem on an unfitted MAC grid, using lattice Green’s functions and Calderón preconditioning to achieve accurate, stable solves without fitted meshes or singular quadrature.",
-  "engineering_relevance": "This offers a practical high-accuracy solver for complex-fluid geometries such as obstacles, narrow gaps, and multiply connected domains, with strong conditioning and near mesh-independent performance for exterior problems.",
+  "key_insight": "The paper introduces an unfitted boundary algebraic equation method for 2D Stokes flow on irregular geometries that uses lattice Green’s functions and Calderón preconditioning to solve boundary problems accurately without artificial outer boundaries or singular quadrature.",
+  "engineering_relevance": "It offers a practical high-order solver for incompressible flow around complex shapes, with strong robustness for exterior domains, narrow gaps, and multiply connected geometries.",
   "method": [
-    "Builds velocity/pressure homogeneous solutions from free-space lattice Green’s functions on thin staggered boundary layers",
-    "Imposes Dirichlet data at cut points by local interpolation and removes hydrostatic null modes with sampled-normal rank updates",
-    "Solves the dense boundary system with GMRES plus a componentwise discrete Calderón preconditioner accelerated by padded FFTs"
+    "Constructs velocity/pressure lattice Green’s functions from free-space Laplace LGFs on a staggered MAC grid.",
+    "Enforces Dirichlet boundary data at cut points via local interpolation and uses rank updates to remove hydrostatic null modes.",
+    "Solves the dense boundary system with GMRES plus a discrete Calderón preconditioner accelerated by padded FFT volume convolutions."
   ],
-  "evidence_signal": "The abstract reports extensive validation on multiple challenging geometries, showing second-order convergence in velocity and pressure, discrete divergence at solver accuracy, recovery of Moffatt eddy scaling, and orders-of-magnitude condition-number reduction.",
-  "watch_item": "The preconditioner remains effective but more demanding in narrow-gap and fine-grid interior cases, so memory/compute cost and robustness near tight clearances may be a practical concern.",
+  "evidence_signal": "The abstract reports extensive tests showing second-order velocity and pressure convergence, solver-accuracy discrete incompressibility, correct Moffatt eddy scaling, and condition-number reductions of orders of magnitude.",
+  "watch_item": "The Calderón-preconditioned system is more demanding in narrow-gap and fine-grid interior cases, so performance may be less uniform than in exterior configurations.",
   "hashtags": [
     "#StokesFlow",
-    "#BoundaryElements",
+    "#BoundaryIntegralMethods",
     "#CalderonPreconditioning",
-    "#LatticeGreenFunctions",
-    "#ComputationalFluidDynamics"
+    "#ComputationalFluidDynamics",
+    "#IrregularGeometry"
   ],
   "paper_id": "2026-07-23-arxiv-an_unfitted_boundary_algebraic_equation_method_with_calder_n_preconditioning_for_2d_stokes",
   "paper_title": "An unfitted boundary algebraic equation method with Calderón preconditioning for 2D Stokes flow in irregular geometry",
   "paper_date": "2026-07-23",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-24T10:22:16",
+  "generated_at": "2026-07-25T09:52:03",
   "generator": "openai"
 }

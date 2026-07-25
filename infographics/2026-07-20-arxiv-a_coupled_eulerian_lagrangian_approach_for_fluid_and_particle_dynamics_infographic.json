@@ -1,17 +1,17 @@
 {
-  "key_insight": "A GPU-accelerated Eulerian-Lagrangian framework can efficiently simulate both fluid motion and passive or inertial particle transport in 2D incompressible turbulence.",
-  "engineering_relevance": "This approach is useful for studying turbulent dispersion, preferential concentration, and particle-laden flows where accurate coupling between flow fields and particle trajectories matters.",
+  "key_insight": "A GPU-accelerated one-way Eulerian–Lagrangian framework can efficiently simulate 2D incompressible turbulence with both passive tracers and finite-inertia particles.",
+  "engineering_relevance": "The method offers a modular, scalable tool for studying turbulent transport, dispersion, and particle-laden flows on a single GPU.",
   "method": [
-    "Extend a Fourier pseudospectral Navier–Stokes solver with particle modules",
-    "Advance fluid with second-order Adams–Bashforth and particles with fourth-order Runge–Kutta",
-    "Couple Eulerian and Lagrangian fields via bilinear, bicubic Catmull-Rom, or bicubic B-spline interpolation"
+    "2D incompressible Navier–Stokes solved with a Fourier pseudospectral Eulerian solver",
+    "Fluid advanced with second-order Adams–Bashforth; particles advanced with fourth-order Runge–Kutta",
+    "Fluid-to-particle coupling via bilinear, bicubic Catmull-Rom, or bicubic B-spline interpolation"
   ],
-  "evidence_signal": "The framework was verified against analytical solutions and benchmark problems, and transport results showed bilinear interpolation performed nearly as well as higher-order schemes with good particle-number convergence.",
-  "watch_item": "Because the model is one-way coupled and designed for two-dimensional incompressible flows, it may not capture strong particle-to-fluid feedback or fully 3D effects.",
+  "evidence_signal": "The framework is verified against analytical solutions and benchmark cases, and bilinear interpolation matches higher-order transport statistics closely while being faster.",
+  "watch_item": "The formulation is one-way coupled, so particle feedback on the fluid is not captured, which limits use for dense or strongly coupled suspensions.",
   "hashtags": [
     "#FluidDynamics",
-    "#ParticleTransport",
     "#Turbulence",
+    "#ParticleTracking",
     "#EulerianLagrangian",
     "#GPUComputing"
   ],
@@ -19,6 +19,6 @@
   "paper_title": "A coupled Eulerian Lagrangian approach for fluid and particle dynamics",
   "paper_date": "2026-07-20",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-24T10:22:13",
+  "generated_at": "2026-07-25T09:52:01",
   "generator": "openai"
 }

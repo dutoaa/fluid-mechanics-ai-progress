@@ -1,24 +1,24 @@
 {
-  "key_insight": "IteraSim RAG improves OpenFOAM case generation by using multi-query retrieval, deterministic routing, and a multi-agent generate/review loop instead of a single flat LLM agent.",
-  "engineering_relevance": "This could make CFD setup more accessible for non-specialists while reducing configuration errors in solver, turbulence, and boundary-condition dictionaries.",
+  "key_insight": "IteraSim RAG improves OpenFOAM case generation by combining query expansion, hybrid retrieval, and a multi-agent writer/reviewer workflow instead of relying on a single flat RAG pass.",
+  "engineering_relevance": "This lowers the barrier to setting up physically consistent CFD input decks, which is valuable for non-specialists and for faster iteration on turbulence and boundary-condition workflows.",
   "method": [
-    "LLM expands each request into physics, solver-keyword, and troubleshooting queries",
-    "Reciprocal Rank Fusion and MMR combine and diversify retrieval from an HNSW dense vector store",
-    "Architect, InputWriter, and Reviewer agents work with a canonical-knowledge layer to draft and repair cases"
+    "LLM expands each user request into physics, solver-keyword, and troubleshooting queries",
+    "Reciprocal Rank Fusion merges ranked results, then MMR re-ranks candidates from an HNSW dense vector store",
+    "A keyword router and three agents—Architect, InputWriter, Reviewer—split generation and repair tasks with a canonical knowledge layer"
   ],
-  "evidence_signal": "On a 28-case benchmark, the system reached 77.9% mean retrieval coverage and all six reference configurations ran successfully on OpenFOAM v2506, with two corrupted cases repaired in the Reviewer loop.",
-  "watch_item": "Performance depends on a curated canonical-knowledge layer and bounded repair loop, so robustness may drop for novel physics or cases outside the released benchmark.",
+  "evidence_signal": "On an openly released 28-case benchmark, the system achieved 77.9% mean retrieval coverage (79.1% median), exceeded 90% in parameter-modification cases, and completed all six reference OpenFOAM v2506 runs.",
+  "watch_item": "Performance depends on curated canonical knowledge and bounded reviewer loops, so edge cases outside the benchmark may still require expert oversight.",
   "hashtags": [
     "#CFD",
     "#OpenFOAM",
     "#RAG",
-    "#LLMAgents",
+    "#LLM",
     "#Turbulence"
   ],
   "paper_id": "2026-07-22-arxiv-iterasim_rag_a_multi_stage_retrieval_augmented_agentic_back_end_for_openfoam_based_computa",
   "paper_title": "IteraSim RAG: A Multi-Stage Retrieval-Augmented Agentic Back-End for OpenFOAM-Based Computational Fluid Dynamics",
   "paper_date": "2026-07-22",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-24T10:21:54",
+  "generated_at": "2026-07-25T09:51:43",
   "generator": "openai"
 }
