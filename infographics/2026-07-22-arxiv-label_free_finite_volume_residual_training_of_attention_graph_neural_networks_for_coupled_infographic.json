@@ -1,15 +1,15 @@
 {
-  "key_insight": "The paper trains an attention graph neural network directly from finite-volume residuals, enabling label-free learning of coupled thermo-fluid fields.",
-  "engineering_relevance": "This reduces CFD data-generation and storage costs while delivering accurate surrogate predictions for steady and transient thermo-fluid simulations.",
+  "key_insight": "A graph neural network can be trained without labeled CFD data by minimizing finite-volume residuals on the mesh, yielding accurate thermo-fluid surrogate predictions.",
+  "engineering_relevance": "This approach can cut the cost of generating training datasets for 3D coupled heat-transfer and fluid-flow simulations while preserving physics fidelity.",
   "method": [
-    "Build an attention graph neural network on the simulation mesh.",
+    "Build an attention graph neural network on the CFD mesh.",
     "Train it by minimizing finite-volume residuals of the governing equations instead of supervised labels.",
-    "Evaluate against CFD references and a data-supervised baseline on four test scenarios."
+    "Evaluate against CFD references on steady and transient thermo-fluid benchmarks."
   ],
-  "evidence_signal": "Across two steady-state benchmarks, the FVM-loss model reached 2.3–2.8% all-field nRMSE and closely matched CFD, while on two parametric transient cases it outperformed the supervised baseline without any data-generation cost.",
-  "watch_item": "Performance depends on accurate residual evaluation on the mesh, so implementation quality and stability of the FVM loss are critical.",
+  "evidence_signal": "Across four test cases, the FVM-loss model reached 2.3–2.8% all-field nRMSE on the two steady benchmarks and outperformed a data-supervised baseline on the two transient cases.",
+  "watch_item": "Residual-based training may be sensitive to mesh quality, boundary-condition handling, and the choice of governing-equation discretization.",
   "hashtags": [
-    "#ScientificMachineLearning",
+    "#ScientificML",
     "#GraphNeuralNetworks",
     "#FiniteVolumeMethod",
     "#ThermoFluid",
@@ -19,6 +19,6 @@
   "paper_title": "Label-Free Finite-Volume-Residual Training of Attention Graph Neural Networks for Coupled Thermo-Fluid Fields",
   "paper_date": "2026-07-22",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-25T09:51:45",
+  "generated_at": "2026-07-26T10:02:34",
   "generator": "openai"
 }

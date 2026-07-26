@@ -1,24 +1,24 @@
 {
-  "key_insight": "A Bayesian finite element model reconstructs steady vascular velocity and pressure fields from noisy, under-resolved measurements while explicitly quantifying uncertainty.",
-  "engineering_relevance": "It provides a training-free, physics-informed route to clinically useful flow estimates such as pressure drop, flow rate, and wall shear stress in patient-specific vessels.",
+  "key_insight": "A Bayesian finite-element inverse solver can reconstruct blood-flow velocity and pressure from sparse noisy measurements while also providing uncertainty estimates.",
+  "engineering_relevance": "This enables clinically useful flow diagnostics on patient-specific vascular geometries without offline training data, improving reliability for quantities like pressure drop and wall shear stress.",
   "method": [
-    "Represent velocity and pressure with Taylor-Hood finite element basis functions.",
-    "Use maximum-entropy physics-informed priors plus a measurement-noise likelihood to form a posterior over nodal unknowns.",
-    "Compute MAP via sparse nonlinear least squares with analytic pressure elimination and no-slip walls enforced exactly; use Laplace approximation for uncertainty."
+    "Represent velocity and pressure with Taylor-Hood finite-element basis functions.",
+    "Impose physics-informed maximum-entropy priors and a noisy measurement likelihood to form the posterior.",
+    "Compute the MAP via a sparse nonlinear least-squares solve, eliminate pressure analytically, and use a Laplace approximation for uncertainty quantification."
   ],
-  "evidence_signal": "Evaluated on patient-specific cerebral aneurysm, aortic aneurysm, and aortic coarctation geometries, where it outperformed tricubic interpolation and matched a PINN for field reconstruction while improving region-of-interest wall shear stress estimates.",
-  "watch_item": "The approach still depends on a steady-flow assumption and accurate noise/prior modeling, and the Laplace approximation may underrepresent non-Gaussian posterior uncertainty.",
+  "evidence_signal": "On patient-specific cerebral aneurysm, aortic aneurysm, and aortic coarctation cases, the method outperformed tricubic interpolation and matched a PINN for velocity/pressure reconstruction while estimating wall shear stress more accurately than both.",
+  "watch_item": "Accuracy depends on the assumed noise model and the quality of the finite-element discretization, and the approach is still tied to steady-flow assumptions.",
   "hashtags": [
     "#PhysicsInformedML",
     "#BayesianInference",
     "#FiniteElementMethod",
-    "#VascularFlow",
+    "#ComputationalFluidDynamics",
     "#UncertaintyQuantification"
   ],
   "paper_id": "2026-07-22-arxiv-bayesian_finite_element_regression_for_vascular_flow_reconstruction_with_quantified_uncert",
   "paper_title": "Bayesian finite element regression for vascular flow reconstruction with quantified uncertainty",
   "paper_date": "2026-07-22",
   "paper_category": "Physics-Informed ML",
-  "generated_at": "2026-07-25T09:52:09",
+  "generated_at": "2026-07-26T10:03:01",
   "generator": "openai"
 }

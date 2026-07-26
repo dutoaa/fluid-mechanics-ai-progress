@@ -1,24 +1,24 @@
 {
-  "key_insight": "A physics-constrained, multi-fidelity ML augmentation of Spalart–Allmaras can make turbulence modeling cost scale formally as O(log(Re)) while preserving accuracy across Reynolds numbers.",
-  "engineering_relevance": "This offers a practical path to cheaper high-Re CFD predictions for wall-bounded flows by training at affordable low-Re conditions and transferring to higher-Re cases.",
+  "key_insight": "A physics-constrained, data-driven turbulence model can be trained at low Reynolds number and extrapolated to much higher Reynolds numbers while keeping formal computational cost near O(log(Re)) under stated assumptions.",
+  "engineering_relevance": "This offers a practical route to more accurate wall-bounded flow predictions without the prohibitive cost growth usually associated with high-Reynolds-number turbulence simulations.",
   "method": [
-    "Field inversion + machine learning on top of Spalart–Allmaras",
-    "Constrained formulation that preserves the law of the wall",
-    "Train at low Re, then deploy and test at higher Re for extrapolation"
+    "Augment the Spalart–Allmaras RANS model using field inversion and machine learning.",
+    "Impose a constrained formulation that preserves the law of the wall and other physics behavior.",
+    "Train on affordable low-Re high-fidelity data, then deploy the model at higher Re for extrapolation."
   ],
-  "evidence_signal": "The abstract reports successful transfer from channel flow at Re_tau=1000 to Re_tau=5200 and from periodic hill training at Re_b=5600 to tests at Re_b=10595, 19000, and 37000, with the constrained model giving the lowest RMSE and nearly Re-independent error.",
-  "watch_item": "The formal O(log(Re)) claim depends on assumptions such as mean-flow-aligned grids, fixed spanwise resolution, and steady-solver cost scaling linearly with grid points, so performance may change outside those conditions.",
+  "evidence_signal": "The abstract reports successful transfer from channel flow trained at Re_tau=1000 to Re_tau=5200, and from periodic hill training at Re_b=5600 to tests at Re_b=10595, 19000, and 37000, with the constrained model giving the lowest RMSE and nearly Re-independent error.",
+  "watch_item": "The favorable O(log(Re)) cost claim depends on assumptions such as mean-flow-aligned grids, fixed spanwise resolution, and steady-solver linear cost, so performance may change outside those conditions.",
   "hashtags": [
     "#TurbulenceModeling",
-    "#ComputationalFluidDynamics",
-    "#PhysicsInformedML",
-    "#ReynoldsNumber",
-    "#MultiFidelity"
+    "#CFD",
+    "#MachineLearning",
+    "#RANS",
+    "#ReynoldsNumber"
   ],
   "paper_id": "2026-07-22-arxiv-a_formal_log_re_cost_framework_for_the_engineering_turbulence_problem",
   "paper_title": "A formal log(Re)-cost framework for the engineering turbulence problem",
   "paper_date": "2026-07-22",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-25T09:51:53",
+  "generated_at": "2026-07-26T10:02:43",
   "generator": "openai"
 }

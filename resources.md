@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-07-25
+Generated: 2026-07-26
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. IteraSim RAG: A Multi-Stage Retrieval-Augmented Agentic Back-End for OpenFOAM-Based Computational Fluid Dynamics
