@@ -1,24 +1,24 @@
 {
-  "key_insight": "A graph neural network can be trained without labeled CFD data by minimizing finite-volume residuals on the mesh, yielding accurate thermo-fluid surrogate predictions.",
-  "engineering_relevance": "This approach can cut the cost of generating training datasets for 3D coupled heat-transfer and fluid-flow simulations while preserving physics fidelity.",
+  "key_insight": "Train an attention graph neural network directly from finite-volume residuals, enabling label-free learning of coupled thermo-fluid fields on meshes.",
+  "engineering_relevance": "This reduces CFD data generation and storage costs while preserving physically consistent predictions for steady and transient thermo-fluid surrogates.",
   "method": [
-    "Build an attention graph neural network on the CFD mesh.",
-    "Train it by minimizing finite-volume residuals of the governing equations instead of supervised labels.",
-    "Evaluate against CFD references on steady and transient thermo-fluid benchmarks."
+    "Compute FVM residuals of the governing equations on the mesh as the training loss.",
+    "Use an attention graph neural network to learn 3D coupled thermo-fluid behavior without labeled snapshots.",
+    "Compare against CFD references and a data-supervised baseline across four benchmark scenarios."
   ],
-  "evidence_signal": "Across four test cases, the FVM-loss model reached 2.3–2.8% all-field nRMSE on the two steady benchmarks and outperformed a data-supervised baseline on the two transient cases.",
-  "watch_item": "Residual-based training may be sensitive to mesh quality, boundary-condition handling, and the choice of governing-equation discretization.",
+  "evidence_signal": "Across four cases, the FVM-loss model achieved 2.3–2.8% all-field nRMSE on the steady benchmarks and outperformed the supervised baseline on the transient parametric cases.",
+  "watch_item": "Residual-based training still depends on mesh quality and accurate discretization of the governing equations, so poor numerical setup could weaken physical fidelity.",
   "hashtags": [
     "#ScientificML",
     "#GraphNeuralNetworks",
     "#FiniteVolumeMethod",
-    "#ThermoFluid",
-    "#PhysicsInformedAI"
+    "#CFDSurrogate",
+    "#ThermoFluid"
   ],
   "paper_id": "2026-07-22-arxiv-label_free_finite_volume_residual_training_of_attention_graph_neural_networks_for_coupled",
   "paper_title": "Label-Free Finite-Volume-Residual Training of Attention Graph Neural Networks for Coupled Thermo-Fluid Fields",
   "paper_date": "2026-07-22",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-26T10:02:34",
+  "generated_at": "2026-07-27T11:27:49",
   "generator": "openai"
 }

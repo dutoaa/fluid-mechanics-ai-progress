@@ -1,13 +1,13 @@
 {
-  "key_insight": "IteraSim RAG improves OpenFOAM case generation by combining query expansion, multi-stage retrieval, and specialized agents instead of relying on one flat search and one self-checking model.",
-  "engineering_relevance": "The system lowers the barrier to setting up CFD cases for non-specialists by helping assemble consistent solver, discretization, boundary-condition, and turbulence-model inputs.",
+  "key_insight": "IteraSim RAG makes OpenFOAM case generation more reliable by splitting retrieval into specialized query variants and splitting generation into distinct architect, writer, and reviewer agents.",
+  "engineering_relevance": "This reduces the manual burden of assembling consistent CFD input decks, making open-source CFD workflows easier for non-specialists to configure and debug.",
   "method": [
-    "LLM expands each request into physics, solver-keyword, and troubleshooting queries",
-    "Reciprocal Rank Fusion and MMR re-rank candidates from an HNSW dense vector store",
-    "A deterministic router plus Architect/InputWriter/Reviewer agents use a canonical knowledge layer for OpenFOAM setup and repair"
+    "LLM expands each request into physics, solver-keyword, and troubleshooting queries.",
+    "Reciprocal Rank Fusion combines ranked results, then Maximal Marginal Relevance re-ranks them from an HNSW dense vector store.",
+    "A deterministic router and three-agent workflow use a canonical knowledge layer for solver choice, turbulence, boundary conditions, and defaults."
   ],
-  "evidence_signal": "On a 28-case benchmark, the pipeline reached 77.9% mean retrieval coverage, with parameter-modification cases above 90%, and all six reference configurations completed successfully on OpenFOAM v2506.",
-  "watch_item": "The approach depends on benchmark-specific retrieval quality and a bounded reviewer loop, so robustness may drop when cases fall outside the canonical knowledge layer or available corpus.",
+  "evidence_signal": "On a 28-case OpenFOAM benchmark, the system achieved 77.9% mean retrieval coverage, all six reference configurations ran successfully on v2506, and two corrupted cases were repaired within the Reviewer loop.",
+  "watch_item": "Performance depends on the quality of the canonical knowledge layer and bounded review loop, so unfamiliar physics or weak corpus coverage may still produce incorrect case setups.",
   "hashtags": [
     "#CFD",
     "#OpenFOAM",
@@ -19,6 +19,6 @@
   "paper_title": "IteraSim RAG: A Multi-Stage Retrieval-Augmented Agentic Back-End for OpenFOAM-Based Computational Fluid Dynamics",
   "paper_date": "2026-07-22",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-26T10:02:31",
+  "generated_at": "2026-07-27T11:27:46",
   "generator": "openai"
 }

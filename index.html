@@ -22,7 +22,7 @@
     <header>
       <div>
         <h1>AI Fluid Mechanics Research Papers - Daily Top 20</h1>
-        <p class="sub">Collected 2026-07-26. Ranked from recent arXiv AI Fluid Mechanics papers, with OpenAI infographic summaries where credentials are available.</p>
+        <p class="sub">Collected 2026-07-27. Ranked from recent arXiv AI Fluid Mechanics papers, with OpenAI infographic summaries where credentials are available.</p>
       </div>
       <nav class="actions">
         <a href="papers.json">Data JSON</a>
@@ -31,20 +31,20 @@
     </header>
     <section class="grid">
       <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>80</strong></div>
-        <p class="date">2026-07-22</p>
-        <h2>IteraSim RAG: A Multi-Stage Retrieval-Augmented Agentic Back-End for OpenFOAM-Based Computational Fluid Dynamics</h2>
-        <p class="authors">Pratyush Kumar</p>
-        <p class="abstract">Configuring a computational fluid dynamics (CFD) case in OpenFOAM requires assembling a multi-directory input deck of mutually consistent solver, discretisation and boundary-condition dictionaries -- a task that remains a substantial barrier to non-specialist use of open-source CFD software. Large language models (LLMs) coupled with retrieval-augmented generation (RAG) can lower this barrier, but existing systems retrieve with a single flat query, apply one retrieval strategy to operationally distinct requests, and let a single agent both draft and review its own output. We present IteraSim RAG, a retrieval-augmented software back-end for automated OpenFOAM case generation built around these three limitations. An LLM first expands the query into physics, solver-keyword and troubleshooting variants, Reciprocal Rank Fusion then merges the resulting ranked lists, and Maximal Marginal Relevance re-ranks the fused candidates against an HNSW-indexed dense vector store. A deterministic keyword router dispatches tool-conditioned workflow queries and corpus-wide physics queries down separate retrieval paths, and generation is split across an Architect, an InputWriter and a Reviewer agent, backed by a static canonical-knowledge layer covering solver selection, turbulence closures, boundary conditions and finite-volume defaults. On an openly released 28-case benchmark spanning zero-shot setup, few-shot generalisation, single-parameter modifications and turbulence-model swaps, the pipeline attains a mean retrieval coverage of 77.9% (median 79.1%), with the parameter-modification category exceeding 90%. All six reference configurations run to completion on OpenFOAM v2506, and two synthetically corrupted cases are diagnosed and repaired within the bounded Reviewer loop using only the solver log and the canonical layer. The benchmark, scoring rubric and figure scripts are released for reproducibility.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.20346v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.20346v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <div class="meta"><span>Multiphase Flow</span><span>arXiv</span><strong>85</strong></div>
+        <p class="date">2026-07-24</p>
+        <h2>Neptuna: A Comprehensive Machine Learning Framework for Benchmarking Complex Multiphase Flows</h2>
+        <p class="authors">Harish Ramachandran, Björn Kimpel, Thomas Paula, Josef Winter, Steffen Schmidt, Nikolaus Adams</p>
+        <p class="abstract">Compressible multiphase flows involving shocks and material interfaces arise in applications such as bubble collapse and droplet breakup, where strong nonlinear interactions produce complex interface deformation, mixing, and multiscale dynamics. Developing reliable machine learning surrogates for these flows remains challenging due to the simultaneous presence of compressibility, sharp discontinuities, and multiphase effects. In this work, we introduce the first large-scale benchmark specifically designed for shock-driven compressible multiphase flows, comprising 2.4 TB of high-fidelity 2D and 3D datasets \footnote{Dataset repo: https://huggingface.co/FluidVerse. Dataset sample videos, metadata.json, inference rollout plots from autoregressive rollout of the trained baselines are provided in the supplementary\_material.zip } featuring shock-induced bubble collapse and droplet breakup. We evaluate diverse surrogate model families on our benchmarking framework: Neptuna \footnote{Benchmarking repo: https://anonymous.4open.science/r/neptuna-A4E3}, including convolutional, spectral, transformer-based, and pre-trained PDE foundation models. Beyond standard MSE training, we investigate composite losses combining MSE with Sobolev, interface-aware, and structure-aware terms, together with adaptive loss balancing using SoftAdapt and GradNorm. Evaluation includes pointwise, spectral, feature-focused, structural, and physics-informed metrics. Results show that no single model performs best across all datasets and metrics, while composite losses significantly improve interface preservation and spectral fidelity. Among adaptive weighting strategies, SoftAdapt provides the most consistent improvements with almost no overhead compared to MSE-only training.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.22280v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.22280v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> IteraSim RAG improves OpenFOAM case generation by combining query expansion, multi-stage retrieval, and specialized agents instead of relying on one flat search and one self-checking model.</p>
-          <p><b>Engineering relevance:</b> The system lowers the barrier to setting up CFD cases for non-specialists by helping assemble consistent solver, discretization, boundary-condition, and turbulence-model inputs.</p>
-          <ul><li>LLM expands each request into physics, solver-keyword, and troubleshooting queries</li><li>Reciprocal Rank Fusion and MMR re-rank candidates from an HNSW dense vector store</li><li>A deterministic router plus Architect/InputWriter/Reviewer agents use a canonical knowledge layer for OpenFOAM setup and repair</li></ul>
-          <p><b>Evidence signal:</b> On a 28-case benchmark, the pipeline reached 77.9% mean retrieval coverage, with parameter-modification cases above 90%, and all six reference configurations completed successfully on OpenFOAM v2506.</p>
-          <p><b>Watch item:</b> The approach depends on benchmark-specific retrieval quality and a bounded reviewer loop, so robustness may drop when cases fall outside the canonical knowledge layer or available corpus.</p>
-          <div class="tags"><span>#CFD</span> <span>#OpenFOAM</span> <span>#RAG</span> <span>#LLM</span> <span>#Turbulence</span></div>
+          <p><b>Key insight:</b> Neptuna shows that no single surrogate model or loss function dominates shock-driven multiphase flow prediction, but composite losses and adaptive weighting can substantially improve interface and spectral accuracy.</p>
+          <p><b>Engineering relevance:</b> This benchmark helps engineers compare machine learning surrogates for compressible multiphase flows more reliably, supporting faster design and analysis of bubble collapse and droplet breakup problems.</p>
+          <ul><li>Large-scale benchmark with 2.4 TB of high-fidelity 2D and 3D shock-driven multiphase flow data</li><li>Evaluates convolutional, spectral, transformer-based, and pre-trained PDE foundation models</li><li>Tests MSE, Sobolev, interface-aware, and structure-aware losses with SoftAdapt and GradNorm</li></ul>
+          <p><b>Evidence signal:</b> The framework combines pointwise, spectral, feature-focused, structural, and physics-informed metrics, and the abstract reports that SoftAdapt gives the most consistent gains with minimal overhead.</p>
+          <p><b>Watch item:</b> Performance varies across datasets and metrics, so reported gains may not transfer uniformly without careful model, loss, and task-specific tuning.</p>
+          <div class="tags"><span>#MultiphaseFlow</span> <span>#MachineLearning</span> <span>#CFD</span> <span>#Benchmarking</span> <span>#ScientificAI</span></div>
         </section>
       </article>
     
@@ -52,24 +52,100 @@
       <article class="paper">
         <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>75</strong></div>
         <p class="date">2026-07-22</p>
+        <h2>IteraSim RAG: A Multi-Stage Retrieval-Augmented Agentic Back-End for OpenFOAM-Based Computational Fluid Dynamics</h2>
+        <p class="authors">Pratyush Kumar</p>
+        <p class="abstract">Configuring a computational fluid dynamics (CFD) case in OpenFOAM requires assembling a multi-directory input deck of mutually consistent solver, discretisation and boundary-condition dictionaries -- a task that remains a substantial barrier to non-specialist use of open-source CFD software. Large language models (LLMs) coupled with retrieval-augmented generation (RAG) can lower this barrier, but existing systems retrieve with a single flat query, apply one retrieval strategy to operationally distinct requests, and let a single agent both draft and review its own output. We present IteraSim RAG, a retrieval-augmented software back-end for automated OpenFOAM case generation built around these three limitations. An LLM first expands the query into physics, solver-keyword and troubleshooting variants, Reciprocal Rank Fusion then merges the resulting ranked lists, and Maximal Marginal Relevance re-ranks the fused candidates against an HNSW-indexed dense vector store. A deterministic keyword router dispatches tool-conditioned workflow queries and corpus-wide physics queries down separate retrieval paths, and generation is split across an Architect, an InputWriter and a Reviewer agent, backed by a static canonical-knowledge layer covering solver selection, turbulence closures, boundary conditions and finite-volume defaults. On an openly released 28-case benchmark spanning zero-shot setup, few-shot generalisation, single-parameter modifications and turbulence-model swaps, the pipeline attains a mean retrieval coverage of 77.9% (median 79.1%), with the parameter-modification category exceeding 90%. All six reference configurations run to completion on OpenFOAM v2506, and two synthetically corrupted cases are diagnosed and repaired within the bounded Reviewer loop using only the solver log and the canonical layer. The benchmark, scoring rubric and figure scripts are released for reproducibility.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.20346v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.20346v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> IteraSim RAG makes OpenFOAM case generation more reliable by splitting retrieval into specialized query variants and splitting generation into distinct architect, writer, and reviewer agents.</p>
+          <p><b>Engineering relevance:</b> This reduces the manual burden of assembling consistent CFD input decks, making open-source CFD workflows easier for non-specialists to configure and debug.</p>
+          <ul><li>LLM expands each request into physics, solver-keyword, and troubleshooting queries.</li><li>Reciprocal Rank Fusion combines ranked results, then Maximal Marginal Relevance re-ranks them from an HNSW dense vector store.</li><li>A deterministic router and three-agent workflow use a canonical knowledge layer for solver choice, turbulence, boundary conditions, and defaults.</li></ul>
+          <p><b>Evidence signal:</b> On a 28-case OpenFOAM benchmark, the system achieved 77.9% mean retrieval coverage, all six reference configurations ran successfully on v2506, and two corrupted cases were repaired within the Reviewer loop.</p>
+          <p><b>Watch item:</b> Performance depends on the quality of the canonical knowledge layer and bounded review loop, so unfamiliar physics or weak corpus coverage may still produce incorrect case setups.</p>
+          <div class="tags"><span>#CFD</span> <span>#OpenFOAM</span> <span>#RAG</span> <span>#LLM</span> <span>#Turbulence</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>70</strong></div>
+        <p class="date">2026-07-22</p>
         <h2>Label-Free Finite-Volume-Residual Training of Attention Graph Neural Networks for Coupled Thermo-Fluid Fields</h2>
         <p class="authors">Tianyu Li, Zhiwei Cao, Qingang Zhang, Ruihang Wang, Binyang Song, Yonggang Wen</p>
         <p class="abstract">Neural surrogates are widely used in scientific machine learning for fast prediction of three-dimensional (3D) thermo-fluid fields. However, generating training data using conventional numerical solvers often incurs substantial computational and storage costs. We propose to train an attention graph neural network by minimizing the finite-volume method (FVM) residuals of the governing equations. These residuals are evaluated directly on the mesh, requiring no labeled data. We evaluate the trained surrogates against computational fluid dynamics (CFD) references and a data-supervised baseline across four scenarios. On the two steady-state benchmarks, the FVM-loss model achieves an all-field normalized root-mean-square error (nRMSE) of 2.3-2.8%. It demonstrates close agreement with the CFD references, including the buoyancy-energy coupling. On the two parametric transient cases, the FVM-loss model outperforms the supervised baseline in terms of accuracy, while avoiding the data-generation cost entirely. These results indicate that the FVM loss can provide a practical training signal for neural surrogates and reduce the model development cost.</p>
         <div class="links"><a href="https://arxiv.org/abs/2607.20321v2" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.20321v2" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A graph neural network can be trained without labeled CFD data by minimizing finite-volume residuals on the mesh, yielding accurate thermo-fluid surrogate predictions.</p>
-          <p><b>Engineering relevance:</b> This approach can cut the cost of generating training datasets for 3D coupled heat-transfer and fluid-flow simulations while preserving physics fidelity.</p>
-          <ul><li>Build an attention graph neural network on the CFD mesh.</li><li>Train it by minimizing finite-volume residuals of the governing equations instead of supervised labels.</li><li>Evaluate against CFD references on steady and transient thermo-fluid benchmarks.</li></ul>
-          <p><b>Evidence signal:</b> Across four test cases, the FVM-loss model reached 2.3–2.8% all-field nRMSE on the two steady benchmarks and outperformed a data-supervised baseline on the two transient cases.</p>
-          <p><b>Watch item:</b> Residual-based training may be sensitive to mesh quality, boundary-condition handling, and the choice of governing-equation discretization.</p>
-          <div class="tags"><span>#ScientificML</span> <span>#GraphNeuralNetworks</span> <span>#FiniteVolumeMethod</span> <span>#ThermoFluid</span> <span>#PhysicsInformedAI</span></div>
+          <p><b>Key insight:</b> Train an attention graph neural network directly from finite-volume residuals, enabling label-free learning of coupled thermo-fluid fields on meshes.</p>
+          <p><b>Engineering relevance:</b> This reduces CFD data generation and storage costs while preserving physically consistent predictions for steady and transient thermo-fluid surrogates.</p>
+          <ul><li>Compute FVM residuals of the governing equations on the mesh as the training loss.</li><li>Use an attention graph neural network to learn 3D coupled thermo-fluid behavior without labeled snapshots.</li><li>Compare against CFD references and a data-supervised baseline across four benchmark scenarios.</li></ul>
+          <p><b>Evidence signal:</b> Across four cases, the FVM-loss model achieved 2.3–2.8% all-field nRMSE on the steady benchmarks and outperformed the supervised baseline on the transient parametric cases.</p>
+          <p><b>Watch item:</b> Residual-based training still depends on mesh quality and accurate discretization of the governing equations, so poor numerical setup could weaken physical fidelity.</p>
+          <div class="tags"><span>#ScientificML</span> <span>#GraphNeuralNetworks</span> <span>#FiniteVolumeMethod</span> <span>#CFDSurrogate</span> <span>#ThermoFluid</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>69</strong></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>67</strong></div>
+        <p class="date">2026-07-24</p>
+        <h2>PRIMS: Physics-guided Representation for Fluid Identification in Multimodal Sensing</h2>
+        <p class="authors">Hai-Long Nguyen, Trung Thanh Nguyen, Lars Holm, Dennis Alveringh, Duc Viet Le</p>
+        <p class="abstract">Accurate on-device fluid identification is essential for microfluidic applications, yet maintaining reliability under varying flow, pressure, and temperature remains a key challenge. Existing learning-based methods often treat sensor signals as domain-agnostic features, neglecting the underlying physical relationships that govern fluid behavior, thereby limiting generalization and interpretability. To address this, we propose PRIMS, a physics-aware multimodal Transformer that integrates physical knowledge into representation learning and attention mechanisms through three dedicated modules: (1) Physics-based Token Vectorization transforms raw Coriolis and pressure sensor signals into physically meaningful token embeddings; (2) Physical Component Synthesizer models viscosity-related dependencies among flow, pressure, and density; and (3) Physics-guided Fusion captures cross-physical correlations through attention-based integration. By embedding these physics-based relationships directly into the model architecture, PRIMS bridges analytical fluid mechanics and deep learning, enabling interpretable, data-efficient, and resilient fluid classification. Evaluations on a five-fluid benchmark under dynamic flow, pressure, and temperature conditions show that PRIMS achieves 98.92% average F1-score with only 0.46 million parameters, a 14 times reduction compared to state-of-the-art Transformer-based methods. PRIMS also consistently outperforms prior SOTA models under out-of-distribution shifts to unseen temperature ranges and unseen flow-rate ranges, indicating strong robustness to operating conditions not observed during training. These findings suggest that designing architectures that explicitly mirror governing physical relationships can make them learn transferable, environment-independent representations, improving real-world reliability for microfluidic sensing.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.22422v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.22422v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> PRIMS improves fluid identification by building physics into the model, so it learns representations that are more interpretable and robust to changing operating conditions.</p>
+          <p><b>Engineering relevance:</b> This could enable more reliable on-device microfluidic sensing for applications where flow, pressure, and temperature vary in real time.</p>
+          <ul><li>Physics-based token vectorization turns Coriolis and pressure signals into physically meaningful embeddings.</li><li>A physical component synthesizer models viscosity-related links among flow, pressure, and density.</li><li>Physics-guided fusion uses attention to combine cross-physical information from multimodal sensors.</li></ul>
+          <p><b>Evidence signal:</b> On a five-fluid benchmark with dynamic flow, pressure, and temperature shifts, PRIMS reached 98.92% average F1-score with only 0.46M parameters and remained strong under unseen temperature and flow-rate ranges.</p>
+          <p><b>Watch item:</b> Performance may depend on how well the embedded physical assumptions match the target sensor setup and fluid regime, so calibration and domain validation are still important.</p>
+          <div class="tags"><span>#FluidMechanics</span> <span>#MultimodalSensing</span> <span>#PhysicsGuidedAI</span> <span>#Transformer</span> <span>#Microfluidics</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Aerodynamics</span><span>arXiv</span><strong>66</strong></div>
+        <p class="date">2026-07-24</p>
+        <h2>Neural Ordinary Differential Equations for Oscillatory Flows in Aeroelasticity with Application to Transonic Buffet</h2>
+        <p class="authors">Michael Candon, Pier Marzocca, Earl Dowell</p>
+        <p class="abstract">Self-excited aerodynamic flows arise across a broad range of systems and can drive nonlinear fluid-structure interactions and aeroelastic instabilities that are challenging and computationally expensive to predict. This paper presents a physics-guided neural differential equation (DE) reduced order model (ROM) combining a nonlinear fluid oscillator, a finite-memory multi-input Volterra series, and a compact neural network correction. The multi-input aerodynamic formulation is generalized to m structural modes, capturing direct and nonlinear cross-modal coupling. The model is identified from a single prescribed-motion CFD simulation with simultaneous excitation of all retained structural modes, and is then coupled with the structural equations of motion for efficient aeroelastic prediction. Applied to transonic buffet over the ONERA OAT15A airfoil, the time-marching ROM predicts aeroelastic stability, frequency lock-in, and limit cycle amplitudes in good agreement with full-order reference solutions. The ROM is used to provide substantial new insight into buffet-induced aeroelastic instabilities involving more than one structural mode.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.22402v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.22402v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> A physics-guided neural differential equation reduced-order model can capture nonlinear, multi-mode aeroelastic buffet dynamics by combining oscillator physics, Volterra memory effects, and a neural correction.</p>
+          <p><b>Engineering relevance:</b> The approach enables fast prediction of aeroelastic stability, lock-in, and limit-cycle amplitudes from a single CFD training case, reducing reliance on expensive full-order simulations.</p>
+          <ul><li>Nonlinear fluid oscillator + finite-memory multi-input Volterra series</li><li>Neural network correction for residual dynamics</li><li>Generalized to multiple structural modes and coupled to structural equations of motion</li></ul>
+          <p><b>Evidence signal:</b> The model is identified from one prescribed-motion CFD simulation and validated on transonic buffet over the ONERA OAT15A airfoil, where it matches reference aeroelastic stability, frequency lock-in, and limit-cycle amplitudes.</p>
+          <p><b>Watch item:</b> Performance may depend on how well the single training maneuver excites all retained modes and may be sensitive when extrapolating beyond the tested flow and structural conditions.</p>
+          <div class="tags"><span>#Aeroelasticity</span> <span>#NeuralODE</span> <span>#ReducedOrderModel</span> <span>#TransonicBuffet</span> <span>#FluidStructureInteraction</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>63</strong></div>
+        <p class="date">2026-07-24</p>
+        <h2>Critical assessment of RANS Models for Turbulent Heat Transfer in Low-Prandtl-Number Forced Convection</h2>
+        <p class="authors">Luca Marocco, Jonathan Schmitt, Jonathan Neuhauser, Bettina Frohnapfel, Davide Gatti</p>
+        <p class="abstract">RANS modeling of turbulent heat transfer in liquid metals remains challenging because the very low Prandtl number weakens the similarity between momentum and thermal transport. Several thermal turbulence closures for forced convection in liquid metals are assessed using OpenFOAM v2212. The combinations include the $k$--$ω$ SST model with the Kays correlation for $\mathrm{Pr}_t$, the four-equation $k$--$ε$--$k_θ$--$ε_θ$ model, the logarithmic $k$--$Ω$--$k_θ$--$Ω_θ$ model, and two algebraic heat-flux formulations for $\overline{u_i&#x27;θ&#x27;}$ coupled with either a low-Reynolds $k$--$ε$ model or an elliptic blending Reynolds-stress model (EBRSM). They are evaluated in channel flow, pipe flow, and heated backward-facing step flow against DNS data and results from the original publications, focusing on reproducibility, robustness, and accuracy. Only a limited subset of models proves reliable for low-$\mathrm{Pr}$ flows. The $k$--$ω$ SST model with the Kays correlation gives the most robust performance and accurate temperature predictions in all cases. The $k$--$ε$--$k_θ$--$ε_θ$ model shows good reproducibility and satisfactory agreement with reference data, remaining the most consistent multi-equation alternative. The logarithmic four-equation model exhibits reduced numerical robustness, while the algebraic heat-flux model coupled with the $k$--$ε$ closure fails to reproduce published thermal results despite correct prediction of the momentum field. The EBRSM-based algebraic heat-flux formulation reproduces selected reference results but suffers from significant robustness limitations. The study establishes a unified formulation of the examined closures, correcting inconsistencies in their published forms, and verifies their reproducibility and robustness.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.22246v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.22246v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> For low-Prandtl-number liquid-metal heat transfer, the simplest closure—k-ω SST with Kays’ turbulent Prandtl correlation—was the most robust and consistently accurate, outperforming more complex thermal turbulence models.</p>
+          <p><b>Engineering relevance:</b> For CFD of liquid-metal cooling systems, model choice strongly affects thermal predictions, and this study identifies which RANS closures are dependable enough for engineering use.</p>
+          <ul><li>Assessed multiple RANS thermal closures in OpenFOAM v2212: k-ω SST + Kays Pr_t, four-equation k-ε-kθ-εθ, logarithmic k-Ω-kθ-Ωθ, and algebraic heat-flux models.</li><li>Validated models on channel flow, pipe flow, and heated backward-facing step cases against DNS and prior published results.</li><li>Compared reproducibility, numerical robustness, and temperature-field accuracy across the closures.</li></ul>
+          <p><b>Evidence signal:</b> Across three benchmark flows, the k-ω SST + Kays model performed best overall, the k-ε-kθ-εθ model was the most consistent multi-equation alternative, and some published formulations could not be reproduced reliably.</p>
+          <p><b>Watch item:</b> Several higher-order closures showed robustness issues or failed to reproduce thermal results, so implementation details and model-form consistency are critical.</p>
+          <div class="tags"><span>#CFD</span> <span>#RANS</span> <span>#TurbulentHeatTransfer</span> <span>#LiquidMetals</span> <span>#LowPrandtl</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>59</strong></div>
         <p class="date">2026-07-21</p>
         <h2>Preferential and differential diffusion in RANS simulation of lean hydrogen flames with tabulated chemistry</h2>
         <p class="authors">Alex M. Garcia, Emiliano M. Fortes, Eduardo J. Pérez-Sánchez, Daniel Mira, Marco Vivenzo, Michael Gauding</p>
@@ -77,37 +153,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.18993v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.18993v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Extending tabulated chemistry with preferential and differential diffusion in RANS lets the model capture the key thermo-diffusive behavior of lean hydrogen flames much more faithfully than unity-Lewis treatments.</p>
-          <p><b>Engineering relevance:</b> This improves the predictive reliability of low-cost CFD for hydrogen combustors and burner design, especially where flame length, heat release, and stability depend on diffusion effects.</p>
-          <ul><li>Solved transport equations for progress variable and mixture fraction from species equations with mixture-averaged diffusion and Soret effect.</li><li>Added turbulence–chemistry interaction through a presumed PDF closure within a RANS framework.</li><li>Compared against DNS and against unity-Lewis and thermo-diffusion-only variants to isolate model effects.</li></ul>
-          <p><b>Evidence signal:</b> Against DNS at Re = 5500 and 11000, the model reproduced flame length, heat-release distribution, and the equivalence-ratio/super-adiabatic temperature branches of the slot flame.</p>
-          <p><b>Watch item:</b> Performance still depends on turbulence closures for scalar dissipation, turbulent diffusion, and Reynolds stresses, which may limit robustness across different flame configurations.</p>
-          <div class="tags"><span>#HydrogenCombustion</span> <span>#RANS</span> <span>#TabulatedChemistry</span> <span>#PreferentialDiffusion</span> <span>#CFD</span></div>
+          <p><b>Key insight:</b> Adding preferential and differential diffusion to a tabulated-chemistry RANS model substantially improves prediction of lean hydrogen flame structure and heat release.</p>
+          <p><b>Engineering relevance:</b> This enables more reliable, cost-effective CFD of hydrogen burners where thermo-diffusive effects can strongly alter stability, flame length, and temperature fields.</p>
+          <ul><li>Extend tabulated chemistry to RANS with transport equations for progress variable and mixture fraction.</li><li>Include mixture-averaged diffusion plus Soret effect and couple turbulence–chemistry interaction through a presumed PDF.</li><li>Compare against a unity-Lewis-number variant and a table-only thermo-diffusive model, using DNS as reference.</li></ul>
+          <p><b>Evidence signal:</b> Against DNS for a lean premixed H2-air slot burner at Re=5500 and 11000, the model reproduces flame length, heat-release distribution, and the equivalence-ratio/super-adiabatic temperature branches.</p>
+          <p><b>Watch item:</b> Accuracy still depends on the chosen turbulence closures, especially for turbulent diffusion, scalar dissipation rate, and Reynolds stresses.</p>
+          <div class="tags"><span>#HydrogenCombustion</span> <span>#RANS</span> <span>#TabulatedChemistry</span> <span>#PreferentialDiffusion</span> <span>#ComputationalFluidDynamics</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>65</strong></div>
-        <p class="date">2026-07-19</p>
-        <h2>Differentiable Hybrid Neural-CFD Modelling of Wall-Bounded Turbulence: Coupled Learning of Subgrid-Scale and Wall Closures</h2>
-        <p class="authors">Xiantao Fan, Yi Liu, Meng Wang, Jian-Xun Wang</p>
-        <p class="abstract">Wall-modelled large-eddy simulation (WMLES) treats the subgrid-scale (SGS) closure, wall closure and numerical discretization as independent components, although their effects are coupled through the same resolved field. We present a differentiable hybrid neural--CFD framework in which the SGS and wall closures are learned jointly, end-to-end, within a differentiable flow solver, using only low-order statistics as training targets. Each closure is a composed neural operator: a trainable neural network followed by a fixed differentiable layer that preserves the structure of its conventional counterpart, so that the network learns only the functions left undetermined by the conventional form. Because every operation is differentiable, gradients of the training loss are back-propagated through the coupled solver, allowing both neural closures to be optimized consistently against the flow field, rather than fitted offline or in isolation. We demonstrate the framework, denoted Hybrid-Joint, on a zero-pressure-gradient turbulent boundary layer across a posteriori tests spanning Re_θ= 600--6500, computational domains and mesh resolutions. The model outperforms WMLES baselines, extrapolates to more than four times the highest training Reynolds number, and transfers to grids and domains absent from training. It recovers a logarithmic mean-velocity region, not imposed by the wall closure, and reproduces the resolved energy spectra accurately, although spectral information is excluded from the training objective. Ablation studies show that learning either closure alone is insufficient and that only joint optimization recovers the full set of statistics, confirming that SGS closure, wall closure and discretization are coupled and must be trained jointly. Once trained, the closures are reused without retraining across all cases, so that training cost is amortized over repeated deployment.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.17357v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.17357v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Learning the subgrid-scale and wall closures jointly inside a differentiable LES solver yields better turbulence predictions than training either closure separately.</p>
-          <p><b>Engineering relevance:</b> This offers a practical route to more accurate and transferable wall-modeled LES for turbulent boundary layers across new Reynolds numbers, grids, and domains.</p>
-          <ul><li>Builds a differentiable hybrid neural–CFD solver for WMLES</li><li>Uses two composed closures: a trainable neural net plus a fixed physics-preserving layer for SGS and wall modeling</li><li>Back-propagates low-order-statistics losses through the coupled flow solver for end-to-end joint optimization</li></ul>
-          <p><b>Evidence signal:</b> Validated on a zero-pressure-gradient turbulent boundary layer with posteriori tests over Re_theta = 600–6500, multiple meshes and domains, where it outperformed WMLES baselines and retained accuracy even beyond the training Reynolds-number range.</p>
-          <p><b>Watch item:</b> Performance depends on reliable differentiable solver implementation and the coupled training setup; learning closures in isolation was shown to be insufficient.</p>
-          <div class="tags"><span>#Turbulence</span> <span>#WMLES</span> <span>#NeuralCFD</span> <span>#DifferentiableSimulation</span> <span>#HybridModeling</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>62</strong></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>57</strong></div>
         <p class="date">2026-07-22</p>
         <h2>A formal log(Re)-cost framework for the engineering turbulence problem</h2>
         <p class="authors">Jiaqi Li, Robert F. Kunz, George Huang, Xiang I. A. Yang</p>
@@ -115,18 +172,37 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.20199v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.20199v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A physics-constrained, data-driven turbulence model can be trained at low Reynolds number and extrapolated to much higher Reynolds numbers while keeping formal computational cost near O(log(Re)) under stated assumptions.</p>
-          <p><b>Engineering relevance:</b> This offers a practical route to more accurate wall-bounded flow predictions without the prohibitive cost growth usually associated with high-Reynolds-number turbulence simulations.</p>
-          <ul><li>Augment the Spalart–Allmaras RANS model using field inversion and machine learning.</li><li>Impose a constrained formulation that preserves the law of the wall and other physics behavior.</li><li>Train on affordable low-Re high-fidelity data, then deploy the model at higher Re for extrapolation.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports successful transfer from channel flow trained at Re_tau=1000 to Re_tau=5200, and from periodic hill training at Re_b=5600 to tests at Re_b=10595, 19000, and 37000, with the constrained model giving the lowest RMSE and nearly Re-independent error.</p>
-          <p><b>Watch item:</b> The favorable O(log(Re)) cost claim depends on assumptions such as mean-flow-aligned grids, fixed spanwise resolution, and steady-solver linear cost, so performance may change outside those conditions.</p>
-          <div class="tags"><span>#TurbulenceModeling</span> <span>#CFD</span> <span>#MachineLearning</span> <span>#RANS</span> <span>#ReynoldsNumber</span></div>
+          <p><b>Key insight:</b> A physics-constrained, multi-fidelity turbulence model can be trained at affordable low Reynolds number and extrapolated to higher Reynolds numbers with formal cost scaling of O(log(Re)) under stated assumptions.</p>
+          <p><b>Engineering relevance:</b> This suggests a path toward more accurate and computationally feasible turbulence predictions for wall-bounded engineering flows without paying the full cost of high-Re high-fidelity simulation.</p>
+          <ul><li>Augment the Spalart–Allmaras RANS model with field inversion and machine learning.</li><li>Constrain the learned correction to preserve the law of the wall.</li><li>Train at low Re and deploy to higher Re with a mean-flow-aligned grid and fixed spanwise resolution.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports successful transfer from plane channel flow at Re_tau=1000 to Re_tau=5200, and from periodic hill training at Re_b=5600 to tests at Re_b=10595, 19000, and 37000, with lowest RMS error and nearly Re-independent error.</p>
+          <p><b>Watch item:</b> The O(log(Re)) cost claim depends on specific grid, solver, and alignment assumptions, so practical scalability may differ outside those conditions.</p>
+          <div class="tags"><span>#TurbulenceModeling</span> <span>#RANS</span> <span>#MachineLearning</span> <span>#CFD</span> <span>#PhysicsInformedAI</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Aerodynamics</span><span>arXiv</span><strong>58</strong></div>
+        <div class="meta"><span>CFD Surrogates</span><span>arXiv</span><strong>54</strong></div>
+        <p class="date">2026-07-23</p>
+        <h2>Explainable quantum-compressed machine learning for complex fluid flows</h2>
+        <p class="authors">Xiao Xue, Maida Wang, Mingyang Gao, Minh Chung, Peter V. Coveney</p>
+        <p class="abstract">Machine-learning surrogates of physical systems face a paradox: explainable models facing the challenge of expressivity to capture complex nonlinear flows, whereas expressive deep surrogates match high-fidelity simulations only through massive parameterisations that turn the learned dynamics into a black box. Here, we introduce quantum-compressed machine learning (QCML), which resolves this tension by compressing the latent propagator of a flow surrogate from $524{,}288$ trainable parameters to no more than $8$. This parameter reduction brings the learned dynamical law to the parameter scale of a physical constitutive relation rather than a black-box neural network, making the surrogate directly interpretable and controllable without sacrificing expressivity. The compression is realised by a structured quantum circuit whose unitary propagator constrains the latent spectrum to the unit circle exactly and by construction, replacing exponential error growth with linear accumulation over autoregressive rollouts. Classical regularisation only approximates this constraint: even a quantum-inspired classical baseline penalised towards unitarity collapses within one Lyapunov time on turbulent channel flow, whereas QCML remains stable over the full rollout. Shared phase and coupling angles parameterising the circuit correspond directly to modal frequencies and inter-mode interactions, giving the learned dynamics a physical interpretation in spectral space. On two patient-specific cardiovascular benchmarks, the structured QCML propagator matches the predictive accuracy of its classical counterpart on surface pressure spectra, pressure drop, and wall shear stress. These results establish QCML as a working component of scientific machine learning and a concrete contribution towards practical quantum advantage in real-world prediction.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.21688v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.21688v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> QCML compresses a flow surrogate’s latent dynamics from 524,288 parameters to at most 8 by enforcing a structured quantum-unitary propagator, making the model both interpretable and stable for long autoregressive rollouts.</p>
+          <p><b>Engineering relevance:</b> This offers a path to CFD surrogates that are small enough to resemble physical constitutive laws while still matching high-fidelity flow predictions for turbulent and cardiovascular applications.</p>
+          <ul><li>Use a structured quantum circuit as the latent propagator.</li><li>Constrain the learned dynamics to be exactly unitary, placing eigenvalues on the unit circle.</li><li>Interpret circuit phase/coupling angles as modal frequencies and inter-mode interactions.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports strong performance on turbulent channel flow and two patient-specific cardiovascular benchmarks, with QCML matching classical surrogate accuracy on pressure spectra, pressure drop, and wall shear stress while remaining stable over full rollouts.</p>
+          <p><b>Watch item:</b> The approach depends on specialized quantum-structured parameterization and may be difficult to implement, train, or scale on practical hardware compared with conventional surrogate models.</p>
+          <div class="tags"><span>#QuantumML</span> <span>#CFDSurrogates</span> <span>#ScientificML</span> <span>#ExplainableAI</span> <span>#FluidDynamics</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Aerodynamics</span><span>arXiv</span><strong>53</strong></div>
         <p class="date">2026-07-23</p>
         <h2>Effect of free-stream turbulence on a moderate adverse pressure gradient turbulent boundary layer developing over an airfoil</h2>
         <p class="authors">Tomek Jaroslawski, Francesco Scarano</p>
@@ -134,56 +210,56 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.21047v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.21047v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Freestream turbulence strongly reshapes moderate adverse-pressure-gradient turbulent boundary layers over an airfoil, reducing wake effects and moving skin friction toward zero-pressure-gradient-like behavior.</p>
-          <p><b>Engineering relevance:</b> In realistic aerodynamic environments, freestream turbulence can materially change boundary-layer growth, drag-related skin-friction trends, and turbulence scaling, so it must be included in airfoil and wing design assessments.</p>
-          <ul><li>Wind-tunnel experiments on a NACA 0015 airfoil</li><li>Angle of attack set to 2° and 4° to vary the adverse pressure gradient</li><li>Hotwire measurements taken over x/c = 0.400–0.625 with FST levels from 0.15% to 6%</li></ul>
-          <p><b>Evidence signal:</b> Across constant chord Reynolds number (~250,000), increasing FST systematically changed mean velocity profiles, lowered shape factor, raised skin-friction coefficient, and amplified both inner- and outer-layer velocity variance with energetic scales around λx/δ ≈ 13.</p>
-          <p><b>Watch item:</b> These findings are for moderate APG conditions on a specific airfoil and Reynolds number, so extrapolation to stronger APGs, different geometries, or higher Reynolds numbers should be done cautiously.</p>
-          <div class="tags"><span>#Aerodynamics</span> <span>#BoundaryLayer</span> <span>#FreestreamTurbulence</span> <span>#AdversePressureGradient</span> <span>#Turbulence</span></div>
+          <p><b>Key insight:</b> Freestream turbulence strongly reshapes a moderate adverse-pressure-gradient turbulent boundary layer over an airfoil, making the mean flow and near-wall statistics move toward more canonical zero-pressure-gradient behavior.</p>
+          <p><b>Engineering relevance:</b> In aerodynamic design and testing, freestream turbulence must be accounted for because it can alter boundary-layer development, skin friction, and separation-related wake structure under realistic adverse pressure gradients.</p>
+          <ul><li>Wind-tunnel experiments on a NACA 0015 airfoil</li><li>Angle of attack set to 2° and 4° to vary the pressure gradient</li><li>Hotwire measurements taken at x/c = 0.400–0.625 for FST levels from 0.15% to 6%</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports systematic changes in shape factor, skin-friction coefficient, velocity variance, and spectral energy as FST increases, with larger effects at stronger adverse pressure gradients.</p>
+          <p><b>Watch item:</b> These findings come from a moderate-APG airfoil case at fixed Reynolds number, so direct transfer to other geometries, stronger APGs, or different Reynolds numbers should be done cautiously.</p>
+          <div class="tags"><span>#TurbulentBoundaryLayer</span> <span>#AdversePressureGradient</span> <span>#FreestreamTurbulence</span> <span>#AirfoilAerodynamics</span> <span>#WindTunnelExperiments</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>CFD Surrogates</span><span>arXiv</span><strong>57</strong></div>
-        <p class="date">2026-07-19</p>
-        <h2>Multi-Granularity Conformal Prediction for Reliable Neural-Operator Automotive Aerodynamic Surrogates</h2>
-        <p class="authors">Chundong Jia, Chao Xia, Alexey Vdovin, Qing Jia, Simone Sebben, Zhigang Yang</p>
-        <p class="abstract">High-fidelity computational fluid dynamics (CFD) provides detailed aerodynamic data for vehicle design, but its cost limits design iteration. Neural-operator surrogates reduce this cost, yet their deterministic predictions do not indicate when a geometry or surface region is reliable. This study develops a conformal-prediction framework for reliability-aware automotive aerodynamic surrogate modeling on the DrivAerML dataset. GeoTransolver is the main backbone, while Transolver assesses transfer across neural-operator architectures. For drag coefficient prediction, conformalized quantile regression constructs calibrated case-level intervals. For surface pressure and wall shear stress (WSS), point prediction is combined with residual-scale estimation and residual-normalized conformal calibration to obtain spatially adaptive intervals. Global absolute, point-adaptive normalized, and case-wise normalized calibration are compared under split and cross-validation-assisted out-of-fold protocols. All experiments target 90% nominal coverage. Conformal calibration corrects the under-coverage of raw drag-coefficient quantile intervals, while out-of-fold score aggregation reduces the Monte Carlo coverage standard deviation from 10.41 to 3.10 percentage points. For surface fields, point-adaptive normalized calibration yields the narrowest near-nominal intervals, reducing mean width by 22.68% for pressure and 25.35%--27.09% for WSS under the out-of-fold protocol. Case-wise normalized calibration is more conservative but improves vehicle-level reliability. Smoothness regularization reduces the residual-scale local-variation score by 74.29% and lowers interval widths without material coverage loss. The framework converts deterministic neural-operator outputs into calibrated reliability indicators for prioritizing uncertain vehicle geometries and surface regions in follow-up CFD verification.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.17297v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.17297v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>50</strong></div>
+        <p class="date">2026-07-24</p>
+        <h2>Numerical Validation of Lyapunov-Liouville Theory and Non-Diffusive Closures in Decaying Isotropic Fluid and Scalar Turbulence</h2>
+        <p class="authors">Nicola de Divitiis</p>
+        <p class="abstract">This work presents a comprehensive numerical validation of the Lyapunov-Liouville theoretical framework and its non-diffusive turbulence closures under freely decaying homogeneous isotropic turbulence (HIT). The closed system of von Karman-Howarth and Corrsin equations is integrated via an autonomous, high-accuracy architecture across three initial states (Saffman-Birkhoff, Loitsiansky, and Gaussian correlation profiles) and Prandtl numbers from Pr = 10^-3 to 1000. The analysis scrutinizes the transient phase, the self-preserving diffusive regime, and the internal structure of turbulence via velocity and temperature increment probability density functions (PDFs). Our findings reveal that the closure accurately captures distinct decay paths. The Saffman-Birkhoff case yields asymptotic exponents m = -1.25 and n = -1.25. The Loitsiansky condition accelerates mechanical decay (m = -1.51) due to higher dissipation but exhibits higher thermal persistence (n = -0.89). Conversely, the Gaussian profile induces ultra-rapid decay (m = -2.7), reaching its operational limit at t = 33 as R_lambda drops below 10. Furthermore, the model replicates the non-equilibrium evolution of characteristic scales. At Pr = 1000, the thermal microscale drops below the Kolmogorov scale, confirming Batchelor&#x27;s scaling where the Batchelor constant converges to C_B = 3.5 and the Obukhov-Corrsin constant matches C_OC = 1.8. Finally, the synthesized PDFs capture a sharp transition from quasi-Gaussian statistics at low Pr to enhanced, scale-dependent small-scale intermittency at high Pr, validating the predictive robustness of the theory for multi-scale scalar mixing.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.22105v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.22105v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Conformal prediction turns neural-operator CFD surrogates from deterministic predictors into calibrated aerodynamic reliability indicators at both vehicle and surface levels.</p>
-          <p><b>Engineering relevance:</b> This enables engineers to identify which vehicle geometries and surface regions need extra CFD verification, improving surrogate use in design iteration.</p>
-          <ul><li>Use GeoTransolver as the main neural-operator backbone and compare transfer with Transolver.</li><li>Build case-level drag intervals with conformalized quantile regression.</li><li>For pressure and WSS, combine point prediction with residual-scale estimation and residual-normalized conformal calibration, then compare global, point-adaptive, and case-wise protocols.</li></ul>
-          <p><b>Evidence signal:</b> On the DrivAerML dataset with 90% nominal coverage, out-of-fold calibration reduced drag coverage variability from 10.41 to 3.10 percentage points and cut surface-field interval widths by up to 27.09% while keeping near-nominal coverage.</p>
-          <p><b>Watch item:</b> Case-wise normalized intervals improve reliability but are more conservative, so the chosen calibration protocol must balance width, coverage, and deployment cost.</p>
-          <div class="tags"><span>#CFD</span> <span>#NeuralOperators</span> <span>#ConformalPrediction</span> <span>#AeroSurrogates</span> <span>#AutomotiveDesign</span></div>
+          <p><b>Key insight:</b> Lyapunov-Liouville closures can reproduce the full decay and small-scale statistics of freely decaying isotropic turbulence across velocity and scalar fields, including regime-dependent intermittency and scaling laws.</p>
+          <p><b>Engineering relevance:</b> The results support reduced-order turbulence and scalar-mixing models for predicting decay rates, characteristic length scales, and high-Pr transport behavior in engineering flows.</p>
+          <ul><li>Integrate closed von Kármán–Howarth and Corrsin equations with a high-accuracy autonomous solver</li><li>Test three initial correlation families: Saffman-Birkhoff, Loitsiansky, and Gaussian</li><li>Compare decay exponents, microscale evolution, and increment PDFs across Pr = 10^-3 to 1000</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports numerical validation over three initial states and a wide Prandtl-number range, with matched asymptotic exponents, Batchelor/Obukhov-Corrsin constants, and PDFs spanning quasi-Gaussian to intermittent behavior.</p>
+          <p><b>Watch item:</b> The Gaussian initial condition reaches an operational limit by t = 33 when R_lambda falls below 10, so applicability may be constrained at very low Reynolds numbers or late-time strong decay.</p>
+          <div class="tags"><span>#Turbulence</span> <span>#FluidMechanics</span> <span>#ScalarMixing</span> <span>#LyapunovTheory</span> <span>#NumericalValidation</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>56</strong></div>
-        <p class="date">2026-07-20</p>
-        <h2>A coupled Eulerian Lagrangian approach for fluid and particle dynamics</h2>
-        <p class="authors">Snehanshu Maiti, Rajaraman Ganesh</p>
-        <p class="abstract">We present a one-way coupled Eulerian-Lagrangian computational framework for simulating fluid and particle dynamics in two-dimensional incompressible flows. The framework extends the GPU-accelerated GHD2D Fourier pseudospectral Navier-Stokes solver \cite{Mukherjee2018,Biswas2024} by incorporating passive tracer and finite-inertia particle modules. The Eulerian fluid equations are integrated using a second-order Adams-Bashforth scheme, while particle trajectories are advanced with a classical fourth-order Runge-Kutta method. Coupling between the Eulerian and Lagrangian descriptions is achieved through spatial and temporal interpolation of the fluid fields using bilinear, bicubic Catmull-Rom, and bicubic B-spline schemes. The framework is verified using analytical solutions and benchmark problems for the fluid solver, tracer transport, and inertial-particle dynamics. Bilinear interpolation produces transport statistics nearly identical to higher-order schemes while providing greater computational efficiency, and particle-number convergence demonstrates statistical robustness. Simulations of tracer and inertial particles in decaying two-dimensional turbulence capture long-time transport, turbulent dispersion, vortex trapping, coherent-structure interactions, preferential concentration, and inertia-dependent transport. The solver exhibits stable scaling with grid resolution and particle number while maintaining efficient single-GPU performance. The modular architecture and computational efficiency make the framework suitable for Eulerian-Lagrangian studies of turbulent transport and particle-laden incompressible flows.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.17836v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.17836v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>50</strong></div>
+        <p class="date">2026-07-24</p>
+        <h2>Study of discrete boundary layer suction for transition delay</h2>
+        <p class="authors">Mukund R., Pranav Joshi, Ishan Singh</p>
+        <p class="abstract">In the present study we have assessed the effect of suction through discrete perforations on the transition of the Blasius boundary layer. In particular, the intermittency and the spectra of the streamwise velocity fluctuations, obtained using hot-wire anemometry, were used to evaluate the optimum suction, i.e., one that provides the greatest delay in transition. The displacement thickness Reynolds number at suction was varied between 1400 and 1600, while the number of rows of holes was either four or ten. The suction holes had diameter of the order of the displacement thickness of the boundary layer, a practical size from manufacturing and maintenance perspectives. As the suction strength was increased the transition front moved downstream, with the maximum delay in transition occurring at the optimum suction. When the suction was increased further, the transition front moved upstream again. The results, supported by a scaling analysis, showed that suction volume flow rate is a better indicator of the effects of suction on the transition delay than suction velocity. In particular, suction through different numbers of rows of perforations produces largely similar effects on the boundary layer transition, provided the suction volume flow rate remains the same. However, suction through fewer rows provided a slightly greater delay in transition in addition to a slightly lower optimum suction volume flow rate. The results also showed that suction applied at a lower Reynolds number provides a substantially greater transition delay but at slightly higher values of the normalized optimum suction volume flow rate.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.22051v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.22051v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A GPU-accelerated one-way Eulerian-Lagrangian framework can accurately simulate 2D incompressible turbulent flow and particle transport, with bilinear interpolation offering a strong accuracy–efficiency tradeoff.</p>
-          <p><b>Engineering relevance:</b> The method provides a modular, single-GPU tool for studying tracer and inertial-particle transport in turbulence, useful for particle-laden flow analysis and coherent-structure diagnostics.</p>
-          <ul><li>Extends a Fourier pseudospectral Navier–Stokes solver with passive tracer and finite-inertia particle modules.</li><li>Advances fluid fields with second-order Adams–Bashforth and particles with fourth-order Runge–Kutta.</li><li>Couples Eulerian and Lagrangian variables via bilinear, bicubic Catmull-Rom, and bicubic B-spline interpolation.</li></ul>
-          <p><b>Evidence signal:</b> The framework is validated against analytical solutions and benchmarks, and particle-number convergence plus transport statistics show bilinear interpolation is nearly indistinguishable from higher-order schemes.</p>
-          <p><b>Watch item:</b> The study is one-way coupled, so particle feedback on the fluid is not modeled, which may limit applicability for dense or strongly coupled suspensions.</p>
-          <div class="tags"><span>#CFD</span> <span>#Turbulence</span> <span>#EulerianLagrangian</span> <span>#ParticleTransport</span> <span>#GPUComputing</span></div>
+          <p><b>Key insight:</b> Discrete suction through perforated rows can delay Blasius boundary-layer transition, with an optimal suction level beyond which the transition front moves upstream again.</p>
+          <p><b>Engineering relevance:</b> Because suction volume flow rate, not suction velocity, best predicts the effect, the findings help guide practical boundary-layer control design using manufacturable perforations.</p>
+          <ul><li>Applied suction through discrete hole rows in a Blasius boundary layer.</li><li>Varied displacement-thickness Reynolds number at suction from 1400 to 1600.</li><li>Compared configurations with 4 vs 10 rows and assessed intermittency and velocity spectra from hot-wire anemometry.</li></ul>
+          <p><b>Evidence signal:</b> Hot-wire measurements of intermittency and streamwise-velocity spectra showed downstream transition shift at increasing suction, followed by upstream movement when suction exceeded the optimum.</p>
+          <p><b>Watch item:</b> The optimum appears sensitive to operating Reynolds number and suction flow rate, so results may not transfer directly without re-tuning the perforation layout and suction strength.</p>
+          <div class="tags"><span>#BoundaryLayer</span> <span>#TransitionDelay</span> <span>#SuctionControl</span> <span>#Turbulence</span> <span>#FluidMechanics</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>55</strong></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>50</strong></div>
         <p class="date">2026-07-23</p>
         <h2>An unfitted boundary algebraic equation method with Calderón preconditioning for 2D Stokes flow in irregular geometry</h2>
         <p class="authors">Wenjun Ying, Qing Xia</p>
@@ -191,18 +267,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.21295v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.21295v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper reformulates 2D Stokes flow on irregular domains as an unfitted boundary algebraic equation problem using lattice Green’s functions and Calderón preconditioning to obtain accurate, stable solutions without singular quadrature.</p>
-          <p><b>Engineering relevance:</b> This provides a practical high-order solver for complex fluid-structure or exterior-flow geometries on Cartesian grids, with strong conditioning and discrete incompressibility suitable for engineering simulations.</p>
-          <ul><li>Builds velocity/pressure lattice Green’s functions from free-space Laplace LGFs on a staggered MAC grid.</li><li>Represents homogeneous fields using sources only on thin boundary layers and enforces Dirichlet data by local interpolation at cut points.</li><li>Uses sampled-normal rank updates and a discrete Calderón preconditioner with padded FFTs for fast volume convolutions and GMRES solve.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports extensive validation on multiply connected domains, narrow gaps, and Moffatt eddies, achieving second-order velocity/pressure convergence, solver-accurate discrete divergence, and orders-of-magnitude condition-number reduction.</p>
-          <p><b>Watch item:</b> The Calderón preconditioner remains more demanding in narrow-gap and fine-grid interior cases, so robustness and cost may degrade for very challenging geometries.</p>
-          <div class="tags"><span>#StokesFlow</span> <span>#BoundaryMethods</span> <span>#CalderonPreconditioning</span> <span>#CartesianGrids</span> <span>#ComputationalFluidDynamics</span></div>
+          <p><b>Key insight:</b> The paper introduces an unfitted boundary algebraic equation approach for 2D Stokes flow that represents the solution using lattice Green’s functions on a staggered grid and stabilizes the boundary system with a discrete Calderón preconditioner.</p>
+          <p><b>Engineering relevance:</b> It enables accurate Stokes simulations in irregular geometries without body-fitted meshes or singular quadrature, making it attractive for complex-fluid and microscale flow solvers.</p>
+          <ul><li>Builds velocity/pressure lattice Green’s functions from free-space Laplace LGFs.</li><li>Imposes boundary conditions at cut points via local interpolation on thin staggered boundary layers.</li><li>Uses a componentwise discrete Calderón preconditioner with FFT-based convolutions and GMRES.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports second-order convergence for velocity and pressure, discrete divergence at solver tolerance, successful tests on multiply connected domains and narrow gaps, and orders-of-magnitude condition-number reduction.</p>
+          <p><b>Watch item:</b> The preconditioner remains effective but more demanding for narrow-gap and fine-grid interior problems, which may increase computational cost and implementation complexity.</p>
+          <div class="tags"><span>#StokesFlow</span> <span>#BoundaryMethods</span> <span>#CalderonPreconditioning</span> <span>#LatticeGreensFunctions</span> <span>#ComputationalFluidDynamics</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>55</strong></div>
+        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>50</strong></div>
         <p class="date">2026-07-23</p>
         <h2>Fractal Scaling of Moffatt Vortices in Triangular Cavity Flow</h2>
         <p class="authors">Rathindra Nath Basak, Sougata Biswas, Jiten C. Kalita</p>
@@ -210,18 +286,37 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.20976v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.20976v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Corner vortices in triangular cavity flow form a self-similar cascade with non-integer fractal dimensions, and their scaling can be estimated from vortex size and intensity ratios.</p>
-          <p><b>Engineering relevance:</b> These fractal scaling laws help predict recirculation structure in slow viscous cavity flows, supporting better modeling of corner eddies in microfluidic, thermal, and CFD applications.</p>
-          <ul><li>Solved the incompressible Navier–Stokes equations in a triangular cavity using a pressure-based coupled solver.</li><li>Measured successive vortex size and intensity ratios to characterize the Moffatt vortex cascade.</li><li>Estimated fractal dimension with an area-perimeter approach and proposed an empirical relation for arbitrary grid resolution.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports numerical results showing corner vortices with fractal dimensions between 1 and 2, plus a Reynolds-number study and a comparison against square-cavity self-similarity.</p>
-          <p><b>Watch item:</b> The empirical fractal-dimension relation is tied to numerical resolution and cavity geometry, so it may need revalidation before transfer to different meshes or boundary conditions.</p>
-          <div class="tags"><span>#FluidMechanics</span> <span>#FractalScaling</span> <span>#MoffattVortices</span> <span>#CFD</span> <span>#PhysicsInformedML</span></div>
+          <p><b>Key insight:</b> Slow viscous flow in a triangular cavity generates a self-similar cascade of corner vortices whose sizes, strengths, and fractal dimensions follow Moffatt-style scaling.</p>
+          <p><b>Engineering relevance:</b> Understanding this vortex fractal scaling helps predict corner-flow behavior in low-Reynolds-number devices and geometries where recirculation affects mixing, drag, and heat transfer.</p>
+          <ul><li>Solved incompressible Navier–Stokes equations with a pressure-based coupled numerical solver.</li><li>Extracted successive corner vortices and measured their size and intensity ratios.</li><li>Applied the area–perimeter method to estimate fractal dimension and tested scaling across Reynolds numbers and cavity shapes.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports systematic numerical analysis showing non-integer fractal dimensions between 1 and 2, with consistent size/intensity scaling and a comparative self-similarity check for triangular versus square cavities.</p>
+          <p><b>Watch item:</b> The empirical fractal-dimension relation may depend on grid resolution and vortex detection accuracy, so results should be validated carefully for different meshes and corner geometries.</p>
+          <div class="tags"><span>#FluidMechanics</span> <span>#MoffattVortices</span> <span>#FractalScaling</span> <span>#ComputationalFluidDynamics</span> <span>#PhysicsInformedML</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>54</strong></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>49</strong></div>
+        <p class="date">2026-07-24</p>
+        <h2>Pulsatile poromechanics in layered soft media controls fluid flow and solute transport: from fundamentals to brain clearance</h2>
+        <p class="authors">Matilde Fiori, Sylvie Lorthois</p>
+        <p class="abstract">Soft porous media often feature a heterogeneous structure. Notably, biological tissues - such as cartilage and the brain tissue - consist of two or more layers, with varying mechanical and fluid-flow properties. Despite the ubiquity of periodic loading in these systems, the physical implications of layering on nonlinear poromechanics and solute transport remain poorly understood. Uncovering these coupled mechanisms could clarify the fundamental physics behind pressing topics, such as brain metabolic clearance. Here, we address this gap using a bilayer model of a generic soft porous medium. To isolate the specific role of layering, we select combinations of material properties (porosity, permeability, and p-wave modulus) that maintain an identical poroelastic timescale, $T_{\mathrm{PE}}$, across four layered configurations and a reference homogeneous case. We demonstrate that while $T_\mathrm{PE}$ is the key parameter governing the response in a homogeneous medium, the same $T_\mathrm{PE}$ leads to non-trivial localization/propagation patterns for strain, fluid flow and solute transport in a bilayer medium. These non-intuitive results suggest that layered architectures may provide functional benefits for cellular homeostasis over homogeneous ones. Finally, we show that pathological alterations to the brain&#x27;s layered structure significantly disrupt fluid-flow and metabolic waste clearance, offering a possible mechanical explanation for impaired transport in disease.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.22462v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.22462v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> In layered soft porous media, matching the usual poroelastic timescale does not guarantee similar behavior: layering creates distinct localization and propagation of strain, flow, and solute transport.</p>
+          <p><b>Engineering relevance:</b> This suggests that biological and engineered porous tissues can be tuned by architecture, not just bulk material properties, to control fluid transport and clearance.</p>
+          <ul><li>Built a bilayer poromechanics model of a generic soft porous medium.</li><li>Matched poroelastic timescale across four layered configurations and one homogeneous reference.</li><li>Compared strain, fluid-flow, and solute-transport responses under periodic loading.</li></ul>
+          <p><b>Evidence signal:</b> The study uses a modeling comparison across four layered cases and a homogeneous case to show that identical poroelastic timescales still produce qualitatively different transport responses.</p>
+          <p><b>Watch item:</b> The conclusions are based on a simplified bilayer model, so translating them to real tissues will require validation with more complex anatomy and parameter variability.</p>
+          <div class="tags"><span>#Poromechanics</span> <span>#SoftMatter</span> <span>#FluidTransport</span> <span>#BrainClearance</span> <span>#Biophysics</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>49</strong></div>
         <p class="date">2026-07-22</p>
         <h2>Bayesian finite element regression for vascular flow reconstruction with quantified uncertainty</h2>
         <p class="authors">Cem Gormezano, Shawn Shadden</p>
@@ -229,56 +324,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.20224v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.20224v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A Bayesian finite-element inverse solver can reconstruct blood-flow velocity and pressure from sparse noisy measurements while also providing uncertainty estimates.</p>
-          <p><b>Engineering relevance:</b> This enables clinically useful flow diagnostics on patient-specific vascular geometries without offline training data, improving reliability for quantities like pressure drop and wall shear stress.</p>
-          <ul><li>Represent velocity and pressure with Taylor-Hood finite-element basis functions.</li><li>Impose physics-informed maximum-entropy priors and a noisy measurement likelihood to form the posterior.</li><li>Compute the MAP via a sparse nonlinear least-squares solve, eliminate pressure analytically, and use a Laplace approximation for uncertainty quantification.</li></ul>
-          <p><b>Evidence signal:</b> On patient-specific cerebral aneurysm, aortic aneurysm, and aortic coarctation cases, the method outperformed tricubic interpolation and matched a PINN for velocity/pressure reconstruction while estimating wall shear stress more accurately than both.</p>
-          <p><b>Watch item:</b> Accuracy depends on the assumed noise model and the quality of the finite-element discretization, and the approach is still tied to steady-flow assumptions.</p>
-          <div class="tags"><span>#PhysicsInformedML</span> <span>#BayesianInference</span> <span>#FiniteElementMethod</span> <span>#ComputationalFluidDynamics</span> <span>#UncertaintyQuantification</span></div>
+          <p><b>Key insight:</b> A Bayesian finite element model reconstructs steady blood-flow velocity and pressure from noisy, under-resolved measurements while explicitly quantifying uncertainty.</p>
+          <p><b>Engineering relevance:</b> This provides a training-free, physics-constrained way to estimate clinically important flow metrics such as pressure drop, flow rate, and wall shear stress in patient-specific vascular geometries.</p>
+          <ul><li>Taylor-Hood finite element basis for velocity and pressure</li><li>Physics-informed maximum-entropy priors on nodal degrees of freedom</li><li>MAP inference via sparse nonlinear least squares with analytic pressure elimination; Laplace approximation for uncertainty</li></ul>
+          <p><b>Evidence signal:</b> On patient-specific cerebral aneurysm, aortic aneurysm, and coarctation cases, the method outperformed tricubic interpolation, matched PINN-level reconstruction quality, and improved wall-shear-stress recovery.</p>
+          <p><b>Watch item:</b> The approach relies on a steady-flow assumption and accurate noise/priors; performance may degrade when measurements are very sparse, strongly unsteady, or boundary conditions are highly misspecified.</p>
+          <div class="tags"><span>#PhysicsInformedML</span> <span>#BayesianInference</span> <span>#FiniteElementMethod</span> <span>#Hemodynamics</span> <span>#UncertaintyQuantification</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>54</strong></div>
-        <p class="date">2026-07-19</p>
-        <h2>Solver-in-the-loop training of deep learning closures for large-eddy simulation of turbulent premixed jet flames</h2>
-        <p class="authors">Priyesh Kakka, Jonathan F. MacArt</p>
-        <p class="abstract">Large-eddy simulation (LES) turbulence models often fail to capture the effects of chemical heat release and the resulting modulation of turbulence in premixed flames, underscoring the need for a framework that remains accurate across a broad range of physical regimes. We develop an augmented eddy-viscosity closure, based on deep neural networks calibrated jointly with the LES solution using adjoint-based optimization and differentiable programming, ensuring consistency with the governing partial differential equations (PDEs). Several objective functions and training methods are examined, and each model is assessed for its capability to interpolate and extrapolate across a wide range of Damköhler numbers. Relative to the Smagorinsky-model baseline, the best neural network model improves a posteriori errors in the LES primitive variables by 25-50% and in the resolved Reynolds stress and scalar flux by more than 60%. Crucially, the model generalizes across Damköhler number regimes, maintaining stability and accuracy even for out-of-sample conditions. These results demonstrate that PDE-consistent deep learning closures can recover both mean fields and resolved turbulence statistics in LES of turbulent premixed flames and can therefore provide a broadly applicable framework for turbulent combustion modeling.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.17376v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.17376v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A PDE-consistent deep neural network closure, trained inside the LES solver, can outperform classic eddy-viscosity models for turbulent premixed flames and generalize across Damköhler-number regimes.</p>
-          <p><b>Engineering relevance:</b> This provides a practical route to more reliable large-eddy simulations of reacting flows, improving prediction of mean fields, stress, and scalar transport with better robustness beyond the training regime.</p>
-          <ul><li>Augmented eddy-viscosity closure represented by a deep neural network</li><li>Solver-in-the-loop training with adjoint-based optimization and differentiable programming</li><li>Joint calibration of the closure with the LES governing equations</li></ul>
-          <p><b>Evidence signal:</b> Against a Smagorinsky baseline, the best model reduced a posteriori primitive-variable errors by 25–50% and improved resolved Reynolds stress and scalar flux by more than 60%, while remaining stable out of sample across Damköhler numbers.</p>
-          <p><b>Watch item:</b> Performance depends on careful solver-in-the-loop training and objective selection, so stability and transferability should still be checked for different flame configurations and operating conditions.</p>
-          <div class="tags"><span>#Turbulence</span> <span>#LargeEddySimulation</span> <span>#DeepLearning</span> <span>#Combustion</span> <span>#PhysicsInformedML</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>CFD Surrogates</span><span>arXiv</span><strong>53</strong></div>
-        <p class="date">2026-07-23</p>
-        <h2>A physics-assisted deep neural network-based closure framework for velocity gradient dynamics in compressible flows with vibrational non-equilibrium</h2>
-        <p class="authors">Deep Shikha, Sawan S Sinha</p>
-        <p class="abstract">In this study, we propose a dynamical model for the evolution of velocity gradients in compressible turbulent flows with vibrational non-equilibrium effects, using physics-assisted deep neural networks. Such models provide a powerful framework for understanding the nonlinear physics associated with small-scale structures. In compressible flows, the influence of thermodynamic fields on velocity-gradient dynamics is represented through thermodynamic gradient field (TGF) tensor. The TGF tensor is one of the primary unclosed terms in velocity-gradient evolution equations. The TGF tensor comprises contributions from the pressure-Hessian tensor, $ρ\boldsymbol{H}$, and the baroclinic tensor, $\boldsymbol{B}$. Accordingly, the proposed framework incorporates closures for both $\boldsymbol{H}$ and $\boldsymbol{B}$ tensor dynamics. Building upon existing phenomenological closures for the $\boldsymbol{H}$ tensor governing mechanisms, we develop a neural-network-based closure for the inviscid mechanism responsible for generating the $\boldsymbol{B}$ tensor. Unlike the other recently used tensor bases, the presented work employs a novel tensor basis allowing for the inclusion of non-symmetric features in the model. The framework also incorporates a data-driven closure for vibrational non-equilibrium effects.The resulting framework combines phenomenological and data-driven representations of various $\boldsymbol{H}$ and $\boldsymbol{B}$ tensors governing mechanisms, termed as the \textit{hybrid enhanced homogenized Euler equation} (H-EHEE) model. Model predictions are evaluated across a range of turbulent Mach numbers and compared against direct numerical simulation (DNS) data and existing compressible velocity-gradient models. The H-EHEE model exhibits close agreement with DNS statistics and provides significant improvements over existing models, particularly in highly compressible flow regimes.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.21152v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.21152v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A physics-assisted neural closure can better model compressible velocity-gradient dynamics by jointly learning thermodynamic-gradient contributions, especially the baroclinic and pressure-Hessian effects.</p>
-          <p><b>Engineering relevance:</b> This offers a more accurate surrogate for high-Mach CFD, helping predict small-scale turbulence behavior in compressible flows with vibrational non-equilibrium.</p>
-          <ul><li>Builds a hybrid enhanced homogenized Euler equation (H-EHEE) model for velocity-gradient evolution.</li><li>Combines phenomenological closures for pressure-Hessian dynamics with a neural-network closure for inviscid baroclinic tensor generation.</li><li>Adds a data-driven closure for vibrational non-equilibrium and uses a novel tensor basis that can represent non-symmetric features.</li></ul>
-          <p><b>Evidence signal:</b> The model was evaluated against direct numerical simulation across multiple turbulent Mach numbers and showed close agreement with DNS, with especially strong gains in highly compressible regimes.</p>
-          <p><b>Watch item:</b> Because the framework mixes learned and phenomenological components, robustness outside the training Mach-number range and sensitivity to tensor-basis design should be checked carefully.</p>
-          <div class="tags"><span>#ComputationalFluidDynamics</span> <span>#MachineLearning</span> <span>#CompressibleFlow</span> <span>#TurbulenceModeling</span> <span>#PhysicsInformedAI</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>53</strong></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>48</strong></div>
         <p class="date">2026-07-21</p>
         <h2>Cavitation Acoustic Perturbation Equations: A Computational Framework for Source-Resolved Multiphase Hydroacoustics</h2>
         <p class="authors">Zhi Cheng, Rajeev K. Jaiman</p>
@@ -286,18 +343,37 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.19567v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.19567v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> CAPE extends acoustic perturbation equations to cavitating multiphase flows by embedding vapor mass transfer, mixture compressibility, and pressure-rate effects so cavitation noise sources can be resolved directly in the flow field.</p>
-          <p><b>Engineering relevance:</b> This provides a practical hydroacoustic tool for predicting and localizing cavitation-induced noise in marine and hydraulic systems, including cylinders and hydrofoils.</p>
-          <ul><li>Formulate cavitation-consistent acoustic perturbation equations with phase-change and compressibility terms.</li><li>Use numerical verification on 1D wave-propagation tests with mesh/time-step refinement and a perfectly matched layer.</li><li>Apply the framework to cavitating flow past a circular cylinder and a NACA hydrofoil to identify tonal source mechanisms.</li></ul>
-          <p><b>Evidence signal:</b> Verification shows grid/time-step convergence, PML boundary-reflection suppression, and attenuation trends consistent with Stokes&#x27; sound attenuation law.</p>
-          <p><b>Watch item:</b> The framework relies on accurate cavitation and phase-change modeling, so source predictions may be sensitive to constitutive choices and numerical treatment of localized collapse events.</p>
-          <div class="tags"><span>#Cavitation</span> <span>#Hydroacoustics</span> <span>#AcousticPerturbation</span> <span>#MultiphaseFlow</span> <span>#ComputationalFluidDynamics</span></div>
+          <p><b>Key insight:</b> CAPE embeds cavitation physics directly into acoustic perturbation equations so cavitation-generated sound sources can be resolved inside the flow field.</p>
+          <p><b>Engineering relevance:</b> This gives engineers a practical way to predict, localize, and interpret hydroacoustic noise in cavitating marine and hydraulic systems.</p>
+          <ul><li>Adds vapor mass transfer, mixture compressibility, and pressure-rate effects to the acoustic equations.</li><li>Uses a source-resolved computational framework for cavitating multiphase hydroacoustics.</li><li>Applies the model to canonical 1D tests, a circular cylinder, and a NACA hydrofoil.</li></ul>
+          <p><b>Evidence signal:</b> Verification shows mesh and time-step refinement independence, PML boundary reflections are suppressed, and frequency-dependent attenuation matches Stokes&#x27; sound attenuation law.</p>
+          <p><b>Watch item:</b> The framework still depends on accurate cavitation and source-term modeling, so predictive quality may be sensitive to closure assumptions and interface-capture resolution.</p>
+          <div class="tags"><span>#Cavitation</span> <span>#Hydroacoustics</span> <span>#MultiphaseFlow</span> <span>#ComputationalFluidDynamics</span> <span>#Acoustics</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Aerodynamics</span><span>arXiv</span><strong>50</strong></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>46</strong></div>
+        <p class="date">2026-07-24</p>
+        <h2>Flow Reversal in Low-Prandtl-Number Convection via Lateral Confinement</h2>
+        <p class="authors">Zhi-Han Wu, Long Chen, Yan-Wu Cao, Liang Xue, Ming-Zhu Ai, Juan-Cheng Yang</p>
+        <p class="abstract">A prevailing consensus holds that flow reversals of the large-scale circulation (LSC) are suppressed in low-Prandtl-number (Pr) fluids, as high thermal diffusivity rapidly dissipates the energy required to fuel the corner-vortex mechanisms. Here, we report Direct Numerical Simulations of liquid metal convection (Pr=0.029) revealing that strong lateral confinement defies this consensus, enabling sustained LSC reversals. We show that confinement triggers a ``plume condensation&quot; transition, reorganizing chaotic thermal plumes into highly coherent, quasi-linear structures. A thermal dissipation analysis demonstrates that this coherence drastically reduces heat loss during transport, allowing plumes to deliver sufficient buoyancy to corner vortices to drive reversals. We map a distinct ``island of reversal&quot; in the parameter space, establishing lateral confinement as a control parameter capable of overcoming the stabilizing effects of high thermal diffusivity.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2607.21984v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.21984v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Strong lateral confinement can restore sustained large-scale circulation reversals in very low-Prandtl-number liquid-metal convection by inducing a plume-condensation transition that preserves buoyancy transport.</p>
+          <p><b>Engineering relevance:</b> This suggests confinement geometry can be used as a practical control knob for thermal mixing and flow directionality in liquid-metal cooling and other low-Pr convection systems.</p>
+          <ul><li>Direct numerical simulations of liquid-metal convection at Pr = 0.029</li><li>Systematic variation of lateral confinement to probe reversal behavior</li><li>Thermal dissipation analysis to link plume coherence with buoyancy delivery</li></ul>
+          <p><b>Evidence signal:</b> The simulations identify a distinct &quot;island of reversal&quot; in parameter space and show that confined flows organize into coherent plume structures associated with sustained LSC reversals.</p>
+          <p><b>Watch item:</b> The reversal mechanism appears sensitive to geometry and confinement strength, so the result may not generalize to all low-Pr convection configurations without further validation.</p>
+          <div class="tags"><span>#FluidMechanics</span> <span>#Turbulence</span> <span>#Convection</span> <span>#LowPrandtl</span> <span>#ComputationalFluidDynamics</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Aerodynamics</span><span>arXiv</span><strong>45</strong></div>
         <p class="date">2026-07-22</p>
         <h2>A High-Order Flux Reconstruction Actuator-Line Framework for Rotating-Blade Aerodynamics on Fixed Cartesian Grids</h2>
         <p class="authors">Abdullah Al Imran, Meilin Yu</p>
@@ -305,18 +381,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.20347v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.20347v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A high-order FR/CPR solver coupled with a rotating actuator-line model can predict VAWT blade aerodynamics accurately on fixed Cartesian grids without resolving blade geometry.</p>
-          <p><b>Engineering relevance:</b> This provides a geometry-free, computationally efficient tool for wind-turbine analysis and parametric design studies, especially for large-scale simulations.</p>
-          <ul><li>Couple FR/CPR flow solver with rotating ALM on a fixed Cartesian mesh</li><li>Project blade loads through an isotropic Gaussian kernel in a blade-attached frame</li><li>Use a modified dynamic-stall model and DMST correction for coarse-mesh inflow recovery</li></ul>
-          <p><b>Evidence signal:</b> The approach was validated against near-wake experiments and prior LES-ALM results, with the mean wake profile matching well and power coefficient within about 6% of high-fidelity LES-ALM near optimal operating conditions.</p>
-          <p><b>Watch item:</b> Accuracy depends on choosing a sufficiently resolved Gaussian projection kernel and applying the coarse-mesh induction correction appropriately; otherwise the model may drift into mesh-controlled behavior.</p>
-          <div class="tags"><span>#Aerodynamics</span> <span>#WindEnergy</span> <span>#ActuatorLineModel</span> <span>#FluxReconstruction</span> <span>#ComputationalFluidDynamics</span></div>
+          <p><b>Key insight:</b> A high-order FR/CPR solver coupled with a rotating actuator-line model can predict VAWT aerodynamics accurately on fixed Cartesian grids without resolving blade geometry.</p>
+          <p><b>Engineering relevance:</b> This geometry-free framework offers a computationally efficient tool for wind-turbine design studies, enabling fast parametric analysis and scalable simulations for large wind-energy systems.</p>
+          <ul><li>Couple FR/CPR with a rotating actuator-line model to represent blade loading as volumetric body forces.</li><li>Project forces with an isotropic Gaussian kernel in a blade-attached frame.</li><li>Use a modified Boeing-Vertol dynamic stall model and DMST correction to recover physical inflow on coarse meshes.</li></ul>
+          <p><b>Evidence signal:</b> The method was validated against experimental near-wake measurements and LES-ALM results, with the power-coefficient curve matching high-fidelity 3D LES-ALM within 6% near optimal operating conditions.</p>
+          <p><b>Watch item:</b> Accuracy on coarse meshes depends on a mesh-resolution criterion for the Gaussian kernel and careful handling of induction feedback with DMST correction.</p>
+          <div class="tags"><span>#Aerodynamics</span> <span>#ActuatorLineModel</span> <span>#FluxReconstruction</span> <span>#WindEnergy</span> <span>#ComputationalFluidDynamics</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Aerodynamics</span><span>arXiv</span><strong>50</strong></div>
+        <div class="meta"><span>Aerodynamics</span><span>arXiv</span><strong>45</strong></div>
         <p class="date">2026-07-22</p>
         <h2>Information Transport and Observability in Compressible Aerodynamics</h2>
         <p class="authors">Bo Zhang</p>
@@ -324,88 +400,12 @@
         <div class="links"><a href="https://arxiv.org/abs/2607.20177v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.20177v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Automatic-differentiation reveals that aerodynamic information from sparse pressure sensors is transported unevenly through compressible flow, creating localized high-observability regions that help but do not fully determine inverse learning success.</p>
-          <p><b>Engineering relevance:</b> This provides a practical framework for choosing sensor locations and assessing parameter identifiability in compressible aerodynamics, especially for inverse design and flow reconstruction.</p>
-          <ul><li>Differentiable shock-capturing immersed-boundary solver</li><li>Backpropagate through the full unsteady flow to compute observability from sparse pressure measurements</li><li>Use the metric to compare sensor locations and parameter-recovery performance</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports inverse-learning experiments showing that highly observable probes usually improve recovery, but the highest-observability probe is not always the best for inference, and results vary with flow regime and airfoil geometry.</p>
-          <p><b>Watch item:</b> Observability is not identical to learnability, so sensor rankings from the metric may not directly translate to best inverse-learning performance in every case.</p>
-          <div class="tags"><span>#Aerodynamics</span> <span>#FluidMechanics</span> <span>#Observability</span> <span>#AutomaticDifferentiation</span> <span>#InverseDesign</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>47</strong></div>
-        <p class="date">2026-07-23</p>
-        <h2>A general synthetic iterative solver for axisymmetric rarefied gas and electrostatic charged-particle flows</h2>
-        <p class="authors">Yifan Wen, Lei Wu</p>
-        <p class="abstract">An axisymmetric general synthetic iterative scheme (AxiGSIS) is proposed to simulate rarefied gas flows and charged particle transport under prescribed electrostatic fields. This solver adopts a finite-volume discrete velocity method defined over the two-dimensional axisymmetric meridian plane paired with a three dimensional molecular velocity space. Under the GSIS framework, the kinetic solver computes nonequilibrium stress and heat flux, which are subsequently imported as corrective source terms into the macroscopic synthetic system. Fast iterative updates of low order flow primitive variables are performed on this macroscopic system, whose corrected flow fields are then fed back to the kinetic solver. This bidirectional coupling enables rapid propagation of macroscopic information and substantially accelerates steady state convergence, particularly in near continuum flow regimes. Four benchmark flows are examined: the Taylor Couette flow, neutral nozzle expansion flow, charged particle flow past an electrostatic sphere, and electrostatically accelerated charged-particle nozzle flow. Results show that AxiGSIS reproduces the reference kinetic solutions and accurately captures axisymmetric flow physics and charged-particle responses to prescribed electrostatic fields. Utilizing fewer spatial cells and iteration steps, AxiGSIS substantially cuts computational overhead relative to conventional kinetic iterations, particularly for low and moderate Knudsen number flows.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.21277v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.21277v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> The paper introduces AxiGSIS, an axisymmetric synthetic iterative solver that tightly couples kinetic and macroscopic updates to speed convergence in rarefied gas and charged-particle flows.</p>
-          <p><b>Engineering relevance:</b> It offers a faster way to simulate axisymmetric microscale flows under electrostatic forcing, reducing iteration cost while preserving kinetic accuracy.</p>
-          <ul><li>Finite-volume discrete velocity method on a 2D axisymmetric meridian plane with 3D molecular velocity space</li><li>Kinetic solver computes stress and heat flux, then passes them as correction terms to a synthetic macroscopic system</li><li>Bidirectional feedback updates primitive variables rapidly and feeds the corrected fields back to the kinetic solver</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports benchmark validation on four flows, showing agreement with reference kinetic solutions and fewer spatial cells and iterations, especially at low and moderate Knudsen numbers.</p>
-          <p><b>Watch item:</b> Performance gains may depend on accurate kinetic-to-macroscopic source coupling and careful implementation for strongly non-equilibrium cases.</p>
-          <div class="tags"><span>#RarefiedGas</span> <span>#AxisymmetricFlow</span> <span>#SyntheticIterativeScheme</span> <span>#DiscreteVelocityMethod</span> <span>#ComputationalFluidDynamics</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>46</strong></div>
-        <p class="date">2026-07-20</p>
-        <h2>A machine-learned probability distribution in the phase space of turbulent channel flow for synthetic turbulence and flow reconstruction</h2>
-        <p class="authors">Frederik Aerts, Dirk Nuyens, Johan Meyers</p>
-        <p class="abstract">Although a complete characterisation of the probability distribution in the phase space of turbulent flows remains elusive, accurately sampling this distribution is essential for both synthetic turbulence generation and turbulent flow reconstruction. Motivated by these applications, we examine to what extent a machine-learned distribution can approximate the physical invariant distribution of turbulent channel flow at $\mathrm{Re}_τ=180$. We assess three important properties of the approximation: physical ensemble statistics, consistent conditional sampling, and dynamical invariance. To this end, a flow-based generative model is trained on a minimal conditional flow unit, which we define as the smallest domain outside which conditional fields, given a single observation at the domain centre, are indistinguishable from unconditional fields in terms of mean-square discrepancy to other conditional fields. We also introduce a consistent procedure for sampling from the conditional learned distribution. Comparisons with direct numerical simulation show that synthetic turbulent fields reproduce key statistical and dynamical features of turbulence, including intermittency and nonlinear energy transfer. The consistency of conditional sampling is demonstrated in a flow reconstruction problem, and subsequently used to generate synthetic turbulent velocity fields on a large domain. When adopted as initial conditions in direct numerical simulations, these fields yield physical and statistically stationary ensemble statistics, indicating that the learned distribution provides a good approximation to the natural distribution of the turbulent dynamical system.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.18058v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.18058v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A flow-based machine-learned probability distribution can closely approximate the natural invariant distribution of turbulent channel flow, enabling realistic synthetic turbulence generation and flow reconstruction.</p>
-          <p><b>Engineering relevance:</b> This provides a practical route to generate physically consistent turbulent fields for simulation initialization, reduced-cost uncertainty studies, and data-driven reconstruction from sparse observations.</p>
-          <ul><li>Train a flow-based generative model on a minimal conditional flow unit for channel flow at Re_τ = 180.</li><li>Sample both unconditional and conditional turbulent fields using a consistent conditional sampling procedure.</li><li>Check physical ensemble statistics, conditional consistency, and dynamical invariance against direct numerical simulation.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports agreement with direct numerical simulation in key statistics and dynamics, including intermittency, nonlinear energy transfer, and stationary ensemble behavior when learned fields are used as DNS initial conditions.</p>
-          <p><b>Watch item:</b> Results are demonstrated for turbulent channel flow at Re_τ = 180, so generalization to other Reynolds numbers, geometries, or higher-dimensional flows still needs validation.</p>
-          <div class="tags"><span>#Turbulence</span> <span>#MachineLearning</span> <span>#FlowReconstruction</span> <span>#SyntheticTurbulence</span> <span>#ComputationalFluidDynamics</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>46</strong></div>
-        <p class="date">2026-07-20</p>
-        <h2>Transition to chaos in two-dimensional Rayleigh-Bénard convection: the role of the magnetic field</h2>
-        <p class="authors">Francis F. Franco, Gabriel de T. Paula, Roman Chertovskih, Dalton N. Oliveira, Erico L. Rempel</p>
-        <p class="abstract">The impact of an externally imposed magnetic field on numerical simulations of two-dimensional Rayleigh-Bénard convection (RBC) is investigated. Initially, the RBC model is examined in the absence of a magnetic field to establish a baseline. Then, a background magnetic field is introduced, and its influence on the transition to chaos is explored. For the purely hydrodynamic case and a range of the reduced Rayleigh number, the system exhibits traveling rolls which, after an attractor-merging crisis, give way to chaotic traveling rolls. Upon imposing a background magnetic field, there is a notable increase in the occurrence of traveling roll dynamics. Furthermore, the presence of the magnetic field favors the splitting/breaking of convective rolls, indicating a possible mechanism for transition to two-dimensional turbulence, with the structure of the convection cell being disrupted. A detailed analysis of the velocity field reveals that the collision between a saddle point and the center of a convective roll restores the system&#x27;s original topology, with two symmetric kinetic vortices. During this collision, a magnetic vortex splits in two as a result of a magnetic reconnection. This behavior occurs intermittently in time.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.17918v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.17918v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> An imposed magnetic field alters two-dimensional Rayleigh-Bénard convection by promoting traveling-roll dynamics and intermittent roll splitting, which can accelerate the transition toward chaos and two-dimensional turbulence.</p>
-          <p><b>Engineering relevance:</b> This suggests magnetic control can be used to influence flow organization and stability in thermal convection systems relevant to heat transfer, MHD devices, and turbulence mitigation or triggering.</p>
-          <ul><li>Numerical simulations of 2D Rayleigh-Bénard convection</li><li>Baseline comparison without magnetic field, then with a background magnetic field</li><li>Dynamical/topological analysis of rolls, vortices, and reconnection events</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports a range of reduced Rayleigh numbers where traveling rolls transition through an attractor-merging crisis to chaotic traveling rolls, with magnetic-field cases showing more roll splitting/breaking and intermittent reconnection-driven topology changes.</p>
-          <p><b>Watch item:</b> The results are based on two-dimensional simulations, so extension to fully three-dimensional convection may change the instability pathways and the role of magnetic reconnection.</p>
-          <div class="tags"><span>#RayleighBenard</span> <span>#Magnetohydrodynamics</span> <span>#TransitionToChaos</span> <span>#Turbulence</span> <span>#Convection</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>45</strong></div>
-        <p class="date">2026-07-21</p>
-        <h2>svMultiPhysics: a finite element-based solver for cardiovascular simulations</h2>
-        <p class="authors">David Codoni, Sujal Dave, David W. Parker, Aaron L. Brown, Javiera Jilberto, Han Zhao</p>
-        <p class="abstract">Heart disease remains the leading cause of death in the United States, motivating extensive efforts to improve its diagnosis, treatment, and prevention. Over the past decade, computational modeling has emerged as a powerful tool to advance cardiovascular research by enabling detailed, patient-specific studies of cardiac physiology and pathology. svMultiPhysics is an open-source, parallel finite element solver written in C++ specifically designed for multiphysics cardiovascular problems. It provides a unified framework for simulating the partial differential equations that govern solid mechanics, fluid dynamics, diffusion, and cardiac electrophysiology. These equations can be solved independently or in a coupled fashion, allowing researchers to investigate interactions between physical processes in a modular yet integrated way. The solver&#x27;s main strength lies in its ability to seamlessly couple multiple physics modules, enabling the study of complex, highly nonlinear systems. For example, svMultiPhysics can capture the interplay between cardiac electrophysiology, myocardial tissue mechanics, and blood flow dynamics, processes that are essential to understanding vascular and cardiac physiology and function in health and disease. Preliminary GPU-enabled simulations show up to approximately $30\times$ wall-clock speedup for selected linear solver configurations over CPU-based simulations. By offering a robust, extensible, and freely available platform, svMultiPhysics empowers researchers to explore multiphysics problems in cardiovascular science. As the primary 3D solver in the SimVascular open source project, it forms a key component of an end-to-end open source software ecosystem for image based patient specific modeling in the cardiovascular system. It is maintained and openly developed on GitHub, fostering transparency, reproducibility, and collaboration.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2607.19631v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2607.19631v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> svMultiPhysics is an open-source finite element solver that unifies cardiovascular solid, fluid, diffusion, and electrophysiology simulations in a modular multiphysics framework.</p>
-          <p><b>Engineering relevance:</b> It helps researchers run patient-specific cardiovascular studies in a single platform, supporting more realistic modeling of cardiac and vascular interactions for diagnosis and treatment research.</p>
-          <ul><li>C++ parallel finite element solver for PDE-based cardiovascular modeling</li><li>Supports independent or coupled simulation of mechanics, flow, diffusion, and electrophysiology</li><li>Designed for seamless module coupling in the SimVascular open-source ecosystem</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports preliminary GPU-enabled runs achieving up to about 30× wall-clock speedup for selected linear solver configurations compared with CPU-based simulations.</p>
-          <p><b>Watch item:</b> The reported speedup is preliminary and limited to selected linear solver setups, so performance may vary across full coupled workflows and problem sizes.</p>
-          <div class="tags"><span>#ComputationalFluidDynamics</span> <span>#CardiovascularSimulation</span> <span>#FiniteElementMethod</span> <span>#Multiphysics</span> <span>#OpenSourceSci</span></div>
+          <p><b>Key insight:</b> Automatic differentiation reveals that aerodynamic information from sparse pressure probes is transported unevenly through compressible flow, creating localized regions where hidden parameters are most observable.</p>
+          <p><b>Engineering relevance:</b> This provides a practical framework for choosing informative sensor locations and improving inverse modeling of aerodynamic systems from limited pressure data.</p>
+          <ul><li>Differentiate through a shock-capturing immersed-boundary flow solver.</li><li>Compute an observability metric from gradient sensitivity of pressure signals to unknown parameters.</li><li>Use inverse-learning tests to compare observability with actual parameter-recovery performance.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports inverse-learning experiments across different flow regimes and airfoil geometries, showing that observability patterns and convergence behavior vary substantially.</p>
+          <p><b>Watch item:</b> High observability does not always mean best parameter inference, so sensor selection should be validated with task-specific inverse-learning tests.</p>
+          <div class="tags"><span>#Aerodynamics</span> <span>#Observability</span> <span>#AutomaticDifferentiation</span> <span>#InverseLearning</span> <span>#FluidMechanics</span></div>
         </section>
       </article>
     </section>
