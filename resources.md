@@ -1,17 +1,33 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-07-27
+Generated: 2026-07-28
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Neptuna: A Comprehensive Machine Learning Framework for Benchmarking Complex Multiphase Flows
 
 - Date: 2026-07-24
 - Category: Multiphase Flow
-- arXiv: https://arxiv.org/abs/2607.22280v1
-- PDF: https://arxiv.org/pdf/2607.22280v1
+- arXiv: https://arxiv.org/abs/2607.22280v2
+- PDF: https://arxiv.org/pdf/2607.22280v2
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-24-arxiv-neptuna_a_comprehensive_machine_learning_framework_for_benchmarking_complex_multiphase_flo_infographic.json
 
-## 2. IteraSim RAG: A Multi-Stage Retrieval-Augmented Agentic Back-End for OpenFOAM-Based Computational Fluid Dynamics
+## 2. Dynamics of fluid-fluid displacements in a model rough fracture beyond the quasistatic limit: A spectral approach
+
+- Date: 2026-07-26
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2607.23759v1
+- PDF: https://arxiv.org/pdf/2607.23759v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-26-arxiv-dynamics_of_fluid_fluid_displacements_in_a_model_rough_fracture_beyond_the_quasistatic_lim_infographic.json
+
+## 3. The balance between compactness and forecast accuracy of data-driven latent-space reduced-order models in controlled wake flows
+
+- Date: 2026-07-27
+- Category: CFD Surrogates
+- arXiv: https://arxiv.org/abs/2607.24569v1
+- PDF: https://arxiv.org/pdf/2607.24569v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-27-arxiv-the_balance_between_compactness_and_forecast_accuracy_of_data_driven_latent_space_reduced_infographic.json
+
+## 4. IteraSim RAG: A Multi-Stage Retrieval-Augmented Agentic Back-End for OpenFOAM-Based Computational Fluid Dynamics
 
 - Date: 2026-07-22
 - Category: Turbulence
@@ -19,7 +35,39 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.20346v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-22-arxiv-iterasim_rag_a_multi_stage_retrieval_augmented_agentic_back_end_for_openfoam_based_computa_infographic.json
 
-## 3. Label-Free Finite-Volume-Residual Training of Attention Graph Neural Networks for Coupled Thermo-Fluid Fields
+## 5. Physics-informed token transformer methodology for nonlinear balance laws. I. Schwarzschild--Burgers fluid flows
+
+- Date: 2026-07-25
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2607.23143v1
+- PDF: https://arxiv.org/pdf/2607.23143v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-25-arxiv-physics_informed_token_transformer_methodology_for_nonlinear_balance_laws_i_schwarzschild_infographic.json
+
+## 6. Adjoint Sensitivity Maps for Passive Flow Control Around Rotating Circular Cylinders Across a Wide Operating Envelope
+
+- Date: 2026-07-26
+- Category: CFD Surrogates
+- arXiv: https://arxiv.org/abs/2607.23831v1
+- PDF: https://arxiv.org/pdf/2607.23831v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-26-arxiv-adjoint_sensitivity_maps_for_passive_flow_control_around_rotating_circular_cylinders_acros_infographic.json
+
+## 7. No Free Lunch in Flow Surrogates under Time-Varying Boundary Conditions: A Two-Regime Study
+
+- Date: 2026-07-26
+- Category: CFD Surrogates
+- arXiv: https://arxiv.org/abs/2607.23667v1
+- PDF: https://arxiv.org/pdf/2607.23667v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-26-arxiv-no_free_lunch_in_flow_surrogates_under_time_varying_boundary_conditions_a_two_regime_study_infographic.json
+
+## 8. A Modified Moving Reference Frame Method for Propeller Resolution
+
+- Date: 2026-07-27
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2607.24630v1
+- PDF: https://arxiv.org/pdf/2607.24630v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-27-arxiv-a_modified_moving_reference_frame_method_for_propeller_resolution_infographic.json
+
+## 9. Label-Free Finite-Volume-Residual Training of Attention Graph Neural Networks for Coupled Thermo-Fluid Fields
 
 - Date: 2026-07-22
 - Category: Turbulence
@@ -27,7 +75,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.20321v2
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-22-arxiv-label_free_finite_volume_residual_training_of_attention_graph_neural_networks_for_coupled_infographic.json
 
-## 4. PRIMS: Physics-guided Representation for Fluid Identification in Multimodal Sensing
+## 10. PRIMS: Physics-guided Representation for Fluid Identification in Multimodal Sensing
 
 - Date: 2026-07-24
 - Category: Turbulence
@@ -35,7 +83,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.22422v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-24-arxiv-prims_physics_guided_representation_for_fluid_identification_in_multimodal_sensing_infographic.json
 
-## 5. Neural Ordinary Differential Equations for Oscillatory Flows in Aeroelasticity with Application to Transonic Buffet
+## 11. Neural Ordinary Differential Equations for Oscillatory Flows in Aeroelasticity with Application to Transonic Buffet
 
 - Date: 2026-07-24
 - Category: Aerodynamics
@@ -43,15 +91,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.22402v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-24-arxiv-neural_ordinary_differential_equations_for_oscillatory_flows_in_aeroelasticity_with_applic_infographic.json
 
-## 6. Critical assessment of RANS Models for Turbulent Heat Transfer in Low-Prandtl-Number Forced Convection
-
-- Date: 2026-07-24
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2607.22246v1
-- PDF: https://arxiv.org/pdf/2607.22246v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-24-arxiv-critical_assessment_of_rans_models_for_turbulent_heat_transfer_in_low_prandtl_number_force_infographic.json
-
-## 7. Preferential and differential diffusion in RANS simulation of lean hydrogen flames with tabulated chemistry
+## 12. Preferential and differential diffusion in RANS simulation of lean hydrogen flames with tabulated chemistry
 
 - Date: 2026-07-21
 - Category: Turbulence
@@ -59,7 +99,55 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.18993v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-21-arxiv-preferential_and_differential_diffusion_in_rans_simulation_of_lean_hydrogen_flames_with_ta_infographic.json
 
-## 8. A formal log(Re)-cost framework for the engineering turbulence problem
+## 13. The real butterfly effect: from the pop culture to mathematics and physics
+
+- Date: 2026-07-27
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2607.24715v1
+- PDF: https://arxiv.org/pdf/2607.24715v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-27-arxiv-the_real_butterfly_effect_from_the_pop_culture_to_mathematics_and_physics_infographic.json
+
+## 14. Critical assessment of RANS Models for Turbulent Heat Transfer in Low-Prandtl-Number Forced Convection
+
+- Date: 2026-07-24
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2607.22246v1
+- PDF: https://arxiv.org/pdf/2607.22246v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-24-arxiv-critical_assessment_of_rans_models_for_turbulent_heat_transfer_in_low_prandtl_number_force_infographic.json
+
+## 15. Sleep-related forcing of cerebrospinal fluid streaming transport through the third ventricle
+
+- Date: 2026-07-27
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2607.24501v1
+- PDF: https://arxiv.org/pdf/2607.24501v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-27-arxiv-sleep_related_forcing_of_cerebrospinal_fluid_streaming_transport_through_the_third_ventric_infographic.json
+
+## 16. Bubble growth on arrays of micro-electrodes
+
+- Date: 2026-07-27
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2607.24286v1
+- PDF: https://arxiv.org/pdf/2607.24286v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-27-arxiv-bubble_growth_on_arrays_of_micro_electrodes_infographic.json
+
+## 17. Influence of a vertical-wall leading edge on bouncing and escape bubble rising regimes
+
+- Date: 2026-07-27
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2607.24248v1
+- PDF: https://arxiv.org/pdf/2607.24248v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-27-arxiv-influence_of_a_vertical_wall_leading_edge_on_bouncing_and_escape_bubble_rising_regimes_infographic.json
+
+## 18. Central-Hermite Sensing and Collision for Frame-Robust Order-Resolved Relaxation on D3Q125
+
+- Date: 2026-07-26
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2607.23629v1
+- PDF: https://arxiv.org/pdf/2607.23629v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-26-arxiv-central_hermite_sensing_and_collision_for_frame_robust_order_resolved_relaxation_on_d3q125_infographic.json
+
+## 19. A formal log(Re)-cost framework for the engineering turbulence problem
 
 - Date: 2026-07-22
 - Category: Turbulence
@@ -67,98 +155,10 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2607.20199v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-22-arxiv-a_formal_log_re_cost_framework_for_the_engineering_turbulence_problem_infographic.json
 
-## 9. Explainable quantum-compressed machine learning for complex fluid flows
+## 20. A vectorial lattice Boltzmann scheme for the incompressible Navier-Stokes equations
 
-- Date: 2026-07-23
-- Category: CFD Surrogates
-- arXiv: https://arxiv.org/abs/2607.21688v1
-- PDF: https://arxiv.org/pdf/2607.21688v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-23-arxiv-explainable_quantum_compressed_machine_learning_for_complex_fluid_flows_infographic.json
-
-## 10. Effect of free-stream turbulence on a moderate adverse pressure gradient turbulent boundary layer developing over an airfoil
-
-- Date: 2026-07-23
-- Category: Aerodynamics
-- arXiv: https://arxiv.org/abs/2607.21047v1
-- PDF: https://arxiv.org/pdf/2607.21047v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-23-arxiv-effect_of_free_stream_turbulence_on_a_moderate_adverse_pressure_gradient_turbulent_boundar_infographic.json
-
-## 11. Numerical Validation of Lyapunov-Liouville Theory and Non-Diffusive Closures in Decaying Isotropic Fluid and Scalar Turbulence
-
-- Date: 2026-07-24
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2607.22105v1
-- PDF: https://arxiv.org/pdf/2607.22105v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-24-arxiv-numerical_validation_of_lyapunov_liouville_theory_and_non_diffusive_closures_in_decaying_i_infographic.json
-
-## 12. Study of discrete boundary layer suction for transition delay
-
-- Date: 2026-07-24
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2607.22051v1
-- PDF: https://arxiv.org/pdf/2607.22051v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-24-arxiv-study_of_discrete_boundary_layer_suction_for_transition_delay_infographic.json
-
-## 13. An unfitted boundary algebraic equation method with Calderón preconditioning for 2D Stokes flow in irregular geometry
-
-- Date: 2026-07-23
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2607.21295v1
-- PDF: https://arxiv.org/pdf/2607.21295v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-23-arxiv-an_unfitted_boundary_algebraic_equation_method_with_calder_n_preconditioning_for_2d_stokes_infographic.json
-
-## 14. Fractal Scaling of Moffatt Vortices in Triangular Cavity Flow
-
-- Date: 2026-07-23
+- Date: 2026-07-27
 - Category: Physics-Informed ML
-- arXiv: https://arxiv.org/abs/2607.20976v1
-- PDF: https://arxiv.org/pdf/2607.20976v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-23-arxiv-fractal_scaling_of_moffatt_vortices_in_triangular_cavity_flow_infographic.json
-
-## 15. Pulsatile poromechanics in layered soft media controls fluid flow and solute transport: from fundamentals to brain clearance
-
-- Date: 2026-07-24
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2607.22462v1
-- PDF: https://arxiv.org/pdf/2607.22462v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-24-arxiv-pulsatile_poromechanics_in_layered_soft_media_controls_fluid_flow_and_solute_transport_fro_infographic.json
-
-## 16. Bayesian finite element regression for vascular flow reconstruction with quantified uncertainty
-
-- Date: 2026-07-22
-- Category: Physics-Informed ML
-- arXiv: https://arxiv.org/abs/2607.20224v1
-- PDF: https://arxiv.org/pdf/2607.20224v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-22-arxiv-bayesian_finite_element_regression_for_vascular_flow_reconstruction_with_quantified_uncert_infographic.json
-
-## 17. Cavitation Acoustic Perturbation Equations: A Computational Framework for Source-Resolved Multiphase Hydroacoustics
-
-- Date: 2026-07-21
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2607.19567v1
-- PDF: https://arxiv.org/pdf/2607.19567v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-21-arxiv-cavitation_acoustic_perturbation_equations_a_computational_framework_for_source_resolved_m_infographic.json
-
-## 18. Flow Reversal in Low-Prandtl-Number Convection via Lateral Confinement
-
-- Date: 2026-07-24
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2607.21984v1
-- PDF: https://arxiv.org/pdf/2607.21984v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-24-arxiv-flow_reversal_in_low_prandtl_number_convection_via_lateral_confinement_infographic.json
-
-## 19. A High-Order Flux Reconstruction Actuator-Line Framework for Rotating-Blade Aerodynamics on Fixed Cartesian Grids
-
-- Date: 2026-07-22
-- Category: Aerodynamics
-- arXiv: https://arxiv.org/abs/2607.20347v1
-- PDF: https://arxiv.org/pdf/2607.20347v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-22-arxiv-a_high_order_flux_reconstruction_actuator_line_framework_for_rotating_blade_aerodynamics_o_infographic.json
-
-## 20. Information Transport and Observability in Compressible Aerodynamics
-
-- Date: 2026-07-22
-- Category: Aerodynamics
-- arXiv: https://arxiv.org/abs/2607.20177v1
-- PDF: https://arxiv.org/pdf/2607.20177v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-22-arxiv-information_transport_and_observability_in_compressible_aerodynamics_infographic.json
+- arXiv: https://arxiv.org/abs/2607.24059v1
+- PDF: https://arxiv.org/pdf/2607.24059v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-07-27-arxiv-a_vectorial_lattice_boltzmann_scheme_for_the_incompressible_navier_stokes_equations_infographic.json
