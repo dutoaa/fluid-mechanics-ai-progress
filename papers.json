@@ -25,29 +25,29 @@
         "url": "https://arxiv.org/pdf/2607.22280v2"
       }
     ],
-    "score": 80,
+    "score": 75,
     "infographic": {
-      "key_insight": "Neptuna introduces the first large-scale benchmark for shock-driven compressible multiphase flows and shows that no single surrogate model or loss wins across all cases, but composite losses and SoftAdapt improve interface and spectral fidelity.",
-      "engineering_relevance": "The framework gives researchers a realistic testbed for building and comparing machine learning surrogates for bubble collapse and droplet breakup in compressible multiphase systems.",
+      "key_insight": "Neptuna introduces the first large-scale benchmark for shock-driven compressible multiphase flows and shows that model performance depends strongly on the dataset, metric, and loss design rather than any single architecture dominating.",
+      "engineering_relevance": "The framework gives engineers a realistic way to compare surrogate models for complex multiphase phenomena like bubble collapse and droplet breakup, helping guide model choice for predictive design and simulation acceleration.",
       "method": [
-        "Benchmarking on 2.4 TB of 2D and 3D high-fidelity datasets for shock-induced bubble collapse and droplet breakup",
-        "Comparison of convolutional, spectral, transformer-based, and pre-trained PDE foundation models",
-        "Training with MSE plus Sobolev, interface-aware, and structure-aware losses, with SoftAdapt and GradNorm for adaptive balancing"
+        "Built a 2.4 TB benchmark with high-fidelity 2D/3D shock-induced bubble collapse and droplet breakup data.",
+        "Compared convolutional, spectral, transformer-based, and pre-trained PDE foundation models.",
+        "Tested MSE plus composite losses (Sobolev, interface-aware, structure-aware) with SoftAdapt and GradNorm weighting."
       ],
-      "evidence_signal": "The study evaluates models with pointwise, spectral, feature-focused, structural, and physics-informed metrics across large-scale 2D and 3D datasets.",
-      "watch_item": "Results appear dataset- and metric-dependent, so improvements from composite losses or adaptive weighting may not transfer uniformly to all multiphase flow scenarios.",
+      "evidence_signal": "Evaluation spans pointwise, spectral, feature-focused, structural, and physics-informed metrics, and the abstract reports that composite losses improve interface preservation and spectral fidelity while SoftAdapt gives the most consistent gains with minimal overhead.",
+      "watch_item": "Because no single model or loss wins universally, deployment should be dataset-specific and carefully validated on interface and spectral behavior, not just MSE.",
       "hashtags": [
         "#MultiphaseFlow",
         "#MachineLearning",
-        "#CFD",
-        "#ScientificML",
-        "#Benchmarking"
+        "#SurrogateModels",
+        "#ShockDynamics",
+        "#ComputationalFluidDynamics"
       ],
       "paper_id": "2026-07-24-arxiv-neptuna_a_comprehensive_machine_learning_framework_for_benchmarking_complex_multiphase_flo",
       "paper_title": "Neptuna: A Comprehensive Machine Learning Framework for Benchmarking Complex Multiphase Flows",
       "paper_date": "2026-07-24",
       "paper_category": "Multiphase Flow",
-      "generated_at": "2026-07-28T10:38:41",
+      "generated_at": "2026-07-29T10:41:52",
       "generator": "openai"
     }
   },
@@ -76,29 +76,29 @@
         "url": "https://arxiv.org/pdf/2607.23759v1"
       }
     ],
-    "score": 76,
+    "score": 71,
     "infographic": {
-      "key_insight": "A spectral interface-evolution model captures fluid-fluid displacement in rough fractures beyond the quasistatic limit and shows that viscosity changes relaxation dynamics without changing the total dissipated energy.",
-      "engineering_relevance": "This enables faster, multiscale prediction of hysteresis and dissipation in porous and fractured media, useful for upscaling flow behavior in subsurface and industrial transport systems.",
+      "key_insight": "A spectral interface-evolution model captures fluid-fluid displacement and energy dissipation in rough fractures beyond the quasistatic limit, linking microscale Haines jumps to macroscale hysteresis.",
+      "engineering_relevance": "This provides a computationally efficient way to predict retention hysteresis and dissipation in heterogeneous porous and fractured media, with direct relevance to flow control and upscaling.",
       "method": [
-        "Spectral computational approach for interface evolution and energy dissipation",
-        "Validated against CFD simulations and experiments",
-        "Applied to a single-defect fracture and random roughness cases"
+        "Developed a spectral computational approach for interface evolution and dissipation.",
+        "Validated against CFD simulations and experiments.",
+        "Applied the model to a single defect and random roughness to probe multiscale dynamics."
       ],
-      "evidence_signal": "The abstract reports validation via CFD and experiments, plus computational tests showing nontrivial dynamics over many orders of magnitude in time.",
-      "watch_item": "The approach is demonstrated on a model imperfect Hele-Shaw cell, so extension to more complex real fractures may require additional geometric and physical modeling.",
+      "evidence_signal": "The abstract reports validation by comparison with CFD and experiments, and demonstrates dynamics spanning many orders of magnitude in time.",
+      "watch_item": "The approach is demonstrated on a model rough Hele-Shaw fracture, so extending it to fully realistic 3D porous systems may require additional assumptions and validation.",
       "hashtags": [
         "#FluidMechanics",
         "#PorousMedia",
-        "#FractureFlow",
-        "#MultiscaleModeling",
+        "#InterfacialFlow",
+        "#SpectralMethods",
         "#ComputationalPhysics"
       ],
       "paper_id": "2026-07-26-arxiv-dynamics_of_fluid_fluid_displacements_in_a_model_rough_fracture_beyond_the_quasistatic_lim",
       "paper_title": "Dynamics of fluid-fluid displacements in a model rough fracture beyond the quasistatic limit: A spectral approach",
       "paper_date": "2026-07-26",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-28T10:38:44",
+      "generated_at": "2026-07-29T10:41:55",
       "generator": "openai"
     }
   },
@@ -128,29 +128,29 @@
         "url": "https://arxiv.org/pdf/2607.24569v1"
       }
     ],
-    "score": 73,
+    "score": 68,
     "infographic": {
-      "key_insight": "There is a trade-off between compression and long-horizon forecast reliability: nonlinear autoencoders compress wake data better, but POD produces smoother latent dynamics that are easier to predict and more stable over time.",
-      "engineering_relevance": "For real-time active flow control, the most compact latent representation is not always the best choice; stability of the reduced dynamics can matter more than maximum reconstruction fidelity.",
+      "key_insight": "For controlled wake flows, more compact latent compression is not always better: POD produces smoother, easier-to-predict latent dynamics and more reliable long-horizon forecasts than nonlinear autoencoders.",
+      "engineering_relevance": "For real-time flow control, especially model predictive control and reinforcement learning, choosing a representation that preserves forecast stability can matter more than maximizing compression.",
       "method": [
-        "Compared POD with convolutional autoencoders and two variational autoencoders for spatial compression.",
-        "Used LSTM-based temporal predictors to forecast latent dynamics.",
-        "Tested on two actuated 2D wake flows: a simplified truck wake and the fluidic pinball."
+        "Compare POD with convolutional autoencoders and two variational autoencoders for spatial compression.",
+        "Train Long Short-Term Memory predictors on latent coordinates for two 2D actuated wakes: a simplified truck wake and the fluidic pinball.",
+        "Evaluate reconstruction quality, latent-dynamics regularity, and long-horizon forecast robustness."
       ],
-      "evidence_signal": "The abstract reports that CAEs give sharper short-term reconstructions, but their latent trajectories are more irregular, with faster long-horizon degradation and a higher chance of catastrophic divergence than POD-based ROMs.",
-      "watch_item": "Highly compressed nonlinear latent spaces may be harder to extrapolate robustly, so controller design should check long-horizon stability—not just reconstruction error.",
+      "evidence_signal": "The abstract reports that CAEs give sharper short-term reconstructions and better compression, but their latent trajectories are more irregular, with faster forecast degradation and a higher chance of catastrophic divergence than POD-based ROMs.",
+      "watch_item": "Highly compressed nonlinear latent spaces may look good in reconstruction tests yet become unstable or unreliable when extrapolated over longer control horizons.",
       "hashtags": [
-        "#ReducedOrderModel",
+        "#ReducedOrderModels",
         "#FlowControl",
-        "#WakeFlows",
         "#Autoencoders",
-        "#POD"
+        "#POD",
+        "#CFDSurrogates"
       ],
       "paper_id": "2026-07-27-arxiv-the_balance_between_compactness_and_forecast_accuracy_of_data_driven_latent_space_reduced",
       "paper_title": "The balance between compactness and forecast accuracy of data-driven latent-space reduced-order models in controlled wake flows",
       "paper_date": "2026-07-27",
       "paper_category": "CFD Surrogates",
-      "generated_at": "2026-07-28T10:38:48",
+      "generated_at": "2026-07-29T10:41:58",
       "generator": "openai"
     }
   },
@@ -180,29 +180,81 @@
         "url": "https://arxiv.org/pdf/2607.20346v1"
       }
     ],
-    "score": 70,
+    "score": 65,
     "infographic": {
-      "key_insight": "IteraSim RAG improves OpenFOAM case generation by splitting retrieval, routing, and agent roles so each part handles a distinct CFD setup problem.",
-      "engineering_relevance": "This could make open-source CFD more accessible to non-specialists by reducing errors in solver setup, boundary conditions, and turbulence-model selection.",
+      "key_insight": "IteraSim RAG improves OpenFOAM case generation by separating query expansion, retrieval routing, and agent roles so CFD inputs can be assembled more reliably than with a single flat LLM-RAG workflow.",
+      "engineering_relevance": "This matters for CFD practitioners because it lowers the barrier to creating consistent OpenFOAM dictionaries for solver setup, turbulence models, boundary conditions, and troubleshooting.",
       "method": [
-        "LLM expands each query into physics, solver-keyword, and troubleshooting variants.",
-        "Reciprocal Rank Fusion combines the ranked lists, then Maximal Marginal Relevance re-ranks candidates from an HNSW dense vector store.",
-        "A deterministic router and three-agent workflow (Architect, InputWriter, Reviewer) are backed by a canonical knowledge layer."
+        "LLM expands each request into physics, solver-keyword, and troubleshooting queries.",
+        "Reciprocal Rank Fusion merges retrieved results, then MMR re-ranks candidates from an HNSW dense vector store.",
+        "A keyword router and three agents (Architect, InputWriter, Reviewer) split workflow, drafting, and verification tasks."
       ],
-      "evidence_signal": "On a released 28-case benchmark, the system achieved 77.9% mean retrieval coverage, with parameter-modification cases exceeding 90%, and all six reference configurations completed successfully on OpenFOAM v2506.",
-      "watch_item": "Performance depends on the quality of the canonical knowledge layer and reviewer loop, so unusual or underdocumented cases may still need human oversight.",
+      "evidence_signal": "On a released 28-case benchmark, the system achieved 77.9% mean retrieval coverage, with the parameter-modification cases exceeding 90%, and all six reference configurations completed successfully in OpenFOAM v2506.",
+      "watch_item": "Performance depends on a canonical knowledge layer and a bounded Reviewer loop, so robustness to novel physics or cases outside the benchmark may still be limited.",
       "hashtags": [
-        "#CFD",
         "#OpenFOAM",
+        "#CFD",
         "#RAG",
-        "#LLM",
+        "#LLMAgents",
         "#Turbulence"
       ],
       "paper_id": "2026-07-22-arxiv-iterasim_rag_a_multi_stage_retrieval_augmented_agentic_back_end_for_openfoam_based_computa",
       "paper_title": "IteraSim RAG: A Multi-Stage Retrieval-Augmented Agentic Back-End for OpenFOAM-Based Computational Fluid Dynamics",
       "paper_date": "2026-07-22",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-28T10:38:51",
+      "generated_at": "2026-07-29T10:42:01",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-27-arxiv-steady_base_states_in_a_two_dimensional_chiral_fluid_the_chiral_stokes_cavity",
+    "arxiv_id": "2607.24279v1",
+    "date": "2026-07-27",
+    "title": "Steady base states in a two-dimensional chiral fluid. The chiral Stokes cavity",
+    "authors": "Francisco Vega Reyes",
+    "abstract": "We develop from first principles the hydrodynamics of a two-dimensional chiral fluid, i.e. one carrying a net microscopic angular-momentum (spin) field. Enforcing angular-momentum conservation without imposing stress-tensor symmetry, we derive the full form of the stress tensor and of the spin flux, and we show that the entire chiral response is generated from the classical Newtonian one by a single operation of direct physical origin --- the $90^{\\circ}$ rotation through which chirality acts, mirrored at the particle level by transverse forces (Caprini & Marini Bettolo Marconi 2025). Applied to the irreducible (deviatoric) decomposition, the rotation assigns to each classical channel a chiral partner --- pressure to chiral pressure, bulk and shear viscosities to their odd counterparts, the spin-flux gradient to its rotated image --- one coefficient and one mechanical action per channel, with no further cross-couplings. In this representation the steady base states become elementary. Quiescent states are organised by a holomorphic chiral complex potential, the mechanical and chiral pressures forming a conjugate harmonic pair subject to a topological existence condition; inhomogeneous activity forces azimuthal flows; and a boundary-driven confined flow, the chiral Stokes cavity, obeys a modified Helmholtz--Poisson system, solved in closed form in a circular domain and numerically in a square one. A single dimensionless group controls both geometries and sets the crossover from a screened, single-vortex regime to a sequence of sign-reversing vortical structures. The theory yields quantitative predictions, amenable to direct comparison with experiments on air-fluidised chiral disks (López-Castaño et al. 2022), and recovers the phenomenological frameworks of the chiral-fluid literature as particular cases.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-07-27T11:25:50Z",
+    "updated": "2026-07-27T11:25:50Z",
+    "primary_category": "cond-mat.soft",
+    "categories": [
+      "cond-mat.soft",
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.24279v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.24279v1"
+      }
+    ],
+    "score": 62,
+    "infographic": {
+      "key_insight": "The paper shows that a 2D chiral fluid can be modeled by rotating each classical hydrodynamic response by 90°, producing matched odd-chiral partners for pressure, viscosity, and spin transport.",
+      "engineering_relevance": "This gives a compact continuum model for predicting and designing chiral confined flows, including vortex patterns in cavities and other microfluidic or active-matter systems.",
+      "method": [
+        "Derive the full chiral hydrodynamics from angular-momentum conservation without assuming symmetric stress.",
+        "Use irreducible decomposition to map classical Newtonian terms to chiral counterparts via a 90° rotation.",
+        "Solve the resulting modified Helmholtz–Poisson equations for quiescent states and cavity flows in circular and square domains."
+      ],
+      "evidence_signal": "The abstract reports closed-form solutions in a circular cavity, numerical results in a square cavity, and a single dimensionless control parameter that reproduces screening and vortex sign reversals, with quantitative comparison to air-fluidized chiral-disk experiments.",
+      "watch_item": "The theory is formulated for idealized two-dimensional chiral fluids, so extending it to real finite-thickness, noisy, or strongly nonuniform experimental systems may require additional constitutive terms and validation.",
+      "hashtags": [
+        "#ChiralFluidDynamics",
+        "#ActiveMatter",
+        "#ComputationalMechanics",
+        "#Microfluidics",
+        "#VortexDynamics"
+      ],
+      "paper_id": "2026-07-27-arxiv-steady_base_states_in_a_two_dimensional_chiral_fluid_the_chiral_stokes_cavity",
+      "paper_title": "Steady base states in a two-dimensional chiral fluid. The chiral Stokes cavity",
+      "paper_date": "2026-07-27",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-07-29T10:42:05",
       "generator": "openai"
     }
   },
@@ -232,29 +284,29 @@
         "url": "https://arxiv.org/pdf/2607.23143v1"
       }
     ],
-    "score": 67,
+    "score": 62,
     "infographic": {
-      "key_insight": "PITT fuses physics priors with tokenized equation structure to accurately track shocks and preserve steady states in nonlinear balance laws.",
-      "engineering_relevance": "This offers a more reliable surrogate for wave-dominated fluid simulations where geometry, discontinuities, and long-time shock motion matter.",
+      "key_insight": "A physics-informed token transformer (PITT) combines symbolic PDE tokenization, learned operators, and exact shock-jump physics to accurately evolve nonlinear balance-law solutions with moving and stationary discontinuities.",
+      "engineering_relevance": "The method improves shock tracking and steady-state preservation for hyperbolic flow problems with geometric effects, making it promising for CFD settings where front location and long-time stability matter.",
       "method": [
-        "Tokenize the governing PDE and encode it with a Fourier neural operator.",
-        "Advance leading discontinuities using the explicit Rankine–Hugoniot shock law.",
-        "Learn a correction term for smooth regions, rarefactions, and finite-resolution effects."
+        "Tokenize the governing equation and encode it with a Fourier neural operator.",
+        "Advance leading discontinuities using the explicit Rankine–Hugoniot shock condition.",
+        "Use a learned correction term to reconstruct smooth regions, rarefactions, and finite-resolution effects."
       ],
-      "evidence_signal": "The abstract reports tests on moving shocks, stationary shocks, rarefaction waves, and Burgers-limit cases, with comparisons against a standard high-order finite-volume method.",
-      "watch_item": "Performance relies on having explicit analytical structure available, so extending the approach to problems without closed-form jump laws or steady states may be harder.",
+      "evidence_signal": "The abstract reports tests on moving shocks, stationary shocks, rarefaction waves, and long-time perturbed steady states, with comparisons against a standard high-order finite-volume method and a Burgers-limit study.",
+      "watch_item": "Performance depends on having an explicit shock law and explicit steady-state structure, so extension to systems or problems without known analytic jump conditions may be harder.",
       "hashtags": [
-        "#PhysicsInformedML",
         "#FluidMechanics",
+        "#PhysicsInformedML",
         "#ShockCapturing",
         "#NeuralOperators",
-        "#HyperbolicPDEs"
+        "#ComputationalScience"
       ],
       "paper_id": "2026-07-25-arxiv-physics_informed_token_transformer_methodology_for_nonlinear_balance_laws_i_schwarzschild",
       "paper_title": "Physics-informed token transformer methodology for nonlinear balance laws. I. Schwarzschild--Burgers fluid flows",
       "paper_date": "2026-07-25",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-28T10:38:54",
+      "generated_at": "2026-07-29T10:42:08",
       "generator": "openai"
     }
   },
@@ -284,29 +336,29 @@
         "url": "https://arxiv.org/pdf/2607.23831v1"
       }
     ],
-    "score": 66,
+    "score": 61,
     "infographic": {
-      "key_insight": "The paper maps where passive flow control around a rotating cylinder will help or hurt drag, lift, and torque using adjoint sensitivity fields, showing spinning ratio is the main driver of the topology.",
-      "engineering_relevance": "These sensitivity atlases give practical design guidance for passive devices near Flettner rotors and other rotating cylinders to improve aerodynamic performance over a broad operating range.",
+      "key_insight": "Adjoint sensitivity maps show where local passive flow-control around rotating cylinders can simultaneously reduce drag and lift, with the dominant field structure set mainly by spinning ratio rather than Reynolds number.",
+      "engineering_relevance": "The sensitivity atlas offers a practical design guide for placing passive devices near Flettner rotors and other rotating cylinders to improve aerodynamic performance over broad operating conditions.",
       "method": [
-        "Topological adjoint sensitivity analysis with a porous-medium formulation",
-        "Computed local sensitivity fields for drag, lift, and torque across Re = 1e1 to 1e7 and spinning ratio 0 to 2π",
-        "Validated with forward simulations using distributed Darcy-type source terms and a sensitivity-informed passive control structure"
+        "Topology-based adjoint sensitivity analysis over Re = 1e1 to 1e7 and spinning ratios 0 to 2π",
+        "Porous-medium formulation to compute local sensitivity fields for drag, lift, and torque",
+        "Validation with forward simulations using distributed Darcy-type sources and a sensitivity-informed passive control structure"
       ],
-      "evidence_signal": "The abstract reports validation by dedicated forward simulations and a systematic sweep over Reynolds number and spinning ratio to build and assess the sensitivity atlas.",
-      "watch_item": "The atlas is most robust over moderate operating ranges, so designs may need re-checking outside the validated envelope or when geometry/manufacturing details change.",
+      "evidence_signal": "The abstract reports dedicated forward-simulation validation and a systematic scan of the operating envelope, showing the sensitivity-field topology is largely governed by spinning ratio with comparatively weak Reynolds-number effects.",
+      "watch_item": "The maps guide passive-device placement, but performance remains contingent on how well the porous-medium sensitivity model and the real control geometry match the actual flow configuration.",
       "hashtags": [
         "#CFD",
         "#AdjointMethods",
         "#FlowControl",
         "#FlettnerRotor",
-        "#SensitivityAnalysis"
+        "#AerodynamicDesign"
       ],
       "paper_id": "2026-07-26-arxiv-adjoint_sensitivity_maps_for_passive_flow_control_around_rotating_circular_cylinders_acros",
       "paper_title": "Adjoint Sensitivity Maps for Passive Flow Control Around Rotating Circular Cylinders Across a Wide Operating Envelope",
       "paper_date": "2026-07-26",
       "paper_category": "CFD Surrogates",
-      "generated_at": "2026-07-28T10:38:58",
+      "generated_at": "2026-07-29T10:42:11",
       "generator": "openai"
     }
   },
@@ -337,29 +389,233 @@
         "url": "https://arxiv.org/pdf/2607.23667v1"
       }
     ],
-    "score": 66,
+    "score": 61,
     "infographic": {
-      "key_insight": "There is no universally best flow surrogate: the winning architecture depends on whether the target dynamics are boundary-driven and direct or self-sustained and phase-sensitive.",
-      "engineering_relevance": "For CFD deployment, surrogate choice and validation must match the flow regime, because a model that looks good on RMSE can still fail on physically important quantities like shear stress, shedding power, or timing.",
+      "key_insight": "There is no universal best surrogate for transient flows under time-varying boundary conditions; the right architecture depends on whether the flow is boundary-driven or phase-memory dominated.",
+      "engineering_relevance": "For CFD surrogates in manufacturing and vortex-shedding applications, model choice and validation should be matched to the flow physics, not just pointwise error.",
       "method": [
-        "Compared 8 surrogate models on two transient flows with time-varying boundary conditions: CMP slurry film and Kármán vortex street.",
-        "Varied two design axes: full-field vs latent representation, and one-shot vs autoregressive time prediction.",
-        "Evaluated models with five physics-aware questions: field, structure, motion, amplitude, and timing."
+        "Compared 8 surrogate architectures on two transient benchmark flows: 3D CMP slurry film and 2D Karman vortex street.",
+        "Varied two design axes: full-field vs latent-state learning, and one-shot vs autoregressive time prediction.",
+        "Evaluated models with five physics-oriented criteria: field, structure, invented motion, amplitude, and timing."
       ],
-      "evidence_signal": "On CMP, a one-shot full-field model achieved 3.2% relative error in cumulative wall shear stress; on KVS, a latent autoregressive DeepONet preserved 96% of shedding power while direct and one-shot models nearly eliminated it, and surrogates were 10^3–10^4× faster per query than the finite-element solver.",
-      "watch_item": "Training simulations are expensive, so the offline cost can delay payoff unless the surrogate is queried beyond the break-even point, and RMSE alone can select the wrong model.",
+      "evidence_signal": "A one-shot full-field model achieved 3.2% relative error on cumulative wall shear stress in CMP, while a latent autoregressive DeepONet preserved 96% of shedding power in KVS that other models nearly eliminated.",
+      "watch_item": "Offline training cost is substantial, so practical payoff depends on how many post-training queries are needed and may not generalize beyond the tested regimes.",
       "hashtags": [
-        "#CFD",
-        "#SurrogateModels",
-        "#DeepONet",
+        "#CFDSurrogates",
         "#ComputationalFluidDynamics",
-        "#PhysicsInformedAI"
+        "#DeepONet",
+        "#ReducedOrderModeling",
+        "#FlowPhysics"
       ],
       "paper_id": "2026-07-26-arxiv-no_free_lunch_in_flow_surrogates_under_time_varying_boundary_conditions_a_two_regime_study",
       "paper_title": "No Free Lunch in Flow Surrogates under Time-Varying Boundary Conditions: A Two-Regime Study",
       "paper_date": "2026-07-26",
       "paper_category": "CFD Surrogates",
-      "generated_at": "2026-07-28T10:39:01",
+      "generated_at": "2026-07-29T10:42:14",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-28-arxiv-foundations_of_a_solved_volatility_stochastic_turbulence_closure_it_hencky_kinematics_sour",
+    "arxiv_id": "2607.25536v1",
+    "date": "2026-07-28",
+    "title": "Foundations of a solved-volatility stochastic turbulence closure: Itô--Hencky kinematics, source-consistent momentum and finite-correlation realisation",
+    "authors": "Hsieh-Chen Tsai",
+    "abstract": "Most stochastic closures prescribe a covariance tensor, a noise basis or an eddy-viscosity field. This paper develops a different framework in which the displacement-volatility field is solved together with the resolved velocity. The starting point is a one-channel Itô configuration map. A local matrix-logarithm expansion gives distinct material and spatial Hencky increments, their quadratic-variation drifts and the exact pathwise volume constraint. Under constant density, one Brownian channel, pathwise isochoricity and no independent martingale in the resolved Eulerian drift, the material pull-back momentum equation is shown to be the on-shell form of the full stochastic Reynolds transport balance when the momentum-source covariation is retained. The resulting velocity--volatility--pressure system has an index-one differential--algebraic structure. Virtual power fixes the mechanical type of the stress impulse and separates work from quadratic covariation. A finite-correlation precursor then gives a Green--Kubo realisation of the solved displacement covariance. State dependence adds a Lyapunov noise-induced drift, while dynamic boundaries add reaction work and active/passive covariance compatibility conditions. The analysis also gives four limits: a non-zero Brownian transport limit cannot retain finite ordinary unresolved kinetic energy; total energy alone does not fix entropy production; wall tangency limits covariance rank rather than the number of stochastic modes; and a homogeneous decoupled Helmholtz--Stokes equation has only the trivial periodic solution. The result is a theory-complete, testable closure architecture. Developed turbulent statistics, logarithmic wall scaling and computational-fluid-dynamics validation are deliberately left to the expanded fluid-mechanics study.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-07-28T10:18:45Z",
+    "updated": "2026-07-28T10:18:45Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.25536v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.25536v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "The paper proposes a solved-volatility turbulence closure where the stochastic displacement field is computed alongside velocity, using Itô–Hencky kinematics and source-consistent momentum balance to make the closure mechanically and energetically self-consistent.",
+      "engineering_relevance": "This framework could enable more physically grounded stochastic CFD closures for turbulence, especially where volume preservation, momentum sources, and finite-correlation effects matter.",
+      "method": [
+        "Builds a one-channel Itô configuration map with local matrix-logarithm Hencky increments.",
+        "Derives pathwise isochoricity, quadratic-variation drift terms, and a momentum equation consistent with stochastic Reynolds transport.",
+        "Constructs a finite-correlation precursor with Green–Kubo-style covariance realization and index-one DAE structure."
+      ],
+      "evidence_signal": "The abstract reports analytical derivations and limit analyses rather than numerical validation; CFD validation and developed turbulent statistics are explicitly deferred to a later study.",
+      "watch_item": "The closure is mathematically intricate and appears to require careful handling of constraints, covariance compatibility, and implementation of the index-one differential-algebraic system.",
+      "hashtags": [
+        "#Turbulence",
+        "#StochasticCFD",
+        "#ClosureModeling",
+        "#FluidMechanics",
+        "#ComputationalScience"
+      ],
+      "paper_id": "2026-07-28-arxiv-foundations_of_a_solved_volatility_stochastic_turbulence_closure_it_hencky_kinematics_sour",
+      "paper_title": "Foundations of a solved-volatility stochastic turbulence closure: Itô--Hencky kinematics, source-consistent momentum and finite-correlation realisation",
+      "paper_date": "2026-07-28",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-07-29T10:42:17",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-28-arxiv-a_universal_diffuse_interface_modeling_framework_for_surfactants",
+    "arxiv_id": "2607.25453v1",
+    "date": "2026-07-28",
+    "title": "A universal diffuse interface modeling framework for surfactants",
+    "authors": "Shahab Mirjalili, Mathieu Bignolles",
+    "abstract": "We propose a universal diffuse-interface modeling framework for surfactant transport in two-phase flows, applicable to all solubility scenarios and to any conservative phase field method. The foundation of our framework is a general three-scalar non-equilibrium model governing the surfactant concentrations in each bulk phase and at the interface, which builds on our prior consistent scalar transport framework and is locally and globally conservative, leakage-free, Galilean-invariant, and reduction-consistent. Assuming thermochemical equilibrium, we derive two one-scalar models: one for a surfactant in full equilibrium between both bulk phases and the interface, and one for a surfactant confined to a single bulk phase and the interface. All models are coupled to the Navier-Stokes equations through a surface tension force that incorporates the Marangoni stress arising from non-uniform interfacial surfactant distributions. While diffuse-interface surfactant models have been developed for the Cahn-Hilliard equation and, more recently, for the conservative Allen-Cahn (CAC) equation, existing models for CAC address only the insoluble and single-phase-soluble cases, leaving the general scenario of partial solubility in both bulk phases unaddressed; furthermore, these models lack Galilean invariance and reduction consistency, and are not applicable beyond the CAC setting. The framework is validated against analytical solutions in one-dimensional transport tests, assessed for convergence in two-dimensional advection-diffusion simulations, and demonstrated in fully-coupled drop-in-shear flow simulations covering insoluble, soluble, and partially-soluble surfactant scenarios.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-07-28T08:43:36Z",
+    "updated": "2026-07-28T08:43:36Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.25453v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.25453v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "The paper introduces a universal diffuse-interface surfactant framework that handles insoluble, soluble, and partially soluble cases in two-phase flows while preserving conservation, Galilean invariance, and reduction consistency.",
+      "engineering_relevance": "This provides a more general and physically consistent way to model surfactant-driven Marangoni effects in multiphase CFD across different phase-field methods and solubility regimes.",
+      "method": [
+        "General three-scalar non-equilibrium transport model for bulk and interfacial surfactant concentrations",
+        "Thermochemical-equilibrium reduction to two one-scalar models for common solubility scenarios",
+        "Coupling to Navier-Stokes via surface-tension forcing with Marangoni stress"
+      ],
+      "evidence_signal": "The framework is validated with 1D analytical transport tests, 2D advection-diffusion convergence studies, and fully coupled drop-in-shear simulations spanning insoluble, soluble, and partially soluble cases.",
+      "watch_item": "The framework is theoretically general, but practical performance will depend on accurate parameterization and numerical robustness when coupling surfactant transport to interfacial flow dynamics.",
+      "hashtags": [
+        "#MultiphaseFlow",
+        "#Surfactants",
+        "#DiffuseInterface",
+        "#MarangoniEffect",
+        "#CFD"
+      ],
+      "paper_id": "2026-07-28-arxiv-a_universal_diffuse_interface_modeling_framework_for_surfactants",
+      "paper_title": "A universal diffuse interface modeling framework for surfactants",
+      "paper_date": "2026-07-28",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-07-29T10:42:20",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-28-arxiv-on_the_scaling_of_bubble_interactions_in_dynamic_turbulence_theoretical_numerical_and_expe",
+    "arxiv_id": "2607.25251v1",
+    "date": "2026-07-28",
+    "title": "On the scaling of bubble interactions in dynamic turbulence: theoretical, numerical, and experimental study",
+    "authors": "Vivek Kumar, Prasoon Suchandra, Shivam Prajapati, Suhas S. Jain, Cyrus K. Aidun",
+    "abstract": "This study investigates dilute bubbly decaying homogeneous isotropic turbulence at high Reynolds number using theory, direct numerical simulation, and experiments. The turbulent kinetic energy and dissipation rate follow power-law decay, while the bubble population reorganizes relative to the evolving Hinze scale. When the dissipation decays sufficiently rapidly, the Hinze scale grows faster than the characteristic bubble diameter, driving the population from super-Hinze toward sub-Hinze sizes. The system passes through a mixed regime in which coalescence dominates but breakup remains active, followed by a pure-coalescence regime. Residual breakup in the mixed regime increases the number of small bubbles and enhances coalescence, leading to faster growth of the characteristic bubble size. DNS of dilute bubble-laden turbulence shows decay exponents close to single-phase turbulence and a bubble-size distribution that shifts toward smaller diameter relative to the Hinze scale. Before the transition, the distribution exhibits two power-law ranges associated with capillary effects and inertial breakup; after the transition, it approaches a single capillary-dominated scaling. Theory and DNS predict distinct growth laws for bubble diameter in the mixed and pure-coalescence regimes, together with corresponding scalings for number density, interfacial area, and coalescence rate. These predictions are further assessed in a spatially developing pump-driven bubbly duct flow at higher Reynolds number. Despite confinement, inhomogeneity, and wall production, the measured trends agree with the theoretical and DNS-based scalings. The results identify Hinze-scale drift as the organizing mechanism for bubble interactions in both idealized and practical decaying turbulent flows, and provide guidance for population-balance and interfacial-area-transport models.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-07-28T03:53:06Z",
+    "updated": "2026-07-28T03:53:06Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.25251v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.25251v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "As decaying turbulence weakens, the Hinze scale can outgrow bubble sizes, reorganizing the bubble population from breakup-influenced to coalescence-dominated dynamics.",
+      "engineering_relevance": "This provides scaling laws for predicting bubble size, interfacial area, and coalescence in bubbly flows relevant to reactors, ducts, and multiphase turbulence models.",
+      "method": [
+        "Theory for bubble-interaction and scaling laws in decaying homogeneous isotropic turbulence",
+        "Direct numerical simulation of dilute bubbly turbulence",
+        "Experiments in a spatially developing pump-driven bubbly duct flow"
+      ],
+      "evidence_signal": "Theory, DNS, and experiments all show power-law decay of turbulent energy/dissipation and consistent transitions in bubble-size distributions and growth regimes.",
+      "watch_item": "The duct-flow validation is promising but still affected by confinement, inhomogeneity, and wall-driven production, so the idealized scalings may need calibration before deployment.",
+      "hashtags": [
+        "#Turbulence",
+        "#BubblyFlow",
+        "#HinzeScale",
+        "#DNS",
+        "#MultiphaseFlow"
+      ],
+      "paper_id": "2026-07-28-arxiv-on_the_scaling_of_bubble_interactions_in_dynamic_turbulence_theoretical_numerical_and_expe",
+      "paper_title": "On the scaling of bubble interactions in dynamic turbulence: theoretical, numerical, and experimental study",
+      "paper_date": "2026-07-28",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-07-29T10:42:24",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-27-arxiv-optimal_data_driven_wall_models_for_efficient_large_eddy_simulations_of_metastable_von_k_r",
+    "arxiv_id": "2607.25048v1",
+    "date": "2026-07-27",
+    "title": "Optimal, Data-Driven Wall Models for Efficient Large Eddy Simulations of Metastable von Kármán Flows",
+    "authors": "Quentin Malé, Lucas Amoudruz, Daniel Bulgarini, Shuolin Xiao, Charles Meneveau, Fabrizio Bisetti",
+    "abstract": "The von Kármán turbulent swirling flow exhibits intriguing large-scale metastable dynamics, including low-frequency state switching. The study of state switching demands long-duration high-fidelity simulations at high Reynolds numbers that capture the flow generated by the impellers. Blade-resolved Large Eddy Simulations (LES) are computationally prohibitive, limiting access to these slow dynamics. Here, we develop a model for the action of the impellers on the flow using experimental data from Particle Image Velocimetry (PIV) and torque measurements of the von Kármán flow. The impeller-region velocity is parametrized via B-splines and coupled to the LES through momentum forcing. An initial set of B-spline coefficients is inferred using the Optimizing a DIscrete Loss (ODIL) framework constrained by the Reynolds-Averaged Navier-Stokes (RANS) equations, PIV measurements in the optically accessible portion of the device, and impeller torque measurements. The coefficients are then refined by the Covariance Matrix Adaptation Evolution Strategy (CMA-ES), which minimizes the discrepancy between the LES time-averaged velocity and torque and their experimental counterparts. Using the data-driven impeller model, we perform long-duration LES of the von Kármán flow. We find that the simulation reproduces the mean flow in the bulk and displays metastable state-switching dynamics. We further show that these metastable states are not axisymmetric and consist of an alternating four-cell flow pattern that slowly rotates around the axis of the cylindrical vessel. The proposed approach provides a practical and computationally efficient route to investigating large-scale dynamics in impeller-driven turbulent flows.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-07-27T20:15:54Z",
+    "updated": "2026-07-27T20:15:54Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.25048v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.25048v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "A data-driven impeller wall model lets LES of von Kármán flow reproduce long-time mean behavior and reveal slow metastable state switching that blade-resolved simulations cannot reach affordably.",
+      "engineering_relevance": "This provides a practical reduced-cost path for simulating high-Re turbulent impeller-driven systems when direct resolution of rotating hardware is too expensive.",
+      "method": [
+        "Parametrize impeller-region velocity with B-splines and apply it as momentum forcing in LES.",
+        "Initialize coefficients with ODIL constrained by RANS, PIV data, and torque measurements.",
+        "Refine the model with CMA-ES to match LES time-averaged velocity and torque to experiments."
+      ],
+      "evidence_signal": "The model is evaluated against experimental PIV and torque data and then used in long-duration LES, which reproduces the bulk mean flow and metastable switching dynamics.",
+      "watch_item": "Because the impeller action is inferred from limited experimental observables and optimized for averages, the model may be sensitive to measurement coverage and may not fully capture all instantaneous near-impeller physics.",
+      "hashtags": [
+        "#Turbulence",
+        "#LargeEddySimulation",
+        "#WallModeling",
+        "#DataDrivenModeling",
+        "#VonKarmanFlow"
+      ],
+      "paper_id": "2026-07-27-arxiv-optimal_data_driven_wall_models_for_efficient_large_eddy_simulations_of_metastable_von_k_r",
+      "paper_title": "Optimal, Data-Driven Wall Models for Efficient Large Eddy Simulations of Metastable von Kármán Flows",
+      "paper_date": "2026-07-27",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-07-29T10:42:26",
       "generator": "openai"
     }
   },
@@ -389,29 +645,29 @@
         "url": "https://arxiv.org/pdf/2607.24630v1"
       }
     ],
-    "score": 65,
+    "score": 60,
     "infographic": {
-      "key_insight": "A smooth spatial blending of the rotating-frame speed in a modified MRF method removes the artificial jump at the rotating–stationary interface while preserving the low cost of MRF calculations.",
-      "engineering_relevance": "This offers a practical middle ground between expensive sliding-interface simulations and less physical classical MRF for predicting propeller–hull interaction and self-propulsion in ship CFD.",
+      "key_insight": "A smoothly blended modified Moving Reference Frame (mMRF) removes the artificial discontinuity at the rotating-stationary interface while preserving the low cost of partially rotating propeller simulations.",
+      "engineering_relevance": "This offers a practical CFD alternative for propeller-hull interaction studies where full sliding-interface motion is too expensive but classical MRF is too crude for self-propulsion predictions.",
       "method": [
-        "Scale the reference-frame rotation rate with a spatially varying decay function from 1 near the propeller to 0 at the domain interface.",
-        "Derive the modified governing equations and implement them in the FreSCo+ RANS solver.",
-        "Verify the formulation against Taylor–Couette flow and apply it to open-water propeller and Japan Bulk Carrier self-propulsion cases."
+        "Scale the frame rotation rate with a spatial function that decays from 1 near the propeller to 0 at the interface.",
+        "Derive the governing equations for the blended rotating frame and implement them in the FreSCo+ RANS solver.",
+        "Verify the formulation with the analytical Taylor--Couette solution and apply it to open-water and ship self-propulsion cases."
       ],
-      "evidence_signal": "The abstract reports accurate agreement in key propulsion metrics (n, KT, KQ, 1-t, 1-wT, etaR) and shows reduced interface discontinuities and flow artifacts, especially at large MRF fractions.",
-      "watch_item": "The method still depends on how the decay function and rotating-region extent are chosen, so poor parameterization could leave residual artifacts or weaken the physical fidelity of the interface.",
+      "evidence_signal": "The abstract reports verification against Taylor--Couette and application to open-water propeller and Japan Bulk Carrier self-propulsion simulations, with mMRF matching key integral propulsion metrics while reducing local interface artifacts.",
+      "watch_item": "The approach still relies on a user-defined blending region/function, so performance and smoothness may depend on how that transition is chosen.",
       "hashtags": [
         "#CFD",
-        "#ShipHydrodynamics",
-        "#PropellerAnalysis",
+        "#PropellerHydrodynamics",
         "#MovingReferenceFrame",
-        "#Turbulence"
+        "#RANS",
+        "#MarineEngineering"
       ],
       "paper_id": "2026-07-27-arxiv-a_modified_moving_reference_frame_method_for_propeller_resolution",
       "paper_title": "A Modified Moving Reference Frame Method for Propeller Resolution",
       "paper_date": "2026-07-27",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-28T10:39:04",
+      "generated_at": "2026-07-29T10:42:30",
       "generator": "openai"
     }
   },
@@ -441,29 +697,132 @@
         "url": "https://arxiv.org/pdf/2607.20321v2"
       }
     ],
-    "score": 65,
+    "score": 60,
     "infographic": {
-      "key_insight": "The paper trains an attention graph neural network directly from finite-volume residuals, enabling label-free prediction of coupled thermo-fluid fields without CFD-generated training data.",
-      "engineering_relevance": "This offers a lower-cost surrogate modeling workflow for 3D thermo-fluid simulations, reducing both solver data generation and storage burden while preserving physical fidelity.",
+      "key_insight": "Train an attention graph neural network directly from finite-volume residuals, eliminating the need for labeled CFD data while preserving thermo-fluid accuracy.",
+      "engineering_relevance": "This enables faster and cheaper surrogate modeling for coupled thermo-fluid simulations, reducing both data-generation cost and storage burden in scientific machine learning workflows.",
       "method": [
-        "Build an attention graph neural network on the simulation mesh.",
-        "Train by minimizing finite-volume method residuals of the governing equations instead of labeled targets.",
-        "Evaluate against CFD references and a data-supervised baseline on steady and transient cases."
+        "Build an attention GNN on the simulation mesh.",
+        "Define the loss as the finite-volume residuals of the governing equations.",
+        "Optimize the network without supervised labels, using mesh-based physics residuals as the training signal."
       ],
-      "evidence_signal": "Across four scenarios, the FVM-loss model reaches 2.3–2.8% all-field nRMSE on the steady benchmarks and outperforms the supervised baseline on the parametric transient cases.",
-      "watch_item": "Residual-based training may depend on mesh quality, equation formulation, and stable optimization, so performance can vary when extending to new geometries or flow regimes.",
+      "evidence_signal": "Across four test scenarios, the FVM-loss model reached 2.3–2.8% all-field nRMSE on the two steady-state benchmarks and outperformed a data-supervised baseline on the two transient cases.",
+      "watch_item": "Residual-based training depends on accurate mesh discretization and equation implementation, so stability and generalization may be sensitive to solver fidelity and problem setup.",
       "hashtags": [
-        "#ScientificMachineLearning",
+        "#ScientificML",
         "#GraphNeuralNetworks",
-        "#ComputationalFluidDynamics",
         "#FiniteVolumeMethod",
-        "#ThermoFluid"
+        "#ThermoFluid",
+        "#PhysicsInformedAI"
       ],
       "paper_id": "2026-07-22-arxiv-label_free_finite_volume_residual_training_of_attention_graph_neural_networks_for_coupled",
       "paper_title": "Label-Free Finite-Volume-Residual Training of Attention Graph Neural Networks for Coupled Thermo-Fluid Fields",
       "paper_date": "2026-07-22",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-28T10:39:09",
+      "generated_at": "2026-07-29T10:42:33",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-28-arxiv-vortex_dynamics_and_air_entrainment_in_dam_break_wave_impacting_on_vertical_walls_a_multip",
+    "arxiv_id": "2607.25433v1",
+    "date": "2026-07-28",
+    "title": "Vortex dynamics and air entrainment in dam break wave impacting on vertical walls: A multiphase lattice Boltzmann study",
+    "authors": "Massimiliano Mustè, Andrea Montessori, Pietro Prestininzi",
+    "abstract": "Air entrainment often plays a crucial role in determining impact loads exerted by free-surface wave flows interacting with structures, yet its modelling is often oversimplified in numerical approaches. In this study a two-phase numerical model, based on the Lattice Boltzmann Method coupled to a conservative Allen--Cahn interface-capturing equation is employed to perform direct numerical simulations of dam-break waves propagating over a dry bed and impacting on vertical walls. Access to high-resolution simulations enables a detailed assessment of how accurately resolving both air--water and solid--water interfaces affects local and overall dynamics, as well as quantities of extreme engineering interest. Indeed, the magnitudes and locations of the pressure peaks are strongly affected by wave front deflection and local aeration induced by a small corner vortex. Additionally, comparisons between no-slip and free-slip implementations suggest that the large air cavity formation, commonly observed as trapped inside the reflected jet falling back onto the incoming flow, may be the result of modeling assumptions rather than intrinsic flow physics, again highlighting the key role of near-wall shear in jet breakup dynamics.",
+    "category": "Multiphase Flow",
+    "source": "arXiv",
+    "published": "2026-07-28T08:26:40Z",
+    "updated": "2026-07-28T08:26:40Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "physics.comp-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.25433v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.25433v1"
+      }
+    ],
+    "score": 58,
+    "infographic": {
+      "key_insight": "High-resolution multiphase LBM simulations show that wall-impact pressures in dam-break waves are strongly controlled by wave-front deflection, small corner vortices, and local air entrainment.",
+      "engineering_relevance": "Accurately modeling air entrainment and near-wall shear is essential for predicting impact loads on vertical structures and avoiding misleading estimates of extreme pressures.",
+      "method": [
+        "Two-phase lattice Boltzmann method for air–water flow",
+        "Conservative Allen–Cahn interface-capturing equation",
+        "Direct numerical simulation of dam-break wave impact on vertical walls with resolved solid–fluid interfaces"
+      ],
+      "evidence_signal": "The study compares high-resolution simulations under no-slip and free-slip wall treatments and links pressure peaks and cavity formation to local flow features seen in the simulations.",
+      "watch_item": "Large trapped air cavities may depend on wall-boundary modeling assumptions, so conclusions about jet breakup and entrainment should be checked against the chosen no-slip/free-slip implementation.",
+      "hashtags": [
+        "#LatticeBoltzmann",
+        "#MultiphaseFlow",
+        "#DamBreak",
+        "#AirEntrainment",
+        "#CFD"
+      ],
+      "paper_id": "2026-07-28-arxiv-vortex_dynamics_and_air_entrainment_in_dam_break_wave_impacting_on_vertical_walls_a_multip",
+      "paper_title": "Vortex dynamics and air entrainment in dam break wave impacting on vertical walls: A multiphase lattice Boltzmann study",
+      "paper_date": "2026-07-28",
+      "paper_category": "Multiphase Flow",
+      "generated_at": "2026-07-29T10:42:35",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-07-28-arxiv-accurate_wetting_dynamics_via_a_conservative_allen_cahn_based_lattice_boltzmann_approach_f",
+    "arxiv_id": "2607.25444v1",
+    "date": "2026-07-28",
+    "title": "Accurate wetting dynamics via a conservative Allen-Cahn based lattice Boltzmann approach for multiphase flows",
+    "authors": "Paolo Bello, Luca Mander, Marco Lauricella, Gianmarco Guglielmo, Michele La Rocca, Andrea Montessori",
+    "abstract": "In this work we propose a local geometric wetting boundary condition for a conservative Allen--Cahn-based lattice Boltzmann framework. The prescribed contact angle is imposed through ghost phase-field values constructed from a locally reconstructed wall normal and a donor-fluid extrapolation. The ghost-node wetting update is local, geometrically consistent, and compatible with thread-safe large-scale implementations, while phase-field mass is controlled through a separate global volume correction. Validation includes static contact-angle tests, short-time droplet spreading, impact on a hydrophobic surface, and gravity-driven motion through a sharp-edged orifice. The simulations recover the imposed equilibrium angles, reproduce contact-angle-dependent spreading exponents between approximately 1/2 and 1/4, and follow the classical W e1/4 maximum-deformation scaling. The model also captures the transition between capture, release, and release with breakup. The proposed approach provides an accurate and scalable framework for wetting-controlled flows in complex geometries.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-07-28T08:34:08Z",
+    "updated": "2026-07-28T08:34:08Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2607.25444v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2607.25444v1"
+      }
+    ],
+    "score": 57,
+    "infographic": {
+      "key_insight": "A local, geometry-based ghost-node wetting condition lets a conservative Allen–Cahn lattice Boltzmann model impose accurate contact angles while keeping the solver scalable and thread-safe.",
+      "engineering_relevance": "This enables reliable simulation of wetted multiphase flows in complex geometries, supporting design and analysis of droplets, impacts, and gravity-driven transport in porous or sharp-edged devices.",
+      "method": [
+        "Reconstruct the wall normal locally and set ghost phase-field values to impose the target contact angle.",
+        "Use donor-fluid extrapolation for the wetting update, keeping the boundary treatment fully local.",
+        "Apply a separate global volume correction to control phase-field mass conservation."
+      ],
+      "evidence_signal": "The method was validated on static contact-angle cases, short-time spreading, hydrophobic impact, and gravity-driven orifice flow, matching imposed angles and classical scaling laws.",
+      "watch_item": "Because mass control is handled by a separate global correction, large or highly transient simulations may need careful tuning to avoid unintended coupling with the wetting boundary update.",
+      "hashtags": [
+        "#LatticeBoltzmann",
+        "#WettingDynamics",
+        "#MultiphaseFlow",
+        "#AllenCahn",
+        "#ComputationalFluidDynamics"
+      ],
+      "paper_id": "2026-07-28-arxiv-accurate_wetting_dynamics_via_a_conservative_allen_cahn_based_lattice_boltzmann_approach_f",
+      "paper_title": "Accurate wetting dynamics via a conservative Allen-Cahn based lattice Boltzmann approach for multiphase flows",
+      "paper_date": "2026-07-28",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-07-29T10:42:39",
       "generator": "openai"
     }
   },
@@ -493,29 +852,29 @@
         "url": "https://arxiv.org/pdf/2607.22422v1"
       }
     ],
-    "score": 62,
+    "score": 57,
     "infographic": {
       "key_insight": "PRIMS embeds fluid physics directly into a multimodal Transformer, making fluid identification more accurate, interpretable, and robust to changing operating conditions.",
-      "engineering_relevance": "This enables more reliable on-device microfluidic sensing for real-world systems where flow, pressure, and temperature vary continuously.",
+      "engineering_relevance": "The method is well-suited for on-device microfluidic sensing where reliability must hold across variable flow, pressure, and temperature.",
       "method": [
-        "Physics-based Token Vectorization converts Coriolis and pressure signals into physically meaningful embeddings.",
-        "Physical Component Synthesizer captures viscosity-related links among flow, pressure, and density.",
-        "Physics-guided Fusion uses attention to combine cross-physical signals in a physics-aware way."
+        "Physics-based Token Vectorization turns Coriolis and pressure signals into physically meaningful embeddings.",
+        "Physical Component Synthesizer models viscosity-related links among flow, pressure, and density.",
+        "Physics-guided Fusion uses attention to combine cross-physical correlations in the final representation."
       ],
-      "evidence_signal": "On a five-fluid benchmark with dynamic flow, pressure, and temperature, PRIMS achieved 98.92% average F1-score with only 0.46M parameters and showed strong out-of-distribution robustness.",
-      "watch_item": "Performance may depend on accurate sensor calibration and on how well the embedded physics assumptions match the target microfluidic setup.",
+      "evidence_signal": "On a five-fluid benchmark, PRIMS reached 98.92% average F1 with 0.46M parameters and outperformed prior methods under unseen temperature and flow-rate shifts.",
+      "watch_item": "Performance may depend on the quality of the embedded physical assumptions, so calibration and sensor-specific adaptation could still be needed in new hardware setups.",
       "hashtags": [
         "#FluidMechanics",
         "#Microfluidics",
         "#PhysicsGuidedAI",
-        "#Transformer",
+        "#TransformerModels",
         "#SensorFusion"
       ],
       "paper_id": "2026-07-24-arxiv-prims_physics_guided_representation_for_fluid_identification_in_multimodal_sensing",
       "paper_title": "PRIMS: Physics-guided Representation for Fluid Identification in Multimodal Sensing",
       "paper_date": "2026-07-24",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-28T10:39:11",
+      "generated_at": "2026-07-29T10:42:41",
       "generator": "openai"
     }
   },
@@ -545,80 +904,29 @@
         "url": "https://arxiv.org/pdf/2607.22402v1"
       }
     ],
-    "score": 61,
+    "score": 56,
     "infographic": {
-      "key_insight": "A physics-guided neural differential equation reduced-order model can capture nonlinear, multi-mode aeroelastic coupling and oscillatory buffet dynamics with far less cost than full CFD.",
-      "engineering_relevance": "This enables faster prediction of aeroelastic stability, lock-in, and limit-cycle oscillations for transonic flows, which is valuable for aircraft design and flutter/buffet assessment.",
+      "key_insight": "A physics-guided neural differential equation reduced-order model can capture multi-mode aeroelastic oscillations and transonic buffet dynamics using a single CFD training simulation.",
+      "engineering_relevance": "The approach offers a much cheaper way to predict aeroelastic stability, frequency lock-in, and limit-cycle amplitudes for flutter/buffet problems than repeated full-order CFD analysis.",
       "method": [
-        "Combines a nonlinear fluid oscillator with a finite-memory multi-input Volterra series.",
-        "Adds a compact neural network correction to improve accuracy for oscillatory flow dynamics.",
-        "Generalizes aerodynamic coupling to multiple structural modes and is trained from one prescribed-motion CFD case."
+        "Nonlinear fluid oscillator + finite-memory multi-input Volterra series",
+        "Neural-network correction to represent residual unmodeled dynamics",
+        "Generalized to multiple structural modes and coupled to structural equations of motion"
       ],
-      "evidence_signal": "The ROM was evaluated on transonic buffet over the ONERA OAT15A airfoil and showed good agreement with reference solutions for aeroelastic stability, frequency lock-in, and limit-cycle amplitudes.",
-      "watch_item": "Performance depends on the representativeness of the training excitation and may degrade when extrapolating beyond the learned motion envelope or mode combinations.",
+      "evidence_signal": "The ROM was identified from one prescribed-motion CFD case with simultaneous multi-mode excitation and then validated on ONERA OAT15A buffet predictions against full-order reference solutions.",
+      "watch_item": "Performance may depend on having a representative excitation case and careful handling of regime changes when extrapolating beyond the training motion or flow conditions.",
       "hashtags": [
         "#Aeroelasticity",
-        "#ReducedOrderModeling",
         "#NeuralODE",
+        "#ReducedOrderModel",
         "#TransonicBuffet",
-        "#ComputationalFluidDynamics"
+        "#CFD"
       ],
       "paper_id": "2026-07-24-arxiv-neural_ordinary_differential_equations_for_oscillatory_flows_in_aeroelasticity_with_applic",
       "paper_title": "Neural Ordinary Differential Equations for Oscillatory Flows in Aeroelasticity with Application to Transonic Buffet",
       "paper_date": "2026-07-24",
       "paper_category": "Aerodynamics",
-      "generated_at": "2026-07-28T10:39:14",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-21-arxiv-preferential_and_differential_diffusion_in_rans_simulation_of_lean_hydrogen_flames_with_ta",
-    "arxiv_id": "2607.18993v1",
-    "date": "2026-07-21",
-    "title": "Preferential and differential diffusion in RANS simulation of lean hydrogen flames with tabulated chemistry",
-    "authors": "Alex M. Garcia, Emiliano M. Fortes, Eduardo J. Pérez-Sánchez, Daniel Mira, Marco Vivenzo, Michael Gauding",
-    "abstract": "Lean hydrogen flames are prone to thermo-diffusive instabilities due to preferential and differential diffusion effects, posing significant challenges for their modeling in computational fluid dynamics simulations. This work extends a tabulated-chemistry (TC) model that includes preferential and differential diffusion effects to a Reynolds-averaged Navier-Stokes (RANS) framework and assesses its performance for a lean premixed $\\mathrm{H_2}$-air slot burner at two Reynolds numbers ($\\mathrm{Re}=5500$ and $11000$) using direct numerical simulation (DNS) as a reference. The approach is based on transport equations for the progress variable and mixture fraction derived from the species mass transport equations considering mixture-averaged diffusion and Soret effect, and incorporates turbulence--chemistry interaction via a presumed probability density function (PDF) approach. RANS simulations including preferential-differential diffusion are able to correctly reproduce the DNS flame length, heat-release distribution, and the characteristic equivalence-ratio and super-adiabatic temperature branches of the slot flame. Comparisons with (i) a unity-Lewis-number variant and (ii) a model including thermo-diffusive effects only in the flamelet table show the impact of preferential and differential diffusion on the TC model at both the thermochemical and transport levels. Finally, the impact of the turbulence closures for turbulent diffusion, scalar dissipation rate, and Reynolds stresses is assessed. The results presented in this paper demonstrate the capability of the model to include preferential and differential diffusion effects in cost-effective RANS simulations of lean hydrogen flames.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-07-21T11:26:37Z",
-    "updated": "2026-07-21T11:26:37Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.18993v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.18993v1"
-      }
-    ],
-    "score": 59,
-    "infographic": {
-      "key_insight": "A tabulated-chemistry RANS model that explicitly includes preferential and differential diffusion can capture the key thermo-diffusive behavior of lean hydrogen flames much more faithfully than unity-Lewis or table-only approximations.",
-      "engineering_relevance": "This enables more reliable and cost-effective CFD prediction of lean hydrogen combustors where flame length, heat release, and stability are strongly affected by diffusion-driven instabilities.",
-      "method": [
-        "Extended a tabulated-chemistry model to RANS with mixture-averaged diffusion and Soret effect.",
-        "Solved transport equations for progress variable and mixture fraction with a presumed-PDF turbulence–chemistry closure.",
-        "Compared preferential/differential diffusion, unity-Lewis, and thermo-diffusion-only variants against DNS at Re = 5500 and 11000."
-      ],
-      "evidence_signal": "Against DNS for a lean premixed H2-air slot burner, the model reproduces flame length, heat-release distribution, and the characteristic equivalence-ratio and super-adiabatic temperature branches at both Reynolds numbers.",
-      "watch_item": "Performance still depends on turbulence closures for turbulent diffusion, scalar dissipation rate, and Reynolds stresses, so calibration and model choice remain important.",
-      "hashtags": [
-        "#HydrogenCombustion",
-        "#RANS",
-        "#TabulatedChemistry",
-        "#PreferentialDiffusion",
-        "#CFD"
-      ],
-      "paper_id": "2026-07-21-arxiv-preferential_and_differential_diffusion_in_rans_simulation_of_lean_hydrogen_flames_with_ta",
-      "paper_title": "Preferential and differential diffusion in RANS simulation of lean hydrogen flames with tabulated chemistry",
-      "paper_date": "2026-07-21",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-07-28T10:39:24",
+      "generated_at": "2026-07-29T10:42:44",
       "generator": "openai"
     }
   },
@@ -648,29 +956,29 @@
         "url": "https://arxiv.org/pdf/2607.24715v1"
       }
     ],
-    "score": 58,
+    "score": 53,
     "infographic": {
-      "key_insight": "The paper unifies multiple “butterfly effect” regimes in turbulence—standard chaos, Eulerian spontaneous stochasticity, Lagrangian spontaneous stochasticity, and localized perturbations—through the Finite Size Lyapunov Exponent (FSLE).",
-      "engineering_relevance": "It helps define practical forecast limits in high-Reynolds-number flows, which matters for turbulence modeling, control, and uncertainty quantification.",
+      "key_insight": "The paper unifies multiple \"butterfly effect\" regimes in turbulence using finite-size Lyapunov exponents, showing how predictability changes from small-scale chaos to large-scale stochasticity.",
+      "engineering_relevance": "It helps quantify forecasting limits in high-Reynolds-number flows, which is useful for turbulence prediction, modeling, and uncertainty-aware engineering design.",
       "method": [
-        "Use FSLE to measure perturbation growth as a function of scale.",
-        "Analyze a Sabra shell model with added thermal noise to connect Lyapunov and large-scale regimes.",
-        "Use the Kraichnan model to illustrate Lagrangian spontaneous stochasticity."
+        "Uses the Finite Size Lyapunov Exponent (FSLE) to measure perturbation growth versus scale.",
+        "Analyzes the Sabra shell model with added thermal noise to bridge classical Lyapunov chaos and large-scale predictability.",
+        "Uses the Kraichnan model to illustrate Lagrangian spontaneous stochasticity and contrasts it with localized sub-dissipative perturbations."
       ],
-      "evidence_signal": "The abstract reports a synthesis supported by FSLE-based analysis of the Sabra shell model and the Kraichnan model, rather than a single data-driven benchmark.",
-      "watch_item": "The results are model-based and conceptual, so direct transfer to real-world turbulent flows may require careful validation and parameter matching.",
+      "evidence_signal": "The abstract reports a systematic synthesis supported by FSLE-based analysis of the Sabra shell model and the Kraichnan model, rather than a single experimental dataset.",
+      "watch_item": "The conclusions depend on idealized models and FSLE interpretation, so transfer to real turbulent flows may require careful validation.",
       "hashtags": [
         "#Turbulence",
         "#ButterflyEffect",
         "#FSLE",
-        "#SpontaneousStochasticity",
+        "#ChaosTheory",
         "#FluidMechanics"
       ],
       "paper_id": "2026-07-27-arxiv-the_real_butterfly_effect_from_the_pop_culture_to_mathematics_and_physics",
       "paper_title": "The real butterfly effect: from the pop culture to mathematics and physics",
       "paper_date": "2026-07-27",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-28T10:39:27",
+      "generated_at": "2026-07-29T10:42:47",
       "generator": "openai"
     }
   },
@@ -699,339 +1007,29 @@
         "url": "https://arxiv.org/pdf/2607.22246v1"
       }
     ],
-    "score": 58,
+    "score": 53,
     "infographic": {
-      "key_insight": "For low-Prandtl-number forced convection, only a few RANS heat-transfer closures are both robust and accurate, with k-ω SST plus the Kays Pr_t correlation performing best overall.",
-      "engineering_relevance": "This helps CFD practitioners choose thermal turbulence models for liquid-metal heat transfer where standard momentum-thermal analogies break down.",
+      "key_insight": "For low-Prandtl-number forced convection in liquid metals, the simple k-ω SST model with Kays turbulent Prandtl number is the most robust and consistently accurate RANS option among the closures tested.",
+      "engineering_relevance": "This gives CFD practitioners a practical shortlist for predicting heat transfer in liquid-metal systems where standard momentum–thermal analogies break down.",
       "method": [
-        "Benchmarked multiple RANS thermal closures in OpenFOAM v2212.",
-        "Compared k-ω SST, four-equation k-ε-kθ-εθ, logarithmic k-Ω-kθ-Ωθ, and algebraic heat-flux models.",
-        "Validated against DNS and prior published results in channel flow, pipe flow, and heated backward-facing step flow."
+        "Benchmarked five RANS thermal-closure families in OpenFOAM v2212",
+        "Compared channel flow, pipe flow, and heated backward-facing step cases",
+        "Assessed reproducibility, robustness, and temperature-field accuracy against DNS and prior published results"
       ],
-      "evidence_signal": "The models were assessed for reproducibility, robustness, and accuracy using DNS data and original-publication results across three canonical forced-convection test cases.",
-      "watch_item": "Some closures showed weak numerical robustness or failed to reproduce published thermal fields, so implementation details and equation consistency are critical.",
+      "evidence_signal": "Across the three test flows, only a limited subset of models was reliable; SST+Kays performed best overall, the k-ε-kθ-εθ model was the most consistent multi-equation alternative, and some algebraic heat-flux variants failed to reproduce published thermal results.",
+      "watch_item": "Several closures are sensitive to formulation details and implementation consistency, so published equations may need correction before results can be reproduced reliably.",
       "hashtags": [
-        "#CFD",
         "#RANS",
         "#TurbulentHeatTransfer",
         "#LiquidMetals",
-        "#LowPrandtl"
+        "#LowPrandtlNumber",
+        "#OpenFOAM"
       ],
       "paper_id": "2026-07-24-arxiv-critical_assessment_of_rans_models_for_turbulent_heat_transfer_in_low_prandtl_number_force",
       "paper_title": "Critical assessment of RANS Models for Turbulent Heat Transfer in Low-Prandtl-Number Forced Convection",
       "paper_date": "2026-07-24",
       "paper_category": "Turbulence",
-      "generated_at": "2026-07-28T10:39:29",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-27-arxiv-sleep_related_forcing_of_cerebrospinal_fluid_streaming_transport_through_the_third_ventric",
-    "arxiv_id": "2607.24501v1",
-    "date": "2026-07-27",
-    "title": "Sleep-related forcing of cerebrospinal fluid streaming transport through the third ventricle",
-    "authors": "Pengcheng Zhao, Luke McTavish, Christoph Bruecker",
-    "abstract": "Quasi-periodic pressure pulses associated with cardiac and respiratory activity generate reciprocating cerebrospinal fluid (CSF) motion in the human ventricles. While weak and more regular during wakefulness, oscillatory fluid motions have recently been found to be much more exaggerated during NREM sleep, appearing as large flushes in successive pulse trains. The present study investigates whether this forcing can induce greater residual streaming through the human ventricles. Transient CFD simulations were performed in the third ventricle under awake and sleep-related flow pulses. Sleep-related forcing produced clear caudal and rostral preferential pathways and less overall recirculation in the cavity. The streaming flux relative to the stroke volume increased from a low value of about \\(0.540\\%\\) to \\(28.4\\%\\) during sleep. Thus, sleep-related forcing changes not only the magnitude of reciprocating fluid displacement but also the relative contribution of residual streaming. These findings demonstrate differences in hydrodynamic organisation in the third ventricle and highlight the importance of this organisation for intraventricular fluid exchange.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-07-27T14:36:18Z",
-    "updated": "2026-07-27T14:36:18Z",
-    "primary_category": "physics.med-ph",
-    "categories": [
-      "physics.med-ph",
-      "physics.bio-ph",
-      "physics.flu-dyn"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.24501v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.24501v1"
-      }
-    ],
-    "score": 56,
-    "infographic": {
-      "key_insight": "Sleep-related CSF pulse trains strongly reorganize third-ventricle flow, creating preferential caudal/rostral streaming and much less recirculation than awake forcing.",
-      "engineering_relevance": "The result suggests that time-varying physiologic forcing can dramatically alter intraventricular transport efficiency, which matters for models of CSF exchange, clearance, and neurofluidic device design.",
-      "method": [
-        "Transient CFD simulations in the human third ventricle",
-        "Comparison of awake versus sleep-related pressure-pulse forcing",
-        "Evaluation of residual streaming and recirculation patterns"
-      ],
-      "evidence_signal": "The abstract reports that streaming flux relative to stroke volume increased from about 0.540% in the awake case to 28.4% during sleep-related forcing.",
-      "watch_item": "The findings come from CFD in the third ventricle, so physiological variability, boundary-condition assumptions, and patient-to-patient anatomy may limit direct generalization.",
-      "hashtags": [
-        "#ComputationalFluidDynamics",
-        "#CerebrospinalFluid",
-        "#Neurofluidics",
-        "#SleepScience",
-        "#Turbulence"
-      ],
-      "paper_id": "2026-07-27-arxiv-sleep_related_forcing_of_cerebrospinal_fluid_streaming_transport_through_the_third_ventric",
-      "paper_title": "Sleep-related forcing of cerebrospinal fluid streaming transport through the third ventricle",
-      "paper_date": "2026-07-27",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-07-28T10:39:31",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-27-arxiv-bubble_growth_on_arrays_of_micro_electrodes",
-    "arxiv_id": "2607.24286v1",
-    "date": "2026-07-27",
-    "title": "Bubble growth on arrays of micro-electrodes",
-    "authors": "Mengyuan Huang, Gerd Mutschke, Zhicheng Yuan, Kerstin Eckert",
-    "abstract": "Gas bubbles evolving on electrodes during water-electrolysis are blocking active reaction area, thus hindering mass transfer and raising Ohmic resistance. Unlike earlier models that prescribe a uniform current density on the wetted part of the electrode, we resolve the primary electric field, which allows the current density and the interfacial gas production to respond to the geometry of the electrode and the temporal evolution of the bubbles. Using three-dimensional geometrical volume-of-fluid (VOF) simulations with phase change in Basilisk, we examine the growth of single-bubbles on electrodes of different size and of multiple bubbles growing on arrays of catalytic electrode islands. The non-uniform current density and the associated Ohmic resistance significantly affect the growth dynamics. Unlike the case of a single bubble, the outer bubbles in case of electrode islands tend to drift outward during growth, thus delaying full electrode coverage and sustaining current. Footprint tracking and a theoretical analysis show that this drift is governed by the liquid advection driven by the growth of neighboring bubbles, scaling with their separation 1/d2, and modulated by the current-density asymmetry. These results show how electrode patterning and bubble spacing can be exploited to tailor the electric field distribution and reduce bubble-induced resistive losses during water electrolysis.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-07-27T11:34:02Z",
-    "updated": "2026-07-27T11:34:02Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.24286v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.24286v1"
-      }
-    ],
-    "score": 56,
-    "infographic": {
-      "key_insight": "Resolving the electric field around growing bubbles shows that current density, Ohmic losses, and bubble motion are strongly geometry-dependent, especially on patterned micro-electrode arrays.",
-      "engineering_relevance": "Electrode patterning and bubble spacing can be designed to delay electrode blockage and reduce resistive losses in water electrolysis.",
-      "method": [
-        "3D VOF simulations with phase change in Basilisk",
-        "Primary electric field solved to obtain non-uniform current density and gas production",
-        "Single-bubble and multi-bubble growth studied on electrodes and catalytic island arrays"
-      ],
-      "evidence_signal": "The abstract reports simulation-based comparison of single-bubble and multi-bubble cases, with footprint tracking and theory used to explain outward drift and its 1/d2 scaling.",
-      "watch_item": "The conclusions depend on idealized simulated geometries and electrochemical field coupling, so experimental validation will be needed before direct design transfer.",
-      "hashtags": [
-        "#FluidMechanics",
-        "#Electrolysis",
-        "#BubbleDynamics",
-        "#VOF",
-        "#MicroElectrodes"
-      ],
-      "paper_id": "2026-07-27-arxiv-bubble_growth_on_arrays_of_micro_electrodes",
-      "paper_title": "Bubble growth on arrays of micro-electrodes",
-      "paper_date": "2026-07-27",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-07-28T10:39:34",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-27-arxiv-influence_of_a_vertical_wall_leading_edge_on_bouncing_and_escape_bubble_rising_regimes",
-    "arxiv_id": "2607.24248v1",
-    "date": "2026-07-27",
-    "title": "Influence of a vertical-wall leading edge on bouncing and escape bubble rising regimes",
-    "authors": "A. Rubio-González, E. J. Vega, R. Bolaños-Jiménez",
-    "abstract": "This work investigates deformable gas bubbles rising near a vertical wall in ultrapure water, focusing on how the position of the wall leading edge affects their near-wall dynamics. Two configurations are considered: (i) a wall extending from 11--25 bubble diameters below the bubble injection point, so that the bubble rises under the continuous influence of the boundary; and (ii) a wall whose leading edge is located 144 mm above the injector, corresponding to approximately 80--180 bubble diameters, allowing the bubble to reach its terminal velocity before entering the wall-bounded region. The results show that the wall leading-edge position influences both the transition from periodic bouncing (PB) to bouncing--tumbling--escaping (BTE) dynamics and the rebound frequency within the PB regime. When the wall leading edge is placed downstream, the onset of BTE occurs at smaller bubble sizes, corresponding simultaneously to lower Bond ($Bo$), Galilei ($Ga$), and Reynolds ($Re$) numbers. The Strouhal number ($St$) follows a similar decreasing trend in both configurations at low Bond numbers, but the two behaviours diverge for ($Bo \\gtrsim 0.15$). For the PB regime, when the wall extends from the injector, $St$ approaches an approximately constant value of $St\\simeq0.014$, whereas substantially lower values are measured for the downstream-wall configuration. The larger rebound amplitudes and longer return stages observed in the latter configuration account for lower frequencies. These findings indicate that the bubble dynamics depend not only on the conventional control parameters and wall separation, but also on the wall geometry and the associated pre-interaction bubble hydrodynamic history.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-07-27T10:35:34Z",
-    "updated": "2026-07-27T10:35:34Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.24248v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.24248v1"
-      }
-    ],
-    "score": 52,
-    "infographic": {
-      "key_insight": "A wall’s leading-edge position changes near-wall bubble dynamics, shifting both the bouncing-to-escaping transition and the rebound frequency even at similar bubble and wall conditions.",
-      "engineering_relevance": "For bubble-contacting equipment and wall-bounded multiphase flows, geometry and upstream bubble history must be considered alongside Bond, Galilei, Reynolds, and wall spacing to predict separation and escape behavior.",
-      "method": [
-        "Compared rising deformable gas bubbles in ultrapure water near a vertical wall.",
-        "Tested two wall placements: one starting near the injector and one beginning downstream after the bubble reaches terminal velocity.",
-        "Mapped regimes and rebound dynamics using dimensionless groups (Bo, Ga, Re, St)."
-      ],
-      "evidence_signal": "The abstract reports that downstream wall placement triggers bouncing-tumbling-escaping at smaller bubble sizes and lower Bo, Ga, and Re, while periodic-bouncing Strouhal numbers drop substantially versus the upstream-wall case.",
-      "watch_item": "Results depend on a specific wall geometry and initial bubble hydrodynamic history, so direct transfer to other fluids, wall shapes, or injection conditions may be limited.",
-      "hashtags": [
-        "#MultiphaseFlow",
-        "#BubbleDynamics",
-        "#WallEffects",
-        "#Turbulence",
-        "#FluidMechanics"
-      ],
-      "paper_id": "2026-07-27-arxiv-influence_of_a_vertical_wall_leading_edge_on_bouncing_and_escape_bubble_rising_regimes",
-      "paper_title": "Influence of a vertical-wall leading edge on bouncing and escape bubble rising regimes",
-      "paper_date": "2026-07-27",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-07-28T10:39:37",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-26-arxiv-central_hermite_sensing_and_collision_for_frame_robust_order_resolved_relaxation_on_d3q125",
-    "arxiv_id": "2607.23629v1",
-    "date": "2026-07-26",
-    "title": "Central-Hermite Sensing and Collision for Frame-Robust Order-Resolved Relaxation on D3Q125",
-    "authors": "Bjørn Wu",
-    "abstract": "Raw-Hermite sensing and collision on a fixed discrete-velocity set can convert a uniform translation into artificial coupling between nominally distinct nonequilibrium orders. We develop a central-Hermite formulation for a D3Q125 kinetic model with order-resolved log-Gaussian relaxation and compare three variants: raw sensing/raw collision (A), central sensing/raw collision (B), and central sensing/central collision (C). In homogeneous translated second-order perturbations, model C preserves third- and fourth-order modal purity to machine precision, whereas A and B develop boost-dependent cross-order content. Across a grid-CFL-boost matrix, model C reduces the post-transport collision frame discrepancy relative to A by 65.342-98.102% (median 81.131%) in the total relative L-infinity measure. Long-time calculations remain positive and conservative to numerical precision, although the accumulated benefit is configuration dependent because transport continually re-injects frame error. A transport study further reveals a clear trade-off: central-Hermite interface reconstruction strongly suppresses the third-order discrepancy but amplifies the fourth-order discrepancy. The fully central-Hermite collision therefore substantially reduces collision-induced cross-order frame discrepancy, while residual dependence remains due to discrete transport and finite velocity-space representation. This moment-space improvement does not by itself establish a comparable reduction in macroscopic Galilean transport error.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-07-26T12:30:25Z",
-    "updated": "2026-07-26T12:30:25Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA",
-      "physics.flu-dyn"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.23629v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.23629v1"
-      }
-    ],
-    "score": 52,
-    "infographic": {
-      "key_insight": "Using central-Hermite moments for both sensing and collision makes a D3Q125 scheme far more frame-robust, largely eliminating boost-induced cross-order contamination in collision.",
-      "engineering_relevance": "This offers a practical path to more reliable kinetic solvers for translating or moving flows, especially where preserving moment order and positivity matters.",
-      "method": [
-        "Compare three schemes: raw/raw (A), central/raw (B), and central/central (C).",
-        "Use a D3Q125 kinetic model with order-resolved log-Gaussian relaxation.",
-        "Test homogeneous translated perturbations and transport/collision frame discrepancy across a grid-CFL-boost matrix."
-      ],
-      "evidence_signal": "In translated second-order tests, model C preserved third- and fourth-order modal purity to machine precision and cut total relative L-infinity collision frame discrepancy versus A by 65.342–98.102% (median 81.131%).",
-      "watch_item": "The gain is partly configuration-dependent because transport continually re-injects frame error, so this moment-space improvement does not automatically translate to reduced macroscopic Galilean transport error.",
-      "hashtags": [
-        "#ComputationalFluidDynamics",
-        "#LatticeBoltzmann",
-        "#MomentMethods",
-        "#Turbulence",
-        "#GalileanInvariance"
-      ],
-      "paper_id": "2026-07-26-arxiv-central_hermite_sensing_and_collision_for_frame_robust_order_resolved_relaxation_on_d3q125",
-      "paper_title": "Central-Hermite Sensing and Collision for Frame-Robust Order-Resolved Relaxation on D3Q125",
-      "paper_date": "2026-07-26",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-07-28T10:39:40",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-22-arxiv-a_formal_log_re_cost_framework_for_the_engineering_turbulence_problem",
-    "arxiv_id": "2607.20199v1",
-    "date": "2026-07-22",
-    "title": "A formal log(Re)-cost framework for the engineering turbulence problem",
-    "authors": "Jiaqi Li, Robert F. Kunz, George Huang, Xiang I. A. Yang",
-    "abstract": "In fluid engineering, the turbulence problem is the longstanding challenge of obtaining accurate predictions of engineering quantities at affordable computational cost. Viewed through computational complexity, a practical algorithm requires cost growth no worse than $O(N)$, where $N$ denotes problem size. For turbulent flows, the problem size may be approximated by the number of dynamically relevant scales and hence by the Reynolds number $Re$. We propose a multi-fidelity, physics-constrained, data-driven framework designed to meet this criterion under stated assumptions. We augment the Spalart--Allmaras model through field inversion and machine learning using a constrained formulation that preserves the law of the wall. The model is trained at a low Reynolds number, where high-fidelity data are affordable, and deployed at higher Reynolds numbers. For a mean-flow-aligned grid in a wall-bounded flow, fixed spanwise resolution, and steady-solver cost linear in grid-point count, the low-fidelity RANS prediction scales as $O(\\log(Re))$. The high-fidelity calculation and learning stage each contribute $O(Re^0)$ relative to the target Reynolds number, giving an overall formal cost of $O(\\log(Re))$. In plane channel flow, a model trained at $Re_τ=1000$ corrects the wake-layer error of the baseline model and retains the improvement at $Re_τ=5200$. In the periodic hill, a model trained at $Re_b=5600$ is tested at $Re_b=10595$, $19000$, and $37000$. The constrained formulation preserves separation and recovery behavior as Reynolds number increases, yields the lowest root-mean-square error across all tests, and exhibits nearly Reynolds-number-independent error, indicating robust extrapolation.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-07-22T14:21:49Z",
-    "updated": "2026-07-22T14:21:49Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.20199v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.20199v1"
-      }
-    ],
-    "score": 52,
-    "infographic": {
-      "key_insight": "A physics-constrained, multi-fidelity turbulence model can be trained at low Reynolds number and then extrapolated to higher Reynolds numbers with formal cost scaling of O(log(Re)) under stated wall-bounded-flow assumptions.",
-      "engineering_relevance": "This offers a pathway toward cheaper yet accurate CFD predictions for engineering turbulence, especially when direct high-fidelity simulation becomes prohibitively expensive at high Reynolds number.",
-      "method": [
-        "Augment the Spalart–Allmaras RANS model using field inversion and machine learning.",
-        "Constrain the learned correction to preserve the law of the wall.",
-        "Train at affordable low-Re cases and deploy the model to higher-Re flows."
-      ],
-      "evidence_signal": "The abstract reports successful transfer from channel flow at Re_tau=1000 to Re_tau=5200 and from periodic hill training at Re_b=5600 to tests at Re_b=10595, 19000, and 37000, with improved separation/recovery behavior and low RMSE.",
-      "watch_item": "The claimed log(Re) cost and extrapolation depend on specific assumptions such as mean-flow-aligned grids, fixed spanwise resolution, and steady-solver scaling, so performance may not generalize outside these conditions.",
-      "hashtags": [
-        "#TurbulenceModeling",
-        "#ComputationalFluidDynamics",
-        "#MachineLearning",
-        "#RANS",
-        "#MultiFidelity"
-      ],
-      "paper_id": "2026-07-22-arxiv-a_formal_log_re_cost_framework_for_the_engineering_turbulence_problem",
-      "paper_title": "A formal log(Re)-cost framework for the engineering turbulence problem",
-      "paper_date": "2026-07-22",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-07-28T10:39:42",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-07-27-arxiv-a_vectorial_lattice_boltzmann_scheme_for_the_incompressible_navier_stokes_equations",
-    "arxiv_id": "2607.24059v1",
-    "date": "2026-07-27",
-    "title": "A vectorial lattice Boltzmann scheme for the incompressible Navier-Stokes equations",
-    "authors": "Denise Aregba-Driollet, Thomas Bellotti, Roberto Natalini, Tommaso Tenna",
-    "abstract": "We introduce a second-order accurate vectorial lattice Boltzmann scheme for the incompressible Navier-Stokes system, inspired by a discrete-velocity kinetic approximation proposed by Carfora and Natalini [ESAIM: M2AN, 42(1), 93-112, 2008]. Advantages and drawbacks compared to relaxation schemes are investigated by providing spectral analyses in the linearized case, and numerical validations on the genuinely non-linear problem.",
-    "category": "Physics-Informed ML",
-    "source": "arXiv",
-    "published": "2026-07-27T06:59:40Z",
-    "updated": "2026-07-27T06:59:40Z",
-    "primary_category": "math.NA",
-    "categories": [
-      "math.NA",
-      "physics.flu-dyn"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2607.24059v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2607.24059v1"
-      }
-    ],
-    "score": 51,
-    "infographic": {
-      "key_insight": "The paper proposes a second-order vectorial lattice Boltzmann method that approximates incompressible Navier-Stokes dynamics using a discrete-velocity kinetic formulation.",
-      "engineering_relevance": "This offers a potentially efficient CFD discretization for incompressible flows, with a clear comparison to relaxation schemes for stability and accuracy tradeoffs.",
-      "method": [
-        "Build a vectorial lattice Boltzmann scheme for the incompressible Navier-Stokes system.",
-        "Base the formulation on a discrete-velocity kinetic approximation inspired by Carfora and Natalini.",
-        "Assess the method through spectral analysis of the linearized problem and nonlinear numerical tests."
-      ],
-      "evidence_signal": "The abstract reports spectral analyses in the linearized case and numerical validations on the genuinely nonlinear problem, but does not provide specific benchmark datasets or quantitative results.",
-      "watch_item": "The approach may have stability or implementation tradeoffs relative to relaxation schemes, so linearized spectral behavior and nonlinear performance should be checked carefully in target flow regimes.",
-      "hashtags": [
-        "#LatticeBoltzmann",
-        "#CFD",
-        "#NavierStokes",
-        "#ComputationalFluidDynamics",
-        "#PhysicsInformedML"
-      ],
-      "paper_id": "2026-07-27-arxiv-a_vectorial_lattice_boltzmann_scheme_for_the_incompressible_navier_stokes_equations",
-      "paper_title": "A vectorial lattice Boltzmann scheme for the incompressible Navier-Stokes equations",
-      "paper_date": "2026-07-27",
-      "paper_category": "Physics-Informed ML",
-      "generated_at": "2026-07-28T10:39:45",
+      "generated_at": "2026-07-29T10:42:50",
       "generator": "openai"
     }
   }

@@ -1,24 +1,24 @@
 {
-  "key_insight": "There is no universally best flow surrogate: the winning architecture depends on whether the target dynamics are boundary-driven and direct or self-sustained and phase-sensitive.",
-  "engineering_relevance": "For CFD deployment, surrogate choice and validation must match the flow regime, because a model that looks good on RMSE can still fail on physically important quantities like shear stress, shedding power, or timing.",
+  "key_insight": "There is no universal best surrogate for transient flows under time-varying boundary conditions; the right architecture depends on whether the flow is boundary-driven or phase-memory dominated.",
+  "engineering_relevance": "For CFD surrogates in manufacturing and vortex-shedding applications, model choice and validation should be matched to the flow physics, not just pointwise error.",
   "method": [
-    "Compared 8 surrogate models on two transient flows with time-varying boundary conditions: CMP slurry film and Kármán vortex street.",
-    "Varied two design axes: full-field vs latent representation, and one-shot vs autoregressive time prediction.",
-    "Evaluated models with five physics-aware questions: field, structure, motion, amplitude, and timing."
+    "Compared 8 surrogate architectures on two transient benchmark flows: 3D CMP slurry film and 2D Karman vortex street.",
+    "Varied two design axes: full-field vs latent-state learning, and one-shot vs autoregressive time prediction.",
+    "Evaluated models with five physics-oriented criteria: field, structure, invented motion, amplitude, and timing."
   ],
-  "evidence_signal": "On CMP, a one-shot full-field model achieved 3.2% relative error in cumulative wall shear stress; on KVS, a latent autoregressive DeepONet preserved 96% of shedding power while direct and one-shot models nearly eliminated it, and surrogates were 10^3–10^4× faster per query than the finite-element solver.",
-  "watch_item": "Training simulations are expensive, so the offline cost can delay payoff unless the surrogate is queried beyond the break-even point, and RMSE alone can select the wrong model.",
+  "evidence_signal": "A one-shot full-field model achieved 3.2% relative error on cumulative wall shear stress in CMP, while a latent autoregressive DeepONet preserved 96% of shedding power in KVS that other models nearly eliminated.",
+  "watch_item": "Offline training cost is substantial, so practical payoff depends on how many post-training queries are needed and may not generalize beyond the tested regimes.",
   "hashtags": [
-    "#CFD",
-    "#SurrogateModels",
-    "#DeepONet",
+    "#CFDSurrogates",
     "#ComputationalFluidDynamics",
-    "#PhysicsInformedAI"
+    "#DeepONet",
+    "#ReducedOrderModeling",
+    "#FlowPhysics"
   ],
   "paper_id": "2026-07-26-arxiv-no_free_lunch_in_flow_surrogates_under_time_varying_boundary_conditions_a_two_regime_study",
   "paper_title": "No Free Lunch in Flow Surrogates under Time-Varying Boundary Conditions: A Two-Regime Study",
   "paper_date": "2026-07-26",
   "paper_category": "CFD Surrogates",
-  "generated_at": "2026-07-28T10:39:01",
+  "generated_at": "2026-07-29T10:42:14",
   "generator": "openai"
 }
