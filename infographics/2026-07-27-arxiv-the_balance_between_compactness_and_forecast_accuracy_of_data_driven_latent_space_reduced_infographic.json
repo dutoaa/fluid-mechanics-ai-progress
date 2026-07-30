@@ -1,15 +1,15 @@
 {
-  "key_insight": "For controlled wake flows, more compact latent compression is not always better: POD produces smoother, easier-to-predict latent dynamics and more reliable long-horizon forecasts than nonlinear autoencoders.",
-  "engineering_relevance": "For real-time flow control, especially model predictive control and reinforcement learning, choosing a representation that preserves forecast stability can matter more than maximizing compression.",
+  "key_insight": "In controlled wake flows, nonlinear autoencoders compress better, but POD produces smoother latent dynamics that are easier to forecast reliably over longer horizons.",
+  "engineering_relevance": "For real-time flow control, the most compact latent space is not always the best choice; forecast stability can matter more than maximum compression for MPC and learning-based controllers.",
   "method": [
     "Compare POD with convolutional autoencoders and two variational autoencoders for spatial compression.",
-    "Train Long Short-Term Memory predictors on latent coordinates for two 2D actuated wakes: a simplified truck wake and the fluidic pinball.",
-    "Evaluate reconstruction quality, latent-dynamics regularity, and long-horizon forecast robustness."
+    "Train LSTM-based temporal predictors on latent coordinates for two 2D actuated wakes: a simplified truck wake and the fluidic pinball.",
+    "Assess short-term reconstruction quality and long-horizon forecast stability of the resulting ROMs."
   ],
-  "evidence_signal": "The abstract reports that CAEs give sharper short-term reconstructions and better compression, but their latent trajectories are more irregular, with faster forecast degradation and a higher chance of catastrophic divergence than POD-based ROMs.",
-  "watch_item": "Highly compressed nonlinear latent spaces may look good in reconstruction tests yet become unstable or unreliable when extrapolated over longer control horizons.",
+  "evidence_signal": "Across the two controlled wake datasets, CAEs gave sharper short-term reconstructions, but POD-based latent trajectories were smoother and yielded more reliable long-horizon predictions with fewer catastrophic failures.",
+  "watch_item": "Higher compression from CAEs can introduce irregular, broadband latent dynamics that destabilize forecasts, so encoder choice should be tested against the intended prediction horizon and control objective.",
   "hashtags": [
-    "#ReducedOrderModels",
+    "#ReducedOrderModeling",
     "#FlowControl",
     "#Autoencoders",
     "#POD",
@@ -19,6 +19,6 @@
   "paper_title": "The balance between compactness and forecast accuracy of data-driven latent-space reduced-order models in controlled wake flows",
   "paper_date": "2026-07-27",
   "paper_category": "CFD Surrogates",
-  "generated_at": "2026-07-29T10:41:58",
+  "generated_at": "2026-07-30T10:28:20",
   "generator": "openai"
 }

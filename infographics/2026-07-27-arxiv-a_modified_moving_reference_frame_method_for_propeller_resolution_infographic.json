@@ -1,24 +1,24 @@
 {
-  "key_insight": "A smoothly blended modified Moving Reference Frame (mMRF) removes the artificial discontinuity at the rotating-stationary interface while preserving the low cost of partially rotating propeller simulations.",
-  "engineering_relevance": "This offers a practical CFD alternative for propeller-hull interaction studies where full sliding-interface motion is too expensive but classical MRF is too crude for self-propulsion predictions.",
+  "key_insight": "A modified moving reference frame (mMRF) smoothly blends rotation rate to remove interface discontinuities, giving MRF-like efficiency while better preserving local flow continuity around propellers.",
+  "engineering_relevance": "The method offers a practical middle ground for ship self-propulsion CFD, improving propeller-hull interaction fidelity without the cost of fully motion-resolving sliding interfaces.",
   "method": [
-    "Scale the frame rotation rate with a spatial function that decays from 1 near the propeller to 0 at the interface.",
-    "Derive the governing equations for the blended rotating frame and implement them in the FreSCo+ RANS solver.",
-    "Verify the formulation with the analytical Taylor--Couette solution and apply it to open-water and ship self-propulsion cases."
+    "Scale the reference-frame angular velocity with a spatially varying decay function from the propeller region to the stationary domain.",
+    "Derive and implement the modified governing equations in the RANS solver FreSCo+.",
+    "Verify on Taylor–Couette flow and apply to open-water propeller and Japan Bulk Carrier self-propulsion cases."
   ],
-  "evidence_signal": "The abstract reports verification against Taylor--Couette and application to open-water propeller and Japan Bulk Carrier self-propulsion simulations, with mMRF matching key integral propulsion metrics while reducing local interface artifacts.",
-  "watch_item": "The approach still relies on a user-defined blending region/function, so performance and smoothness may depend on how that transition is chosen.",
+  "evidence_signal": "The abstract reports agreement in integral propulsion quantities and shows that mMRF reduces interface discontinuities and non-physical local artifacts, especially at large MRF fractions, at essentially the same computational cost.",
+  "watch_item": "The decay function and interface placement must be chosen carefully, since the added smoothing can alter local kinematics if the transition region is not well tuned.",
   "hashtags": [
     "#CFD",
-    "#PropellerHydrodynamics",
-    "#MovingReferenceFrame",
+    "#ShipHydrodynamics",
+    "#Propeller",
     "#RANS",
-    "#MarineEngineering"
+    "#MovingReferenceFrame"
   ],
   "paper_id": "2026-07-27-arxiv-a_modified_moving_reference_frame_method_for_propeller_resolution",
   "paper_title": "A Modified Moving Reference Frame Method for Propeller Resolution",
   "paper_date": "2026-07-27",
   "paper_category": "Turbulence",
-  "generated_at": "2026-07-29T10:42:30",
+  "generated_at": "2026-07-30T10:28:51",
   "generator": "openai"
 }
