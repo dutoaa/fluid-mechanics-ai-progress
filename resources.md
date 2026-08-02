@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-08-01
+Generated: 2026-08-02
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Gaussian non relativistic spontaneously stochastic hydrodynamics
