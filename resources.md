@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-08-07
+Generated: 2026-08-08
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. From expansion to collapse: Bubble and continuum multiscale modeling in open-system magmas
