@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-08-08
+Generated: 2026-08-09
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. From expansion to collapse: Bubble and continuum multiscale modeling in open-system magmas
@@ -67,15 +67,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.04728v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-05-arxiv-a_hybrid_proper_orthogonal_decomposition_and_diffusion_framework_for_reduced_order_forecas_infographic.json
 
-## 9. Adaptive Quantum Physics-Informed Neural Networks for Differential Equations with Applications to Fluid Dynamics
-
-- Date: 2026-08-01
-- Category: Physics-Informed ML
-- arXiv: https://arxiv.org/abs/2608.00850v1
-- PDF: https://arxiv.org/pdf/2608.00850v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-01-arxiv-adaptive_quantum_physics_informed_neural_networks_for_differential_equations_with_applicat_infographic.json
-
-## 10. TIDE: A Physically Diverse 3D Turbulence Benchmark Dataset for Advancing Scientific Machine Learning
+## 9. TIDE: A Physically Diverse 3D Turbulence Benchmark Dataset for Advancing Scientific Machine Learning
 
 - Date: 2026-08-04
 - Category: Turbulence
@@ -83,7 +75,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.04222v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-04-arxiv-tide_a_physically_diverse_3d_turbulence_benchmark_dataset_for_advancing_scientific_machine_infographic.json
 
-## 11. Confinement-induced evolution and breakup of viscoelastic filaments in microfluidic coflows
+## 10. Confinement-induced evolution and breakup of viscoelastic filaments in microfluidic coflows
 
 - Date: 2026-08-05
 - Category: Multiphase Flow
@@ -91,7 +83,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.05343v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-05-arxiv-confinement_induced_evolution_and_breakup_of_viscoelastic_filaments_in_microfluidic_coflow_infographic.json
 
-## 12. Prandtl--Batchelor and flux-expulsion selection for steady MHD flows in a disk
+## 11. Prandtl--Batchelor and flux-expulsion selection for steady MHD flows in a disk
 
 - Date: 2026-08-06
 - Category: Turbulence
@@ -99,7 +91,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.05994v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-06-arxiv-prandtl_batchelor_and_flux_expulsion_selection_for_steady_mhd_flows_in_a_disk_infographic.json
 
-## 13. Area and Perimeter Rules of Velocity Circulation in Two-Dimensional Turbulence with Large-scale Absolute Equilibrium
+## 12. Area and Perimeter Rules of Velocity Circulation in Two-Dimensional Turbulence with Large-scale Absolute Equilibrium
 
 - Date: 2026-08-06
 - Category: Turbulence
@@ -107,7 +99,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.05617v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-06-arxiv-area_and_perimeter_rules_of_velocity_circulation_in_two_dimensional_turbulence_with_large_infographic.json
 
-## 14. Laminar gaps mirror turbulent puffs in pipe flow
+## 13. Laminar gaps mirror turbulent puffs in pipe flow
 
 - Date: 2026-08-05
 - Category: Turbulence
@@ -115,7 +107,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.04823v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-05-arxiv-laminar_gaps_mirror_turbulent_puffs_in_pipe_flow_infographic.json
 
-## 15. Coherent structure modulation and recovery in drag-reduced turbulent boundary layers
+## 14. Coherent structure modulation and recovery in drag-reduced turbulent boundary layers
 
 - Date: 2026-08-03
 - Category: Turbulence
@@ -123,7 +115,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.02017v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-03-arxiv-coherent_structure_modulation_and_recovery_in_drag_reduced_turbulent_boundary_layers_infographic.json
 
-## 16. Three-layer water flows: Dirichlet-Neumann operators and approximations
+## 15. Three-layer water flows: Dirichlet-Neumann operators and approximations
 
 - Date: 2026-08-06
 - Category: CFD Surrogates
@@ -131,7 +123,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.06314v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-06-arxiv-three_layer_water_flows_dirichlet_neumann_operators_and_approximations_infographic.json
 
-## 17. Wave scattering around a submerged vertical permeable breakwater
+## 16. Wave scattering around a submerged vertical permeable breakwater
 
 - Date: 2026-08-06
 - Category: Turbulence
@@ -139,7 +131,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.06089v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-06-arxiv-wave_scattering_around_a_submerged_vertical_permeable_breakwater_infographic.json
 
-## 18. Onsager-variational-principle-based Lattice Boltzmann Model For Three-phase Dielectric Fluid Flows
+## 17. Onsager-variational-principle-based Lattice Boltzmann Model For Three-phase Dielectric Fluid Flows
 
 - Date: 2026-08-06
 - Category: Turbulence
@@ -147,7 +139,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.05787v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-06-arxiv-onsager_variational_principle_based_lattice_boltzmann_model_for_three_phase_dielectric_flu_infographic.json
 
-## 19. Erodible bed turbulence modulation driven by transition between longitudinal and transverse bedforms at varying Shields numbers
+## 18. Erodible bed turbulence modulation driven by transition between longitudinal and transverse bedforms at varying Shields numbers
 
 - Date: 2026-08-05
 - Category: Turbulence
@@ -155,10 +147,18 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.04648v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-05-arxiv-erodible_bed_turbulence_modulation_driven_by_transition_between_longitudinal_and_transvers_infographic.json
 
-## 20. Aerodynamic Drag and Heat Transfer Corrections for Dehydrated Pollen Particles: CFD-Based Modeling of Airborne Allergen Transport in Smart Urban Environments
+## 19. Aerodynamic Drag and Heat Transfer Corrections for Dehydrated Pollen Particles: CFD-Based Modeling of Airborne Allergen Transport in Smart Urban Environments
 
 - Date: 2026-08-03
 - Category: Turbulence
 - arXiv: https://arxiv.org/abs/2608.02360v1
 - PDF: https://arxiv.org/pdf/2608.02360v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-03-arxiv-aerodynamic_drag_and_heat_transfer_corrections_for_dehydrated_pollen_particles_cfd_based_m_infographic.json
+
+## 20. VENUSS: a unified finite-element model of solidifying lava
+
+- Date: 2026-08-06
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2608.06199v1
+- PDF: https://arxiv.org/pdf/2608.06199v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-06-arxiv-venuss_a_unified_finite_element_model_of_solidifying_lava_infographic.json
