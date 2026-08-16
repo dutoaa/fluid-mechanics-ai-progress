@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-08-15
+Generated: 2026-08-16
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. DD-RNO: A Domain-Decomposed Routed Neural Operator for Airfoil Flow Prediction
