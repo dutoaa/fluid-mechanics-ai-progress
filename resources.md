@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-08-22
+Generated: 2026-08-23
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Complementary, Not Cumulative: Interaction Effects in Physics-Informed Neural Networks for Navier-Stokes Vortex Shedding
