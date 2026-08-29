@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-08-28
+Generated: 2026-08-29
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. How well can Diffusion Models learn Lagrangian-Tracer Statistics in Non-reciprocal Turbulence?
@@ -67,15 +67,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.26611v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-27-arxiv-resolvent_analysis_to_inform_viscoelastic_coatings_for_turbulent_drag_reduction_infographic.json
 
-## 9. Density Field of Dilute Particle Flow in Two-Fluid Model with Incompressible Carrier Flow
-
-- Date: 2026-08-27
-- Category: Aerodynamics
-- arXiv: https://arxiv.org/abs/2608.26835v1
-- PDF: https://arxiv.org/pdf/2608.26835v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-27-arxiv-density_field_of_dilute_particle_flow_in_two_fluid_model_with_incompressible_carrier_flow_infographic.json
-
-## 10. Vortex filament dynamics and vortex ring motion revisited
+## 9. Vortex filament dynamics and vortex ring motion revisited
 
 - Date: 2026-08-26
 - Category: Aerodynamics
@@ -83,15 +75,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.25827v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-26-arxiv-vortex_filament_dynamics_and_vortex_ring_motion_revisited_infographic.json
 
-## 11. Wing-Rotor Aerodynamic Interactions in Small UAVs During Hover and Cruise
-
-- Date: 2026-08-25
-- Category: Aerodynamics
-- arXiv: https://arxiv.org/abs/2608.25150v1
-- PDF: https://arxiv.org/pdf/2608.25150v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-25-arxiv-wing_rotor_aerodynamic_interactions_in_small_uavs_during_hover_and_cruise_infographic.json
-
-## 12. High-order stabilized matrix-free simulation of rotating mixing devices using the Mortar Element Method
+## 10. High-order stabilized matrix-free simulation of rotating mixing devices using the Mortar Element Method
 
 - Date: 2026-08-27
 - Category: Turbulence
@@ -99,13 +83,29 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.27423v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-27-arxiv-high_order_stabilized_matrix_free_simulation_of_rotating_mixing_devices_using_the_mortar_e_infographic.json
 
-## 13. Energy transfer and scale organisation in dense canopy turbulence
+## 11. Energy transfer and scale organisation in dense canopy turbulence
 
 - Date: 2026-08-27
 - Category: Turbulence
 - arXiv: https://arxiv.org/abs/2608.27272v1
 - PDF: https://arxiv.org/pdf/2608.27272v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-27-arxiv-energy_transfer_and_scale_organisation_in_dense_canopy_turbulence_infographic.json
+
+## 12. Density Field of Dilute Particle Flow in Two-Fluid Model with Incompressible Carrier Flow
+
+- Date: 2026-08-27
+- Category: Aerodynamics
+- arXiv: https://arxiv.org/abs/2608.26835v1
+- PDF: https://arxiv.org/pdf/2608.26835v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-27-arxiv-density_field_of_dilute_particle_flow_in_two_fluid_model_with_incompressible_carrier_flow_infographic.json
+
+## 13. Wing-Rotor Aerodynamic Interactions in Small UAVs During Hover and Cruise
+
+- Date: 2026-08-25
+- Category: Aerodynamics
+- arXiv: https://arxiv.org/abs/2608.25150v1
+- PDF: https://arxiv.org/pdf/2608.25150v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-25-arxiv-wing_rotor_aerodynamic_interactions_in_small_uavs_during_hover_and_cruise_infographic.json
 
 ## 14. Turbulent diffusivity and effective rise velocity of buoyant particles in a free-surface boundary layer
 
@@ -147,18 +147,18 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2608.25441v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-26-arxiv-a_generalized_energy_consistent_finite_difference_scheme_for_10_moment_magnetohydrodynamic_infographic.json
 
-## 19. Efficient Treatment of Non-Linearity in Quantum Computational Fluid Dynamics Using Hybrid Tensor Networks
+## 19. Ice melting in an oscillatory flow
+
+- Date: 2026-08-25
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2608.24875v1
+- PDF: https://arxiv.org/pdf/2608.24875v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-25-arxiv-ice_melting_in_an_oscillatory_flow_infographic.json
+
+## 20. Efficient Treatment of Non-Linearity in Quantum Computational Fluid Dynamics Using Hybrid Tensor Networks
 
 - Date: 2026-08-25
 - Category: CFD Surrogates
 - arXiv: https://arxiv.org/abs/2608.24150v1
 - PDF: https://arxiv.org/pdf/2608.24150v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-25-arxiv-efficient_treatment_of_non_linearity_in_quantum_computational_fluid_dynamics_using_hybrid_infographic.json
-
-## 20. High-resolution in situ analysis of biomass pyrolysis by combining quantitative synchrotron $μ$CT and 3D particle-resolved simulations
-
-- Date: 2026-08-27
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2608.27042v1
-- PDF: https://arxiv.org/pdf/2608.27042v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-08-27-arxiv-high_resolution_in_situ_analysis_of_biomass_pyrolysis_by_combining_quantitative_synchrotro_infographic.json
