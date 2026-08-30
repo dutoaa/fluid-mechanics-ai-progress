@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-08-29
+Generated: 2026-08-30
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. How well can Diffusion Models learn Lagrangian-Tracer Statistics in Non-reciprocal Turbulence?
