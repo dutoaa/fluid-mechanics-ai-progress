@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-09-05
+Generated: 2026-09-06
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Dissipation scaling in wind turbine wakes exposed to free-stream turbulence
