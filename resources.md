@@ -1,164 +1,164 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-09-11
+Generated: 2026-09-16
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
-## 1. ONE CYLinder: A Benchmark for Graph-Based Surrogate Modeling of Unsteady Bluff-Body Flows
+## 1. Neural Field Ensembles for Aerodynamic Surface Prediction: Winning Solution to the ONERA CRM Wall Distribution 2025 Challenge
 
-- Date: 2026-09-08
+- Date: 2026-09-15
 - Category: CFD Surrogates
-- arXiv: https://arxiv.org/abs/2609.08947v1
-- PDF: https://arxiv.org/pdf/2609.08947v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-08-arxiv-one_cylinder_a_benchmark_for_graph_based_surrogate_modeling_of_unsteady_bluff_body_flows_infographic.json
+- arXiv: https://arxiv.org/abs/2609.17160v1
+- PDF: https://arxiv.org/pdf/2609.17160v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-15-arxiv-neural_field_ensembles_for_aerodynamic_surface_prediction_winning_solution_to_the_onera_cr_infographic.json
 
-## 2. Physics-informed neural networks for viscoelastic fluid flows around a cylinder in a two-dimensional channel
+## 2. Physics Informed Neural Network model for the dynamical study of Abdominal Aortic Aneurysm
 
-- Date: 2026-09-07
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2609.07861v1
-- PDF: https://arxiv.org/pdf/2609.07861v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-07-arxiv-physics_informed_neural_networks_for_viscoelastic_fluid_flows_around_a_cylinder_in_a_two_d_infographic.json
-
-## 3. Dynamic Reduced-Order Data Assimilation from Sparse Velocity Measurements
-
-- Date: 2026-09-09
-- Category: CFD Surrogates
-- arXiv: https://arxiv.org/abs/2609.10497v1
-- PDF: https://arxiv.org/pdf/2609.10497v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-09-arxiv-dynamic_reduced_order_data_assimilation_from_sparse_velocity_measurements_infographic.json
-
-## 4. Low inertia limit of elasto-inertial turbulence
-
-- Date: 2026-09-10
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2609.11581v1
-- PDF: https://arxiv.org/pdf/2609.11581v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-10-arxiv-low_inertia_limit_of_elasto_inertial_turbulence_infographic.json
-
-## 5. Mixing dynamics and transport mechanisms during laminar stirring flows
-
-- Date: 2026-09-09
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2609.10773v1
-- PDF: https://arxiv.org/pdf/2609.10773v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-09-arxiv-mixing_dynamics_and_transport_mechanisms_during_laminar_stirring_flows_infographic.json
-
-## 6. A Novel Multi-fidelity Surrogate for Turbomachinery Design Optimization
-
-- Date: 2026-09-10
-- Category: CFD Surrogates
-- arXiv: https://arxiv.org/abs/2609.11111v1
-- PDF: https://arxiv.org/pdf/2609.11111v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-10-arxiv-a_novel_multi_fidelity_surrogate_for_turbomachinery_design_optimization_infographic.json
-
-## 7. A stochastic modeling framework to generate 2-D rough-wall high-Reynolds-number turbulent boundary layers
-
-- Date: 2026-09-09
-- Category: Aerodynamics
-- arXiv: https://arxiv.org/abs/2609.10236v1
-- PDF: https://arxiv.org/pdf/2609.10236v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-09-arxiv-a_stochastic_modeling_framework_to_generate_2_d_rough_wall_high_reynolds_number_turbulent_infographic.json
-
-## 8. A Systematic Analysis of Automatic Differentiation versus Discretization-based Constraints for Physics-Informed PDE Solvers
-
-- Date: 2026-09-07
+- Date: 2026-09-14
 - Category: Physics-Informed ML
-- arXiv: https://arxiv.org/abs/2609.07437v1
-- PDF: https://arxiv.org/pdf/2609.07437v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-07-arxiv-a_systematic_analysis_of_automatic_differentiation_versus_discretization_based_constraints_infographic.json
+- arXiv: https://arxiv.org/abs/2609.15104v1
+- PDF: https://arxiv.org/pdf/2609.15104v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-14-arxiv-physics_informed_neural_network_model_for_the_dynamical_study_of_abdominal_aortic_aneurysm_infographic.json
 
-## 9. Macroscale vortex impingement at a porous-fluid interface induces local heat-transfer enhancement
+## 3. Assessment of wind energy potential of buildings by CFD simulation in dense urban environments - From Case Studies to a Dendrogram-Based Design Framework
 
-- Date: 2026-09-09
+- Date: 2026-09-14
 - Category: Turbulence
-- arXiv: https://arxiv.org/abs/2609.09635v1
-- PDF: https://arxiv.org/pdf/2609.09635v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-09-arxiv-macroscale_vortex_impingement_at_a_porous_fluid_interface_induces_local_heat_transfer_enha_infographic.json
+- arXiv: https://arxiv.org/abs/2609.15769v1
+- PDF: https://arxiv.org/pdf/2609.15769v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-14-arxiv-assessment_of_wind_energy_potential_of_buildings_by_cfd_simulation_in_dense_urban_environm_infographic.json
 
-## 10. Influence of wall thermal boundary condition on mean-flow characteristics of a Mach 2.5 fully rough turbulent boundary layer
+## 4. A panoramic aerodynamic performance prediction method for turbomachinery cascades using transformer-enhanced neural operator
 
-- Date: 2026-09-08
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2609.09341v1
-- PDF: https://arxiv.org/pdf/2609.09341v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-08-arxiv-influence_of_wall_thermal_boundary_condition_on_mean_flow_characteristics_of_a_mach_2_5_fu_infographic.json
-
-## 11. Towards Heterogeneous Exascale CFD with a Single Fortran Code Base: OpenMP Target Acceleration of the High-Order Unstructured Solver UCNS3D
-
-- Date: 2026-09-07
-- Category: AI Fluid Mechanics
-- arXiv: https://arxiv.org/abs/2609.07387v1
-- PDF: https://arxiv.org/pdf/2609.07387v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-07-arxiv-towards_heterogeneous_exascale_cfd_with_a_single_fortran_code_base_openmp_target_accelerat_infographic.json
-
-## 12. A Robust All-Mach Six-Equation Diffuse-Interface Method for Multiphase Flows with Surface Tension
-
-- Date: 2026-09-09
-- Category: Multiphase Flow
-- arXiv: https://arxiv.org/abs/2609.10727v1
-- PDF: https://arxiv.org/pdf/2609.10727v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-09-arxiv-a_robust_all_mach_six_equation_diffuse_interface_method_for_multiphase_flows_with_surface_infographic.json
-
-## 13. Stable, Compact, and Direct Ghost-Cell Reconstruction: A Non-Iterative Approach for Embedded-Boundary Methods
-
-- Date: 2026-09-09
-- Category: Aerodynamics
-- arXiv: https://arxiv.org/abs/2609.10165v1
-- PDF: https://arxiv.org/pdf/2609.10165v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-09-arxiv-stable_compact_and_direct_ghost_cell_reconstruction_a_non_iterative_approach_for_embedded_infographic.json
-
-## 14. A Novel Multi-fidelity Surrogate for Efficient Turbine Design Optimization
-
-- Date: 2026-09-10
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2609.11112v1
-- PDF: https://arxiv.org/pdf/2609.11112v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-10-arxiv-a_novel_multi_fidelity_surrogate_for_efficient_turbine_design_optimization_infographic.json
-
-## 15. A Conservative Hybrid Eulerian-Lagrangian Method with Persistent Structure Tracking for Multiscale Cavitation
-
-- Date: 2026-09-10
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2609.11776v1
-- PDF: https://arxiv.org/pdf/2609.11776v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-10-arxiv-a_conservative_hybrid_eulerian_lagrangian_method_with_persistent_structure_tracking_for_mu_infographic.json
-
-## 16. Surface gravity wave-mean flow interaction with comparable spatial scales. Part I: reduced wave equations
-
-- Date: 2026-09-10
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2609.11587v1
-- PDF: https://arxiv.org/pdf/2609.11587v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-10-arxiv-surface_gravity_wave_mean_flow_interaction_with_comparable_spatial_scales_part_i_reduced_w_infographic.json
-
-## 17. DiffSWE2d: a differentiable Shallow Water Equations solver for end-to-end flood and tsunami modelling
-
-- Date: 2026-09-10
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2609.11426v1
-- PDF: https://arxiv.org/pdf/2609.11426v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-10-arxiv-diffswe2d_a_differentiable_shallow_water_equations_solver_for_end_to_end_flood_and_tsunami_infographic.json
-
-## 18. Giesekus Stick-Slip Singularity: Asymptotic Theory in the Log-Conformation Formulation
-
-- Date: 2026-09-09
-- Category: Aerodynamics
-- arXiv: https://arxiv.org/abs/2609.10836v1
-- PDF: https://arxiv.org/pdf/2609.10836v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-09-arxiv-giesekus_stick_slip_singularity_asymptotic_theory_in_the_log_conformation_formulation_infographic.json
-
-## 19. Surface gravity wave-mean flow interaction with comparable spatial scales. Part II: two-way coupling and wave-wave interactions
-
-- Date: 2026-09-10
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2609.11631v1
-- PDF: https://arxiv.org/pdf/2609.11631v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-10-arxiv-surface_gravity_wave_mean_flow_interaction_with_comparable_spatial_scales_part_ii_two_way_infographic.json
-
-## 20. A Comparative Study of Finite-Volume-based Coupled and Segregated Reduced-Order Models for Incompressible Flows in Parametrized Domains
-
-- Date: 2026-09-07
+- Date: 2026-09-13
 - Category: CFD Surrogates
-- arXiv: https://arxiv.org/abs/2609.07472v1
-- PDF: https://arxiv.org/pdf/2609.07472v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-07-arxiv-a_comparative_study_of_finite_volume_based_coupled_and_segregated_reduced_order_models_for_infographic.json
+- arXiv: https://arxiv.org/abs/2609.16066v1
+- PDF: https://arxiv.org/pdf/2609.16066v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-13-arxiv-a_panoramic_aerodynamic_performance_prediction_method_for_turbomachinery_cascades_using_tr_infographic.json
+
+## 5. Computer-assisted global regularity across nonlinear families of three-dimensional periodic Navier-Stokes flows
+
+- Date: 2026-09-14
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2609.16157v1
+- PDF: https://arxiv.org/pdf/2609.16157v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-14-arxiv-computer_assisted_global_regularity_across_nonlinear_families_of_three_dimensional_periodi_infographic.json
+
+## 6. Comparative Evaluation of Carotid Artery Hemodynamics: Patient-Specific CFD Simulations vs. 4D flow MRI
+
+- Date: 2026-09-15
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2609.17295v1
+- PDF: https://arxiv.org/pdf/2609.17295v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-15-arxiv-comparative_evaluation_of_carotid_artery_hemodynamics_patient_specific_cfd_simulations_vs_infographic.json
+
+## 7. A deep dive into Tollmien-Schlichting wave control via passive wall deformations: The battle between local and downstream stabilization, lessons learned, and implications for phononic subsurfaces
+
+- Date: 2026-09-14
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2609.16144v1
+- PDF: https://arxiv.org/pdf/2609.16144v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-14-arxiv-a_deep_dive_into_tollmien_schlichting_wave_control_via_passive_wall_deformations_the_battl_infographic.json
+
+## 8. A Kinetic Energy Preserving and Entropy Conserving Two-Point Flux for Multi-species Compressible Flow
+
+- Date: 2026-09-11
+- Category: AI Fluid Mechanics
+- arXiv: https://arxiv.org/abs/2609.13503v1
+- PDF: https://arxiv.org/pdf/2609.13503v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-11-arxiv-a_kinetic_energy_preserving_and_entropy_conserving_two_point_flux_for_multi_species_compre_infographic.json
+
+## 9. Extensible membranes in inviscid flow: aerodynamics and singular limits
+
+- Date: 2026-09-15
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2609.16484v1
+- PDF: https://arxiv.org/pdf/2609.16484v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-15-arxiv-extensible_membranes_in_inviscid_flow_aerodynamics_and_singular_limits_infographic.json
+
+## 10. Deep Koopman Sensing
+
+- Date: 2026-09-14
+- Category: CFD Surrogates
+- arXiv: https://arxiv.org/abs/2609.15762v1
+- PDF: https://arxiv.org/pdf/2609.15762v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-14-arxiv-deep_koopman_sensing_infographic.json
+
+## 11. A Calibrated Reduced-Order Force Model for Bacterial Hydrodynamics in Free Space and Near a Planar Boundary
+
+- Date: 2026-09-14
+- Category: CFD Surrogates
+- arXiv: https://arxiv.org/abs/2609.14958v1
+- PDF: https://arxiv.org/pdf/2609.14958v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-14-arxiv-a_calibrated_reduced_order_force_model_for_bacterial_hydrodynamics_in_free_space_and_near_infographic.json
+
+## 12. A derivative-free framework for capturing macroscopic behavior of incompressible turbulent flows
+
+- Date: 2026-09-15
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2609.17323v1
+- PDF: https://arxiv.org/pdf/2609.17323v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-15-arxiv-a_derivative_free_framework_for_capturing_macroscopic_behavior_of_incompressible_turbulent_infographic.json
+
+## 13. Multiflagellarity facilitates bacterial upstream motility
+
+- Date: 2026-09-14
+- Category: CFD Surrogates
+- arXiv: https://arxiv.org/abs/2609.15920v1
+- PDF: https://arxiv.org/pdf/2609.15920v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-14-arxiv-multiflagellarity_facilitates_bacterial_upstream_motility_infographic.json
+
+## 14. A conservative Godunov-type mesh-free hydrodynamics scheme for weakly compressible multiphase flows
+
+- Date: 2026-09-11
+- Category: Multiphase Flow
+- arXiv: https://arxiv.org/abs/2609.13473v1
+- PDF: https://arxiv.org/pdf/2609.13473v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-11-arxiv-a_conservative_godunov_type_mesh_free_hydrodynamics_scheme_for_weakly_compressible_multiph_infographic.json
+
+## 15. Direct Trajectory Reconstruction for Fast 3D X-ray Particle Tracking Velocimetry in Porous Media
+
+- Date: 2026-09-15
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2609.16838v1
+- PDF: https://arxiv.org/pdf/2609.16838v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-15-arxiv-direct_trajectory_reconstruction_for_fast_3d_x_ray_particle_tracking_velocimetry_in_porous_infographic.json
+
+## 16. Turbulence at an aerofoil leading edge: the linearity boundary and its generation mechanism
+
+- Date: 2026-09-15
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2609.16709v1
+- PDF: https://arxiv.org/pdf/2609.16709v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-15-arxiv-turbulence_at_an_aerofoil_leading_edge_the_linearity_boundary_and_its_generation_mechanism_infographic.json
+
+## 17. Autonomous Droplet Navigation via Model-Based Reinforcement Learning
+
+- Date: 2026-09-14
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2609.16369v1
+- PDF: https://arxiv.org/pdf/2609.16369v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-14-arxiv-autonomous_droplet_navigation_via_model_based_reinforcement_learning_infographic.json
+
+## 18. Fluctuation-dissipation relations in isotropic turbulence from Kraichnan's fully resolved DIA closure
+
+- Date: 2026-09-14
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2609.15641v1
+- PDF: https://arxiv.org/pdf/2609.15641v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-14-arxiv-fluctuation_dissipation_relations_in_isotropic_turbulence_from_kraichnan_s_fully_resolved_infographic.json
+
+## 19. Lagrangian Dynamical Theory of the Velocity Gradient Tensor: Real Schur Form, Schur Frame, Characteristic Vorticity Modes, and Commutative Vorticity Operators
+
+- Date: 2026-09-12
+- Category: CFD Surrogates
+- arXiv: https://arxiv.org/abs/2609.14034v1
+- PDF: https://arxiv.org/pdf/2609.14034v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-12-arxiv-lagrangian_dynamical_theory_of_the_velocity_gradient_tensor_real_schur_form_schur_frame_ch_infographic.json
+
+## 20. A nonlinear hydrodynamic theory of ultrafast laser self-organization
+
+- Date: 2026-09-14
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2609.15421v1
+- PDF: https://arxiv.org/pdf/2609.15421v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-14-arxiv-a_nonlinear_hydrodynamic_theory_of_ultrafast_laser_self_organization_infographic.json
