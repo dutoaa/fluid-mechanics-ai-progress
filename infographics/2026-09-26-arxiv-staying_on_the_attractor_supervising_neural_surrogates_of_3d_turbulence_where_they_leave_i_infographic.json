@@ -1,24 +1,24 @@
 {
-  "key_insight": "Off-attractor supervision (OAS) retrains neural turbulence surrogates on states where they begin to fail, so the model learns the true Navier-Stokes response and stays physically plausible for much longer.",
-  "engineering_relevance": "This makes CFD surrogates more reliable for long-rollout deployment, improving robustness, statistics, and stability beyond the training trajectory.",
+  "key_insight": "Off-attractor supervision teaches a neural turbulence surrogate how Navier-Stokes dynamics evolve from states the model drifts into, preventing error amplification and long-horizon collapse.",
+  "engineering_relevance": "For CFD surrogates deployed beyond their training distribution, OAS improves robustness, preserves turbulence statistics, and greatly extends useful rollout time.",
   "method": [
-    "Select a few hundred off-attractor states for relabeling",
-    "Generate these states from surrogate rollouts, adversarial attacks, and dynamic perturbations",
-    "Compute DNS futures offline once per selected state and supervise the surrogate on those targets"
+    "Select a small set of off-attractor states where the surrogate is likely to fail.",
+    "Relabel each selected state with its true future from DNS and supervise the surrogate on these trajectories.",
+    "Generate states from surrogate rollouts, targeted attacks, and dynamics-informed perturbations."
   ],
-  "evidence_signal": "On 128^3 turbulence, OAS raised the median time to failure from 21 to 721 steps, outperforming baselines whose medians were at most 110 steps and also improving step-15 error and long-horizon statistics.",
-  "watch_item": "The approach still depends on offline DNS relabeling and careful choice of attack/selection strategies, so its cost and coverage may limit scalability to larger systems.",
+  "evidence_signal": "On 128^3 turbulence, OAS raises median time to failure from 21 to 721 steps and achieves the best short-term error and long-horizon statistics among the compared methods.",
+  "watch_item": "OAS depends on offline DNS relabeling of selected states, so the added cost and choice of attack/selection strategy may affect practicality.",
   "hashtags": [
     "#CFD",
     "#Turbulence",
     "#NeuralSurrogates",
     "#ScientificML",
-    "#PhysicsInformedAI"
+    "#RobustSimulation"
   ],
   "paper_id": "2026-09-26-arxiv-staying_on_the_attractor_supervising_neural_surrogates_of_3d_turbulence_where_they_leave_i",
   "paper_title": "Staying on the Attractor: Supervising Neural Surrogates of 3D Turbulence Where They Leave It",
   "paper_date": "2026-09-26",
   "paper_category": "CFD Surrogates",
-  "generated_at": "2026-09-29T14:42:49",
+  "generated_at": "2026-09-30T14:44:59",
   "generator": "openai"
 }
