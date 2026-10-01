@@ -1,24 +1,24 @@
 {
-  "key_insight": "A physics-informed neural network can learn depth-averaged avalanche dynamics from the Savage-Hutter model, matching 1D analytical benchmarks and extending to realistic 2D granular-collapse experiments.",
-  "engineering_relevance": "This provides a compact surrogate for avalanche prediction that can support hazard assessment by estimating flow depth, velocity, and runout patterns with limited data.",
+  "key_insight": "A physics-informed neural network can learn avalanche dynamics from the Savage-Hutter model, moving from 1D analytical verification to 2D experimental validation with sparse data assistance.",
+  "engineering_relevance": "This approach offers a fast surrogate for predicting granular avalanche runout, depth, and velocity for hazard assessment on slopes and in mountainous terrain.",
   "method": [
-    "Verified the PINN on three 1D problems: prescribed-velocity height prediction, prescribed-height velocity prediction, and fully coupled conservative-form learning.",
-    "Extended the framework to 2D and used a hybrid physics + sparse-data loss, since pure physics training collapsed to the trivial zero solution.",
-    "Compared predictions against laboratory experiments and TITAN2D using RMSE, peak fields, and wetted-area IoU."
+    "Verified 1D PINNs against analytical solutions for height-only, velocity-only, and coupled conservative formulations.",
+    "Extended the framework to 2D cylindrical-pile collapse on an incline and compared against laboratory experiments and TITAN2D.",
+    "Added 10 sparse final-deposit points to avoid trivial zero-solution training in the purely physics-based 2D case."
   ],
-  "evidence_signal": "In 2D validation, global height RMSE was 2.7–6.7 mm across four cases and mean wetted-area IoU reached 69–81%, while the coupled 1D PINN achieved height and velocity RMSEs of 0.043 and 0.079 in non-dimensional units.",
-  "watch_item": "Pure physics-only training failed in 2D, so the approach depends on a small amount of sparse observational data and careful loss balancing to avoid trivial solutions.",
+  "evidence_signal": "The coupled 1D model achieved mean RMSEs of 0.043 for height and 0.079 for velocity, while 2D validation reported global height RMSE of 2.7–6.7 mm and wetted-area IoU of 69–81% across four cases.",
+  "watch_item": "Pure physics-only training in 2D collapsed to the trivial zero solution, so practical deployment depends on sparse observational data and careful loss balancing.",
   "hashtags": [
-    "#PhysicsInformedML",
-    "#PINN",
+    "#PhysicsInformedNN",
     "#AvalancheDynamics",
     "#GranularFlow",
-    "#ComputationalMechanics"
+    "#ComputationalMechanics",
+    "#HazardModeling"
   ],
   "paper_id": "2026-09-28-arxiv-physics_informed_neural_networks_for_depth_averaged_avalanche_dynamics",
   "paper_title": "Physics-Informed Neural Networks for Depth-Averaged Avalanche Dynamics",
   "paper_date": "2026-09-28",
   "paper_category": "Physics-Informed ML",
-  "generated_at": "2026-09-30T14:44:44",
+  "generated_at": "2026-10-01T15:14:30",
   "generator": "openai"
 }

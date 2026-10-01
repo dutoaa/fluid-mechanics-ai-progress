@@ -1,24 +1,24 @@
 {
-  "key_insight": "Off-attractor supervision teaches a neural turbulence surrogate how Navier-Stokes dynamics evolve from states the model drifts into, preventing error amplification and long-horizon collapse.",
-  "engineering_relevance": "For CFD surrogates deployed beyond their training distribution, OAS improves robustness, preserves turbulence statistics, and greatly extends useful rollout time.",
+  "key_insight": "Off-attractor supervision (OAS) retrains neural turbulence surrogates on states where they actually fail, helping them stay physically realistic instead of drifting, freezing, or blowing up.",
+  "engineering_relevance": "For CFD surrogate deployment, OAS improves both short-term prediction and long-horizon statistical fidelity, making learned simulators more trustworthy beyond the training distribution.",
   "method": [
-    "Select a small set of off-attractor states where the surrogate is likely to fail.",
-    "Relabel each selected state with its true future from DNS and supervise the surrogate on these trajectories.",
-    "Generate states from surrogate rollouts, targeted attacks, and dynamics-informed perturbations."
+    "Collect off-attractor states from surrogate rollouts, adversarial attacks, and targeted perturbations.",
+    "Run DNS offline once on each selected state to obtain the correct future trajectory.",
+    "Relabel the surrogate with these DNS futures so it learns dynamics from failure modes, not just training trajectories."
   ],
-  "evidence_signal": "On 128^3 turbulence, OAS raises median time to failure from 21 to 721 steps and achieves the best short-term error and long-horizon statistics among the compared methods.",
-  "watch_item": "OAS depends on offline DNS relabeling of selected states, so the added cost and choice of attack/selection strategy may affect practicality.",
+  "evidence_signal": "On 128^3 turbulence, OAS raised the median time to failure from 21 to 721 steps and achieved the best step-15 error and long-horizon statistics among compared methods.",
+  "watch_item": "The approach adds offline DNS relabeling and depends on how well the selected off-attractor states cover realistic failure modes during deployment.",
   "hashtags": [
     "#CFD",
     "#Turbulence",
     "#NeuralSurrogates",
     "#ScientificML",
-    "#RobustSimulation"
+    "#NavierStokes"
   ],
   "paper_id": "2026-09-26-arxiv-staying_on_the_attractor_supervising_neural_surrogates_of_3d_turbulence_where_they_leave_i",
   "paper_title": "Staying on the Attractor: Supervising Neural Surrogates of 3D Turbulence Where They Leave It",
   "paper_date": "2026-09-26",
   "paper_category": "CFD Surrogates",
-  "generated_at": "2026-09-30T14:44:59",
+  "generated_at": "2026-10-01T15:14:42",
   "generator": "openai"
 }
