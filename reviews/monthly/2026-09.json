@@ -1,0 +1,80 @@
+{
+  "repo_title": "AI Fluid Mechanics",
+  "period": "month",
+  "label": "2026-09",
+  "author": "William Sun with help from OpenAI",
+  "paper_count": 119,
+  "analysis": {
+    "executive_summary": "September 2026 was a strong month for AI fluid mechanics, with progress spanning CFD surrogates, physics-informed learning, and turbulence/multiphase modeling. On the surrogate side, several papers pushed beyond pointwise prediction toward more operationally useful tools: benchmark creation for unsteady bluff-body flows, improved geometry-conditioned models for airfoils and turbomachinery, reduced-order sensing/assimilation, and methods that supervise models off-attractor to improve long-horizon stability. Physics-informed work continued to mature from proof-of-concept toward more robust formulations, including adaptive basis construction, comparisons of automatic differentiation versus discretization-based constraints, and application-oriented PINNs for viscoelastic, biomedical, and granular-flow systems. Turbulence research remained vibrant, with studies on dissipation anomalies, vorticity dynamics, wall-bounded flow control, roughness/thermal effects, and data-driven or theoretical advances in regularity and statistics. Overall, the month shows a field moving from isolated model demonstrations toward benchmarked, physics-aware, and deployment-oriented tools, while still grappling with stability, generalization, and faithful extrapolation to hard flow regimes.",
+    "major_themes": [
+      "Benchmarking and evaluation standards are becoming central for CFD surrogates.",
+      "Geometry-conditioned neural models are expanding to complex aerodynamic design spaces.",
+      "Physics-informed methods are maturing through stabilization, adaptivity, and domain-specific constraints.",
+      "Data assimilation and sensing are shifting from forecasting toward state recovery from sparse measurements.",
+      "Turbulence studies continue to probe dissipation, intermittency, and invariants with both theory and DNS.",
+      "Multiphase, aeroelastic, and biomedical flows remain important proving grounds for AI-assisted fluid modeling.",
+      "High-performance computing and solver modernization remain a parallel enabler for the field."
+    ],
+    "notable_papers": [
+      {
+        "title": "ONE CYLinder: A Benchmark for Graph-Based Surrogate Modeling of Unsteady Bluff-Body Flows",
+        "why_it_matters": "Provides a much-needed benchmark dataset and evaluation protocol for graph-based CFD surrogates across multiple Reynolds-number regimes, which can help standardize long-horizon rollout testing."
+      },
+      {
+        "title": "Staying on the Attractor: Supervising Neural Surrogates of 3D Turbulence Where They Leave It",
+        "why_it_matters": "Addresses a major failure mode of chaotic-flow surrogates by relabeling off-attractor states with DNS trajectories, improving robustness and statistical fidelity."
+      },
+      {
+        "title": "Deep Koopman Sensing",
+        "why_it_matters": "Highlights the gap between forecasting and sensing, and offers a Koopman-latent framework for reconstructing flow states from sparse sensors across several benchmarks."
+      },
+      {
+        "title": "Airfoil2Vec: Spectral Geometry-Conditioned Neural Surrogate Models for Airfoil Aerodynamics and a Downforce-Generating CFD Dataset",
+        "why_it_matters": "Combines a large open airfoil dataset with a new spectral geometry encoder, advancing geometry-aware surrogates for practical aerodynamic design."
+      },
+      {
+        "title": "Physics-Informed Method of Group Data Handling: Adaptive Construction of Functional Representations with an Application to the Navier-Stokes Equations",
+        "why_it_matters": "Introduces adaptive construction of the solution representation itself, moving PINNs beyond fixed ansatzes and showing very low error on a benchmark flow."
+      },
+      {
+        "title": "A Systematic Analysis of Automatic Differentiation versus Discretization-based Constraints for Physics-Informed PDE Solvers",
+        "why_it_matters": "Clarifies when AD-based PINNs struggle and when discretization-based constraints may be preferable, helping guide method choice across PDE regimes."
+      },
+      {
+        "title": "Toward Principled Generative Data Assimilation of Turbulent Flows from Sparse Observations",
+        "why_it_matters": "Pushes diffusion-based assimilation toward a more Bayesian formulation by using observation-error covariance rather than heuristic balancing."
+      },
+      {
+        "title": "Is Vorticity Amplification Essential for Anomalous Dissipation and Intermittency in Turbulence?",
+        "why_it_matters": "Provides a strong mechanistic result linking vorticity amplification to the classical energy cascade and dissipation anomaly."
+      },
+      {
+        "title": "Generalised Mixing-Plane Method for Compressible Reacting-Mixture Flows in Steady Multiphysics Turbomachinery Simulations",
+        "why_it_matters": "Extends a foundational turbomachinery coupling method to reacting mixtures, supporting whole-engine simulation workflows."
+      },
+      {
+        "title": "A Kinetic Energy Preserving and Entropy Conserving Two-Point Flux for Multi-species Compressible Flow",
+        "why_it_matters": "Strengthens the numerical foundations of high-order, stable solvers for chemically complex flows, an enabling piece for robust CFD and surrogate training data."
+      }
+    ],
+    "field_progress": [
+      "Surrogates are increasingly judged by rollout stability, off-distribution behavior, and sensing/assimilation performance rather than only one-step accuracy.",
+      "Benchmark datasets and challenge-style evaluations are becoming more common, signaling a move toward reproducibility and fair comparison.",
+      "PINNs and physics-informed methods are broadening from toy problems to realistic elastic, biomedical, granular, and manufacturing flows, with more attention to stability tricks and representation design.",
+      "Turbulence research is blending classical analysis with modern computation to isolate causal mechanisms such as vorticity amplification, dissipation scaling, and wall/roughness effects.",
+      "There is growing convergence between CFD, reduced-order modeling, and machine learning in practical design loops for airfoils, turbomachinery, reactors, and biomedical flows.",
+      "Solver modernization and HPC-aware implementations remain important infrastructure work that supports larger datasets, more simulations, and faster model development."
+    ],
+    "open_questions": [
+      "How can surrogate models be made reliably stable over very long rollouts in chaotic turbulent flows without repeated DNS supervision?",
+      "What benchmarks and metrics best capture whether a learned model truly preserves physics, not just short-term accuracy?",
+      "When should physics-informed methods prefer continuous automatic differentiation, and when are discretization-based constraints or hybrid formulations superior?",
+      "Can generative data assimilation be made fully Bayesian and scalable enough for real-time turbulent flow inference?",
+      "How can models generalize across geometry, Reynolds number, Mach number, multiphase state, and boundary-condition changes without retraining?",
+      "Which numerical invariants and stability constraints are most important to preserve when learning constitutive laws or multi-species compressible fluxes?"
+    ],
+    "outlook": "The next stage of progress is likely to focus on trustworthy deployment: validated surrogates, calibrated physics-informed solvers, and assimilation methods that remain stable under distribution shift. Expect more benchmark datasets, more hybrid numerical-ML solvers that encode conservation and stability explicitly, and more application-specific methods targeting aerospace, energy, biomedical, and multiphase systems. The main bottleneck remains the same across subfields: achieving generalization and long-term fidelity while retaining computational efficiency."
+  },
+  "markdown_file": "2026-09.md",
+  "generated_at": "2026-10-02T05:59:13"
+}
