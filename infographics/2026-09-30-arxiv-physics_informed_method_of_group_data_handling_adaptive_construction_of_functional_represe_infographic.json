@@ -1,24 +1,24 @@
 {
-  "key_insight": "PI-GMDH adaptively builds the functional form of the solution while enforcing physics, rather than optimizing only fixed architectures.",
-  "engineering_relevance": "This can reduce model size and training cost for CFD surrogates or inverse problems while maintaining strong accuracy on benchmark incompressible flows.",
+  "key_insight": "PI-GMDH adaptively builds the functional form of physics-informed representations during training, rather than fixing the architecture upfront, and applies it to incompressible Navier-Stokes flow.",
+  "engineering_relevance": "This can reduce model size and training cost while preserving high accuracy for fluid-flow surrogates and inverse/forward physics-informed simulation workflows.",
   "method": [
-    "Progressively constructs coupled field representations by adding candidate basis functions during training.",
-    "Ranks candidate directions using the first variation of a combined physics and observational objective.",
-    "Refines coefficients with block-coordinate damped Gauss-Newton optimization."
+    "Generate candidate functional directions progressively using the first variation of the combined physics and data objective.",
+    "Optimize coefficients with block-coordinate damped Gauss-Newton updates.",
+    "Use tensor-product Chebyshev basis functions for the 2D time-dependent Taylor-Green Navier-Stokes benchmark."
   ],
-  "evidence_signal": "On the 2D time-dependent Taylor-Green Navier-Stokes benchmark, adaptive PI-GMDH achieved validation and test losses of 5.299e-19 and 5.296e-19 with 204, 201, and 175 active functions for u, v, and p.",
-  "watch_item": "The reported gains come from a controlled synthetic benchmark, so the results may not generalize directly to noisier or more complex real-world flow data.",
+  "evidence_signal": "On the Taylor-Green benchmark, adaptive PI-GMDH achieved validation and held-out test losses of 5.299e-19 and 5.296e-19, with 204/201/175 active functions for u/v/p.",
+  "watch_item": "Results come from a controlled synthetic benchmark, so the apparent gains may not directly transfer to more complex or noisy real-world CFD problems.",
   "hashtags": [
     "#PhysicsInformedML",
     "#NavierStokes",
-    "#CFD",
-    "#AdaptiveModels",
-    "#ComputationalFluidDynamics"
+    "#ComputationalFluidDynamics",
+    "#AdaptiveModeling",
+    "#ChebyshevBasis"
   ],
   "paper_id": "2026-09-30-arxiv-physics_informed_method_of_group_data_handling_adaptive_construction_of_functional_represe",
   "paper_title": "Physics-Informed Method of Group Data Handling: Adaptive Construction of Functional Representations with an Application to the Navier-Stokes Equations",
   "paper_date": "2026-09-30",
   "paper_category": "Physics-Informed ML",
-  "generated_at": "2026-10-01T15:14:10",
+  "generated_at": "2026-10-02T14:33:59",
   "generator": "openai"
 }
