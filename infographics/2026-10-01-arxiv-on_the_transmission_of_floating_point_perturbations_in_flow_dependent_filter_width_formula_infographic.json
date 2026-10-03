@@ -1,24 +1,24 @@
 {
-  "key_insight": "Flow-dependent LES filter widths can pass floating-point perturbations through the SGS model with little attenuation, so numerical noise can become physically relevant on heterogeneous hardware.",
-  "engineering_relevance": "A robust max-min compressed, velocity-gradient-bounded filter-width formulation can reduce architecture-induced sensitivity while preserving flow dependence in LES.",
+  "key_insight": "Flow-dependent LES filter-widths can transmit floating-point perturbations almost without attenuation when they depend on directional mesh metrics, making numerical sensitivity an active modeling issue.",
+  "engineering_relevance": "For heterogeneous CPU/GPU LES workflows, the paper offers a more robust filter-width formulation that preserves flow dependence while reducing sensitivity to architecture-induced roundoff effects.",
   "method": [
-    "Analyze how LSQ-based filter width transmits perturbations from mesh metrics",
-    "Introduce scalar max-min compression of directional mesh scales",
-    "Add bounded modulation from the resolved velocity gradient to reroute perturbations"
+    "Analyze how LSQ-based filter-width responds to metric perturbations under fixed resolved kinematics",
+    "Add a scalar max–min compression of directional mesh scales plus a bounded velocity-gradient modulation",
+    "Compare the original and modified formulations on heterogeneous CPU/GPU runs"
   ],
-  "evidence_signal": "The approach is evaluated on CPU and GPU for cylinder flow at Re=3900 and Taylor-Green vortex at Re=1600, showing strong transmission effects in the former and no comparable macroscopic response on orthogonal grids in the latter.",
-  "watch_item": "The mitigation depends on mesh geometry and flow coupling, so gains may be limited or absent in configurations where the perturbation pathway is structurally weak.",
+  "evidence_signal": "The approach is evaluated on flow past a circular cylinder at Re=3900 and the Taylor–Green vortex at Re=1600, showing near one-to-one metric perturbation transmission in the cylinder case but no comparable macroscopic response on orthogonal Taylor–Green grids.",
+  "watch_item": "The robustness gain may depend on mesh anisotropy and flow geometry, so the modified operator should be checked carefully before use in strongly directional or transition-sensitive LES cases.",
   "hashtags": [
     "#LargeEddySimulation",
-    "#Turbulence",
     "#FloatingPoint",
-    "#HPC",
-    "#CFD"
+    "#CFD",
+    "#Turbulence",
+    "#HPC"
   ],
   "paper_id": "2026-10-01-arxiv-on_the_transmission_of_floating_point_perturbations_in_flow_dependent_filter_width_formula",
   "paper_title": "On the transmission of floating-point perturbations in flow-dependent filter-width formulations in Large-Eddy Simulation",
   "paper_date": "2026-10-01",
   "paper_category": "Turbulence",
-  "generated_at": "2026-10-02T14:34:11",
+  "generated_at": "2026-10-03T13:09:36",
   "generator": "openai"
 }
