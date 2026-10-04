@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-10-03
+Generated: 2026-10-04
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Vortex rings as hydrodynamic dispersants for mitigating underwater oil spills
@@ -75,15 +75,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.01570v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-01-arxiv-flow_separation_and_turbulence_production_over_trapezoidal_protrusions_infographic.json
 
-## 10. Generalised Mixing-Plane Method for Compressible Reacting-Mixture Flows in Steady Multiphysics Turbomachinery Simulations
-
-- Date: 2026-09-30
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2609.39746v1
-- PDF: https://arxiv.org/pdf/2609.39746v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-30-arxiv-generalised_mixing_plane_method_for_compressible_reacting_mixture_flows_in_steady_multiphy_infographic.json
-
-## 11. Helical pipes homogenize particle transport in pneumatic conveying
+## 10. Helical pipes homogenize particle transport in pneumatic conveying
 
 - Date: 2026-10-01
 - Category: Turbulence
@@ -91,7 +83,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.01920v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-01-arxiv-helical_pipes_homogenize_particle_transport_in_pneumatic_conveying_infographic.json
 
-## 12. A conservative micro-continuum-cellular automaton method for multispecies biofilm dynamics in complex flows
+## 11. A conservative micro-continuum-cellular automaton method for multispecies biofilm dynamics in complex flows
 
 - Date: 2026-10-01
 - Category: Turbulence
@@ -99,7 +91,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.01565v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-01-arxiv-a_conservative_micro_continuum_cellular_automaton_method_for_multispecies_biofilm_dynamics_infographic.json
 
-## 13. Scalar mixing by stagnation points on solid surfaces
+## 12. Scalar mixing by stagnation points on solid surfaces
 
 - Date: 2026-09-30
 - Category: Turbulence
@@ -107,7 +99,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.00790v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-30-arxiv-scalar_mixing_by_stagnation_points_on_solid_surfaces_infographic.json
 
-## 14. On the spectra of strong turbulence on water surfaces
+## 13. On the spectra of strong turbulence on water surfaces
 
 - Date: 2026-09-30
 - Category: Turbulence
@@ -115,7 +107,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.00777v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-30-arxiv-on_the_spectra_of_strong_turbulence_on_water_surfaces_infographic.json
 
-## 15. Do Better Scores Mean Better Physics? Physics-Grounded Explanations for Sim2Real Neural Operators
+## 14. Do Better Scores Mean Better Physics? Physics-Grounded Explanations for Sim2Real Neural Operators
 
 - Date: 2026-09-30
 - Category: CFD Surrogates
@@ -123,7 +115,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.00415v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-30-arxiv-do_better_scores_mean_better_physics_physics_grounded_explanations_for_sim2real_neural_ope_infographic.json
 
-## 16. Leading-edge noise reduction by perforated and porous inserts: a compressible finite-chord prediction without fitted constants
+## 15. Leading-edge noise reduction by perforated and porous inserts: a compressible finite-chord prediction without fitted constants
 
 - Date: 2026-09-29
 - Category: Turbulence
@@ -131,7 +123,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2609.36669v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-29-arxiv-leading_edge_noise_reduction_by_perforated_and_porous_inserts_a_compressible_finite_chord_infographic.json
 
-## 17. Direct Modeling of Pore Size Evolution and Microcollapse in Lyophilization by Population Balance
+## 16. Direct Modeling of Pore Size Evolution and Microcollapse in Lyophilization by Population Balance
 
 - Date: 2026-10-01
 - Category: Turbulence
@@ -139,7 +131,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.01851v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-01-arxiv-direct_modeling_of_pore_size_evolution_and_microcollapse_in_lyophilization_by_population_b_infographic.json
 
-## 18. Flow-rate controls on trapped hydrogen redistribution in a heterogeneous sandstone: a synchrotron X-ray micro-CT study
+## 17. Flow-rate controls on trapped hydrogen redistribution in a heterogeneous sandstone: a synchrotron X-ray micro-CT study
 
 - Date: 2026-10-01
 - Category: Turbulence
@@ -147,13 +139,21 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.01886v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-01-arxiv-flow_rate_controls_on_trapped_hydrogen_redistribution_in_a_heterogeneous_sandstone_a_synch_infographic.json
 
-## 19. A Reynolds-like Criterion for the Onset of Universal Active Turbulence
+## 18. A Reynolds-like Criterion for the Onset of Universal Active Turbulence
 
 - Date: 2026-09-30
 - Category: Turbulence
 - arXiv: https://arxiv.org/abs/2609.39999v1
 - PDF: https://arxiv.org/pdf/2609.39999v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-30-arxiv-a_reynolds_like_criterion_for_the_onset_of_universal_active_turbulence_infographic.json
+
+## 19. Generalised Mixing-Plane Method for Compressible Reacting-Mixture Flows in Steady Multiphysics Turbomachinery Simulations
+
+- Date: 2026-09-30
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2609.39746v1
+- PDF: https://arxiv.org/pdf/2609.39746v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-09-30-arxiv-generalised_mixing_plane_method_for_compressible_reacting_mixture_flows_in_steady_multiphy_infographic.json
 
 ## 20. Role of flame localization in wavemaker regions on the suppression of combustion instability in turbulent partially-premixed methane flames
 
