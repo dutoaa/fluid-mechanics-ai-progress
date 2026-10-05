@@ -1,24 +1,24 @@
 {
-  "key_insight": "PI-GMDH adaptively builds the functional form of a physics-informed solution during training, rather than fixing the representation beforehand.",
-  "engineering_relevance": "This can reduce model size and training cost while preserving high accuracy for fluid-flow surrogates and other PDE-constrained engineering problems.",
+  "key_insight": "PI-GMDH builds the solution structure progressively, using physics- and data-informed criteria to add functional terms only where they improve the coupled Navier-Stokes representation.",
+  "engineering_relevance": "For fluid mechanics problems, this adaptive construction can reduce model size and training cost while preserving high accuracy on incompressible flow fields.",
   "method": [
-    "Evaluate candidate functional terms using the first variation of the combined physics and observation objective.",
-    "Add useful terms progressively, then optimize coefficients with block-coordinate damped Gauss-Newton updates.",
-    "Demonstrate the approach on 2D time-dependent incompressible Navier-Stokes with tensor-product Chebyshev functions."
+    "Evaluate candidate basis directions via the first variation of the full physical + observational objective.",
+    "Add functions progressively and optimize coefficients with block-coordinate damped Gauss-Newton.",
+    "Demonstrate the approach with tensor-product Chebyshev expansions on the 2D time-dependent Taylor-Green vortex."
   ],
-  "evidence_signal": "On the Taylor-Green benchmark, the adaptive PI-GMDH variant reached validation and test losses of 5.299e-19 and 5.296e-19, with 204, 201, and 175 active functions for u, v, and p.",
-  "watch_item": "The reported gains come from a controlled synthetic benchmark, so performance may not transfer directly to more complex or noisy real-world flows.",
+  "evidence_signal": "On the benchmark test, adaptive PI-GMDH achieved validation and held-out test losses of 5.299e-19 and 5.296e-19, with 204, 201, and 175 active functions for u, v, and p.",
+  "watch_item": "The reported advantage is benchmark-specific, so the structural-construction policy may not generalize without tuning for harder or noisy CFD data.",
   "hashtags": [
     "#PhysicsInformedML",
     "#NavierStokes",
-    "#FluidDynamics",
-    "#ScientificML",
+    "#FluidMechanics",
+    "#ChebyshevMethods",
     "#AdaptiveModeling"
   ],
   "paper_id": "2026-09-30-arxiv-physics_informed_method_of_group_data_handling_adaptive_construction_of_functional_represe",
   "paper_title": "Physics-Informed Method of Group Data Handling: Adaptive Construction of Functional Representations with an Application to the Navier-Stokes Equations",
   "paper_date": "2026-09-30",
   "paper_category": "Physics-Informed ML",
-  "generated_at": "2026-10-04T13:49:07",
+  "generated_at": "2026-10-05T16:56:31",
   "generator": "openai"
 }

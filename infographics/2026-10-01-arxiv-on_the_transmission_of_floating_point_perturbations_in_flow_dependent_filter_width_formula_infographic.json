@@ -1,13 +1,13 @@
 {
-  "key_insight": "Flow-dependent LSQ filter-widths in LES can transmit floating-point perturbations through mesh metrics with little attenuation, so numerical noise may affect the SGS model response.",
-  "engineering_relevance": "This matters for heterogeneous CPU/GPU simulations because tiny roundoff differences can alter filter-widths and, in sensitive flows, influence predicted transition and turbulence behavior.",
+  "key_insight": "Flow-dependent LSQ LES filter-widths can transmit floating-point perturbations with little attenuation, so mesh-metric noise may affect the SGS model and downstream flow physics.",
+  "engineering_relevance": "For heterogeneous CPU/GPU LES, the filter-width formulation should be numerically robust because small arithmetic differences can alter predictions in sensitive transitional flows.",
   "method": [
-    "Analyzed how LSQ filter-width responds to perturbations in mesh metrics for fixed resolved kinematics.",
-    "Introduced a scalar max-min compression of directional mesh scales plus bounded velocity-gradient modulation.",
-    "Compared the original and modified formulations on heterogeneous architectures to assess perturbation transmission."
+    "Analyzed how floating-point disturbances enter through mesh metrics in the LSQ filter-width operator",
+    "Introduced a scalar max–min compression of directional mesh scales",
+    "Added bounded modulation from the resolved velocity gradient to preserve flow dependence while reducing sensitivity"
   ],
-  "evidence_signal": "Evaluated on flow past a circular cylinder at Re=3900 and the Taylor-Green vortex at Re=1600, showing near one-to-one disturbance transmission in the cylinder case but no comparable macroscopic effect on orthogonal Taylor-Green grids.",
-  "watch_item": "The mitigation preserves flow dependence, but its effectiveness may still depend on grid anisotropy and on whether perturbations couple into shear-layer transition.",
+  "evidence_signal": "Evaluated on heterogeneous CPU and GPU runs for cylinder flow at Re=3900 and Taylor–Green vortex at Re=1600, showing strong transmission in the cylinder case but no comparable macroscopic effect on orthogonal Taylor–Green grids.",
+  "watch_item": "The mitigation changes the original LSQ construction, so implementation must balance robustness against preserving physically meaningful flow dependence.",
   "hashtags": [
     "#LES",
     "#Turbulence",
@@ -19,6 +19,6 @@
   "paper_title": "On the transmission of floating-point perturbations in flow-dependent filter-width formulations in Large-Eddy Simulation",
   "paper_date": "2026-10-01",
   "paper_category": "Turbulence",
-  "generated_at": "2026-10-04T13:49:09",
+  "generated_at": "2026-10-05T16:56:42",
   "generator": "openai"
 }
