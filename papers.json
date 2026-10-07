@@ -1,5 +1,57 @@
 [
   {
+    "id": "2026-10-06-arxiv-only_linear_constraints_survive_coarse_graining_evaluating_physics_constrained_neural_oper",
+    "arxiv_id": "2610.07811v1",
+    "date": "2026-10-06",
+    "title": "Only Linear Constraints Survive Coarse-Graining: Evaluating Physics-Constrained Neural Operators on Stochastically Forced Turbulence",
+    "authors": "Michael Groom, Rafael Oliveira",
+    "abstract": "A physics-informed loss adds a discretised PDE residual to the data term, but is only strictly valid if the equations being enforced are closed on the fields being fitted. This fails on coarse-grained, stochastically forced data: nonlinear terms in the PDE generally do not commute with the filter, so the coarse-grained fields do not satisfy the original equations, and driving their residual to zero encodes an implicit closure into the learned operator. Under normalised, translation-invariant filtering on a periodic domain, constant-coefficient linear constraints remain valid on the filtered grid. For the 2D incompressible Navier-Stokes equations, two such constraints are continuity and global momentum balance. We enforce these exactly by applying a closed-form projection on the output of a Fourier neural operator (FNO) at $O(N \\log N)$ cost. On two-dimensional isotropic turbulence, truncated so that its forcing lies entirely beyond the cutoff wavenumber, the projection achieves a continuity error of $5.0\\times10^{-7}$ against 0.51 for a plain FNO and 0.17 for a physics-informed FNO, and a global momentum balance error of $8.6\\times10^{-11}$ against $7.5\\times10^{-4}$ and $8.3\\times10^{-4}$. The projection only costs an extra 2% of training time, and takes the fraction of rollouts whose energy remains bounded at 448 steps from 0.18 to 0.87. On resolved Kolmogorov flow, test-time optimisation costs approximately 3,300$\\times$ as much per trajectory as the projection, while leaving maximum divergence three orders of magnitude higher. Nonlinear constraints can also be enforced once their unclosed terms are modelled: closing the global energy balance with a constant subgrid flux, fitted from the coarse training data alone, removes the 20.9% energy deficit that enforcing the unclosed balance produces and keeps every free-running rollout bounded over 2,000 steps.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-10-06T06:06:20Z",
+    "updated": "2026-10-06T06:06:20Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "physics.comp-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.07811v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.07811v1"
+      }
+    ],
+    "score": 82,
+    "infographic": {
+      "key_insight": "Physics-informed losses only safely enforce constraints that remain closed after coarse-graining; on filtered turbulence, linear constraints survive, while nonlinear PDE residuals can encode the wrong closure.",
+      "engineering_relevance": "For turbulence surrogates on coarse grids, exact projection onto valid linear constraints can greatly improve stability and conservation at minimal overhead compared with residual penalties or test-time optimization.",
+      "method": [
+        "Train a Fourier neural operator (FNO) on coarse turbulent fields.",
+        "Apply a closed-form Fourier-space projection to enforce continuity and global momentum balance exactly.",
+        "Optionally model the subgrid flux to close the global energy balance for nonlinear conservation."
+      ],
+      "evidence_signal": "On 2D isotropic turbulence, the projection reduced continuity error to 5.0e-7 and momentum-balance error to 8.6e-11, while raising bounded 448-step rollouts from 0.18 to 0.87; on Kolmogorov flow, test-time optimization was about 3300x more expensive per trajectory.",
+      "watch_item": "The projection only guarantees constraints that are valid on the filtered grid, so nonlinear physics must be explicitly closed before enforcing them exactly.",
+      "hashtags": [
+        "#Turbulence",
+        "#NeuralOperators",
+        "#PhysicsInformedML",
+        "#CFD",
+        "#ScientificML"
+      ],
+      "paper_id": "2026-10-06-arxiv-only_linear_constraints_survive_coarse_graining_evaluating_physics_constrained_neural_oper",
+      "paper_title": "Only Linear Constraints Survive Coarse-Graining: Evaluating Physics-Constrained Neural Operators on Stochastically Forced Turbulence",
+      "paper_date": "2026-10-06",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-10-07T15:19:04",
+      "generator": "openai"
+    }
+  },
+  {
     "id": "2026-10-04-arxiv-generating_kolmogorov_spectra_and_structure_functions_with_a_rosenhead_profile_trefoil_vor",
     "arxiv_id": "2610.05408v1",
     "date": "2026-10-04",
@@ -24,29 +76,185 @@
         "url": "https://arxiv.org/pdf/2610.05408v1"
       }
     ],
-    "score": 75,
+    "score": 70,
     "infographic": {
-      "key_insight": "A compact Rosenhead-profile trefoil vortex knot can evolve in a large periodic domain into turbulence-like states that exhibit Kolmogorov energy spectra and structure-function scaling.",
-      "engineering_relevance": "This suggests a practical unforced Navier–Stokes route for generating benchmark turbulent data in simulations, with potential use for validating models against experiments.",
+      "key_insight": "A compact trefoil vortex knot with a Rosenhead vorticity profile can evolve in Navier–Stokes simulations to produce turbulence-like Kolmogorov energy spectra and structure-function scaling from an initially unforced flow.",
+      "engineering_relevance": "This suggests a controlled numerical route for generating and studying fully developed turbulence in periodic domains, useful for benchmarking CFD methods and comparing against vortex-collision experiments.",
       "method": [
-        "Extend a trefoil vortex simulation to later times in a (4π)^3 periodic box",
-        "Use an algebraic Rosenhead vorticity profile to improve compactness and enable finite energy dissipation",
-        "Analyze energy spectra, decay laws, integral-scale growth, and higher-order vorticity moments"
+        "Extend a compact trefoil vortex simulation to later times in a larger 4π periodic domain",
+        "Use an algebraic Rosenhead vorticity profile to improve compactness and enable finite dissipation",
+        "Analyze energy spectra, energy decay, integral-scale growth, and higher-order vorticity moments"
       ],
-      "evidence_signal": "The abstract reports Kolmogorov scaling in the energy spectrum, structure-function scaling, and decay/growth exponents consistent with Loitsyanskii-integral arguments.",
-      "watch_item": "Results may depend on whether the lowest Fourier modes of the periodic domain are included, which can alter the inferred integral-scale growth rate.",
+      "evidence_signal": "The abstract reports persistent energy spectra with Kolmogorov scaling, structure-function scaling, ν-independent finite dissipation, and decay laws E(t)∼(t+t0)^−10/7 and ℓ(t)∼(t+t0)^(2/7).",
+      "watch_item": "Results depend on periodic-domain Fourier-mode treatment; excluding the largest-domain modes changes the inferred integral-scale growth rate.",
       "hashtags": [
         "#Turbulence",
-        "#NavierStokes",
         "#VortexDynamics",
         "#KolmogorovScaling",
+        "#NavierStokes",
         "#CFD"
       ],
       "paper_id": "2026-10-04-arxiv-generating_kolmogorov_spectra_and_structure_functions_with_a_rosenhead_profile_trefoil_vor",
       "paper_title": "Generating Kolmogorov spectra and structure functions with a Rosenhead profile trefoil vortex knot",
       "paper_date": "2026-10-04",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-06T14:53:18",
+      "generated_at": "2026-10-07T15:19:07",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-06-arxiv-vectorial_discrete_unified_gas_kinetic_scheme_for_continuum_compressible_flows",
+    "arxiv_id": "2610.07664v1",
+    "date": "2026-10-06",
+    "title": "Vectorial discrete unified gas kinetic scheme for continuum compressible flows",
+    "authors": "Yinghao Ma, Ziyang Xin, Zhaoli Guo",
+    "abstract": "A vectorial discrete unified gas kinetic scheme (V-DUGKS) is proposed for continuum compressible flows. In the vectorial kinetic framework, mass, momentum, and total energy are represented by coupled distribution functions with separate relaxation processes for momentum and energy transport, enabling an adjustable Prandtl number. All equilibrium distributions are truncated at the second-order Hermite level. Since only second-order velocity moments are required to recover the compressible Navier-Stokes equations, fourth-order Gauss-Hermite quadrature is sufficient for exact moment evaluation. Eliminating third-order Hermite terms allows compact discrete velocity sets to be used uniformly for all distribution functions, reducing sensitivity to the numerical reference temperature and improving stability and efficiency over the scalar DUGKS. The scheme employs a finite-volume formulation with characteristic-based flux evaluation and trapezoidal collision integration. Numerical tests, including shock-tube, Shu-Osher, two-dimensional Riemann, and three-dimensional Taylor-Green vortex problems, demonstrate its accuracy and robustness. For the three-dimensional Taylor-Green vortex, V-DUGKS achieves a speed-up of about 2.2-2.9 under the same CFL constraint due to a larger allowable time step and simplified equilibrium formulation. These results show that V-DUGKS provides a robust and efficient kinetic framework for continuum compressible flow simulations.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-10-06T03:00:26Z",
+    "updated": "2026-10-06T03:00:26Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.07664v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.07664v1"
+      }
+    ],
+    "score": 68,
+    "infographic": {
+      "key_insight": "V-DUGKS reformulates compressible flow simulation with vectorial coupled distributions and second-order Hermite equilibria, enabling adjustable Prandtl number and more stable, efficient continuum-flow computations.",
+      "engineering_relevance": "The scheme offers a practical CFD framework for accurate shock, vortex, and multi-dimensional compressible-flow simulations with improved timestep efficiency and reduced sensitivity to reference temperature.",
+      "method": [
+        "Coupled mass, momentum, and total-energy distributions in a vectorial kinetic formulation",
+        "Use separate relaxation processes for momentum and energy transport to tune Prandtl number",
+        "Employ second-order Hermite truncation with fourth-order Gauss-Hermite quadrature and finite-volume characteristic fluxes"
+      ],
+      "evidence_signal": "Validated on shock-tube, Shu-Osher, two-dimensional Riemann, and three-dimensional Taylor-Green vortex tests, where it shows accuracy, robustness, and about 2.2–2.9× speed-up on the 3D vortex case.",
+      "watch_item": "Performance and robustness may depend on the chosen compact velocity set, quadrature accuracy, and careful implementation of the finite-volume flux and collision steps.",
+      "hashtags": [
+        "#ComputationalFluidDynamics",
+        "#CompressibleFlow",
+        "#KineticMethods",
+        "#DUGKS",
+        "#HighPerformanceComputing"
+      ],
+      "paper_id": "2026-10-06-arxiv-vectorial_discrete_unified_gas_kinetic_scheme_for_continuum_compressible_flows",
+      "paper_title": "Vectorial discrete unified gas kinetic scheme for continuum compressible flows",
+      "paper_date": "2026-10-06",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-10-07T15:19:11",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-05-arxiv-well_posed_by_design_learning_constitutive_laws_from_velocity_data_using_convex_neural_net",
+    "arxiv_id": "2610.07236v1",
+    "date": "2026-10-05",
+    "title": "Well-posed by Design: Learning Constitutive Laws from Velocity Data using Convex Neural Network Potentials",
+    "authors": "Gonzalo G. de Diego, Georg Stadler",
+    "abstract": "Learning constitutive laws of complex fluids from velocity data (i.e. indirect observations) is a PDE-constrained inverse problem in which expressive neural parameterizations risk breaking the well-posedness of the forward physics model. We address this tension by learning, rather than the constitutive law itself, the dissipation potential: a scalar function whose convexity, frame-indifference, and dissipativity propagate into the underlying continuum mechanics and guarantee the structural properties needed for a well-posed and generalizable forward PDE. We introduce ICNNE, an input-convex neural architecture that exactly enforces convexity, frame-indifference, and evenness in the second strain-rate invariant via symmetrization, alleviating the numerical instabilities that occur at small strain rates in standard formulations. By weakly enforcing zero gradients in the origin of the potential via penalization, ICNNE also satisfies the dissipativity property. The loss objective and its gradient are computed using a combination of finite element and neural network methods, coupling the Firedrake and PyTorch libraries. We evaluate on four problems spanning compressible and incompressible regimes: compressible Navier-Stokes, Herschel-Bulkley yield-stress flow, Hibler's viscous-plastic sea-ice model, and discrete-element-method data with no known constitutive law. We show that the learned potentials (i) recover ground-truth physics where it is known, (ii) transfer accurately to geometries unseen during training, and (iii) succeed in regimes where unstructured methods diverge. These results suggest that embedding mathematical structure into the parameterization, rather than into the loss, is a robust path to learning physics from indirect data.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-10-05T18:42:59Z",
+    "updated": "2026-10-05T18:42:59Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "math.NA",
+      "math.OC"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.07236v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.07236v1"
+      }
+    ],
+    "score": 66,
+    "infographic": {
+      "key_insight": "Learn the dissipation potential with an input-convex neural network so the learned constitutive law remains physically well-posed, frame-indifferent, and dissipative by construction.",
+      "engineering_relevance": "This provides a safer way to infer material models from indirect velocity data, improving stability and generalization for CFD and continuum-mechanics inverse problems.",
+      "method": [
+        "ICNNE enforces convexity, frame-indifference, and evenness in the second strain-rate invariant via symmetrization.",
+        "A penalty at zero strain rate encourages dissipativity by pushing the potential gradient to vanish at the origin.",
+        "The inverse objective couples Firedrake finite elements with PyTorch to optimize the learned potential against velocity observations."
+      ],
+      "evidence_signal": "The approach was tested on four cases—compressible Navier-Stokes, Herschel-Bulkley flow, Hibler sea-ice, and DEM data—and matched known physics, generalized to unseen geometries, and remained stable where unstructured methods diverged.",
+      "watch_item": "The method depends on careful PDE-ML coupling and penalty tuning, so training cost and sensitivity to implementation details may affect robustness in new applications.",
+      "hashtags": [
+        "#FluidMechanics",
+        "#PhysicsInformedML",
+        "#InverseProblems",
+        "#ConstitutiveModeling",
+        "#NeuralPDEs"
+      ],
+      "paper_id": "2026-10-05-arxiv-well_posed_by_design_learning_constitutive_laws_from_velocity_data_using_convex_neural_net",
+      "paper_title": "Well-posed by Design: Learning Constitutive Laws from Velocity Data using Convex Neural Network Potentials",
+      "paper_date": "2026-10-05",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-10-07T15:19:14",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-06-arxiv-learning_a_generalized_navier_stokes_model_beyond_the_continuum_regime",
+    "arxiv_id": "2610.07952v1",
+    "date": "2026-10-06",
+    "title": "Learning a generalized Navier-Stokes model beyond the continuum regime",
+    "authors": "Sihong Shao, Yanli Wang, Zhongwei Xu",
+    "abstract": "Navier-Stokes (NS) equations lose accuracy in the transition regime when the Knudsen number is large, while the Boltzmann equation provides an adequate kinetic description with a substantially higher computational cost. In this work, a data-driven generalized Navier-Stokes (GNS) model is proposed to extend the applicability of the NS equations to the transition regime. A new relationship between the non-equilibrium variables, such as the stress tensor and the heat flux, and the equilibrium variables, including the density, macroscopic velocity, and the temperature, together with the Knudsen number, is learned from the data formed by the numerical solution to the Boltzmann equation. The standard end-to-end learning is utilized to construct the loss function, based on which, a long-term end-to-end learning method is proposed for the loss function to reduce accumulated error and improve long-term predictive accuracy. Several numerical examples, including one-dimensional wave and Riemann problems as well as two-dimensional isentropic vortex and Taylor-Green vortex problems, are studied to validate the efficiency of this new GNS model.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-10-06T08:25:18Z",
+    "updated": "2026-10-06T08:25:18Z",
+    "primary_category": "math.NA",
+    "categories": [
+      "math.NA",
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.07952v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.07952v1"
+      }
+    ],
+    "score": 65,
+    "infographic": {
+      "key_insight": "The paper learns a generalized Navier-Stokes model that augments classical fluid equations with data-driven non-equilibrium closures so they remain accurate in the transition regime beyond continuum assumptions.",
+      "engineering_relevance": "This could enable much cheaper simulations than Boltzmann solvers while improving predictive fidelity for rarefied or moderately rarefied flows where standard Navier-Stokes breaks down.",
+      "method": [
+        "Learn a mapping from equilibrium variables and Knudsen number to non-equilibrium quantities such as stress and heat flux.",
+        "Train on numerical solutions of the Boltzmann equation to construct the generalized Navier-Stokes closure.",
+        "Use a long-term end-to-end learning strategy to reduce error accumulation and improve multi-step prediction."
+      ],
+      "evidence_signal": "The model is validated on multiple benchmark tests, including 1D wave and Riemann problems and 2D isentropic vortex and Taylor-Green vortex cases.",
+      "watch_item": "Performance likely depends on the quality and coverage of Boltzmann training data, and long-horizon stability may still be sensitive when extrapolating to unseen flow regimes.",
+      "hashtags": [
+        "#NavierStokes",
+        "#Boltzmann",
+        "#RarefiedGasDynamics",
+        "#PhysicsInformedML",
+        "#Turbulence"
+      ],
+      "paper_id": "2026-10-06-arxiv-learning_a_generalized_navier_stokes_model_beyond_the_continuum_regime",
+      "paper_title": "Learning a generalized Navier-Stokes model beyond the continuum regime",
+      "paper_date": "2026-10-06",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-10-07T15:19:17",
       "generator": "openai"
     }
   },
@@ -75,17 +283,17 @@
         "url": "https://arxiv.org/pdf/2610.06474v1"
       }
     ],
-    "score": 73,
+    "score": 63,
     "infographic": {
-      "key_insight": "Transonic shock-boundary-layer interactions strongly couple with pitching dynamics of a NACA0012 airfoil, with the dominant oscillation shifting from flow-driven to structure-driven as reduced velocity increases.",
-      "engineering_relevance": "The results help predict aeroelastic stability and buffet-like behavior in transonic airfoils, which is important for aircraft control-surface design and vibration mitigation.",
+      "key_insight": "DNS shows that transonic shock-boundary-layer interaction strongly couples with NACA0012 pitching dynamics, with the dominant oscillation shifting from flow-driven at low reduced velocity to structure-driven at high reduced velocity.",
+      "engineering_relevance": "The results help predict aeroelastic instability and buffet response in transonic airfoils, informing safer wing and control-surface design at high Mach number.",
       "method": [
-        "Direct Numerical Simulation (DNS) of transonic flow over a NACA0012 airfoil",
-        "Single-DOF pitching aeroelastic coupling at fixed angle of attack and varying reduced velocity",
-        "FFT-based extraction of dominant flow and coupled oscillation frequencies, supported by pressure, vorticity, and schlieren fields"
+        "Direct numerical simulation of a NACA0012 airfoil with single-DOF pitching dynamics at M∞ = 0.8, Re∞ = 3×10^6, and α = 8°.",
+        "FFT of moment coefficient for fixed and coupled cases to extract dominant frequency, Strouhal number, and coupled oscillation frequency.",
+        "Use of pressure-fluctuation, vorticity, and schlieren fields to interpret shock motion, vortex structures, and acoustic radiation."
       ],
-      "evidence_signal": "At AoA 8°, the stationary case gives a Strouhal number of 1.3161, while coupled oscillation frequencies of 0.0762 and 0.1716 are reported for U* = 2 and 8, respectively, showing a clear transition in dynamic dominance.",
-      "watch_item": "The study is limited to one airfoil, one Reynolds/Mach condition, and a single reduced mass, so broader applicability should be validated before use in design.",
+      "evidence_signal": "The abstract reports a fixed-airfoil Strouhal number of St = 1.3161 and coupled oscillation frequencies Stc = 0.0762 (U* = 2) and 0.1716 (U* = 8), compared with natural frequencies Stn = 0.5 and 0.125.",
+      "watch_item": "Because the study focuses on one airfoil, one angle of attack, and a limited reduced-velocity range, the observed coupling trends may not generalize without further parametric validation.",
       "hashtags": [
         "#Aeroelasticity",
         "#TransonicFlow",
@@ -97,7 +305,110 @@
       "paper_title": "Direct Numerical Simulation of Transonic Flows Induced Pitching of NACA Airfoil",
       "paper_date": "2026-10-05",
       "paper_category": "Aerodynamics",
-      "generated_at": "2026-10-06T14:53:21",
+      "generated_at": "2026-10-07T15:19:21",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-06-arxiv-direct_numerical_simulations_of_multi_layer_rayleigh_taylor_instability_under_asymmetric_i",
+    "arxiv_id": "2610.07714v1",
+    "date": "2026-10-06",
+    "title": "Direct numerical simulations of multi-layer Rayleigh-Taylor instability under asymmetric interfacial density stratification",
+    "authors": "Abhijeet Guha, Prasoon Suchandra, Aditi Sengupta",
+    "abstract": "Direct numerical simulations of thermally stratified multi-layer Rayleigh-Taylor instability are performed to investigate the influence of interfacial Atwood number (At) on instability growth, interfacial coupling, turbulent mixing, and spectral characteristics. A fully compressible, three-dimensional, high-fidelity Navier-Stokes solver has been used to simulate ten cases spanning a broad range of interfacial $At$ to examine the evolution of coupled instability dynamics. The configuration consists of three superposed fluid layers with unstable density stratification across two interfaces generated through temperature variations. The temporal evolution of the flow is characterized using the maximum vorticity, mixing-layer growth, density fluctuations, turbulent kinetic energy, and energy partitioning between gravitational potential energy, TKE, and dissipation. The instability evolution is shown to proceed through distinct onset, quasi-exponential growth, and nonlinear saturation stages for all configurations. Increasing interfacial At leads to earlier instability onset, enhanced vorticity amplification, and accelerated development of turbulent mixing layers. The weakly stratified configurations exhibit dynamics resembling effectively single-interface RTI, whereas the strongly stratified cases develop two simultaneously active mixing layers that subsequently interact and merge into a coupled turbulent region. The wall-normal distributions of density fluctuations and TKE demonstrate progressive broadening of the mixing region and increasing redistribution of turbulent activity with increasing stratification strength. The late-stage spectra exhibit an approximate -11/5 scaling over an intermediate range of wavenumbers, consistent with buoyancy-dominated turbulent transport.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-10-06T04:09:49Z",
+    "updated": "2026-10-06T04:09:49Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.07714v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.07714v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "Higher interfacial Atwood number makes multi-layer Rayleigh–Taylor instability start sooner, grow faster, and transition from separate mixing layers to a coupled turbulent region.",
+      "engineering_relevance": "The results help predict and control stratified mixing in thermal, geophysical, and multiphase systems where interface density contrast governs instability and transport.",
+      "method": [
+        "Fully compressible 3D direct numerical simulations with a high-fidelity Navier–Stokes solver.",
+        "Ten cases spanning a broad range of interfacial At to compare instability evolution across stratification strengths.",
+        "Tracked vorticity, mixing-layer growth, density fluctuations, TKE, and energy partitioning over time."
+      ],
+      "evidence_signal": "The abstract reports consistent onset, quasi-exponential growth, and saturation stages across all cases, with stronger At producing earlier onset, more vorticity, broader mixing regions, and an approximate -11/5 late-stage spectral scaling.",
+      "watch_item": "Results are specific to the simulated geometry, thermal stratification setup, and parameter range, so extrapolation to other fluids or interface configurations should be done cautiously.",
+      "hashtags": [
+        "#RayleighTaylorInstability",
+        "#DNS",
+        "#Turbulence",
+        "#MultiphaseFlow",
+        "#CFD"
+      ],
+      "paper_id": "2026-10-06-arxiv-direct_numerical_simulations_of_multi_layer_rayleigh_taylor_instability_under_asymmetric_i",
+      "paper_title": "Direct numerical simulations of multi-layer Rayleigh-Taylor instability under asymmetric interfacial density stratification",
+      "paper_date": "2026-10-06",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-10-07T15:19:24",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-05-arxiv-number_theory_of_decaying_turbulence_3_comparing_with_physical_and_numerical_experiments",
+    "arxiv_id": "2610.07433v1",
+    "date": "2026-10-05",
+    "title": "Number Theory of Decaying Turbulence 3: Comparing with Physical and Numerical Experiments",
+    "authors": "Alexander Migdal, Wei Wang",
+    "abstract": "We compare the predictions of the Euler-ensemble solution of freely decaying incompressible turbulence with simulations and experiments: the scaling function of the energy spectrum, the index of the second-order structure function and the decay laws. The predictions have a fixed shape; only their normalization and scale are fitted. In the final $4096^3$ direct numerical simulations of Rodhiya and Sreenivasan, the turbulent attractor is selected by a parabola law for the growth of the bulk length. Along it the collapsed spectrum depends only on the instantaneous Reynolds number, identically for Saffman and Loitsyansky initial spectra; extrapolated to infinite Reynolds number, it agrees with the theory to 1% in the bulk of the enstrophy range, below the dissipation range. The energy balance holds exactly. The energy integral of the theory diverges in the infrared, so energy and enstrophy depend on how a finite flow cuts off the spectrum: with a sharp cutoff $k_0$, the decay laws, energy $\\propto t^{-5/4}$ and enstrophy $\\propto t^{-9/4}$, are reached only when the cutoff enters the $k^{-7/2}$ tail of the spectrum. Such a cutoff is only an estimate; the reliable test is the bulk of the spectrum. Fitted to the simulations, the cutoff lies at the lower edge of the bulk, where the spectrum still carries the initial data, and the decay exponents depend on the initial infrared spectrum. In the Max Planck wind tunnel at $Re_λ$ up to 5779, the longitudinal index extrapolated to infinite Reynolds number matches the odd ensemble with one scale parameter at large separations, where standard crossover forms fail. The freely decaying turbulent blob of Matsuzawa et al. is too small, too inhomogeneous and too weak to display the attractor. The theory is derived in the first two papers of this series.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-10-05T21:39:55Z",
+    "updated": "2026-10-05T21:39:55Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "nlin.CD"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.07433v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.07433v1"
+      }
+    ],
+    "score": 60,
+    "infographic": {
+      "key_insight": "A fixed-shape Euler-ensemble theory closely matches freely decaying turbulence data when spectra and structure functions are compared in the appropriate bulk range, with only normalization and scale fitted.",
+      "engineering_relevance": "This provides a predictive framework for estimating decay laws, spectrum shape, and Reynolds-number trends in decaying turbulence, useful for CFD validation and model calibration.",
+      "method": [
+        "Compare Euler-ensemble predictions against DNS and wind-tunnel measurements for energy spectra and second-order structure functions.",
+        "Fit only scale and normalization, then test whether the collapsed spectrum depends solely on instantaneous Reynolds number.",
+        "Assess decay exponents and spectral collapse across different initial infrared conditions and cutoff assumptions."
+      ],
+      "evidence_signal": "In the 4096^3 DNS, the extrapolated collapsed spectrum agrees with theory to about 1% in the bulk of the enstrophy range, and wind-tunnel extrapolations match the odd ensemble at large separations.",
+      "watch_item": "The inferred decay exponents depend on how the infrared spectrum is cut off, so using a finite-flow cutoff as a proxy can be misleading outside the spectral bulk.",
+      "hashtags": [
+        "#Turbulence",
+        "#ComputationalFluidDynamics",
+        "#DirectNumericalSimulation",
+        "#EnergySpectrum",
+        "#DecayingTurbulence"
+      ],
+      "paper_id": "2026-10-05-arxiv-number_theory_of_decaying_turbulence_3_comparing_with_physical_and_numerical_experiments",
+      "paper_title": "Number Theory of Decaying Turbulence 3: Comparing with Physical and Numerical Experiments",
+      "paper_date": "2026-10-05",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-10-07T15:19:26",
       "generator": "openai"
     }
   },
@@ -127,21 +438,21 @@
         "url": "https://arxiv.org/pdf/2610.05762v1"
       }
     ],
-    "score": 65,
+    "score": 60,
     "infographic": {
-      "key_insight": "A synchronization-theoretic autoencoder can map cylinder-airfoil wake interaction onto a low-dimensional oscillator model and identify conditions where vortex shedding is suppressed, i.e., oscillation death.",
-      "engineering_relevance": "This offers a data-driven way to predict wake stability and interaction regimes for body-body aerodynamics, which is useful for designing bluff-body and airfoil configurations with reduced unsteady loads.",
+      "key_insight": "A synchronization-theoretic autoencoder can map cylinder–airfoil wake interactions to a low-order oscillator model and predict oscillation death, where vortex shedding is suppressed by body-body coupling.",
+      "engineering_relevance": "This provides a data-driven way to assess flow stability and interaction effects in paired aerodynamic components, supporting design of quieter or more stable fluid machinery.",
       "method": [
-        "Direct numerical simulation of 2D incompressible flow at Reynolds number 100 for a cylinder with a NACA0012 airfoil in its wake.",
-        "Parameter sweep over streamwise gap Δx, vertical offset Δy, and airfoil angle of attack α to classify vortex-shedding regimes.",
-        "Synchronization-theoretic autoencoder built from aerodynamic coefficients to infer coupled-oscillator dynamics and stability."
+        "Direct numerical simulation of 2D incompressible cylinder–airfoil flows at Reynolds number 100",
+        "Parameter sweep over streamwise gap Δx, vertical offset Δy, and airfoil angle of attack α to identify four vortex-shedding regimes",
+        "Train a synchronization-theoretic autoencoder on aerodynamic coefficients to infer a coupled-oscillator representation"
       ],
-      "evidence_signal": "The abstract reports four characteristic vortex-shedding regimes across the parameter space and highlights one arrangement where shedding is suppressed, with theoretical stability predicted on a machine-learned low-order coordinate.",
-      "watch_item": "The results are demonstrated only for 2D Reynolds-number-100 DNS, so generalization to 3D, higher-Re flows, or different geometries may require retraining and validation.",
+      "evidence_signal": "The abstract reports four distinct flow regimes from the parameter sweep and a theoretical stability prediction on a learned low-order coordinate that matches suppressed vortex shedding behavior.",
+      "watch_item": "The approach is demonstrated only for 2D, low-Reynolds-number cases, so generalization to higher-Re flows or 3D geometries may require retraining and validation.",
       "hashtags": [
-        "#ComputationalFluidDynamics",
-        "#MachineLearning",
+        "#FluidMechanics",
         "#Aerodynamics",
+        "#MachineLearning",
         "#Autoencoder",
         "#VortexShedding"
       ],
@@ -149,7 +460,212 @@
       "paper_title": "Studying oscillation death in two-dimensional cylinder-airfoil interactions with synchronization-theoretic autoencoder",
       "paper_date": "2026-10-05",
       "paper_category": "Aerodynamics",
-      "generated_at": "2026-10-06T14:53:26",
+      "generated_at": "2026-10-07T15:19:29",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-06-arxiv-geometric_effects_on_the_persistence_of_patch_structures_for_2d_euler_equations_in_simply",
+    "arxiv_id": "2610.08679v1",
+    "date": "2026-10-06",
+    "title": "Geometric effects on the persistence of patch structures for 2D Euler equations in simply-connected bounded domains",
+    "authors": "Emeric Roulley",
+    "abstract": "We first prove a rigidity result for uniformly rotating vortex patch solutions to Euler equations in bounded simply-connected planar domains. Namely, if a bounded simply-connected domain with real-analytic boundary contains a nontrivial vortex patch that remains strictly inside the domain while undergoing a uniform rigid rotation, then the ambient domain must be a disc centered at the rotation center. The proof combines the rotating-frame formulation with harmonic unique continuation and the generalized Schwarz's reflection principle across analytic boundary arcs. These tools imply that, unless the outer domain is rotationally invariant, the velocity must vanish in an open region surrounding the patch, contradicting the nonzero circulation generated by the patch. In the same spirit, we show that only circular domains possess a circular point vortex orbit. As a second result, we construct quasi-periodic vortex patch solutions to the Euler equations in domains that are small perturbations of the unit disc $\\mathbb{D}$. The amplitudes of the solutions are linked to the size of the domain deformation, allowing the classical Rankine vortices $b\\cdot\\mathbb{D}$, $b\\in(0,1)$, to be regarded as equilibrium states. Our analysis is perturbative with respect to the construction developed in the undeformed case, and the resulting quasi-periodic solutions exist for most values of the inner radius $b$. This provides the first construction of quasi-periodic vortex patch solutions to the Euler equations in non-radial domains. Moreover, combined with the rigidity result established above, this shows that, in the periodic case, these solutions cannot arise from a purely rigid rotation.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-10-06T17:01:09Z",
+    "updated": "2026-10-06T17:01:09Z",
+    "primary_category": "math.AP",
+    "categories": [
+      "math.AP",
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.08679v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.08679v1"
+      }
+    ],
+    "score": 59,
+    "infographic": {
+      "key_insight": "In simply-connected analytic domains, a nontrivial rigidly rotating vortex patch forces the outer boundary to be a centered disk, while small boundary deformations can still support quasi-periodic patch motions for most inner radii.",
+      "engineering_relevance": "These results clarify when geometry preserves or destroys coherent vortex structures, which is useful for flow control, reduced-order modeling, and understanding vortical persistence in bounded fluids.",
+      "method": [
+        "Use a rotating-frame reformulation of the 2D Euler equations.",
+        "Apply harmonic unique continuation and generalized Schwarz reflection across analytic boundary arcs.",
+        "Construct quasi-periodic patch solutions perturbatively for domains near the unit disk."
+      ],
+      "evidence_signal": "The abstract reports rigorous analytical theorems and constructive existence results, including rigidity proofs and a perturbative solution family for most values of the inner radius.",
+      "watch_item": "The quasi-periodic construction is perturbative and depends on domains being small deformations of the disk with real-analytic boundaries, so it may not extend to strongly non-radial geometries.",
+      "hashtags": [
+        "#FluidDynamics",
+        "#EulerEquations",
+        "#VortexPatches",
+        "#Turbulence",
+        "#AppliedMath"
+      ],
+      "paper_id": "2026-10-06-arxiv-geometric_effects_on_the_persistence_of_patch_structures_for_2d_euler_equations_in_simply",
+      "paper_title": "Geometric effects on the persistence of patch structures for 2D Euler equations in simply-connected bounded domains",
+      "paper_date": "2026-10-06",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-10-07T15:19:32",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-06-arxiv-a_lagrangian_analysis_of_coherent_structures_in_2d_annular_rayleigh_b_nard_convection",
+    "arxiv_id": "2610.08024v1",
+    "date": "2026-10-06",
+    "title": "A Lagrangian analysis of coherent structures in 2D annular Rayleigh-Bénard convection",
+    "authors": "Luis Álamo, Jezabel Curbelo, Kathrin Padberg-Gehle",
+    "abstract": "Convective instabilities are studied from a Lagrangian perspective in order to gain new insights into how the resulting global, long-lived coherent flow structures organize themselves. We consider a 2D annular fluid layer uniformly heated from the inside and subject to radial gravity and propose several new Lagrangian diagnostics for characterizing its convective instabilities. In particular, we perform a comprehensive Lagrangian analysis of the flow field across a wide range of dimensionless parameters, establishing a heuristic correspondence between convective plumes and curves of local maxima of Finite-Time Lyapunov Exponent (FTLE) fields. Moreover, we characterize coherent swirling motions inside convective rolls, which are associated to the non-zero curvature of the flow. By introducing a sliding window method for our finite-time kinematic measures, we demonstrate a direct relationship with radial heat flux quantified by means of the Nusselt number and identify relevant dynamical transitions that leave a trace on both. Finally, we propose a formal criterion for determining viscous boundary layer (UBL) thickness by virtue of radial FTLE profiles and validated against a classical Eulerian method.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-10-06T09:17:32Z",
+    "updated": "2026-10-06T09:17:32Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.08024v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.08024v1"
+      }
+    ],
+    "score": 58,
+    "infographic": {
+      "key_insight": "A Lagrangian view of 2D annular Rayleigh–Bénard convection reveals that FTLE ridges, flow curvature, and sliding-window kinematic measures can diagnose plumes, rolls, heat transport, and boundary-layer thickness in a unified way.",
+      "engineering_relevance": "The proposed diagnostics offer a physics-informed toolkit for tracking coherent structures and heat-transfer transitions in convective systems, which is useful for thermal management and buoyancy-driven flow analysis.",
+      "method": [
+        "Computed Finite-Time Lyapunov Exponent (FTLE) fields to identify plume-like transport structures.",
+        "Used flow curvature to characterize coherent swirling motion inside convective rolls.",
+        "Applied a sliding-window approach to finite-time kinematic measures and related them to Nusselt number and radial boundary-layer estimates."
+      ],
+      "evidence_signal": "The abstract reports a comprehensive parameter sweep and validation of the FTLE-based boundary-layer criterion against a classical Eulerian method, along with observed correspondence to Nusselt-number changes.",
+      "watch_item": "The diagnostics are developed and validated for a 2D annular geometry, so transfer to fully 3D or strongly nonideal flows may require re-tuning and additional validation.",
+      "hashtags": [
+        "#LagrangianCoherentStructures",
+        "#RayleighBenardConvection",
+        "#FTLE",
+        "#HeatTransfer",
+        "#FluidMechanics"
+      ],
+      "paper_id": "2026-10-06-arxiv-a_lagrangian_analysis_of_coherent_structures_in_2d_annular_rayleigh_b_nard_convection",
+      "paper_title": "A Lagrangian analysis of coherent structures in 2D annular Rayleigh-Bénard convection",
+      "paper_date": "2026-10-06",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-10-07T15:19:35",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-06-arxiv-physically_organized_latent_spaces_in_unsupervised_autoencoders_evidence_from_aerodynamic",
+    "arxiv_id": "2610.08451v1",
+    "date": "2026-10-06",
+    "title": "Physically Organized Latent Spaces in Unsupervised Autoencoders: Evidence from Aerodynamic Databases",
+    "authors": "Renato Tognaccini, Ettore Saetta, Gianluca Iaccarino",
+    "abstract": "Using aerodynamic databases of progressively increasing complexity - from linear analytical theory to nonlinear separated RANS flows - we demonstrate that an autoencoder, trained solely by reconstruction, can spontaneously organize the latent representation according to physically meaningful variables and aerodynamic laws. Although the latent coordinates themselves vary under random initialization, the underlying physical organization is reproducible, even quantitatively. In addition, we present a three-dimensional latent space representation of the airfoil flow obtained by an unsupervised autoencoder with sequential training in which the inviscid field is decoupled from the boundary layer effects with the third latent variable strongly correlated with the Reynolds number and aerodynamic drag. Cross-validated regression and affine-alignment measures show that physical parameters and responses are strongly and linearly encoded in the learned coordinates, consistently across independent trainings.",
+    "category": "Aerodynamics",
+    "source": "arXiv",
+    "published": "2026-10-06T14:37:58Z",
+    "updated": "2026-10-06T14:37:58Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.08451v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.08451v1"
+      }
+    ],
+    "score": 56,
+    "infographic": {
+      "key_insight": "Unsupervised autoencoders trained only for reconstruction can still learn latent spaces that align with physically meaningful aerodynamic variables and laws.",
+      "engineering_relevance": "This suggests reduced-order models and flow surrogates can discover interpretable flow parameters without explicit physics labels, which is useful for design, control, and uncertainty-aware analysis.",
+      "method": [
+        "Train autoencoders on aerodynamic databases of increasing complexity, from linear theory to nonlinear separated RANS flows.",
+        "Use sequential training to decouple inviscid flow structure from boundary-layer effects in a 3D latent space.",
+        "Assess whether latent coordinates align with physical variables via cross-validated regression and affine-alignment metrics."
+      ],
+      "evidence_signal": "Across independent trainings, the latent organization is reproducible and quantitatively linked to physical parameters; one latent variable strongly correlates with Reynolds number and aerodynamic drag.",
+      "watch_item": "Latent coordinates are not uniquely identifiable under random initialization, so interpretation requires post-hoc alignment and careful validation before using them as direct physical variables.",
+      "hashtags": [
+        "#Aerodynamics",
+        "#Autoencoder",
+        "#LatentSpace",
+        "#PhysicsInformedAI",
+        "#ReducedOrderModel"
+      ],
+      "paper_id": "2026-10-06-arxiv-physically_organized_latent_spaces_in_unsupervised_autoencoders_evidence_from_aerodynamic",
+      "paper_title": "Physically Organized Latent Spaces in Unsupervised Autoencoders: Evidence from Aerodynamic Databases",
+      "paper_date": "2026-10-06",
+      "paper_category": "Aerodynamics",
+      "generated_at": "2026-10-07T15:19:37",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-05-arxiv-erasing_and_regenerating_the_turbulent_cascade_arrow",
+    "arxiv_id": "2610.07449v1",
+    "date": "2026-10-05",
+    "title": "Erasing and Regenerating the Turbulent Cascade Arrow",
+    "authors": "Yang Zhao, Daocheng Zhou, Hongfu Zhang",
+    "abstract": "Which information tells a turbulent flow which way to cascade? We apply Haar-distributed Hermitian phases that retain prescribed same-mode quadratic information, including modal amplitudes, the energy spectrum, and same-mode two-time correlations. For the phase-Haar ensemble, the expectation of any integrable odd flux functional is zero. Finite ensembles strongly suppress mean transfer and forward-event bias in the primary block. An independent block retains sign separation but fails the scale-8 mean criterion. In matched evolution protocols, nonlinear Navier-Stokes dynamics restores the selected signed-flux scalar close to its natural reference, whereas linear evolution and an amplitude-matched frozen control do not. Flux and a local cubic geometry scalar recover together, yet high local correlation can survive erasure of the arrow. Signed transfer thus requires information beyond the retained quadratic record; the tested nonlinear dynamics rebuilds it.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-10-05T21:56:52Z",
+    "updated": "2026-10-05T21:56:52Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.07449v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.07449v1"
+      }
+    ],
+    "score": 56,
+    "infographic": {
+      "key_insight": "Erasing phase information while preserving modal amplitudes and same-mode quadratic statistics suppresses the turbulent cascade arrow, but nonlinear Navier–Stokes evolution can rebuild the signed flux.",
+      "engineering_relevance": "This suggests that controlling or diagnosing turbulence requires more than energy spectra and two-time correlations, because directional energy transfer depends on higher-order phase information and nonlinear dynamics.",
+      "method": [
+        "Build a Haar-distributed Hermitian phase ensemble that keeps prescribed quadratic information intact.",
+        "Compare flux statistics under phase-randomized, independent-block, nonlinear-evolution, linear-evolution, and amplitude-matched frozen controls.",
+        "Track signed flux and a local cubic geometry scalar to test whether the cascade arrow is recovered."
+      ],
+      "evidence_signal": "The abstract reports that the phase-Haar ensemble makes the expected odd flux functional zero, strongly suppresses mean transfer and forward-event bias, and that only matched nonlinear Navier–Stokes evolution restores the selected signed-flux scalar near its natural reference.",
+      "watch_item": "Because high local correlation can persist even after the cascade arrow is erased, local similarity metrics alone may not reliably indicate correct signed energy transfer.",
+      "hashtags": [
+        "#Turbulence",
+        "#FluidMechanics",
+        "#Cascade",
+        "#NavierStokes",
+        "#ComputationalScience"
+      ],
+      "paper_id": "2026-10-05-arxiv-erasing_and_regenerating_the_turbulent_cascade_arrow",
+      "paper_title": "Erasing and Regenerating the Turbulent Cascade Arrow",
+      "paper_date": "2026-10-05",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-10-07T15:19:40",
       "generator": "openai"
     }
   },
@@ -178,29 +694,29 @@
         "url": "https://arxiv.org/pdf/2610.05509v1"
       }
     ],
-    "score": 60,
+    "score": 55,
     "infographic": {
-      "key_insight": "Gas-surface scattering laws can be amplified, muted, or even reversed by collisional feedback in rarefied hypersonic flow, so wall-response trends do not directly map to macroscopic forces and heat transfer.",
-      "engineering_relevance": "For high-speed vehicle design, accurate prediction of drag, lift, and heating in rarefied regimes requires accounting for both accommodation physics and the evolving incident molecular population.",
+      "key_insight": "Gas-surface scattering can change the incoming molecular population enough to reverse or reshape predicted drag, lift, shear, and heat-transfer trends in rarefied hypersonic flow.",
+      "engineering_relevance": "For hypersonic vehicle and inlet design, wall accommodation models must be evaluated with population feedback, not just fixed-incidence assumptions, because macroscopic loads can change substantially across rarefied regimes.",
       "method": [
-        "Direct simulation Monte Carlo (DSMC) for hypersonic flow over a 40° inclined flat plate",
-        "Compare Maxwell and Cercignani-Lampis-Lord (CLL) scattering using fixed-incidence moment references",
-        "Re-evaluate alternative kernels on the same recorded non-reactive incident populations"
+        "Direct simulation Monte Carlo (DSMC) for hypersonic flow over a 40° inclined flat plate.",
+        "Compared Maxwell and Cercignani-Lampis-Lord (CLL) scattering using fixed-incidence moment references and alternative-kernel re-evaluation on recorded incident populations.",
+        "Studied four benchmark conditions spanning 0.023 ≤ Kn∞ ≤ 8.439."
       ],
-      "evidence_signal": "Across four benchmark Knudsen numbers (0.023 to 8.439), the study found up to 40% deviation from diffuse-specular interpolation at low Kn and a 3.1% diffuse-heat-transfer defect even at the highest Kn.",
-      "watch_item": "Agreement in selected force or heat-transfer components does not prove common incidence or free-molecular behavior, so kernel calibration must avoid over-interpreting partial response matches.",
+      "evidence_signal": "At Kn∞=0.023, Maxwell shear and heat transfer deviated by up to 40% of diffuse-reference values, and at Kn∞=8.439 the common-incidence energy constraint still left a 3.1% heat-transfer defect.",
+      "watch_item": "Agreement in selected force/heat metrics does not prove common incidence or free-molecular behavior; population feedback can hide or reverse the wall-law response.",
       "hashtags": [
         "#Hypersonics",
         "#RarefiedFlow",
         "#DSMC",
         "#GasSurfaceInteraction",
-        "#AerospaceEngineering"
+        "#CFD"
       ],
       "paper_id": "2026-10-04-arxiv-gas_surface_scattering_and_collisional_feedback_in_rarefied_hypersonic_flow_past_an_inclin",
       "paper_title": "Gas-surface scattering and collisional feedback in rarefied hypersonic flow past an inclined flat plate",
       "paper_date": "2026-10-04",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-06T14:53:29",
+      "generated_at": "2026-10-07T15:19:43",
       "generator": "openai"
     }
   },
@@ -229,17 +745,17 @@
         "url": "https://arxiv.org/pdf/2610.04410v1"
       }
     ],
-    "score": 58,
+    "score": 53,
     "infographic": {
-      "key_insight": "Nose bluntness and wall temperature control hypersonic boundary-layer receptivity by jointly setting the stagnation vorticity response and the downstream lift-up amplification.",
-      "engineering_relevance": "The results provide scaling laws that can help predict and manage transition in hypersonic blunt-nose vehicles by tuning geometry and wall thermal conditions.",
+      "key_insight": "In hypersonic blunt-nose boundary layers, stronger nose bluntness and cooler walls generally intensify receptivity by boosting stagnation vorticity, while lift-up effects change more modestly.",
+      "engineering_relevance": "These scaling laws help predict how wall heating and nose geometry influence early transition in hypersonic vehicle boundary layers.",
       "method": [
-        "Shock-fitting harmonic linearised Navier–Stokes simulations (SF-HLNS)",
-        "Three-step asymptotic receptivity model linking free-stream forcing to downstream perturbations",
-        "Seven case studies varying Reynolds number (nose bluntness) and wall temperature"
+        "Used a shock-fitting harmonic linearised Navier–Stokes (SF-HLNS) framework.",
+        "Applied a three-step asymptotic model to separate stagnation vorticity generation from downstream non-modal evolution.",
+        "Examined seven case studies to derive scaling with Reynolds number (R) and wall temperature (T_w)."
       ],
-      "evidence_signal": "The abstract reports detailed analysis across seven cases and derives explicit scaling laws for receptivity efficiency with respect to nose bluntness and wall temperature.",
-      "watch_item": "The conclusions rely on asymptotic modeling and linearized analysis, so applicability may be limited when strong nonlinear effects or real-flight uncertainties become important.",
+      "evidence_signal": "The abstract reports seven detailed case studies and explicit scaling laws linking receptivity efficiency to nose bluntness and wall temperature.",
+      "watch_item": "The conclusions are based on asymptotic and linearized analysis, so applicability may be limited when nonlinear effects or real-flight uncertainties become significant.",
       "hashtags": [
         "#Hypersonics",
         "#BoundaryLayer",
@@ -251,7 +767,7 @@
       "paper_title": "Excitation of non-modal perturbations in hypersonic boundary layers by free stream forcing. Part III: effects of wall temperature and nose bluntness",
       "paper_date": "2026-10-03",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-06T14:53:32",
+      "generated_at": "2026-10-07T15:19:45",
       "generator": "openai"
     }
   },
@@ -280,756 +796,236 @@
         "url": "https://arxiv.org/pdf/2610.04105v1"
       }
     ],
-    "score": 58,
+    "score": 53,
     "infographic": {
-      "key_insight": "A reproducible stereolithography workflow can fabricate transparent monolithic porous flow cells that enable direct imaging and pressure measurements, revealing geometry-dependent flow-reversal asymmetry in two-phase flow.",
-      "engineering_relevance": "This provides an open-source route to rapidly prototype optically accessible porous-media experiments for studying multiphase transport, mixing, and reactive flow in custom pore geometries.",
+      "key_insight": "The paper presents an open-source stereolithography workflow for making transparent 3D-printed porous flow cells, enabling direct imaging and pressure measurements of multiphase flow in designed micro- to millimetre-scale geometries.",
+      "engineering_relevance": "This fabrication protocol lowers the barrier to building custom optically accessible porous-media experiments for studying flow, mixing, transport, and multiphase behavior.",
       "method": [
-        "Digitally design quasi-2D porous flow cells with prescribed obstacle geometries.",
-        "3D print monolithic cells by stereolithography, then flush internal channels to remove uncured resin.",
-        "Apply resin coating to improve optical transparency for simultaneous pressure and image-based measurements."
+        "Digitally design monolithic porous flow cells and print them by stereolithography.",
+        "Flush internal channels to remove uncured resin from enclosed voids.",
+        "Apply resin coating to make the printed cells optically transparent for imaging."
       ],
-      "evidence_signal": "The proof-of-concept compares triangular and cylindrical obstacle cells using pressure data and image-based active-width measurements for steady oil-air two-phase flow under flow reversal.",
-      "watch_item": "Transparency and performance depend critically on complete internal flushing and coating, so incomplete resin removal or uneven coating could affect optical quality and flow measurements.",
+      "evidence_signal": "The proof-of-concept compares oil-air two-phase flow reversal in triangular versus cylindrical obstacle cells using pressure data and image-based active-width measurements.",
+      "watch_item": "Performance depends on successful internal flushing and coating; incomplete resin removal or inconsistent transparency could affect imaging quality and repeatability.",
       "hashtags": [
-        "#3DPrinting",
         "#PorousMedia",
-        "#TwoPhaseFlow",
+        "#3DPrinting",
+        "#MultiphaseFlow",
         "#FlowReversal",
-        "#Microfluidics"
+        "#ExperimentalFluidMechanics"
       ],
       "paper_id": "2026-10-02-arxiv-transparent_3d_printed_flow_cells_for_porous_media_studies_with_proof_of_concept_on_two_ph",
       "paper_title": "Transparent 3D-printed flow cells for porous media studies with proof-of-concept on two-phase flow-reversal asymmetry",
       "paper_date": "2026-10-02",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-06T14:53:35",
+      "generated_at": "2026-10-07T15:19:48",
       "generator": "openai"
     }
   },
   {
-    "id": "2026-10-04-arxiv-landau_damping_and_mode_selective_instability_of_a_vortex_gas",
-    "arxiv_id": "2610.04841v1",
-    "date": "2026-10-04",
-    "title": "Landau damping and mode-selective instability of a vortex gas",
-    "authors": "H. Terças, J. L. Figueiredo, J. T, Mendonça",
-    "abstract": "We show that a collisionless point-vortex gas behaves as a genuine Vlasov system. Starting from the non-canonical Hamiltonian structure of point-vortex dynamics, we derive a reduced Klimontovich equation and the corresponding Vlasov description directly on the physical plane, without introducing auxiliary momentum variables. The theory predicts a rich spectrum of collective phenomena, including vortex Rossby-like waves, global oscillations, resonant critical layers, and a dielectric response operator analogous to that of plasmas and self-gravitating systems. For smooth vortex distributions, differential rotation gives rise to a vortex analogue of Landau damping, whereby collective modes transfer energy and angular momentum to resonant vortex annuli in the absence of collisions or dissipation. Remarkably, differential rotation acts as a stringent mode-selection mechanism: for a Gaussian vortex cloud, only a single quadrupolar quasi-mode survives, while all higher multipoles are destroyed by phase mixing. We further predict a vortex counterpart of the beam--plasma instability, in which a thin vortex ring orbiting an Onsager patch selectively excites Kelvin modes with an azimuthal symmetry controlled by the ring population. These results establish kinetic theory as a natural framework for collective vortex dynamics and suggest new mechanisms for vortex transport, vortex avalanches, and rotational glitches in neutron-star superfluids.",
+    "id": "2026-10-06-arxiv-simulation_of_weakly_ionized_hypersonic_flows_with_reactive_species_weighting_scheme_in_th",
+    "arxiv_id": "2610.08476v1",
+    "date": "2026-10-06",
+    "title": "Simulation of Weakly Ionized Hypersonic Flows with Reactive Species Weighting Scheme in the Direct Simulation Monte Carlo Method",
+    "authors": "Takato Morimoto, Virgile Charton, Eiichiro Yamaoka, Kiyoshi Kinefuchi",
+    "abstract": "The conservative species weighting scheme enables the direct simulation Monte Carlo (DSMC) method to resolve trace species such as electrons and ions in weakly ionized flows. The present study extends this scheme to reacting flows, utilizing a split-merge concept for particles with species-dependent weights. Reactive collisions between differently weighted species are processed according to their respective weights, introducing the production of an integer number of product particles and a probabilistic approach applied to both reactant and product particles to satisfy mass conservation. The extended scheme was validated in single-cell dissociation and exchange reaction test cases, verifying mass and total energy conservation and the mole-fraction histories against conventional DSMC. This extension provides the electron number density required for predicting the onset of communication blackout at high altitudes during hypersonic reentry. The method was applied to the Orbital Re-entry Experiment (OREX) flight conditions from 105.0 km to 92.8 km altitude. Translational and internal temperatures showed good agreement with conventional DSMC results, validating the macroscopic flow-field computation. The scheme enabled continuous spatial distributions of trace electron number density, consistent with the communication blackout onset observed in the flight data. The computed ion current reproduced the overall trend of the in-flight electrostatic probe data. The influences of the ion recombination at the vehicle surface and of the uncertainty of the N + O associative-ionization rate were quantified, and the range of the computed currents encompassed the available measurements. The 105.0 km case extended the prediction beyond available measurements, consistent with the overall trend.",
     "category": "Turbulence",
     "source": "arXiv",
-    "published": "2026-10-04T00:52:02Z",
-    "updated": "2026-10-04T00:52:02Z",
+    "published": "2026-10-06T14:55:53Z",
+    "updated": "2026-10-06T14:55:53Z",
     "primary_category": "physics.flu-dyn",
     "categories": [
       "physics.flu-dyn",
-      "cond-mat.quant-gas",
-      "nucl-th",
       "physics.plasm-ph"
     ],
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.04841v1"
+        "url": "https://arxiv.org/abs/2610.08476v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.04841v1"
-      }
-    ],
-    "score": 55,
-    "infographic": {
-      "key_insight": "A point-vortex gas can be treated as a Vlasov system, revealing Landau-damping-like phase mixing and strong mode selection in rotating vortex clouds.",
-      "engineering_relevance": "This kinetic viewpoint helps predict and control collective vortex transport, instability, and coherent structures in geophysical, plasma-like, and superfluid rotation settings.",
-      "method": [
-        "Derive a reduced Klimontovich equation directly on the physical plane from point-vortex Hamiltonian dynamics.",
-        "Formulate a Vlasov description with a dielectric-response operator and resonant critical layers.",
-        "Analyze smooth vortex distributions to identify damping, quasi-modes, and beam-plasma-like instabilities."
-      ],
-      "evidence_signal": "The abstract reports analytical theory predictions for Gaussian vortex clouds and thin vortex rings, including selective survival of a single quadrupolar mode and excitation of Kelvin modes.",
-      "watch_item": "The results are theoretical and rely on idealized collisionless point-vortex and smooth-distribution assumptions, so finite-core, dissipative, or noisy effects may alter the predicted mode selection.",
-      "hashtags": [
-        "#FluidMechanics",
-        "#VortexDynamics",
-        "#LandauDamping",
-        "#VlasovTheory",
-        "#Turbulence"
-      ],
-      "paper_id": "2026-10-04-arxiv-landau_damping_and_mode_selective_instability_of_a_vortex_gas",
-      "paper_title": "Landau damping and mode-selective instability of a vortex gas",
-      "paper_date": "2026-10-04",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-10-06T14:53:38",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-05-arxiv-accurate_contact_discontinuity_resolving_boltzmann_schemes_based_on_peculiar_velocity",
-    "arxiv_id": "2610.06649v1",
-    "date": "2026-10-05",
-    "title": "Accurate contact discontinuity resolving Boltzmann schemes based on peculiar velocity",
-    "authors": "Balwinder Singh, S. V. Raghurama Rao",
-    "abstract": "Starting from the robust foundation of the peculiar velocity based upwind (PVU) Boltzmann scheme, which fails to recognize contact discontinuities, this paper introduces new variants for the numerical solutions of equations of gas dynamics. A modified partial differential equation (MPDE) analysis of the original scheme reveals that the numerical diffusion coefficient corresponding to the peculiar velocity part does not vanish as the Mach number goes to zero. The numerical discretization of the peculiar velocity term is redesigned so that the numerical diffusion depends only on the bulk fluid velocity across the stationary contact discontinuities, enabling its exact capture in 1D and exact capture of slip surfaces in 2D. The resulting variants achieve low numerical diffusion while preserving the robustness of the original scheme, as demonstrated through several 1D and 2D benchmark compressible flow test cases.",
-    "category": "CFD Surrogates",
-    "source": "arXiv",
-    "published": "2026-10-05T16:28:52Z",
-    "updated": "2026-10-05T16:28:52Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn",
-      "physics.comp-ph"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.06649v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.06649v1"
+        "url": "https://arxiv.org/pdf/2610.08476v1"
       }
     ],
     "score": 52,
     "infographic": {
-      "key_insight": "The paper redesigns a peculiar-velocity Boltzmann upwind scheme so contact discontinuities are exactly captured while keeping the method robust and low-diffusion.",
-      "engineering_relevance": "This improves compressible-flow solvers for CFD by reducing smearing of shocks, contacts, and slip surfaces without sacrificing stability.",
+      "key_insight": "A species-weighted DSMC extension can simulate weakly ionized hypersonic reacting flows while conserving mass and energy and resolving trace electrons and ions.",
+      "engineering_relevance": "This enables more reliable prediction of communication blackout onset and ion current during atmospheric reentry, supporting vehicle design and mission safety.",
       "method": [
-        "Start from the PVU Boltzmann scheme and analyze its modified PDE (MPDE) behavior.",
-        "Change the discretization of the peculiar-velocity term so numerical diffusion depends only on bulk fluid velocity across stationary contacts.",
-        "Use the resulting variants to achieve exact 1D contact capture and exact 2D slip-surface capture."
+        "Extend conservative species weighting to reacting DSMC with species-dependent particle weights.",
+        "Use split-merge handling for reactants/products so reactions between differently weighted species remain mass-conservative.",
+        "Validate on single-cell dissociation/exchange tests and apply to OREX reentry conditions from 105.0 to 92.8 km."
       ],
-      "evidence_signal": "The abstract reports validation on several 1D and 2D benchmark compressible-flow test cases, showing low diffusion and preserved robustness.",
-      "watch_item": "Exact contact/slip capture may depend on careful implementation of the revised velocity split and may not generalize identically to all multidimensional flow configurations.",
+      "evidence_signal": "The method matched conventional DSMC for mass, energy, and mole-fraction histories, and reproduced the overall trend of OREX temperature, electron-density, and ion-current data.",
+      "watch_item": "Accuracy depends on reaction-rate assumptions and surface recombination modeling, especially for the uncertain N + O associative-ionization rate.",
       "hashtags": [
-        "#CFD",
-        "#CompressibleFlow",
-        "#BoltzmannMethod",
-        "#ContactDiscontinuity",
-        "#NumericalMethods"
+        "#DSMC",
+        "#HypersonicFlow",
+        "#AerospaceEngineering",
+        "#PlasmaAerodynamics",
+        "#Reentry"
       ],
-      "paper_id": "2026-10-05-arxiv-accurate_contact_discontinuity_resolving_boltzmann_schemes_based_on_peculiar_velocity",
-      "paper_title": "Accurate contact discontinuity resolving Boltzmann schemes based on peculiar velocity",
-      "paper_date": "2026-10-05",
-      "paper_category": "CFD Surrogates",
-      "generated_at": "2026-10-06T14:53:40",
+      "paper_id": "2026-10-06-arxiv-simulation_of_weakly_ionized_hypersonic_flows_with_reactive_species_weighting_scheme_in_th",
+      "paper_title": "Simulation of Weakly Ionized Hypersonic Flows with Reactive Species Weighting Scheme in the Direct Simulation Monte Carlo Method",
+      "paper_date": "2026-10-06",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-10-07T15:19:50",
       "generator": "openai"
     }
   },
   {
-    "id": "2026-10-05-arxiv-a_renormalization_group_hierarchy_of_stochastic_effective_dynamics_learned_through_path_in",
-    "arxiv_id": "2610.06099v1",
-    "date": "2026-10-05",
-    "title": "A Renormalization-Group Hierarchy of Stochastic Effective Dynamics Learned through Path Integrals",
-    "authors": "Yuki Yasuda, Tobias Bischoff",
-    "abstract": "This study combines a stochastic renormalization group (RG) in space with a path-integral description of the time evolution, giving a spatial hierarchy of coarse-grained dynamics together with the distribution over spatiotemporal paths. The RG is defined as a diffusion process that applies scale-dependent Laplacian damping together with additive Gaussian noise. The time evolution at each spatial scale is formulated as an Onsager--Machlup action, with a drift (i.e., the predictor) and white noise whose amplitude is fixed by the RG. The predictor of these dynamics is optimized by minimizing the Kullback--Leibler divergence between the path distributions from the RG and from the path-integral description. The optimal predictor contains the score function that connects the spatial scales, so the predictor and the score are two aspects of the same multiscale path formulation. The formulation unifies simulation using the predictor, unconditional generation using the score, and super-resolution using both. The predictor has no closed form, so it is computed by a neural network in two realizations that differ only in how the score is computed. The first realization obtains the score by automatic differentiation of the path distribution, remaining faithful to that formulation. The second obtains the score as an additional network output trained by denoising, at a lower computational cost. These two realizations are validated through numerical experiments on two representative multiscale systems, the Kolmogorov flow and the two-timescale Lorenz-96 model.",
-    "category": "Turbulence",
+    "id": "2026-10-06-arxiv-adhimex_adaptively_high_order_implicit_explicit_transport_for_large_time_steps",
+    "arxiv_id": "2610.08166v1",
+    "date": "2026-10-06",
+    "title": "AdHImEx: Adaptively High-Order Implicit-Explicit Transport for Large Time Steps",
+    "authors": "Amber J. te Winkel, Hilary Weller, Christian Kühnlein, James Kent",
+    "abstract": "Adaptively Implicit-Explicit (AdImEx) time stepping provides stability for large time steps for mass-conservative transport, making it attractive for the numerical representation of advection in weather and climate prediction. Existing AdImEx transport schemes become first-order accurate in the large-time-step, implicit regime and may require multiple sparse matrix solutions per time step. This work introduces AdHImEx, a new AdImEx scheme that addresses both limitations simultaneously. AdHImEx provides second-order accuracy for large Courant numbers while requiring only a single matrix solution per time step. It is a Runge-Kutta scheme that blends third-order accurate explicit time stepping and Crank-Nicolson implicit time stepping to provide numerically verified stability for Courant numbers up to 100. AdHImEx is designed for flows that are predominantly explicit, activating implicit time stepping only where large Courant numbers occur. It retains the full efficiency and third-order accuracy of the explicit time stepping in regions with small Courant numbers. In this work, it is combined with a fifth-order accurate finite-volume discretisation in space for mass conservation. A second contribution of this work is a novel stage-dependent treatment of the divergence operator that preserves constancy despite different implicit and explicit Runge-Kutta stage time steps and spatially varying implicitness, removing spurious divergence. This innovation is applicable to other AdImEx time stepping schemes. Convergence, transport, and efficiency tests demonstrate substantial improvements over previous first-order AdImEx schemes, little phase and amplitude error, accurate transport on locally refined meshes with large Courant numbers, and promising efficiency characteristics for atmospheric transport.",
+    "category": "CFD Surrogates",
     "source": "arXiv",
-    "published": "2026-10-05T10:32:07Z",
-    "updated": "2026-10-05T10:32:07Z",
-    "primary_category": "nlin.CD",
+    "published": "2026-10-06T11:23:21Z",
+    "updated": "2026-10-06T11:23:21Z",
+    "primary_category": "math.NA",
     "categories": [
-      "nlin.CD",
+      "math.NA",
       "physics.comp-ph",
       "physics.flu-dyn"
     ],
     "links": [
       {
         "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.06099v1"
+        "url": "https://arxiv.org/abs/2610.08166v1"
       },
       {
         "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.06099v1"
+        "url": "https://arxiv.org/pdf/2610.08166v1"
       }
     ],
     "score": 52,
     "infographic": {
-      "key_insight": "The paper learns a multiscale stochastic dynamics model by combining spatial renormalization-group coarse graining with a path-integral time-evolution formulation, linking the predictor and score across scales.",
-      "engineering_relevance": "This enables unified simulation, unconditional generation, and super-resolution for complex turbulent and multiscale flow systems.",
+      "key_insight": "AdHImEx is a hybrid implicit-explicit transport method that keeps second-order accuracy at large Courant numbers while needing only one matrix solve per time step.",
+      "engineering_relevance": "It enables stable, mass-conservative advection for weather and climate models with better efficiency in mostly explicit flows and fewer accuracy losses in high-Courant regions.",
       "method": [
-        "Apply a stochastic RG in space using scale-dependent Laplacian damping plus additive Gaussian noise.",
-        "Formulate time evolution at each scale with an Onsager--Machlup action and optimize the drift predictor via KL divergence minimization.",
-        "Compute the score either by automatic differentiation of the path distribution or by a cheaper denoising-trained network output."
+        "Runge-Kutta AdImEx scheme blending third-order explicit stepping with Crank-Nicolson implicit stepping",
+        "Single sparse matrix solve per time step, even in the implicit regime",
+        "Stage-dependent divergence treatment to preserve constancy under spatially varying implicitness"
       ],
-      "evidence_signal": "The approach is validated numerically on two multiscale benchmarks: the Kolmogorov flow and the two-timescale Lorenz-96 model.",
-      "watch_item": "The predictor has no closed form, so practical performance depends on neural-network approximation quality and the chosen score-estimation route.",
+      "evidence_signal": "The abstract reports convergence, transport, and efficiency tests showing improved accuracy over prior first-order AdImEx schemes, low phase/amplitude error, and stable performance up to Courant numbers of 100.",
+      "watch_item": "Implementation must carefully handle stage-dependent divergence and local implicitness on refined meshes to avoid spurious divergence or reduced accuracy.",
       "hashtags": [
-        "#Turbulence",
-        "#RenormalizationGroup",
-        "#StochasticDynamics",
-        "#PathIntegrals",
-        "#MachineLearning"
-      ],
-      "paper_id": "2026-10-05-arxiv-a_renormalization_group_hierarchy_of_stochastic_effective_dynamics_learned_through_path_in",
-      "paper_title": "A Renormalization-Group Hierarchy of Stochastic Effective Dynamics Learned through Path Integrals",
-      "paper_date": "2026-10-05",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-10-06T14:53:43",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-05-arxiv-fast_and_differentiable_mhd_surrogate_for_solar_wind_using_neural_operator",
-    "arxiv_id": "2610.05657v1",
-    "date": "2026-10-05",
-    "title": "Fast and Differentiable MHD Surrogate for Solar Wind using Neural Operator",
-    "authors": "Prateek Mayank, Enrico Camporeale, Thomas E. Berger, Zhenguang Huang, Gabor Toth",
-    "abstract": "Global magnetohydrodynamic (MHD) simulations provide the complete plasma state of the heliosphere, but their computational cost limits applications requiring repeated model evaluations. We introduce SNOW (Solar Neural Operator for Wind), a fast and differentiable surrogate for global MHD solar wind. SNOW combines a rotational ballistic approximation, a spherical harmonic neural operator, and causal radial context to autoregressively propagate all eight MHD variables from 20 to 240 Rs through consecutive shell to shell transitions. Trained and evaluated using AWSoM simulations spanning a solar cycle, SNOW remains stable across the complete rollout. The model successfully reproduces the large scale plasma and magnetic field structures, including fast and slow wind streams, magnetic polarity sectors, vector orientations, fieldline connectivity, and bulk-flow structures. Additionally, the magnetic divergence and induction diagnostics remain comparable to the reference MHD solutions. The complete three-dimensional solution is generated in less than one second on a single GPU. These results demonstrate the feasibility of fast neural emulation of global MHD solar wind solutions while retaining physically meaningful plasma and magnetic field structure.",
-    "category": "CFD Surrogates",
-    "source": "arXiv",
-    "published": "2026-10-05T01:06:41Z",
-    "updated": "2026-10-05T01:06:41Z",
-    "primary_category": "astro-ph.SR",
-    "categories": [
-      "astro-ph.SR",
-      "physics.flu-dyn",
-      "physics.plasm-ph",
-      "physics.space-ph"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.05657v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.05657v1"
-      }
-    ],
-    "score": 52,
-    "infographic": {
-      "key_insight": "SNOW is a fast, differentiable neural surrogate that reproduces global MHD solar wind evolution from 20 to 240 Rs while preserving key plasma and magnetic-field structures.",
-      "engineering_relevance": "It enables near-real-time, repeated heliospheric simulations on a single GPU, making global solar-wind modeling far more practical for forecasting and sensitivity studies.",
-      "method": [
-        "Combines rotational ballistic approximation with a spherical harmonic neural operator.",
-        "Uses causal radial context to autoregressively advance all eight MHD variables shell by shell.",
-        "Trained on AWSoM solar-cycle simulations and rolled out across the full 3D domain."
-      ],
-      "evidence_signal": "The model was evaluated on AWSoM simulations spanning a solar cycle and remained stable through complete rollouts, while matching large-scale flow, magnetic polarity, divergence, and induction diagnostics.",
-      "watch_item": "Because the surrogate is trained on AWSoM-based data and uses autoregressive shell propagation, generalization beyond the training regime and error accumulation over long rollouts need careful validation.",
-      "hashtags": [
-        "#ComputationalFluidDynamics",
-        "#Magnetohydrodynamics",
-        "#NeuralOperators",
-        "#SolarWindModeling",
-        "#AIForScience"
-      ],
-      "paper_id": "2026-10-05-arxiv-fast_and_differentiable_mhd_surrogate_for_solar_wind_using_neural_operator",
-      "paper_title": "Fast and Differentiable MHD Surrogate for Solar Wind using Neural Operator",
-      "paper_date": "2026-10-05",
-      "paper_category": "CFD Surrogates",
-      "generated_at": "2026-10-06T14:53:46",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-04-arxiv-droplet_triggered_faraday_waves_in_a_vertically_forced_bath",
-    "arxiv_id": "2610.05596v1",
-    "date": "2026-10-04",
-    "title": "Droplet-triggered Faraday waves in a vertically forced bath",
-    "authors": "Fahim Tanfeez Mahmood, C. Ricardo Constante-Amores",
-    "abstract": "Repeated impacts of a droplet on a vertically forced bath can produce a growing Faraday-wave response under forcing conditions for which the corresponding initially undisturbed bath remains linearly stable. We investigate this mechanism using axisymmetric two-phase direct numerical simulations over a wide range of Reynolds and Weber numbers. The resulting phenomenological regime map identifies quasi-periodic, decaying, faint, and unstable-bath responses. Along the parameter path considered here, the transition to the unstable-bath regime occurs over a narrow range of Weber numbers and varies only weakly with Reynolds number. In the unstable regime, the bath develops a coherent subharmonic response at half the forcing frequency, while disturbances in the decaying regime remain broadband and weaken between successive rebounds. Bath-only simulations show that a finite-amplitude perturbation representative of droplet impact can seed the confined radial mode susceptible to parametric forcing, initiating a growing subharmonic response below the linear instability threshold of the initially flat bath. A reduced capillary-dominated model provides a scaling estimate for the impact-equivalent perturbation amplitude, and bath-only simulations initialized with these perturbations reproduce the bounded-to-growing transition observed in the coupled simulations. Floquet analysis of the finite cylindrical bath identifies the first axisymmetric Neumann mode as having the lowest subharmonic instability threshold. A time-resolved Bessel decomposition independently shows that the growing bath response is dominated by the same radial mode, while the droplet-induced subharmonic response projects predominantly onto this structure. These results identify a finite-amplitude route by which localized droplet impacts can access Faraday-wave dynamics below the linear onset threshold of an initially undisturbed bath.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-10-04T23:01:17Z",
-    "updated": "2026-10-04T23:01:17Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.05596v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.05596v1"
-      }
-    ],
-    "score": 52,
-    "infographic": {
-      "key_insight": "Repeated droplet impacts can trigger a growing subharmonic Faraday-wave response in a vertically forced bath even when the initially flat bath is linearly stable, by seeding the most susceptible radial mode with finite amplitude.",
-      "engineering_relevance": "This suggests droplet–surface interactions can unlock unexpected wave growth and mixing in forced liquid systems, which matters for atomization, coating, vibration-driven processing, and wave-controlled fluid devices.",
-      "method": [
-        "Axisymmetric two-phase direct numerical simulations across a wide Reynolds–Weber parameter range",
-        "Bath-only simulations with finite-amplitude impact-equivalent perturbations",
-        "Floquet analysis and Bessel-mode decomposition to identify the dominant unstable radial mode"
-      ],
-      "evidence_signal": "The abstract reports a phenomenological regime map with quasi-periodic, decaying, faint, and unstable-bath regimes, plus agreement between coupled simulations, bath-only perturbation tests, and mode analysis.",
-      "watch_item": "The mechanism is demonstrated for a finite cylindrical, axisymmetric setup, so transferability to 3D geometries, different bath sizes, or non-ideal droplet impact conditions may require additional validation.",
-      "hashtags": [
-        "#FaradayWaves",
-        "#DropletImpact",
-        "#TwoPhaseFlow",
-        "#DirectNumericalSimulation",
-        "#FluidDynamics"
-      ],
-      "paper_id": "2026-10-04-arxiv-droplet_triggered_faraday_waves_in_a_vertically_forced_bath",
-      "paper_title": "Droplet-triggered Faraday waves in a vertically forced bath",
-      "paper_date": "2026-10-04",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-10-06T14:53:50",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-02-arxiv-development_of_a_class_of_dynamic_rans_closures_for_coarse_grained_approaches_to_turbulenc",
-    "arxiv_id": "2610.03067v1",
-    "date": "2026-10-02",
-    "title": "Development of a class of dynamic RANS closures for coarse-grained approaches to turbulence",
-    "authors": "Yves Tessier Urrecha, Giorgio Manzi, Filippo Cancellotti, Andrea Cimarelli",
-    "abstract": "This work represents a crucial advancement in the development of a new class of turbulence closures conceived by Cimarelli et al. [1]. This new class of closures is based on the theoretical framework provided by the temporally filtered Navier-Stokes equations. This framework represents a unifying formalism for coarse-grained approaches to turbulence ranging from the statistical to the scale-resolving ones and provides exact equations relating turbulent stresses at different levels of coarsening. The latter have been used in Cimarelli et al. [1] as the theoretical foundation to derive a new class of closures based on the dynamic computation of the model coefficient appearing in the definition of eddy viscosity. Here, we extend this class of dynamic RANS models by deriving a new formulation based on the k-ω model including an alternative version where the non-physical decay of free-stream turbulence reproduced by the transport equations of k and ω is solved in an elegant way. A scale-resolving simulation campaign is performed and the analysis of the results reveals interesting features. Among others, the new dynamic k-ω model demonstrates strong robustness to a coarsening of the temporal resolution and successfully captures complex flow phenomena, including laminar-to-turbulent transition and the sensitivity of boundary-layer separation and reattachment to free-stream turbulence levels prescribed at the boundaries.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-10-02T09:49:57Z",
-    "updated": "2026-10-02T09:49:57Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.03067v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.03067v1"
-      }
-    ],
-    "score": 52,
-    "infographic": {
-      "key_insight": "The paper develops a dynamic k-ω RANS closure for coarse-grained turbulence simulation that adapts its model coefficient from the flow itself, improving robustness under temporal coarsening.",
-      "engineering_relevance": "This provides a more reliable and flexible turbulence model for engineering CFD where reduced temporal resolution is needed, while still capturing transition and boundary-layer separation/reattachment effects.",
-      "method": [
-        "Build on temporally filtered Navier-Stokes equations as a unifying coarse-grained turbulence framework.",
-        "Derive a dynamic RANS closure based on the k-ω model, including an alternative form that avoids non-physical free-stream turbulence decay.",
-        "Validate through scale-resolving simulations and compare behavior under different temporal coarsening levels and free-stream turbulence settings."
-      ],
-      "evidence_signal": "The abstract reports a simulation campaign showing the new dynamic k-ω model remains robust to temporal coarsening and captures laminar-to-turbulent transition plus separation/reattachment sensitivity to inlet free-stream turbulence.",
-      "watch_item": "Performance depends on the chosen free-stream turbulence prescription and the model’s behavior should be checked carefully in highly separated or boundary-condition-sensitive flows.",
-      "hashtags": [
-        "#TurbulenceModeling",
-        "#RANS",
-        "#kOmega",
         "#CFD",
+        "#WeatherModeling",
+        "#ClimateSimulation",
+        "#Advection",
+        "#RungeKutta"
+      ],
+      "paper_id": "2026-10-06-arxiv-adhimex_adaptively_high_order_implicit_explicit_transport_for_large_time_steps",
+      "paper_title": "AdHImEx: Adaptively High-Order Implicit-Explicit Transport for Large Time Steps",
+      "paper_date": "2026-10-06",
+      "paper_category": "CFD Surrogates",
+      "generated_at": "2026-10-07T15:19:52",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-06-arxiv-airborne_liquid_marble_evaporation_dynamics_of_liquid_marble_in_acoustic_levitation",
+    "arxiv_id": "2610.07703v1",
+    "date": "2026-10-06",
+    "title": "Airborne liquid marble: Evaporation dynamics of liquid marble in acoustic levitation",
+    "authors": "Keigo Noro, Xiao Ma, Koji Hasegawa",
+    "abstract": "Liquid marbles (LMs), droplets encapsulated by hydrophobic particles, allow for non-wetting manipulation and containerless handling, making them well-suited for applications such as microreactors. When integrated with acoustic levitation, the LMs serve as contact-free reaction platforms. However, the complex behaviours associated with acoustic fields, including deformation, internal flow, and evaporation, remain insufficiently understood. This study investigates the evaporation dynamics of acoustically levitated LMs. Simultaneous visualisation of the droplet morphology and surrounding vapour concentration fields was achieved using backlighting and the Background-oriented Schlieren (BOS) method. At intermediate relative humidity (RH = 40%), the evaporation rates and vapour distributions of LMs closely resembled those of pure water droplets, indicating that the particle shell exerts minimal influence under these conditions. Conversely, significant differences were observed at high- and low-humidity, attributable to the evaporation resistance and interfacial properties introduced by the hydrophobic particle layers. Furthermore, although pure water droplets maintained a quasi-spherical shape, LMs demonstrated progressive flattening over time, suggesting mechanical constraints imposed by the particle shell. These findings provide new insights into the coupled evaporation and deformation behaviours of LMs in acoustic fields, informing the design of contamination-free microfluidic and microreactor systems.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-10-06T03:53:41Z",
+    "updated": "2026-10-06T03:53:41Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.07703v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.07703v1"
+      }
+    ],
+    "score": 52,
+    "infographic": {
+      "key_insight": "Acoustically levitated liquid marbles evaporate like pure droplets at moderate humidity, but their particle shells strongly alter evaporation and shape change at high and low humidity.",
+      "engineering_relevance": "The results support contact-free microreactors and microfluidic handling by showing when liquid marbles behave predictably and when shell effects must be accounted for.",
+      "method": [
+        "Acoustic levitation of liquid marbles and pure water droplets",
+        "Backlighting to track droplet morphology",
+        "Background-oriented Schlieren (BOS) to visualize surrounding vapor concentration fields"
+      ],
+      "evidence_signal": "Simultaneous morphology and vapor-field measurements showed close agreement with pure water droplets at 40% RH, with clear deviations at higher and lower humidity.",
+      "watch_item": "The shell-induced evaporation resistance and flattening may reduce model transferability across humidity conditions, so operating environment must be controlled.",
+      "hashtags": [
+        "#AcousticLevitation",
+        "#LiquidMarbles",
+        "#Evaporation",
+        "#Microfluidics",
+        "#BackgroundOrientedSchlieren"
+      ],
+      "paper_id": "2026-10-06-arxiv-airborne_liquid_marble_evaporation_dynamics_of_liquid_marble_in_acoustic_levitation",
+      "paper_title": "Airborne liquid marble: Evaporation dynamics of liquid marble in acoustic levitation",
+      "paper_date": "2026-10-06",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-10-07T15:19:55",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-06-arxiv-thermocapillary_stabilization_of_liquid_space_telescopes",
+    "arxiv_id": "2610.08654v1",
+    "date": "2026-10-06",
+    "title": "Thermocapillary stabilization of Liquid Space Telescopes",
+    "authors": "Ryan Engle, Valeri Frumkin",
+    "abstract": "We investigate how spatially uniform, time-modulated heating can be used to stabilize a thin liquid mirror in microgravity. Periodic heating generates oscillatory thermocapillary flows that suppress the instability associated with sustained heating, allowing the free surface to relax through the combined effects of thermal radiation, thermocapillary transport, and capillarity. Using multiple-scale analysis of a long-wave model, we derive the coupled surface-temperature evolution over many heating cycles. A subsequent linear stability analysis yields the stability criteria and decay times of individual surface modes. Numerical simulations validate the analytical predictions and demonstrate stabilization of meter-scale surface deformations over timescales of days.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-10-06T16:38:54Z",
+    "updated": "2026-10-06T16:38:54Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.08654v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.08654v1"
+      }
+    ],
+    "score": 51,
+    "infographic": {
+      "key_insight": "Time-modulated, spatially uniform heating can stabilize a microgravity liquid mirror by driving oscillatory thermocapillary flows that counteract the destabilizing effects of steady heating.",
+      "engineering_relevance": "This provides a control strategy for large space telescopes and other thin liquid-surface systems, enabling meter-scale shape stability over multi-day timescales.",
+      "method": [
+        "Built a long-wave model for a thin liquid mirror in microgravity.",
+        "Applied multiple-scale analysis to derive coupled surface-temperature evolution across many heating cycles.",
+        "Used linear stability analysis and numerical simulation to predict decay times and stability thresholds for surface modes."
+      ],
+      "evidence_signal": "The abstract reports that numerical simulations validate the analytical predictions and show stabilization of meter-scale surface deformations over timescales of days.",
+      "watch_item": "The approach relies on idealized model assumptions and controlled thermal modulation, so real spacecraft implementation may be sensitive to imperfect heating uniformity and disturbances.",
+      "hashtags": [
+        "#Thermocapillary",
+        "#Microgravity",
+        "#LiquidMirror",
+        "#SpaceTelescopes",
         "#FluidMechanics"
       ],
-      "paper_id": "2026-10-02-arxiv-development_of_a_class_of_dynamic_rans_closures_for_coarse_grained_approaches_to_turbulenc",
-      "paper_title": "Development of a class of dynamic RANS closures for coarse-grained approaches to turbulence",
-      "paper_date": "2026-10-02",
+      "paper_id": "2026-10-06-arxiv-thermocapillary_stabilization_of_liquid_space_telescopes",
+      "paper_title": "Thermocapillary stabilization of Liquid Space Telescopes",
+      "paper_date": "2026-10-06",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-06T14:53:52",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-05-arxiv-a_semi_implicit_all_mach_numerical_method_for_implicit_large_eddy_simulations",
-    "arxiv_id": "2610.06217v1",
-    "date": "2026-10-05",
-    "title": "A Semi-Implicit All-Mach Numerical Method for Implicit Large Eddy Simulations",
-    "authors": "Simon D. Wilkinson",
-    "abstract": "Implicit Large Eddy Simulation (ILES) is a well established approach for modeling high-Reynolds-number turbulent flows by numerical solution of the inviscid Euler equations in 3D. These turbulent flows cover a wide range of Mach numbers, including within individual simulations. For example, Richtmyer-Meshkov instability simulations transition from a high-Mach compressible regime to a low-Mach quasi-incompressible regime during the late-time evolution. These flows motivate the development of a semi-implicit all-Mach numerical method, which is subject to a CFL stability constraint corresponding to the fluid velocity, but independent of the speed of sound, and can be applied efficiently and accurately across the whole spectrum of Mach numbers. Furthermore, finite-volume discretization is chosen to maintain strict conservation and ensure robust and accurate capturing of strong shocks. The method is validated in both high- and low-Mach regimes. Validation is also presented for stratified atmospheres in the presence of gravity, and the method is thus shown to be applicable to buoyancy driven flows. We present favorable comparison against previously published ILES simulations of multimode Richtmyer-Meshkov instability from the $Θ$-group collaboration, Thornber et al., (arXiv:1706.09991).",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-10-05T12:26:54Z",
-    "updated": "2026-10-05T12:26:54Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.06217v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.06217v1"
-      }
-    ],
-    "score": 50,
-    "infographic": {
-      "key_insight": "The paper introduces a semi-implicit all-Mach finite-volume method for ILES that remains stable and accurate from high-Mach shocks to low-Mach quasi-incompressible flow.",
-      "engineering_relevance": "This lets turbulent, compressible, and buoyancy-driven simulations run more efficiently by removing the acoustic CFL time-step restriction while preserving conservation and shock-capturing robustness.",
-      "method": [
-        "Semi-implicit time integration with CFL limited by fluid velocity, not sound speed.",
-        "Finite-volume discretization to ensure strict conservation and strong-shock resolution.",
-        "Designed for ILES across the full Mach-number spectrum, including gravity-stratified flows."
-      ],
-      "evidence_signal": "The abstract reports validation in both high- and low-Mach regimes, plus stratified atmospheres, with favorable comparison to published multimode Richtmyer-Meshkov ILES results from the Θ-group collaboration.",
-      "watch_item": "Performance and accuracy depend on careful implementation of the semi-implicit solver to maintain stability across strong shocks, gravity, and very low-Mach conditions.",
-      "hashtags": [
-        "#ComputationalFluidDynamics",
-        "#Turbulence",
-        "#ImplicitLES",
-        "#AllMach",
-        "#FiniteVolume"
-      ],
-      "paper_id": "2026-10-05-arxiv-a_semi_implicit_all_mach_numerical_method_for_implicit_large_eddy_simulations",
-      "paper_title": "A Semi-Implicit All-Mach Numerical Method for Implicit Large Eddy Simulations",
-      "paper_date": "2026-10-05",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-10-06T14:53:55",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-09-29-arxiv-stable_and_interpretable_multi_mode_rheological_universal_differential_equations_mmrudes_f",
-    "arxiv_id": "2609.38470v1",
-    "date": "2026-09-29",
-    "title": "Stable and Interpretable Multi-Mode Rheological Universal Differential Equations (mmRUDEs) for Data-Driven Constitutive Modeling",
-    "authors": "Mohua Das, Nicholas King, Navid Azizan, Gareth H. McKinley",
-    "abstract": "The Rheological Universal Differential Equation (RUDE) framework embeds neural networks within a frame-indifferent tensorial constitutive backbone and so enables data-driven discovery of complex material rheological behavior. However, the flexibility that makes the RUDE framework attractive also makes it difficult to deploy: the learned neural network correction can make the constitutive equation numerically stiff during training, distribute corrections across non-unique combinations of tensor-basis terms, and extrapolate poorly with increasing nonlinearity, especially for industrially relevant materials with broad relaxation spectra. We develop a stability- and reliability-focused multi-mode RUDE framework that addresses three key challenges: thermodynamic admissibility, out-of-distribution prediction, and interpretability. Logarithmic compression of the input invariants and a split-network architecture improve numerical conditioning during training, while a differentiable projection layer enforces the Clausius--Duhem inequality at every time step. We illustrate the framework with both synthetic (a multi-mode Giesekus model) and experimental data on an entangled silicone polymer melt. Both models were trained on LAOS; they remain stable and accurate under unseen flow conditions, including steady shear, transient stress growth, and extensional flows, for which the unconstrained models may diverge numerically. To aid in interpretation of the contributions of each learned correction to the rheological behavior, we introduce the rheome, a compact way of representing the dominant weighted tensor-basis contributions to the overall rheological behavior. These improvements to the RUDE framework lead to stable and interpretable trained models, paving the way for implementation in computational fluid dynamics simulations and for guiding the rational design of soft material processing operations.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-09-29T20:00:35Z",
-    "updated": "2026-09-29T20:00:35Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn",
-      "cond-mat.soft"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2609.38470v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2609.38470v1"
-      }
-    ],
-    "score": 49,
-    "infographic": {
-      "key_insight": "A stable multi-mode RUDE framework improves data-driven constitutive modeling by enforcing thermodynamic admissibility, better conditioning training, and making learned rheology more interpretable.",
-      "engineering_relevance": "The approach is designed for reliable extrapolation and CFD-ready constitutive laws for complex polymers and soft materials under industrial flow conditions.",
-      "method": [
-        "Log-compress input invariants and use a split-network architecture to reduce stiffness and improve conditioning.",
-        "Add a differentiable projection layer to enforce the Clausius--Duhem inequality at every time step.",
-        "Summarize learned tensor-basis contributions with the compact \"rheome\" for interpretability."
-      ],
-      "evidence_signal": "The models were trained on LAOS data and tested on synthetic multi-mode Giesekus and experimental silicone melt cases, where they remained stable and accurate under unseen shear, transient, and extensional flows.",
-      "watch_item": "The projection and multi-network design improve stability, but they add implementation complexity and may require careful tuning for new materials or simulation pipelines.",
-      "hashtags": [
-        "#ComputationalRheology",
-        "#ConstitutiveModeling",
-        "#PhysicsInformedML",
-        "#NeuralPDEs",
-        "#SoftMaterials"
-      ],
-      "paper_id": "2026-09-29-arxiv-stable_and_interpretable_multi_mode_rheological_universal_differential_equations_mmrudes_f",
-      "paper_title": "Stable and Interpretable Multi-Mode Rheological Universal Differential Equations (mmRUDEs) for Data-Driven Constitutive Modeling",
-      "paper_date": "2026-09-29",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-10-06T14:53:58",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-02-arxiv-flow_regime_determines_whether_larval_settlement_hydrodynamics_are_governed_by_swimming_sp",
-    "arxiv_id": "2610.03596v1",
-    "date": "2026-10-02",
-    "title": "Flow regime determines whether larval settlement hydrodynamics are governed by swimming speed or shape",
-    "authors": "Daniel Gysbers, Mark A. Levenstein, Gabriel Juarez",
-    "abstract": "Larval dispersal and settlement govern the replenishment of sessile marine populations and the assembly of benthic communities, yet how larval traits interact with near-surface flow structures to direct settlement remains unclear. We used coupled hydrodynamic and larval-scale simulations to resolve how swimming speed and body shape, from circular to elongated, influence settlement in oscillatory flow over ridged substrates. Settlement success differed by up to an order of magnitude across trait combinations. Near-surface flow acted as a trait filter by differentially regulating transport to, retention near, and encounters with the substrate. The trait that mattered most depended on the local flow structure. Where rapid flow restricted access to settlement surfaces, swimming speed was most important. Where flow recirculated between substrate ridges, shape-dependent alignment controlled transport and retention. These results link larval traits to flow-mediated settlement mechanisms and provide a physical framework for understanding how recruitment varies across complex benthic habitats.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-10-02T17:02:51Z",
-    "updated": "2026-10-02T17:02:51Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.03596v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.03596v1"
-      }
-    ],
-    "score": 47,
-    "infographic": {
-      "key_insight": "Which larval trait matters most for settlement depends on the local flow regime: swimming speed dominates in fast flow, while body shape dominates in recirculating flow between ridges.",
-      "engineering_relevance": "The study provides a physical basis for predicting and potentially designing flow-dependent recruitment in complex benthic habitats, with implications for coastal ecosystem management and habitat engineering.",
-      "method": [
-        "Coupled hydrodynamic and larval-scale simulations",
-        "Oscillatory flow over ridged substrates",
-        "Varied larval swimming speed and shape from circular to elongated"
-      ],
-      "evidence_signal": "Settlement success varied by up to an order of magnitude across trait combinations, showing strong flow-mediated sensitivity to larval properties.",
-      "watch_item": "Results come from controlled simulations, so real-world performance may differ in natural environments with unmodeled turbulence, behavior, and biological variability.",
-      "hashtags": [
-        "#FluidMechanics",
-        "#Turbulence",
-        "#MarineBiology",
-        "#LarvalSettlement",
-        "#ComputationalFluidDynamics"
-      ],
-      "paper_id": "2026-10-02-arxiv-flow_regime_determines_whether_larval_settlement_hydrodynamics_are_governed_by_swimming_sp",
-      "paper_title": "Flow regime determines whether larval settlement hydrodynamics are governed by swimming speed or shape",
-      "paper_date": "2026-10-02",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-10-06T14:54:01",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-09-30-arxiv-physics_informed_method_of_group_data_handling_adaptive_construction_of_functional_represe",
-    "arxiv_id": "2609.39291v1",
-    "date": "2026-09-30",
-    "title": "Physics-Informed Method of Group Data Handling: Adaptive Construction of Functional Representations with an Application to the Navier-Stokes Equations",
-    "authors": "Mykhailo Minin",
-    "abstract": "Physics-informed computational methods usually optimize parameters within a functional representation whose structure is fixed in advance. This work proposes a Physics-Informed Method of Group Data Handling (PI-GMDH), in which representations of coupled physical fields are progressively constructed during solution. Candidate functional directions are evaluated through the first variation of the complete physical and observational objective, introduced in packages, and followed by block-coordinate damped Gauss-Newton coefficient optimization. The framework is demonstrated with tensor-product Chebyshev functions on the incompressible Navier-Stokes equations using a two-dimensional time-dependent Taylor-Green benchmark. Under the tested configuration, adaptive PI-GMDH reached validation and held-out test losses of 5.299e-19 and 5.296e-19 with 204, 201, and 175 active functions for u, v, and p. Complete degree-by-degree and all-terms PI-GMDH variants, together with selected PINN and KAN reference configurations, are used to examine the effect of structural construction policy. The results show that, for this controlled synthetic benchmark, selective progressive construction can provide a favorable combination of accuracy, representation size, and wall-clock time. The comparison is illustrative rather than a claim of universal superiority over alternative physics-informed approaches.",
-    "category": "Physics-Informed ML",
-    "source": "arXiv",
-    "published": "2026-09-30T08:37:26Z",
-    "updated": "2026-09-30T08:37:26Z",
-    "primary_category": "cs.LG",
-    "categories": [
-      "cs.LG",
-      "physics.flu-dyn"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2609.39291v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2609.39291v1"
-      }
-    ],
-    "score": 46,
-    "infographic": {
-      "key_insight": "PI-GMDH adaptively builds the functional form of coupled physics fields during training, rather than fixing the representation upfront, and uses physics plus data residuals to guide structure growth and coefficient fitting.",
-      "engineering_relevance": "This offers a practical route to compact, accurate surrogate models for fluid dynamics when model structure, not just parameters, must be discovered from the governing equations.",
-      "method": [
-        "Starts with no fixed architecture and progressively adds candidate basis functions using the first variation of the combined physical and observational objective.",
-        "Optimizes coefficients with block-coordinate damped Gauss-Newton updates after each structural expansion step.",
-        "Demonstrated on incompressible Navier-Stokes using tensor-product Chebyshev functions for the 2D time-dependent Taylor-Green vortex."
-      ],
-      "evidence_signal": "On the benchmark, adaptive PI-GMDH reported validation and held-out test losses of 5.299e-19 and 5.296e-19, with 204, 201, and 175 active functions for u, v, and p.",
-      "watch_item": "The comparison is explicitly presented as illustrative on a controlled synthetic benchmark, so the reported advantage may not transfer directly to harder or noisy real-world flows.",
-      "hashtags": [
-        "#PhysicsInformedML",
-        "#NavierStokes",
-        "#ComputationalFluidDynamics",
-        "#SurrogateModeling",
-        "#AdaptiveMethods"
-      ],
-      "paper_id": "2026-09-30-arxiv-physics_informed_method_of_group_data_handling_adaptive_construction_of_functional_represe",
-      "paper_title": "Physics-Informed Method of Group Data Handling: Adaptive Construction of Functional Representations with an Application to the Navier-Stokes Equations",
-      "paper_date": "2026-09-30",
-      "paper_category": "Physics-Informed ML",
-      "generated_at": "2026-10-06T14:54:05",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-05-arxiv-a_simple_lagrangian_for_shallow_water_equations_with_constant_potential_vorticity",
-    "arxiv_id": "2610.05904v1",
-    "date": "2026-10-05",
-    "title": "A simple Lagrangian for shallow water equations with constant potential vorticity",
-    "authors": "Anton Galajinsky",
-    "abstract": "Inspired by a recent gauge field description of shallow water equations [SciPost Phys. 14 (2023) 102], in this work we build a simple Lagrangian formulation for the case of constant potential vorticity. An attractive feature of the construction is that it does not appeal to a Clebsch-like parametrization or the use of auxiliary fields. It is also emphasized that on the equator, where the Coriolis parameter vanishes, the shallow water equations exhibit extra SO(2,1) conformal invariance. Using the group-theoretic method, a new exact solution is found, which is associated with the scaling symmetry transformation entering the conformal group.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-10-05T07:22:10Z",
-    "updated": "2026-10-05T07:22:10Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn",
-      "hep-th"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.05904v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.05904v1"
-      }
-    ],
-    "score": 45,
-    "infographic": {
-      "key_insight": "The paper derives a simple Lagrangian formulation for shallow water equations with constant potential vorticity, avoiding Clebsch variables and auxiliary fields.",
-      "engineering_relevance": "This offers a cleaner theoretical foundation for geophysical flow modeling and may simplify analytical work on rotating shallow-water systems, especially in regimes near the equator.",
-      "method": [
-        "Builds a Lagrangian description from the shallow water equations under the constant potential vorticity constraint.",
-        "Uses a gauge-field-inspired framework rather than Clebsch-like parametrization.",
-        "Applies group-theoretic symmetry analysis to obtain a new exact solution via conformal scaling symmetry."
-      ],
-      "evidence_signal": "The abstract reports a derived formulation and one new exact solution, but does not mention numerical experiments or benchmark evaluations.",
-      "watch_item": "The formulation is specialized to constant potential vorticity, so applicability to more general shallow-water flows may be limited.",
-      "hashtags": [
-        "#ShallowWater",
-        "#PotentialVorticity",
-        "#LagrangianMechanics",
-        "#GeophysicalFlows",
-        "#SymmetryMethods"
-      ],
-      "paper_id": "2026-10-05-arxiv-a_simple_lagrangian_for_shallow_water_equations_with_constant_potential_vorticity",
-      "paper_title": "A simple Lagrangian for shallow water equations with constant potential vorticity",
-      "paper_date": "2026-10-05",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-10-06T14:54:07",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-01-arxiv-leading_edge_energy_transfer_governs_flutter_onset_of_a_pitching_finite_wing_in_low_reynol",
-    "arxiv_id": "2610.02402v1",
-    "date": "2026-10-01",
-    "title": "Leading-edge energy transfer governs flutter onset of a pitching finite wing in low-Reynolds number flows",
-    "authors": "Apoorva R. Parvathgari, Tulsi Ram Sahu, Aditya G. Nair",
-    "abstract": "Flutter onset is determined by the sign of the aerodynamic work on the structure, but cycle-integrated work does not reveal where this energy transfer originates. We perform direct numerical simulations of incompressible flow over an aspect-ratio-two NACA 0015 wing pitching at $Re=1000$ and use lobe-resolved force-moment partitioning to identify the vortical contributions to aeroelastic power. The net energy transfer changes sign near $U^*=4.25$. Across this transition, the upper leading-edge contribution changes from damping at $U^*=2$ to excitation near onset and becomes the largest positive contribution at $U^*=6$. Near the stability boundary, positive leading-edge work is nearly balanced by negative trailing-edge work. This change is accompanied by a reorganization of the leading-edge pressure footprint and a reduction in the phase difference between aerodynamic moment and pitch rate, linking flutter onset to the timing of the leading-edge vortex system. A single slowly growing-amplitude simulation recovers the finite-amplitude energy boundary, while a free-pitching calculation confirms the predicted instability. As the motion approaches its limit cycle, the energy pathways redistribute, and a response-frequency-matched forced calculation reproduces the large-amplitude energy budget. These results distinguish the mechanism that triggers flutter from that which saturates the response and identify the leading edge as a natural target for flutter suppression.",
-    "category": "Aerodynamics",
-    "source": "arXiv",
-    "published": "2026-10-01T19:30:02Z",
-    "updated": "2026-10-01T19:30:02Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.02402v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.02402v1"
-      }
-    ],
-    "score": 45,
-    "infographic": {
-      "key_insight": "Flutter onset in a low-Re pitching finite wing is governed primarily by leading-edge vortical energy transfer, which shifts from damping to excitation as the flow approaches the instability threshold.",
-      "engineering_relevance": "Designs that weaken or phase-shift leading-edge loading could delay flutter and improve aeroelastic stability in low-Re wings, micro air vehicles, and flexible lifting surfaces.",
-      "method": [
-        "Direct numerical simulation of incompressible flow over an aspect-ratio-two NACA 0015 wing at Re=1000",
-        "Lobe-resolved force-moment partitioning to separate vortical contributions to aerodynamic power",
-        "Comparison of forced, slowly growing-amplitude, and free-pitching cases to map the flutter boundary and post-onset energy pathways"
-      ],
-      "evidence_signal": "The net energy transfer changes sign near U*=4.25, with leading-edge work turning from damping at U*=2 to dominant positive excitation by U*=6, and a free-pitching case confirming the predicted instability.",
-      "watch_item": "The mechanism is demonstrated for a specific low-Reynolds-number wing geometry and pitching condition, so transferability to different planforms, Reynolds numbers, or 3D effects may require new validation.",
-      "hashtags": [
-        "#Aeroelasticity",
-        "#Flutter",
-        "#LowReynoldsNumber",
-        "#LeadingEdgeVortex",
-        "#ComputationalFluidDynamics"
-      ],
-      "paper_id": "2026-10-01-arxiv-leading_edge_energy_transfer_governs_flutter_onset_of_a_pitching_finite_wing_in_low_reynol",
-      "paper_title": "Leading-edge energy transfer governs flutter onset of a pitching finite wing in low-Reynolds number flows",
-      "paper_date": "2026-10-01",
-      "paper_category": "Aerodynamics",
-      "generated_at": "2026-10-06T14:54:11",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-09-30-arxiv-is_vorticity_amplification_essential_for_anomalous_dissipation_and_intermittency_in_turbul",
-    "arxiv_id": "2609.39826v1",
-    "date": "2026-09-30",
-    "title": "Is Vorticity Amplification Essential for Anomalous Dissipation and Intermittency in Turbulence?",
-    "authors": "Alessandro Chiarini",
-    "abstract": "The distinct dynamical roles of vorticity amplification (VA) and vortex tilting (VT) in three-dimensional homogeneous isotropic turbulence are investigated using direct numerical simulations of a modified Navier--Stokes system. By selectively suppressing VA while retaining VT, we demonstrate that gradient amplification by VA is strictly required to sustain the classical forward energy cascade. Progressively suppressing VA weakens small-scale velocity gradients, heavily depletes extreme fluctuations, and entirely eliminates the classical energy dissipative anomaly, causing the normalized energy dissipation to decay as $Re_λ^{-1}$. In the limit of complete VA suppression, enstrophy emerges as the relevant inviscid invariant. Scale-by-scale budget analyses confirm that the dynamics transition to a purely forward enstrophy cascade, characterized by an anomalous enstrophy dissipation and a robust $E(k) \\sim k^{-3}$ intermediate energy spectrum. We verify that these asymptotic scaling limits---including a $Re_λ^{-1/2}$ finite-Reynolds-number correction for the enstrophy anomalous dissipation---are universal properties of the VA-suppressed dynamics, independent of whether the large-scale forcing is helical or non-helical. Remarkably, despite the smoothing of the velocity field and the elimination of the energy dissipative anomaly, anomalous structural scaling and a broad multifractal spectrum persist. These results reveal a fundamental mechanistic separation: while VA is responsible for amplifying intense localized fluctuations, geometric reorganization by VT alone is mechanically sufficient to sustain multifractal intermittency.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-09-30T14:27:34Z",
-    "updated": "2026-09-30T14:27:34Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2609.39826v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2609.39826v1"
-      }
-    ],
-    "score": 43,
-    "infographic": {
-      "key_insight": "Suppressing vorticity amplification breaks the classical energy cascade and energy dissipation anomaly, but vortex tilting alone can still sustain multifractal intermittency and a forward enstrophy cascade.",
-      "engineering_relevance": "This identifies vorticity amplification as the key mechanism behind extreme small-scale mixing and dissipation in 3D turbulence, informing reduced-order models and subgrid closures for CFD.",
-      "method": [
-        "Direct numerical simulations of a modified Navier--Stokes system in homogeneous isotropic turbulence",
-        "Selective suppression of vorticity amplification while retaining vortex tilting",
-        "Scale-by-scale budget analysis across helical and non-helical forcing cases"
-      ],
-      "evidence_signal": "The abstract reports that normalized energy dissipation decays as Re_λ^-1 under VA suppression, with a Re_λ^-1/2 finite-Re correction for enstrophy dissipation and an intermediate E(k) ~ k^-3 spectrum.",
-      "watch_item": "Because the result comes from a modified dynamical system with suppressed vorticity amplification, care is needed when extrapolating directly to fully physical turbulence or engineering flows.",
-      "hashtags": [
-        "#Turbulence",
-        "#Vorticity",
-        "#AnomalousDissipation",
-        "#Intermittency",
-        "#DirectNumericalSimulation"
-      ],
-      "paper_id": "2026-09-30-arxiv-is_vorticity_amplification_essential_for_anomalous_dissipation_and_intermittency_in_turbul",
-      "paper_title": "Is Vorticity Amplification Essential for Anomalous Dissipation and Intermittency in Turbulence?",
-      "paper_date": "2026-09-30",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-10-06T14:54:14",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-03-arxiv-weakly_nonlinear_analysis_of_phototactic_bioconvection_under_thermal_buoyancy",
-    "arxiv_id": "2610.04462v1",
-    "date": "2026-10-03",
-    "title": "Weakly Nonlinear Analysis of Phototactic Bioconvection under Thermal Buoyancy",
-    "authors": "Sandeep Kumar, Suneet Singh",
-    "abstract": "A weakly nonlinear stability analysis is performed to investigate the influence of thermal buoyancy on phototactic bioconvection in a suspension of swimming microorganisms confined between horizontal boundaries and subjected to bottom heating or cooling. The objective is to examine how thermal forcing modifies the post-critical evolution of bioconvective instability through its influence on bifurcation behaviour and finite-amplitude convection. Linear stability theory is first employed to determine the critical conditions for the onset of convection. The corresponding direct and adjoint eigenvalue problems, together with the second-order resolvent system, are then solved numerically to derive the Stuart-Landau amplitude equation governing the nonlinear evolution of disturbances. A systematic analysis is carried out for varying thermal Rayleigh numbers. The results show that, as the thermal Rayleigh number approaches the classical Rayleigh-Benard critical value, the critical bioconvection Rayleigh number decreases to zero, indicating a gradual transition from phototaxis-dominated to thermally driven convection. The computed positive Landau coefficient predicts supercritical pitchfork and Hopf bifurcations for stationary and oscillatory instabilities, respectively. In parameter regimes with oscillatory onset, increasing the thermal Rayleigh number drives a transition from a supercritical Hopf bifurcation to a supercritical pitchfork bifurcation. The nonlinear dynamics are further characterized through amplitude evolution, phase portraits, potential functions, and finite-amplitude flow structures.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-10-03T11:59:45Z",
-    "updated": "2026-10-03T11:59:45Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn",
-      "math.DS"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.04462v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.04462v1"
-      }
-    ],
-    "score": 42,
-    "infographic": {
-      "key_insight": "Thermal buoyancy strongly reshapes phototactic bioconvection, lowering the critical bioconvection threshold and driving a transition from phototaxis-dominated instability to thermally driven convection.",
-      "engineering_relevance": "The results help predict and control onset, mode, and amplitude of microorganism-driven flows in heated or cooled suspensions relevant to bioengineering and thermal-fluid systems.",
-      "method": [
-        "Linear stability analysis to compute critical onset conditions.",
-        "Solved direct and adjoint eigenvalue problems plus a second-order resolvent system.",
-        "Derived a Stuart-Landau amplitude equation to classify nonlinear bifurcations and finite-amplitude behavior."
-      ],
-      "evidence_signal": "The abstract reports numerical evaluation over varying thermal Rayleigh numbers, showing the critical bioconvection Rayleigh number tends to zero near the classical Rayleigh-Bénard threshold and that the Landau coefficient is positive.",
-      "watch_item": "The conclusions are based on weakly nonlinear theory near onset, so predictions may be less reliable far from critical conditions or in strongly nonlinear regimes.",
-      "hashtags": [
-        "#Bioconvection",
-        "#Phototaxis",
-        "#ThermalBuoyancy",
-        "#StabilityAnalysis",
-        "#NonlinearDynamics"
-      ],
-      "paper_id": "2026-10-03-arxiv-weakly_nonlinear_analysis_of_phototactic_bioconvection_under_thermal_buoyancy",
-      "paper_title": "Weakly Nonlinear Analysis of Phototactic Bioconvection under Thermal Buoyancy",
-      "paper_date": "2026-10-03",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-10-06T14:54:17",
+      "generated_at": "2026-10-07T15:19:58",
       "generator": "openai"
     }
   }
