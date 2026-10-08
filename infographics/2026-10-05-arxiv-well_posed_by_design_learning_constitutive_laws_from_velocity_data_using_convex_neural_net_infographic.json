@@ -1,24 +1,24 @@
 {
-  "key_insight": "Learn the dissipation potential with an input-convex neural network so the learned constitutive law remains physically well-posed, frame-indifferent, and dissipative by construction.",
-  "engineering_relevance": "This provides a safer way to infer material models from indirect velocity data, improving stability and generalization for CFD and continuum-mechanics inverse problems.",
+  "key_insight": "Learn the dissipation potential, not the constitutive law directly, so convexity, frame-indifference, and dissipativity are built into the model and the PDE remains well-posed.",
+  "engineering_relevance": "This provides a safer way to infer fluid/continuum material laws from indirect velocity measurements, with better transfer to new geometries and more stable behavior in hard regimes.",
   "method": [
-    "ICNNE enforces convexity, frame-indifference, and evenness in the second strain-rate invariant via symmetrization.",
-    "A penalty at zero strain rate encourages dissipativity by pushing the potential gradient to vanish at the origin.",
-    "The inverse objective couples Firedrake finite elements with PyTorch to optimize the learned potential against velocity observations."
+    "Use an input-convex neural network potential (ICNNE) to represent the dissipation potential.",
+    "Enforce frame-indifference and evenness in the second strain-rate invariant by symmetrization.",
+    "Add a penalty to keep the potential gradient zero at the origin and couple Firedrake with PyTorch for PDE-constrained training."
   ],
-  "evidence_signal": "The approach was tested on four cases—compressible Navier-Stokes, Herschel-Bulkley flow, Hibler sea-ice, and DEM data—and matched known physics, generalized to unseen geometries, and remained stable where unstructured methods diverged.",
-  "watch_item": "The method depends on careful PDE-ML coupling and penalty tuning, so training cost and sensitivity to implementation details may affect robustness in new applications.",
+  "evidence_signal": "The approach was tested on four cases—compressible Navier-Stokes, Herschel-Bulkley flow, Hibler sea-ice rheology, and DEM data—and matched known physics, transferred to unseen geometries, and remained stable where unstructured methods diverged.",
+  "watch_item": "Performance depends on correctly enforcing the structural constraints and tuning the dissipativity penalty, which may add implementation complexity.",
   "hashtags": [
     "#FluidMechanics",
-    "#PhysicsInformedML",
-    "#InverseProblems",
+    "#PhysicsInformedAI",
     "#ConstitutiveModeling",
-    "#NeuralPDEs"
+    "#NeuralPDEs",
+    "#ComputationalScience"
   ],
   "paper_id": "2026-10-05-arxiv-well_posed_by_design_learning_constitutive_laws_from_velocity_data_using_convex_neural_net",
   "paper_title": "Well-posed by Design: Learning Constitutive Laws from Velocity Data using Convex Neural Network Potentials",
   "paper_date": "2026-10-05",
   "paper_category": "Turbulence",
-  "generated_at": "2026-10-07T15:19:14",
+  "generated_at": "2026-10-08T15:22:36",
   "generator": "openai"
 }

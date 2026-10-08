@@ -1,24 +1,24 @@
 {
-  "key_insight": "Physics-informed losses only safely enforce constraints that remain closed after coarse-graining; on filtered turbulence, linear constraints survive, while nonlinear PDE residuals can encode the wrong closure.",
-  "engineering_relevance": "For turbulence surrogates on coarse grids, exact projection onto valid linear constraints can greatly improve stability and conservation at minimal overhead compared with residual penalties or test-time optimization.",
+  "key_insight": "Physics-informed losses can be invalid on coarse-grained turbulent data, but linear constraints that survive filtering can be enforced exactly with a cheap projection.",
+  "engineering_relevance": "For turbulence surrogate models, enforcing only filter-consistent constraints can greatly improve stability and conservation without the cost or closure error of full PDE residual penalties.",
   "method": [
-    "Train a Fourier neural operator (FNO) on coarse turbulent fields.",
-    "Apply a closed-form Fourier-space projection to enforce continuity and global momentum balance exactly.",
-    "Optionally model the subgrid flux to close the global energy balance for nonlinear conservation."
+    "Train a Fourier Neural Operator on coarse turbulent fields.",
+    "Apply a closed-form Fourier-space projection to enforce continuity and global momentum exactly.",
+    "Optionally fit a constant subgrid energy flux to close the global energy balance."
   ],
-  "evidence_signal": "On 2D isotropic turbulence, the projection reduced continuity error to 5.0e-7 and momentum-balance error to 8.6e-11, while raising bounded 448-step rollouts from 0.18 to 0.87; on Kolmogorov flow, test-time optimization was about 3300x more expensive per trajectory.",
-  "watch_item": "The projection only guarantees constraints that are valid on the filtered grid, so nonlinear physics must be explicitly closed before enforcing them exactly.",
+  "evidence_signal": "On 2D isotropic turbulence, the projection reduced continuity error to 5.0e-7 and momentum error to 8.6e-11, and increased bounded 448-step rollouts from 0.18 to 0.87; on Kolmogorov flow, test-time optimization was about 3300x more expensive per trajectory.",
+  "watch_item": "The main caution is that enforcing unclosed nonlinear constraints can bake in a false closure unless the missing subgrid terms are modeled or the constraint is truly filter-consistent.",
   "hashtags": [
     "#Turbulence",
     "#NeuralOperators",
     "#PhysicsInformedML",
-    "#CFD",
-    "#ScientificML"
+    "#FourierNeuralOperator",
+    "#ComputationalFluidDynamics"
   ],
   "paper_id": "2026-10-06-arxiv-only_linear_constraints_survive_coarse_graining_evaluating_physics_constrained_neural_oper",
   "paper_title": "Only Linear Constraints Survive Coarse-Graining: Evaluating Physics-Constrained Neural Operators on Stochastically Forced Turbulence",
   "paper_date": "2026-10-06",
   "paper_category": "Turbulence",
-  "generated_at": "2026-10-07T15:19:04",
+  "generated_at": "2026-10-08T15:22:23",
   "generator": "openai"
 }
