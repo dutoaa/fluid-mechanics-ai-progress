@@ -1,24 +1,24 @@
 {
-  "key_insight": "SAGE-PINN encodes axisymmetric cylindrical geometry directly into a PINN to remove the axis singularity and enforce mass conservation by design.",
-  "engineering_relevance": "This enables mesh-free surrogate simulation of coupled flow and heat transfer in cylindrical systems such as stenosed arteries across varying buoyancy and advection regimes.",
+  "key_insight": "SAGE-PINN removes cylindrical-axis singularities by encoding axisymmetric physics into the variables and network structure, enabling stable PINN simulation of coupled flow and heat transfer without labeled data.",
+  "engineering_relevance": "This makes PINNs more practical for biomedical and other cylindrical multiphysics problems, especially when accurate conservation and boundary enforcement are critical.",
   "method": [
-    "Use parity-preserving variable s = r^2 and a modified stream-function to eliminate explicit 1/r singular terms.",
-    "Enforce boundary conditions exactly with boundary-fitted analytical ansätze.",
-    "Stabilize training with staged momentum-thermal-joint optimization, residual normalization, and Péclet/Richardson continuation."
+    "Use the parity-preserving transform s = r^2 to eliminate explicit 1/r singular terms.",
+    "Encode mass conservation with a modified stream-function representation.",
+    "Apply boundary-fitted analytical ansätze plus staged momentum-thermal training, residual normalization, and parameter continuation for stability."
   ],
-  "evidence_signal": "Validated against finite-element reference solutions for steady nanofluid flow and heat transfer, achieving about 1.6% relative L2 error in axial velocity and 9.1% in temperature over the central operating range, with mass conservation at single-precision round-off.",
-  "watch_item": "Accuracy degrades in extreme regimes, especially strongly buoyancy-influenced slow flow and highly advection-dominated heat transfer.",
+  "evidence_signal": "The model was validated against finite-element references for stenosed-artery nanofluid flow, achieving single-precision mass conservation and about 1.6% axial-velocity error and 9.1% temperature error in the central operating range.",
+  "watch_item": "Accuracy degrades near strongly buoyancy-dominated slow flow and highly advection-dominated heat transfer, so these regimes may need extra tuning or stronger stabilization.",
   "hashtags": [
     "#PINN",
     "#CFD",
     "#AxisymmetricFlow",
     "#Multiphysics",
-    "#PhysicsInformedAI"
+    "#ScientificML"
   ],
   "paper_id": "2026-10-07-arxiv-sage_pinn_a_singularity_free_axisymmetric_geometry_encoded_physics_informed_neural_network",
   "paper_title": "SAGE-PINN: A Singularity-free Axisymmetric Geometry-Encoded Physics-Informed Neural Network for Axisymmetric Multiphysics Flow in Cylindrical Coordinates",
   "paper_date": "2026-10-07",
   "paper_category": "CFD Surrogates",
-  "generated_at": "2026-10-08T15:22:17",
+  "generated_at": "2026-10-09T15:05:01",
   "generator": "openai"
 }

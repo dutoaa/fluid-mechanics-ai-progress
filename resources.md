@@ -1,9 +1,17 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-10-08
+Generated: 2026-10-09
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
-## 1. SAGE-PINN: A Singularity-free Axisymmetric Geometry-Encoded Physics-Informed Neural Network for Axisymmetric Multiphysics Flow in Cylindrical Coordinates
+## 1. Gen-PINNs: Generative Adversarial Physics Informed Neural Networks for solving partial differential equations
+
+- Date: 2026-10-07
+- Category: Physics-Informed ML
+- arXiv: https://arxiv.org/abs/2610.10897v1
+- PDF: https://arxiv.org/pdf/2610.10897v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-07-arxiv-gen_pinns_generative_adversarial_physics_informed_neural_networks_for_solving_partial_diff_infographic.json
+
+## 2. SAGE-PINN: A Singularity-free Axisymmetric Geometry-Encoded Physics-Informed Neural Network for Axisymmetric Multiphysics Flow in Cylindrical Coordinates
 
 - Date: 2026-10-07
 - Category: CFD Surrogates
@@ -11,7 +19,23 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.10449v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-07-arxiv-sage_pinn_a_singularity_free_axisymmetric_geometry_encoded_physics_informed_neural_network_infographic.json
 
-## 2. PoreML: A Data-Driven Framework for Learning Multiphase Flow in Porous Media
+## 3. On the relationships between pressure geometrization and vortex identification
+
+- Date: 2026-10-08
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2610.11980v1
+- PDF: https://arxiv.org/pdf/2610.11980v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-08-arxiv-on_the_relationships_between_pressure_geometrization_and_vortex_identification_infographic.json
+
+## 4. Cova-PINN: Cross-Domain Conservation Physics-Informed Neural Network for Fluid-Solid Conjugate Heat Transfer in Complex Geometries
+
+- Date: 2026-10-08
+- Category: Physics-Informed ML
+- arXiv: https://arxiv.org/abs/2610.11108v1
+- PDF: https://arxiv.org/pdf/2610.11108v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-08-arxiv-cova_pinn_cross_domain_conservation_physics_informed_neural_network_for_fluid_solid_conjug_infographic.json
+
+## 5. PoreML: A Data-Driven Framework for Learning Multiphase Flow in Porous Media
 
 - Date: 2026-10-07
 - Category: Turbulence
@@ -19,7 +43,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.10314v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-07-arxiv-poreml_a_data_driven_framework_for_learning_multiphase_flow_in_porous_media_infographic.json
 
-## 3. Only Linear Constraints Survive Coarse-Graining: Evaluating Physics-Constrained Neural Operators on Stochastically Forced Turbulence
+## 6. Only Linear Constraints Survive Coarse-Graining: Evaluating Physics-Constrained Neural Operators on Stochastically Forced Turbulence
 
 - Date: 2026-10-06
 - Category: Turbulence
@@ -27,7 +51,31 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.07811v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-06-arxiv-only_linear_constraints_survive_coarse_graining_evaluating_physics_constrained_neural_oper_infographic.json
 
-## 4. Conditional Flow Matching for Generation of 3D Multi-variable Instantaneous Urban Microclimate Fields
+## 7. Extending convolutional neural networks to finite-volume meshes for fine-scale reconstruction of wall-bounded turbulence
+
+- Date: 2026-10-08
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2610.12141v1
+- PDF: https://arxiv.org/pdf/2610.12141v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-08-arxiv-extending_convolutional_neural_networks_to_finite_volume_meshes_for_fine_scale_reconstruct_infographic.json
+
+## 8. Learning minimum-time navigation policies in two-dimensional flows with a genetic algorithm
+
+- Date: 2026-10-08
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2610.12177v1
+- PDF: https://arxiv.org/pdf/2610.12177v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-08-arxiv-learning_minimum_time_navigation_policies_in_two_dimensional_flows_with_a_genetic_algorith_infographic.json
+
+## 9. Net drag reduction in turbulent pipe flow by airfoil-section grids concentrated near the wall
+
+- Date: 2026-10-08
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2610.11474v1
+- PDF: https://arxiv.org/pdf/2610.11474v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-08-arxiv-net_drag_reduction_in_turbulent_pipe_flow_by_airfoil_section_grids_concentrated_near_the_w_infographic.json
+
+## 10. Conditional Flow Matching for Generation of 3D Multi-variable Instantaneous Urban Microclimate Fields
 
 - Date: 2026-10-07
 - Category: Turbulence
@@ -35,7 +83,31 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.10430v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-07-arxiv-conditional_flow_matching_for_generation_of_3d_multi_variable_instantaneous_urban_microcli_infographic.json
 
-## 5. Machine-learning-assisted phase-amplitude reduction for fast synchronization of airfoil wakes with constrained fluctuations
+## 11. Geometric Mechanics of Real-Space Energy Transfer in Turbulence
+
+- Date: 2026-10-08
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2610.11029v1
+- PDF: https://arxiv.org/pdf/2610.11029v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-08-arxiv-geometric_mechanics_of_real_space_energy_transfer_in_turbulence_infographic.json
+
+## 12. Online Learning of a Spectral Eddy Viscosity Closure for Large Eddy Simulation Using Ensemble Kalman Inversion
+
+- Date: 2026-10-08
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2610.12170v1
+- PDF: https://arxiv.org/pdf/2610.12170v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-08-arxiv-online_learning_of_a_spectral_eddy_viscosity_closure_for_large_eddy_simulation_using_ensem_infographic.json
+
+## 13. A nonclassical law of the wall in superfluid helium-4
+
+- Date: 2026-10-07
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2610.10923v1
+- PDF: https://arxiv.org/pdf/2610.10923v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-07-arxiv-a_nonclassical_law_of_the_wall_in_superfluid_helium_4_infographic.json
+
+## 14. Machine-learning-assisted phase-amplitude reduction for fast synchronization of airfoil wakes with constrained fluctuations
 
 - Date: 2026-10-07
 - Category: Aerodynamics
@@ -43,7 +115,15 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.09543v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-07-arxiv-machine_learning_assisted_phase_amplitude_reduction_for_fast_synchronization_of_airfoil_wa_infographic.json
 
-## 6. Extension of a mathematical analogy between vortical flows without surface tension and irrotational capillary flows
+## 15. Kinetic Reduction and Hydrodynamics under Time-Dependent Helical Symmetry
+
+- Date: 2026-10-07
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2610.10605v1
+- PDF: https://arxiv.org/pdf/2610.10605v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-07-arxiv-kinetic_reduction_and_hydrodynamics_under_time_dependent_helical_symmetry_infographic.json
+
+## 16. Extension of a mathematical analogy between vortical flows without surface tension and irrotational capillary flows
 
 - Date: 2026-10-07
 - Category: Turbulence
@@ -51,7 +131,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.10146v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-07-arxiv-extension_of_a_mathematical_analogy_between_vortical_flows_without_surface_tension_and_irr_infographic.json
 
-## 7. Generating Kolmogorov spectra and structure functions with a Rosenhead profile trefoil vortex knot
+## 17. Generating Kolmogorov spectra and structure functions with a Rosenhead profile trefoil vortex knot
 
 - Date: 2026-10-04
 - Category: Turbulence
@@ -59,7 +139,15 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.05408v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-04-arxiv-generating_kolmogorov_spectra_and_structure_functions_with_a_rosenhead_profile_trefoil_vor_infographic.json
 
-## 8. Vectorial discrete unified gas kinetic scheme for continuum compressible flows
+## 18. A critical-layer instability of structural acoustic wall modes in a two-flexible-plate channel with Poiseuille flow: closed-form low-Mach corrections and parity-protected absorption
+
+- Date: 2026-10-07
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2610.10798v1
+- PDF: https://arxiv.org/pdf/2610.10798v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-07-arxiv-a_critical_layer_instability_of_structural_acoustic_wall_modes_in_a_two_flexible_plate_cha_infographic.json
+
+## 19. Vectorial discrete unified gas kinetic scheme for continuum compressible flows
 
 - Date: 2026-10-06
 - Category: Turbulence
@@ -67,98 +155,10 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.07664v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-06-arxiv-vectorial_discrete_unified_gas_kinetic_scheme_for_continuum_compressible_flows_infographic.json
 
-## 9. Well-posed by Design: Learning Constitutive Laws from Velocity Data using Convex Neural Network Potentials
+## 20. Variational Derivation of the Weak Form for Viscous Flows Involving Free Surfaces with Implications for Geodynamic Simulations
 
-- Date: 2026-10-05
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2610.07236v1
-- PDF: https://arxiv.org/pdf/2610.07236v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-05-arxiv-well_posed_by_design_learning_constitutive_laws_from_velocity_data_using_convex_neural_net_infographic.json
-
-## 10. Learning a generalized Navier-Stokes model beyond the continuum regime
-
-- Date: 2026-10-06
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2610.07952v1
-- PDF: https://arxiv.org/pdf/2610.07952v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-06-arxiv-learning_a_generalized_navier_stokes_model_beyond_the_continuum_regime_infographic.json
-
-## 11. Phase-controlled lateral forcing of droplets on a vibrating bath
-
-- Date: 2026-10-07
-- Category: Flow Control
-- arXiv: https://arxiv.org/abs/2610.10450v1
-- PDF: https://arxiv.org/pdf/2610.10450v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-07-arxiv-phase_controlled_lateral_forcing_of_droplets_on_a_vibrating_bath_infographic.json
-
-## 12. Direct Numerical Simulation of Transonic Flows Induced Pitching of NACA Airfoil
-
-- Date: 2026-10-05
-- Category: Aerodynamics
-- arXiv: https://arxiv.org/abs/2610.06474v1
-- PDF: https://arxiv.org/pdf/2610.06474v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-05-arxiv-direct_numerical_simulation_of_transonic_flows_induced_pitching_of_naca_airfoil_infographic.json
-
-## 13. Steady translation of a chemically active viscous drop along a rigid wall
-
-- Date: 2026-10-07
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2610.10300v1
-- PDF: https://arxiv.org/pdf/2610.10300v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-07-arxiv-steady_translation_of_a_chemically_active_viscous_drop_along_a_rigid_wall_infographic.json
-
-## 14. Direct numerical simulations of multi-layer Rayleigh-Taylor instability under asymmetric interfacial density stratification
-
-- Date: 2026-10-06
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2610.07714v1
-- PDF: https://arxiv.org/pdf/2610.07714v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-06-arxiv-direct_numerical_simulations_of_multi_layer_rayleigh_taylor_instability_under_asymmetric_i_infographic.json
-
-## 15. Number Theory of Decaying Turbulence 3: Comparing with Physical and Numerical Experiments
-
-- Date: 2026-10-05
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2610.07433v1
-- PDF: https://arxiv.org/pdf/2610.07433v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-05-arxiv-number_theory_of_decaying_turbulence_3_comparing_with_physical_and_numerical_experiments_infographic.json
-
-## 16. Studying oscillation death in two-dimensional cylinder-airfoil interactions with synchronization-theoretic autoencoder
-
-- Date: 2026-10-05
-- Category: Aerodynamics
-- arXiv: https://arxiv.org/abs/2610.05762v1
-- PDF: https://arxiv.org/pdf/2610.05762v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-05-arxiv-studying_oscillation_death_in_two_dimensional_cylinder_airfoil_interactions_with_synchroni_infographic.json
-
-## 17. A hat function based positive contact discontinuity capturing Boltzmann scheme
-
-- Date: 2026-10-07
+- Date: 2026-10-08
 - Category: CFD Surrogates
-- arXiv: https://arxiv.org/abs/2610.10419v1
-- PDF: https://arxiv.org/pdf/2610.10419v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-07-arxiv-a_hat_function_based_positive_contact_discontinuity_capturing_boltzmann_scheme_infographic.json
-
-## 18. The existence of null points of flow and magnetic fields as prerequisites for the presence of astropauses and their co-location
-
-- Date: 2026-10-07
-- Category: CFD Surrogates
-- arXiv: https://arxiv.org/abs/2610.09933v1
-- PDF: https://arxiv.org/pdf/2610.09933v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-07-arxiv-the_existence_of_null_points_of_flow_and_magnetic_fields_as_prerequisites_for_the_presence_infographic.json
-
-## 19. Fluid Mixing and Incompressible Optimal Transport
-
-- Date: 2026-10-06
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2610.09235v1
-- PDF: https://arxiv.org/pdf/2610.09235v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-06-arxiv-fluid_mixing_and_incompressible_optimal_transport_infographic.json
-
-## 20. Geometric effects on the persistence of patch structures for 2D Euler equations in simply-connected bounded domains
-
-- Date: 2026-10-06
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2610.08679v1
-- PDF: https://arxiv.org/pdf/2610.08679v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-06-arxiv-geometric_effects_on_the_persistence_of_patch_structures_for_2d_euler_equations_in_simply_infographic.json
+- arXiv: https://arxiv.org/abs/2610.12152v1
+- PDF: https://arxiv.org/pdf/2610.12152v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-08-arxiv-variational_derivation_of_the_weak_form_for_viscous_flows_involving_free_surfaces_with_imp_infographic.json
