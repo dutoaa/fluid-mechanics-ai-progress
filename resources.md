@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-10-09
+Generated: 2026-10-10
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Gen-PINNs: Generative Adversarial Physics Informed Neural Networks for solving partial differential equations
@@ -83,7 +83,15 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.10430v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-07-arxiv-conditional_flow_matching_for_generation_of_3d_multi_variable_instantaneous_urban_microcli_infographic.json
 
-## 11. Geometric Mechanics of Real-Space Energy Transfer in Turbulence
+## 11. Extension of a mathematical analogy between vortical flows without surface tension and irrotational capillary flows
+
+- Date: 2026-10-07
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2610.10146v1
+- PDF: https://arxiv.org/pdf/2610.10146v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-07-arxiv-extension_of_a_mathematical_analogy_between_vortical_flows_without_surface_tension_and_irr_infographic.json
+
+## 12. Geometric Mechanics of Real-Space Energy Transfer in Turbulence
 
 - Date: 2026-10-08
 - Category: Turbulence
@@ -91,7 +99,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.11029v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-08-arxiv-geometric_mechanics_of_real_space_energy_transfer_in_turbulence_infographic.json
 
-## 12. Online Learning of a Spectral Eddy Viscosity Closure for Large Eddy Simulation Using Ensemble Kalman Inversion
+## 13. Online Learning of a Spectral Eddy Viscosity Closure for Large Eddy Simulation Using Ensemble Kalman Inversion
 
 - Date: 2026-10-08
 - Category: Turbulence
@@ -99,7 +107,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.12170v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-08-arxiv-online_learning_of_a_spectral_eddy_viscosity_closure_for_large_eddy_simulation_using_ensem_infographic.json
 
-## 13. A nonclassical law of the wall in superfluid helium-4
+## 14. A nonclassical law of the wall in superfluid helium-4
 
 - Date: 2026-10-07
 - Category: Turbulence
@@ -107,7 +115,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.10923v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-07-arxiv-a_nonclassical_law_of_the_wall_in_superfluid_helium_4_infographic.json
 
-## 14. Machine-learning-assisted phase-amplitude reduction for fast synchronization of airfoil wakes with constrained fluctuations
+## 15. Machine-learning-assisted phase-amplitude reduction for fast synchronization of airfoil wakes with constrained fluctuations
 
 - Date: 2026-10-07
 - Category: Aerodynamics
@@ -115,21 +123,13 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.09543v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-07-arxiv-machine_learning_assisted_phase_amplitude_reduction_for_fast_synchronization_of_airfoil_wa_infographic.json
 
-## 15. Kinetic Reduction and Hydrodynamics under Time-Dependent Helical Symmetry
+## 16. Kinetic Reduction and Hydrodynamics under Time-Dependent Helical Symmetry
 
 - Date: 2026-10-07
 - Category: Turbulence
 - arXiv: https://arxiv.org/abs/2610.10605v1
 - PDF: https://arxiv.org/pdf/2610.10605v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-07-arxiv-kinetic_reduction_and_hydrodynamics_under_time_dependent_helical_symmetry_infographic.json
-
-## 16. Extension of a mathematical analogy between vortical flows without surface tension and irrotational capillary flows
-
-- Date: 2026-10-07
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2610.10146v1
-- PDF: https://arxiv.org/pdf/2610.10146v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-07-arxiv-extension_of_a_mathematical_analogy_between_vortical_flows_without_surface_tension_and_irr_infographic.json
 
 ## 17. Generating Kolmogorov spectra and structure functions with a Rosenhead profile trefoil vortex knot
 
@@ -155,10 +155,10 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.07664v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-06-arxiv-vectorial_discrete_unified_gas_kinetic_scheme_for_continuum_compressible_flows_infographic.json
 
-## 20. Variational Derivation of the Weak Form for Viscous Flows Involving Free Surfaces with Implications for Geodynamic Simulations
+## 20. Direct Numerical Simulation of Transonic Flows Induced Pitching of NACA Airfoil
 
-- Date: 2026-10-08
-- Category: CFD Surrogates
-- arXiv: https://arxiv.org/abs/2610.12152v1
-- PDF: https://arxiv.org/pdf/2610.12152v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-08-arxiv-variational_derivation_of_the_weak_form_for_viscous_flows_involving_free_surfaces_with_imp_infographic.json
+- Date: 2026-10-05
+- Category: Aerodynamics
+- arXiv: https://arxiv.org/abs/2610.06474v1
+- PDF: https://arxiv.org/pdf/2610.06474v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-05-arxiv-direct_numerical_simulation_of_transonic_flows_induced_pitching_of_naca_airfoil_infographic.json
