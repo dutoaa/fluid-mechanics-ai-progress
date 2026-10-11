@@ -1,17 +1,17 @@
 {
-  "key_insight": "V-DUGKS reformulates continuum compressible flow simulation with vectorial distribution functions and separate momentum/energy relaxation, enabling adjustable Prandtl number and improved stability with compact velocity sets.",
-  "engineering_relevance": "It offers a more efficient kinetic solver for compressible CFD, with larger stable time steps and lower sensitivity to numerical reference temperature than scalar DUGKS.",
+  "key_insight": "V-DUGKS reformulates compressible-flow kinetic modeling with coupled vectorial distributions and second-order Hermite equilibrium so it can recover Navier-Stokes physics more efficiently and with adjustable Prandtl number.",
+  "engineering_relevance": "The scheme offers a more stable and efficient finite-volume solver for continuum compressible flows, making it attractive for shock, vortex, and other high-speed CFD applications.",
   "method": [
-    "Uses a vectorial kinetic framework for mass, momentum, and total energy.",
+    "Uses coupled mass, momentum, and energy distribution functions with separate relaxation for momentum and energy transport.",
     "Truncates equilibrium distributions at second-order Hermite level and evaluates moments with fourth-order Gauss-Hermite quadrature.",
-    "Applies finite-volume discretization with characteristic-based fluxes and trapezoidal collision integration."
+    "Employs finite-volume characteristic fluxes plus trapezoidal collision integration, with compact discrete velocity sets."
   ],
-  "evidence_signal": "Validated on shock-tube, Shu-Osher, 2D Riemann, and 3D Taylor-Green vortex cases, with reported 2.2–2.9× speed-up for the 3D Taylor-Green vortex under the same CFL constraint.",
-  "watch_item": "Accuracy and stability depend on the chosen discrete velocity set and numerical reference temperature, so careful calibration is still needed for new flow regimes.",
+  "evidence_signal": "The abstract reports successful tests on shock-tube, Shu-Osher, 2D Riemann, and 3D Taylor-Green vortex cases, with about 2.2-2.9× speed-up in the 3D Taylor-Green vortex case.",
+  "watch_item": "Performance and stability gains may depend on careful choice of reference temperature, discrete velocity set, and relaxation parameters when implementing the compact vectorial formulation.",
   "hashtags": [
     "#CFD",
     "#KineticMethods",
-    "#CompressibleFlow",
+    "#CompressibleFlows",
     "#DUGKS",
     "#Turbulence"
   ],
@@ -19,6 +19,6 @@
   "paper_title": "Vectorial discrete unified gas kinetic scheme for continuum compressible flows",
   "paper_date": "2026-10-06",
   "paper_category": "Turbulence",
-  "generated_at": "2026-10-10T14:20:36",
+  "generated_at": "2026-10-11T14:46:24",
   "generator": "openai"
 }

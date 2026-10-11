@@ -26,29 +26,29 @@
         "url": "https://arxiv.org/pdf/2610.10897v1"
       }
     ],
-    "score": 77,
+    "score": 72,
     "infographic": {
-      "key_insight": "Gen-PINNs combines physics-informed learning with adversarial training to reduce PINN failures such as spectral bias, loss imbalance, and optimizer stagnation in difficult PDEs.",
-      "engineering_relevance": "The method offers a more accurate and stable data-free solver for nonlinear flow and wave-type PDEs with sharp gradients, shocks, or high-frequency structure.",
+      "key_insight": "Gen-PINNs combines physics-informed learning with adversarial residual matching to better solve sharp, stiff, and high-frequency PDEs than standard PINNs.",
+      "engineering_relevance": "This offers a more reliable data-free surrogate for computational fluid mechanics and nonlinear transport problems where shocks, fronts, and oscillations are hard to capture.",
       "method": [
-        "Generator minimizes dynamically weighted physics, boundary, and initial-condition losses.",
-        "Discriminators assess residual features against an ideal zero-residual target.",
-        "Fourier-based representation and spectral diagnostics improve high-frequency resolution and error tracking."
+        "Generator learns PDE solution with dynamically weighted physics, IC, BC, and adversarial losses",
+        "Discriminators assess residual features against ideal zero-residual states",
+        "Fourier representation and spectral diagnostics help resolve and evaluate high-frequency content"
       ],
-      "evidence_signal": "The abstract reports testing on Burgers, Allen-Cahn, and Kuramoto-Sivashinsky equations, with improved accuracy and convergence over standard PINNs on sharp-front, stiff, and higher-order problems.",
-      "watch_item": "The added adversarial and dynamic-weighting components may increase training complexity and tuning burden compared with standard PINNs.",
+      "evidence_signal": "The method is evaluated against standard PINNs on Burgers, Allen-Cahn, and Kuramoto-Sivashinsky PDEs, with reported improvements in accuracy and convergence.",
+      "watch_item": "Training stability and performance may depend on careful balancing of multiple loss terms, discriminator design, and the added complexity of spectral components.",
       "hashtags": [
         "#PhysicsInformedML",
         "#PINNs",
         "#GANs",
         "#PDEs",
-        "#ScientificMachineLearning"
+        "#ComputationalFluidDynamics"
       ],
       "paper_id": "2026-10-07-arxiv-gen_pinns_generative_adversarial_physics_informed_neural_networks_for_solving_partial_diff",
       "paper_title": "Gen-PINNs: Generative Adversarial Physics Informed Neural Networks for solving partial differential equations",
       "paper_date": "2026-10-07",
       "paper_category": "Physics-Informed ML",
-      "generated_at": "2026-10-10T14:19:48",
+      "generated_at": "2026-10-11T14:45:35",
       "generator": "openai"
     }
   },
@@ -77,29 +77,29 @@
         "url": "https://arxiv.org/pdf/2610.10449v1"
       }
     ],
-    "score": 73,
+    "score": 68,
     "infographic": {
-      "key_insight": "SAGE-PINN embeds axisymmetric cylindrical geometry directly into a PINN, eliminating the r=0 singularity while enforcing mass conservation and boundary conditions by construction.",
-      "engineering_relevance": "It enables label-free surrogate simulation of coupled flow and heat transfer in axisymmetric biomedical and multiphysics problems, such as stenosed artery transport, with stable performance across a broad operating range.",
+      "key_insight": "SAGE-PINN builds an axisymmetric PINN that removes cylindrical-coordinate singularities by using a parity-preserving variable transformation and physics-aware architecture, enabling stable multiphysics flow prediction without labeled data.",
+      "engineering_relevance": "It offers a mesh-free surrogate for stenosed-artery nanofluid flow and heat transfer in cylindrical geometries, which is useful for biomedical flow analysis and other axisymmetric CFD applications.",
       "method": [
-        "Uses parity-preserving variable s=r^2 and a modified stream-function formulation to remove explicit 1/r singular terms.",
-        "Enforces boundary conditions exactly with boundary-fitted analytical ansätze.",
-        "Stabilizes training with staged momentum-thermal-joint optimization, residual normalization, Péclet/Richardson continuation, and a physics-scaled drift guard."
+        "Uses s = r^2 and a modified stream-function form to eliminate explicit 1/r singular terms and enforce mass conservation exactly.",
+        "Encodes boundary conditions analytically and trains in stages for momentum, thermal, and coupled physics residuals.",
+        "Stabilizes optimization with residual normalization, Péclet-/Richardson-number continuation, and a physics-scaled drift guard."
       ],
-      "evidence_signal": "Validated against finite-element reference solutions for steady nanofluid flow and heat transfer, achieving single-precision mass conservation and up to 1.6% axial-velocity and 9.1% temperature relative L2 error in the central operating range.",
-      "watch_item": "Accuracy degrades in extreme regimes, especially strongly buoyancy-influenced slow flow and highly advection-dominated heat transfer, so regime coverage and continuation settings matter.",
+      "evidence_signal": "Validated against finite-element reference solutions with no labeled training data; mass conservation stayed at single-precision round-off, and central-range errors were about 1.6% for axial velocity and 9.1% for temperature.",
+      "watch_item": "Performance degrades in extreme regimes, especially strongly buoyancy-influenced slow flow and highly advection-dominated heat transfer, so those cases may need extra care or tuning.",
       "hashtags": [
         "#PINN",
         "#CFD",
         "#AxisymmetricFlow",
         "#Multiphysics",
-        "#ComputationalFluidDynamics"
+        "#BiomedicalEngineering"
       ],
       "paper_id": "2026-10-07-arxiv-sage_pinn_a_singularity_free_axisymmetric_geometry_encoded_physics_informed_neural_network",
       "paper_title": "SAGE-PINN: A Singularity-free Axisymmetric Geometry-Encoded Physics-Informed Neural Network for Axisymmetric Multiphysics Flow in Cylindrical Coordinates",
       "paper_date": "2026-10-07",
       "paper_category": "CFD Surrogates",
-      "generated_at": "2026-10-10T14:19:51",
+      "generated_at": "2026-10-11T14:45:39",
       "generator": "openai"
     }
   },
@@ -128,29 +128,29 @@
         "url": "https://arxiv.org/pdf/2610.11980v1"
       }
     ],
-    "score": 71,
+    "score": 66,
     "infographic": {
-      "key_insight": "Pressure is reinterpreted as a geometric potential that curves an effective fluid space, unifying pressure dynamics and vortex identification through differential geometry.",
-      "engineering_relevance": "This offers a principled way to connect flow diagnostics and turbulence structure with geometric invariants, potentially improving interpretation of vortices in simulations and post-processing.",
+      "key_insight": "Pressure can be treated as a geometric potential that curves an effective space, linking fluid motion, the pressure Poisson equation, and vortex identification through the same geometric framework.",
+      "engineering_relevance": "This offers a unifying way to interpret turbulence diagnostics and may help design more physically grounded vortex-capture and flow-analysis methods, especially for 2D turbulence.",
       "method": [
-        "Build a Newton-Cartan geometric framework for the flow field.",
-        "Apply a conformal transformation to encode pressure as effective spatial curvature.",
-        "Relate vortex-identification criteria to curvature invariants/projections in the curved space."
+        "Build a Newton-Cartan geometric model for the flow.",
+        "Apply a conformal transformation to the spatial metric so pressure becomes effective curvature.",
+        "Interpret vortex-identification criteria as geometric invariants/projections of the resulting curvature tensor."
       ],
-      "evidence_signal": "The abstract presents a theoretical derivation and consistency check: the Euler equation is recovered in the weak-field limit, and the pressure Poisson equation follows from the geodesic equation and Bianchi identity.",
-      "watch_item": "The framework is theoretical and geometric, so practical use will depend on how robustly curvature-based diagnostics can be computed from noisy finite-resolution flow data.",
+      "evidence_signal": "The abstract presents a theoretical derivation showing that the Euler equation and pressure Poisson equation emerge from geodesic motion plus the Bianchi identity, with a special 2D result where the effective tensor and global curvature integral vanish.",
+      "watch_item": "This is a theoretical framework; practical value will depend on how robustly the geometric quantities can be computed from noisy experimental or simulation data.",
       "hashtags": [
         "#Turbulence",
         "#FluidMechanics",
         "#VortexIdentification",
-        "#GeometricMechanics",
-        "#PressureGeometry"
+        "#Geometry",
+        "#2DTurbulence"
       ],
       "paper_id": "2026-10-08-arxiv-on_the_relationships_between_pressure_geometrization_and_vortex_identification",
       "paper_title": "On the relationships between pressure geometrization and vortex identification",
       "paper_date": "2026-10-08",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-10T14:19:54",
+      "generated_at": "2026-10-11T14:45:41",
       "generator": "openai"
     }
   },
@@ -180,29 +180,29 @@
         "url": "https://arxiv.org/pdf/2610.11108v1"
       }
     ],
-    "score": 71,
+    "score": 66,
     "infographic": {
-      "key_insight": "Cova-PINN improves multi-domain PINN accuracy for fluid-solid conjugate heat transfer by enforcing conservation across thermal interaction paths instead of only within separately sampled domains.",
-      "engineering_relevance": "This makes PINN predictions more reliable for heat-exchanger design, where correct outlet temperature and device-level energy balance matter as much as local field accuracy.",
+      "key_insight": "Cova-PINN improves fluid-solid conjugate heat transfer prediction by enforcing conservation across thermal interaction paths, not just within separately sampled domains.",
+      "engineering_relevance": "This makes PINNs more reliable for designing complex heat exchangers where accurate outlet temperature and end-to-end energy transfer matter as much as local field accuracy.",
       "method": [
-        "Cross-domain composite control-volume balances are optimized at the local scale.",
-        "Paired-wall closure is enforced at the full heat-exchanger scale.",
-        "Designed for complex geometries and evaluated on TPMS and DualMS CHT cases."
+        "Cross-domain composite control-volume balances are enforced at the local scale.",
+        "Paired-wall closure is imposed at the exchanger scale to preserve global energy consistency.",
+        "Designed for complex multi-domain geometries such as TPMS heat exchangers and DualMS."
       ],
-      "evidence_signal": "Across four TPMS heat exchangers, Cova-PINN reduced average outlet-temperature error by 37.7% and device-level closure error by 60.2% relative to the closest baseline (MUSA-PINN-CHT), with consistent gains on DualMS.",
-      "watch_item": "The framework adds coupled conservation constraints that may increase training complexity and sensitivity to how control volumes, interfaces, and sampling are defined.",
+      "evidence_signal": "Evaluated on four TPMS heat exchangers and one DualMS design, Cova-PINN reduced average outlet-temperature error by 37.7% and device-level closure error by 60.2% versus the closest baseline, MUSA-PINN-CHT.",
+      "watch_item": "Performance depends on accurately defining conservation paths and wall pairings, which may be nontrivial in highly intricate geometries or incomplete mesh/geometry settings.",
       "hashtags": [
         "#PhysicsInformedML",
-        "#FluidSolidCHT",
         "#HeatTransfer",
-        "#PINNs",
-        "#ComputationalEngineering"
+        "#FluidSolidInteraction",
+        "#PINN",
+        "#ThermalDesign"
       ],
       "paper_id": "2026-10-08-arxiv-cova_pinn_cross_domain_conservation_physics_informed_neural_network_for_fluid_solid_conjug",
       "paper_title": "Cova-PINN: Cross-Domain Conservation Physics-Informed Neural Network for Fluid-Solid Conjugate Heat Transfer in Complex Geometries",
       "paper_date": "2026-10-08",
       "paper_category": "Physics-Informed ML",
-      "generated_at": "2026-10-10T14:19:57",
+      "generated_at": "2026-10-11T14:45:44",
       "generator": "openai"
     }
   },
@@ -232,17 +232,17 @@
         "url": "https://arxiv.org/pdf/2610.10314v1"
       }
     ],
-    "score": 69,
+    "score": 64,
     "infographic": {
-      "key_insight": "PoreML is an open-source, pore-scale learning framework that combines GPU-based simulation data, large-scale datasets, and unified evaluation to predict multiphase flow in porous media.",
-      "engineering_relevance": "It can help improve design and optimization of technologies such as CO2 storage, fuel cells, and packaging by enabling faster, physics-aware forecasting of pore-scale fluid behavior.",
+      "key_insight": "PoreML unifies pore-scale data generation, model training, and evaluation to make multiphase flow prediction in porous media more reliable and reproducible.",
+      "engineering_relevance": "The framework supports applications such as CO2 storage, fuel cells, and packaging by enabling data-driven models that can predict interface evolution in complex porous structures.",
       "method": [
-        "GPU-native lattice Boltzmann solver for reproducible data generation",
+        "GPU-native lattice Boltzmann solver for reproducible pore-scale simulation data",
         "3.3 TB dataset with 560 runs and 158,546 time steps across four scenarios",
-        "Unified training and evaluation for one-step prediction and autoregressive rollouts"
+        "Unified benchmarking for one-step prediction, rollout stability, and physical consistency"
       ],
-      "evidence_signal": "The abstract reports validation against analytical solutions and experiments, plus domain-specific protocols that test accuracy, physical consistency, and transfer to larger or micro-CT-derived domains.",
-      "watch_item": "Performance may still depend on data coverage and generalization may be limited when transferring to unseen geometries, wetting conditions, or viscosity ratios.",
+      "evidence_signal": "The abstract reports a large open dataset spanning synthetic and micro-CT-derived geometries, plus domain-specific evaluation protocols and transfer tests to larger domains and real-material structures.",
+      "watch_item": "Performance may still depend strongly on dataset coverage, wettability settings, and geometry transfer beyond the scenarios included in PoreML.",
       "hashtags": [
         "#MultiphaseFlow",
         "#PorousMedia",
@@ -254,7 +254,7 @@
       "paper_title": "PoreML: A Data-Driven Framework for Learning Multiphase Flow in Porous Media",
       "paper_date": "2026-10-07",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-10T14:20:00",
+      "generated_at": "2026-10-11T14:45:47",
       "generator": "openai"
     }
   },
@@ -284,29 +284,29 @@
         "url": "https://arxiv.org/pdf/2610.07811v1"
       }
     ],
-    "score": 67,
+    "score": 62,
     "infographic": {
-      "key_insight": "Physics constraints only remain valid after coarse-graining if they are linear and closed on the filtered fields; otherwise, enforcing the raw PDE can bake in a wrong closure.",
-      "engineering_relevance": "For turbulent-flow surrogates, a cheap projection can enforce continuity and momentum exactly, improving rollout stability far more efficiently than test-time optimization or naive physics losses.",
+      "key_insight": "On coarse-grained turbulence data, only linear constant-coefficient constraints remain valid under filtering, so enforcing the original nonlinear PDE residual can bake in an incorrect closure.",
+      "engineering_relevance": "For neural operators in fluid mechanics, a cheap Fourier-space projection can enforce physically valid constraints exactly, improving stability and rollout quality with minimal training overhead.",
       "method": [
-        "Train a Fourier neural operator on coarse, stochastically forced turbulence data.",
-        "Apply a closed-form Fourier-space projection to enforce continuity and global momentum balance at O(N log N) cost.",
-        "For nonlinear balances, fit a constant subgrid flux from coarse training data to close the energy constraint."
+        "Train a Fourier neural operator on coarse turbulence data.",
+        "Project each output onto the divergence-free / momentum-conserving constraint set in closed form using FFTs.",
+        "For energy balance, learn a constant subgrid flux closure before enforcing the constraint."
       ],
-      "evidence_signal": "On 2D turbulence, the projection reduced continuity error to 5.0e-7 and momentum-balance error to 8.6e-11, while raising bounded 448-step rollouts from 0.18 to 0.87; on Kolmogorov flow, it was about 3300x cheaper than test-time optimization.",
-      "watch_item": "The approach depends on identifying constraints that remain closed after filtering; unmodeled nonlinear subgrid effects can still invalidate a direct physics loss.",
+      "evidence_signal": "In 2D turbulence, projection reduced continuity error to 5.0×10^-7 and momentum-balance error to 8.6×10^-11, while increasing bounded 448-step rollouts from 0.18 to 0.87; on Kolmogorov flow it was ~3,300× cheaper per trajectory than test-time optimization.",
+      "watch_item": "The projection only guarantees constraints that survive coarse-graining; nonlinear laws require an explicit closure model before they can be enforced reliably.",
       "hashtags": [
         "#Turbulence",
         "#NeuralOperators",
         "#PhysicsInformedML",
         "#CFD",
-        "#ScientificAI"
+        "#FluidMechanics"
       ],
       "paper_id": "2026-10-06-arxiv-only_linear_constraints_survive_coarse_graining_evaluating_physics_constrained_neural_oper",
       "paper_title": "Only Linear Constraints Survive Coarse-Graining: Evaluating Physics-Constrained Neural Operators on Stochastically Forced Turbulence",
       "paper_date": "2026-10-06",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-10T14:20:03",
+      "generated_at": "2026-10-11T14:45:50",
       "generator": "openai"
     }
   },
@@ -335,29 +335,29 @@
         "url": "https://arxiv.org/pdf/2610.12141v1"
       }
     ],
-    "score": 66,
+    "score": 61,
     "infographic": {
-      "key_insight": "A finite-volume convolution unit lets CNNs operate directly on non-uniform, non-orthogonal meshes, enabling turbulence super-resolution beyond structured grids.",
-      "engineering_relevance": "This makes data-driven flow reconstruction usable on the meshes actually employed in wall-bounded and complex-geometry CFD simulations.",
+      "key_insight": "A finite-volume convolution unit (FVCU) lets CNN super-resolution work directly on non-uniform, non-orthogonal meshes by building convolutions from finite-volume operators instead of assuming a uniform grid.",
+      "engineering_relevance": "This makes data-driven turbulence reconstruction usable on the kinds of meshes actually used in wall-bounded and complex-geometry CFD, bridging ML super-resolution and practical engineering simulations.",
       "method": [
-        "Replace standard convolution with finite-volume convolution operators built from axis-wise gradient, averaging, and identity terms.",
-        "Use an exact 3D convolution decomposition into successive 1D-axis operations that remain well-defined on arbitrary polyhedral cells.",
-        "Condition the network on a Van Driest damping input to encode wall proximity and near-wall physics."
+        "Replace standard CNN convolutions with a finite-volume convolution unit (FVCU).",
+        "Decompose 3D convolution into successive axis-wise operations using gradient, averaging, and identity operators that are valid on arbitrary polyhedral cells.",
+        "Condition the network with a Van Driest damping input to encode wall proximity."
       ],
-      "evidence_signal": "The model was tested on 4× downsampled channel-flow and pipe-flow cases and reproduced instantaneous velocities, Reynolds stresses, anisotropy, and spectra beyond the low-resolution Nyquist limit, with transfer to an unseen elliptic pipe.",
-      "watch_item": "Generalization to new geometries is promising but small-scale energy was modestly overpredicted on the unseen elliptic pipe, so mesh/geometry transfer should be validated carefully.",
+      "evidence_signal": "The model was trained and tested on 4× coarsened channel-flow and circular-pipe-flow data, and it reproduced instantaneous velocity fields, Reynolds stresses, anisotropy, and spectra beyond the low-resolution Nyquist limit; on an unseen elliptic pipe it recovered the main flow features with only modest small-scale energy overprediction.",
+      "watch_item": "Performance on unseen geometries is promising but still shows some small-scale spectral bias, so generalization to more complex meshes and flows should be validated carefully.",
       "hashtags": [
         "#Turbulence",
         "#CFD",
+        "#FiniteVolume",
         "#DeepLearning",
-        "#SuperResolution",
-        "#FiniteVolume"
+        "#SuperResolution"
       ],
       "paper_id": "2026-10-08-arxiv-extending_convolutional_neural_networks_to_finite_volume_meshes_for_fine_scale_reconstruct",
       "paper_title": "Extending convolutional neural networks to finite-volume meshes for fine-scale reconstruction of wall-bounded turbulence",
       "paper_date": "2026-10-08",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-10T14:20:05",
+      "generated_at": "2026-10-11T14:45:53",
       "generator": "openai"
     }
   },
@@ -386,29 +386,29 @@
         "url": "https://arxiv.org/pdf/2610.12177v1"
       }
     ],
-    "score": 63,
+    "score": 58,
     "infographic": {
-      "key_insight": "A neural-network policy optimized by a genetic algorithm can learn minimum-time navigation in 2D flows, matching optimal-control solutions and handling turbulent environments.",
-      "engineering_relevance": "This offers a compact, parallelizable route-planning method for autonomous vessels or microrobots moving through complex flows when fast, robust trajectory computation is needed.",
+      "key_insight": "A neural network policy optimized by a genetic algorithm can learn minimum-time navigation in 2D flows and match or exceed optimal-control, Q-learning, and actor-critic baselines.",
+      "engineering_relevance": "This offers a compact, parallelizable way to compute practical guidance policies for autonomous vehicles or micro-robots moving through complex fluid environments.",
       "method": [
-        "Parameterize the navigation rule with a neural network.",
-        "Evolve policy parameters with a genetic algorithm using selection and mutation, without crossover.",
-        "Evaluate in benchmark flows and turbulent cases against optimal-control, Q-learning, and actor-critic baselines."
+        "Parameterize the steering policy with a neural network",
+        "Evolve candidate policies with Darwinian selection and parameter mutation",
+        "Optimize for minimum travel time without crossover or reward shaping"
       ],
-      "evidence_signal": "The abstract reports that the learned policy recovers analytical/numerical optima in benchmark problems and outperforms Q-learning and one-step actor-critic, while remaining robust to starting-point variation and small unresolved turbulence.",
-      "watch_item": "Robustness depends on unresolved fluctuations staying small relative to the vessel slip velocity, so performance may degrade in stronger or less-resolved turbulence.",
+      "evidence_signal": "The abstract reports recovery of analytical and numerical optimal-control solutions on benchmark cases, including two-dimensional turbulence, and better performance than Q-learning and one-step actor-critic.",
+      "watch_item": "Robustness is limited when unresolved turbulent fluctuations become comparable to or larger than the vessel’s slip velocity.",
       "hashtags": [
-        "#FluidDynamics",
+        "#ComputationalFluidDynamics",
         "#Turbulence",
         "#GeneticAlgorithm",
-        "#ReinforcementLearning",
-        "#AutonomousNavigation"
+        "#NeuralNetworks",
+        "#OptimalControl"
       ],
       "paper_id": "2026-10-08-arxiv-learning_minimum_time_navigation_policies_in_two_dimensional_flows_with_a_genetic_algorith",
       "paper_title": "Learning minimum-time navigation policies in two-dimensional flows with a genetic algorithm",
       "paper_date": "2026-10-08",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-10T14:20:08",
+      "generated_at": "2026-10-11T14:45:56",
       "generator": "openai"
     }
   },
@@ -437,17 +437,17 @@
         "url": "https://arxiv.org/pdf/2610.11474v1"
       }
     ],
-    "score": 63,
+    "score": 58,
     "infographic": {
-      "key_insight": "Concentrating NACA0006 airfoil-grid flow straighteners near the pipe wall can reduce turbulence enough to produce a net drag reduction, not just a local pressure loss.",
-      "engineering_relevance": "This suggests a practical way to improve energy efficiency in long-distance water and gas pipelines by increasing throughput at the same pressure difference.",
+      "key_insight": "Concentrating NACA0006 airfoil grids near the pipe wall can suppress turbulence enough to achieve a net drag reduction, increasing flow rate without the usual penalty of added resistance.",
+      "engineering_relevance": "This suggests a practical pipe-flow control strategy that could lower pumping power in water and gas distribution systems while maintaining or improving throughput.",
       "method": [
         "Axisymmetric RANS simulations with the k-ω SST turbulence model and periodic boundary conditions",
-        "Validated against fully developed turbulent pipe flow and a prior large-eddy breakup device experiment",
-        "Compared concentric-ring grid layouts, especially near-wall placement with 0.5 m axial spacing"
+        "Validate the model against fully developed turbulent pipe flow and prior LEBU experiment data",
+        "Test concentric-ring airfoil-grid layouts, especially near-wall placement, under fixed pressure difference"
       ],
-      "evidence_signal": "At about Re ≈ 10^5, the near-wall ring grid increased flow rate by up to 9.0%, reduced area-integrated Reynolds shear stress by 29%, and stayed beneficial across 5×10^4 to 2×10^5.",
-      "watch_item": "The result is model-based rather than direct full-scale pipe testing, so real-world performance may depend on fabrication tolerances, installation losses, and off-design operating conditions.",
+      "evidence_signal": "At a pressure difference corresponding to Re ≈ 10^5, the near-wall grid layout increased flow rate by up to 9.0%, reduced area-integrated Reynolds shear stress by 29%, and stayed beneficial across 5×10^4 ≤ Re ≤ 2×10^5.",
+      "watch_item": "Results are model-based and depend on idealized geometry and boundary conditions, so experimental verification and sensitivity to manufacturing/installation tolerances are still needed.",
       "hashtags": [
         "#Turbulence",
         "#PipeFlow",
@@ -459,7 +459,7 @@
       "paper_title": "Net drag reduction in turbulent pipe flow by airfoil-section grids concentrated near the wall",
       "paper_date": "2026-10-08",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-10T14:20:10",
+      "generated_at": "2026-10-11T14:45:58",
       "generator": "openai"
     }
   },
@@ -491,81 +491,29 @@
         "url": "https://arxiv.org/pdf/2610.10430v1"
       }
     ],
-    "score": 61,
+    "score": 56,
     "infographic": {
-      "key_insight": "A conditional flow-matching generative model can rapidly synthesize realistic 3D instantaneous urban wind and temperature fields by conditioning on building geometry and mean flow.",
-      "engineering_relevance": "This enables turbulence-aware urban microclimate design and climate adaptation studies with LES-like detail in seconds instead of expensive iterative simulation.",
+      "key_insight": "Conditional Flow Matching can generate physically plausible 3D instantaneous urban wind and temperature fields from building geometry and mean flow, capturing turbulent variability rather than only deterministic averages.",
+      "engineering_relevance": "This enables fast LES-like microclimate prediction for iterative urban design, improving feasibility for turbulence-aware planning and climate adaptation.",
       "method": [
-        "Uses Conditional Flow Matching to generate stochastic 3D velocity and temperature fields.",
-        "Conditions generation on urban geometry and mean-flow information to guide physically plausible outputs.",
-        "Runs in overlapping pixel-space blocks with shared-noise initialization to reduce GPU memory use while preserving spatial continuity."
+        "Condition the generator on building geometry and mean flow fields.",
+        "Use Conditional Flow Matching to sample full 3D instantaneous velocity and temperature fields.",
+        "Generate in overlapping pixel-space blocks with shared-noise initialization to reduce GPU memory use and preserve continuity."
       ],
-      "evidence_signal": "Compared with LES reference data, the surrogate achieved low NRMSE for first-order statistics (2.99% wind, 1.77% temperature) and strong agreement for turbulence metrics, TKE, PDFs, and vertical profiles.",
-      "watch_item": "Because it generates fields in overlapping pixel-space chunks, careful handling is needed to avoid seam artifacts and to ensure generalization across unseen urban morphologies.",
+      "evidence_signal": "Compared with LES reference data, the surrogate reported low NRMSE for first-order statistics (2.99% wind, 1.77% temperature) and strong agreement on second-order turbulence metrics, TKE, PDFs, and vertical profiles.",
+      "watch_item": "The overlapping pixel-space generation strategy may be sensitive to domain tiling and continuity settings, so deployment should verify boundary consistency and generalization across unseen urban morphologies.",
       "hashtags": [
         "#CFM",
         "#UrbanMicroclimate",
         "#Turbulence",
         "#GenerativeAI",
-        "#LES"
+        "#LargeEddySimulation"
       ],
       "paper_id": "2026-10-07-arxiv-conditional_flow_matching_for_generation_of_3d_multi_variable_instantaneous_urban_microcli",
       "paper_title": "Conditional Flow Matching for Generation of 3D Multi-variable Instantaneous Urban Microclimate Fields",
       "paper_date": "2026-10-07",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-10T14:20:13",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-10-07-arxiv-extension_of_a_mathematical_analogy_between_vortical_flows_without_surface_tension_and_irr",
-    "arxiv_id": "2610.10146v1",
-    "date": "2026-10-07",
-    "title": "Extension of a mathematical analogy between vortical flows without surface tension and irrotational capillary flows",
-    "authors": "Valentin D. Kunz, Saleh Tanveer, Darren G. Crowdy",
-    "abstract": "In a recent paper, a mathematical analogy was found between two physically distinct classes of two-dimensional free boundary problems in inviscid fluid mechanics. One class involves free surface flows with constant vorticity in the bulk but without boundary surface tension, the other comprises free surface flows without vorticity in the bulk but with non-zero boundary surface tension (capillarity). Several examples were given of pairs of physically-distinct free boundary problems that amount to solving the same mathematical problem, albeit with the possibility of a single constraint arising for the capillary flows. The present work shows that this analogy extends to another pair of physically-distinct problems: a hollow vortex equilibrium in a shear flow with a third order irrotational strain and a steady bubble with surface tension in a simple straining flow. For both problems, we construct an isolated exact solution when a parameter $γ=0$ and provide numerical solutions for non-zero $γ$. An interesting feature is that non-trivial conformal mapping identities emerge from the class of problems with capillarity that apply equally for the hollow vortex problems when the parameters are appropriately constrained.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-10-07T14:24:09Z",
-    "updated": "2026-10-07T14:24:09Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn",
-      "math-ph"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2610.10146v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2610.10146v1"
-      }
-    ],
-    "score": 61,
-    "infographic": {
-      "key_insight": "The paper extends a previously discovered mathematical equivalence between two-dimensional vortical and capillary free-boundary flows to a new pair of problems: a hollow vortex in shear/strain and a surface-tension bubble in straining flow.",
-      "engineering_relevance": "This analogy can let researchers transfer analytical and numerical tools between seemingly different fluid-interface problems, improving how equilibrium shapes and free boundaries are modeled.",
-      "method": [
-        "Constructed an exact isolated solution for the special case γ = 0.",
-        "Computed numerical solutions for non-zero γ to test the extended analogy.",
-        "Identified conformal mapping identities that hold for capillary flows and, under parameter constraints, for hollow-vortex flows as well."
-      ],
-      "evidence_signal": "The abstract reports both an exact solution at γ = 0 and numerical solutions for γ ≠ 0, indicating the extension is supported by analytical construction plus computation.",
-      "watch_item": "The analogy appears to require parameter constraints, so the mapping may not apply broadly without careful checking of each flow configuration.",
-      "hashtags": [
-        "#FluidMechanics",
-        "#FreeBoundaryProblems",
-        "#ConformalMapping",
-        "#Capillarity",
-        "#VortexDynamics"
-      ],
-      "paper_id": "2026-10-07-arxiv-extension_of_a_mathematical_analogy_between_vortical_flows_without_surface_tension_and_irr",
-      "paper_title": "Extension of a mathematical analogy between vortical flows without surface tension and irrotational capillary flows",
-      "paper_date": "2026-10-07",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-10-10T14:20:15",
+      "generated_at": "2026-10-11T14:46:01",
       "generator": "openai"
     }
   },
@@ -594,29 +542,29 @@
         "url": "https://arxiv.org/pdf/2610.11029v1"
       }
     ],
-    "score": 59,
+    "score": 54,
     "infographic": {
-      "key_insight": "The paper shows that real-space turbulent energy transfer at scale ℓ can be written directly in terms of local strain self-amplification and vortex stretching, with a geometric coefficient set by the spherical neighborhood’s moment of inertia.",
-      "engineering_relevance": "This provides a mechanical, scale-local way to diagnose forward and inverse cascade events from flow kinematics, useful for turbulence modeling and analysis.",
+      "key_insight": "The paper shows that local energy transfer in turbulence can be decomposed geometrically into strain self-amplification and vortex stretching, with a spherical moment-of-inertia coefficient tying cascade strength to fluid-element deformation.",
+      "engineering_relevance": "This gives a mechanistic, physics-based way to interpret and model forward versus inverse energy transfer in turbulence, which is useful for turbulence modeling and analysis in CFD and fluid engineering.",
       "method": [
-        "Exact geometric decomposition of energy transfer on a spherical fluid neighborhood",
-        "Separate the transfer into strain self-amplification and vortex-stretching terms",
-        "Further split transfer into longitudinal and transverse components to connect with Kolmogorov’s 4/5 law"
+        "Derive an exact real-space energy-transfer decomposition at scale ℓ using spherical geometry.",
+        "Split the transfer into strain self-amplification and vortex-stretching contributions.",
+        "Further separate longitudinal and transverse components to link Kolmogorov’s 4/5-law transfer to strain dynamics."
       ],
-      "evidence_signal": "Direct numerical simulations confirm the decomposition captures the dominant local transfer and identifies a statistical boundary between forward- and inverse-cascade events.",
-      "watch_item": "The result is derived for spherical neighborhoods and idealized DNS settings, so practical use in complex geometries or coarse experimental data may require care.",
+      "evidence_signal": "Direct numerical simulations confirm that the derived local contribution captures the dominant transfer and statistically separates forward-cascade from inverse-cascade events.",
+      "watch_item": "The decomposition is exact for the idealized spherical neighborhood formulation, so applying it in practical simulations may require careful handling of finite-resolution, anisotropy, and non-spherical flow structures.",
       "hashtags": [
         "#Turbulence",
         "#EnergyCascade",
-        "#FluidMechanics",
         "#VortexStretching",
-        "#DirectNumericalSimulation"
+        "#StrainDynamics",
+        "#ComputationalFluidDynamics"
       ],
       "paper_id": "2026-10-08-arxiv-geometric_mechanics_of_real_space_energy_transfer_in_turbulence",
       "paper_title": "Geometric Mechanics of Real-Space Energy Transfer in Turbulence",
       "paper_date": "2026-10-08",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-10T14:20:18",
+      "generated_at": "2026-10-11T14:46:03",
       "generator": "openai"
     }
   },
@@ -645,29 +593,29 @@
         "url": "https://arxiv.org/pdf/2610.12170v1"
       }
     ],
-    "score": 58,
+    "score": 53,
     "infographic": {
-      "key_insight": "The paper shows that ensemble Kalman inversion can tune a 16-parameter spectral eddy viscosity closure online to better match LES energy spectra to DNS in forced 2D turbulence.",
-      "engineering_relevance": "This offers a derivative-free route to calibrate subgrid-scale models for LES, improving predictive fidelity without hand-tuning closure coefficients.",
+      "key_insight": "Ensemble Kalman Inversion can automatically tune a 16-parameter spectral eddy-viscosity closure so coarse LES spectra better match DNS in forced 2D turbulence.",
+      "engineering_relevance": "This offers a derivative-free way to calibrate turbulence models online, improving LES fidelity without hand-tuning closure coefficients.",
       "method": [
-        "Parameterize a wavenumber-dependent eddy viscosity with 16 unknowns.",
-        "Run an ensemble of coarse LES simulations and compare their kinetic energy spectra to DNS.",
-        "Iteratively update the parameters with ensemble Kalman inversion to reduce spectral mismatch."
+        "Parameterize the subgrid closure as a wavenumber-dependent spectral viscosity with 16 parameters.",
+        "Run an ensemble of coarse LES simulations and compare their kinetic energy spectra to filtered DNS data.",
+        "Iteratively update the parameters with ensemble statistics to reduce spectral mismatch."
       ],
-      "evidence_signal": "The closure is evaluated by comparing LES and filtered DNS kinetic energy spectra up to the resolved wavenumber range, with convergence of the spectral mismatch used as the main accuracy indicator.",
-      "watch_item": "The approach is demonstrated for forced two-dimensional turbulence, so robustness and transferability to other flows, Reynolds numbers, or 3D turbulence remain to be validated.",
+      "evidence_signal": "Performance is evaluated by how well the calibrated LES reproduces the DNS kinetic energy spectrum over the LES-resolved wavenumber range, with convergence of the spectral mismatch used as the main indicator.",
+      "watch_item": "The approach is demonstrated for forced two-dimensional turbulence, so transferability to 3D, different flows, or out-of-sample regimes still needs validation.",
       "hashtags": [
         "#LargeEddySimulation",
         "#TurbulenceModeling",
         "#EnsembleKalmanInversion",
-        "#SubgridScaleClosure",
+        "#DataDrivenClosure",
         "#ComputationalFluidDynamics"
       ],
       "paper_id": "2026-10-08-arxiv-online_learning_of_a_spectral_eddy_viscosity_closure_for_large_eddy_simulation_using_ensem",
       "paper_title": "Online Learning of a Spectral Eddy Viscosity Closure for Large Eddy Simulation Using Ensemble Kalman Inversion",
       "paper_date": "2026-10-08",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-10T14:20:21",
+      "generated_at": "2026-10-11T14:46:06",
       "generator": "openai"
     }
   },
@@ -697,29 +645,29 @@
         "url": "https://arxiv.org/pdf/2610.10923v1"
       }
     ],
-    "score": 57,
+    "score": 52,
     "infographic": {
-      "key_insight": "Superfluid helium-4 near a wall still follows a logarithmic law-of-the-wall, but with a strongly reduced, temperature-insensitive effective Kármán constant that signals nonclassical two-fluid behavior.",
-      "engineering_relevance": "This provides a new wall-flow model for cryogenic He II transport, relevant to designing and operating cooling systems where near-wall shear and pressure losses matter.",
+      "key_insight": "Superfluid helium-4 near a solid wall still follows a logarithmic law of the wall, but with a strongly reduced, nearly temperature-invariant effective Kármán constant that signals nonclassical near-wall dynamics.",
+      "engineering_relevance": "This provides a practical scaling rule for predicting wall shear and flow behavior in He II transport, which is important for cryogenic cooling system design and operation.",
       "method": [
-        "Measured near-wall velocity in mechanically driven He II pipe flow using molecular tagging velocimetry.",
-        "Computed wall shear stress independently from pressure-drop measurements.",
-        "Compared profiles across Reynolds numbers up to 1.26×10^6 and multiple temperatures."
+        "Molecular tagging velocimetry to visualize near-wall velocity fields in mechanically driven He II pipe flow",
+        "Pressure-drop measurements to independently infer wall shear stress",
+        "Tested flows up to Reynolds number 1.26×10^6 across a range of temperatures"
       ],
-      "evidence_signal": "The abstract reports robust logarithmic velocity profiles in the normal fluid and an effective Kármán constant that stays nearly unchanged across the temperature range studied.",
-      "watch_item": "The reported wall law is derived for the normal-fluid component in He II pipe flow, so its applicability to other geometries, forcing conditions, or cryogenic operating regimes should be validated before broad use.",
+      "evidence_signal": "The abstract reports robust logarithmic velocity profiles in the normal-fluid component and an effective Kármán constant less than half the classical value, with little change across temperatures despite varying two-fluid fractions.",
+      "watch_item": "The inferred wall law comes from specialized cryogenic pipe-flow experiments, so broader applicability to other geometries, heat loads, or flow regimes may require additional validation.",
       "hashtags": [
         "#SuperfluidHe4",
         "#QuantumTurbulence",
         "#LawOfTheWall",
-        "#CryogenicFlow",
+        "#CryogenicEngineering",
         "#FluidMechanics"
       ],
       "paper_id": "2026-10-07-arxiv-a_nonclassical_law_of_the_wall_in_superfluid_helium_4",
       "paper_title": "A nonclassical law of the wall in superfluid helium-4",
       "paper_date": "2026-10-07",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-10T14:20:23",
+      "generated_at": "2026-10-11T14:46:08",
       "generator": "openai"
     }
   },
@@ -750,29 +698,29 @@
         "url": "https://arxiv.org/pdf/2610.09543v1"
       }
     ],
-    "score": 57,
+    "score": 52,
     "infographic": {
-      "key_insight": "By combining phase-amplitude reduction with sparse-sensor machine learning, the study computes optimal actuation waveforms that rapidly retune airfoil wake shedding while constraining lift fluctuations.",
-      "engineering_relevance": "This offers a practical control strategy for post-stall airfoils and other periodic aeroelastic systems where fast flow modification must be achieved without inducing large aerodynamic oscillations.",
+      "key_insight": "Sparse sensor data plus phase-amplitude reduction and machine learning can compute optimal actuation that rapidly synchronizes airfoil wake shedding while controlling lift fluctuations.",
+      "engineering_relevance": "This provides a practical route to faster post-stall flow control and safer aerodynamic actuation when output fluctuations must be constrained.",
       "method": [
-        "Use only three sparse sensors to reconstruct wake state and estimate phase/amplitude sensitivity fields.",
-        "Derive optimal time-varying forcing waveforms analytically from the sensitivity fields for fast synchronization.",
-        "Add an amplitude penalty to reduce lift-coefficient fluctuations during frequency control."
+        "Use three sparse sensors and nonlinear ML reconstruction to estimate the wake state.",
+        "Derive time-varying phase and amplitude sensitivity fields to locate when and where forcing is most effective.",
+        "Analytically design an optimal waveform that accelerates frequency locking with an amplitude penalty on lift variation."
       ],
-      "evidence_signal": "Evaluated on multiple NACA airfoils at several post-stall angles of attack with periodic vortex shedding; the optimal forcing changed wake frequency faster than sinusoidal actuation and the amplitude-penalized version reduced lift fluctuations by 20%.",
-      "watch_item": "The method depends on accurate sparse-sensor reconstruction and sensitivity modeling, so performance may degrade if the flow departs from the assumed periodic regime or if sensor noise is strong.",
+      "evidence_signal": "The approach was tested on several NACA airfoils at multiple post-stall angles of attack, where the optimized forcing changed wake frequency faster than sinusoidal actuation and reduced lift fluctuations by 20% with amplitude penalty.",
+      "watch_item": "Performance depends on accurate sparse-sensor reconstruction and periodic vortex-shedding behavior, so robustness may drop if the flow becomes strongly nonperiodic or sensor coverage is insufficient.",
       "hashtags": [
-        "#FluidMechanics",
+        "#FluidDynamics",
         "#Aerodynamics",
         "#MachineLearning",
         "#FlowControl",
-        "#VortexShedding"
+        "#WakeSynchronization"
       ],
       "paper_id": "2026-10-07-arxiv-machine_learning_assisted_phase_amplitude_reduction_for_fast_synchronization_of_airfoil_wa",
       "paper_title": "Machine-learning-assisted phase-amplitude reduction for fast synchronization of airfoil wakes with constrained fluctuations",
       "paper_date": "2026-10-07",
       "paper_category": "Aerodynamics",
-      "generated_at": "2026-10-10T14:20:25",
+      "generated_at": "2026-10-11T14:46:11",
       "generator": "openai"
     }
   },
@@ -802,19 +750,19 @@
         "url": "https://arxiv.org/pdf/2610.10605v1"
       }
     ],
-    "score": 57,
+    "score": 52,
     "infographic": {
-      "key_insight": "A reduced kinetic-to-fluid framework for time-dependent helical symmetry captures how cylindrical geometry and axial deformation drive anisotropic stresses, heat transfer, and radial variation in dilute-gas flows.",
-      "engineering_relevance": "This provides a symmetry-aware modeling route for predicting transport in helical/rotating geometries such as mixers, ducts, and deforming flows where standard Cartesian reductions miss key anisotropies.",
+      "key_insight": "The paper derives a reduced kinetic-to-continuum framework for dilute gases with time-dependent helical symmetry, showing how axial deformation and cylindrical geometry create anisotropic stress and modified transport.",
+      "engineering_relevance": "This provides a physics-based model for predicting heat and momentum transport in rotating, twisted, or helically deformed flow systems relevant to turbomachinery, mixers, and microfluidic devices.",
       "method": [
-        "Derive a reduced Boltzmann equation that preserves the classical collision operator while retaining radial dependence under helical symmetry.",
-        "Perform formal hydrodynamic expansions to obtain Euler and Navier-Stokes-Fourier equations.",
-        "Use objective molecular dynamics and DSMC comparisons to validate uniform and radially varying cases."
+        "Derived a reduced Boltzmann equation that preserves radial dependence under helical symmetry.",
+        "Built Euler and Navier–Stokes–Fourier hydrodynamic limits from formal expansions.",
+        "Compared continuum predictions against direct simulation Monte Carlo for uniform and radially varying cases."
       ],
-      "evidence_signal": "The abstract reports comparisons against direct simulation Monte Carlo, showing first-order fluid corrections improve stress anisotropy and radial temperature predictions, though performance degrades at larger Knudsen numbers.",
-      "watch_item": "The first-order hydrodynamic approximation may become unreliable at higher Knudsen numbers, where kinetic effects are no longer well captured.",
+      "evidence_signal": "The abstract reports DSMC comparisons showing first-order corrections capture leading stress anisotropy and improve radial temperature prediction, though accuracy degrades at larger Knudsen numbers.",
+      "watch_item": "The continuum approximation becomes less reliable at higher Knudsen numbers, so strong rarefaction may require the full kinetic model.",
       "hashtags": [
-        "#FluidMechanics",
+        "#Turbulence",
         "#KineticTheory",
         "#BoltzmannEquation",
         "#HelicalSymmetry",
@@ -824,7 +772,59 @@
       "paper_title": "Kinetic Reduction and Hydrodynamics under Time-Dependent Helical Symmetry",
       "paper_date": "2026-10-07",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-10T14:20:28",
+      "generated_at": "2026-10-11T14:46:13",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-10-07-arxiv-extension_of_a_mathematical_analogy_between_vortical_flows_without_surface_tension_and_irr",
+    "arxiv_id": "2610.10146v1",
+    "date": "2026-10-07",
+    "title": "Extension of a mathematical analogy between vortical flows without surface tension and irrotational capillary flows",
+    "authors": "Valentin D. Kunz, Saleh Tanveer, Darren G. Crowdy",
+    "abstract": "In a recent paper, a mathematical analogy was found between two physically distinct classes of two-dimensional free boundary problems in inviscid fluid mechanics. One class involves free surface flows with constant vorticity in the bulk but without boundary surface tension, the other comprises free surface flows without vorticity in the bulk but with non-zero boundary surface tension (capillarity). Several examples were given of pairs of physically-distinct free boundary problems that amount to solving the same mathematical problem, albeit with the possibility of a single constraint arising for the capillary flows. The present work shows that this analogy extends to another pair of physically-distinct problems: a hollow vortex equilibrium in a shear flow with a third order irrotational strain and a steady bubble with surface tension in a simple straining flow. For both problems, we construct an isolated exact solution when a parameter $γ=0$ and provide numerical solutions for non-zero $γ$. An interesting feature is that non-trivial conformal mapping identities emerge from the class of problems with capillarity that apply equally for the hollow vortex problems when the parameters are appropriately constrained.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-10-07T14:24:09Z",
+    "updated": "2026-10-07T14:24:09Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "math-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2610.10146v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2610.10146v1"
+      }
+    ],
+    "score": 51,
+    "infographic": {
+      "key_insight": "The paper extends a previously discovered mathematical equivalence between two-dimensional vortical free-boundary flows without surface tension and irrotational capillary flows to a new pair of problems: a hollow vortex in shear/strain and a surface-tension bubble in a straining flow.",
+      "engineering_relevance": "This analogy lets researchers transfer analytical and numerical techniques between seemingly different fluid-structure problems, potentially simplifying the design and prediction of free-surface and vortex-dominated flows.",
+      "method": [
+        "Constructs an exact isolated solution for the special case γ = 0.",
+        "Computes numerical solutions for nonzero γ.",
+        "Shows that conformal-mapping identities from capillary flows also apply to hollow vortex problems under parameter constraints."
+      ],
+      "evidence_signal": "The abstract reports both an exact analytical solution at γ = 0 and numerical solutions for nonzero γ, supporting the proposed extension of the analogy.",
+      "watch_item": "The correspondence may require special parameter constraints and may not hold directly for all flow configurations or perturbations.",
+      "hashtags": [
+        "#FluidMechanics",
+        "#FreeBoundaryProblems",
+        "#Capillarity",
+        "#VortexDynamics",
+        "#ConformalMapping"
+      ],
+      "paper_id": "2026-10-07-arxiv-extension_of_a_mathematical_analogy_between_vortical_flows_without_surface_tension_and_irr",
+      "paper_title": "Extension of a mathematical analogy between vortical flows without surface tension and irrotational capillary flows",
+      "paper_date": "2026-10-07",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-10-11T14:46:15",
       "generator": "openai"
     }
   },
@@ -853,29 +853,29 @@
         "url": "https://arxiv.org/pdf/2610.05408v1"
       }
     ],
-    "score": 55,
+    "score": 50,
     "infographic": {
-      "key_insight": "A compact trefoil vortex knot with a Rosenhead profile can evolve in decaying Navier–Stokes simulations to produce turbulence-like Kolmogorov spectra and structure-function scaling.",
-      "engineering_relevance": "This suggests a controlled numerical route to generate fully developed turbulent statistics from an unforced, boundary-free initial condition for comparison with experiments.",
+      "key_insight": "A compact trefoil vortex knot with a Rosenhead vorticity profile can evolve in a periodic Navier–Stokes simulation to produce Kolmogorov-like spectra and turbulence-style structure-function scaling from an initially unforced state.",
+      "engineering_relevance": "The result suggests a controllable computational route for generating realistic decaying turbulence statistics, useful for benchmarking vortex dynamics, scaling laws, and higher-Reynolds-number flow models against experiments.",
       "method": [
-        "Extend the trefoil vortex simulation to later times in a larger (4π)^3 periodic domain",
-        "Use an algebraic Rosenhead vorticity profile to improve compactness and enable finite energy dissipation",
-        "Analyze energy spectra, energy decay, integral-scale growth, and higher-order vorticity moments"
+        "Extended a compact trefoil vortex simulation to later times in a larger (4π)^3 periodic domain.",
+        "Used an algebraic Rosenhead vorticity profile to improve compactness and support finite, viscosity-independent dissipation.",
+        "Analyzed energy spectra, structure functions, energy decay, and integral-scale growth through reconnection and late-time evolution."
       ],
-      "evidence_signal": "The abstract reports persistent Kolmogorov scaling, structure-function scaling, ν-independent finite energy dissipation, and exponents E(t)~(t+t0)^-10/7 and ℓ(t)~(t+t0)^2/7 consistent with Loitsyanskii-invariant arguments.",
-      "watch_item": "The agreement with the experimental integral-scale growth rate depends on excluding Fourier modes near the periodic-domain scale, so domain-size effects may influence the conclusions.",
+      "evidence_signal": "The abstract reports a persistent energy spectrum with Kolmogorov scaling, structure-function scaling characteristic of fully developed turbulence, and late-time exponents consistent with Loitsyanskii-integral-based predictions.",
+      "watch_item": "Scaling results depend on how the periodic-domain Fourier modes are treated, so the apparent agreement with experimental integral-scale growth can shift if box-scale modes are included.",
       "hashtags": [
         "#Turbulence",
-        "#NavierStokes",
-        "#KolmogorovScaling",
         "#VortexDynamics",
+        "#KolmogorovScaling",
+        "#NavierStokes",
         "#ComputationalFluidDynamics"
       ],
       "paper_id": "2026-10-04-arxiv-generating_kolmogorov_spectra_and_structure_functions_with_a_rosenhead_profile_trefoil_vor",
       "paper_title": "Generating Kolmogorov spectra and structure functions with a Rosenhead profile trefoil vortex knot",
       "paper_date": "2026-10-04",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-10T14:20:31",
+      "generated_at": "2026-10-11T14:46:18",
       "generator": "openai"
     }
   },
@@ -904,29 +904,29 @@
         "url": "https://arxiv.org/pdf/2610.10798v1"
       }
     ],
-    "score": 53,
+    "score": 48,
     "infographic": {
-      "key_insight": "A compressible Poiseuille-flow channel with two flexible plates can undergo a critical-layer, convective instability in its symmetric wall mode, while the antisymmetric mode is protected by a mid-plane pressure node.",
-      "engineering_relevance": "This matters for predicting when compliant-wall channels can amplify pressure/flow disturbances, which is relevant to aeroacoustic liners, flow-control devices, and instability mitigation in flexible conduits.",
+      "key_insight": "A two-flexible-plate Poiseuille-flow channel can trigger a critical-layer instability of structural-acoustic wall modes, with symmetric modes becoming convectively unstable above a Mach-number threshold while antisymmetric modes remain protected by a mid-plane pressure node.",
+      "engineering_relevance": "The result helps predict when compliant ducts or channels may amplify acoustic/structural oscillations under flow, informing the design of quieter and more stable aeroacoustic and fluid-structure systems.",
       "method": [
-        "Derive coupled dispersion relations for structural-acoustic wall modes in a two-plate channel.",
-        "Use a Fredholm solvability argument to obtain closed-form O(M) wavenumber corrections for smooth no-slip shear profiles.",
-        "Classify stability with spatial/temporal analysis and Briggs-Bers criteria, comparing results across shear profiles and numerical schemes."
+        "Closed-form O(M) correction for coupled wavenumbers using a Fredholm solvability argument.",
+        "Dispersion and stability analysis of symmetric vs antisymmetric wall modes with critical-layer physics.",
+        "Briggs-Bers classification plus spatial and temporal growth-rate calculations."
       ],
-      "evidence_signal": "The abstract reports agreement across three independent numerical schemes to one part in 10^9, with the closed-form correction matching numerical differentiation across three shear profiles.",
-      "watch_item": "The instability appears only above a critical Mach number when an interior critical layer forms, so the result is sensitive to flow compressibility, wall compliance, and the assumed smooth no-slip profile.",
+      "evidence_signal": "Three independent numerical schemes agree to within 10^-9, and the analytic low-Mach correction matches numerical differentiation across three shear profiles.",
+      "watch_item": "The instability is specific to compliant walls and appears above a critical Mach number, so rigid-wall intuition or low-Mach approximations may miss the onset condition and mode-dependent behavior.",
       "hashtags": [
         "#FluidMechanics",
         "#Aeroacoustics",
-        "#CompliantWalls",
-        "#Instability",
-        "#CompressibleFlow"
+        "#FSI",
+        "#CriticalLayer",
+        "#StructuralStability"
       ],
       "paper_id": "2026-10-07-arxiv-a_critical_layer_instability_of_structural_acoustic_wall_modes_in_a_two_flexible_plate_cha",
       "paper_title": "A critical-layer instability of structural acoustic wall modes in a two-flexible-plate channel with Poiseuille flow: closed-form low-Mach corrections and parity-protected absorption",
       "paper_date": "2026-10-07",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-10T14:20:34",
+      "generated_at": "2026-10-11T14:46:21",
       "generator": "openai"
     }
   },
@@ -955,21 +955,21 @@
         "url": "https://arxiv.org/pdf/2610.07664v1"
       }
     ],
-    "score": 53,
+    "score": 48,
     "infographic": {
-      "key_insight": "V-DUGKS reformulates continuum compressible flow simulation with vectorial distribution functions and separate momentum/energy relaxation, enabling adjustable Prandtl number and improved stability with compact velocity sets.",
-      "engineering_relevance": "It offers a more efficient kinetic solver for compressible CFD, with larger stable time steps and lower sensitivity to numerical reference temperature than scalar DUGKS.",
+      "key_insight": "V-DUGKS reformulates compressible-flow kinetic modeling with coupled vectorial distributions and second-order Hermite equilibrium so it can recover Navier-Stokes physics more efficiently and with adjustable Prandtl number.",
+      "engineering_relevance": "The scheme offers a more stable and efficient finite-volume solver for continuum compressible flows, making it attractive for shock, vortex, and other high-speed CFD applications.",
       "method": [
-        "Uses a vectorial kinetic framework for mass, momentum, and total energy.",
+        "Uses coupled mass, momentum, and energy distribution functions with separate relaxation for momentum and energy transport.",
         "Truncates equilibrium distributions at second-order Hermite level and evaluates moments with fourth-order Gauss-Hermite quadrature.",
-        "Applies finite-volume discretization with characteristic-based fluxes and trapezoidal collision integration."
+        "Employs finite-volume characteristic fluxes plus trapezoidal collision integration, with compact discrete velocity sets."
       ],
-      "evidence_signal": "Validated on shock-tube, Shu-Osher, 2D Riemann, and 3D Taylor-Green vortex cases, with reported 2.2–2.9× speed-up for the 3D Taylor-Green vortex under the same CFL constraint.",
-      "watch_item": "Accuracy and stability depend on the chosen discrete velocity set and numerical reference temperature, so careful calibration is still needed for new flow regimes.",
+      "evidence_signal": "The abstract reports successful tests on shock-tube, Shu-Osher, 2D Riemann, and 3D Taylor-Green vortex cases, with about 2.2-2.9× speed-up in the 3D Taylor-Green vortex case.",
+      "watch_item": "Performance and stability gains may depend on careful choice of reference temperature, discrete velocity set, and relaxation parameters when implementing the compact vectorial formulation.",
       "hashtags": [
         "#CFD",
         "#KineticMethods",
-        "#CompressibleFlow",
+        "#CompressibleFlows",
         "#DUGKS",
         "#Turbulence"
       ],
@@ -977,7 +977,7 @@
       "paper_title": "Vectorial discrete unified gas kinetic scheme for continuum compressible flows",
       "paper_date": "2026-10-06",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-10T14:20:36",
+      "generated_at": "2026-10-11T14:46:24",
       "generator": "openai"
     }
   },
@@ -1006,29 +1006,29 @@
         "url": "https://arxiv.org/pdf/2610.06474v1"
       }
     ],
-    "score": 53,
+    "score": 48,
     "infographic": {
-      "key_insight": "DNS of a transonic NACA0012 airfoil shows that shock–boundary-layer interaction and structural pitching compete, with the dominant oscillation shifting from flow-controlled at low reduced velocity to structure-controlled at high reduced velocity.",
-      "engineering_relevance": "The results help predict aeroelastic instability and buffet-driven loads for transonic wings, informing safer airfoil and control-surface design.",
+      "key_insight": "DNS shows that in transonic NACA0012 pitching, the dominant oscillation shifts from flow-controlled shock-buffet behavior at low reduced velocity to structure-controlled pitching at high reduced velocity.",
+      "engineering_relevance": "The results help predict aeroelastic stability and load amplification in high-speed airfoils, which is important for aircraft wing and control-surface design.",
       "method": [
-        "Direct Numerical Simulation of a NACA0012 airfoil at M∞ = 0.8, Re∞ = 3×10^6, and α = 8°.",
-        "Single-DOF pitching aeroelastic coupling studied across reduced velocity U* = 2 to 8 with reduced mass m* = 5.0.",
-        "FFT of moment coefficient used to extract dominant flow and coupled oscillation frequencies; pressure, vorticity, and schlieren fields used for flow-structure interpretation."
+        "Direct numerical simulation of transonic flow over a NACA0012 airfoil with single-DOF pitching motion",
+        "Cases at AoA = 8°, M∞ = 0.8, Re∞ = 3×10^6, m* = 5.0, and reduced velocity U* = 2 to 8",
+        "FFT of moment coefficient plus pressure, vorticity, and schlieren visualizations"
       ],
-      "evidence_signal": "FFT of the fixed-airfoil moment coefficient gives St = 1.3161, while coupled oscillation frequencies Stc = 0.0762 (U* = 2) and 0.1716 (U* = 8) show a transition from subharmonic buffet influence to natural-frequency locking.",
-      "watch_item": "Because the study relies on a specific airfoil, single angle of attack, and one structural degree of freedom, the observed frequency-locking behavior may not generalize to broader geometries or more flexible aeroelastic systems.",
+      "evidence_signal": "FFT of the fixed-airfoil moment signal gives a dominant Strouhal number St = 1.3161, while coupled oscillation frequencies are Stc = 0.0762 at U* = 2 and 0.1716 at U* = 8.",
+      "watch_item": "The study is based on a specific airfoil, AoA, and transonic condition, so the observed frequency coupling may not generalize to other geometries or flight regimes.",
       "hashtags": [
         "#Aeroelasticity",
         "#TransonicFlow",
         "#DNS",
-        "#ShockBuffet",
-        "#AirfoilDynamics"
+        "#AirfoilDynamics",
+        "#ShockBuffet"
       ],
       "paper_id": "2026-10-05-arxiv-direct_numerical_simulation_of_transonic_flows_induced_pitching_of_naca_airfoil",
       "paper_title": "Direct Numerical Simulation of Transonic Flows Induced Pitching of NACA Airfoil",
       "paper_date": "2026-10-05",
       "paper_category": "Aerodynamics",
-      "generated_at": "2026-10-10T14:20:40",
+      "generated_at": "2026-10-11T14:46:27",
       "generator": "openai"
     }
   }
