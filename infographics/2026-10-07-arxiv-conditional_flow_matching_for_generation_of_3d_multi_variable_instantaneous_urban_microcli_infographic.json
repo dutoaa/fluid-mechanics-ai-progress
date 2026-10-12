@@ -1,24 +1,24 @@
 {
-  "key_insight": "Conditional Flow Matching can generate physically plausible 3D instantaneous urban wind and temperature fields from building geometry and mean flow, capturing turbulent variability rather than only deterministic averages.",
-  "engineering_relevance": "This enables fast LES-like microclimate prediction for iterative urban design, improving feasibility for turbulence-aware planning and climate adaptation.",
+  "key_insight": "A conditional flow-matching generative model can rapidly synthesize plausible 3D urban wind and temperature fields from building geometry and mean flow, capturing turbulent variability rather than only deterministic averages.",
+  "engineering_relevance": "This enables near-real-time, turbulence-aware urban microclimate assessment for design iteration, local gust analysis, and climate-adaptation planning without repeated expensive LES runs.",
   "method": [
-    "Condition the generator on building geometry and mean flow fields.",
-    "Use Conditional Flow Matching to sample full 3D instantaneous velocity and temperature fields.",
-    "Generate in overlapping pixel-space blocks with shared-noise initialization to reduce GPU memory use and preserve continuity."
+    "Uses Conditional Flow Matching as a generative surrogate conditioned on urban geometry and mean flow.",
+    "Generates 3D instantaneous velocity and temperature fields in pixel space.",
+    "Mitigates GPU memory limits by running on overlapping subdomains with shared-noise initialization to preserve continuity."
   ],
-  "evidence_signal": "Compared with LES reference data, the surrogate reported low NRMSE for first-order statistics (2.99% wind, 1.77% temperature) and strong agreement on second-order turbulence metrics, TKE, PDFs, and vertical profiles.",
-  "watch_item": "The overlapping pixel-space generation strategy may be sensitive to domain tiling and continuity settings, so deployment should verify boundary consistency and generalization across unseen urban morphologies.",
+  "evidence_signal": "Compared with LES, the model reported low NRMSE for first-order statistics (2.99% wind, 1.77% temperature) and good agreement for turbulence metrics, TKE, PDFs, and vertical profiles.",
+  "watch_item": "Pixel-space 3D generation with subdomain stitching may be sensitive to boundary consistency and memory constraints, so domain decomposition and continuity handling must be implemented carefully.",
   "hashtags": [
     "#CFM",
     "#UrbanMicroclimate",
+    "#ComputationalFluidDynamics",
     "#Turbulence",
-    "#GenerativeAI",
-    "#LargeEddySimulation"
+    "#GenerativeAI"
   ],
   "paper_id": "2026-10-07-arxiv-conditional_flow_matching_for_generation_of_3d_multi_variable_instantaneous_urban_microcli",
   "paper_title": "Conditional Flow Matching for Generation of 3D Multi-variable Instantaneous Urban Microclimate Fields",
   "paper_date": "2026-10-07",
   "paper_category": "Turbulence",
-  "generated_at": "2026-10-11T14:46:01",
+  "generated_at": "2026-10-12T17:33:26",
   "generator": "openai"
 }

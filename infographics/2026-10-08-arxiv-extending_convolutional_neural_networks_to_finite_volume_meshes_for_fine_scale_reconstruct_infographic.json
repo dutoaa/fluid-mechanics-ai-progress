@@ -1,24 +1,24 @@
 {
-  "key_insight": "A finite-volume convolution unit (FVCU) lets CNN super-resolution work directly on non-uniform, non-orthogonal meshes by building convolutions from finite-volume operators instead of assuming a uniform grid.",
-  "engineering_relevance": "This makes data-driven turbulence reconstruction usable on the kinds of meshes actually used in wall-bounded and complex-geometry CFD, bridging ML super-resolution and practical engineering simulations.",
+  "key_insight": "A new finite-volume convolution unit lets CNN super-resolution work directly on non-uniform, non-orthogonal meshes by replacing standard grid-based convolutions with finite-volume operators.",
+  "engineering_relevance": "This makes turbulence reconstruction methods usable on the kinds of meshes actually employed in wall-bounded and complex-geometry CFD simulations.",
   "method": [
-    "Replace standard CNN convolutions with a finite-volume convolution unit (FVCU).",
-    "Decompose 3D convolution into successive axis-wise operations using gradient, averaging, and identity operators that are valid on arbitrary polyhedral cells.",
-    "Condition the network with a Van Driest damping input to encode wall proximity."
+    "Builds convolution from exact axis-wise decompositions of 3D convolution",
+    "Uses finite-volume gradient, averaging, and identity operators so layers work on arbitrary polyhedral cells",
+    "Adds Van Driest damping as a wall-proximity conditioning input"
   ],
-  "evidence_signal": "The model was trained and tested on 4× coarsened channel-flow and circular-pipe-flow data, and it reproduced instantaneous velocity fields, Reynolds stresses, anisotropy, and spectra beyond the low-resolution Nyquist limit; on an unseen elliptic pipe it recovered the main flow features with only modest small-scale energy overprediction.",
-  "watch_item": "Performance on unseen geometries is promising but still shows some small-scale spectral bias, so generalization to more complex meshes and flows should be validated carefully.",
+  "evidence_signal": "The model was trained and evaluated on 4× coarsened channel-flow and pipe-flow data, accurately recovering velocity fields, Reynolds stresses, anisotropy, and energy spectra beyond the coarse-grid Nyquist limit, with additional tests on an unseen elliptic pipe.",
+  "watch_item": "Performance is slightly weaker on the unseen elliptic pipe, with modest overprediction of small-scale energy, so generalization to new geometries and mesh types still needs careful validation.",
   "hashtags": [
     "#Turbulence",
-    "#CFD",
+    "#CNN",
     "#FiniteVolume",
-    "#DeepLearning",
-    "#SuperResolution"
+    "#SuperResolution",
+    "#CFD"
   ],
   "paper_id": "2026-10-08-arxiv-extending_convolutional_neural_networks_to_finite_volume_meshes_for_fine_scale_reconstruct",
   "paper_title": "Extending convolutional neural networks to finite-volume meshes for fine-scale reconstruction of wall-bounded turbulence",
   "paper_date": "2026-10-08",
   "paper_category": "Turbulence",
-  "generated_at": "2026-10-11T14:45:53",
+  "generated_at": "2026-10-12T17:33:02",
   "generator": "openai"
 }
