@@ -1,24 +1,24 @@
 {
-  "key_insight": "CFD Forge combines an LLM-driven agent with deterministic, physics-based checks so the model can automate CFD workflows while fixed criteria decide whether results are accepted.",
-  "engineering_relevance": "This can reduce manual effort in meshing, solver setup, debugging, and reporting for repeated CFD studies, making high-throughput design and active-learning loops more practical.",
+  "key_insight": "CFD Forge automates CFD case setup, execution, diagnosis, and reporting with an LLM, but uses deterministic physics checks—not the model—to decide whether results are accepted.",
+  "engineering_relevance": "This enables faster, more repeatable CFD workflows for design iteration and high-throughput studies while keeping acceptance decisions auditable and trustworthy.",
   "method": [
-    "LLM interprets the engineering request and selects actions from a closed set for case construction, meshing, solver execution, diagnostics, and reporting.",
-    "Flow-specific deterministic acceptance checks evaluate explicit criteria and override model judgment when deciding whether a run is acceptable.",
-    "Validated on a converging-diverging nozzle, a 2D forward-facing step, and a turbulent cube retrospective test with recorded simulation states."
+    "LLM interprets the engineering request and proposes actions from a closed set.",
+    "OpenFOAM-based agent carries the case through geometry/case construction, meshing, solver execution, diagnostics, and reporting.",
+    "Registered deterministic checks evaluate flow-specific criteria and determine acceptance independently of the model."
   ],
-  "evidence_signal": "In replay tests over 36 recorded simulation states, the model accepted 12 of 13 detectable faults when judging without check outputs, but accepted none when CFD Forge’s deterministic checks controlled the decision.",
-  "watch_item": "Reliance on predefined check rules means coverage depends on how well each flow type’s acceptance criteria are designed and registered.",
+  "evidence_signal": "In 36 replayed simulation states with some altered diagnostics, the model accepted 12 of 13 detectable faults when judging without checks, but accepted none when CFD Forge’s checks controlled the verdicts.",
+  "watch_item": "The framework depends on well-designed registered checks and robust diagnostics; if the checks are incomplete, failure modes may still slip through.",
   "hashtags": [
     "#CFD",
     "#OpenFOAM",
+    "#PhysicsConstrainedAI",
     "#AgenticAI",
-    "#Turbulence",
-    "#PhysicsConstrainedAI"
+    "#Turbulence"
   ],
   "paper_id": "2026-10-08-arxiv-cfd_forge_a_physics_constrained_agentic_framework_for_autonomous_cfd",
   "paper_title": "CFD Forge: A Physics-Constrained Agentic Framework for Autonomous CFD",
   "paper_date": "2026-10-08",
   "paper_category": "Turbulence",
-  "generated_at": "2026-10-14T13:26:42",
+  "generated_at": "2026-10-15T13:11:29",
   "generator": "openai"
 }
