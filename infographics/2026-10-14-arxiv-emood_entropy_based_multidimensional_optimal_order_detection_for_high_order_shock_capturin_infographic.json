@@ -1,24 +1,24 @@
 {
-  "key_insight": "eMOOD replaces MOOD's classical troubled-cell test with entropy production, enabling more targeted shock detection in high-order finite-volume solvers.",
-  "engineering_relevance": "The method improves robustness and scalability for unstructured-mesh compressible-flow simulations by reducing unnecessary cell flagging, memory traffic, and runtime.",
+  "key_insight": "eMOOD replaces MOOD’s traditional troubled-cell test with entropy production to detect non-smooth regions more selectively and efficiently on unstructured meshes.",
+  "engineering_relevance": "This improves shock-capturing finite-volume simulations by reducing unnecessary cell flagging, lowering memory overhead, and speeding up high-order compressible-flow solvers without sacrificing robustness.",
   "method": [
-    "Uses numerical entropy generation as a compact-stencil troubled-cell indicator.",
-    "Integrates the detector into both a classical MOOD cascade and a MOOD-CWENO hybrid.",
-    "Activates nonlinear reconstruction only where entropy signals non-smooth flow."
+    "Uses numerical entropy generation as a compact troubled-cell indicator instead of a relaxed discrete maximum principle.",
+    "Integrates the detector into both a classical MOOD cascade and a MOOD-CWENO hybrid scheme.",
+    "Implemented in UCNS3D for parallel high-order finite-volume simulations on unstructured meshes."
   ],
-  "evidence_signal": "Across shock and multiphase benchmarks, eMOOD flagged up to 75% fewer cells and delivered speed-ups of up to 20% while maintaining solution quality.",
-  "watch_item": "Performance gains depend on how well entropy production isolates true flow discontinuities, so detector tuning and robustness on different mesh/physics regimes remain important.",
+  "evidence_signal": "Across benchmarks including Shu-Osher, double Mach reflection, forward-facing step, shock-helium-bubble interaction, and triple material point problems, eMOOD reportedly flags up to 75% fewer cells and delivers up to 20% speed-up while maintaining solution quality.",
+  "watch_item": "Entropy-based detection is physically motivated but may need careful calibration to remain reliable across very different flow regimes, meshes, and solver settings.",
   "hashtags": [
-    "#CFD",
+    "#ComputationalFluidDynamics",
     "#ShockCapturing",
     "#FiniteVolumeMethods",
-    "#MultiphaseFlow",
-    "#HighPerformanceComputing"
+    "#UnstructuredMeshes",
+    "#HighOrderMethods"
   ],
   "paper_id": "2026-10-14-arxiv-emood_entropy_based_multidimensional_optimal_order_detection_for_high_order_shock_capturin",
   "paper_title": "eMOOD: Entropy-Based Multidimensional Optimal Order Detection for High-Order Shock-Capturing Finite-Volume Schemes",
   "paper_date": "2026-10-14",
   "paper_category": "Multiphase Flow",
-  "generated_at": "2026-10-15T13:11:20",
+  "generated_at": "2026-10-16T13:05:41",
   "generator": "openai"
 }
