@@ -1,24 +1,24 @@
 {
-  "key_insight": "GeONet improves flow-field prediction in porous media by explicitly encoding geometry alongside material properties and coordinates, enabling stronger cross-geometry generalization than a DeepONet baseline.",
-  "engineering_relevance": "The model can accelerate pressure-field prediction for microfluidic experiments, tracer-test interpretation, and digital-twin workflows where many heterogeneous pore geometries must be evaluated quickly.",
+  "key_insight": "GeONet improves flow-field prediction by explicitly encoding solid--void geometry, letting an operator network generalize better across heterogeneous porous media domains.",
+  "engineering_relevance": "This enables faster, geometry-aware pressure prediction for microfluidic design, tracer interpretation, and digital-twin workflows in subsurface energy and critical mineral applications.",
   "method": [
-    "Extends the Branch-Trunk operator network with a Leaf Network that encodes the binary solid-void mask.",
-    "Uses porosity, permeability, coordinates, and local geometric descriptors with random Fourier features.",
-    "Fuses representations with a gated DeepMixer to predict steady-state pressure."
+    "Extends Branch--Trunk operator learning with a Leaf Network for binary geometry masks.",
+    "Uses porosity/permeability inputs plus coordinates, local geometric descriptors, and random Fourier features.",
+    "Fuses representations with a gated DeepMixer to predict steady-state pressure fields."
   ],
-  "evidence_signal": "Trained on 5,000 PFLOTRAN simulations (~30 TB) and evaluated on held-out and unseen geometries, GeONet achieved NRMSE of 0.0381–0.0676 and R2 of 0.9511–0.9822, substantially outperforming DeepONet.",
-  "watch_item": "Performance depends on high-quality geometry masks and large simulation datasets, so deployment may be limited when geometry encoding is noisy or training coverage is sparse.",
+  "evidence_signal": "Trained on 5,000 PFLOTRAN simulations (~30 TB) and validated against pore-scale/Stokes and held-out geometries, GeONet reached NRMSE 0.0381--0.0500 and R^2 0.9673--0.9822, clearly outperforming the DeepONet baseline.",
+  "watch_item": "Performance depends on high-quality geometry-encoded training data, so generalization to unseen pore structures may still require careful domain coverage and hyperparameter tuning.",
   "hashtags": [
-    "#FluidMechanics",
-    "#PorousMedia",
+    "#PorousMediaFlow",
     "#OperatorLearning",
-    "#DeepLearning",
-    "#DigitalTwins"
+    "#DeepONet",
+    "#Microfluidics",
+    "#DigitalTwin"
   ],
   "paper_id": "2026-10-14-arxiv-geonet_geometry_encoded_operator_network_for_predicting_flow_in_heterogeneous_porous_media",
   "paper_title": "GeONet: Geometry-Encoded Operator Network for Predicting Flow in Heterogeneous Porous Media",
   "paper_date": "2026-10-14",
   "paper_category": "Flow Control",
-  "generated_at": "2026-10-15T13:11:34",
+  "generated_at": "2026-10-18T12:31:00",
   "generator": "openai"
 }

@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-10-17
+Generated: 2026-10-18
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Reynolds-number-dependent entrance bias in temperature polarization of lab-scale membrane distillation
@@ -83,15 +83,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.19577v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-14-arxiv-two_way_coupled_dynamics_of_quantized_vortex_bundle_formation_in_spatially_periodic_normal_infographic.json
 
-## 11. Partially-Averaged Navier-Stokes simulation of turbulent annular Poiseulle flow
-
-- Date: 2026-10-13
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2610.18254v1
-- PDF: https://arxiv.org/pdf/2610.18254v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-13-arxiv-partially_averaged_navier_stokes_simulation_of_turbulent_annular_poiseulle_flow_infographic.json
-
-## 12. Ambient-pressure effects on shock emission and liquid-shell expansion following optical breakdown inside water droplets
+## 11. Ambient-pressure effects on shock emission and liquid-shell expansion following optical breakdown inside water droplets
 
 - Date: 2026-10-15
 - Category: Multiphase Flow
@@ -99,15 +91,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.21831v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-15-arxiv-ambient_pressure_effects_on_shock_emission_and_liquid_shell_expansion_following_optical_br_infographic.json
 
-## 13. Numerical Modeling of a Metallic Alloy Droplet Impact, Solidification, and Macrosegregation
-
-- Date: 2026-10-11
-- Category: Multiphase Flow
-- arXiv: https://arxiv.org/abs/2610.15381v1
-- PDF: https://arxiv.org/pdf/2610.15381v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-11-arxiv-numerical_modeling_of_a_metallic_alloy_droplet_impact_solidification_and_macrosegregation_infographic.json
-
-## 14. Active Sculpting: morphodynamics of internally stirred active vesicles
+## 12. Active Sculpting: morphodynamics of internally stirred active vesicles
 
 - Date: 2026-10-14
 - Category: Turbulence
@@ -115,7 +99,15 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.19631v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-14-arxiv-active_sculpting_morphodynamics_of_internally_stirred_active_vesicles_infographic.json
 
-## 15. Response of Confined Mesoscale Flames to Acoustic Forcing
+## 13. Partially-Averaged Navier-Stokes simulation of turbulent annular Poiseulle flow
+
+- Date: 2026-10-13
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2610.18254v1
+- PDF: https://arxiv.org/pdf/2610.18254v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-13-arxiv-partially_averaged_navier_stokes_simulation_of_turbulent_annular_poiseulle_flow_infographic.json
+
+## 14. Response of Confined Mesoscale Flames to Acoustic Forcing
 
 - Date: 2026-10-14
 - Category: Turbulence
@@ -123,7 +115,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.19661v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-14-arxiv-response_of_confined_mesoscale_flames_to_acoustic_forcing_infographic.json
 
-## 16. Pumping by Two-frequency Steady Streaming: Impact of Amplitude Ratio and Phase
+## 15. Pumping by Two-frequency Steady Streaming: Impact of Amplitude Ratio and Phase
 
 - Date: 2026-10-14
 - Category: CFD Surrogates
@@ -131,7 +123,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.20784v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-14-arxiv-pumping_by_two_frequency_steady_streaming_impact_of_amplitude_ratio_and_phase_infographic.json
 
-## 17. PANDA-D: Interface-free determination of two dynamic contact angles
+## 16. PANDA-D: Interface-free determination of two dynamic contact angles
 
 - Date: 2026-10-15
 - Category: Turbulence
@@ -139,7 +131,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.21996v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-15-arxiv-panda_d_interface_free_determination_of_two_dynamic_contact_angles_infographic.json
 
-## 18. Wave-driven geostrophic vortices in rotating turbulence
+## 17. Wave-driven geostrophic vortices in rotating turbulence
 
 - Date: 2026-10-11
 - Category: Turbulence
@@ -147,7 +139,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.15863v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-11-arxiv-wave_driven_geostrophic_vortices_in_rotating_turbulence_infographic.json
 
-## 19. Preferential concentration in a periodically forced particle-laden turbulent planar jet
+## 18. Preferential concentration in a periodically forced particle-laden turbulent planar jet
 
 - Date: 2026-10-12
 - Category: Turbulence
@@ -155,10 +147,18 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.17353v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-12-arxiv-preferential_concentration_in_a_periodically_forced_particle_laden_turbulent_planar_jet_infographic.json
 
-## 20. Versatile two-layer model for thermohydraulic prediction of microchannel heat sinks
+## 19. Versatile two-layer model for thermohydraulic prediction of microchannel heat sinks
 
 - Date: 2026-10-12
 - Category: Turbulence
 - arXiv: https://arxiv.org/abs/2610.16716v1
 - PDF: https://arxiv.org/pdf/2610.16716v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-12-arxiv-versatile_two_layer_model_for_thermohydraulic_prediction_of_microchannel_heat_sinks_infographic.json
+
+## 20. GeONet: Geometry-Encoded Operator Network for Predicting Flow in Heterogeneous Porous Media
+
+- Date: 2026-10-14
+- Category: Flow Control
+- arXiv: https://arxiv.org/abs/2610.19493v1
+- PDF: https://arxiv.org/pdf/2610.19493v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-14-arxiv-geonet_geometry_encoded_operator_network_for_predicting_flow_in_heterogeneous_porous_media_infographic.json
