@@ -1,24 +1,26 @@
 {
-  "key_insight": "The transonic flutter boundary folds because elastic-axis placement changes how shock energy transfer balances modal damping, creating multiple flutter speeds at the same Mach number near the dip.",
-  "engineering_relevance": "This lets designers predict and shift flutter margins by tuning elastic-axis location, with calibrated surrogate models giving fast, reliable stability calls for aeroelastic design.",
+  "key_insight": "Moving the elastic axis aft closes the folded transonic flutter boundary by reducing supersonic-surface damping faster than the residual shock energy input.",
+  "engineering_relevance": "Elastic-axis placement can determine whether multiple flutter-speed thresholds coexist at one Mach number, complicating aeroelastic stability assessment.",
   "method": [
-    "Coupled unsteady Euler simulations of Isogai case A and elastic-axis variants",
-    "Gaussian-process surrogate for damping, improved by batch active learning",
-    "Split conformal prediction to convert surrogate outputs into distribution-free stability calls"
+    "Coupled unsteady Euler simulations of a pitch–plunge aerofoil with varying elastic-axis position.",
+    "Batch active learning of a Gaussian-process damping surrogate, calibrated using independent split conformal prediction.",
+    "Chordwise energy budgets to explain shock-driven energy transfer and fold closure."
   ],
-  "evidence_signal": "With 80 simulations, the learned case A boundary correctly labeled 64 of 65 independent runs, and calibrated calls were wrong in at most 1.6% of cases; 193 simulations plus 40 calibration runs mapped the fold across Mach number and elastic-axis position.",
-  "watch_item": "Time-domain damping labels can fail silently, so the workflow is sensitive to hidden labeling errors and to mean-incidence setup, which shifted the dip flutter speed by 2.8%.",
+  "evidence_signal": "With 80 simulations, the case A model correctly labeled 64 of 65 independent runs; a broader study using 193 simulations and 40 calibration runs placed fold closure between 0.39 and 0.33 chord ahead of the leading edge on two meshes.",
+  "watch_item": "Results concern inviscid flow, and time-domain damping labels require careful checks: the common one-degree start left a mean incidence that raised dip flutter speed by 2.8%.",
   "hashtags": [
     "#Aeroelasticity",
-    "#Flutter",
-    "#TransonicFlow",
+    "#TransonicFlutter",
     "#ActiveLearning",
-    "#ConformalPrediction"
+    "#ConformalPrediction",
+    "#ComputationalFluidDynamics"
   ],
+  "model": "gpt-6.1-sol",
+  "service_tier": "ultrafast",
   "paper_id": "2026-10-16-arxiv-how_the_elastic_axis_folds_the_transonic_flutter_boundary_shock_energy_transfer_and_confor",
   "paper_title": "How the elastic axis folds the transonic flutter boundary: shock energy transfer and conformally calibrated active learning",
   "paper_date": "2026-10-16",
   "paper_category": "Turbulence",
-  "generated_at": "2026-10-19T09:57:13",
+  "generated_at": "2026-10-19T09:59:58",
   "generator": "openai"
 }
