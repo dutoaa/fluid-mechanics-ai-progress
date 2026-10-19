@@ -1,24 +1,24 @@
 {
-  "key_insight": "eMOOD replaces MOOD’s classical troubled-cell test with an entropy-based detector, enabling more targeted shock capture while keeping high-order accuracy on unstructured meshes.",
-  "engineering_relevance": "The method can reduce unnecessary fallback reconstructions and memory traffic in large-scale compressible-flow solvers, improving efficiency for multiphase and shock-dominated simulations.",
+  "key_insight": "eMOOD replaces the usual troubled-cell test in MOOD with an entropy-production indicator, giving more targeted shock detection with fewer flagged cells.",
+  "engineering_relevance": "This improves the efficiency and scalability of high-order finite-volume shock-capturing on unstructured meshes while preserving accuracy for challenging compressible-flow problems.",
   "method": [
-    "Computes numerical entropy production as a compact troubled-cell indicator.",
-    "Integrates the detector into both standard MOOD cascades and a MOOD-CWENO hybrid.",
-    "Uses the open-source UCNS3D solver for high-order finite-volume simulations on unstructured meshes."
+    "Use numerical entropy generation as a compact troubled-cell indicator instead of a relaxed discrete maximum principle.",
+    "Deploy the detector inside both a standard MOOD cascade and a MOOD-CWENO hybrid reconstruction strategy.",
+    "Implement and test the approach in the parallel UCNS3D solver for multiphase and shock-dominated flows."
   ],
-  "evidence_signal": "Across benchmark problems including Shu-Osher, double Mach reflection, forward-facing step, shock-helium-bubble interaction, and triple material point cases, eMOOD flags up to 75% fewer cells and achieves up to 20% speed-up while preserving solution quality.",
-  "watch_item": "Entropy-based detection must remain robust across very different flow regimes, since overly aggressive or mislocalized flagging could still degrade accuracy or efficiency in strongly heterogeneous multiphase cases.",
+  "evidence_signal": "Across Shu-Osher, double Mach reflection, forward-facing step, shock-helium-bubble, and triple material point cases, the method reportedly flags up to 75% fewer cells and delivers up to 20% speed-up without loss of solution quality.",
+  "watch_item": "Entropy-based detection is physically motivated, but its effectiveness may depend on robust entropy evaluation and careful tuning for different meshes and flow regimes.",
   "hashtags": [
     "#ComputationalFluidDynamics",
     "#ShockCapturing",
-    "#FiniteVolumeMethods",
+    "#HighOrderMethods",
     "#MultiphaseFlow",
-    "#HighOrderSchemes"
+    "#FiniteVolume"
   ],
   "paper_id": "2026-10-14-arxiv-emood_entropy_based_multidimensional_optimal_order_detection_for_high_order_shock_capturin",
   "paper_title": "eMOOD: Entropy-Based Multidimensional Optimal Order Detection for High-Order Shock-Capturing Finite-Volume Schemes",
   "paper_date": "2026-10-14",
   "paper_category": "Multiphase Flow",
-  "generated_at": "2026-10-18T12:30:36",
+  "generated_at": "2026-10-19T09:57:40",
   "generator": "openai"
 }
