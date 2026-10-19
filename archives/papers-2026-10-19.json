@@ -26,27 +26,29 @@
     ],
     "score": 77,
     "infographic": {
-      "key_insight": "Entrance-generated streamwise vortices in lab-scale DCMD cause Reynolds-number-dependent temperature polarization bias, shifting from stronger to weaker TP relative to a straight-channel baseline as flow rate increases.",
-      "engineering_relevance": "Membrane-distillation correlations and module characterization should account for geometry- and Reynolds-dependent entrance effects, rather than using a single universal correction.",
+      "key_insight": "Entrance-induced vortices create geometry-dependent temperature-polarization bias whose magnitude and direction change with inlet Reynolds number.",
+      "engineering_relevance": "Lab-scale membrane characterization and heat-transfer correlations should account for inlet geometry and operating conditions rather than use a constant entrance correction.",
       "method": [
-        "3D CFD simulations of direct contact membrane distillation",
-        "Swept inlet Reynolds number from 10 to 1000",
-        "Varied side-chamber length and main-channel height to isolate geometry effects"
+        "Performed 3D CFD simulations of direct contact membrane distillation.",
+        "Varied inlet Reynolds number from 10 to 1000, side-chamber length, and main-channel height.",
+        "Compared temperature polarization with a straight-channel baseline."
       ],
-      "evidence_signal": "The abstract reports simulation-based evaluation across multiple geometries and flow conditions, showing vortex persistence and TP deviations that change systematically with Reynolds number.",
-      "watch_item": "These findings are specific to the modeled lab-scale geometry and operating range, so direct transfer of any correction to other modules or higher-Re flows should be done cautiously.",
+      "evidence_signal": "Across all simulated geometries, entrance vortices formed and persisted farther downstream at higher Reynolds numbers; most geometries shifted from stronger polarization than the baseline at low Reynolds numbers to weaker polarization at high Reynolds numbers.",
+      "watch_item": "The abstract reports simulation results but no experimental validation, so transfer to physical modules requires verification.",
       "hashtags": [
+        "#FluidMechanics",
+        "#CFD",
         "#MembraneDistillation",
-        "#ComputationalFluidDynamics",
         "#HeatTransfer",
-        "#TemperaturePolarization",
-        "#FluidMechanics"
+        "#EntranceEffects"
       ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
       "paper_id": "2026-10-14-arxiv-reynolds_number_dependent_entrance_bias_in_temperature_polarization_of_lab_scale_membrane",
       "paper_title": "Reynolds-number-dependent entrance bias in temperature polarization of lab-scale membrane distillation",
       "paper_date": "2026-10-14",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-19T09:56:54",
+      "generated_at": "2026-10-19T09:59:39",
       "generator": "openai"
     }
   },
@@ -77,27 +79,29 @@
     ],
     "score": 76,
     "infographic": {
-      "key_insight": "The paper introduces FCV-PICRN, a physics-informed convolutional residual network with Fourier features and complex-valued learning that can reconstruct missing, sparse, and noisy flow fields even in dynamically critical regions.",
-      "engineering_relevance": "This offers a practical route to recover velocity, pressure, and vorticity from incomplete experimental or simulation data in wakes and turbulence where conventional interpolation and standard PINNs struggle.",
+      "key_insight": "FCV-PICRN reconstructs flow structures across large unsupervised gaps by combining Fourier features, complex-valued learning, and Navier–Stokes constraints.",
+      "engineering_relevance": "The approach could support flow diagnostics when sensors or imaging leave critical wake regions unobserved or noisy.",
       "method": [
-        "Fourier-feature embedding captures oscillatory, multiscale flow structures.",
-        "Complex-valued representations learn coupled amplitude-phase flow dynamics.",
-        "Navier--Stokes-constrained convolutional residual blocks enforce physical consistency during reconstruction."
+        "Fourier features encode oscillatory and multiscale flow structures.",
+        "Complex-valued convolutional residual blocks learn coupled amplitude–phase representations.",
+        "Navier–Stokes constraints guide reconstruction of velocity, pressure, and vorticity."
       ],
-      "evidence_signal": "Validated on Taylor--Green vortex and cylinder wake at Re=100, then tested on severely gappy noisy wake cases and 2D Kolmogorov turbulence, with strong SSIM/PSNR and lower error than a conventional PINN.",
-      "watch_item": "Performance still depends on the quality of physics constraints and training setup, so extreme noise, different Reynolds numbers, or poorly tuned gap geometries may reduce reconstruction reliability.",
+      "evidence_signal": "Tests cover Taylor–Green and cylinder-wake flows at Re=100, three severe gap geometries with Gaussian or speckle noise, robustness to 20% Gaussian noise, and lower errors than a conventional PINN on 2D Kolmogorov turbulence with 5% Gaussian noise.",
+      "watch_item": "Validation is limited to the reported benchmarks; performance on three-dimensional, higher-Reynolds-number flows remains unestablished.",
       "hashtags": [
-        "#PhysicsInformedML",
+        "#AIFluidMechanics",
+        "#PhysicsInformedLearning",
         "#FlowReconstruction",
-        "#ComputationalFluidDynamics",
-        "#Turbulence",
-        "#NeuralNetworks"
+        "#ComplexValuedNetworks",
+        "#Turbulence"
       ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
       "paper_id": "2026-10-15-arxiv-fourier_feature_embedded_complex_valued_physics_informed_convolutional_residual_networks_f",
       "paper_title": "Fourier-Feature-Embedded Complex-Valued Physics-Informed Convolutional Residual Networks for Sparse and Gappy Noisy Flow-Field Reconstruction",
       "paper_date": "2026-10-15",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-19T09:56:57",
+      "generated_at": "2026-10-19T09:59:42",
       "generator": "openai"
     }
   },
@@ -128,27 +132,29 @@
     ],
     "score": 65,
     "infographic": {
-      "key_insight": "Droplet impact loading on wind turbine blades can be predicted from a universal scaling law based on the droplet projection area, capturing non-spherical shapes and non-normal incidence.",
-      "engineering_relevance": "This improves leading-edge erosion prediction and maintenance planning by replacing idealized impact assumptions with a geometry-aware model for real rain and spray conditions.",
+      "key_insight": "Droplet projection area provides a geometry-based scaling parameter for predicting impact loads from droplets with non-ideal shapes and orientations.",
+      "engineering_relevance": "Accounting for droplet morphology could improve wind turbine leading-edge erosion predictions beyond idealized spherical, normal-incidence impacts.",
       "method": [
-        "Built a fluid-structure interaction framework coupling incompressible multiphase flow with finite element blade-material analysis.",
-        "Simulated droplet impacts with arbitrary shapes and orientations to resolve pressure, force, and timing dynamics.",
-        "Derived a universal scaling law linking key impact loadings to droplet projection area."
+        "Couple incompressible multiphase flow simulations with finite element analysis of blade materials.",
+        "Investigate impact dynamics across arbitrary droplet shapes and orientations.",
+        "Derive a universal scaling law using initial droplet projection area."
       ],
-      "evidence_signal": "The abstract reports consistent correlations between peak impact pressure, influential area, and peak force, with peak-force timing following inverse momentum scaling.",
-      "watch_item": "The scaling law should be validated across broader droplet sizes, speeds, and blade materials before direct deployment in industrial erosion models.",
+      "evidence_signal": "Simulations show positive correlations among peak pressure, influential area at the pressure peak, and peak force, with peak-force timing scaling inversely; the abstract reports no quantitative errors or experimental validation.",
+      "watch_item": "The proposed scaling law needs validation across realistic rain conditions and blade materials before use in erosion-life predictions.",
       "hashtags": [
-        "#WindTurbines",
         "#MultiphaseFlow",
         "#FluidStructureInteraction",
-        "#LeadingEdgeErosion",
-        "#DropletImpact"
+        "#DropletImpact",
+        "#WindEnergy",
+        "#LeadingEdgeErosion"
       ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
       "paper_id": "2026-10-16-arxiv-influence_of_droplet_morphology_on_fluid_dynamics_and_impact_erosion_of_wind_turbine_blade",
       "paper_title": "Influence of Droplet Morphology on Fluid Dynamics and Impact Erosion of Wind Turbine Blades",
       "paper_date": "2026-10-16",
       "paper_category": "Multiphase Flow",
-      "generated_at": "2026-10-19T09:56:59",
+      "generated_at": "2026-10-19T09:59:45",
       "generator": "openai"
     }
   },
@@ -180,27 +186,29 @@
     ],
     "score": 59,
     "infographic": {
-      "key_insight": "GINNGER learns thermodynamic generators, not direct constitutive laws, so it can discover rheology models that are automatically thermodynamically admissible and transferable across flow types.",
-      "engineering_relevance": "This enables physically consistent surrogate models for complex fluids that generalize across shear, extensional, and mixed flows without prescribing a constitutive form upfront.",
+      "key_insight": "GINNGER learns thermodynamic generators rather than constitutive operators, yielding rheological models that obey the first and second laws of thermodynamics by construction.",
+      "engineering_relevance": "The framework supports transferable complex-fluid models for CFD across deformation protocols and flow geometries without prescribing phenomenological constitutive equations.",
       "method": [
-        "Embed the GENERIC thermodynamic formalism into neural learning to enforce the first and second laws by construction.",
-        "Train in the intrinsic eigenspace of the polymer conformation tensor to obtain a kinematics-independent state representation.",
-        "Use microstructural flow data from multiple deformation protocols to infer one unified constitutive model."
+        "Embed GENERIC thermodynamics in neural constitutive discovery.",
+        "Represent polymer microstructure in the conformation tensor’s intrinsic eigenspace.",
+        "Combine shear, extensional, and mixed-flow data to learn a shared constitutive model."
       ],
-      "evidence_signal": "The abstract reports validation on high-fidelity simulations, with accurate reconstruction of constitutive behavior and prediction of complex flow fields in previously unseen geometries.",
-      "watch_item": "The approach depends on accurate microstructural data and a correct spectral state representation, so noisy simulations or strongly non-eigenbasis-friendly dynamics could limit robustness.",
+      "evidence_signal": "The abstract reports validation against high-fidelity simulations, including constitutive reconstruction and flow-field prediction in previously unseen geometries, but provides no quantitative errors.",
+      "watch_item": "Generalization beyond the sampled microstructural states remains to be established; thermodynamic admissibility alone does not guarantee predictive accuracy.",
       "hashtags": [
-        "#AI4CFD",
+        "#AIFluidMechanics",
         "#Rheology",
+        "#PhysicsInformedML",
         "#Thermodynamics",
-        "#NeuralOperators",
-        "#GenerativeModeling"
+        "#CFD"
       ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
       "paper_id": "2026-10-16-arxiv-a_generic_informed_neural_network_for_generative_rheology",
       "paper_title": "A GENERIC-Informed Neural Network for Generative Rheology",
       "paper_date": "2026-10-16",
       "paper_category": "CFD Surrogates",
-      "generated_at": "2026-10-19T09:57:02",
+      "generated_at": "2026-10-19T09:59:48",
       "generator": "openai"
     }
   },
@@ -233,27 +241,29 @@
     ],
     "score": 59,
     "infographic": {
-      "key_insight": "The paper reconstructs high-fidelity 3D turbulent flow fields from coarse data by combining multiscale volumetric learning, temporal state-space modeling, and physics-based regularization.",
-      "engineering_relevance": "This enables more accurate and cost-effective surrogate modeling for CFD, flow monitoring, and atmospheric analysis when direct high-resolution simulation or measurement is impractical.",
+      "key_insight": "A turbulence-aware AI framework reconstructs time-resolved 3D flow fields from coarse data while better preserving multiscale structures and temporal coherence.",
+      "engineering_relevance": "The approach could reduce reliance on costly high-resolution simulations or measurements when detailed turbulent flow fields are needed for engineering analysis.",
       "method": [
-        "Multiscale neural operator recovers fine 3D spatial structures from coarse inputs.",
-        "State space model enforces coherent time evolution in reconstructed turbulence.",
-        "Navier-Stokes residuals and a mixture-of-experts module add physical plausibility and adapt to unknown coarse-graining."
+        "Combine a multiscale neural operator for volumetric reconstruction with a state space model for temporal consistency.",
+        "Use Navier–Stokes residuals as soft constraints to encourage physically plausible dynamics.",
+        "Introduce a mixture-of-experts mechanism for unsupervised adaptation to unknown coarse-graining."
       ],
-      "evidence_signal": "The framework is evaluated on canonical turbulent systems and atmospheric reanalysis data, where it reduces reconstruction error and better preserves multiscale structure and temporal coherence than learning-based and classical baselines.",
-      "watch_item": "Performance may depend on how well the physics residuals, temporal model, and expert routing generalize to new flow regimes, noise levels, or coarse-graining patterns.",
+      "evidence_signal": "Evaluations on canonical turbulent systems and atmospheric reanalysis data report lower reconstruction errors than learning-based and classical baselines, though the abstract provides no numerical gains.",
+      "watch_item": "Soft physics constraints do not guarantee physical consistency; reconstructed fine-scale dynamics require validation before engineering use.",
       "hashtags": [
-        "#CFD",
+        "#AIFluidMechanics",
         "#Turbulence",
-        "#NeuralOperator",
-        "#PhysicsInformedML",
-        "#FluidDynamics"
+        "#FlowReconstruction",
+        "#NeuralOperators",
+        "#PhysicsInformedAI"
       ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
       "paper_id": "2026-10-13-arxiv-high_fidelity_three_dimensional_flow_field_reconstruction_driven_by_turbulent_fluid_dynami",
       "paper_title": "High-fidelity Three-Dimensional Flow Field Reconstruction Driven by Turbulent Fluid Dynamics",
       "paper_date": "2026-10-13",
       "paper_category": "CFD Surrogates",
-      "generated_at": "2026-10-19T09:57:04",
+      "generated_at": "2026-10-19T09:59:50",
       "generator": "openai"
     }
   },
@@ -284,27 +294,29 @@
     ],
     "score": 58,
     "infographic": {
-      "key_insight": "A phononic subsurface embedded in a flat plate can systematically reshape sustained vortex shedding, with its chordwise position and resonant growth rate controlling whether lift/drag oscillations are amplified or strongly damped.",
-      "engineering_relevance": "This suggests a passive flow-control strategy for reducing unsteady loads in separated-flow systems while preserving mean aerodynamic performance.",
+      "key_insight": "Positioning a phononic subsurface beneath a separated flat-plate flow can either amplify or attenuate sustained vortex shedding, with one configuration substantially reducing force oscillations.",
+      "engineering_relevance": "Passive phononic subsurfaces could reduce unsteady aerodynamic loads while largely preserving mean lift and drag.",
       "method": [
-        "High-fidelity immersed boundary FSI simulations of fully separated flow over a flat plate with an embedded grounded diatomic-chain phononic subsurface.",
-        "Swept two controls: chordwise placement of the subsurface and the growth rate of its resonant displacement envelope.",
-        "Analyzed limit-cycle behavior, characteristic frequencies, phase between subsurface motion and lift, and unsteady/mean flow fields."
+        "Simulated strongly coupled fluid–structure interaction using a high-fidelity immersed boundary method.",
+        "Modeled the subsurface as a grounded diatomic chain driving a compliant plate section.",
+        "Varied chordwise position and resonant displacement-amplitude growth; analyzed frequencies, phase relationships, and flow fields."
       ],
-      "evidence_signal": "The simulations identified four position-dependent regimes, including a configuration that reduced lift oscillation amplitude by over 30% and drag oscillation amplitude by over 50% with less than 0.5% change in mean lift and drag.",
-      "watch_item": "The reported benefits are highly configuration-dependent, so practical implementation will require careful tuning of subsurface placement and resonant response to match the target separated flow.",
+      "evidence_signal": "Simulations identified four position-dependent limit-cycle regimes and a configuration reducing lift oscillation amplitude by over 30% and drag oscillation amplitude by over 50%, with less than 0.5% change in mean lift and drag.",
+      "watch_item": "Performance is position-sensitive, and the abstract reports numerical results rather than experimental validation.",
       "hashtags": [
-        "#FluidMechanics",
-        "#VortexShedding",
         "#FluidStructureInteraction",
         "#PhononicMaterials",
-        "#PassiveFlowControl"
+        "#VortexShedding",
+        "#PassiveFlowControl",
+        "#ComputationalFluidDynamics"
       ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
       "paper_id": "2026-10-15-arxiv-interaction_of_sustained_vortex_shedding_with_a_phononic_subsurface_effect_of_positioning",
       "paper_title": "Interaction of Sustained Vortex Shedding with a Phononic Subsurface: Effect of Positioning and Resonant Characteristics",
       "paper_date": "2026-10-15",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-19T09:57:06",
+      "generated_at": "2026-10-19T09:59:52",
       "generator": "openai"
     }
   },
@@ -336,27 +348,29 @@
     ],
     "score": 57,
     "infographic": {
-      "key_insight": "High-resolution hurricane LES captures materially different turbulent inflow structures, which can substantially change the predicted loads and aeroelastic response of an idling wind turbine.",
-      "engineering_relevance": "Accurate extreme-wind design for turbines in tropical-cyclone-prone regions depends on using sufficiently resolved inflow fields rather than coarse storm representations.",
+      "key_insight": "LES grid resolution changes predicted hurricane winds and turbulence, producing distinct aeroelastic responses in an idling wind turbine.",
+      "engineering_relevance": "High-resolution hurricane inflow information can improve extreme-load prediction and support wind turbine design in cyclone-prone regions.",
       "method": [
-        "LES of Hurricane Laura at three grid spacings: 55.55 m, 25 m, and 10 m",
-        "Used simulated hurricane inflow directly as boundary conditions for aeroelastic turbine simulations",
-        "Compared mean wind and turbulence structure evolution as the storm passed a virtual turbine site"
+        "Simulate Hurricane Laura (2020) using large-eddy simulation.",
+        "Compare grid spacings of 55.55 m, 25 m, and 10 m.",
+        "Use LES inflow directly in aeroelastic simulations of an idling turbine."
       ],
-      "evidence_signal": "The abstract reports significant differences in mean wind and turbulence across grid resolutions, producing distinct turbine aeroelastic responses in the coupled simulations.",
-      "watch_item": "Results are based on one hurricane case and one virtual turbine location, so broader design use needs additional storms, locations, and validation.",
+      "evidence_signal": "Across three grid resolutions, the simulations showed significant differences in mean winds and turbulence structures that affected turbine response.",
+      "watch_item": "The abstract reports no quantitative load differences or validation against measurements, and comparisons across storm-relative locations are deferred to Part II.",
       "hashtags": [
-        "#WindEnergy",
-        "#HurricaneLoads",
         "#LargeEddySimulation",
+        "#HurricaneLaura",
+        "#WindEnergy",
         "#Aeroelasticity",
         "#Turbulence"
       ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
       "paper_id": "2026-10-15-arxiv-hurricane_laura_induced_loads_on_wind_turbines_part_i_high_fidelity_modeling_and_sensitivi",
       "paper_title": "Hurricane Laura-induced loads on wind turbines -- Part I: High-fidelity modeling and sensitivity to turbulent inflow conditions",
       "paper_date": "2026-10-15",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-19T09:57:08",
+      "generated_at": "2026-10-19T09:59:54",
       "generator": "openai"
     }
   },
@@ -387,27 +401,29 @@
     ],
     "score": 55,
     "infographic": {
-      "key_insight": "Increasing spanwise convex curvature stabilizes a hypersonic G\u0000f6rtler-driven boundary layer by thinning it, weakening centrifugal amplification, and delaying transition without changing the dominant breakdown mechanism.",
-      "engineering_relevance": "For hypersonic surface design, adding spanwise convex curvature can be used to push transition downstream and reduce heating risk while preserving the same overall instability route.",
+      "key_insight": "Increasing spanwise convex curvature delays hypersonic boundary-layer transition by weakening centrifugal amplification while preserving the dominant Görtler–sinuous breakdown pathway.",
+      "engineering_relevance": "Spanwise curvature offers a potential geometry-based lever for delaying transition and managing surface heating in hypersonic designs.",
       "method": [
-        "Direct numerical simulation of smooth doubly curved hypersonic boundary layers",
-        "Mach 7 experiments with fixed streamwise concavity and varied spanwise convex curvature",
-        "Spectral proper orthogonal decomposition to identify dominant instability dynamics"
+        "Direct numerical simulation and Mach 7 experiments.",
+        "Smooth doubly curved surfaces with fixed streamwise concavity and increasing spanwise convex curvature.",
+        "Spectral proper orthogonal decomposition to identify dominant disturbance dynamics."
       ],
-      "evidence_signal": "Numerical and experimental results agree on later transition, weaker G\u0000f6rtler growth, shifted secondary instability, and increased prominence of higher-frequency acoustic disturbances near breakdown.",
-      "watch_item": "The stabilizing effect does not eliminate transition; the G\u0000f6rtler-sinuous pathway remains dominant, so designs must still account for secondary instability and thermal loads.",
+      "evidence_signal": "Simulations and experiments show consistent trends in transition location, thermal-streak organisation and disturbance evolution, with greater spanwise curvature delaying breakdown.",
+      "watch_item": "The abstract does not quantify transition-delay magnitude or establish applicability beyond the tested geometries and flow conditions.",
       "hashtags": [
         "#Hypersonics",
         "#BoundaryLayerTransition",
         "#GortlerInstability",
-        "#DirectNumericalSimulation",
-        "#AeroThermalDesign"
+        "#FlowControl",
+        "#ComputationalFluidDynamics"
       ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
       "paper_id": "2026-10-16-arxiv-effects_of_spanwise_curvature_on_hypersonic_boundary_layer_transition_in_g_rtler_driven_fl",
       "paper_title": "Effects of Spanwise Curvature on Hypersonic Boundary Layer Transition in Görtler-driven Flows",
       "paper_date": "2026-10-16",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-19T09:57:11",
+      "generated_at": "2026-10-19T09:59:56",
       "generator": "openai"
     }
   },
@@ -439,27 +455,29 @@
     ],
     "score": 53,
     "infographic": {
-      "key_insight": "The transonic flutter boundary folds because elastic-axis placement changes how shock energy transfer balances modal damping, creating multiple flutter speeds at the same Mach number near the dip.",
-      "engineering_relevance": "This lets designers predict and shift flutter margins by tuning elastic-axis location, with calibrated surrogate models giving fast, reliable stability calls for aeroelastic design.",
+      "key_insight": "Moving the elastic axis aft closes the folded transonic flutter boundary by reducing supersonic-surface damping faster than the residual shock energy input.",
+      "engineering_relevance": "Elastic-axis placement can determine whether multiple flutter-speed thresholds coexist at one Mach number, complicating aeroelastic stability assessment.",
       "method": [
-        "Coupled unsteady Euler simulations of Isogai case A and elastic-axis variants",
-        "Gaussian-process surrogate for damping, improved by batch active learning",
-        "Split conformal prediction to convert surrogate outputs into distribution-free stability calls"
+        "Coupled unsteady Euler simulations of a pitch–plunge aerofoil with varying elastic-axis position.",
+        "Batch active learning of a Gaussian-process damping surrogate, calibrated using independent split conformal prediction.",
+        "Chordwise energy budgets to explain shock-driven energy transfer and fold closure."
       ],
-      "evidence_signal": "With 80 simulations, the learned case A boundary correctly labeled 64 of 65 independent runs, and calibrated calls were wrong in at most 1.6% of cases; 193 simulations plus 40 calibration runs mapped the fold across Mach number and elastic-axis position.",
-      "watch_item": "Time-domain damping labels can fail silently, so the workflow is sensitive to hidden labeling errors and to mean-incidence setup, which shifted the dip flutter speed by 2.8%.",
+      "evidence_signal": "With 80 simulations, the case A model correctly labeled 64 of 65 independent runs; a broader study using 193 simulations and 40 calibration runs placed fold closure between 0.39 and 0.33 chord ahead of the leading edge on two meshes.",
+      "watch_item": "Results concern inviscid flow, and time-domain damping labels require careful checks: the common one-degree start left a mean incidence that raised dip flutter speed by 2.8%.",
       "hashtags": [
         "#Aeroelasticity",
-        "#Flutter",
-        "#TransonicFlow",
+        "#TransonicFlutter",
         "#ActiveLearning",
-        "#ConformalPrediction"
+        "#ConformalPrediction",
+        "#ComputationalFluidDynamics"
       ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
       "paper_id": "2026-10-16-arxiv-how_the_elastic_axis_folds_the_transonic_flutter_boundary_shock_energy_transfer_and_confor",
       "paper_title": "How the elastic axis folds the transonic flutter boundary: shock energy transfer and conformally calibrated active learning",
       "paper_date": "2026-10-16",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-19T09:57:13",
+      "generated_at": "2026-10-19T09:59:58",
       "generator": "openai"
     }
   },
@@ -490,27 +508,29 @@
     ],
     "score": 53,
     "infographic": {
-      "key_insight": "Strong adverse-pressure-gradient turbulent boundary layers still show component-wise outer similarity when each mean-defect or Reynolds-stress profile is normalized by its value at a common outer location.",
-      "engineering_relevance": "This gives a compact reference for comparing and modeling APG boundary layers, helping turbulence-model validation and profile reconstruction in strong non-equilibrium flows.",
+      "key_insight": "Under strong adverse pressure gradients, turbulent boundary layers retain component-wise outer similarity when each velocity defect or Reynolds stress is normalized by its own value at a shared outer-layer location.",
+      "engineering_relevance": "Compact outer-profile expressions offer references for assessing APG turbulence models and reconstructing profiles when component amplitudes are known.",
       "method": [
-        "Built a benchmark from DNS of a suction–blowing separation bubble plus published APG profiles.",
-        "Tested two mean-velocity defects and four Reynolds-stress components across wide ranges of Clauser parameter and Reynolds number.",
-        "Normalized each quantity by its value at a common outer location y_s, using y_s = 0.5δ for the main presentation."
+        "Combine separation-bubble DNS with published turbulent-boundary-layer profiles.",
+        "Normalize two mean-velocity defects and four Reynolds stresses by their respective values at a common location, illustrated at y_s = 0.5δ.",
+        "Assess profile collapse across conditions and test sensitivity to the normalization location."
       ],
-      "evidence_signal": "Across β_e = 0.04–180 and Re_θ = 530–19000, the normalized profiles collapse in the outer layer, with velocity-defect collapse for y/δ ≳ 0.2 and Reynolds-stress collapse for y/δ ≳ 0.4.",
-      "watch_item": "The similarity is component-wise and outer-region dependent, so it does not imply a single universal scaling valid throughout the full boundary layer or for all APG configurations.",
+      "evidence_signal": "Across β_e = 0.04–180 and Re_θ = 530–19,000, collapse emerges at y/δ ≳ 0.2 for velocity defects and ≳ 0.4 for Reynolds stresses, and persists over a broad range of outer normalization locations.",
+      "watch_item": "The similarity is component-wise and outer-layer-specific; reconstruction still requires each quantity’s value at the chosen normalization location.",
       "hashtags": [
+        "#FluidMechanics",
         "#Turbulence",
-        "#BoundaryLayer",
+        "#BoundaryLayers",
         "#AdversePressureGradient",
-        "#DNS",
-        "#FlowModeling"
+        "#DirectNumericalSimulation"
       ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
       "paper_id": "2026-10-14-arxiv-component_wise_outer_similarity_of_turbulent_boundary_layers_with_strong_adverse_pressure",
       "paper_title": "Component-wise outer similarity of turbulent boundary layers with strong adverse-pressure gradient",
       "paper_date": "2026-10-14",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-19T09:57:16",
+      "generated_at": "2026-10-19T10:00:01",
       "generator": "openai"
     }
   },
@@ -543,27 +563,29 @@
     ],
     "score": 52,
     "infographic": {
-      "key_insight": "PINN-LPCDD makes PINNs viable for compressible multi-medium flows by learning interface locations while enforcing physically consistent sharp domain decomposition.",
-      "engineering_relevance": "This offers a physics-aware surrogate for shock–interface problems in multi-material CFD, especially when media have very different stiffness and pressure levels.",
+      "key_insight": "PINN-LPCDD learns physically consistent interfaces between media, enabling sharp contact discontinuities in compressible multi-medium flow simulations.",
+      "engineering_relevance": "The framework targets shock-driven flows involving large pressure ratios and media with strongly differing stiffness.",
       "method": [
-        "Separate sub-networks are assigned to each medium and their interface positions are learned end-to-end.",
-        "A sharp interface method is embedded so the contact discontinuity remains physically consistent and sharp.",
-        "Euler equations with artificial viscosity and scaling invariance are used to improve robustness for shocks and high pressure ratios."
+        "Use separate neural networks for each medium and learn interface positions through sharp-interface domain decomposition.",
+        "Solve Euler equations with artificial viscosity to improve robustness around shock waves.",
+        "Exploit Euler-equation scaling invariance to handle high pressure ratios."
       ],
-      "evidence_signal": "The abstract reports numerical tests on air-air, air-helium, air-water, and air-R22 cases, with acceptable accuracy across these multi-medium scenarios.",
-      "watch_item": "Performance likely depends on stable interface learning and careful tuning of artificial viscosity/scaling for strongly discontinuous flows.",
+      "evidence_signal": "Numerical experiments on air–air, air–helium, air–water, and air–R22 problems report acceptable accuracy, without quantitative metrics in the abstract.",
+      "watch_item": "Sensitivity to artificial-viscosity settings and interface-training choices should be checked; the abstract does not establish computational efficiency.",
       "hashtags": [
         "#PhysicsInformedML",
-        "#PINN",
+        "#PINNs",
         "#ComputationalFluidDynamics",
         "#MultiMediumFlows",
-        "#ShockCapturing"
+        "#DomainDecomposition"
       ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
       "paper_id": "2026-10-16-arxiv-pinn_lpcdd_physics_informed_neural_network_with_learnable_and_physically_consistent_domain",
       "paper_title": "PINN-LPCDD: Physics-Informed Neural Network with Learnable and Physically Consistent Domain Decomposition for Compressible Multi-Medium Flows",
       "paper_date": "2026-10-16",
       "paper_category": "Physics-Informed ML",
-      "generated_at": "2026-10-19T09:57:18",
+      "generated_at": "2026-10-19T10:00:04",
       "generator": "openai"
     }
   },
@@ -597,27 +619,29 @@
     ],
     "score": 52,
     "infographic": {
-      "key_insight": "The paper proves that, in incompressible MHD turbulence, simultaneous transfer of cross-helicity uniquely determines a pair-exchange decomposition of nonlinear energy transfer within triad interactions.",
-      "engineering_relevance": "This provides a mathematically rigorous way to interpret and model energy exchange pathways in MHD turbulence, improving analysis of plasma, astrophysical, and fusion-relevant flows.",
+      "key_insight": "Simultaneous cross-helicity transfer uniquely determines pairwise energy and cross-helicity exchanges within nonlinear triads in incompressible MHD turbulence.",
+      "engineering_relevance": "This result offers a rigorous basis for interpreting energy-transfer pathways in incompressible MHD simulations relevant to conducting-fluid and plasma flows.",
       "method": [
-        "Analyze triad interactions in incompressible magnetohydrodynamics.",
-        "Use conservation and simultaneous transfer of cross-helicity to constrain the nonlinear transfer structure.",
-        "Derive a unique pair-exchange representation for energy and cross-helicity transfer."
+        "Analyze conservative nonlinear exchanges among three interacting spatial fluctuations.",
+        "Use simultaneous cross-helicity transfer to constrain triad dynamics.",
+        "Prove uniqueness of the pair-exchange representation for energy and cross-helicity transfer."
       ],
-      "evidence_signal": "The abstract presents a theoretical proof rather than a numerical dataset, showing uniqueness of the pair-exchange formulation under the stated MHD constraints.",
-      "watch_item": "The result depends on incompressibility and the availability of cross-helicity transfer, so it may not extend unchanged to compressible or differently constrained turbulence models.",
+      "evidence_signal": "The abstract reports a mathematical uniqueness proof, but no numerical benchmarks, experimental data, or AI-based evaluation.",
+      "watch_item": "The result is established for incompressible MHD; applicability to compressible flows or Navier–Stokes turbulence is not demonstrated in the abstract.",
       "hashtags": [
-        "#MHD",
-        "#Turbulence",
+        "#MHDTurbulence",
+        "#Magnetohydrodynamics",
+        "#EnergyTransfer",
         "#CrossHelicity",
-        "#NonlinearDynamics",
-        "#FluidMechanics"
+        "#ComputationalFluidDynamics"
       ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
       "paper_id": "2026-10-15-arxiv-pair_exchange_dynamics_of_magnetohydrodynamic_turbulence",
       "paper_title": "Pair-exchange dynamics of magnetohydrodynamic turbulence",
       "paper_date": "2026-10-15",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-19T09:57:20",
+      "generated_at": "2026-10-19T10:00:06",
       "generator": "openai"
     }
   },
@@ -648,27 +672,29 @@
     ],
     "score": 50,
     "infographic": {
-      "key_insight": "Stern-sculling propulsion is driven by two distinct hydrodynamic mechanisms: lift during lateral strokes and added-mass effects during backward strokes, with peak propulsive efficiency around 65% at intermediate speed.",
-      "engineering_relevance": "The results help quantify when this traditional human-powered propulsion method is most effective, offering design and operating guidance for low-speed marine propulsion systems.",
+      "key_insight": "Stern-sculling propulsion relies mainly on lift during lateral strokes and added-mass effects during backward strokes, with peak efficiency near 65% at intermediate boat speed.",
+      "engineering_relevance": "The findings can inform oscillating-oar propulsion design and operating speeds for efficient human-powered boats.",
       "method": [
-        "Continuously measured oar kinematics over a broad range of boat speeds",
-        "Recorded boat motion and forces acting on the oar",
-        "Separated propulsive contributions from lateral and backward stroke phases"
+        "Continuously measure oar kinematics and boat motion.",
+        "Measure forces acting on the oar across a broad range of boat speeds.",
+        "Determine propulsive efficiency as a function of boat speed."
       ],
-      "evidence_signal": "The study combines continuous experimental measurements across multiple boat speeds to compute propulsive efficiency as a function of speed, revealing a peak near 65% and a drop to about 25% at higher speeds.",
-      "watch_item": "The reported efficiency is speed-dependent and falls substantially at higher speeds, so conclusions should not be generalized beyond the tested operating range.",
+      "evidence_signal": "Measurements show efficiency peaking at approximately 65% at intermediate speed and declining to approximately 25% at higher speeds.",
+      "watch_item": "The abstract reports experimental measurements, not an AI or CFD surrogate, and does not establish generalizability across oar geometries or boat designs.",
       "hashtags": [
         "#FluidMechanics",
         "#Hydrodynamics",
-        "#Propulsion",
-        "#MarineEngineering",
-        "#CFD"
+        "#SternSculling",
+        "#PropulsiveEfficiency",
+        "#ExperimentalMechanics"
       ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
       "paper_id": "2026-10-16-arxiv-hydrodynamics_and_propulsive_efficiency_of_stern_sculling_propulsion",
       "paper_title": "Hydrodynamics and propulsive efficiency of stern-sculling propulsion",
       "paper_date": "2026-10-16",
       "paper_category": "CFD Surrogates",
-      "generated_at": "2026-10-19T09:57:22",
+      "generated_at": "2026-10-19T10:00:08",
       "generator": "openai"
     }
   },
@@ -700,27 +726,29 @@
     ],
     "score": 50,
     "infographic": {
-      "key_insight": "SCP-FTLE and SCP-FSLE accelerate 3D Lagrangian flow diagnostics by combining CPU/GPU parallelism with memory- and data-movement-aware algorithms for FTLE and FSLE.",
-      "engineering_relevance": "The workflow enables scalable, high-throughput detection of transport barriers and stretching structures in large CFD datasets, making advanced Lagrangian analysis practical for billion-seed and large-ensemble studies.",
+      "key_insight": "SCP-FTLE and SCP-FSLE accelerate three-dimensional material-stretching and transport-barrier analysis on CPUs and GPUs while scaling efficiently to a billion seeds.",
+      "engineering_relevance": "The modules enable large-scale flow-transport diagnostics, including mixing in shear-thinning cavity flows and tracer dispersion around urban buildings.",
       "method": [
-        "CPU- and GPU-accelerated FTLE/FSLE modules in StreamCenter+",
-        "Supports structured and native unstructured meshes with selectable integration/interpolation schemes",
-        "Uses rolling snapshot reuse, memory-bounded FTLE batching, device-resident trajectory state, and active-set FSLE advancement"
+        "Support structured and native unstructured meshes with selectable integration and interpolation schemes.",
+        "Reduce data movement through rolling snapshot reuse, memory-bounded FTLE batching and device-resident trajectory state.",
+        "Use active-set FSLE advancement to reduce redundant computation."
       ],
-      "evidence_signal": "The paper reports state-of-the-art performance, with strong-scaling efficiency up to 86.3% on 32 GPUs for FTLE and 95.2% for FSLE, and verifies results on ABC, SCVM, linear stretching, and rotational shear benchmarks.",
-      "watch_item": "Performance depends on careful memory management, batching, and device-resident execution, so results may vary with mesh type, hardware, and chosen integration/interpolation settings.",
+      "evidence_signal": "For a billion-seed benchmark, 32-GPU strong-scaling efficiencies reach 86.3% for FTLE and 95.2% for FSLE; verification uses ABC and SCVM flows for FTLE and linear stretching and rotational shear flows for FSLE.",
+      "watch_item": "Performance and accuracy on new datasets should be checked against available memory, mesh characteristics and integration/interpolation choices.",
       "hashtags": [
-        "#FluidMechanics",
+        "#ComputationalFluidDynamics",
         "#LagrangianAnalysis",
         "#FTLE",
         "#FSLE",
         "#GPUComputing"
       ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
       "paper_id": "2026-10-15-arxiv-scp_ftle_and_scp_fsle_high_performance_finite_time_and_finite_size_lyapunov_exponent_compu",
       "paper_title": "SCP-FTLE and SCP-FSLE: High-performance finite-time and finite-size Lyapunov-exponent computations for CPUs and GPUs",
       "paper_date": "2026-10-15",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-19T09:57:25",
+      "generated_at": "2026-10-19T10:00:10",
       "generator": "openai"
     }
   },
@@ -752,27 +780,29 @@
     ],
     "score": 49,
     "infographic": {
-      "key_insight": "A near-singular Navier–Stokes-like flow can drive magnetic reconnection that splits a flux ring into multiple daughter rings, with the reconnection pathway shaped by Lorentz feedback and asymmetry in the imposed swirl.",
-      "engineering_relevance": "This suggests that extreme fluid strain and swirl in plasma- or MHD-like systems can trigger abrupt magnetic topology changes, which is important for predicting stability in fusion, space, and astrophysical flows.",
+      "key_insight": "A regularized flow approaching a proposed Navier–Stokes singularity can trigger magnetic reconnection that splits a flux ring into daughter rings.",
+      "engineering_relevance": "The results connect rapidly collapsing flow structures to magnetic topology changes, informing the modeling of strongly driven conducting fluids and plasmas.",
       "method": [
-        "Simulated resistive magnetohydrodynamics with a magnetic ring driven by a regularized imposed flow that matches the collapsing-core geometry and scaling.",
-        "Released the drive at the nominal singular time and followed free evolution to observe reconnection, splitting, and merging.",
-        "Compared 2D/3D behavior and used normal-form analysis (pitchfork-to-fold, cusp) to interpret bifurcation asymmetry."
+        "Simulate a magnetic ring with resistive magnetohydrodynamics under an imposed, regularized collapsing flow.",
+        "Remove the imposed drive at the nominal singular time and track subsequent reconnection.",
+        "Analyze poloidal-flux bifurcations and Lorentz feedback, with three-dimensional simulations checking persistence."
       ],
-      "evidence_signal": "The abstract reports numerical MHD simulations in 2D and 3D showing pre- and post-release reconnections that split the ring and persist in three dimensions, with cusp normal form matching the single-island asymmetry without adjustable parameters.",
-      "watch_item": "The result comes from a designed, regularized forcing and numerical simulations, so the physical relevance depends on how closely the imposed flow and resistive parameters match a real singular-flow scenario.",
+      "evidence_signal": "The abstract reports parameter-free cusp predictions of daughter-ring asymmetry for single-island splits, while three-dimensional simulations retain splitting and merger.",
+      "watch_item": "The imposed flow is regularized, so these simulations do not establish a Navier–Stokes singularity or its consequences in an unregularized physical system.",
       "hashtags": [
-        "#MHD",
+        "#FluidMechanics",
+        "#Magnetohydrodynamics",
         "#MagneticReconnection",
-        "#NavierStokes",
         "#Turbulence",
-        "#PlasmaPhysics"
+        "#ComputationalPhysics"
       ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
       "paper_id": "2026-10-15-arxiv-magnetic_flux_ring_splitting_near_a_navier_stokes_singularity",
       "paper_title": "Magnetic flux ring splitting near a Navier-Stokes singularity",
       "paper_date": "2026-10-15",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-19T09:57:28",
+      "generated_at": "2026-10-19T10:00:13",
       "generator": "openai"
     }
   },
@@ -805,27 +835,29 @@
     ],
     "score": 48,
     "infographic": {
-      "key_insight": "The paper models tornado genesis as rotating convective instability, showing how vertical, radial, and azimuthal flows can self-organize from the initial stage to a quasi-stationary vortex.",
-      "engineering_relevance": "It offers a physically grounded framework for predicting vortex structure and velocity maxima, which can inform tornado dynamics modeling and hazard analysis.",
+      "key_insight": "A hierarchy of ideal-hydrodynamic models describes tornado formation as rotating convection driven by thermal instability, with coordinated growth of velocity components.",
+      "engineering_relevance": "The models offer a theoretical framework for investigating vortex initiation, near-surface inflow, and peak wind locations in tornado-like flows.",
       "method": [
-        "Simplest model: stream-function equation for early vortex generation.",
-        "Refined model: ideal-hydrodynamic rotating convection with azimuthal velocity and density evolution.",
-        "Full model: coupled equations for stream function, swirl, and density, applied to single- and two-core tornado cases."
+        "Link convective onset to the Schwarzschild instability criterion.",
+        "Develop simplest, refined, and full models coupling stream function, azimuthal velocity, and density change at increasing levels of complexity.",
+        "Construct an analytical solution for the simplest model and examine single-whirlwind and two-eyed tornado configurations."
       ],
-      "evidence_signal": "The abstract reports analytical construction of a solution from eight height-wise linear segments and compares qualitative flow patterns across model variants and tornado configurations.",
-      "watch_item": "The results rely on idealized hydrodynamics and boundary-condition-sensitive behavior, so realism and generalizability may be limited.",
+      "evidence_signal": "The abstract reports analytical modeling and predicted flow structures, but provides no quantitative validation against observations or experiments.",
+      "watch_item": "Ideal-hydrodynamic assumptions and boundary-condition-sensitive rotation may limit applicability to real atmospheric tornadoes.",
       "hashtags": [
+        "#FluidMechanics",
         "#TornadoModeling",
         "#RotatingConvection",
-        "#FluidDynamics",
         "#VortexDynamics",
-        "#ComputationalScience"
+        "#HydrodynamicInstability"
       ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
       "paper_id": "2026-10-13-arxiv-some_generalizations_of_the_tornado_model",
       "paper_title": "Some generalizations of the tornado model",
       "paper_date": "2026-10-13",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-19T09:57:30",
+      "generated_at": "2026-10-19T10:00:15",
       "generator": "openai"
     }
   },
@@ -856,27 +888,29 @@
     ],
     "score": 45,
     "infographic": {
-      "key_insight": "In a 100.7 GW North Sea offshore wind scenario, engineering wake models can match annual capacity factors while still showing sizable month-by-month and regime-dependent wind-speed biases relative to LES and mesoscale simulations.",
-      "engineering_relevance": "Regional wind-energy planning should account for wake-model choice because formulation-dependent errors of 0.60-0.70 m/s at 10-40 km downstream can materially affect offshore energy and layout assessments.",
+      "key_insight": "Agreement in annual capacity factor can mask substantial differences in predicted offshore wind wakes across locations, seasons, and atmospheric regimes.",
+      "engineering_relevance": "Regional wind-energy assessments should account for wake-model sensitivity when estimating production from a 100.7 GW North Sea build-out.",
       "method": [
-        "Compared HARMONIE-AROME mesoscale simulations, ASPIRE LES, and three engineering wake models (Jensen, Bastankhah Gaussian, TurbOPark).",
-        "Evaluated year-round offshore wind conditions across wind speed and atmospheric stability regimes.",
-        "Benchmarked model free-stream and wake predictions for a large 2050 North Sea offshore wind buildout."
+        "Evaluate a 2050 offshore wind scenario under year-round weather conditions.",
+        "Compare HARMONIE-AROME mesoscale simulations, ASPIRE large-eddy simulations, and three engineering wake models.",
+        "Assess wake predictions across downstream distance, wind speed, and atmospheric stability."
       ],
-      "evidence_signal": "The abstract reports that LES and mesoscale simulations reproduce observed local free-stream winds well, while all three engineering wake models overpredict mean wind speed versus LES in every month, with the largest biases at 10-40 km downstream.",
-      "watch_item": "Good annual energy agreement can hide systematic spatial and seasonal wake errors, so relying on a single wake formulation may understate uncertainty in cluster-scale offshore planning.",
+      "evidence_signal": "LES and mesoscale simulations accurately represent observed local free-stream winds, while all three engineering models predict higher monthly mean wind speeds than LES, with biases reaching 0.60–0.70 m/s at 10–40 km downstream.",
+      "watch_item": "Validation against local free-stream observations does not establish wake accuracy across the full region; engineering-model biases also depend on atmospheric regime.",
       "hashtags": [
-        "#OffshoreWind",
-        "#WakeModeling",
-        "#LargeEddySimulation",
         "#WindEnergy",
-        "#NorthSea"
+        "#WakeEffects",
+        "#Turbulence",
+        "#LargeEddySimulation",
+        "#OffshoreWind"
       ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
       "paper_id": "2026-10-16-arxiv-wake_effects_in_a_100_gw_north_sea_offshore_wind_scenario_a_model_intercomparison_under_ye",
       "paper_title": "Wake effects in a 100 GW North Sea offshore wind scenario: a model intercomparison under year-round weather conditions",
       "paper_date": "2026-10-16",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-19T09:57:33",
+      "generated_at": "2026-10-19T10:00:17",
       "generator": "openai"
     }
   },
@@ -907,27 +941,29 @@
     ],
     "score": 45,
     "infographic": {
-      "key_insight": "Adding a hemispherical leading-edge curvature changes separation and vortex shedding at Re = 1000, delaying onset of unsteady shedding for some angles while strengthening near-plate vortical structures.",
-      "engineering_relevance": "Leading-edge shape can be tuned to balance stability and glide performance for low-Re small UAVs or aquatic vehicles operating at different angles of attack.",
+      "key_insight": "At Re = 1000, a hemispherical leading-edge protuberance produces thicker vortical regions and shedding onset at 5°, while a simple flat plate achieves better glide ratios at 5°, 10°, and 15°.",
+      "engineering_relevance": "Leading-edge geometry can guide aerodynamic design choices for small unmanned aerial or aquatic vehicles operating at low Reynolds numbers.",
       "method": [
-        "2D numerical simulation of a flat plate with and without hemispherical leading-edge curvature",
-        "Swept angle of attack from 0° to 25° at Reynolds number 1000",
-        "Compared vortex shedding behavior, shedding frequency, and aerodynamic force/glide-ratio response"
+        "Two-dimensional numerical flow simulations at Re = 1000.",
+        "Compared a simple flat plate with a plate featuring a hemispherical leading-edge protuberance.",
+        "Examined vortex shedding, frequencies, and aerodynamic forces over angles of attack from 0° to 25°."
       ],
-      "evidence_signal": "The abstract reports angle-dependent force coefficients, multiple shedding frequencies at higher angles, and different onset of shedding between the curved and simple flat plates.",
-      "watch_item": "Results are from 2D simulations at a single low Reynolds number, so real 3D effects and broader operating conditions may alter the observed performance trends.",
+      "evidence_signal": "Simulations show multiple force-coefficient frequencies at higher angles of attack and comparable glide ratios between the two geometries at higher angles.",
+      "watch_item": "Results are limited to two-dimensional simulations at one Reynolds number; three-dimensional and experimental validation would be needed before vehicle-scale application.",
       "hashtags": [
         "#FluidMechanics",
-        "#Turbulence",
-        "#Aerodynamics",
         "#LowReynoldsNumber",
-        "#UAVDesign"
+        "#LeadingEdgeGeometry",
+        "#VortexShedding",
+        "#ComputationalFluidDynamics"
       ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
       "paper_id": "2026-10-15-arxiv-effect_of_leading_edge_geometry_on_aerodynamic_performance_of_a_flat_plate",
       "paper_title": "Effect of leading edge geometry on aerodynamic performance of a flat plate",
       "paper_date": "2026-10-15",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-19T09:57:35",
+      "generated_at": "2026-10-19T10:00:19",
       "generator": "openai"
     }
   },
@@ -959,27 +995,29 @@
     ],
     "score": 45,
     "infographic": {
-      "key_insight": "A single high-resolution turbulent snapshot contains enough repeated spatial structure to train a patch-based super-resolution model that reconstructs unseen flow fields at extreme scale factors.",
-      "engineering_relevance": "This suggests a data-efficient route for turbulence modeling and CFD post-processing when full high-resolution training databases are unavailable.",
+      "key_insight": "Learning from overlapping patches of a single turbulent realization enables extreme ×32 and ×64 super-resolution of previously unseen flow fields.",
+      "engineering_relevance": "This data-efficient approach could help reconstruct under-resolved turbulent flows when high-resolution training data are scarce.",
       "method": [
-        "Train a WDSR network only on overlapping patches from one high-resolution homogeneous isotropic turbulence realization.",
-        "Predict super-resolved patches for unseen fields and stitch them together with Hann-window-weighted overlap-add.",
-        "Compare against interpolation and against WDSR trained on 1, 25, 50, and 100 full snapshots."
+        "Train a wide-activation deep super-resolution (WDSR) network on overlapping patches from one high-resolution realization.",
+        "Predict unseen fields patchwise and assemble them using Hann-window-weighted overlap-add.",
+        "Compare against interpolation and WDSR models trained on 1, 25, 50, or 100 complete snapshots."
       ],
-      "evidence_signal": "The abstract reports successful reconstruction at x32 and x64 with improved vortical structures, better high-wavenumber energy recovery, and stronger multiscale statistics than conventional interpolation.",
-      "watch_item": "Performance may depend on the strong spatial redundancy of homogeneous turbulence, so results may not transfer directly to strongly inhomogeneous or transient flows.",
+      "evidence_signal": "In two-dimensional homogeneous isotropic turbulence at ×32 and ×64, the abstract reports improved vortical structures, fine-scale features, and high-wavenumber energy recovery relative to interpolation.",
+      "watch_item": "Validation is limited to two-dimensional homogeneous isotropic turbulence; transfer to three-dimensional or more complex engineering flows remains unestablished.",
       "hashtags": [
+        "#AIFluidMechanics",
         "#Turbulence",
         "#SuperResolution",
-        "#DeepLearning",
-        "#CFD",
-        "#PhysicsInformedAI"
+        "#DataEfficientLearning",
+        "#ScientificMachineLearning"
       ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
       "paper_id": "2026-10-14-arxiv-extreme_scale_super_resolution_of_homogeneous_turbulence_from_a_single_realization",
       "paper_title": "Extreme-Scale Super-Resolution of Homogeneous Turbulence from a Single Realization",
       "paper_date": "2026-10-14",
       "paper_category": "Turbulence",
-      "generated_at": "2026-10-19T09:57:38",
+      "generated_at": "2026-10-19T10:00:21",
       "generator": "openai"
     }
   },
@@ -1011,27 +1049,29 @@
     ],
     "score": 45,
     "infographic": {
-      "key_insight": "eMOOD replaces the usual troubled-cell test in MOOD with an entropy-production indicator, giving more targeted shock detection with fewer flagged cells.",
-      "engineering_relevance": "This improves the efficiency and scalability of high-order finite-volume shock-capturing on unstructured meshes while preserving accuracy for challenging compressible-flow problems.",
+      "key_insight": "eMOOD uses numerical entropy production to localise troubled cells, reducing flagged cells by up to 75% while preserving high-order shock-capturing accuracy and robustness.",
+      "engineering_relevance": "The approach can accelerate compressible and multi-material flow simulations on unstructured meshes, with reported speed-ups of up to 20%.",
       "method": [
-        "Use numerical entropy generation as a compact troubled-cell indicator instead of a relaxed discrete maximum principle.",
-        "Deploy the detector inside both a standard MOOD cascade and a MOOD-CWENO hybrid reconstruction strategy.",
-        "Implement and test the approach in the parallel UCNS3D solver for multiphase and shock-dominated flows."
+        "Replace relaxed discrete maximum-principle detection with a compact entropy-production indicator.",
+        "Apply detection within a reduced-order MOOD cascade or a MOOD-CWENO hybrid that activates nonlinear reconstruction only where needed.",
+        "Implement and evaluate the method in the open-source parallel solver UCNS3D."
       ],
-      "evidence_signal": "Across Shu-Osher, double Mach reflection, forward-facing step, shock-helium-bubble, and triple material point cases, the method reportedly flags up to 75% fewer cells and delivers up to 20% speed-up without loss of solution quality.",
-      "watch_item": "Entropy-based detection is physically motivated, but its effectiveness may depend on robust entropy evaluation and careful tuning for different meshes and flow regimes.",
+      "evidence_signal": "Five benchmarks, including Shu–Osher interaction, double Mach reflection and shock–helium-bubble interaction, test shock capturing, instabilities and multi-material interfaces against reference CWENO and MOOD formulations.",
+      "watch_item": "The reported gains are benchmark-dependent; the abstract does not establish performance across broader flow regimes or at massive parallel scale.",
       "hashtags": [
         "#ComputationalFluidDynamics",
         "#ShockCapturing",
-        "#HighOrderMethods",
-        "#MultiphaseFlow",
-        "#FiniteVolume"
+        "#FiniteVolumeMethods",
+        "#EntropyBasedDetection",
+        "#MultiphaseFlow"
       ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
       "paper_id": "2026-10-14-arxiv-emood_entropy_based_multidimensional_optimal_order_detection_for_high_order_shock_capturin",
       "paper_title": "eMOOD: Entropy-Based Multidimensional Optimal Order Detection for High-Order Shock-Capturing Finite-Volume Schemes",
       "paper_date": "2026-10-14",
       "paper_category": "Multiphase Flow",
-      "generated_at": "2026-10-19T09:57:40",
+      "generated_at": "2026-10-19T10:00:23",
       "generator": "openai"
     }
   }
