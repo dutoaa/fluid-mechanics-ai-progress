@@ -1,19 +1,19 @@
 {
-  "key_insight": "CuAD transforms CUDA kernels into tangent and adjoint CUDA source, enabling accurate GPU-based sensitivities for aerodynamic design.",
-  "engineering_relevance": "Generated derivatives support discrete-adjoint lift and drag sensitivities while avoiding the gradient errors seen with finite-difference Jacobians in single precision.",
+  "key_insight": "CuAD transforms CUDA kernels into tangent and adjoint CUDA source, enabling accurate GPU-based sensitivities for aerodynamic simulation.",
+  "engineering_relevance": "Generated derivatives support aerodynamic shape optimization and data assimilation while avoiding the gradient errors introduced by finite-difference Jacobians.",
   "method": [
     "Generate tangent and adjoint kernels through source-to-source automatic differentiation.",
-    "Organize reverse mode by GPU thread, recomputing intermediates and differentiating pure accumulations without a tape.",
-    "Assume non-aliasing inputs and outputs; store any remaining tape in fixed thread-local arrays."
+    "Organize reverse mode around GPU threads, recomputing intermediates and differentiating pure accumulations without a tape.",
+    "Assume non-aliasing inputs and outputs; store remaining tape in fixed thread-local arrays."
   ],
-  "evidence_signal": "Across four flow-model kernels and a 2D Euler solver, derivatives passed dot-product tests to round-off, adjoint kernels cost 2–6× the primal, and transonic NACA 0012 adjoint sensitivities agreed with tangents to 10⁻¹³.",
-  "watch_item": "Deployment requires respecting the non-aliasing assumption and checking fixed thread-local tape requirements for new kernels.",
+  "evidence_signal": "Across four flow-model kernels and a 2D Euler solver, derivatives passed dot-product tests to round-off, adjoints cost 2–6× primal kernels, and transonic NACA 0012 adjoint sensitivities agreed with tangents to 10⁻¹³.",
+  "watch_item": "Use requires respecting the non-aliasing convention; fixed thread-local tape capacity and performance should be checked for larger or more complex kernels.",
   "hashtags": [
-    "#ComputationalFluidDynamics",
     "#AutomaticDifferentiation",
     "#CUDA",
     "#DiscreteAdjoint",
-    "#AerodynamicDesign"
+    "#ComputationalFluidDynamics",
+    "#AerodynamicOptimization"
   ],
   "model": "gpt-6.1-sol",
   "service_tier": "ultrafast",
@@ -21,6 +21,6 @@
   "paper_title": "CuAD: Source-to-Source Automatic Differentiation of CUDA Kernels for Discrete Adjoints in Computational Fluid Dynamics",
   "paper_date": "2026-10-19",
   "paper_category": "Aerodynamics",
-  "generated_at": "2026-10-22T13:37:08",
+  "generated_at": "2026-10-23T13:13:02",
   "generator": "openai"
 }
