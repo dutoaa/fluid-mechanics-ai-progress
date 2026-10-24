@@ -1,17 +1,17 @@
 {
-  "key_insight": "Neural Operator Splitting learns physically interpretable fractional steps instead of a monolithic fluid update, reducing rollout error in complex geometries.",
-  "engineering_relevance": "The approach offers fast CFD surrogates for varied geometries, with approximately 1,000× faster per-step inference than the Monte Carlo solver at comparable error levels.",
+  "key_insight": "Neural Operator Splitting learns physically interpretable fractional steps instead of full-step fluid evolution, reducing rollout error in complex geometries.",
+  "engineering_relevance": "The approach could accelerate repeated fluid simulations across varying geometries while retaining the structure of fractional-step numerical schemes.",
   "method": [
-    "Train separate operators on intermediate states from a fractional-step numerical solver.",
-    "Use conditional-linear Fourier neural operators to preserve linear state mappings while conditioning nonlinearly on geometry.",
-    "Apply symmetry sampling and corrective cycling to mitigate autoregressive error accumulation."
+    "Train separate neural operators on intermediate states from a numerical solver.",
+    "Use conditional-linear Fourier neural operators to preserve linear state mappings while conditioning nonlinearly on inputs such as geometry.",
+    "Apply symmetry sampling and corrective cycling to limit autoregressive error accumulation."
   ],
-  "evidence_signal": "Across 2D and 3D flows with varying geometries and initial conditions, the full model reduced mean relative L2 rollout error by 68% and 40%, respectively, versus a single full-step neural operator.",
-  "watch_item": "Training requires solver-generated intermediate states; generalization beyond the evaluated geometries and flow conditions remains to be established.",
+  "evidence_signal": "In 2D and 3D flow experiments, the full model reduced mean relative L2 rollout error by 68% and 40%, respectively, versus a single full-step neural operator; inference was approximately 1,000× faster per step than the Monte Carlo solver at comparable error.",
+  "watch_item": "Training requires solver-generated intermediate states, and the abstract does not establish generalization beyond the tested geometries and flow conditions.",
   "hashtags": [
-    "#AIForCFD",
+    "#AIFluidMechanics",
     "#NeuralOperators",
-    "#FluidDynamics",
+    "#CFDSurrogates",
     "#OperatorSplitting",
     "#ScientificMachineLearning"
   ],
@@ -21,6 +21,6 @@
   "paper_title": "Neural Operator Splitting for Fluid Dynamics in Complex Geometry",
   "paper_date": "2026-10-20",
   "paper_category": "CFD Surrogates",
-  "generated_at": "2026-10-23T13:12:50",
+  "generated_at": "2026-10-24T12:30:42",
   "generator": "openai"
 }

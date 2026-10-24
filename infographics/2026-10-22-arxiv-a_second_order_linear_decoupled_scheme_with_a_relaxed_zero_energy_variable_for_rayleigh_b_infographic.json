@@ -1,19 +1,19 @@
 {
-  "key_insight": "A second-order, linear, fully decoupled scheme uses a relaxed zero-energy scalar to obtain provable energy bounds for Rayleigh–Bénard convection while requiring only constant-coefficient linear solves.",
-  "engineering_relevance": "The scheme simplifies time stepping for buoyancy-driven convection between Navier-slip walls, though energy stability alone does not guarantee accurate flow predictions.",
+  "key_insight": "A second-order, linear, fully decoupled scheme uses a relaxed zero-energy scalar to obtain energy estimates for Rayleigh–Bénard convection while requiring only constant-coefficient linear solves.",
+  "engineering_relevance": "The scheme simplifies time stepping for buoyancy-driven heat-transfer simulations between Navier-slip walls without coupling the velocity, pressure, and temperature solves.",
   "method": [
-    "Use BDF2 time stepping with rotational pressure correction.",
-    "Treat nonlinear terms explicitly, multiplied by a scalar whose exact value is 1.",
+    "Combine BDF2 time stepping with rotational pressure correction.",
+    "Treat nonlinear terms explicitly, multiplied by an auxiliary scalar whose exact value is 1.",
     "Relax the scalar toward 1 while preserving the proved energy estimates."
   ],
-  "evidence_signal": "Taylor–Hood tests show second-order temporal convergence, recover critical Rayleigh numbers, and match published Nusselt numbers within 0.5%; a 3D implementation also passes corresponding validation tests.",
-  "watch_item": "Fields use the unrelaxed scalar, whose deviation from 1 scales as (E/C)(δt/τ)^3, so scalar-weight and time-step choices remain important for accuracy.",
+  "evidence_signal": "Taylor–Hood tests show second-order temporal convergence, recover critical Rayleigh numbers, and match published Nusselt numbers within 0.5%; a 3D implementation passes corresponding validation tests.",
+  "watch_item": "Energy stability does not guarantee scalar accuracy: its unrelaxed value drives the fields, with deviation scaling as (E/C)(δt/τ)^3, so scalar weight and time step require care.",
   "hashtags": [
     "#RayleighBenardConvection",
     "#ComputationalFluidDynamics",
     "#EnergyStableSchemes",
-    "#NumericalMethods",
-    "#HeatTransfer"
+    "#HeatTransfer",
+    "#NumericalMethods"
   ],
   "model": "gpt-6.1-sol",
   "service_tier": "ultrafast",
@@ -21,6 +21,6 @@
   "paper_title": "A second-order linear decoupled scheme with a relaxed zero-energy variable for Rayleigh-Bénard convection",
   "paper_date": "2026-10-22",
   "paper_category": "Turbulence",
-  "generated_at": "2026-10-23T13:13:07",
+  "generated_at": "2026-10-24T12:30:58",
   "generator": "openai"
 }

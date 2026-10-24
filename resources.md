@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-10-23
+Generated: 2026-10-24
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Automated Discovery of Physically Interpretable Subgrid Length Scales for Detached Eddy Simulation via Agentic AI
