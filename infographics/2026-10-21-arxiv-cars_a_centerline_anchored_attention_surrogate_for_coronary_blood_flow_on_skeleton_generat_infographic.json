@@ -1,16 +1,16 @@
 {
-  "key_insight": "CARS anchors attention to coronary centerlines to predict pressure and velocity at arbitrary lumen points, reducing geometry-fusion cost from O(N²) to O(N n_f).",
-  "engineering_relevance": "The surrogate evaluates a coronary flow case in 87 ms versus 572–1,063 s for CFD, supporting rapid pressure-based assessment.",
+  "key_insight": "CARS anchors attention to coronary centerlines to rapidly predict pressure and velocity across variable lumen geometries.",
+  "engineering_relevance": "It enables coronary flow evaluation in 87 ms per case versus 572–1,063 s for CFD, with strong agreement on pressure-derived fractional flow reserve (FFR).",
   "method": [
     "Inputs: image-derived centerline, per-point lumen radius, and scalar inlet flow rate.",
-    "Uses the case’s own centerline as the attention focal set to encode geometry.",
-    "Learns steady incompressible Navier–Stokes solution maps from OpenFOAM simulations, with separate models per coronary territory."
+    "Predicts steady incompressible flow pressure and velocity at arbitrary query points.",
+    "Uses centerline-anchored attention with O(N n_f) geometry-fusion cost rather than O(N²)."
   ],
-  "evidence_signal": "Trained per territory on 2,700 simulations with synthetic focal lesions, CARS achieved pressure/velocity relative ℓ₂ errors of 0.120/0.149 (left) and 0.063/0.119 (right), with 97.7%/96.3% agreement on the CFD-derived FFR ≤ 0.8 decision.",
-  "watch_item": "Predicted velocity does not satisfy continuity closely enough for derived quantities, and territory-specific weights limit model reuse.",
+  "evidence_signal": "Trained per territory on 2,700 OpenFOAM solutions with synthetic lesions, CARS achieved left/right test relative ℓ₂ errors of 0.120/0.063 for pressure and 0.149/0.119 for velocity, with 97.7%/96.3% agreement on the FFR ≤ 0.8 decision.",
+  "watch_item": "Predicted velocity does not satisfy continuity closely enough for derived quantities, and model weights are territory-specific.",
   "hashtags": [
     "#AIFluidMechanics",
-    "#CFDSurrogates",
+    "#CFDSurrogate",
     "#CoronaryHemodynamics",
     "#AttentionModels",
     "#ScientificMachineLearning"
@@ -21,6 +21,6 @@
   "paper_title": "CARS: a centerline-anchored attention surrogate for coronary blood flow on skeleton-generated lumen geometries",
   "paper_date": "2026-10-21",
   "paper_category": "CFD Surrogates",
-  "generated_at": "2026-10-25T13:02:43",
+  "generated_at": "2026-10-26T14:58:16",
   "generator": "openai"
 }
