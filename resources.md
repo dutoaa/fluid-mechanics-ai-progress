@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-10-28
+Generated: 2026-10-29
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Spatial symmetry invariance of three-dimensional Navier-Stokes turbulence
@@ -107,15 +107,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.35975v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-26-arxiv-a_graph_informed_kriging_model_for_sample_efficient_bayesian_optimization_of_wind_farm_lay_infographic.json
 
-## 14. Automated Discovery of Physically Interpretable Subgrid Length Scales for Detached Eddy Simulation via Agentic AI
-
-- Date: 2026-10-21
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2610.29850v1
-- PDF: https://arxiv.org/pdf/2610.29850v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-21-arxiv-automated_discovery_of_physically_interpretable_subgrid_length_scales_for_detached_eddy_si_infographic.json
-
-## 15. Local Metrics for Exact Streaming on Curvilinear Lattices: A Curvilinear D3Q27 Cumulant Lattice-Boltzmann Method
+## 14. Local Metrics for Exact Streaming on Curvilinear Lattices: A Curvilinear D3Q27 Cumulant Lattice-Boltzmann Method
 
 - Date: 2026-10-27
 - Category: Turbulence
@@ -123,7 +115,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.36971v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-27-arxiv-local_metrics_for_exact_streaming_on_curvilinear_lattices_a_curvilinear_d3q27_cumulant_lat_infographic.json
 
-## 16. Rotation-driven suppression and re-emergence of unsteady flow past a circular cylinder
+## 15. Rotation-driven suppression and re-emergence of unsteady flow past a circular cylinder
 
 - Date: 2026-10-27
 - Category: Aerodynamics
@@ -131,7 +123,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.36556v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-27-arxiv-rotation_driven_suppression_and_re_emergence_of_unsteady_flow_past_a_circular_cylinder_infographic.json
 
-## 17. Learning the solution operator of standing waves with a Fourier neural operator
+## 16. Learning the solution operator of standing waves with a Fourier neural operator
 
 - Date: 2026-10-27
 - Category: CFD Surrogates
@@ -139,7 +131,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.36747v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-27-arxiv-learning_the_solution_operator_of_standing_waves_with_a_fourier_neural_operator_infographic.json
 
-## 18. Flow Mesh: A Velocity-Regularized Flow Matching Framework for Stable Distributional Modeling of Physical Fields on Unstructured Meshes
+## 17. Flow Mesh: A Velocity-Regularized Flow Matching Framework for Stable Distributional Modeling of Physical Fields on Unstructured Meshes
 
 - Date: 2026-10-23
 - Category: Turbulence
@@ -147,7 +139,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.33204v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-23-arxiv-flow_mesh_a_velocity_regularized_flow_matching_framework_for_stable_distributional_modelin_infographic.json
 
-## 19. DSMC Study on Unsteadiness of Supersonic Flow Over a Cylinder
+## 18. DSMC Study on Unsteadiness of Supersonic Flow Over a Cylinder
 
 - Date: 2026-10-27
 - Category: Turbulence
@@ -155,10 +147,18 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.37048v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-27-arxiv-dsmc_study_on_unsteadiness_of_supersonic_flow_over_a_cylinder_infographic.json
 
-## 20. High-Fidelity Aerostructural Dataset of Transonic Wings in Cruise Conditions
+## 19. High-Fidelity Aerostructural Dataset of Transonic Wings in Cruise Conditions
 
 - Date: 2026-10-27
 - Category: Aerodynamics
 - arXiv: https://arxiv.org/abs/2610.36442v1
 - PDF: https://arxiv.org/pdf/2610.36442v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-27-arxiv-high_fidelity_aerostructural_dataset_of_transonic_wings_in_cruise_conditions_infographic.json
+
+## 20. DSMC Study of Hypersonic Boundary-Layer Unsteadiness Using Data-Driven Analysis
+
+- Date: 2026-10-26
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2610.36248v1
+- PDF: https://arxiv.org/pdf/2610.36248v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-26-arxiv-dsmc_study_of_hypersonic_boundary_layer_unsteadiness_using_data_driven_analysis_infographic.json
