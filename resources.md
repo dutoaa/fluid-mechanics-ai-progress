@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-10-30
+Generated: 2026-10-31
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Differentiable Schwarz-Coupled Solvers for Thin Boundary Layer Transport: Inverse Modeling via Agentic AI Optimization
@@ -67,7 +67,15 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.39780v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-29-arxiv-optimization_of_curved_vortex_generator_geometry_for_enhanced_thermal_performance_in_water_infographic.json
 
-## 9. Aerodynamic Shape Optimization of unsteady flapping wings
+## 9. Free-vortex-wake dynamics of airborne wind energy kites in crosswind flight
+
+- Date: 2026-10-27
+- Category: Aerodynamics
+- arXiv: https://arxiv.org/abs/2610.37313v1
+- PDF: https://arxiv.org/pdf/2610.37313v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-27-arxiv-free_vortex_wake_dynamics_of_airborne_wind_energy_kites_in_crosswind_flight_infographic.json
+
+## 10. Aerodynamic Shape Optimization of unsteady flapping wings
 
 - Date: 2026-10-29
 - Category: CFD Surrogates
@@ -75,7 +83,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.40426v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-29-arxiv-aerodynamic_shape_optimization_of_unsteady_flapping_wings_infographic.json
 
-## 10. Causality-informed dynamic mode decomposition for unsteady flow analysis
+## 11. Causality-informed dynamic mode decomposition for unsteady flow analysis
 
 - Date: 2026-10-29
 - Category: CFD Surrogates
@@ -83,7 +91,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.39522v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-29-arxiv-causality_informed_dynamic_mode_decomposition_for_unsteady_flow_analysis_infographic.json
 
-## 11. Nonlinear dynamics of short-wave instabilities in a helical vortex within and beyond the weakly nonlinear regime
+## 12. Nonlinear dynamics of short-wave instabilities in a helical vortex within and beyond the weakly nonlinear regime
 
 - Date: 2026-10-29
 - Category: CFD Surrogates
@@ -91,7 +99,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.39386v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-29-arxiv-nonlinear_dynamics_of_short_wave_instabilities_in_a_helical_vortex_within_and_beyond_the_w_infographic.json
 
-## 12. Transition to turbulence in swirl created by a vertical magnetic field in liquid metal electrodes
+## 13. Transition to turbulence in swirl created by a vertical magnetic field in liquid metal electrodes
 
 - Date: 2026-10-29
 - Category: Turbulence
@@ -99,7 +107,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.39348v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-29-arxiv-transition_to_turbulence_in_swirl_created_by_a_vertical_magnetic_field_in_liquid_metal_ele_infographic.json
 
-## 13. Identifiability Limits of Reynolds-Stress Attribution in Localized Nonorthogonal Flow Representations
+## 14. Identifiability Limits of Reynolds-Stress Attribution in Localized Nonorthogonal Flow Representations
 
 - Date: 2026-10-28
 - Category: Turbulence
@@ -107,7 +115,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.38743v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-28-arxiv-identifiability_limits_of_reynolds_stress_attribution_in_localized_nonorthogonal_flow_repr_infographic.json
 
-## 14. Kinetic linear stability theory for incompressible parallel shear flows with the full Boltzmann collision operator
+## 15. Kinetic linear stability theory for incompressible parallel shear flows with the full Boltzmann collision operator
 
 - Date: 2026-10-28
 - Category: CFD Surrogates
@@ -115,7 +123,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.38714v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-28-arxiv-kinetic_linear_stability_theory_for_incompressible_parallel_shear_flows_with_the_full_bolt_infographic.json
 
-## 15. Effects of Deep Learning Architecture and Pretraining on Automated Vocal Fold Segmentation in Ex Vivo High-Speed Phonation Images
+## 16. Effects of Deep Learning Architecture and Pretraining on Automated Vocal Fold Segmentation in Ex Vivo High-Speed Phonation Images
 
 - Date: 2026-10-27
 - Category: Turbulence
@@ -123,7 +131,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.37860v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-27-arxiv-effects_of_deep_learning_architecture_and_pretraining_on_automated_vocal_fold_segmentation_infographic.json
 
-## 16. Generative AI in Turbulence: Foundations, Applications, Validations and Benchmarks
+## 17. Generative AI in Turbulence: Foundations, Applications, Validations and Benchmarks
 
 - Date: 2026-10-26
 - Category: Turbulence
@@ -131,21 +139,13 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.35123v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-26-arxiv-generative_ai_in_turbulence_foundations_applications_validations_and_benchmarks_infographic.json
 
-## 17. Wave Turbulence of Capillary Waves in Finite Systems
+## 18. Wave Turbulence of Capillary Waves in Finite Systems
 
 - Date: 2026-10-29
 - Category: Turbulence
 - arXiv: https://arxiv.org/abs/2610.40217v1
 - PDF: https://arxiv.org/pdf/2610.40217v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-29-arxiv-wave_turbulence_of_capillary_waves_in_finite_systems_infographic.json
-
-## 18. Free-vortex-wake dynamics of airborne wind energy kites in crosswind flight
-
-- Date: 2026-10-27
-- Category: Aerodynamics
-- arXiv: https://arxiv.org/abs/2610.37313v1
-- PDF: https://arxiv.org/pdf/2610.37313v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-27-arxiv-free_vortex_wake_dynamics_of_airborne_wind_energy_kites_in_crosswind_flight_infographic.json
 
 ## 19. Toward fully stabilized flow control using deep reinforcement learning
 
