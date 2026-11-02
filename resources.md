@@ -1,9 +1,17 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-11-01
+Generated: 2026-11-02
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
-## 1. Differentiable Schwarz-Coupled Solvers for Thin Boundary Layer Transport: Inverse Modeling via Agentic AI Optimization
+## 1. Hard Constraint Projection in a Physics Informed Neural Network (Burgers)
+
+- Date: 2026-10-30
+- Category: Physics-Informed ML
+- arXiv: https://arxiv.org/abs/2610.42106v1
+- PDF: https://arxiv.org/pdf/2610.42106v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-30-arxiv-hard_constraint_projection_in_a_physics_informed_neural_network_burgers_infographic.json
+
+## 2. Differentiable Schwarz-Coupled Solvers for Thin Boundary Layer Transport: Inverse Modeling via Agentic AI Optimization
 
 - Date: 2026-10-28
 - Category: Turbulence
@@ -11,7 +19,15 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.38672v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-28-arxiv-differentiable_schwarz_coupled_solvers_for_thin_boundary_layer_transport_inverse_modeling_infographic.json
 
-## 2. Triadic energy cascades and linear amplification mechanisms in supersonic turbulent boundary layers over curved walls
+## 3. Physics-Informed Latent Neural ODEs for Reduced-Order Modeling of Hydrogen, Ammonia, and Methane Combustion Kinetics
+
+- Date: 2026-10-30
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2610.42016v1
+- PDF: https://arxiv.org/pdf/2610.42016v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-30-arxiv-physics_informed_latent_neural_odes_for_reduced_order_modeling_of_hydrogen_ammonia_and_met_infographic.json
+
+## 4. Triadic energy cascades and linear amplification mechanisms in supersonic turbulent boundary layers over curved walls
 
 - Date: 2026-10-29
 - Category: Turbulence
@@ -19,7 +35,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.39123v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-29-arxiv-triadic_energy_cascades_and_linear_amplification_mechanisms_in_supersonic_turbulent_bounda_infographic.json
 
-## 3. Agentic AI Reasoning and Learned Sampling for Task-Aware Projection Selection in Sparse-View CT: Predicting Hemodynamics
+## 5. Agentic AI Reasoning and Learned Sampling for Task-Aware Projection Selection in Sparse-View CT: Predicting Hemodynamics
 
 - Date: 2026-10-28
 - Category: CFD Surrogates
@@ -27,7 +43,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.39003v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-28-arxiv-agentic_ai_reasoning_and_learned_sampling_for_task_aware_projection_selection_in_sparse_vi_infographic.json
 
-## 4. Inherent Failure Modes of Physics-Informed Neural Networks for Buoyancy-Driven Flow: Role of Non-Dimensionalization in Network Training
+## 6. Inherent Failure Modes of Physics-Informed Neural Networks for Buoyancy-Driven Flow: Role of Non-Dimensionalization in Network Training
 
 - Date: 2026-10-28
 - Category: Physics-Informed ML
@@ -35,7 +51,15 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.38889v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-28-arxiv-inherent_failure_modes_of_physics_informed_neural_networks_for_buoyancy_driven_flow_role_o_infographic.json
 
-## 5. Regional accuracy of physics-informed neural networks (PINNs) for recirculation in a deep lid-driven cavity
+## 7. Benchmarking One-Dimensional Quantum Lattice Boltzmann Methods on Quantum Hardware
+
+- Date: 2026-10-29
+- Category: CFD Surrogates
+- arXiv: https://arxiv.org/abs/2610.40851v1
+- PDF: https://arxiv.org/pdf/2610.40851v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-29-arxiv-benchmarking_one_dimensional_quantum_lattice_boltzmann_methods_on_quantum_hardware_infographic.json
+
+## 8. Regional accuracy of physics-informed neural networks (PINNs) for recirculation in a deep lid-driven cavity
 
 - Date: 2026-10-28
 - Category: Physics-Informed ML
@@ -43,7 +67,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.38814v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-28-arxiv-regional_accuracy_of_physics_informed_neural_networks_pinns_for_recirculation_in_a_deep_li_infographic.json
 
-## 6. An Optimal Seed Reveals the Dynamical Route to Spontaneous Splitting of Turbulent Puffs
+## 9. An Optimal Seed Reveals the Dynamical Route to Spontaneous Splitting of Turbulent Puffs
 
 - Date: 2026-10-27
 - Category: Turbulence
@@ -51,7 +75,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.38011v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-27-arxiv-an_optimal_seed_reveals_the_dynamical_route_to_spontaneous_splitting_of_turbulent_puffs_infographic.json
 
-## 7. Predicting Sparse Observables in Parameterized Unsteady Flows Using Coarse-Mesh Graph Neural Networks
+## 10. Predicting Sparse Observables in Parameterized Unsteady Flows Using Coarse-Mesh Graph Neural Networks
 
 - Date: 2026-10-27
 - Category: CFD Surrogates
@@ -59,7 +83,63 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.37986v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-27-arxiv-predicting_sparse_observables_in_parameterized_unsteady_flows_using_coarse_mesh_graph_neur_infographic.json
 
-## 8. Optimization of curved vortex generator geometry for enhanced thermal performance in water-to-air finned-tube heat exchanger
+## 11. Turbulence on Hybrid Lattices: regular grids meet self similar cascade models
+
+- Date: 2026-10-30
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2610.41947v1
+- PDF: https://arxiv.org/pdf/2610.41947v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-30-arxiv-turbulence_on_hybrid_lattices_regular_grids_meet_self_similar_cascade_models_infographic.json
+
+## 12. Hydrodynamic regimes of the edge-tone in a simplified recorder mouthpiece
+
+- Date: 2026-10-30
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2610.41467v1
+- PDF: https://arxiv.org/pdf/2610.41467v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-30-arxiv-hydrodynamic_regimes_of_the_edge_tone_in_a_simplified_recorder_mouthpiece_infographic.json
+
+## 13. ART of PIV: Agentic Real-Time Particle Image Velocimetry for Active Flow Control
+
+- Date: 2026-10-30
+- Category: Flow Control
+- arXiv: https://arxiv.org/abs/2610.41304v1
+- PDF: https://arxiv.org/pdf/2610.41304v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-30-arxiv-art_of_piv_agentic_real_time_particle_image_velocimetry_for_active_flow_control_infographic.json
+
+## 14. A Large Eddy Simulation Study of Turbine Pitch Motion Effects on Power Generation in Fully Developed Floating Wind Turbine Arrays
+
+- Date: 2026-10-30
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2610.41224v1
+- PDF: https://arxiv.org/pdf/2610.41224v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-30-arxiv-a_large_eddy_simulation_study_of_turbine_pitch_motion_effects_on_power_generation_in_fully_infographic.json
+
+## 15. An analytical framework for wave-coherent airflow over fast surface waves
+
+- Date: 2026-10-29
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2610.40933v1
+- PDF: https://arxiv.org/pdf/2610.40933v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-29-arxiv-an_analytical_framework_for_wave_coherent_airflow_over_fast_surface_waves_infographic.json
+
+## 16. Novel Mixed Approximate Deconvolution Large-Eddy Simulation Models for Two-Phase Flows
+
+- Date: 2026-10-30
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2610.41975v1
+- PDF: https://arxiv.org/pdf/2610.41975v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-30-arxiv-novel_mixed_approximate_deconvolution_large_eddy_simulation_models_for_two_phase_flows_infographic.json
+
+## 17. Frozen in Time: How a Physics Foundation Model Forgets Under Sim-to-Real Adaptation
+
+- Date: 2026-10-29
+- Category: AI Fluid Mechanics
+- arXiv: https://arxiv.org/abs/2610.40857v1
+- PDF: https://arxiv.org/pdf/2610.40857v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-29-arxiv-frozen_in_time_how_a_physics_foundation_model_forgets_under_sim_to_real_adaptation_infographic.json
+
+## 18. Optimization of curved vortex generator geometry for enhanced thermal performance in water-to-air finned-tube heat exchanger
 
 - Date: 2026-10-29
 - Category: Turbulence
@@ -67,15 +147,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.39780v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-29-arxiv-optimization_of_curved_vortex_generator_geometry_for_enhanced_thermal_performance_in_water_infographic.json
 
-## 9. Aerodynamic Shape Optimization of unsteady flapping wings
-
-- Date: 2026-10-29
-- Category: CFD Surrogates
-- arXiv: https://arxiv.org/abs/2610.40426v1
-- PDF: https://arxiv.org/pdf/2610.40426v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-29-arxiv-aerodynamic_shape_optimization_of_unsteady_flapping_wings_infographic.json
-
-## 10. Causality-informed dynamic mode decomposition for unsteady flow analysis
+## 19. Causality-informed dynamic mode decomposition for unsteady flow analysis
 
 - Date: 2026-10-29
 - Category: CFD Surrogates
@@ -83,82 +155,10 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2610.39522v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-29-arxiv-causality_informed_dynamic_mode_decomposition_for_unsteady_flow_analysis_infographic.json
 
-## 11. Nonlinear dynamics of short-wave instabilities in a helical vortex within and beyond the weakly nonlinear regime
+## 20. Nonlinear dynamics of short-wave instabilities in a helical vortex within and beyond the weakly nonlinear regime
 
 - Date: 2026-10-29
 - Category: CFD Surrogates
 - arXiv: https://arxiv.org/abs/2610.39386v1
 - PDF: https://arxiv.org/pdf/2610.39386v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-29-arxiv-nonlinear_dynamics_of_short_wave_instabilities_in_a_helical_vortex_within_and_beyond_the_w_infographic.json
-
-## 12. Transition to turbulence in swirl created by a vertical magnetic field in liquid metal electrodes
-
-- Date: 2026-10-29
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2610.39348v1
-- PDF: https://arxiv.org/pdf/2610.39348v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-29-arxiv-transition_to_turbulence_in_swirl_created_by_a_vertical_magnetic_field_in_liquid_metal_ele_infographic.json
-
-## 13. Identifiability Limits of Reynolds-Stress Attribution in Localized Nonorthogonal Flow Representations
-
-- Date: 2026-10-28
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2610.38743v1
-- PDF: https://arxiv.org/pdf/2610.38743v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-28-arxiv-identifiability_limits_of_reynolds_stress_attribution_in_localized_nonorthogonal_flow_repr_infographic.json
-
-## 14. Kinetic linear stability theory for incompressible parallel shear flows with the full Boltzmann collision operator
-
-- Date: 2026-10-28
-- Category: CFD Surrogates
-- arXiv: https://arxiv.org/abs/2610.38714v1
-- PDF: https://arxiv.org/pdf/2610.38714v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-28-arxiv-kinetic_linear_stability_theory_for_incompressible_parallel_shear_flows_with_the_full_bolt_infographic.json
-
-## 15. Effects of Deep Learning Architecture and Pretraining on Automated Vocal Fold Segmentation in Ex Vivo High-Speed Phonation Images
-
-- Date: 2026-10-27
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2610.37860v1
-- PDF: https://arxiv.org/pdf/2610.37860v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-27-arxiv-effects_of_deep_learning_architecture_and_pretraining_on_automated_vocal_fold_segmentation_infographic.json
-
-## 16. Generative AI in Turbulence: Foundations, Applications, Validations and Benchmarks
-
-- Date: 2026-10-26
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2610.35123v1
-- PDF: https://arxiv.org/pdf/2610.35123v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-26-arxiv-generative_ai_in_turbulence_foundations_applications_validations_and_benchmarks_infographic.json
-
-## 17. Wave Turbulence of Capillary Waves in Finite Systems
-
-- Date: 2026-10-29
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2610.40217v1
-- PDF: https://arxiv.org/pdf/2610.40217v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-29-arxiv-wave_turbulence_of_capillary_waves_in_finite_systems_infographic.json
-
-## 18. Free-vortex-wake dynamics of airborne wind energy kites in crosswind flight
-
-- Date: 2026-10-27
-- Category: Aerodynamics
-- arXiv: https://arxiv.org/abs/2610.37313v1
-- PDF: https://arxiv.org/pdf/2610.37313v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-27-arxiv-free_vortex_wake_dynamics_of_airborne_wind_energy_kites_in_crosswind_flight_infographic.json
-
-## 19. Toward fully stabilized flow control using deep reinforcement learning
-
-- Date: 2026-10-26
-- Category: Flow Control
-- arXiv: https://arxiv.org/abs/2610.35676v1
-- PDF: https://arxiv.org/pdf/2610.35676v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-26-arxiv-toward_fully_stabilized_flow_control_using_deep_reinforcement_learning_infographic.json
-
-## 20. From Stochastic Transport Models to High-Dimensional Bayesian Inference
-
-- Date: 2026-10-26
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2610.35352v1
-- PDF: https://arxiv.org/pdf/2610.35352v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-26-arxiv-from_stochastic_transport_models_to_high_dimensional_bayesian_inference_infographic.json

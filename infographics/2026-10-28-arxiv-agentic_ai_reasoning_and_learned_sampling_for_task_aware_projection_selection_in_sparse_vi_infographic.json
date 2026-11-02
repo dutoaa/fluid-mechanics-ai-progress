@@ -1,19 +1,19 @@
 {
-  "key_insight": "Task-aware CT projection selection improves sparse-view hemodynamic prediction, but views optimized for this task can yield poor image reconstructions.",
-  "engineering_relevance": "Acquisition tailored to downstream flow quantities could reduce CT measurement requirements without prioritizing anatomical reconstruction quality.",
+  "key_insight": "Selecting sparse CT views for hemodynamic prediction rather than image reconstruction improves TAWSS prediction, with Agentic and Soft top-K selection achieving the lowest mean field errors.",
+  "engineering_relevance": "Task-aware acquisition could enable fewer CT projections while preserving information needed to predict aneurysm wall shear stress.",
   "method": [
     "Generate synthetic fan-beam CTA projections from intracranial aneurysm CFD simulations.",
     "Train a Fourier neural operator to predict spatial TAWSS fields and spatially averaged TAWSS.",
-    "Compare uniform and golden-angle sampling with Gumbel-Softmax, Soft top-K, and agentic AI selection."
+    "Compare uniform and golden-angle sampling with Gumbel-Softmax, Soft top-K, and agentic AI selection across view budgets."
   ],
-  "evidence_signal": "Across tested view budgets, agentic AI and Soft top-K achieved the lowest mean spatial-field errors, with agentic AI slightly better; optimized selection mattered most under extreme sparsity.",
-  "watch_item": "Evaluation used synthetic CFD-derived projections; robustness to clinical CT noise and patient variability remains unestablished in the abstract.",
+  "evidence_signal": "On synthetic CTA data, Agentic selection slightly outperformed Soft top-K for spatial TAWSS, and both substantially outperformed fixed sampling under extreme sparsity.",
+  "watch_item": "Validation on clinical acquisitions is needed; masks optimized for hemodynamic prediction produced poor image reconstructions.",
   "hashtags": [
     "#AIFluidMechanics",
+    "#TaskAwareSampling",
     "#SparseViewCT",
-    "#Hemodynamics",
     "#NeuralOperators",
-    "#TaskAwareSampling"
+    "#Hemodynamics"
   ],
   "model": "gpt-6.1-sol",
   "service_tier": "ultrafast",
@@ -21,6 +21,6 @@
   "paper_title": "Agentic AI Reasoning and Learned Sampling for Task-Aware Projection Selection in Sparse-View CT: Predicting Hemodynamics",
   "paper_date": "2026-10-28",
   "paper_category": "CFD Surrogates",
-  "generated_at": "2026-11-01T14:50:11",
+  "generated_at": "2026-11-02T17:59:45",
   "generator": "openai"
 }
