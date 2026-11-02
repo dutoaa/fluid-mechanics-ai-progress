@@ -1,0 +1,85 @@
+{
+  "repo_title": "AI Fluid Mechanics",
+  "period": "month",
+  "label": "2026-10",
+  "author": "William Sun with help from OpenAI",
+  "paper_count": 208,
+  "analysis": {
+    "author": "William Sun with help from OpenAI",
+    "period": "2026-10",
+    "executive_summary": "The supplied October 2026 papers emphasize integrating AI with the mathematical and numerical structure of fluid mechanics rather than treating simulation as a generic prediction task. Prominent directions include conservation-preserving neural operators, geometry-aware surrogates, physically admissible constitutive learning, agent-assisted turbulence-model discovery, and improved state representations for reinforcement-learning control. Data assimilation, synthetic datasets, and differentiable solvers connect these methods to experiments and inverse problems. Equally important, several studies expose limitations of physics-informed learning: coarse-grained fields need appropriate closures, nondimensionalization can dominate trainability, and aggregate errors can hide failures in weak-flow regions. Application breadth spans cardiovascular flows, porous media, urban microclimates, turbomachinery, and aerodynamic control. These observations describe the supplied collection, not independently verified field-wide trends; many abstracts are truncated, limiting assessment of validation, computational gains, and generalization.",
+    "major_themes": [
+      "Physics by construction: exact conservation projections, divergence-free representations, convex dissipation potentials, and boundary-compatible formulations aim to restrict learning to physically admissible solutions.",
+      "Geometry-aware and task-specific surrogates: centerline attention, finite-volume convolutions, operator splitting, and coarse-mesh graph networks tailor computation to complex domains and required observables.",
+      "Agentic scientific workflows: LLM agents are explored for proposing and evaluating turbulence closures, while other studies investigate agent-assisted inverse modeling and measurement selection.",
+      "Physics-informed learning under scrutiny: filtering, coefficient-induced gradient imbalance, and regional solution errors challenge the assumption that a small residual ensures an accurate flow.",
+      "Probabilistic turbulence reconstruction: generative approaches target distributions of plausible instantaneous fields, with growing emphasis on validation beyond visual realism and low-order statistics.",
+      "Data and differentiable infrastructure: pore-scale datasets, physiologically consistent synthetic CFD, experimental assimilation, and CUDA differentiation support training and inverse analysis.",
+      "State-aware control and sensing: enriched dynamic features, filtering, sparse-sensor reconstruction, and task-aware sampling connect learned models to actionable flow objectives."
+    ],
+    "notable_papers": [
+      {
+        "title": "Only Linear Constraints Survive Coarse-Graining: Evaluating Physics-Constrained Neural Operators on Stochastically Forced Turbulence",
+        "why_it_matters": "Explains why enforcing an unclosed nonlinear PDE on filtered data can impose an implicit closure. Under the stated periodic, translation-invariant filtering assumptions, it enforces continuity and global momentum balance through an exact Fourier-neural-operator output projection costing O(N log N). The central contribution is guidance on which physical constraints remain valid at the learned resolution."
+      },
+      {
+        "title": "Automated Discovery of Physically Interpretable Subgrid Length Scales for Detached Eddy Simulation via Agentic AI",
+        "why_it_matters": "DEScover assigns proposal, review, implementation, and evaluation tasks to four LLM agents, starting from a user-specified physical modeling idea. The abstract reports that its best candidate outperforms the standard maximum-cell-size length scale across four test cases. This is a concrete example of agentic closure development, though broader transfer and search reproducibility remain to be assessed."
+      },
+      {
+        "title": "Well-posed by Design: Learning Constitutive Laws from Velocity Data using Convex Neural Network Potentials",
+        "why_it_matters": "Learns a dissipation potential rather than directly fitting a constitutive law. Convexity, frame-indifference, and dissipativity are built into the formulation to preserve structural properties needed by the forward problem. It illustrates how neural expressiveness can be constrained by continuum-mechanical admissibility."
+      },
+      {
+        "title": "Inherent Failure Modes of Physics-Informed Neural Networks for Buoyancy-Driven Flow: Role of Non-Dimensionalization in Network Training",
+        "why_it_matters": "Provides a quantitative warning about scaling choices. For the reported heated-cavity tests, free-fall scaling yields mean-Nusselt-number errors below 1.1% at Rayleigh numbers up to 10000, whereas thermal-diffusive scaling produces errors of 157–650% and divergence at 100000. Direct gradient measurements support a coefficient-induced imbalance mechanism."
+      },
+      {
+        "title": "Neural Operator Splitting for Fluid Dynamics in Complex Geometry",
+        "why_it_matters": "Learns physically interpretable fractional steps instead of a monolithic time-update map. Its conditional-linear Fourier neural operator combines linear state mappings with nonlinear geometry conditioning, while symmetry sampling and corrective cycling target rollout error accumulation. The supplied abstract establishes the design but does not provide complete performance results."
+      },
+      {
+        "title": "Assisted Turbulence Modeling via Data Assimilation and Machine Learning for Turbomachinery Flows",
+        "why_it_matters": "Combines experimental PIV, steady RANS, and unsteady hybrid RANS/LES through a Multi-Fidelity Ensemble Kalman Filter. The resulting enriched database trains learned forcing terms for discretized Navier–Stokes equations. The abstract reports reduced experiment–simulation discrepancies at the assimilation stage, linking experimental evidence to model correction."
+      },
+      {
+        "title": "PoreML: A Data-Driven Framework for Learning Multiphase Flow in Porous Media",
+        "why_it_matters": "Introduces an open-source workflow joining a validated GPU-native lattice Boltzmann solver with data generation, training, and evaluation. Its reported 3.3 TB dataset contains 560 simulations. Such shared infrastructure addresses a major obstacle to learning time-dependent, three-dimensional multiphase dynamics: limited standardized data."
+      },
+      {
+        "title": "CARS: a centerline-anchored attention surrogate for coronary blood flow on skeleton-generated lumen geometries",
+        "why_it_matters": "Uses vessel centerlines and local radii as the attention reference for predicting steady pressure and velocity at query points. Reported relative L2 errors span 0.063–0.149 across targets and coronary territories, with 87 ms inference per case. Its geometry representation is promising for rapid assessment, but the evidence described concerns territory-specific training and skeleton-generated lumens."
+      },
+      {
+        "title": "State-augmented deep reinforcement learning for active flow control around an elliptical cylinder",
+        "why_it_matters": "Combines richer dynamic features with Kalman-filtered state estimation to address increasingly difficult wakes as cylinder aspect ratio decreases. The abstract reports complete vortex-shedding suppression and maximum drag reduction of 32.2% for the most slender case. The result highlights state representation as a control bottleneck, not merely policy optimization."
+      },
+      {
+        "title": "Generative AI in Turbulence: Foundations, Applications, Validations and Benchmarks",
+        "why_it_matters": "Frames generative turbulence modeling around multiple physically plausible outcomes rather than deterministic reconstruction alone. As a review and perspective contribution, it stresses that visual quality, pointwise error, and low-order spectra are insufficient to validate multiscale dynamics, intermittency, extreme events, and stochastic transport."
+      }
+    ],
+    "field_progress": [
+      "Across the collection, physical structure is increasingly embedded in architectures, projections, and parameterizations rather than supplied only through residual penalties. The approaches address different guarantees and should not be treated as interchangeable.",
+      "Surrogate design is becoming more selective about both representation and output: geometry-specific attention, mesh-compatible convolutions, and sparse-observable prediction avoid unnecessary full-field computation.",
+      "Learning is being integrated more tightly with established scientific workflows, including multifidelity assimilation, fractional-step solvers, PDE-constrained inversion, and adjoint differentiation.",
+      "Reported PINN failure mechanisms and coarse-graining analysis sharpen the distinction between satisfying a chosen training objective and accurately representing the intended physical system.",
+      "Generative models and shared simulation datasets broaden the scope from single best-estimate fields toward turbulent variability and reproducible evaluation, although the supplied metadata do not establish mature common benchmarks.",
+      "Conventional CFD and turbulence studies remain important context: entrance effects, boundary-layer scaling, numerical sensitivity, and multiphase modeling identify physical regimes and numerical biases that AI methods must respect."
+    ],
+    "open_questions": [
+      "How can learned closures remain valid when resolution, filtering, Reynolds number, geometry, or forcing changes, particularly when nonlinear governing terms are not closed on the training fields?",
+      "Which hard constraints improve generalization, and what additional stability or error analysis is needed beyond conservation, divergence freedom, or a small PDE residual?",
+      "Can agent-discovered turbulence models demonstrate reproducible gains on genuinely unseen flow families after accounting for human guidance, search cost, and candidate-selection bias?",
+      "What benchmarks can jointly assess generative turbulence models for dynamics, intermittency, extreme events, calibrated uncertainty, and long-time statistics?",
+      "How well do geometry-aware biomedical and engineering surrogates transfer from synthetic training domains to measured geometries, uncertain boundary conditions, and experimental observations?",
+      "Do reported control and inference gains persist under sensor noise, actuation limits, model mismatch, and end-to-end computational or energy accounting?"
+    ],
+    "outlook": "The most promising direction suggested by this collection is tighter coupling among learned representations, admissible physics, and established numerical methods. Near-term evaluation should prioritize unseen geometries and flow regimes, resolution-aware constraints, regional and long-horizon accuracy, and complete accounting of training, search, inference, and control costs. Agentic modeling and generative turbulence methods merit attention, but their value will depend on reproducible workflows and stronger validation than selected test-case improvements. Because many supplied abstracts end before their results and limitations, the full papers are needed before drawing firm conclusions about comparative superiority or deployment readiness.",
+    "model": "gpt-6.1-sol",
+    "service_tier": "ultrafast",
+    "generator": "openai"
+  },
+  "markdown_file": "2026-10.md",
+  "generated_at": "2026-11-02T06:35:42"
+}
