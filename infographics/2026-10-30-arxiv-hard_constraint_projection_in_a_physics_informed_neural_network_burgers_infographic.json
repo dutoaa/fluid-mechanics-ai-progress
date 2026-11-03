@@ -1,13 +1,13 @@
 {
-  "key_insight": "A fixed hard-constraint projection layer improves a PINN for 1D Burgers’ flow by enforcing a local discrete approximation of the governing PDE.",
-  "engineering_relevance": "This approach could improve the accuracy and physical consistency of neural flow models while reducing sensitivity to physics collocation-point selection.",
+  "key_insight": "A fixed hard-constraint projection layer improves a PINN’s accuracy by enforcing a local discrete approximation of the nonlinear 1D Burgers’ equation.",
+  "engineering_relevance": "Hard-constraint projection could make physics-informed fluid models more reliable and less sensitive to the number and placement of physics collocation points.",
   "method": [
-    "Locally discretise the nonlinear 1D Burgers’ equation using a finite-difference stencil.",
+    "Locally discretise Burgers’ equation with a finite-difference stencil.",
     "Decompose the discrete equation into constraint and prediction matrices to construct a projection.",
-    "Project PINN velocity predictions onto the discrete constraint set using a final, non-trainable layer."
+    "Apply a final non-trainable layer that projects PINN velocity predictions onto the discrete constraint hyperplane."
   ],
-  "evidence_signal": "Initial tests on an unseen uniform grid show approximately an order-of-magnitude lower data error than a comparable PINN, alongside better PDE adherence.",
-  "watch_item": "The projection enforces a discrete approximation, not the continuous PDE exactly; evidence is preliminary and limited to 1D Burgers’ flow.",
+  "evidence_signal": "On an unseen uniform grid, initial experiments report approximately one order of magnitude lower data error than a comparable PINN, alongside better PDE adherence.",
+  "watch_item": "Exact enforcement applies to the local discrete approximation, not the continuous PDE; evidence is limited to initial 1D Burgers’ experiments.",
   "hashtags": [
     "#PhysicsInformedML",
     "#FluidMechanics",
@@ -21,6 +21,6 @@
   "paper_title": "Hard Constraint Projection in a Physics Informed Neural Network (Burgers)",
   "paper_date": "2026-10-30",
   "paper_category": "Physics-Informed ML",
-  "generated_at": "2026-11-02T17:59:34",
+  "generated_at": "2026-11-03T15:58:30",
   "generator": "openai"
 }
