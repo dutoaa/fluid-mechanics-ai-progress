@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-11-06
+Generated: 2026-11-07
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Projection-based segregated, iterative, and multi-stage physics-informed neural network for incompressible Navier-stokes equations
