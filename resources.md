@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-11-07
+Generated: 2026-11-08
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Projection-based segregated, iterative, and multi-stage physics-informed neural network for incompressible Navier-stokes equations
@@ -131,15 +131,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.06825v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-04-arxiv-interscale_energy_transfer_in_a_propeller_driven_homogeneous_and_isotropic_turbulence_gene_infographic.json
 
-## 17. Learned Surrogates of Three-Dimensional Magnetohydrodynamic Turbulence
-
-- Date: 2026-10-31
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2611.01356v1
-- PDF: https://arxiv.org/pdf/2611.01356v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-10-31-arxiv-learned_surrogates_of_three_dimensional_magnetohydrodynamic_turbulence_infographic.json
-
-## 18. The lattice Boltzmann machine
+## 17. The lattice Boltzmann machine
 
 - Date: 2026-11-04
 - Category: Turbulence
@@ -147,7 +139,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.07139v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-04-arxiv-the_lattice_boltzmann_machine_infographic.json
 
-## 19. Novel hydrodynamic features in dissipative spin-polarized fluids
+## 18. Novel hydrodynamic features in dissipative spin-polarized fluids
 
 - Date: 2026-11-03
 - Category: Turbulence
@@ -155,10 +147,18 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.06945v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-03-arxiv-novel_hydrodynamic_features_in_dissipative_spin_polarized_fluids_infographic.json
 
-## 20. A physics-informed neural network method for pressure-driven turbine-blade optimization
+## 19. A physics-informed neural network method for pressure-driven turbine-blade optimization
 
 - Date: 2026-11-03
 - Category: Turbulence
 - arXiv: https://arxiv.org/abs/2611.05691v1
 - PDF: https://arxiv.org/pdf/2611.05691v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-03-arxiv-a_physics_informed_neural_network_method_for_pressure_driven_turbine_blade_optimization_infographic.json
+
+## 20. Designing turbulence through hierarchies
+
+- Date: 2026-11-03
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2611.04706v1
+- PDF: https://arxiv.org/pdf/2611.04706v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-03-arxiv-designing_turbulence_through_hierarchies_infographic.json
