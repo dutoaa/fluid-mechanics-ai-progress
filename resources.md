@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-11-13
+Generated: 2026-11-14
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. AeroZoo: A Benchmark of Well-Posed Flow Problems for Foundation Models of Aerodynamics
