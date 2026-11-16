@@ -1,13 +1,13 @@
 {
-  "key_insight": "ISLA builds physical invariances into a transformer for steady, boundary-driven PDEs, preserving predictions across rigid motions, reflections, unit changes, and mesh refinement.",
-  "engineering_relevance": "More consistent predictions across poses, units, and boundary meshes could make aerodynamic surrogates more reliable in engineering workflows.",
+  "key_insight": "ISLA builds physical symmetries and mesh-refinement consistency into a transformer for steady, boundary-driven PDEs without feeding coordinates directly to learned operations.",
+  "engineering_relevance": "The approach targets reliable aerodynamic surrogates whose predictions remain consistent across object poses, unit changes, and boundary discretizations.",
   "method": [
-    "Uses distances and relative angles to learned slice anchors, never feeding coordinates directly into learned operations.",
-    "Treats boundary cells as tokens, weights boundary sums by quadrature, and normalizes lengths using a boundary-derived scale.",
+    "Uses distances and relative angles to learned slice anchors, with lengths normalized by a boundary-derived scale.",
+    "Treats every boundary cell as a token and weights every boundary sum by quadrature.",
     "Predicts interior fields through a tree-accelerated learned boundary kernel, with each query independent of other queries."
   ],
-  "evidence_signal": "On AeroZoo’s 2,816 flows, mean reference-scaled velocity and pressure errors were at least 3.1× and 3.3× lower than any baseline’s; on AirfRANS, ISLA ranked second to GLOBE.",
-  "watch_item": "The abstract addresses steady, boundary-driven PDEs; performance on unsteady flows and broader PDE classes remains unestablished.",
+  "evidence_signal": "On AeroZoo’s 2,816 flows, mean reference-scaled velocity and pressure errors are at least 3.1× and 3.3× lower than any baseline’s; on AirfRANS, ISLA ranks behind GLOBE but achieves at least 1.6× lower errors than Transolver and GeoTransolver.",
+  "watch_item": "Results concern steady, boundary-driven PDEs; performance on unsteady turbulence and the cost of retaining every boundary cell require further evaluation.",
   "hashtags": [
     "#AIFluidMechanics",
     "#CFD",
@@ -21,6 +21,6 @@
   "paper_title": "ISLA: A Coordinate-Free, Measure-Weighted Transformer for Boundary-Driven PDEs",
   "paper_date": "2026-11-12",
   "paper_category": "Turbulence",
-  "generated_at": "2026-11-15T15:28:29",
+  "generated_at": "2026-11-16T18:07:15",
   "generator": "openai"
 }

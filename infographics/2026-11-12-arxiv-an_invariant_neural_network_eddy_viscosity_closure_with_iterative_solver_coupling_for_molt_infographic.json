@@ -1,13 +1,13 @@
 {
-  "key_insight": "An invariant neural-network closure recovers two-equation RANS turbulence behavior in coarse-mesh reactor simulations without solving turbulence transport equations.",
-  "engineering_relevance": "The closure improves molten-salt reactor flow predictions at system-code cost, taking about 0.2 core-hours versus 330 core-hours for Nek5000 in the reported transient.",
+  "key_insight": "An invariant neural-network closure brings two-equation RANS-like turbulence behavior to coarse-mesh reactor simulations without solving turbulence transport equations.",
+  "engineering_relevance": "The closure improves molten-salt reactor flow predictions while retaining the low computational cost of a system thermal-hydraulics code.",
   "method": [
-    "Predict turbulent kinetic energy and timescale from neighboring flow and geometry, with exact invariance to translation, Galilean boosts, rotation, reflection, and neighbor ordering.",
-    "Insert non-negative eddy viscosity into SAM’s implicit diffusion operator to maintain well-conditioned momentum equations.",
+    "Predict elementwise turbulent kinetic energy and timescale from neighboring flow and geometry.",
+    "Enforce translation, Galilean, rotation, reflection, and neighbor-order invariance; insert non-negative eddy viscosity into SAM’s implicit diffusive operator.",
     "Iteratively retrain on SAM flow states against fixed Nek5000 targets to reduce coarse-mesh covariate shift."
   ],
-  "evidence_signal": "On a held-out steady state, the closure reproduces the reference recirculation cell and eddy-viscosity plume; during a 120 s pump coastdown, velocity error falls from 37.6% to 17.7%, with 12% time-averaged relative eddy-viscosity error.",
-  "watch_item": "Coarse-mesh resolution remains a source of velocity error, and accuracy beyond the reported MSFR cases is not established.",
+  "evidence_signal": "For a 120 s pump coastdown, velocity error fell from 37.6% to 17.7%, time-averaged eddy-viscosity error was 12%, and runtime was about 0.2 core-hours versus 330 for Nek5000.",
+  "watch_item": "Coarse-mesh resolution still limits velocity accuracy, and transfer beyond the evaluated MSFR conditions remains unestablished.",
   "hashtags": [
     "#AIFluidMechanics",
     "#TurbulenceModeling",
@@ -21,6 +21,6 @@
   "paper_title": "An Invariant Neural-Network Eddy-Viscosity Closure with Iterative Solver Coupling for Molten Salt Fast Reactor Thermal-Hydraulics",
   "paper_date": "2026-11-12",
   "paper_category": "Turbulence",
-  "generated_at": "2026-11-15T15:28:32",
+  "generated_at": "2026-11-16T18:07:17",
   "generator": "openai"
 }

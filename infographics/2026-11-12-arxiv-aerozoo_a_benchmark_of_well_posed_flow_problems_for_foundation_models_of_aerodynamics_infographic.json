@@ -1,19 +1,19 @@
 {
-  "key_insight": "Explicit boundary-condition inputs sharply improve aerodynamic surrogate accuracy, but generalization to unseen enclosures and boundary layouts remains difficult.",
-  "engineering_relevance": "AeroZoo tests whether fast CFD surrogates can handle new shapes and flow domains under fully specified physical conditions.",
+  "key_insight": "AeroZoo shows that explicit boundary-condition inputs sharply improve aerodynamic flow prediction, while unseen enclosures and boundary-condition layouts remain major generalization challenges.",
+  "engineering_relevance": "The benchmark tests whether fast CFD surrogates can handle new shapes and flow domains using solver-style inputs rather than geometry alone.",
   "method": [
-    "Generate 3,815 time-mean unsteady RANS solutions with a transition model across seven geometry families and eight enclosure configurations.",
-    "Represent each problem using boundary meshes grouped by condition type, prescribed values and fluid properties.",
+    "Generate 3,815 time-mean unsteady RANS solutions with a transition model across seven geometry families, eight enclosures and Reynolds numbers from 10³ to 10⁸.",
+    "Specify each problem through boundary meshes grouped by condition type, prescribed values and fluid properties.",
     "Evaluate two tasks using engineering metrics and 22 frozen, geometry-disjoint splits."
   ],
-  "evidence_signal": "The canonical benchmark contains 2,816 stable-mean cases; boundary-condition tokens reduce GeoTransolver's median velocity error from 76.9% to 8.4% of inlet speed in single-seed runs, while ISLA reaches 5.3% over four seeds.",
-  "watch_item": "On the same test samples, holding out enclosures or boundary-condition layouts raises ISLA's error 2.4–9.2 times, highlighting deployment risks beyond familiar flow domains.",
+  "evidence_signal": "On the 2,816-sample canonical benchmark's random split, boundary-condition tokens reduced GeoTransolver's median velocity error from 76.9% to 8.4% of inlet speed in single-seed runs; ISLA reached 5.3% over four seeds.",
+  "watch_item": "Held-out enclosures or boundary-condition layouts increased ISLA's error by 2.4–9.2×, cautioning against assuming reliable deployment beyond training conditions.",
   "hashtags": [
+    "#AeroZoo",
     "#AIForCFD",
     "#FluidMechanics",
-    "#Aerodynamics",
     "#FoundationModels",
-    "#CFDBenchmark"
+    "#ScientificMachineLearning"
   ],
   "model": "gpt-6.1-sol",
   "service_tier": "ultrafast",
@@ -21,6 +21,6 @@
   "paper_title": "AeroZoo: A Benchmark of Well-Posed Flow Problems for Foundation Models of Aerodynamics",
   "paper_date": "2026-11-12",
   "paper_category": "Turbulence",
-  "generated_at": "2026-11-15T15:28:23",
+  "generated_at": "2026-11-16T18:07:01",
   "generator": "openai"
 }
