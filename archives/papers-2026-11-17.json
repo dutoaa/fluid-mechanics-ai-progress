@@ -1,0 +1,1085 @@
+[
+  {
+    "id": "2026-11-12-arxiv-aerozoo_a_benchmark_of_well_posed_flow_problems_for_foundation_models_of_aerodynamics",
+    "arxiv_id": "2611.17152v1",
+    "date": "2026-11-12",
+    "title": "AeroZoo: A Benchmark of Well-Posed Flow Problems for Foundation Models of Aerodynamics",
+    "authors": "Peter Sharpe, Carmelo Gonzales, Corey Adams, Mehdi Ataei, Sanjay Choudhry",
+    "abstract": "Neural surrogates for computational fluid dynamics (CFD) are trained and ranked on datasets that each vary one design family in one flow domain. Such datasets cannot test the least that an aerodynamic foundation model must do: predict CFD-quality incompressible flow in seconds for new shapes in new enclosures. On DrivAerML, larger models and longer training barely lower Transolver's error; doubling the training cases cuts it by about 12% up to 400 cases, exhausting the dataset. We introduce AeroZoo, a benchmark and training corpus of 3,815 time-mean solutions to the unsteady Reynolds-averaged Navier--Stokes (RANS) equations with a transition model, across seven geometry families, eight enclosure configurations and Reynolds numbers from $10^3$ to $10^8$. Each sample poses a well-posed PDE problem in the form a solver receives it: the boundary meshes grouped by condition type, the prescribed values and the fluid properties. The 2,816 samples with a stable time mean form the canonical benchmark: two tasks, engineering metrics and 22 frozen splits, disjoint in geometry, that hold out geometry families, enclosures, boundary-condition layouts and Reynolds ranges. On the random split, boundary-condition tokens cut GeoTransolver's median velocity error from 76.9% to 8.4% of the inlet speed in single-seed runs (uniform inlet flow: 11.0%). ISLA, a transformer for boundary-driven PDEs, reaches 5.3% over four seeds, about 4 times the change from a finer mesh. On the same test samples, a held-out geometry family barely changes ISLA's error relative to uniform flow, and a held-out enclosure or boundary-condition layout raises it 2.4 to 9.2 times. The data and the scoring code will be released.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-11-12T17:36:09Z",
+    "updated": "2026-11-12T17:36:09Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.CE",
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.17152v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.17152v1"
+      }
+    ],
+    "score": 81,
+    "infographic": {
+      "key_insight": "AeroZoo shows that explicit boundary-condition inputs sharply improve aerodynamic flow prediction, while unseen enclosures and boundary-condition layouts remain major generalization challenges.",
+      "engineering_relevance": "The benchmark tests whether fast CFD surrogates can handle new shapes and flow domains using solver-style inputs rather than geometry alone.",
+      "method": [
+        "Generate 3,815 time-mean unsteady RANS solutions with a transition model across seven geometry families, eight enclosures and Reynolds numbers from 10³ to 10⁸.",
+        "Specify each problem through boundary meshes grouped by condition type, prescribed values and fluid properties.",
+        "Evaluate two tasks using engineering metrics and 22 frozen, geometry-disjoint splits."
+      ],
+      "evidence_signal": "On the 2,816-sample canonical benchmark's random split, boundary-condition tokens reduced GeoTransolver's median velocity error from 76.9% to 8.4% of inlet speed in single-seed runs; ISLA reached 5.3% over four seeds.",
+      "watch_item": "Held-out enclosures or boundary-condition layouts increased ISLA's error by 2.4–9.2×, cautioning against assuming reliable deployment beyond training conditions.",
+      "hashtags": [
+        "#AeroZoo",
+        "#AIForCFD",
+        "#FluidMechanics",
+        "#FoundationModels",
+        "#ScientificMachineLearning"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-12-arxiv-aerozoo_a_benchmark_of_well_posed_flow_problems_for_foundation_models_of_aerodynamics",
+      "paper_title": "AeroZoo: A Benchmark of Well-Posed Flow Problems for Foundation Models of Aerodynamics",
+      "paper_date": "2026-11-12",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-11-16T18:07:01",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-11-arxiv-gradient_aware_ai_agents_for_autonomous_turbulence_model_discovery_via_differentiable_cfd",
+    "arxiv_id": "2611.16082v1",
+    "date": "2026-11-11",
+    "title": "Gradient-Aware AI Agents for Autonomous Turbulence Model Discovery via Differentiable CFD",
+    "authors": "Yi Liu, Xiantao Fan, Mingqi Xu, Jian-Xun Wang",
+    "abstract": "Turbulence modeling relies on human choices of closure form, physical inputs, and tunable parameters. Training closures a posteriori is efficient only with gradients through long chaotic rollouts, which few solvers provide. Most a posteriori approaches therefore resort to gradient-free optimization, and nearly all fix the closure form in advance, learning only its parameters. In this work, we introduce a gradient-aware agentic framework that poses closure discovery as a bilevel problem: a multi-agent large language model (LLM) system searches over closure forms, while a GPU-native differentiable computational fluid dynamics (CFD) solver supplies gradients, making differentiable a posteriori learning an action of the autonomous AI agent. For each proposal, the agents construct a differentiable training program by embedding the analytical, neural, or hybrid closure in the solver, implementing a differentiable objective, and validating the gradient path. They then decide whether to evaluate the closure, compute its parameter sensitivities, or train it a posteriori, select the optimization settings, and revise subsequent proposals using the simulation outcomes and returned gradients. Truncated-horizon gradients make this training usable under chaotic dynamics for closures with tens of thousands of parameters. Demonstrations include dissipation-law and subgrid-scale closure discovery in two-dimensional turbulence and wall-model discovery for large-eddy simulation of three-dimensional channel flow. With gradient-based training, the agent recovers reference coefficients that forward evaluation alone does not reach within the same budget, and autonomously discovers and trains analytical and neural closures that improve agreement with the targeted reference statistics. These results demonstrate the feasibility of end-to-end autonomous turbulence model development in time-resolved flows.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-11-11T22:50:33Z",
+    "updated": "2026-11-11T22:50:33Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "cs.LG",
+      "cs.MA",
+      "physics.comp-ph"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.16082v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.16082v1"
+      }
+    ],
+    "score": 81,
+    "infographic": {
+      "key_insight": "Gradient-aware AI agents can autonomously discover and train turbulence closures by combining LLM-guided model search with differentiable CFD.",
+      "engineering_relevance": "This approach could reduce manual closure design and calibration for turbulence simulations, including large-eddy simulation of wall-bounded flows.",
+      "method": [
+        "Use multi-agent LLMs to search analytical, neural, and hybrid closure forms.",
+        "Embed proposals in a GPU-native differentiable CFD solver and validate objectives and gradient paths.",
+        "Use truncated-horizon gradients for parameter training and feed simulation results back into model search."
+      ],
+      "evidence_signal": "Tests cover 2D dissipation and subgrid-scale closures plus 3D channel-flow wall models; gradient-based training recovers reference coefficients missed by forward evaluation within the same budget and improves targeted reference statistics.",
+      "watch_item": "Truncated-horizon gradients enable training under chaotic dynamics, but agreement with targeted statistics does not establish generalization to unseen flow conditions.",
+      "hashtags": [
+        "#AIForScience",
+        "#FluidMechanics",
+        "#TurbulenceModeling",
+        "#DifferentiableCFD",
+        "#AgenticAI"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-11-arxiv-gradient_aware_ai_agents_for_autonomous_turbulence_model_discovery_via_differentiable_cfd",
+      "paper_title": "Gradient-Aware AI Agents for Autonomous Turbulence Model Discovery via Differentiable CFD",
+      "paper_date": "2026-11-11",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-11-16T18:07:03",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-12-arxiv-sumno_spatially_unrolled_multigrid_neural_operator_for_fluid_flow_surrogates",
+    "arxiv_id": "2611.16341v1",
+    "date": "2026-11-12",
+    "title": "SUMNO: Spatially Unrolled Multigrid Neural Operator for Fluid Flow Surrogates",
+    "authors": "Yingqi Hu, Nan Deng, Changxiao Shao, Xiaozhou He",
+    "abstract": "Data-driven surrogate modeling has emerged as a powerful paradigm for accelerating computational fluid dynamics, and hierarchical U-shaped networks, which resemble the structure of classical Geometric Multigrid (GMG) methods, have become prevalent designs. Modern surrogates built on these designs achieve competitive accuracy at a fraction of the cost of numerical solvers; however, accurate prediction of complex flows remains challenging, and no existing architecture leads across them. In such networks, the multigrid analogy mainly concerns the multi-resolution topology, while their components largely follow common vision practice. To address this, this study introduces SUMNO, a multigrid neural operator for fluid flow fields on regular grids that spatially unrolls a V-cycle into a feed-forward U-shaped network. Parameter-free down- and upsampling stand in for restriction and prolongation, and additive skip connections for coarse-grid correction, with normalization-free transfer and skip pathways. Within this macro-architecture, convolutions are used at the fine and intermediate resolutions and shifted-window attention at the coarsest, whose window partitioning is generalized to handle periodicity independently per axis. Evaluated on unseen test configurations across four unsteady and steady flow benchmarks against five representative baselines, SUMNO is best in 5 of 7 settings and ranks second in the remaining two. It reduces the 10-step rollout MSE by about 30% relative to the strongest baseline, and outperforms three baselines with over 130 million parameters using 9.4 million parameters.",
+    "category": "CFD Surrogates",
+    "source": "arXiv",
+    "published": "2026-11-12T06:02:05Z",
+    "updated": "2026-11-12T06:02:05Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "cs.AI"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.16341v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.16341v1"
+      }
+    ],
+    "score": 67,
+    "infographic": {
+      "key_insight": "SUMNO turns a multigrid V-cycle into a U-shaped neural operator, achieving strong fluid-flow prediction accuracy with 9.4 million parameters.",
+      "engineering_relevance": "The architecture offers a compact surrogate approach for accelerating regular-grid CFD predictions across steady and unsteady flows.",
+      "method": [
+        "Use parameter-free downsampling and upsampling for restriction and prolongation, with additive skips for coarse-grid correction.",
+        "Keep transfer and skip pathways normalization-free.",
+        "Combine fine- and intermediate-scale convolutions with coarse-scale shifted-window attention supporting periodicity independently per axis."
+      ],
+      "evidence_signal": "Across four benchmarks and five baselines on unseen test configurations, SUMNO ranks first in 5 of 7 settings and second in two, reducing 10-step rollout MSE by about 30% versus the strongest baseline.",
+      "watch_item": "The method targets regular grids; applicability to unstructured meshes and stability beyond the reported rollout horizon remain unestablished in the abstract.",
+      "hashtags": [
+        "#CFD",
+        "#NeuralOperators",
+        "#Multigrid",
+        "#SurrogateModeling",
+        "#ScientificMachineLearning"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-12-arxiv-sumno_spatially_unrolled_multigrid_neural_operator_for_fluid_flow_surrogates",
+      "paper_title": "SUMNO: Spatially Unrolled Multigrid Neural Operator for Fluid Flow Surrogates",
+      "paper_date": "2026-11-12",
+      "paper_category": "CFD Surrogates",
+      "generated_at": "2026-11-16T18:07:05",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-13-arxiv-active_flow_control_based_on_topological_data_analysis_and_a_dmdc_reduced_order_model_for",
+    "arxiv_id": "2611.18336v1",
+    "date": "2026-11-13",
+    "title": "Active flow control based on topological data analysis and a DMDc reduced-order model for drag reduction",
+    "authors": "Constantini Mbangue Lobe Yiphta, Dina Razafindralandy",
+    "abstract": "Controlling and reducing undesirable vortical structures in unsteady flows is a major issue in aerodynamics. This paper presents an active control methodology that combines topological data analysis (TDA) through persistence diagrams, a reduced-order model based on dynamic mode decomposition with control (DMDc) and receding-horizon model predictive control (MPC). Vortices are detected and characterised by the persistence diagram of the absolute value of the vorticity, which makes it possible to define a target flow in which only the useful vortices are retained. This target flow is computed offline in the reduced space by gradient descent, the derivative of a persistence diagram being defined through a parametrisation of the space of diagrams. The control loop then reduces to a small-dimensional convex quadratic program, whose construction we detail and whose cost we compare with that of an approach that places the diagrams directly in the cost function. The approach is applied numerically to the flow around an oscillating aircraft wing for seven vibration frequencies, and yields a mean reduction of the drag coefficient while preserving the main vortices.",
+    "category": "Flow Control",
+    "source": "arXiv",
+    "published": "2026-11-13T15:48:38Z",
+    "updated": "2026-11-13T15:48:38Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.18336v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.18336v1"
+      }
+    ],
+    "score": 63,
+    "infographic": {
+      "key_insight": "Topology-guided flow targets combined with a DMDc reduced-order model and model predictive control reduce mean drag while preserving the main vortices.",
+      "engineering_relevance": "The approach offers a computationally compact strategy for active aerodynamic control around oscillating wings.",
+      "method": [
+        "Detect and characterize vortices using persistence diagrams of absolute vorticity.",
+        "Compute a target flow offline by gradient descent in reduced space, retaining useful vortices.",
+        "Track the target using DMDc-based receding-horizon MPC formulated as a small convex quadratic program."
+      ],
+      "evidence_signal": "Numerical tests around an oscillating aircraft wing at seven vibration frequencies yielded mean drag-coefficient reduction while preserving the main vortices.",
+      "watch_item": "The abstract reports numerical validation only; robustness to experimental noise and changing flow conditions remains unestablished.",
+      "hashtags": [
+        "#FlowControl",
+        "#TopologicalDataAnalysis",
+        "#DMDc",
+        "#ModelPredictiveControl",
+        "#DragReduction"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-13-arxiv-active_flow_control_based_on_topological_data_analysis_and_a_dmdc_reduced_order_model_for",
+      "paper_title": "Active flow control based on topological data analysis and a DMDc reduced-order model for drag reduction",
+      "paper_date": "2026-11-13",
+      "paper_category": "Flow Control",
+      "generated_at": "2026-11-16T18:07:07",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-13-arxiv-sample_efficient_control_of_magnetoconvective_flows_via_differentiable_simulation",
+    "arxiv_id": "2611.18008v1",
+    "date": "2026-11-13",
+    "title": "Sample-Efficient Control of Magnetoconvective Flows via Differentiable Simulation",
+    "authors": "Jannis Becktepe, Dmitry Krasnov, Nils Thuerey, Jörg Schumacher, Sebastian Peitz",
+    "abstract": "Magnetohydrodynamic (MHD) fluid flows are central to demanding engineering applications, most prominently fusion blanket cooling, where flow control is a promising tool to optimize key properties such as heat transfer. While active flow control (AFC) has recently advanced through machine learning, its application to MHD flows remains largely unexplored. In this work, we present $φ$-PICT, a novel differentiable GPU-accelerated MHD solver targeted at AFC. We validate $φ$-PICT against MHD benchmarks and demonstrate its high computational efficiency. Integrated into FluidGym, $φ$-PICT enables sample-efficient gradient-based algorithms to improve heat transfer by $>25$% and allows optimizers to achieve $10^3\\times$ higher accuracy in inverse design than black-box methods. $φ$-PICT is publicly available at https://github.com/upb-sciml/phiPICT.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-11-13T10:35:25Z",
+    "updated": "2026-11-13T10:35:25Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.18008v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.18008v1"
+      }
+    ],
+    "score": 59,
+    "infographic": {
+      "key_insight": "φ-PICT enables sample-efficient gradient-based control of magnetoconvective flows, improving heat transfer by more than 25%.",
+      "engineering_relevance": "Differentiable MHD simulation could support flow-control design for fusion blanket cooling, where efficient heat transfer is critical.",
+      "method": [
+        "Develop a differentiable, GPU-accelerated MHD solver.",
+        "Integrate φ-PICT into FluidGym for active flow control.",
+        "Use simulation gradients for control optimization and inverse design."
+      ],
+      "evidence_signal": "The abstract reports MHD benchmark validation, heat-transfer gains above 25%, and 10³× higher inverse-design accuracy than black-box methods.",
+      "watch_item": "The abstract does not establish whether these gains generalize to reactor-relevant conditions or practical actuator constraints.",
+      "hashtags": [
+        "#Magnetohydrodynamics",
+        "#DifferentiableSimulation",
+        "#FlowControl",
+        "#ScientificMachineLearning",
+        "#FusionEngineering"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-13-arxiv-sample_efficient_control_of_magnetoconvective_flows_via_differentiable_simulation",
+      "paper_title": "Sample-Efficient Control of Magnetoconvective Flows via Differentiable Simulation",
+      "paper_date": "2026-11-13",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-11-16T18:07:10",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-13-arxiv-compressible_gas_flow_through_porous_media_under_forced_pressure_and_fluxes_compressibilit",
+    "arxiv_id": "2611.18177v1",
+    "date": "2026-11-13",
+    "title": "Compressible gas flow through porous media under forced pressure and fluxes: compressibility number and pressure curvature",
+    "authors": "A. F. Visentini, J. J. Hidalgo, M. Dentz",
+    "abstract": "Gas compressibility induces a nonlinear relationship between boundary forcing and pressure evolution in porous media. This matters in operations and experiments where inlet pressure, volumetric flux or mass flux is controlled, as each forcing produces a distinct transient approach to steady state. We analyze this systematically for isothermal gas flow, using the porous medium equation (PME), nondimensionalized in terms of a Peclet-type number $Π$ that compares the time scales of gas flow and pressure diffusion and measures the steady flow compression. At steady state, increasing $Π$ leads to a boundary layer near the outlet, of width $\\simΠ^{-1}$, where the velocity and flow expansion scale as $Π$ and $Π^2$, respectively. Since $Π$ fixes the steady compression for all three inlet conditions, their transients can be compared directly. We derive a semi-analytical perturbation series in $β=2Π/(1+2Π)<1$, valid for the three inlet conditions, which remains convergent at large $Π$. Numerical solutions for $10^{-2}\\leqΠ\\leq10^3$ show that the effective pressure-squared diffusivity plateaus at boundary-condition-dependent values for $Π\\ll1$, and scales as $Π^{1/2}$ for $Π\\gg1$, explained by the slowest eigenmode of the linearized PME about its steady state. To resolve local flow compression, we introduce the pressure curvature, $κ=\\nabla^2 p$, and interpret its evolution through a nonlinear advection-diffusion-reaction equation. Curvature fields reveal localized compression pulses that migrate downstream and dissipate as the system relaxes, while curvature moments highlight a $Π$-dependent crossover from compression- to expansion-dominated transients. Applications to gas chromatography and underground hydrogen storage are illustrated.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-11-13T13:46:13Z",
+    "updated": "2026-11-13T13:46:13Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.18177v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.18177v1"
+      }
+    ],
+    "score": 58,
+    "infographic": {
+      "key_insight": "A single compressibility number Π organizes steady gas compression across three inlet controls, while pressure curvature reveals migrating compression pulses during relaxation.",
+      "engineering_relevance": "The framework helps interpret pressure, volumetric-flux, and mass-flux control in gas chromatography and underground hydrogen storage.",
+      "method": [
+        "Nondimensionalize the isothermal porous medium equation using Π.",
+        "Derive a convergent perturbation series in β = 2Π/(1 + 2Π) for all three inlet controls.",
+        "Analyze relaxation eigenmodes and pressure curvature to resolve transient compression."
+      ],
+      "evidence_signal": "Numerical solutions over 10⁻² ≤ Π ≤ 10³ show boundary-condition-dependent low-Π diffusivity plateaus and effective pressure-squared diffusivity scaling as Π¹ᐟ² at high Π.",
+      "watch_item": "The results assume isothermal flow, and the outlet boundary layer narrows as Π⁻¹, demanding finer numerical resolution at high compressibility.",
+      "hashtags": [
+        "#PorousMedia",
+        "#CompressibleFlow",
+        "#ComputationalFluidDynamics",
+        "#GasChromatography",
+        "#HydrogenStorage"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-13-arxiv-compressible_gas_flow_through_porous_media_under_forced_pressure_and_fluxes_compressibilit",
+      "paper_title": "Compressible gas flow through porous media under forced pressure and fluxes: compressibility number and pressure curvature",
+      "paper_date": "2026-11-13",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-11-16T18:07:12",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-12-arxiv-isla_a_coordinate_free_measure_weighted_transformer_for_boundary_driven_pdes",
+    "arxiv_id": "2611.17141v1",
+    "date": "2026-11-12",
+    "title": "ISLA: A Coordinate-Free, Measure-Weighted Transformer for Boundary-Driven PDEs",
+    "authors": "Peter Sharpe",
+    "abstract": "A foundational principle of physics is that all coordinate systems are equally valid: the behavior of a PDE-governed system does not depend on the origin or orientation of the frame, nor on the units or mesh used to write it down, and neither should a surrogate model. Yet the neural surrogates with the lowest errors on today's aerodynamics benchmarks lack these invariances and fail under simple transformations of the same problem: for models trained on PDEs of cars in one pose (i.e., translation and rotation) and from one mesher, rotating the full PDE raises the surface-pressure error from 4% to more than 100%, and re-sampling its boundary raises it to about 30%. We introduce ISLA (Invariant Slice Attention), a slice-attention transformer for steady, boundary-driven PDEs in which no learned operation receives a coordinate and every sum over the boundary is a quadrature. Positions enter only as distances and relative angles to learned slice anchors, lengths are measured in a unit computed from the boundary, and interior points query the boundary through a tree-accelerated learned kernel without influencing one another. With every boundary cell a token and an exact boundary read, ISLA is equivariant to rigid motions and reflections, invariant to the units of its declared data, and consistent under mesh refinement, while at every setting each query is independent of all other queries. On AeroZoo, 2,816 flows that vary in shape, size, speed, and boundary conditions, its mean reference-scaled velocity and pressure errors are at least 3.1 and 3.3 times lower than any baseline's. On AirfRANS its errors are second only to those of a boundary-integral model (GLOBE) and at least 1.6 times lower than those of Transolver and GeoTransolver.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-11-12T17:30:03Z",
+    "updated": "2026-11-12T17:30:03Z",
+    "primary_category": "cs.LG",
+    "categories": [
+      "cs.LG",
+      "cs.CE",
+      "math-ph",
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.17141v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.17141v1"
+      }
+    ],
+    "score": 57,
+    "infographic": {
+      "key_insight": "ISLA builds physical symmetries and mesh-refinement consistency into a transformer for steady, boundary-driven PDEs without feeding coordinates directly to learned operations.",
+      "engineering_relevance": "The approach targets reliable aerodynamic surrogates whose predictions remain consistent across object poses, unit changes, and boundary discretizations.",
+      "method": [
+        "Uses distances and relative angles to learned slice anchors, with lengths normalized by a boundary-derived scale.",
+        "Treats every boundary cell as a token and weights every boundary sum by quadrature.",
+        "Predicts interior fields through a tree-accelerated learned boundary kernel, with each query independent of other queries."
+      ],
+      "evidence_signal": "On AeroZoo’s 2,816 flows, mean reference-scaled velocity and pressure errors are at least 3.1× and 3.3× lower than any baseline’s; on AirfRANS, ISLA ranks behind GLOBE but achieves at least 1.6× lower errors than Transolver and GeoTransolver.",
+      "watch_item": "Results concern steady, boundary-driven PDEs; performance on unsteady turbulence and the cost of retaining every boundary cell require further evaluation.",
+      "hashtags": [
+        "#AIFluidMechanics",
+        "#CFD",
+        "#PhysicsAwareAI",
+        "#Transformers",
+        "#GeometricDeepLearning"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-12-arxiv-isla_a_coordinate_free_measure_weighted_transformer_for_boundary_driven_pdes",
+      "paper_title": "ISLA: A Coordinate-Free, Measure-Weighted Transformer for Boundary-Driven PDEs",
+      "paper_date": "2026-11-12",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-11-16T18:07:15",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-12-arxiv-an_invariant_neural_network_eddy_viscosity_closure_with_iterative_solver_coupling_for_molt",
+    "arxiv_id": "2611.17067v2",
+    "date": "2026-11-12",
+    "title": "An Invariant Neural-Network Eddy-Viscosity Closure with Iterative Solver Coupling for Molten Salt Fast Reactor Thermal-Hydraulics",
+    "authors": "Zaid Abulawi, William Oliveira, Akzhol Almukhametov, Jun Fang, Ling Zou, Rui Hu",
+    "abstract": "System thermal-hydraulics codes such as the System Analysis Module (SAM) close turbulence on coarse meshes with algebraic zero-equation mixing-length models. These models cannot represent the non-equilibrium turbulence, flow separation, and large-scale recirculation of open-cavity advanced reactors. We develop an invariant neural-network eddy-viscosity closure for SAM and apply it to the Molten Salt Fast Reactor (MSFR). The closure predicts the turbulent kinetic energy and timescale of each element from the flow and geometry of its neighbors, without solving turbulence transport equations. The resulting non-negative eddy viscosity enters the implicit diffusive operator, which keeps the momentum equations well conditioned. We prove that the closure is exactly invariant to translation, Galilean boost, rotation, reflection, and neighbor ordering. A network trained on high-order Nek5000 fields sees a different feature distribution on the coarse SAM mesh. We remove this covariate shift by iteratively retraining the network on SAM flow states against fixed Nek5000 targets. For a held-out steady state, the coupled closure reproduces the single recirculation cell and eddy-viscosity plume of the Nek5000 reference. In a 120 s pump-coastdown transient, it halves the velocity error of the mixing-length model, from 37.6% to 17.7%, and matches the Nek5000 eddy viscosity with a time-averaged relative error of 12%. The remaining velocity error comes from the coarse mesh. The coupled transient takes about 0.2 core-hours, compared with about 330 core-hours for Nek5000. The results show that the closure can recover two-equation RANS turbulence behavior in a coarse-mesh system code at a small fraction of the CFD cost.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-11-12T16:41:34Z",
+    "updated": "2026-11-13T18:08:52Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "cs.LG"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.17067v2"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.17067v2"
+      }
+    ],
+    "score": 53,
+    "infographic": {
+      "key_insight": "An invariant neural-network closure brings two-equation RANS-like turbulence behavior to coarse-mesh reactor simulations without solving turbulence transport equations.",
+      "engineering_relevance": "The closure improves molten-salt reactor flow predictions while retaining the low computational cost of a system thermal-hydraulics code.",
+      "method": [
+        "Predict elementwise turbulent kinetic energy and timescale from neighboring flow and geometry.",
+        "Enforce translation, Galilean, rotation, reflection, and neighbor-order invariance; insert non-negative eddy viscosity into SAM’s implicit diffusive operator.",
+        "Iteratively retrain on SAM flow states against fixed Nek5000 targets to reduce coarse-mesh covariate shift."
+      ],
+      "evidence_signal": "For a 120 s pump coastdown, velocity error fell from 37.6% to 17.7%, time-averaged eddy-viscosity error was 12%, and runtime was about 0.2 core-hours versus 330 for Nek5000.",
+      "watch_item": "Coarse-mesh resolution still limits velocity accuracy, and transfer beyond the evaluated MSFR conditions remains unestablished.",
+      "hashtags": [
+        "#AIFluidMechanics",
+        "#TurbulenceModeling",
+        "#ScientificMachineLearning",
+        "#ThermalHydraulics",
+        "#MoltenSaltReactors"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-12-arxiv-an_invariant_neural_network_eddy_viscosity_closure_with_iterative_solver_coupling_for_molt",
+      "paper_title": "An Invariant Neural-Network Eddy-Viscosity Closure with Iterative Solver Coupling for Molten Salt Fast Reactor Thermal-Hydraulics",
+      "paper_date": "2026-11-12",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-11-16T18:07:17",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-12-arxiv-complex_nematic_dynamics_driven_by_steady_kolmogorov_flows",
+    "arxiv_id": "2611.16857v1",
+    "date": "2026-11-12",
+    "title": "Complex nematic dynamics driven by steady Kolmogorov flows",
+    "authors": "Rahil N Valani, Sumesh P Thampi, Julia M Yeomans",
+    "abstract": "Complex nematohydrodynamics, including irregular defect dynamics, is commonly associated with time-dependent flows, most notably in active turbulence. Here we consider a simple model of a planar nematic subjected to a temporally steady but spatially varying flow and investigate the onset of time-dependent dynamics. Subjecting a passive nematic to steady Kolmogorov flow, while eliminating velocity fluctuations and hydrodynamic feedback, we find that increasing the flow strength drives a transition from stationary to periodic and, at stronger forcing, irregular spatiotemporal dynamics. The time-dependent states involve repeated local suppression of nematic order and director reorganisation, arising from the competition between spatially varying shear and nematic relaxation. Bifurcation and phase-space analyses characterise this progression, while reduced-order models identify the dynamical origins. A two-mode model captures the onset of periodic motion through a saddle-node infinite-period bifurcation. A five-mode Galerkin truncation further recovers the progression from stationary to periodic and irregular dynamics. These results allow us to explain how a fixed, spatially heterogeneous velocity field can generate temporal complexity through the nonlinear dynamics of nematic order alone.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-11-12T14:30:11Z",
+    "updated": "2026-11-12T14:30:11Z",
+    "primary_category": "cond-mat.soft",
+    "categories": [
+      "cond-mat.soft",
+      "nlin.PS",
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.16857v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.16857v1"
+      }
+    ],
+    "score": 53,
+    "infographic": {
+      "key_insight": "A steady, spatially varying Kolmogorov flow can drive a passive nematic from stationary to periodic and irregular dynamics without velocity fluctuations or hydrodynamic feedback.",
+      "engineering_relevance": "The findings suggest that steady spatial shear could control time-dependent nematic responses without requiring time-varying forcing.",
+      "method": [
+        "Study a planar passive nematic under prescribed steady Kolmogorov flow as flow strength increases.",
+        "Use bifurcation and phase-space analyses to characterize dynamical transitions.",
+        "Develop two-mode and five-mode reduced-order models to identify the underlying mechanisms."
+      ],
+      "evidence_signal": "The two-mode model captures periodic onset through a saddle-node infinite-period bifurcation, while the five-mode Galerkin model reproduces the stationary-to-periodic-to-irregular progression.",
+      "watch_item": "Velocity fluctuations and hydrodynamic feedback are excluded, so applicability to fully coupled nematic flows requires further validation.",
+      "hashtags": [
+        "#Nematohydrodynamics",
+        "#KolmogorovFlow",
+        "#NonlinearDynamics",
+        "#ReducedOrderModeling",
+        "#ComputationalFluidDynamics"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-12-arxiv-complex_nematic_dynamics_driven_by_steady_kolmogorov_flows",
+      "paper_title": "Complex nematic dynamics driven by steady Kolmogorov flows",
+      "paper_date": "2026-11-12",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-11-16T18:07:19",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-11-arxiv-data_driven_correction_reduced_order_stochastic_collocation_method_for_the_time_dependent",
+    "arxiv_id": "2611.15980v1",
+    "date": "2026-11-11",
+    "title": "Data-driven Correction Reduced-Order Stochastic Collocation Method for the Time-Dependent Navier-Stokes Equations",
+    "authors": "Md. Abdul Aziz, Muhammad Mohebujjaman, Xuping Xie",
+    "abstract": "We develop two hybrid data-driven Uncertainty Quantification (UQ) Reduced-Order Models (ROMs) for the non-stationary incompressible Navier--Stokes Equations (NSEs) with random viscosity. The proposed framework combines Proper Orthogonal Decomposition (POD) ROMs, spatial filtering, data-driven closure modeling, and the Stochastic Collocation Method (SCM). A key feature is the approximation of the realization-dependent closure term by the closure associated with the expected viscosity. Consequently, a single data-driven closure model constructed from the full-order solution corresponding to the expected viscosity can be reused across all realizations, thereby avoiding the expensive construction of realization-specific closure models. This leads to the Data-Driven Correction UQ ROM (DDC-UQ-ROM) and its physically constrained variant, the Constrained DDC-UQ-ROM (CDDC-UQ-ROM), in which physical constraints are imposed on the data-driven correction model. The proposed methods are evaluated for a two-dimensional (2D) flow past a circular cylinder problem with a 5D random viscosity field, considering mean Reynolds numbers $Re=100$ and $Re=500$, different correlation lengths, and both in-sample and out-of-sample parameter settings. Numerical results show that the DDC-UQ-ROM generally improves upon the standard Galerkin ROM (G-ROM), while the CDDC-UQ-ROM exhibits the most accurate and robust approximation of the benchmark energy evolution across the cases considered. The robustness and accuracy of the CDDC-UQ-ROM are further assessed through statistical error analyses of the first- and second-order energy moments, reduced-training-data experiments, and an indicative comparison of wall-clock computational costs with the full-order UQ calculations.",
+    "category": "CFD Surrogates",
+    "source": "arXiv",
+    "published": "2026-11-11T20:33:05Z",
+    "updated": "2026-11-11T20:33:05Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "math.NA"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.15980v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.15980v1"
+      }
+    ],
+    "score": 53,
+    "infographic": {
+      "key_insight": "A single data-driven closure trained at the expected viscosity can be reused across stochastic realizations, with physical constraints improving ROM accuracy and robustness.",
+      "engineering_relevance": "The approach can reduce the cost of uncertainty quantification for unsteady incompressible flows without training a separate closure for every viscosity realization.",
+      "method": [
+        "Combine POD reduced-order modeling, spatial filtering, and stochastic collocation.",
+        "Reuse an expected-viscosity closure across random-viscosity realizations.",
+        "Impose physical constraints in CDDC-UQ-ROM to improve robustness."
+      ],
+      "evidence_signal": "Tests on 2D cylinder flow with a 5D random viscosity field at mean Re = 100 and 500 found CDDC-UQ-ROM most accurate and robust for benchmark energy evolution across the cases considered.",
+      "watch_item": "Reusing the expected-viscosity closure is an approximation; performance beyond the tested flow and viscosity settings remains to be established.",
+      "hashtags": [
+        "#FluidMechanics",
+        "#ReducedOrderModeling",
+        "#UncertaintyQuantification",
+        "#DataDrivenModeling",
+        "#NavierStokes"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-11-arxiv-data_driven_correction_reduced_order_stochastic_collocation_method_for_the_time_dependent",
+      "paper_title": "Data-driven Correction Reduced-Order Stochastic Collocation Method for the Time-Dependent Navier-Stokes Equations",
+      "paper_date": "2026-11-11",
+      "paper_category": "CFD Surrogates",
+      "generated_at": "2026-11-16T18:07:21",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-13-arxiv-adfire_an_empirical_and_cfd_informed_advection_diffusion_reaction_thermal_model_for_wildfi",
+    "arxiv_id": "2611.18012v1",
+    "date": "2026-11-13",
+    "title": "ADfiRe: An empirical- and CFD-informed advection-diffusion-reaction thermal model for wildfire spread",
+    "authors": "Konstantinos Vogiatzoglou, Nikolaos Sdiros, Costas Papadimitriou, Konstantinos Ampountolas, Petros Koumoutsakos, Vasilis Bontozoglou",
+    "abstract": "Real-time wildfire forecasting requires a trade-off between rapid yet physically relevant models and high fidelity but computationally costly models of flame spread over heterogeneous, multiphase solid fuel. The present study introduces ADfiRe, a hybrid framework that integrates empirical correlations and CFD-informed parameterizations into a physics-based advection-diffusion-reaction (ADR) formulation. The key features of ADfiRe are the use of established fuel databases, the capacity to handle multiple fuels, and a methodology to capture the effect of arbitrary topography. Furthermore, it includes the effect of flame tilting due to wind, thus accounting for the differences between plume- and wind-dominated fire propagation. ADfiRe resolves explicitly the coupled thermochemical degradation as well as heat and mass transport mechanisms of the advancing fire front. The wind field is modeled based on an appropriately defined Byram number. The model is validated against five well-documented experimental field-scale fires in Mediterranean shrublands, showing quantitative agreement with key metrics such as the rate of spread (ROS) and the fireline intensity, through a two-stage, Arrhenius-based heterogeneous reaction scheme coupling solid-fuel pyrolysis and oxygen-limited char/volatile combustion.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-11-13T10:40:33Z",
+    "updated": "2026-11-13T10:40:33Z",
+    "primary_category": "physics.comp-ph",
+    "categories": [
+      "physics.comp-ph",
+      "cs.CE",
+      "math-ph",
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.18012v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.18012v1"
+      }
+    ],
+    "score": 50,
+    "infographic": {
+      "key_insight": "ADfiRe combines empirical correlations and CFD-informed parameterizations with an advection–diffusion–reaction thermal model to predict wildfire spread while balancing physical detail and computational cost.",
+      "engineering_relevance": "The framework targets rapid wildfire forecasting across multiple fuel types and arbitrary topography while accounting for wind-driven flame tilting.",
+      "method": [
+        "Integrate fuel databases, empirical correlations, and CFD-informed parameterizations into a physics-based transport model.",
+        "Couple solid-fuel pyrolysis with oxygen-limited char/volatile combustion using two-stage Arrhenius kinetics.",
+        "Model wind effects using a Byram-number formulation to distinguish plume- and wind-dominated propagation."
+      ],
+      "evidence_signal": "Validation against five field-scale experimental fires in Mediterranean shrublands showed quantitative agreement in rate of spread and fireline intensity.",
+      "watch_item": "The abstract does not quantify runtime or establish validation beyond Mediterranean shrublands, leaving real-time performance and broader generalization to be assessed.",
+      "hashtags": [
+        "#WildfireModeling",
+        "#CFD",
+        "#AdvectionDiffusionReaction",
+        "#Combustion",
+        "#ComputationalEngineering"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-13-arxiv-adfire_an_empirical_and_cfd_informed_advection_diffusion_reaction_thermal_model_for_wildfi",
+      "paper_title": "ADfiRe: An empirical- and CFD-informed advection-diffusion-reaction thermal model for wildfire spread",
+      "paper_date": "2026-11-13",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-11-16T18:07:23",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-13-arxiv-global_saddle_selection_and_exact_absolute_instability_boundaries_for_convection_in_porous",
+    "arxiv_id": "2611.17614v1",
+    "date": "2026-11-13",
+    "title": "Global saddle selection and exact absolute-instability boundaries for convection in porous media with throughflow",
+    "authors": "Oleg N. Kirillov",
+    "abstract": "In the Darcy-Prats problem, horizontal throughflow leaves the temporal onset of convection unchanged but raises the heating required for a localized disturbance to grow at a fixed point. The saddle equations give five candidates, but only the saddles reached by deformation of the Fourier contour contribute to the growth. For $Ra>π^2$, $Pe>0$ we prove that the same off-axis pair contributes throughout the domain: no Stokes transition can change its contribution. Its growth gives a unique analytic absolute threshold, first reached by the lowest vertical mode. Rescaling transfers the selection to Forchheimer drag, transverse rolls of a power-law fluid, anisotropic permeability, an open upper boundary and a vertical magnetic field. A shift of the same growth function accounts for interphase heat exchange in a model of metallic foam. At prescribed throughflow the threshold increases strictly with either resistance coefficient. In particular, a vertical magnetic field raises the absolute threshold at fixed Péclet number. Tabulated thresholds check the reduction. Algebraic elimination gives the boundary polynomial, and frequency recovery selects its physical branch. At the Darcy level the selected saddles trace an arc of the elliptic curve 11a3, a degeneration of a genus-two family at nonzero shifted levels. Series inversion on this arc gives an integer weak-throughflow series and an all-order strong-throughflow expansion. Rational certificates establish the exact convergence radii of both series on the selected sheets.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-11-13T00:30:50Z",
+    "updated": "2026-11-13T00:30:50Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "math-ph",
+      "nlin.PS"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.17614v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.17614v1"
+      }
+    ],
+    "score": 50,
+    "infographic": {
+      "key_insight": "Horizontal throughflow leaves temporal convection onset unchanged but raises the absolute-instability threshold, determined by one globally selected off-axis saddle pair.",
+      "engineering_relevance": "The exact thresholds can guide porous-media thermal design by quantifying how throughflow, resistance and magnetic fields suppress growth at a fixed location.",
+      "method": [
+        "Identify contributing saddles through Fourier-contour deformation and rule out Stokes transitions.",
+        "Derive the boundary polynomial and recover frequency to select its physical branch.",
+        "Rescale the result across related models and certify convergence of weak- and strong-throughflow expansions."
+      ],
+      "evidence_signal": "Tabulated thresholds check the analytical reduction, while rational certificates establish exact convergence radii for both asymptotic series.",
+      "watch_item": "The boundary polynomial includes nonphysical branches, so implementations must retain the saddle-selection and frequency-recovery criteria.",
+      "hashtags": [
+        "#FluidMechanics",
+        "#PorousMedia",
+        "#AbsoluteInstability",
+        "#Convection",
+        "#StabilityAnalysis"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-13-arxiv-global_saddle_selection_and_exact_absolute_instability_boundaries_for_convection_in_porous",
+      "paper_title": "Global saddle selection and exact absolute-instability boundaries for convection in porous media with throughflow",
+      "paper_date": "2026-11-13",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-11-16T18:07:25",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-12-arxiv-generative_ai_models_for_exploring_diffusion_dynamics_from_multi_frame_particle_tracking",
+    "arxiv_id": "2611.16163v1",
+    "date": "2026-11-12",
+    "title": "Generative AI models for exploring diffusion dynamics from multi-frame particle tracking",
+    "authors": "Jianan Wei, Qiang Zhang, Hao Sun, Yi Yang, Wenguan Wang",
+    "abstract": "Particle-based volumetric flow measurement techniques have proven their efficacy in quantitatively assessing the dynamic characteristics of unsteady flows within the realm of fluid mechanics. Despite recent advances in multi-frame particle tracking, an open challenge in this area is maintaining trajectories in temporally under-sampled 3D sequences, where inter-frame displacements are large. In this work, we develop DiffTR-Flow3D, a diffusion-based model that estimates flow motion from spatiotemporal three-dimensional particle recordings via a stochastic diffusion process. DiffTR-Flow3D conditions the diffusion process with both global and local particle dynamics and enhances flow estimation by leveraging historical particle trajectories. Extensive experiments, including numerical simulations and real-world measurements, demonstrate that DiffTR-Flow3D achieves state-of-the-art displacement estimation accuracy compared with learning-based flow estimators, and, when integrated into particle tracking pipelines, substantially improves their long-term tracking performance, while exhibiting robustness and generalization across diverse flow patterns. This work is expected to provide fluid researchers with an effective tool for the consistent and precise analysis of particle trajectories in temporally under-sampled 3D sequences with large inter-frame displacements.",
+    "category": "CFD Surrogates",
+    "source": "arXiv",
+    "published": "2026-11-12T01:50:57Z",
+    "updated": "2026-11-12T01:50:57Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "cs.LG"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.16163v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.16163v1"
+      }
+    ],
+    "score": 50,
+    "infographic": {
+      "key_insight": "DiffTR-Flow3D uses generative diffusion to estimate 3D particle motion and improve trajectory continuity when large inter-frame displacements make tracking difficult.",
+      "engineering_relevance": "More reliable tracking in temporally under-sampled volumetric measurements can support quantitative analysis of unsteady flows.",
+      "method": [
+        "Estimates motion from spatiotemporal 3D particle recordings through a stochastic diffusion process.",
+        "Conditions motion estimation on global and local particle dynamics.",
+        "Uses historical particle trajectories to improve flow estimation."
+      ],
+      "evidence_signal": "Numerical simulations and real-world measurements show reported state-of-the-art displacement accuracy against learning-based estimators and improved long-term tracking when integrated into tracking pipelines.",
+      "watch_item": "The abstract does not quantify inference cost, leaving computational practicality for large volumetric datasets unclear.",
+      "hashtags": [
+        "#AIFluidMechanics",
+        "#DiffusionModels",
+        "#ParticleTracking",
+        "#VolumetricFlow",
+        "#FlowMeasurement"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-12-arxiv-generative_ai_models_for_exploring_diffusion_dynamics_from_multi_frame_particle_tracking",
+      "paper_title": "Generative AI models for exploring diffusion dynamics from multi-frame particle tracking",
+      "paper_date": "2026-11-12",
+      "paper_category": "CFD Surrogates",
+      "generated_at": "2026-11-16T18:07:27",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-12-arxiv-spatiotemporal_learning_improves_quantification_of_pore_space_evolution_and_fluid_displace",
+    "arxiv_id": "2611.17111v1",
+    "date": "2026-11-12",
+    "title": "Spatiotemporal learning improves quantification of pore-space evolution and fluid displacement",
+    "authors": "Zhuangzhuang Ma, Rukuan Chai, Qianqian Ma, Yanghua Wang, Branko Bijeljic, Martin J. Blunt",
+    "abstract": "Pore-space evolution and fluid displacement influence how rocks transmit and store fluids, affecting geological carbon storage, underground hydrogen storage and groundwater contaminant transport. A single time-resolved micro-CT experiment may produce tens to hundreds of three-dimensional images, and segmentation is required to quantify physical properties and run image-based simulations. Traditional methods such as thresholding perform poorly on noisy, low-contrast images and need manual adjustment per image; 3D deep learning networks segment each image without temporal information, so their errors vary between images and could be mistaken for physical change. Here we introduce a transformer-based 4D segmentation framework combining spatial and temporal information. It uses sequential images to resolve ambiguous phase assignments and separate physical change from segmentation error. The method is tested on images of mineral dissolution: it measures pore-volume growth and rock boundaries more accurately than an equivalent 3D model that ignores temporal information. It also captures the increase in permeability verified against reference segmentations and flow simulations. The advantage transfers to another dissolution sample without retraining. On two other datasets of fluid displacement, it reduces spurious changes in predicted rock and porosity fluctuations and accurately identifies filling events. Spatiotemporal segmentation turns sequences of hundreds of three-dimensional images into more reliable quantitative measurements of pore-space evolution and fluid displacement without per-image parameter adjustment to support the analysis of time-resolved CT imaging.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-11-12T17:04:50Z",
+    "updated": "2026-11-12T17:04:50Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "cs.CV"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.17111v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.17111v1"
+      }
+    ],
+    "score": 49,
+    "infographic": {
+      "key_insight": "Learning across space and time makes micro-CT segmentation more reliable by distinguishing real pore and fluid changes from segmentation errors.",
+      "engineering_relevance": "More consistent measurements of pore evolution and fluid displacement support analysis of geological carbon storage, underground hydrogen storage and groundwater contaminant transport.",
+      "method": [
+        "Use a transformer-based 4D framework to segment sequential 3D micro-CT images.",
+        "Combine spatial and temporal information to resolve ambiguous phase assignments.",
+        "Quantify pore growth, permeability evolution and fluid-filling events without per-image parameter adjustment."
+      ],
+      "evidence_signal": "Dissolution tests showed more accurate pore-volume growth and rock boundaries than an equivalent 3D model, permeability trends verified against reference segmentations and flow simulations, transfer to another sample without retraining, and reduced spurious variation on two fluid-displacement datasets.",
+      "watch_item": "The abstract does not establish performance across broader rock types, imaging conditions or temporal sampling rates.",
+      "hashtags": [
+        "#AIForScience",
+        "#PorousMedia",
+        "#MicroCT",
+        "#SpatiotemporalLearning",
+        "#FluidMechanics"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-12-arxiv-spatiotemporal_learning_improves_quantification_of_pore_space_evolution_and_fluid_displace",
+      "paper_title": "Spatiotemporal learning improves quantification of pore-space evolution and fluid displacement",
+      "paper_date": "2026-11-12",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-11-16T18:07:29",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-13-arxiv-the_effect_of_particle_shape_on_sunlight_exposure_in_a_wind_driven_free_surface_flow",
+    "arxiv_id": "2611.18475v1",
+    "date": "2026-11-13",
+    "title": "The effect of particle shape on sunlight exposure in a wind-driven free-surface flow",
+    "authors": "Lucia Baker, Julio Chávez-Dorado, Anusha Aggarwal, Inessa Garrey, Michelle DiBenedetto",
+    "abstract": "We investigate how nonspherical marine particles, such as microplastics, phytoplankton, and ice, are exposed to sunlight near the water surface in wind-driven surface boundary layer conditions. We measure the depth and orientation of these particles in a laboratory wind-wave tank, then use this data to model how much sunlight the particles would be exposed to in an aquatic environment. In particular, we explore how their orientation affects their sunlight exposure in these conditions, since most studies to date do not account for orientation, turbulent shear flow, and wind-waves at the water surface. We find that in all cases, particles prefer certain orientations, and this causes the average sunlight exposure of the particles to be 5 to 40\\% higher than would be expected if their orientations were random. Further, we find that the mean irradiance depends on the ratio of the particle mixing length $L_m$ to the light decay lengthscale $λ$, and the nature of this dependence differs between disks and rods. Disks experience disproportionately greater mean irradiance at smaller $L_m/λ$ due to the vertical variation in their orientations. These results have important implications for accurately estimating the sunlight exposure of particles in the surface boundary layer.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-11-13T17:49:25Z",
+    "updated": "2026-11-13T17:49:25Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.18475v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.18475v1"
+      }
+    ],
+    "score": 48,
+    "infographic": {
+      "key_insight": "Preferred particle orientations increase average sunlight exposure by 5–40% relative to random orientations in wind-driven surface flows.",
+      "engineering_relevance": "Accounting for particle shape and orientation can improve sunlight-exposure estimates for microplastics, phytoplankton, and ice near the water surface.",
+      "method": [
+        "Measure particle depth and orientation in a laboratory wind-wave tank.",
+        "Use measurements to model sunlight exposure in an aquatic environment.",
+        "Compare disk and rod irradiance as particle mixing length relative to light decay length changes."
+      ],
+      "evidence_signal": "All tested cases showed preferred orientations, while disks exhibited disproportionately greater mean irradiance at smaller mixing-length-to-light-decay-length ratios.",
+      "watch_item": "The reported exposure increases come from a model informed by laboratory measurements; applicability to natural waters requires validation.",
+      "hashtags": [
+        "#FluidMechanics",
+        "#Turbulence",
+        "#ParticleDynamics",
+        "#Microplastics",
+        "#SunlightExposure"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-13-arxiv-the_effect_of_particle_shape_on_sunlight_exposure_in_a_wind_driven_free_surface_flow",
+      "paper_title": "The effect of particle shape on sunlight exposure in a wind-driven free-surface flow",
+      "paper_date": "2026-11-13",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-11-16T18:07:32",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-13-arxiv-flow_structure_heat_transport_and_dissipation_in_vertical_field_magnetoconvection_at_simil",
+    "arxiv_id": "2611.17979v1",
+    "date": "2026-11-13",
+    "title": "Flow structure, heat transport, and dissipation in vertical-field magnetoconvection at similar Reynolds numbers",
+    "authors": "Md Shahid Raza, Akanksha Bhardwaj, Shashwat Bhattacharya",
+    "abstract": "We employ direct numerical simulations to investigate the effect of a vertical magnetic field on the flow structures, heat transport, and dissipation rates in Rayleigh--Bénard convection of a low-Prandtl-number fluid ($\\mathrm{Pr} = 0.025$) at an approximately fixed Reynolds number ($\\mathrm{Re} \\approx 880$), maintained by adjusting the Rayleigh number to compensate for the Lorentz force. As the Hartmann number increases, the flow becomes more anisotropic, which strengthens the positive convective heat fluxes relative to the negative ones and thereby raises the Nusselt number, accompanied by a thinning of the thermal boundary layers. The total viscous and thermal dissipation rates are dominated by the boundary layers, whereas the total magnetic dissipation rate is dominated by the bulk. With increasing Hartmann number, the boundary-layer fraction of the viscous and magnetic dissipation rates increases, whereas that of the thermal dissipation computed from the temperature fluctuations decreases, owing to the suppression of temperature fluctuations near the boundary layers. The dissipation rates deviate from log-normality and are well described by stretched exponential distributions, whose tails become more extended with increasing Hartmann number.",
+    "category": "Aerodynamics",
+    "source": "arXiv",
+    "published": "2026-11-13T10:07:36Z",
+    "updated": "2026-11-13T10:07:36Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.17979v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.17979v1"
+      }
+    ],
+    "score": 48,
+    "infographic": {
+      "key_insight": "At approximately fixed Reynolds number, a stronger vertical magnetic field increases flow anisotropy and heat transport while thinning thermal boundary layers.",
+      "engineering_relevance": "These results may inform magnetic control of heat transfer in low-Prandtl-number conducting fluids, where buoyancy must compensate for magnetic damping to maintain flow intensity.",
+      "method": [
+        "Direct numerical simulations of Rayleigh–Bénard magnetoconvection at Pr = 0.025.",
+        "Increase Hartmann number while adjusting Rayleigh number to maintain Re ≈ 880.",
+        "Analyze flow structure, convective heat flux, and viscous, thermal, and magnetic dissipation."
+      ],
+      "evidence_signal": "Simulations show increasing Nusselt number with Hartmann number, boundary-layer-dominated viscous and thermal dissipation, and bulk-dominated magnetic dissipation.",
+      "watch_item": "The heat-transfer increase is demonstrated with adjusted buoyancy at nearly fixed Reynolds number, not at fixed Rayleigh number.",
+      "hashtags": [
+        "#Magnetoconvection",
+        "#ComputationalFluidDynamics",
+        "#HeatTransfer",
+        "#DirectNumericalSimulation",
+        "#Magnetohydrodynamics"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-13-arxiv-flow_structure_heat_transport_and_dissipation_in_vertical_field_magnetoconvection_at_simil",
+      "paper_title": "Flow structure, heat transport, and dissipation in vertical-field magnetoconvection at similar Reynolds numbers",
+      "paper_date": "2026-11-13",
+      "paper_category": "Aerodynamics",
+      "generated_at": "2026-11-16T18:07:36",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-11-arxiv-transient_cfd_simulation_of_a_linear_start_up_of_a_variable_speed_reversible_pump_turbine",
+    "arxiv_id": "2611.15202v1",
+    "date": "2026-11-11",
+    "title": "Transient CFD simulation of a linear start-up of a variable speed reversible pump-turbine",
+    "authors": "Aron D. Beck, Alexander Masero, Ernesto Casartelli, Elena Vagnoni",
+    "abstract": "The integration of intermittent energy sources has led to a growing demand for fast response and partial-load operation of hydraulic turbines, making variable speed units increasingly important. In hydraulic turbines, frequent start-stop cycles generate the highest loads under normal operating conditions. Although historically infrequent and often neglected in turbine design, the growing occurrence of these cycles now necessitates particular consideration due to their contribution to fatigue loading and reduced runner lifetime. Experimental investigations of turbine start-up are costly and cannot be conducted during early design stages. While start-up sequences have been simulated with CFD for fixed speed turbines, each approach has had notable limitations. Some studies have lacked experimental validation. Some studies have used reduced geometrical domains, making it unclear whether inaccuracies stem from geometry simplification or turbulence modelling, and others employ hybrid LES/RANS models, at a very high computational cost, making them unfeasible for use during the design phase. In this study, the linear start-up of a variable-speed turbine start-up is simulated using URANS-based approaches. Simulations are performed using the k-$ω$ SST, EARSM, and the RSM turbulence models within a computationally tractable framework. The simulations show that torque, mass flow, and the blade-passing frequency content at the leading edge are accurately captured by all models. In contrast, the frequency content at the trailing edge and in the draft tube is considerably better resolved using the RSM than the other models because of its capability to consistently capture turbulence anisotropy.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-11-11T08:52:04Z",
+    "updated": "2026-11-11T08:52:04Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.15202v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.15202v1"
+      }
+    ],
+    "score": 48,
+    "infographic": {
+      "key_insight": "All three URANS turbulence models capture key start-up behavior, but RSM better resolves trailing-edge and draft-tube frequency content through its treatment of turbulence anisotropy.",
+      "engineering_relevance": "Computationally tractable start-up simulations can support variable-speed pump-turbine design as frequent start-stop cycles increase fatigue-loading concerns.",
+      "method": [
+        "Simulate a linear variable-speed pump-turbine start-up using transient CFD.",
+        "Compare k–ω SST, EARSM, and RSM turbulence models within a URANS framework.",
+        "Assess torque, mass flow, and frequency content at blade edges and in the draft tube."
+      ],
+      "evidence_signal": "The abstract reports accurate torque, mass flow, and leading-edge blade-passing frequency content for all models, with considerably better downstream spectral resolution using RSM.",
+      "watch_item": "The abstract provides no quantitative error or runtime metrics, limiting assessment of the accuracy–cost trade-off.",
+      "hashtags": [
+        "#CFD",
+        "#TurbulenceModeling",
+        "#PumpTurbine",
+        "#VariableSpeedHydropower",
+        "#TransientSimulation"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-11-arxiv-transient_cfd_simulation_of_a_linear_start_up_of_a_variable_speed_reversible_pump_turbine",
+      "paper_title": "Transient CFD simulation of a linear start-up of a variable speed reversible pump-turbine",
+      "paper_date": "2026-11-11",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-11-16T18:07:39",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-10-arxiv-harmonic_structure_and_parametric_prediction_of_instantaneous_power_in_oscillating_foils",
+    "arxiv_id": "2611.14746v1",
+    "date": "2026-11-10",
+    "title": "Harmonic structure and parametric prediction of instantaneous power in oscillating foils",
+    "authors": "Junjie Shen, Jennifer A. Franck",
+    "abstract": "A closed-form model is developed to predict the instantaneous lift, pitching moment, and power of an oscillating-foil energy harvester directly from its kinematic input. Such foils extract renewable power from moving water through sinusoidal heaving and pitching. However, due to their large-amplitude motion and vortex-dominated dynamics, classical unsteady aerodynamics cannot accurately predict the time-dependent force and power generation. To generate the model, 405 two-dimensional simulations are computed which vary heave amplitude, pitch amplitude, and frequency, representing the energy harvesting kinematic parameter space. The lift and pitching moment are decomposed into odd Fourier harmonics, and each Fourier coefficient is regressed on sixteen physics-based polynomial terms derived from the kinematic, power, and energy scalings. The regression is performed in two Ridge steps, one for attribution and one for the deployable predictor. The attribution shows that the first harmonic, which contains the mean power, depends on the motion amplitudes. The higher harmonics respond nonlinearly to the frequency, which determines the number and timing of the vortex shedding. The model recovers the cycle-averaged power with a leave-one-out $R^2$ of $0.98$, and reproduces the instantaneous lift with a median peak error of $9\\%$ and a median phase error below $1\\%$ of the period. The harmonic order of the response counts the discrete vortex events in each stroke, as confirmed by the wake visualization. The model's analytical expression for time-dependent force and power can be utilized as a fast and accurate alternative to high-fidelity simulations, specifically targeting device design and array optimization of oscillating foils.",
+    "category": "Aerodynamics",
+    "source": "arXiv",
+    "published": "2026-11-10T21:15:47Z",
+    "updated": "2026-11-10T21:15:47Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.14746v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.14746v1"
+      }
+    ],
+    "score": 48,
+    "infographic": {
+      "key_insight": "A closed-form harmonic model predicts oscillating-foil forces and power from motion inputs, linking higher harmonics to discrete vortex-shedding events.",
+      "engineering_relevance": "The model offers a fast alternative to high-fidelity simulations for designing oscillating-foil energy harvesters and optimizing arrays.",
+      "method": [
+        "Generate 405 two-dimensional simulations varying heave amplitude, pitch amplitude, and frequency.",
+        "Decompose lift and pitching moment into odd Fourier harmonics.",
+        "Fit harmonic coefficients using 16 physics-based polynomial terms and two Ridge regression steps for attribution and prediction."
+      ],
+      "evidence_signal": "The model achieves leave-one-out R² = 0.98 for cycle-averaged power, with median instantaneous-lift peak error of 9% and phase error below 1% of the period.",
+      "watch_item": "Validation is based on two-dimensional simulations; performance for three-dimensional devices, interacting arrays, or motions outside the sampled parameter space remains unestablished.",
+      "hashtags": [
+        "#FluidMechanics",
+        "#PhysicsBasedML",
+        "#OscillatingFoils",
+        "#RenewableEnergy",
+        "#ReducedOrderModeling"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-10-arxiv-harmonic_structure_and_parametric_prediction_of_instantaneous_power_in_oscillating_foils",
+      "paper_title": "Harmonic structure and parametric prediction of instantaneous power in oscillating foils",
+      "paper_date": "2026-11-10",
+      "paper_category": "Aerodynamics",
+      "generated_at": "2026-11-16T18:07:40",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-12-arxiv-multi_domain_aaa_least_squares_methods_and_applications",
+    "arxiv_id": "2611.16631v1",
+    "date": "2026-11-12",
+    "title": "Multi-domain AAA-least squares methods and applications",
+    "authors": "Samuel J. Harris, Ryan A. Palmer",
+    "abstract": "A multi-domain AAA-least squares (nAAALS) method is developed for computing rational approximations of harmonic functions defined in the interior and exterior of multiply-connected domains. Three classes of problems are considered: i) multi-domain problems where an unbounded exterior is punctured by multiple singly-connected domains; ii) nested domain problems where one domain contains multiple punctured domains; and iii) quasi-steady time-stepping problems where the nAAALS algorithm is coupled with standard Runge-Kutta schemes to compute the coupled evolution of the multiple domain boundaries. The nAAALS method extends the original AAALS algorithm in two key ways. First, a function $\\tilde{S}$ satisfying $\\tilde{S}(z)=\\overline{z}$ on each domain boundary is approximated using the AAA algorithm, producing simple poles distributed according to both the individual boundary geometries and the global multi-domain configuration. Second, the least-squares framework is modified to accommodate the coupled matching conditions across each domain boundary. The method is applied to problems in vortex dynamics to demonstrate its capability, focusing specifically on vortex patches as a working example: finite-area regions of incompressible, inviscid fluid in rotational flow. The nAAALS algorithm is used to (a) reproduce known vortex patch equilibria, and (b) compute the evolution of new and existing non-equilibrium configurations. The results are shown to be accurate at low computational cost, running in seconds on a standard laptop. Crucially, the nAAALS method is suitable for addressing a broader class of steady and quasi-steady multi-domain problems across disciplines, such as those arising in applied mathematics, mathematical biology, and fluid dynamics.",
+    "category": "Turbulence",
+    "source": "arXiv",
+    "published": "2026-11-12T11:04:12Z",
+    "updated": "2026-11-12T11:04:12Z",
+    "primary_category": "physics.comp-ph",
+    "categories": [
+      "physics.comp-ph",
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.16631v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.16631v1"
+      }
+    ],
+    "score": 47,
+    "infographic": {
+      "key_insight": "The multi-domain AAA-least squares (nAAALS) method efficiently approximates harmonic functions across coupled interior and exterior domains with evolving boundaries.",
+      "engineering_relevance": "It offers a low-cost computational approach for coupled-boundary problems in inviscid fluid dynamics and potentially other multi-domain engineering applications.",
+      "method": [
+        "Use AAA rational approximation of boundary conjugate data to place poles according to local geometry and global domain configuration.",
+        "Enforce coupled matching conditions across boundaries through a modified least-squares formulation.",
+        "Couple nAAALS with standard Runge–Kutta schemes to evolve domain boundaries."
+      ],
+      "evidence_signal": "Vortex-patch tests reproduce known equilibria and evolve new and existing non-equilibrium configurations, with reported accuracy and runtimes of seconds on a standard laptop.",
+      "watch_item": "The abstract provides no quantitative error benchmarks or scaling results, so performance for more complex geometries remains to be assessed.",
+      "hashtags": [
+        "#ComputationalFluidDynamics",
+        "#RationalApproximation",
+        "#VortexDynamics",
+        "#NumericalMethods",
+        "#MultiDomainModeling"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-12-arxiv-multi_domain_aaa_least_squares_methods_and_applications",
+      "paper_title": "Multi-domain AAA-least squares methods and applications",
+      "paper_date": "2026-11-12",
+      "paper_category": "Turbulence",
+      "generated_at": "2026-11-16T18:07:43",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-11-arxiv-boundary_layer_detachment_and_infinite_reynolds_limit_of_two_dimensional_wall_bounded_flow",
+    "arxiv_id": "2611.15239v1",
+    "date": "2026-11-11",
+    "title": "Boundary-layer detachment and infinite-Reynolds limit of two-dimensional wall-bounded flows",
+    "authors": "Ciro S. Campolina, Jérémie Bec",
+    "abstract": "Understanding boundary-layer detachment and its consequences for the infinite-Reynolds-number limit remains a major challenge in fluid mechanics. Here, direct numerical simulations of incompressible flow in a two-dimensional periodic channel with no-slip walls are used to investigate this problem. Reynolds-number-dependent initial conditions are constructed with a boundary layer of Prandtl thickness that converge in the energy norm to an analytic, stationary Euler flow, while the associated Prandtl system develops a finite-time singularity. Highly resolved simulations show boundary-layer detachment and departures from Prandtl scaling, yet provide numerical evidence that the Navier--Stokes solutions continue to converge to the Euler flow over the simulated time interval. In particular, the squared energy norm of the velocity difference and the time-averaged energy dissipation both scale approximately as $Re^{-1/2}$, consistently with established convergence criteria. Although the detached vortices become more numerous and intense as the Reynolds number increases, their characteristic size and occupied area appear to decrease. These observations suggest how boundary-layer detachment and the breakdown of the Prandtl description can coexist with convergence to a smooth Euler flow.",
+    "category": "CFD Surrogates",
+    "source": "arXiv",
+    "published": "2026-11-11T09:30:44Z",
+    "updated": "2026-11-11T09:30:44Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn",
+      "math.AP"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.15239v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.15239v1"
+      }
+    ],
+    "score": 46,
+    "infographic": {
+      "key_insight": "Boundary-layer detachment and breakdown of Prandtl scaling can coexist with numerical convergence toward a smooth Euler flow as Reynolds number increases.",
+      "engineering_relevance": "The findings help distinguish local near-wall complexity from global inviscid-limit accuracy when assessing high-Reynolds-number flow models.",
+      "method": [
+        "Run highly resolved direct numerical simulations in a two-dimensional periodic channel with no-slip walls.",
+        "Construct Reynolds-dependent initial conditions with Prandtl-thickness boundary layers converging to a stationary Euler flow.",
+        "Track detachment, velocity-error energy, dissipation, and detached-vortex structure."
+      ],
+      "evidence_signal": "Over the simulated interval, both the squared energy norm of the velocity difference and time-averaged energy dissipation scale approximately as Re^(-1/2), supporting convergence despite detachment.",
+      "watch_item": "The evidence is numerical and limited to the simulated two-dimensional configuration and time interval; it does not establish general or long-time convergence.",
+      "hashtags": [
+        "#FluidMechanics",
+        "#BoundaryLayers",
+        "#DirectNumericalSimulation",
+        "#InviscidLimit",
+        "#HighReynoldsNumber"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-11-arxiv-boundary_layer_detachment_and_infinite_reynolds_limit_of_two_dimensional_wall_bounded_flow",
+      "paper_title": "Boundary-layer detachment and infinite-Reynolds limit of two-dimensional wall-bounded flows",
+      "paper_date": "2026-11-11",
+      "paper_category": "CFD Surrogates",
+      "generated_at": "2026-11-16T18:07:45",
+      "generator": "openai"
+    }
+  }
+]

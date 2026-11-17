@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-11-16
+Generated: 2026-11-17
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. AeroZoo: A Benchmark of Well-Posed Flow Problems for Foundation Models of Aerodynamics
@@ -11,7 +11,15 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.17152v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-12-arxiv-aerozoo_a_benchmark_of_well_posed_flow_problems_for_foundation_models_of_aerodynamics_infographic.json
 
-## 2. Gradient-Aware AI Agents for Autonomous Turbulence Model Discovery via Differentiable CFD
+## 2. Direct Numerical Simulation of Vortex-Induced Instability Over a Semi-Infinite Flat Plate with Discrete Roughness
+
+- Date: 2026-11-16
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2611.21409v1
+- PDF: https://arxiv.org/pdf/2611.21409v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-16-arxiv-direct_numerical_simulation_of_vortex_induced_instability_over_a_semi_infinite_flat_plate_infographic.json
+
+## 3. Gradient-Aware AI Agents for Autonomous Turbulence Model Discovery via Differentiable CFD
 
 - Date: 2026-11-11
 - Category: Turbulence
@@ -19,7 +27,47 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.16082v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-11-arxiv-gradient_aware_ai_agents_for_autonomous_turbulence_model_discovery_via_differentiable_cfd_infographic.json
 
-## 3. SUMNO: Spatially Unrolled Multigrid Neural Operator for Fluid Flow Surrogates
+## 4. Resolvent-based modeling of turbulent flow over multilayer compliant surfaces
+
+- Date: 2026-11-15
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2611.20281v1
+- PDF: https://arxiv.org/pdf/2611.20281v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-15-arxiv-resolvent_based_modeling_of_turbulent_flow_over_multilayer_compliant_surfaces_infographic.json
+
+## 5. Experimental Evidence of Elastic Instability in Viscoelastic Kolmogorov Flow
+
+- Date: 2026-11-16
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2611.21087v1
+- PDF: https://arxiv.org/pdf/2611.21087v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-16-arxiv-experimental_evidence_of_elastic_instability_in_viscoelastic_kolmogorov_flow_infographic.json
+
+## 6. Gas expansion in global models of nanosecond pulsed discharges: a reduced gas-dynamic model coupled to plasma kinetics
+
+- Date: 2026-11-15
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2611.20097v1
+- PDF: https://arxiv.org/pdf/2611.20097v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-15-arxiv-gas_expansion_in_global_models_of_nanosecond_pulsed_discharges_a_reduced_gas_dynamic_model_infographic.json
+
+## 7. Graph Neural Network based non-local models: Toward application to RANS turbulence modeling
+
+- Date: 2026-11-13
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2611.18858v1
+- PDF: https://arxiv.org/pdf/2611.18858v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-13-arxiv-graph_neural_network_based_non_local_models_toward_application_to_rans_turbulence_modeling_infographic.json
+
+## 8. An LLM-assisted theoretical model for aeroengine installation noise scattering
+
+- Date: 2026-11-13
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2611.18796v1
+- PDF: https://arxiv.org/pdf/2611.18796v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-13-arxiv-an_llm_assisted_theoretical_model_for_aeroengine_installation_noise_scattering_infographic.json
+
+## 9. SUMNO: Spatially Unrolled Multigrid Neural Operator for Fluid Flow Surrogates
 
 - Date: 2026-11-12
 - Category: CFD Surrogates
@@ -27,7 +75,31 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.16341v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-12-arxiv-sumno_spatially_unrolled_multigrid_neural_operator_for_fluid_flow_surrogates_infographic.json
 
-## 4. Active flow control based on topological data analysis and a DMDc reduced-order model for drag reduction
+## 10. Scale-aware composite forcing enhances forward energy transfer in lattice Boltzmann simulations of forced homogeneous isotropic turbulence
+
+- Date: 2026-11-16
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2611.20541v1
+- PDF: https://arxiv.org/pdf/2611.20541v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-16-arxiv-scale_aware_composite_forcing_enhances_forward_energy_transfer_in_lattice_boltzmann_simula_infographic.json
+
+## 11. On the relation of secondary motions to large- and very-large-scale motions
+
+- Date: 2026-11-15
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2611.20228v1
+- PDF: https://arxiv.org/pdf/2611.20228v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-15-arxiv-on_the_relation_of_secondary_motions_to_large_and_very_large_scale_motions_infographic.json
+
+## 12. Surrogate-Based Optimization of Tandem Twin-Rotor Wind Turbines Accounting for Wake Interactions
+
+- Date: 2026-11-16
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2611.21185v1
+- PDF: https://arxiv.org/pdf/2611.21185v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-16-arxiv-surrogate_based_optimization_of_tandem_twin_rotor_wind_turbines_accounting_for_wake_intera_infographic.json
+
+## 13. Active flow control based on topological data analysis and a DMDc reduced-order model for drag reduction
 
 - Date: 2026-11-13
 - Category: Flow Control
@@ -35,130 +107,58 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.18336v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-13-arxiv-active_flow_control_based_on_topological_data_analysis_and_a_dmdc_reduced_order_model_for_infographic.json
 
-## 5. Sample-Efficient Control of Magnetoconvective Flows via Differentiable Simulation
+## 14. A conditional quadrature method of moments for populations of oblate spheroidal particles
+
+- Date: 2026-11-16
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2611.21487v1
+- PDF: https://arxiv.org/pdf/2611.21487v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-16-arxiv-a_conditional_quadrature_method_of_moments_for_populations_of_oblate_spheroidal_particles_infographic.json
+
+## 15. The 1/4-power law for bounded variation of wall turbulence from the Kármán-Howarth equation
+
+- Date: 2026-11-16
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2611.20578v1
+- PDF: https://arxiv.org/pdf/2611.20578v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-16-arxiv-the_1_4_power_law_for_bounded_variation_of_wall_turbulence_from_the_k_rm_n_howarth_equatio_infographic.json
+
+## 16. What explainable deep learning reveals about wall-bounded turbulence: insights from conditional surprisal
 
 - Date: 2026-11-13
 - Category: Turbulence
-- arXiv: https://arxiv.org/abs/2611.18008v1
-- PDF: https://arxiv.org/pdf/2611.18008v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-13-arxiv-sample_efficient_control_of_magnetoconvective_flows_via_differentiable_simulation_infographic.json
+- arXiv: https://arxiv.org/abs/2611.18820v1
+- PDF: https://arxiv.org/pdf/2611.18820v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-13-arxiv-what_explainable_deep_learning_reveals_about_wall_bounded_turbulence_insights_from_conditi_infographic.json
 
-## 6. Compressible gas flow through porous media under forced pressure and fluxes: compressibility number and pressure curvature
+## 17. Reconstruction and Forecast of Extreme Waves from a Single Observation
 
-- Date: 2026-11-13
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2611.18177v1
-- PDF: https://arxiv.org/pdf/2611.18177v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-13-arxiv-compressible_gas_flow_through_porous_media_under_forced_pressure_and_fluxes_compressibilit_infographic.json
-
-## 7. ISLA: A Coordinate-Free, Measure-Weighted Transformer for Boundary-Driven PDEs
-
-- Date: 2026-11-12
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2611.17141v1
-- PDF: https://arxiv.org/pdf/2611.17141v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-12-arxiv-isla_a_coordinate_free_measure_weighted_transformer_for_boundary_driven_pdes_infographic.json
-
-## 8. An Invariant Neural-Network Eddy-Viscosity Closure with Iterative Solver Coupling for Molten Salt Fast Reactor Thermal-Hydraulics
-
-- Date: 2026-11-12
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2611.17067v2
-- PDF: https://arxiv.org/pdf/2611.17067v2
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-12-arxiv-an_invariant_neural_network_eddy_viscosity_closure_with_iterative_solver_coupling_for_molt_infographic.json
-
-## 9. Complex nematic dynamics driven by steady Kolmogorov flows
-
-- Date: 2026-11-12
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2611.16857v1
-- PDF: https://arxiv.org/pdf/2611.16857v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-12-arxiv-complex_nematic_dynamics_driven_by_steady_kolmogorov_flows_infographic.json
-
-## 10. Data-driven Correction Reduced-Order Stochastic Collocation Method for the Time-Dependent Navier-Stokes Equations
-
-- Date: 2026-11-11
+- Date: 2026-11-16
 - Category: CFD Surrogates
-- arXiv: https://arxiv.org/abs/2611.15980v1
-- PDF: https://arxiv.org/pdf/2611.15980v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-11-arxiv-data_driven_correction_reduced_order_stochastic_collocation_method_for_the_time_dependent_infographic.json
+- arXiv: https://arxiv.org/abs/2611.21068v1
+- PDF: https://arxiv.org/pdf/2611.21068v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-16-arxiv-reconstruction_and_forecast_of_extreme_waves_from_a_single_observation_infographic.json
 
-## 11. ADfiRe: An empirical- and CFD-informed advection-diffusion-reaction thermal model for wildfire spread
+## 18. The role of turbulent jet dynamics on contrail formation from conventional and sustainable aviation fuels
 
-- Date: 2026-11-13
+- Date: 2026-11-15
 - Category: Turbulence
-- arXiv: https://arxiv.org/abs/2611.18012v1
-- PDF: https://arxiv.org/pdf/2611.18012v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-13-arxiv-adfire_an_empirical_and_cfd_informed_advection_diffusion_reaction_thermal_model_for_wildfi_infographic.json
+- arXiv: https://arxiv.org/abs/2611.20057v1
+- PDF: https://arxiv.org/pdf/2611.20057v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-15-arxiv-the_role_of_turbulent_jet_dynamics_on_contrail_formation_from_conventional_and_sustainable_infographic.json
 
-## 12. Global saddle selection and exact absolute-instability boundaries for convection in porous media with throughflow
+## 19. Dynamics and stability of volatile thin liquid films on a heated vertical cylinder
 
-- Date: 2026-11-13
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2611.17614v1
-- PDF: https://arxiv.org/pdf/2611.17614v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-13-arxiv-global_saddle_selection_and_exact_absolute_instability_boundaries_for_convection_in_porous_infographic.json
+- Date: 2026-11-15
+- Category: Multiphase Flow
+- arXiv: https://arxiv.org/abs/2611.20041v1
+- PDF: https://arxiv.org/pdf/2611.20041v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-15-arxiv-dynamics_and_stability_of_volatile_thin_liquid_films_on_a_heated_vertical_cylinder_infographic.json
 
-## 13. Generative AI models for exploring diffusion dynamics from multi-frame particle tracking
+## 20. Magnetic control of hydrodynamic spin coupling between rotors: Ferrohydrodynamic effects in the two-rotor problem
 
-- Date: 2026-11-12
+- Date: 2026-11-15
 - Category: CFD Surrogates
-- arXiv: https://arxiv.org/abs/2611.16163v1
-- PDF: https://arxiv.org/pdf/2611.16163v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-12-arxiv-generative_ai_models_for_exploring_diffusion_dynamics_from_multi_frame_particle_tracking_infographic.json
-
-## 14. Spatiotemporal learning improves quantification of pore-space evolution and fluid displacement
-
-- Date: 2026-11-12
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2611.17111v1
-- PDF: https://arxiv.org/pdf/2611.17111v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-12-arxiv-spatiotemporal_learning_improves_quantification_of_pore_space_evolution_and_fluid_displace_infographic.json
-
-## 15. The effect of particle shape on sunlight exposure in a wind-driven free-surface flow
-
-- Date: 2026-11-13
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2611.18475v1
-- PDF: https://arxiv.org/pdf/2611.18475v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-13-arxiv-the_effect_of_particle_shape_on_sunlight_exposure_in_a_wind_driven_free_surface_flow_infographic.json
-
-## 16. Flow structure, heat transport, and dissipation in vertical-field magnetoconvection at similar Reynolds numbers
-
-- Date: 2026-11-13
-- Category: Aerodynamics
-- arXiv: https://arxiv.org/abs/2611.17979v1
-- PDF: https://arxiv.org/pdf/2611.17979v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-13-arxiv-flow_structure_heat_transport_and_dissipation_in_vertical_field_magnetoconvection_at_simil_infographic.json
-
-## 17. Transient CFD simulation of a linear start-up of a variable speed reversible pump-turbine
-
-- Date: 2026-11-11
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2611.15202v1
-- PDF: https://arxiv.org/pdf/2611.15202v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-11-arxiv-transient_cfd_simulation_of_a_linear_start_up_of_a_variable_speed_reversible_pump_turbine_infographic.json
-
-## 18. Harmonic structure and parametric prediction of instantaneous power in oscillating foils
-
-- Date: 2026-11-10
-- Category: Aerodynamics
-- arXiv: https://arxiv.org/abs/2611.14746v1
-- PDF: https://arxiv.org/pdf/2611.14746v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-10-arxiv-harmonic_structure_and_parametric_prediction_of_instantaneous_power_in_oscillating_foils_infographic.json
-
-## 19. Multi-domain AAA-least squares methods and applications
-
-- Date: 2026-11-12
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2611.16631v1
-- PDF: https://arxiv.org/pdf/2611.16631v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-12-arxiv-multi_domain_aaa_least_squares_methods_and_applications_infographic.json
-
-## 20. Boundary-layer detachment and infinite-Reynolds limit of two-dimensional wall-bounded flows
-
-- Date: 2026-11-11
-- Category: CFD Surrogates
-- arXiv: https://arxiv.org/abs/2611.15239v1
-- PDF: https://arxiv.org/pdf/2611.15239v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-11-arxiv-boundary_layer_detachment_and_infinite_reynolds_limit_of_two_dimensional_wall_bounded_flow_infographic.json
+- arXiv: https://arxiv.org/abs/2611.19941v1
+- PDF: https://arxiv.org/pdf/2611.19941v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-15-arxiv-magnetic_control_of_hydrodynamic_spin_coupling_between_rotors_ferrohydrodynamic_effects_in_infographic.json
