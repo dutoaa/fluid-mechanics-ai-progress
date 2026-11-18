@@ -1,13 +1,13 @@
 {
-  "key_insight": "Wake-aware optimization favors high-power operation near λ = 10, with L/D = 0.20 delivering the highest system power coefficient and lowest peak thrust among high-power candidates.",
-  "engineering_relevance": "The surrogate supports power–thrust trade-off analysis for tandem twin-rotor turbines sharing a support structure.",
+  "key_insight": "Wake interactions redistribute power between tandem rotors, while the highest system power coefficient occurs at L/D = 0.20, with the high-power Pareto region near λ = 10.",
+  "engineering_relevance": "Surrogate-based optimization can help select rotor spacing and operating conditions that balance combined power capture against thrust on a shared support.",
   "method": [
-    "Simulate 160 configurations under turbulent inflow using a vortex method.",
-    "Predict 600 s power, thrust, and torque histories with per-time-node XGBoost models, then extend them with CNN-Attention-LSTM.",
+    "Simulate 160 tandem-rotor configurations under turbulent inflow using a vortex method.",
+    "Train per-time-node XGBoost models for 600 s load histories and extend them with a CNN-Attention-LSTM network.",
     "Use a genetic algorithm to balance system power and thrust coefficients."
   ],
-  "evidence_signal": "Ten-fold cross-validation on unseen configurations yielded median power-history R² values of 0.995 upstream and 0.958 downstream.",
-  "watch_item": "The first-stage surrogate cannot extrapolate in tip-speed ratio; coefficients apply to fixed-pitch, prescribed-speed operation where both rotors attain the simulated ratio below rated wind speed.",
+  "evidence_signal": "Ten-fold cross-validation on unseen configurations yields median power-history R² values of 0.995 upstream and 0.958 downstream.",
+  "watch_item": "The first-stage surrogate cannot extrapolate in tip-speed ratio, and the coefficients apply only below rated wind speed where both fixed-pitch rotors attain the simulated tip-speed ratio.",
   "hashtags": [
     "#AIFluidMechanics",
     "#WindEnergy",
@@ -21,6 +21,6 @@
   "paper_title": "Surrogate-Based Optimization of Tandem Twin-Rotor Wind Turbines Accounting for Wake Interactions",
   "paper_date": "2026-11-16",
   "paper_category": "Turbulence",
-  "generated_at": "2026-11-17T17:28:28",
+  "generated_at": "2026-11-18T17:02:22",
   "generator": "openai"
 }

@@ -1,19 +1,19 @@
 {
-  "key_insight": "AeroZoo shows that encoding boundary conditions can sharply improve aerodynamic flow prediction, while unseen enclosures and boundary-condition layouts remain major generalization challenges.",
-  "engineering_relevance": "The benchmark tests whether fast CFD surrogates can predict flows across new shapes and enclosures, rather than only within a single design family.",
+  "key_insight": "AeroZoo shows that explicitly encoding boundary conditions can sharply improve aerodynamic flow predictions, while generalization to unseen enclosures and boundary-condition layouts remains difficult.",
+  "engineering_relevance": "The benchmark tests whether neural CFD surrogates can handle new shapes and flow domains rather than only variations within one design family.",
   "method": [
-    "Generate 3,815 time-mean unsteady RANS solutions with a transition model across seven geometry families, eight enclosure configurations and Reynolds numbers from 10³ to 10⁸.",
-    "Specify each problem using boundary meshes grouped by condition type, prescribed values and fluid properties.",
-    "Evaluate two tasks with engineering metrics and 22 frozen, geometry-disjoint splits."
+    "Generate 3,815 time-mean unsteady RANS solutions with a transition model across seven geometry families, eight enclosures and Reynolds numbers from 10³ to 10⁸.",
+    "Specify each flow problem using boundary meshes grouped by condition type, prescribed values and fluid properties.",
+    "Evaluate two tasks with engineering metrics and 22 geometry-disjoint splits using the 2,816 samples with stable time means."
   ],
-  "evidence_signal": "Among 2,816 stable-mean cases used for benchmarking, boundary-condition tokens reduced GeoTransolver’s random-split median velocity error from 76.9% to 8.4% of inlet speed in single-seed runs; ISLA reached 5.3% over four seeds.",
-  "watch_item": "Held-out enclosures or boundary-condition layouts increased ISLA’s error 2.4–9.2 times, cautioning against assuming reliable deployment in unfamiliar flow domains.",
+  "evidence_signal": "On the random split, boundary-condition tokens reduced GeoTransolver’s median velocity error from 76.9% to 8.4% of inlet speed in single-seed runs; ISLA reached 5.3% over four seeds.",
+  "watch_item": "ISLA’s error rose 2.4–9.2× for held-out enclosures or boundary-condition layouts, so random-split accuracy does not establish robust deployment generalization.",
   "hashtags": [
     "#AeroZoo",
     "#AIForCFD",
     "#FluidMechanics",
-    "#FoundationModels",
-    "#ScientificMachineLearning"
+    "#ScientificMachineLearning",
+    "#Aerodynamics"
   ],
   "model": "gpt-6.1-sol",
   "service_tier": "ultrafast",
@@ -21,6 +21,6 @@
   "paper_title": "AeroZoo: A Benchmark of Well-Posed Flow Problems for Foundation Models of Aerodynamics",
   "paper_date": "2026-11-12",
   "paper_category": "Turbulence",
-  "generated_at": "2026-11-17T17:28:01",
+  "generated_at": "2026-11-18T17:01:45",
   "generator": "openai"
 }
