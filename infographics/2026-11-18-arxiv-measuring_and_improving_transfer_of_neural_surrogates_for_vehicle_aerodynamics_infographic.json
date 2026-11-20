@@ -1,19 +1,19 @@
 {
-  "key_insight": "GeoReplay preserves pretrained vehicle-aerodynamics knowledge while matching standard fine-tuning accuracy on new target datasets.",
-  "engineering_relevance": "Geometry- and gradient-aligned replay can help adapt aerodynamic surrogates to new vehicle classes without sacrificing accuracy on previously learned designs.",
+  "key_insight": "GeoReplay preserves pretrained aerodynamic surrogate accuracy on source vehicles while matching fine-tuning accuracy on new vehicle classes.",
+  "engineering_relevance": "It offers a way to adapt fast CFD surrogates to new vehicle designs without sacrificing their usefulness on previously learned designs.",
   "method": [
     "Benchmark five DrivAerML-pretrained surrogates on four independent target datasets.",
-    "Replay source simulations geometrically similar to the target, applying updates only when their gradients agree with the target gradient.",
-    "Separate geometric coverage from simulated-physics differences in a risk bound and prove target-objective descent for sufficiently small GeoReplay steps."
+    "Replay source simulations with geometries resembling the target vehicles.",
+    "Apply replay updates only when they align with the target gradient."
   ],
-  "evidence_signal": "Across datasets differing in geometry, CFD solver, turbulence model, and flow conditions, fine-tuning beats training from scratch in fewer than half of comparisons; GeoReplay reduces source error relative to fine-tuning in 77 of 80 settings while matching target accuracy.",
-  "watch_item": "The descent guarantee concerns the target training objective, not unseen-case accuracy; deployment still requires validation under new geometries and physics conditions.",
+  "evidence_signal": "Across datasets differing in geometry, solver, turbulence model, and flow conditions, fine-tuning beat training from scratch in fewer than half of comparisons; GeoReplay reduced source error relative to fine-tuning in 77 of 80 settings while matching target accuracy.",
+  "watch_item": "The guarantee concerns sufficiently small steps on the target training objective, not unseen-vehicle accuracy or arbitrary shifts in simulated physics.",
   "hashtags": [
     "#VehicleAerodynamics",
     "#NeuralSurrogates",
     "#TransferLearning",
     "#CFD",
-    "#GeoReplay"
+    "#ContinualLearning"
   ],
   "model": "gpt-6.1-sol",
   "service_tier": "ultrafast",
@@ -21,6 +21,6 @@
   "paper_title": "Measuring and Improving Transfer of Neural Surrogates for Vehicle Aerodynamics",
   "paper_date": "2026-11-18",
   "paper_category": "Turbulence",
-  "generated_at": "2026-11-19T17:10:21",
+  "generated_at": "2026-11-20T16:48:28",
   "generator": "openai"
 }
