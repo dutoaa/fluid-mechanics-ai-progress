@@ -1,19 +1,19 @@
 {
-  "key_insight": "Embedding an asymptotic boundary-layer corrector in neural trial functions preserves accuracy at small viscosity without requiring a grid that resolves the layer.",
-  "engineering_relevance": "The approach could reduce training costs for low-viscosity flow simulation by representing thin wall layers analytically rather than resolving them numerically.",
+  "key_insight": "Embedding an asymptotic boundary-layer corrector enables neural solvers to maintain accuracy as viscosity decreases, without resolving the thin vorticity layer on the residual grid.",
+  "engineering_relevance": "The approach could reduce training costs for low-viscosity flow simulations by representing near-wall layers analytically rather than through fine-grid resolution.",
   "method": [
-    "Use the 2D incompressible Navier–Stokes vorticity–stream function formulation with slip boundary conditions.",
-    "Embed a corrector for the √ε-wide vorticity layer, tying its amplitude to the network’s wall trace without knowing the limit solution.",
-    "Replace the residual Laplacian with coarse-grid finite-volume flux differences to obtain sl-FVNN."
+    "Embed the asymptotic corrector in the sl-PINN trial function to capture the √ε-thick vorticity layer.",
+    "Tie the corrector amplitude to the network’s wall trace, avoiding prior knowledge of the limiting solution.",
+    "Use coarse-grid finite-volume flux differences for the residual Laplacian in sl-FVNN."
   ],
-  "evidence_signal": "The abstract reports viscosity-uniform error over six decades for Stokes and Navier–Stokes tests, with sl-FVNN matching sl-PINN accuracy within random-seed scatter at about half the training-step cost.",
-  "watch_item": "The reported results concern 2D flows with slip boundaries; extension to other boundary conditions or geometries requires validation.",
+  "evidence_signal": "The abstract reports viscosity-uniform errors over six decades for Stokes and Navier–Stokes tests; sl-FVNN matches sl-PINN accuracy within random-seed scatter at about half the training-step cost.",
+  "watch_item": "Results concern two-dimensional flows with slip boundary conditions; extension to other wall conditions or geometries requires validation.",
   "hashtags": [
     "#PhysicsInformedML",
-    "#FluidMechanics",
     "#NavierStokes",
     "#BoundaryLayers",
-    "#ScientificMachineLearning"
+    "#ScientificMachineLearning",
+    "#ComputationalFluidDynamics"
   ],
   "model": "gpt-6.1-sol",
   "service_tier": "ultrafast",
@@ -21,6 +21,6 @@
   "paper_title": "Singular layer neural networks for the Navier-Stokes equations at small viscosity",
   "paper_date": "2026-11-17",
   "paper_category": "Physics-Informed ML",
-  "generated_at": "2026-11-20T16:48:34",
+  "generated_at": "2026-11-21T15:58:04",
   "generator": "openai"
 }

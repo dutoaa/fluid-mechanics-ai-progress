@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-11-20
+Generated: 2026-11-21
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Measuring and Improving Transfer of Neural Surrogates for Vehicle Aerodynamics
@@ -123,7 +123,15 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.24870v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-18-arxiv-kinetic_study_of_reaction_control_jet_interference_in_rarefied_hypersonic_crossflow_infographic.json
 
-## 16. PhysDial: Adapting Pretrained Video Models for PDE Simulation under Changing Physical Conditions
+## 16. Physics-based Tabulation Approach for Rotating Detonation Engines
+
+- Date: 2026-11-18
+- Category: CFD Surrogates
+- arXiv: https://arxiv.org/abs/2611.24667v1
+- PDF: https://arxiv.org/pdf/2611.24667v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-18-arxiv-physics_based_tabulation_approach_for_rotating_detonation_engines_infographic.json
+
+## 17. PhysDial: Adapting Pretrained Video Models for PDE Simulation under Changing Physical Conditions
 
 - Date: 2026-11-17
 - Category: Turbulence
@@ -131,7 +139,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.23498v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-17-arxiv-physdial_adapting_pretrained_video_models_for_pde_simulation_under_changing_physical_condi_infographic.json
 
-## 17. Flux-induced condensation in a radial geometry
+## 18. Flux-induced condensation in a radial geometry
 
 - Date: 2026-11-19
 - Category: Turbulence
@@ -139,7 +147,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.26236v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-19-arxiv-flux_induced_condensation_in_a_radial_geometry_infographic.json
 
-## 18. Swimming formula in a linearly viscous fluid with anisotropic and odd viscosity tensors at low Reynolds number
+## 19. Swimming formula in a linearly viscous fluid with anisotropic and odd viscosity tensors at low Reynolds number
 
 - Date: 2026-11-19
 - Category: Turbulence
@@ -147,18 +155,10 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.26049v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-19-arxiv-swimming_formula_in_a_linearly_viscous_fluid_with_anisotropic_and_odd_viscosity_tensors_at_infographic.json
 
-## 19. Lagrangian transport driven by travelling waves in a radially deforming circular cavity
+## 20. Lagrangian transport driven by travelling waves in a radially deforming circular cavity
 
 - Date: 2026-11-19
 - Category: Turbulence
 - arXiv: https://arxiv.org/abs/2611.26486v1
 - PDF: https://arxiv.org/pdf/2611.26486v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-19-arxiv-lagrangian_transport_driven_by_travelling_waves_in_a_radially_deforming_circular_cavity_infographic.json
-
-## 20. A boundary integral formulation for microscale Marangoni surfing
-
-- Date: 2026-11-18
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2611.24766v1
-- PDF: https://arxiv.org/pdf/2611.24766v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-18-arxiv-a_boundary_integral_formulation_for_microscale_marangoni_surfing_infographic.json

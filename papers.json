@@ -25,22 +25,22 @@
         "url": "https://arxiv.org/pdf/2611.24843v1"
       }
     ],
-    "score": 92,
+    "score": 87,
     "infographic": {
       "key_insight": "GeoReplay preserves pretrained aerodynamic surrogate accuracy on source vehicles while matching fine-tuning accuracy on new vehicle classes.",
-      "engineering_relevance": "It offers a way to adapt fast CFD surrogates to new vehicle designs without sacrificing their usefulness on previously learned designs.",
+      "engineering_relevance": "This approach could reduce the need for separate CFD-based surrogate training campaigns while limiting accuracy loss on previously learned vehicle designs.",
       "method": [
         "Benchmark five DrivAerML-pretrained surrogates on four independent target datasets.",
         "Replay source simulations with geometries resembling the target vehicles.",
-        "Apply replay updates only when they align with the target gradient."
+        "Apply replay updates only when aligned with the target gradient."
       ],
-      "evidence_signal": "Across datasets differing in geometry, solver, turbulence model, and flow conditions, fine-tuning beat training from scratch in fewer than half of comparisons; GeoReplay reduced source error relative to fine-tuning in 77 of 80 settings while matching target accuracy.",
-      "watch_item": "The guarantee concerns sufficiently small steps on the target training objective, not unseen-vehicle accuracy or arbitrary shifts in simulated physics.",
+      "evidence_signal": "Across datasets differing in geometry, CFD solver, turbulence model, and flow conditions, fine-tuning beat training from scratch in fewer than half of comparisons; GeoReplay reduced source error relative to fine-tuning in 77 of 80 settings while matching target accuracy.",
+      "watch_item": "GeoReplay requires access to source simulations, and its small-step target training guarantee does not establish zero-shot generalization or improved target test accuracy.",
       "hashtags": [
+        "#AIForCFD",
         "#VehicleAerodynamics",
         "#NeuralSurrogates",
         "#TransferLearning",
-        "#CFD",
         "#ContinualLearning"
       ],
       "model": "gpt-6.1-sol",
@@ -49,7 +49,7 @@
       "paper_title": "Measuring and Improving Transfer of Neural Surrogates for Vehicle Aerodynamics",
       "paper_date": "2026-11-18",
       "paper_category": "Turbulence",
-      "generated_at": "2026-11-20T16:48:28",
+      "generated_at": "2026-11-21T15:57:59",
       "generator": "openai"
     }
   },
@@ -82,17 +82,17 @@
         "url": "https://arxiv.org/pdf/2611.26547v1"
       }
     ],
-    "score": 81,
+    "score": 76,
     "infographic": {
       "key_insight": "A general-relativistic superfluid framework establishes necessary and sufficient conditions for nonlinear causality and strong hyperbolicity, enabling stable simulations of neutron-star vortex dynamics.",
-      "engineering_relevance": "The framework provides a foundation for computational studies of superfluid rotation and angular-momentum transfer relevant to pulsar glitches and neutron-star binaries.",
+      "engineering_relevance": "The framework supports computational studies of superfluid angular-momentum transport relevant to pulsar glitches and neutron-star dynamics.",
       "method": [
-        "Include entrainment, vortex forces, and line energy in relativistic two-fluid hydrodynamics.",
-        "Recast vortex dynamics using effective electromagnetic fields and drift velocities.",
-        "Combine finite-volume evolution with constrained transport of vorticity and implicit electric-field updates."
+        "Include entrainment, vortex forces, and vortex-line energy in relativistic two-fluid hydrodynamics.",
+        "Represent vortex dynamics using effective electric and magnetic fields and drift velocities.",
+        "Combine finite-volume evolution with constrained transport of superfluid vorticity and implicit electric-field updates."
       ],
       "evidence_signal": "Validation includes an exact relativistic superfluid Riemann solution, Kelvin-wave dispersion relations, and oscillation modes of global two-fluid neutron-star equilibria.",
-      "watch_item": "The spin-down demonstration prescribes vortex release and repinning; commonly used dissipative force-balanced models without line tension are also shown to be generically ill-posed at short wavelengths.",
+      "watch_item": "The simplified spin-down calculation prescribes vortex release and repinning, limiting conclusions about self-consistent glitch dynamics.",
       "hashtags": [
         "#SuperfluidHydrodynamics",
         "#NeutronStars",
@@ -106,7 +106,7 @@
       "paper_title": "Nonlinearly Causal General-Relativistic Superfluid Hydrodynamics: Simulating Vortex Dynamics in Neutron-Star Interiors",
       "paper_date": "2026-11-19",
       "paper_category": "Turbulence",
-      "generated_at": "2026-11-20T16:48:31",
+      "generated_at": "2026-11-21T15:58:01",
       "generator": "openai"
     }
   },
@@ -136,23 +136,23 @@
         "url": "https://arxiv.org/pdf/2611.22072v1"
       }
     ],
-    "score": 76,
+    "score": 71,
     "infographic": {
-      "key_insight": "Embedding an asymptotic boundary-layer corrector in neural trial functions preserves accuracy at small viscosity without requiring a grid that resolves the layer.",
-      "engineering_relevance": "The approach could reduce training costs for low-viscosity flow simulation by representing thin wall layers analytically rather than resolving them numerically.",
+      "key_insight": "Embedding an asymptotic boundary-layer corrector enables neural solvers to maintain accuracy as viscosity decreases, without resolving the thin vorticity layer on the residual grid.",
+      "engineering_relevance": "The approach could reduce training costs for low-viscosity flow simulations by representing near-wall layers analytically rather than through fine-grid resolution.",
       "method": [
-        "Use the 2D incompressible Navier–Stokes vorticity–stream function formulation with slip boundary conditions.",
-        "Embed a corrector for the √ε-wide vorticity layer, tying its amplitude to the network’s wall trace without knowing the limit solution.",
-        "Replace the residual Laplacian with coarse-grid finite-volume flux differences to obtain sl-FVNN."
+        "Embed the asymptotic corrector in the sl-PINN trial function to capture the √ε-thick vorticity layer.",
+        "Tie the corrector amplitude to the network’s wall trace, avoiding prior knowledge of the limiting solution.",
+        "Use coarse-grid finite-volume flux differences for the residual Laplacian in sl-FVNN."
       ],
-      "evidence_signal": "The abstract reports viscosity-uniform error over six decades for Stokes and Navier–Stokes tests, with sl-FVNN matching sl-PINN accuracy within random-seed scatter at about half the training-step cost.",
-      "watch_item": "The reported results concern 2D flows with slip boundaries; extension to other boundary conditions or geometries requires validation.",
+      "evidence_signal": "The abstract reports viscosity-uniform errors over six decades for Stokes and Navier–Stokes tests; sl-FVNN matches sl-PINN accuracy within random-seed scatter at about half the training-step cost.",
+      "watch_item": "Results concern two-dimensional flows with slip boundary conditions; extension to other wall conditions or geometries requires validation.",
       "hashtags": [
         "#PhysicsInformedML",
-        "#FluidMechanics",
         "#NavierStokes",
         "#BoundaryLayers",
-        "#ScientificMachineLearning"
+        "#ScientificMachineLearning",
+        "#ComputationalFluidDynamics"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -160,7 +160,7 @@
       "paper_title": "Singular layer neural networks for the Navier-Stokes equations at small viscosity",
       "paper_date": "2026-11-17",
       "paper_category": "Physics-Informed ML",
-      "generated_at": "2026-11-20T16:48:34",
+      "generated_at": "2026-11-21T15:58:04",
       "generator": "openai"
     }
   },
@@ -189,17 +189,17 @@
         "url": "https://arxiv.org/pdf/2611.25611v1"
       }
     ],
-    "score": 68,
+    "score": 63,
     "infographic": {
-      "key_insight": "Early three-dimensional vorticity growth in transonic shock–boundary-layer interactions is dominated by viscous and compressibility effects, while vortex stretching becomes appreciable intermittently with shock-induced separation.",
-      "engineering_relevance": "Understanding when three-dimensional effects emerge can guide the use of 2D versus 3D simulations when assessing transonic natural-laminar-flow airfoil performance.",
+      "key_insight": "Early three-dimensionality in transonic shock–boundary-layer interactions is governed mainly by viscous and compressibility effects, while vortex stretching becomes intermittently appreciable with shock-induced separation.",
+      "engineering_relevance": "Understanding when three-dimensional effects emerge can help assess the limits of two-dimensional aerodynamic predictions for natural laminar flow airfoils.",
       "method": [
-        "Run high-fidelity 3D simulations of the SHM1 airfoil across normal-shock onset, drag divergence, and shock-induced separation.",
-        "Compare spanwise-averaged 3D pressure and skin friction with previously reported 2D simulations.",
-        "Track streamwise and wall-normal enstrophy and analyze the compressible enstrophy transport budget."
+        "High-fidelity 3D simulations of the SHM1 airfoil in normal-shock onset, drag-divergence, and shock-induced-separation regimes.",
+        "Comparison of spanwise-averaged 3D surface pressure and skin friction with prior 2D simulations.",
+        "Analysis of streamwise and wall-normal enstrophy evolution and compressible enstrophy transport budgets."
       ],
-      "evidence_signal": "Across three operating conditions, 2D–3D comparisons identify an initial interval of close agreement followed by departures, while normalized enstrophy budgets show regime-dependent redistribution among the same principal mechanisms.",
-      "watch_item": "The study addresses short-time evolution for one airfoil at three operating conditions, so long-time behavior and broader design generality remain unestablished.",
+      "evidence_signal": "Across three operating conditions, the simulations identify an initial interval of close 2D–3D agreement followed by departures, with the same principal enstrophy mechanisms contributing differently across SBLI topologies.",
+      "watch_item": "The study addresses short-time evolution on one airfoil; long-time behavior and generalization to other geometries remain unestablished by the abstract.",
       "hashtags": [
         "#FluidMechanics",
         "#TransonicFlow",
@@ -213,7 +213,7 @@
       "paper_title": "Onset of three dimensionality in transonic shock boundary layer interaction over a natural laminar flow airfoil",
       "paper_date": "2026-11-19",
       "paper_category": "Aerodynamics",
-      "generated_at": "2026-11-20T16:48:37",
+      "generated_at": "2026-11-21T15:58:06",
       "generator": "openai"
     }
   },
@@ -243,23 +243,23 @@
         "url": "https://arxiv.org/pdf/2611.25449v1"
       }
     ],
-    "score": 68,
+    "score": 63,
     "infographic": {
-      "key_insight": "HAVAPlot enables browser-only scientific visualization and post-processing of simulation data without software installation or data uploads.",
-      "engineering_relevance": "Engineers can inspect native OpenFOAM, VTK, and tabular datasets locally and export publication-ready plots across diverse flow applications.",
+      "key_insight": "HAVAPlot enables browser-only visualization and post-processing of simulation data without software installation or data uploads.",
+      "engineering_relevance": "Engineers can inspect native OpenFOAM, VTK, and tabular datasets locally and export publication-ready graphics.",
       "method": [
         "Read native OpenFOAM meshes, fields, boundaries, and particles alongside VTK and tabular data.",
-        "Apply exact polyhedral slicing, variable calculations, streamlines, isosurfaces, and particle visualization.",
-        "Verify mesh geometry, field reading, and interpolation against independent implementations and analytical fields."
+        "Apply exact polyhedral slicing, cell-to-point interpolation, variable calculations, and boundary extraction.",
+        "Visualize contours, streamlines, isosurfaces, and particles; export vector graphics and data."
       ],
-      "evidence_signal": "Verification reproduced 6.1 million field values to machine precision across four production cases, demonstrated second-order interior and first-order boundary interpolation convergence, and loaded 250,000-cell meshes in at most 1.3 seconds.",
-      "watch_item": "Browser memory limits and performance on meshes substantially larger than the reported 250,000-cell benchmark remain to be established.",
+      "evidence_signal": "Independent checks reproduced 6.1 million field values to machine precision; interpolation showed second-order interior and first-order boundary convergence, and 250,000-cell meshes loaded in at most 1.3 seconds.",
+      "watch_item": "Browser memory and performance on substantially larger meshes remain unestablished by the reported benchmark.",
       "hashtags": [
-        "#ScientificVisualization",
+        "#HAVAPlot",
         "#CFD",
+        "#ScientificVisualization",
         "#OpenFOAM",
-        "#BrowserBasedComputing",
-        "#SimulationPostProcessing"
+        "#BrowserBasedComputing"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -267,7 +267,7 @@
       "paper_title": "HAVAPlot: A Web-Based Scientific Visualization and Post-Processing Platform",
       "paper_date": "2026-11-19",
       "paper_category": "Turbulence",
-      "generated_at": "2026-11-20T16:48:39",
+      "generated_at": "2026-11-21T15:58:08",
       "generator": "openai"
     }
   },
@@ -298,23 +298,23 @@
         "url": "https://arxiv.org/pdf/2611.22624v1"
       }
     ],
-    "score": 68,
+    "score": 63,
     "infographic": {
-      "key_insight": "Biot–Savart-inspired activations improve incompressible-flow PINNs, with fixed- and learnable-scale variants reducing combined velocity error by 31.7% and 33.2% on average versus tanh-based PINNs.",
-      "engineering_relevance": "Embedding analytical flow structure in network activations could improve neural incompressible-flow simulations, including localized shear and vortex dynamics.",
+      "key_insight": "Biot–Savart-inspired activation functions improve incompressible-flow PINN accuracy while preserving the standard velocity–pressure formulation.",
+      "engineering_relevance": "Flow-informed neural representations could improve simulation accuracy for wakes, vortices, and localized shear structures.",
       "method": [
         "Extract a smooth rational activation from a regularized Biot–Savart kernel.",
-        "Use either fixed or learnable kernel scales.",
-        "Retain the standard velocity–pressure formulation and physics-informed training."
+        "Test fixed and learnable kernel-scale variants.",
+        "Retain conventional physics-informed training to isolate activation effects."
       ],
-      "evidence_signal": "Across 21 benchmark–architecture comparisons spanning five flows, both variants consistently reduced combined velocity error; reported pressure and vorticity errors also improved.",
-      "watch_item": "The abstract does not establish computational overhead or generalization beyond the tested benchmarks and architectures.",
+      "evidence_signal": "Across five flow benchmarks and 21 benchmark–architecture comparisons, fixed- and learnable-scale variants consistently reduced combined velocity error versus tanh PINNs, with mean relative reductions of 31.7% and 33.2%, respectively.",
+      "watch_item": "The abstract does not establish computational-cost advantages or generalization beyond the tested benchmarks and architectures.",
       "hashtags": [
         "#PhysicsInformedNeuralNetworks",
         "#FluidMechanics",
         "#NavierStokes",
         "#ScientificMachineLearning",
-        "#BiotSavart"
+        "#ComputationalFluidDynamics"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -322,7 +322,7 @@
       "paper_title": "Stochastic Representation-Inspired Physics-Informed Neural Networks for Incompressible Fluid Flows",
       "paper_date": "2026-11-17",
       "paper_category": "Aerodynamics",
-      "generated_at": "2026-11-20T16:48:42",
+      "generated_at": "2026-11-21T15:58:10",
       "generator": "openai"
     }
   },
@@ -351,22 +351,22 @@
         "url": "https://arxiv.org/pdf/2611.24736v1"
       }
     ],
-    "score": 66,
+    "score": 61,
     "infographic": {
-      "key_insight": "A passive reduced-order sloshing model combines curved-meniscus inertia, viscous losses and contact-line hysteresis to capture low-gravity frequencies, damping and resonance softening.",
-      "engineering_relevance": "Faster-than-real-time simulation of coupled spacecraft translation and sloshing supports control analyses that account for uncertain wetting and damping.",
+      "key_insight": "A physics-based reduced-order model combines meniscus curvature, viscous losses and contact-line hysteresis to predict dissipative low-gravity sloshing.",
+      "engineering_relevance": "Faster-than-real-time simulation of coupled spacecraft translation and sloshing can support control analyses that account for uncertain damping.",
       "method": [
-        "Use Dirichlet–Neumann and Jacobi operators for curved-meniscus inertia and restoring forces.",
+        "Represent curved-meniscus inertia and restoring forces with Dirichlet–Neumann and Jacobi operators.",
         "Combine bulk, Stokes-layer and contact-line dissipation in a passive port-Hamiltonian formulation.",
         "Propagate analytically between contact-line stick–slip events."
       ],
-      "evidence_signal": "Across 42 drop-tower and ground measurements, curvature correction reduced RMS frequency error from 24% to 4%; on MODE tests, calibrated hysteresis yielded 11–35% normalized force errors versus 149–208% for an ideal pinned line.",
-      "watch_item": "Uncertain wetting and residual response discrepancies warrant damping ranges rather than a single nominal value in spacecraft control analyses.",
+      "evidence_signal": "Across 42 drop-tower and ground measurements, curvature correction reduced RMS frequency error from 24% to 4%; one calibrated hysteresis width predicted additional MODE tests with 11–35% normalized force errors.",
+      "watch_item": "Uncertain wetting and remaining response discrepancies warrant damping ranges rather than a single nominal value in spacecraft control studies.",
       "hashtags": [
+        "#FluidMechanics",
         "#ReducedOrderModeling",
-        "#Sloshing",
-        "#LowGravity",
-        "#PortHamiltonian",
+        "#LowGravitySloshing",
+        "#ContactLineHysteresis",
         "#SpacecraftDynamics"
       ],
       "model": "gpt-6.1-sol",
@@ -375,7 +375,7 @@
       "paper_title": "A curvature-corrected port-Hamiltonian reduced-order model for dissipative sloshing with contact-line hysteresis in low-gravity tanks",
       "paper_date": "2026-11-18",
       "paper_category": "CFD Surrogates",
-      "generated_at": "2026-11-20T16:48:44",
+      "generated_at": "2026-11-21T15:58:12",
       "generator": "openai"
     }
   },
@@ -404,23 +404,23 @@
         "url": "https://arxiv.org/pdf/2611.21409v1"
       }
     ],
-    "score": 66,
+    "score": 61,
     "infographic": {
-      "key_insight": "A Gaussian surface bump significantly accelerates vortex-induced boundary-layer transition and the onset of three-dimensionality while preserving the spatio-temporal wave front characteristic of a nonmodal response.",
-      "engineering_relevance": "Predicting transition over rough surfaces exposed to free-stream vortices requires three-dimensional modeling to capture the accelerated breakdown accurately.",
+      "key_insight": "A Gaussian surface bump substantially accelerates vortex-induced boundary-layer transition while preserving the spatio-temporal wave front that signals nonmodal response.",
+      "engineering_relevance": "Predicting transition under combined surface roughness and free-stream vortices requires accounting for rapid growth of three-dimensional flow structures.",
       "method": [
-        "Solve the incompressible Navier–Stokes equations using 2D and 3D direct numerical simulations.",
-        "Model a semi-infinite flat plate with a Gaussian bump and a convecting free-stream vortex of fixed strength and sign.",
+        "Perform 2D and 3D DNS of the incompressible Navier–Stokes equations over a semi-infinite flat plate.",
+        "Combine a convecting vortex of fixed strength and sign with a Gaussian surface bump.",
         "Analyze instantaneous flow features, vorticity dynamics, and nonlinear receptivity."
       ],
-      "evidence_signal": "The simulations identify four stages: roughness-generated vortical disturbances, spatio-temporal amplification, wave-front emergence with unsteady separation bubbles, and bubble merging into turbulent spots.",
-      "watch_item": "The abstract reports no quantitative transition shifts or parameter ranges, so applicability beyond the studied bump and vortex configuration remains uncertain.",
+      "evidence_signal": "The simulations identify four stages: roughness-generated disturbances, spatio-temporal amplification, wave-front emergence with unsteady separation bubbles, and bubble merging into turbulent spots.",
+      "watch_item": "The findings concern a specific Gaussian bump and deterministic vortex forcing; 2D simulations alone cannot accurately capture the roughness-driven evolution toward three-dimensionality.",
       "hashtags": [
         "#FluidMechanics",
         "#DirectNumericalSimulation",
         "#BoundaryLayerTransition",
         "#SurfaceRoughness",
-        "#VortexInducedInstability"
+        "#FlowReceptivity"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -428,7 +428,7 @@
       "paper_title": "Direct Numerical Simulation of Vortex-Induced Instability Over a Semi-Infinite Flat Plate with Discrete Roughness",
       "paper_date": "2026-11-16",
       "paper_category": "Turbulence",
-      "generated_at": "2026-11-20T16:48:46",
+      "generated_at": "2026-11-21T15:58:15",
       "generator": "openai"
     }
   },
@@ -460,23 +460,23 @@
         "url": "https://arxiv.org/pdf/2611.22249v1"
       }
     ],
-    "score": 65,
+    "score": 60,
     "infographic": {
-      "key_insight": "An H₂-optimal design framework systematically identifies riblet profiles that suppress velocity fluctuations at a fixed spanwise spacing.",
-      "engineering_relevance": "The approach could guide turbulence-control surface design beyond exhaustive searches over predefined riblet shapes.",
+      "key_insight": "An H₂-optimal design framework identifies riblet wall-normal profiles that maximally suppress modeled turbulent velocity fluctuations at a fixed spanwise spacing.",
+      "engineering_relevance": "Systematic riblet-shape optimization could guide drag-reducing surface design without exhaustive searches over predefined geometries.",
       "method": [
-        "Model riblets through volume penalization in the linearized Navier–Stokes equations.",
+        "Model riblets using volume penalization in linearized Navier–Stokes dynamics.",
         "Recast penalization as structured state feedback.",
-        "Optimize fluctuation variance and riblet-induced dynamical augmentations while maintaining constant bulk flux."
+        "Minimize steady-state fluctuation variance and riblet-induced dynamical augmentations while maintaining constant bulk flux."
       ],
-      "evidence_signal": "The abstract reports optimal wall-normal profiles for fixed riblet spacing but provides no quantitative attenuation results or experimental validation.",
-      "watch_item": "Optimality is model-based and spacing-specific; performance in nonlinear turbulent flow and resulting drag reduction require validation.",
+      "evidence_signal": "The abstract reports optimal profiles for fixed riblet spacing but provides no quantitative attenuation results or experimental validation.",
+      "watch_item": "Suppression in the linearized model does not by itself establish drag reduction in fully nonlinear turbulent flows.",
       "hashtags": [
-        "#FluidMechanics",
-        "#TurbulenceControl",
+        "#Turbulence",
         "#Riblets",
-        "#OptimalDesign",
-        "#FlowControl"
+        "#FlowControl",
+        "#ShapeOptimization",
+        "#ComputationalFluidDynamics"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -484,7 +484,7 @@
       "paper_title": "$H_2$-optimal riblet profiles for turbulence suppression in channel flows",
       "paper_date": "2026-11-17",
       "paper_category": "Turbulence",
-      "generated_at": "2026-11-20T16:48:49",
+      "generated_at": "2026-11-21T15:58:17",
       "generator": "openai"
     }
   },
@@ -514,21 +514,21 @@
         "url": "https://arxiv.org/pdf/2611.26208v1"
       }
     ],
-    "score": 60,
+    "score": 55,
     "infographic": {
-      "key_insight": "A magnetic-field-induced hydrodynamic potential modifies ion distributions in flowing electrolytes, producing a Hall potential that scales nearly linearly with flow velocity and magnetic field strength.",
+      "key_insight": "A magnetic-field-induced hydrodynamic potential reshapes ion distributions, producing a Hall potential that scales nearly linearly with flow velocity and magnetic field while remaining largely independent of salt concentration.",
       "engineering_relevance": "The framework could guide magnetic control and interpretation of ion transport in microfluidic channels and electrochemical systems.",
       "method": [
-        "Couple steady-state Navier–Stokes, Nernst–Planck, and Poisson equations for dilute electrolytes.",
-        "Derive ion distributions incorporating electrostatic and hydrodynamic potentials.",
-        "Analyze Poiseuille flow, two-dimensional entrance transients, and counterion-only conditions."
+        "Analytically couple steady-state Navier–Stokes, Nernst–Planck, and Poisson equations for unidirectional electrolyte flow.",
+        "Derive ion distributions and Hall potentials for Poiseuille flow, including a counterion-only case.",
+        "Analyze two-dimensional entrance transients to distinguish rapid electrical adjustment from slower salt redistribution."
       ],
-      "evidence_signal": "Analytical results predict weak salt-concentration dependence of the Hall potential, while entrance-region analysis shows rapid Hall-field adjustment and a slower salt wake governed by the Péclet-dependent Graetz length.",
-      "watch_item": "The theory assumes dilute electrolytes and steady unidirectional flow; the abstract reports no experimental validation.",
+      "evidence_signal": "The abstract reports analytical results and entrance-region analysis supporting the one-dimensional framework, but no experimental validation.",
+      "watch_item": "Applicability beyond dilute electrolytes and steady unidirectional flow remains to be established.",
       "hashtags": [
         "#MagnetoElectrokinetics",
-        "#ElectrolyteTransport",
         "#Microfluidics",
+        "#IonTransport",
         "#HallEffect",
         "#FluidMechanics"
       ],
@@ -538,7 +538,7 @@
       "paper_title": "Theory of magneto-electrokinetics in unidirectional electrolyte flow: Hydrodynamic potential and Hall effect",
       "paper_date": "2026-11-19",
       "paper_category": "Turbulence",
-      "generated_at": "2026-11-20T16:48:51",
+      "generated_at": "2026-11-21T15:58:19",
       "generator": "openai"
     }
   },
@@ -567,21 +567,21 @@
         "url": "https://arxiv.org/pdf/2611.26064v1"
       }
     ],
-    "score": 60,
+    "score": 55,
     "infographic": {
       "key_insight": "Oxide-cap size and position alter aluminum-particle combustion: front caps enhance local evaporation near the cap–metal junction, while rear caps absorb heat and lower reaction temperatures.",
       "engineering_relevance": "Cap-aware evaporation and drag models can improve Lagrangian predictions of burning aluminum particles without resolving each particle’s boundary layer.",
       "method": [
-        "Boundary-layer resolved simulations varying cap size, cap position, and particle Reynolds number.",
-        "Film properties estimated using a 0.55-rule for temperature, species mass fractions, and pressure.",
-        "Optimized Whitaker evaporation and Schiller–Naumann drag correlations, with extensions to capped doublet particles."
+        "Boundary-layer-resolved simulations varying cap size, cap orientation, and particle Reynolds number.",
+        "Film-state modeling with a 0.55-rule for temperature, species mass fractions, and pressure.",
+        "Optimized Whitaker and Schiller–Naumann correlations, extended to oxide-capped doublet particles."
       ],
-      "evidence_signal": "The optimized correlations agreed well with the simulations; exposed aluminum area supported rear-cap evaporation predictions, but front caps required an additional mass-flux correction, especially at high particle Reynolds numbers.",
-      "watch_item": "The abstract reports simulation-based agreement without quantitative errors or experimental validation, leaving accuracy outside the studied conditions uncertain.",
+      "evidence_signal": "The revised evaporation and drag correlations agree well with the simulations; exposed aluminum area supports rear-cap evaporation predictions, while front caps require an additional flux correction.",
+      "watch_item": "Front-cap evaporation needs particular care at high particle Reynolds numbers; validation beyond the simulated conditions is not established in the abstract.",
       "hashtags": [
         "#AluminumCombustion",
         "#MultiphaseFlow",
-        "#BoundaryLayerSimulations",
+        "#ParticleResolvedSimulation",
         "#LagrangianModeling",
         "#ComputationalFluidDynamics"
       ],
@@ -591,7 +591,7 @@
       "paper_title": "Influence of an oxide cap on the combustion of aluminum particles using boundary-layer resolved simulations",
       "paper_date": "2026-11-19",
       "paper_category": "Turbulence",
-      "generated_at": "2026-11-20T16:48:53",
+      "generated_at": "2026-11-21T15:58:21",
       "generator": "openai"
     }
   },
@@ -621,23 +621,23 @@
         "url": "https://arxiv.org/pdf/2611.25923v1"
       }
     ],
-    "score": 60,
+    "score": 55,
     "infographic": {
-      "key_insight": "Iterative strong coupling stabilizes FD-SPH simulations of lightweight floating bodies where single-pass coupling fails, even with drastically smaller time steps.",
-      "engineering_relevance": "The approach supports simulation of lightweight, complex-shaped floating bodies in transient free-surface flows without explicit interface reconstruction or surface-normal evaluation.",
+      "key_insight": "Iterative strong coupling stabilizes FD-SPH simulations of lightweight floating rigid bodies where single-pass coupling fails, even with much smaller time steps.",
+      "engineering_relevance": "The method supports simulation of lightweight, complex-shaped floating bodies in transient free-surface flows without explicit interface reconstruction or surface-normal evaluation.",
       "method": [
-        "Combine volume-based hydrodynamic loads with Newton–Euler rigid-body updates.",
+        "Couple volume-based FD-SPH hydrodynamic loads with Newton–Euler rigid-body updates.",
         "Iteratively feed back the velocity mismatch between pressure-projected fictitious fluid and the rigid body within each time step.",
-        "Compare single-pass and iterative coupling under matched conditions."
+        "Analyze when Passively Moving Solid projection and Newton–Euler updates yield identical rigid-body velocities."
       ],
-      "evidence_signal": "Tests include a settling disk, buoyant cubes, wet-bed dam breaks and star-shaped bodies; iterative coupling remains stable across tested specific gravities of 0.1–1.0, while single-pass coupling fails at 0.1 and 0.2.",
-      "watch_item": "All reported production runs meet the coupling-residual tolerance, but computational cost and stability beyond the tested conditions remain unquantified in the abstract.",
+      "evidence_signal": "Settling-disk and dam-break tests agree with published results or experimental trends; cube tests remain stable at specific gravities of 0.1–1.0 with iterative coupling, while single-pass coupling fails at 0.1 and 0.2.",
+      "watch_item": "Strong coupling requires a residual-controlled iteration loop; all reported production runs converged, but computational overhead is not quantified in the abstract.",
       "hashtags": [
         "#FluidStructureInteraction",
         "#SmoothedParticleHydrodynamics",
         "#FictitiousDomain",
-        "#StrongCoupling",
-        "#FreeSurfaceFlows"
+        "#FreeSurfaceFlow",
+        "#RigidBodyDynamics"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -645,7 +645,7 @@
       "paper_title": "Partitioned iterative FD-SPH for fluid-rigid-body interaction: Stability and validation for lightweight floating bodies",
       "paper_date": "2026-11-19",
       "paper_category": "Turbulence",
-      "generated_at": "2026-11-20T16:48:55",
+      "generated_at": "2026-11-21T15:58:23",
       "generator": "openai"
     }
   },
@@ -674,21 +674,21 @@
         "url": "https://arxiv.org/pdf/2611.25750v1"
       }
     ],
-    "score": 60,
+    "score": 55,
     "infographic": {
-      "key_insight": "Turbulence-driven ice-crystal orientation changes scattering and can bias ice-water-content retrievals that assume perfectly horizontal alignment.",
-      "engineering_relevance": "Orientation-aware scattering models can improve interpretation of polarimetric radar, lidar and submillimeter measurements of ice clouds.",
+      "key_insight": "Turbulence alters ice-crystal alignment and scattering, so assuming perfectly horizontal crystals can underestimate ice-water content.",
+      "engineering_relevance": "Orientation-aware scattering models can reduce biases in polarimetric radar, lidar and submillimeter ice-cloud retrievals.",
       "method": [
-        "Model overdamped spheroid orientations with settling torque, turbulent gradients, rotational diffusion and intermittency.",
-        "Average Rayleigh, Rayleigh–Gans, T-matrix and specular scattering over the orientation distribution.",
-        "Link orientation moments to scattering observables and retrieval biases."
+        "Model overdamped spheroid orientations with settling-induced torque, rotational diffusion and intermittent turbulence.",
+        "Couple orientation statistics to Rayleigh, Rayleigh–Gans, T-matrix and specular scattering.",
+        "Express turbulence effects through Legendre moments of the orientation distribution."
       ],
-      "evidence_signal": "For single-size populations of the studied shapes, combining specific differential phase with differential reflectivity limits retrieval bias to 25%; exploratory EarthCARE lidar analysis finds a compatible signature most frequent near −11 °C.",
-      "watch_item": "The 25% bias bound can fail for size distributions spanning the alignment transition, and degree-scale tilt widths require crystals near or beyond the model’s validity range.",
+      "evidence_signal": "For the single-size shapes studied, combining specific differential phase with differential reflectivity limits retrieval bias to 25%; exploratory EarthCARE lidar analysis finds a compatible signature most frequently near −11°C.",
+      "watch_item": "The 25% bias bound can fail for size distributions spanning the alignment transition because the observables weight crystal sizes differently.",
       "hashtags": [
         "#Turbulence",
         "#IceClouds",
-        "#Scattering",
+        "#LightScattering",
         "#RemoteSensing",
         "#FluidMechanics"
       ],
@@ -698,7 +698,7 @@
       "paper_title": "Scattering by Small Ice Crystals in Turbulence: From Orientation Statistics to Retrieval Biases",
       "paper_date": "2026-11-19",
       "paper_category": "Turbulence",
-      "generated_at": "2026-11-20T16:48:57",
+      "generated_at": "2026-11-21T15:58:25",
       "generator": "openai"
     }
   },
@@ -728,23 +728,23 @@
         "url": "https://arxiv.org/pdf/2611.25631v1"
       }
     ],
-    "score": 60,
+    "score": 55,
     "infographic": {
-      "key_insight": "IRMAE-WD’s latent singular-value drop marks a trained representation’s effective dimension, not an intrinsic dimension of turbulence; coordinate counts must be tied to accuracy or resolved scale.",
-      "engineering_relevance": "IRMAE-WD offers more compact turbulent-flow representations than POD up to about 97% reconstruction, while POD needs fewer coordinates above that threshold.",
+      "key_insight": "IRMAE-WD’s sharp latent singular-value drop identifies the trained representation’s effective dimension, not necessarily turbulence’s intrinsic degrees of freedom.",
+      "engineering_relevance": "For compact wall-turbulence representations, choose the coordinate count by required reconstruction accuracy or resolved scale rather than a single dimension estimate.",
       "method": [
-        "Apply a 3D convolutional IRMAE-WD to minimal-channel velocity fields at Reτ = 110.",
+        "Apply IRMAE-WD with a 3D convolutional autoencoder to minimal-channel velocity fields.",
         "Vary the number of linear layers and truncate latent coordinates at the singular-value drop.",
-        "Use transfer learning to compare coordinate requirements with POD at matched reconstruction accuracy and smallest reproduced scale."
+        "Use transfer learning to compare coordinate requirements with POD across reconstruction accuracies and scales."
       ],
-      "evidence_signal": "Truncation at the drop reduces reconstruction rate by at most 0.01 percentage points, but the drop shifts toward fewer dimensions as linear layers are added.",
-      "watch_item": "Do not interpret the architecture-dependent drop as intrinsic degrees of freedom; results concern a minimal channel at Reτ = 110.",
+      "evidence_signal": "At Reτ = 110, truncation at the drop reduced reconstruction rate by at most 0.01 percentage points; with transfer learning, IRMAE-WD needed fewer coordinates than POD up to about 97% reconstruction, but POD needed fewer above that threshold.",
+      "watch_item": "The drop shifts toward lower dimensions as linear layers are added, so it should not be treated as an architecture-independent intrinsic dimension.",
       "hashtags": [
-        "#AIFluidMechanics",
+        "#FluidMechanics",
         "#Turbulence",
+        "#MachineLearning",
         "#DimensionalityReduction",
-        "#Autoencoders",
-        "#ReducedOrderModeling"
+        "#Autoencoders"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -752,7 +752,7 @@
       "paper_title": "Effective-dimension estimation of a minimal turbulent channel flow via IRMAE-WD",
       "paper_date": "2026-11-19",
       "paper_category": "Turbulence",
-      "generated_at": "2026-11-20T16:49:00",
+      "generated_at": "2026-11-21T15:58:27",
       "generator": "openai"
     }
   },
@@ -781,23 +781,23 @@
         "url": "https://arxiv.org/pdf/2611.24870v1"
       }
     ],
-    "score": 60,
+    "score": 55,
     "infographic": {
-      "key_insight": "Three-dimensional DSMC captures measured jet–crossflow interference pressure, while two-dimensional modeling reproduces qualitative patterns but overpredicts peak pressure about twelvefold.",
-      "engineering_relevance": "Accurate prediction of reaction-control-jet interference in rarefied hypersonic flight requires three-dimensional kinetic modeling rather than planar approximations.",
+      "key_insight": "Three-dimensional DSMC captures measured jet–crossflow interference pressures, while two-dimensional simulations reproduce qualitative patterns but overpredict peak pressure about twelvefold.",
+      "engineering_relevance": "Accurate prediction of reaction-control-jet interference in rarefied hypersonic flight requires three-dimensional kinetic modeling rather than a planar approximation.",
       "method": [
-        "Revisited a 1975 DLR helium-jet experiment in Mach 11–12 air crossflow.",
-        "Compared two- and three-dimensional DSMC across three freestream densities at Knudsen numbers of 0.021–0.125.",
-        "Checked planar resolution convergence and plate-alone boundary-layer consistency."
+        "Revisit a 1975 DLR helium-jet experiment in Mach 11–12 air crossflow.",
+        "Compare 2D and 3D DSMC at three freestream densities spanning Knudsen numbers 0.021–0.125.",
+        "Evaluate wall pressures, boundary layers, shock topology, and planar resolution convergence."
       ],
-      "evidence_signal": "Across all three densities, three-dimensional DSMC reproduced the measured interference-pressure lobe peak within 25% and its position within 3 mm.",
-      "watch_item": "Both models overpredict plate-alone wall pressure by 50–75%, and lateral relief remains an unconfirmed explanation for the planar model’s interference-pressure error.",
+      "evidence_signal": "Across all three densities, 3D DSMC matches measured interference-pressure lobe peaks within 25% and peak positions within 3 mm.",
+      "watch_item": "Both 2D and 3D simulations overpredict plate-alone wall pressure by 50–75%, and validation of jet strength and forces remains ongoing.",
       "hashtags": [
         "#Hypersonics",
         "#RarefiedGasDynamics",
         "#DSMC",
-        "#ReactionControl",
-        "#JetCrossflow"
+        "#ReactionControlJets",
+        "#Aerodynamics"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -805,7 +805,60 @@
       "paper_title": "Kinetic study of Reaction-Control-Jet Interference in Rarefied Hypersonic Crossflow",
       "paper_date": "2026-11-18",
       "paper_category": "Aerodynamics",
-      "generated_at": "2026-11-20T16:49:02",
+      "generated_at": "2026-11-21T15:58:37",
+      "generator": "openai"
+    }
+  },
+  {
+    "id": "2026-11-18-arxiv-physics_based_tabulation_approach_for_rotating_detonation_engines",
+    "arxiv_id": "2611.24667v1",
+    "date": "2026-11-18",
+    "title": "Physics-based Tabulation Approach for Rotating Detonation Engines",
+    "authors": "Noah Schwalb, Vansh Sharma, Shivank Sharma, Venkat Raman",
+    "abstract": "High-fidelity simulations of rotating detonation engines remain computationally expensive due to the strong coupling between compressible flow dynamics and stiff chemical kinetics. The coexistence of deflagrative and detonative combustion, along with shock interactions and rapid thermodynamic changes, further challenges conventional reduced-order chemistry models. This work presents a multi-mode tabulation framework that replaces detailed chemical kinetic integration with precomputed thermochemical states and source terms while accounting for variations in the local thermodynamic state. The key novelty lies in a unified treatment of distinct combustion regimes, wherein homogeneous reactor solutions describe deflagrative combustion and post-detonation reactions up to the Chapman-Jouguet (CJ) point, while an equilibrium isentropic expansion model captures supersonic relaxation beyond the CJ state. The framework is evaluated against detailed chemistry across progressively complex configurations, including homogeneous ignition, one-dimensional detonations, and a two-dimensional rotating detonation engine (RDE). The tabulated model accurately reproduces ignition delays and captures the initiation and sustained propagation of detonation waves across varying mixture compositions. Furthermore, the framework reconstructs the complete thermodynamic evolution along an RDE streamline, including post-injection expansion, detonation, post-detonation expansion, and oblique shock interactions, directly from conserved flow variables. These results demonstrate the capability of multi-mode tabulation to represent coupled combustion, shock, and expansion processes within a single thermodynamically responsive framework, offering a promising route toward computationally efficient simulations of detonative combustion across a broad range of applications.",
+    "category": "CFD Surrogates",
+    "source": "arXiv",
+    "published": "2026-11-18T16:05:16Z",
+    "updated": "2026-11-18T16:05:16Z",
+    "primary_category": "physics.flu-dyn",
+    "categories": [
+      "physics.flu-dyn"
+    ],
+    "links": [
+      {
+        "title": "arXiv",
+        "url": "https://arxiv.org/abs/2611.24667v1"
+      },
+      {
+        "title": "PDF",
+        "url": "https://arxiv.org/pdf/2611.24667v1"
+      }
+    ],
+    "score": 55,
+    "infographic": {
+      "key_insight": "A physics-based, multi-mode lookup framework replaces detailed chemical kinetics while representing combustion, shocks, and expansion in rotating detonation engines.",
+      "engineering_relevance": "The approach offers a path toward less expensive rotating detonation engine simulations while retaining sensitivity to local thermodynamic conditions.",
+      "method": [
+        "Precompute thermochemical states and reaction source terms for lookup from conserved flow variables.",
+        "Use homogeneous reactor solutions for deflagration and post-detonation reactions up to the Chapman–Jouguet state.",
+        "Model supersonic relaxation beyond the Chapman–Jouguet state with equilibrium isentropic expansion."
+      ],
+      "evidence_signal": "Comparisons with detailed chemistry span homogeneous ignition, one-dimensional detonations, and a two-dimensional engine, showing agreement in ignition delays, detonation propagation, and streamline thermodynamic evolution.",
+      "watch_item": "The abstract reports no quantified computational speedup, and accuracy outside the evaluated thermodynamic and mixture conditions remains unestablished.",
+      "hashtags": [
+        "#RotatingDetonation",
+        "#CFD",
+        "#CombustionModeling",
+        "#ChemistryTabulation",
+        "#PhysicsBasedSurrogates"
+      ],
+      "model": "gpt-6.1-sol",
+      "service_tier": "ultrafast",
+      "paper_id": "2026-11-18-arxiv-physics_based_tabulation_approach_for_rotating_detonation_engines",
+      "paper_title": "Physics-based Tabulation Approach for Rotating Detonation Engines",
+      "paper_date": "2026-11-18",
+      "paper_category": "CFD Surrogates",
+      "generated_at": "2026-11-21T15:58:39",
       "generator": "openai"
     }
   },
@@ -835,22 +888,22 @@
         "url": "https://arxiv.org/pdf/2611.23498v1"
       }
     ],
-    "score": 59,
+    "score": 54,
     "infographic": {
-      "key_insight": "PhysDial shows that learning from trajectories with changing physical conditions helps pretrained video models simulate how PDE systems respond to interventions.",
-      "engineering_relevance": "More responsive learned simulators could support fluid-control and design studies that change forcing or parameters during a simulation.",
+      "key_insight": "PhysDial shows that training on trajectories with changing physical conditions helps learned PDE simulators respond to interventions rather than merely accept condition inputs.",
+      "engineering_relevance": "More responsive learned simulators could support control, design, and scenario studies involving changes in forcing or physical parameters.",
       "method": [
-        "Adapt a pretrained video diffusion transformer to eight two-dimensional PDE families.",
-        "Encode coefficients alongside noise level, condition fields as reference frames, and equations as text prompts.",
-        "Train on within-trajectory switches and evaluate predictions against changed solver branches from the same state."
+        "Adapts a pretrained video diffusion transformer to eight two-dimensional PDE families.",
+        "Encodes coefficients alongside noise level, condition fields as reference frames, and equations as text prompts.",
+        "Uses within-trajectory interventions and counterfactual solver branches to train and evaluate responses to changed conditions."
       ],
-      "evidence_signal": "In Kolmogorov flow, within-trajectory switches comprised about 5% of training samples and halved post-change error at matched compute for forcing-wavenumber or amplitude changes.",
-      "watch_item": "Results are limited to the tested two-dimensional systems, and reliable responses to new conditions may require targeted intervention trajectories.",
+      "evidence_signal": "In Kolmogorov flow, within-trajectory switches made up about 5% of training samples and halved post-change error for forcing wavenumber or amplitude at matched compute.",
+      "watch_item": "Evidence is limited to two-dimensional PDEs, and reliable responses to unseen interventions may require additional condition-changing training trajectories.",
       "hashtags": [
         "#AIFluidMechanics",
-        "#ScientificMachineLearning",
-        "#PDESimulation",
+        "#PDE",
         "#Turbulence",
+        "#ScientificMachineLearning",
         "#VideoDiffusion"
       ],
       "model": "gpt-6.1-sol",
@@ -859,7 +912,7 @@
       "paper_title": "PhysDial: Adapting Pretrained Video Models for PDE Simulation under Changing Physical Conditions",
       "paper_date": "2026-11-17",
       "paper_category": "Turbulence",
-      "generated_at": "2026-11-20T16:49:04",
+      "generated_at": "2026-11-21T15:58:41",
       "generator": "openai"
     }
   },
@@ -890,21 +943,21 @@
         "url": "https://arxiv.org/pdf/2611.26236v1"
       }
     ],
-    "score": 58,
+    "score": 53,
     "infographic": {
-      "key_insight": "A steady component flux can induce a pinned condensed annulus in an otherwise stable binary mixture through an effective logarithmic field.",
-      "engineering_relevance": "Semipermeable boundary transport could control where condensation or cavitation occurs in radial systems without changing the critical temperature.",
+      "key_insight": "A steady boundary-driven flux can condense an otherwise stable binary mixture into a pinned annulus through an effective logarithmic field.",
+      "engineering_relevance": "Permeate chemical potential and boundary permeability could control localized phase separation in radial membrane systems without changing the critical temperature.",
       "method": [
-        "Model binary-mixture transport in a two-dimensional annulus using Model B dynamics.",
-        "Map steady transport to an equilibrium profile in a self-consistent logarithmic field.",
-        "Derive condensation thresholds and interfacial-tension effects, then test with numerical solutions."
+        "Model B dynamics in a two-dimensional annulus with a semipermeable inner boundary.",
+        "Map the driven steady state to an equilibrium profile in an effective logarithmic field.",
+        "Derive condensation and interfacial-tension thresholds, then test predictions numerically."
       ],
       "evidence_signal": "Numerical solutions confirm the analytical predictions and reveal hysteresis bounded by two saddle-node bifurcations.",
-      "watch_item": "The predictions rely on radial geometry and Model B dynamics; applicability to systems with hydrodynamic flow or turbulence remains unestablished.",
+      "watch_item": "The results assume Model B dynamics and radial geometry; applicability with fluid flow or more complex boundaries remains untested in the abstract.",
       "hashtags": [
         "#PhaseSeparation",
         "#TransportPhenomena",
-        "#Condensation",
+        "#MembraneSystems",
         "#ComputationalPhysics",
         "#FluidMechanics"
       ],
@@ -914,7 +967,7 @@
       "paper_title": "Flux-induced condensation in a radial geometry",
       "paper_date": "2026-11-19",
       "paper_category": "Turbulence",
-      "generated_at": "2026-11-20T16:49:07",
+      "generated_at": "2026-11-21T15:58:43",
       "generator": "openai"
     }
   },
@@ -943,23 +996,23 @@
         "url": "https://arxiv.org/pdf/2611.26049v1"
       }
     ],
-    "score": 58,
+    "score": 53,
     "infographic": {
-      "key_insight": "A generalized swimming formula shows how anisotropic and odd viscosity shape microswimmer motion while preserving the scallop theorem in linearly viscous fluids.",
-      "engineering_relevance": "The framework could guide microswimmer control and transport predictions in fluids with anisotropic or chiral viscous responses.",
+      "key_insight": "A generalized swimming formula shows how anisotropic and odd viscosity affect microswimmer motion while preserving the scallop theorem in linearly viscous fluids.",
+      "engineering_relevance": "The framework could guide microswimmer design and steering in chiral or anisotropic fluids, where strong shear can destabilize preferred orientations.",
       "method": [
-        "Model low-Reynolds-number flow with even and odd viscosity tensors.",
-        "Use the generalized Lorentz reciprocal theorem to establish Onsager–Casimir reciprocity for rigid-body resistance tensors.",
-        "Derive a swimming formula and analyze a spherical swimmer in an odd-viscous fluid."
+        "Apply the generalized Lorentz reciprocal theorem.",
+        "Establish Onsager–Casimir reciprocity for rigid-body resistance tensors.",
+        "Derive swimming velocities from prescribed surface motion and background flows."
       ],
-      "evidence_signal": "The abstract reports theoretical proofs and a spherical-swimmer analysis showing that sufficiently strong shear destabilizes bimodal chirotactic alignment; no experimental validation is described.",
-      "watch_item": "Applicability is limited to low-Reynolds-number, linearly viscous fluids; nonlinear rheology and inertial effects lie outside the stated framework.",
+      "evidence_signal": "The abstract reports theoretical proofs and a spherical-swimmer analysis predicting shear-induced destabilization of bimodal chirotactic alignment, rather than experimental validation.",
+      "watch_item": "Applicability is restricted to low-Reynolds-number, linearly viscous fluids; nonlinear rheology lies outside the stated framework.",
       "hashtags": [
-        "#Microhydrodynamics",
-        "#OddViscosity",
-        "#AnisotropicFluids",
+        "#FluidMechanics",
         "#Microswimmers",
-        "#LowReynoldsNumber"
+        "#OddViscosity",
+        "#LowReynoldsNumber",
+        "#AnisotropicFluids"
       ],
       "model": "gpt-6.1-sol",
       "service_tier": "ultrafast",
@@ -967,7 +1020,7 @@
       "paper_title": "Swimming formula in a linearly viscous fluid with anisotropic and odd viscosity tensors at low Reynolds number",
       "paper_date": "2026-11-19",
       "paper_category": "Turbulence",
-      "generated_at": "2026-11-20T16:49:08",
+      "generated_at": "2026-11-21T15:58:45",
       "generator": "openai"
     }
   },
@@ -996,22 +1049,22 @@
         "url": "https://arxiv.org/pdf/2611.26486v1"
       }
     ],
-    "score": 57,
+    "score": 52,
     "infographic": {
-      "key_insight": "Travelling wall waves drive net particle rotation, but near-wall transport can reverse direction depending on viscous effects and whether wall material moves only radially or also tangentially.",
-      "engineering_relevance": "Wave-driven cavity designs could control particle transport by tuning wave imbalance, frequency, and wall kinematics.",
+      "key_insight": "Travelling wall deformations drive particle transport whose direction depends on wave intensity, flow regime, and wall-material motion—not just the travelling shape.",
+      "engineering_relevance": "Controlling radial and tangential wall motion could tune or reverse particle transport in deformable cavities.",
       "method": [
-        "Decompose Lagrangian drift into Eulerian mean flow and Stokes drift.",
-        "Derive closed-form viscous-limit profiles and finite-Womersley profiles by quadrature.",
-        "Compare radial and locally arc-length-preserving wall motions using moving-domain simulations."
+        "Combine Eulerian mean flow and Stokes drift to obtain total Lagrangian drift.",
+        "Derive closed-form viscous-limit profiles and quadrature solutions at finite Womersley number.",
+        "Analyze high-frequency near-wall behavior and validate with moving-domain simulations."
       ],
-      "evidence_signal": "At azimuthal order m=2 and Wo²=10, moving-domain simulations recover leading-order drift coefficients for both wall motions.",
-      "watch_item": "Predictions are leading-order in wall amplitude; larger deformations require validation beyond the reported regime.",
+      "evidence_signal": "At azimuthal order m=2 and Wo²=10, moving-domain simulations recover leading-order drift coefficients for both radial-only and locally arc-length-preserving wall motions.",
+      "watch_item": "Predictions are leading-order in wall amplitude; finite-amplitude performance and broader simulation validation are not established in the abstract.",
       "hashtags": [
         "#FluidMechanics",
         "#LagrangianTransport",
         "#TravellingWaves",
-        "#MovingBoundaries",
+        "#SteadyStreaming",
         "#ComputationalScience"
       ],
       "model": "gpt-6.1-sol",
@@ -1020,60 +1073,7 @@
       "paper_title": "Lagrangian transport driven by travelling waves in a radially deforming circular cavity",
       "paper_date": "2026-11-19",
       "paper_category": "Turbulence",
-      "generated_at": "2026-11-20T16:49:11",
-      "generator": "openai"
-    }
-  },
-  {
-    "id": "2026-11-18-arxiv-a_boundary_integral_formulation_for_microscale_marangoni_surfing",
-    "arxiv_id": "2611.24766v1",
-    "date": "2026-11-18",
-    "title": "A boundary integral formulation for microscale Marangoni surfing",
-    "authors": "Scott Weady",
-    "abstract": "We consider a model for collections of surfactant-producing particles moving along the surface of a viscous fluid under their self-generated Marangoni flows. Such systems are challenging due to their nonlocal nature: particle motion is coupled to Marangoni stresses distributed across the entire fluid surface and to the resulting flows in the bulk. In the low Reynolds and Péclet number limit, we reduce these nonlocal effects to a system of integral equations supported solely on the particles and their boundaries. This formulation is not only computationally tractable, but also provides a framework for systematically coarse-graining many-particle systems. Numerical simulations, performed with a custom spectral method, show collective dynamics are highly sensitive to shape. In particular, among elliptical particles, we find prolate particles tend to attract while oblate particles tend to repel, and these geometric details control the stability of polarized populations. We rationalize these behaviors through a far-field expansion of the boundary integral equations and its corresponding reduced-order model.",
-    "category": "Turbulence",
-    "source": "arXiv",
-    "published": "2026-11-18T17:16:57Z",
-    "updated": "2026-11-18T17:16:57Z",
-    "primary_category": "physics.flu-dyn",
-    "categories": [
-      "physics.flu-dyn"
-    ],
-    "links": [
-      {
-        "title": "arXiv",
-        "url": "https://arxiv.org/abs/2611.24766v1"
-      },
-      {
-        "title": "PDF",
-        "url": "https://arxiv.org/pdf/2611.24766v1"
-      }
-    ],
-    "score": 57,
-    "infographic": {
-      "key_insight": "Particle shape controls collective Marangoni surfing: prolate ellipses tend to attract, while oblate ellipses tend to repel, influencing the stability of polarized populations.",
-      "engineering_relevance": "The formulation offers a computationally tractable route to modeling and potentially designing shape-controlled, surfactant-driven particle assemblies at fluid interfaces.",
-      "method": [
-        "Assume low Reynolds and Péclet numbers.",
-        "Reduce nonlocal surface–bulk coupling to integral equations on particles and their boundaries.",
-        "Use custom spectral simulations and a far-field reduced-order model."
-      ],
-      "evidence_signal": "Numerical simulations reveal shape-sensitive collective dynamics, with attraction and repulsion trends rationalized by a far-field expansion.",
-      "watch_item": "Applicability beyond low Reynolds and Péclet numbers is not established by the abstract.",
-      "hashtags": [
-        "#MarangoniFlow",
-        "#BoundaryIntegralMethods",
-        "#InterfacialFlows",
-        "#CollectiveDynamics",
-        "#ComputationalFluidDynamics"
-      ],
-      "model": "gpt-6.1-sol",
-      "service_tier": "ultrafast",
-      "paper_id": "2026-11-18-arxiv-a_boundary_integral_formulation_for_microscale_marangoni_surfing",
-      "paper_title": "A boundary integral formulation for microscale Marangoni surfing",
-      "paper_date": "2026-11-18",
-      "paper_category": "Turbulence",
-      "generated_at": "2026-11-20T16:49:13",
+      "generated_at": "2026-11-21T15:58:48",
       "generator": "openai"
     }
   }

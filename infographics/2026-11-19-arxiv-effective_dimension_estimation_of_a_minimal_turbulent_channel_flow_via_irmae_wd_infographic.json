@@ -1,19 +1,19 @@
 {
-  "key_insight": "IRMAE-WD’s latent singular-value drop marks a trained representation’s effective dimension, not an intrinsic dimension of turbulence; coordinate counts must be tied to accuracy or resolved scale.",
-  "engineering_relevance": "IRMAE-WD offers more compact turbulent-flow representations than POD up to about 97% reconstruction, while POD needs fewer coordinates above that threshold.",
+  "key_insight": "IRMAE-WD’s sharp latent singular-value drop identifies the trained representation’s effective dimension, not necessarily turbulence’s intrinsic degrees of freedom.",
+  "engineering_relevance": "For compact wall-turbulence representations, choose the coordinate count by required reconstruction accuracy or resolved scale rather than a single dimension estimate.",
   "method": [
-    "Apply a 3D convolutional IRMAE-WD to minimal-channel velocity fields at Reτ = 110.",
+    "Apply IRMAE-WD with a 3D convolutional autoencoder to minimal-channel velocity fields.",
     "Vary the number of linear layers and truncate latent coordinates at the singular-value drop.",
-    "Use transfer learning to compare coordinate requirements with POD at matched reconstruction accuracy and smallest reproduced scale."
+    "Use transfer learning to compare coordinate requirements with POD across reconstruction accuracies and scales."
   ],
-  "evidence_signal": "Truncation at the drop reduces reconstruction rate by at most 0.01 percentage points, but the drop shifts toward fewer dimensions as linear layers are added.",
-  "watch_item": "Do not interpret the architecture-dependent drop as intrinsic degrees of freedom; results concern a minimal channel at Reτ = 110.",
+  "evidence_signal": "At Reτ = 110, truncation at the drop reduced reconstruction rate by at most 0.01 percentage points; with transfer learning, IRMAE-WD needed fewer coordinates than POD up to about 97% reconstruction, but POD needed fewer above that threshold.",
+  "watch_item": "The drop shifts toward lower dimensions as linear layers are added, so it should not be treated as an architecture-independent intrinsic dimension.",
   "hashtags": [
-    "#AIFluidMechanics",
+    "#FluidMechanics",
     "#Turbulence",
+    "#MachineLearning",
     "#DimensionalityReduction",
-    "#Autoencoders",
-    "#ReducedOrderModeling"
+    "#Autoencoders"
   ],
   "model": "gpt-6.1-sol",
   "service_tier": "ultrafast",
@@ -21,6 +21,6 @@
   "paper_title": "Effective-dimension estimation of a minimal turbulent channel flow via IRMAE-WD",
   "paper_date": "2026-11-19",
   "paper_category": "Turbulence",
-  "generated_at": "2026-11-20T16:49:00",
+  "generated_at": "2026-11-21T15:58:27",
   "generator": "openai"
 }
