@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-11-21
+Generated: 2026-11-22
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Measuring and Improving Transfer of Neural Surrogates for Vehicle Aerodynamics
