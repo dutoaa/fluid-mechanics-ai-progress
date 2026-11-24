@@ -1,19 +1,19 @@
 {
   "key_insight": "Pretrained vehicle-aerodynamics surrogates transfer unreliably, while GeoReplay preserves source-domain accuracy without sacrificing fine-tuning’s target accuracy.",
-  "engineering_relevance": "GeoReplay could help reuse aerodynamic surrogates across vehicle classes while limiting accuracy loss on previously modeled designs.",
+  "engineering_relevance": "GeoReplay could make surrogate adaptation to new vehicle classes more reusable while limiting loss of accuracy on previously modeled vehicles.",
   "method": [
     "Benchmark five DrivAerML-pretrained surrogates on four independent target datasets.",
-    "Replay source simulations with geometries resembling the target vehicles.",
-    "Apply replay updates only when aligned with the target gradient."
+    "Replay source simulations with geometries resembling the target, applying their updates only when aligned with the target gradient.",
+    "Separate geometric coverage from simulated-physics differences in a risk bound and prove target-training descent for sufficiently small GeoReplay steps."
   ],
-  "evidence_signal": "Fine-tuning beat training from scratch in fewer than half of comparisons; GeoReplay reduced source error relative to fine-tuning in 77 of 80 settings while matching target accuracy.",
-  "watch_item": "GeoReplay requires retained source simulations, and its guarantee concerns sufficiently small steps on the target training objective—not unseen-target accuracy.",
+  "evidence_signal": "Across datasets differing in geometry, CFD solver, turbulence model, and flow conditions, fine-tuning beat training from scratch in fewer than half of comparisons; GeoReplay reduced fine-tuning’s source error in 77 of 80 settings while matching target accuracy.",
+  "watch_item": "GeoReplay requires retained source simulations and gradient-alignment checks; its target-training descent guarantee does not establish generalization to unseen vehicles.",
   "hashtags": [
-    "#AIForCFD",
     "#VehicleAerodynamics",
     "#NeuralSurrogates",
     "#TransferLearning",
-    "#ContinualLearning"
+    "#CFD",
+    "#GeoReplay"
   ],
   "model": "gpt-6.1-sol",
   "service_tier": "ultrafast",
@@ -21,6 +21,6 @@
   "paper_title": "Measuring and Improving Transfer of Neural Surrogates for Vehicle Aerodynamics",
   "paper_date": "2026-11-18",
   "paper_category": "Turbulence",
-  "generated_at": "2026-11-23T19:57:28",
+  "generated_at": "2026-11-24T19:25:01",
   "generator": "openai"
 }
