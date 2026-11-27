@@ -1,12 +1,12 @@
 {
-  "key_insight": "BridgeSRDA combines low-resolution forecasts and sparse observations to generate high-resolution flow ensembles, approaching high-resolution filtering accuracy at lower computational cost.",
-  "engineering_relevance": "The framework could make probabilistic flow-state reconstruction more affordable by replacing repeated high-resolution ensemble forecasts with low-resolution forecasts and learned stochastic transport.",
+  "key_insight": "BridgeSRDA combines low-resolution forecasts with sparse, noisy observations to generate probabilistic high-resolution flow reconstructions at lower cost than a high-resolution ensemble filter.",
+  "engineering_relevance": "The framework could make ensemble flow-state estimation more affordable while providing retrospective reconstructions and short-range nowcasts.",
   "method": [
-    "Condition learned stochastic transport on low-resolution forecasts and sparse, noisy observations.",
-    "Sample high-resolution analysis ensembles, retrospective reconstructions, and short-range nowcasts.",
+    "Train a neural network to learn forecast-informed stochastic transport.",
+    "Sample high-resolution analysis ensembles conditioned on low-resolution forecasts and observations.",
     "Use each current analysis to initialize the next low-resolution forecast."
   ],
-  "evidence_signal": "Across ten independently initialized 3D quasi-geostrophic trajectories in a narrow-jet regime different from training, BridgeSRDA reduced the mean absolute error ratio by approximately 32.5% versus deterministic 4D SRDA and took approximately 17 s per 30-member analysis versus 31 s for a high-resolution ensemble filter.",
+  "evidence_signal": "Across ten independently initialized 3D quasi-geostrophic trajectories in an unseen narrow-jet regime, BridgeSRDA reduced the mean absolute error ratio by approximately 32.5% versus deterministic 4D-SRDA at training observation spacing; 30-member analyses took approximately 17 s versus 31 s for the high-resolution filter.",
   "watch_item": "Uncertainty remains undercalibrated: nominal 90% intervals covered approximately 62% of reference values, with boundary spread artifacts and reduced skill under sparser observations.",
   "hashtags": [
     "#AIForFluidMechanics",
@@ -21,6 +21,6 @@
   "paper_title": "BridgeSRDA: Efficient Probabilistic Super-Resolution Data Assimilation with Forecast-Informed Stochastic Interpolants",
   "paper_date": "2026-11-25",
   "paper_category": "Turbulence",
-  "generated_at": "2026-11-26T18:13:52",
+  "generated_at": "2026-11-27T17:56:15",
   "generator": "openai"
 }

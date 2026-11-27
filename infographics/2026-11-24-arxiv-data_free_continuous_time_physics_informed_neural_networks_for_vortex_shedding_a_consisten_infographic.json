@@ -1,18 +1,18 @@
 {
-  "key_insight": "A data-free, continuous-time PINN generates cylinder vortex shedding, while enforcing pressure continuity and a hidden incompressibility constraint improves consistency across time windows.",
-  "engineering_relevance": "The approach supports reference-data-free prediction of unsteady wakes and aerodynamic loads, reducing artificial jumps in lift between training windows.",
+  "key_insight": "A data-free, continuous-time PINN produces cylinder vortex shedding, while pressure matching plus a hidden incompressibility constraint improves consistency across training windows.",
+  "engineering_relevance": "The approach supports physics-only prediction of unsteady wakes and smoother aerodynamic loads across successive training windows.",
   "method": [
-    "Train a continuous-time PINN over successive time windows without temporal discretization.",
-    "Trigger shedding using an analytical, divergence-free initial condition that breaks wake symmetry.",
-    "Enforce junction pressure and add the hidden constraint ∇·∂ₜv = 0 to the loss."
+    "Train over successive time windows without reference data or temporal discretization.",
+    "Break wake symmetry with an analytical, divergence-free initial condition.",
+    "Match junction pressure and penalize ∇·∂ₜv = 0, using the momentum equation to evaluate ∂ₜv."
   ],
-  "evidence_signal": "At Re=100, the Strouhal number and mean drag agree with same-domain OpenFOAM results within 0.5%; over five shedding periods, the remedy reduces lift jumps 20-fold.",
-  "watch_item": "Evidence is limited to the reported Re=100 cylinder case; pressure continuity alone does not ensure dynamically consistent window transitions.",
+  "evidence_signal": "At Re=100, Strouhal number and mean drag agree with same-domain OpenFOAM results within 0.5%; the consistency remedy reduces lift-coefficient jumps 20-fold over five shedding periods.",
+  "watch_item": "Evidence is limited to the reported Re=100 cylinder case and five-period consistency evaluation; broader flow-regime robustness remains unestablished.",
   "hashtags": [
     "#PhysicsInformedML",
     "#FluidMechanics",
+    "#PINNs",
     "#VortexShedding",
-    "#NavierStokes",
     "#ScientificMachineLearning"
   ],
   "model": "gpt-6.1-sol",
@@ -21,6 +21,6 @@
   "paper_title": "Data-free continuous-time physics-informed neural networks for vortex shedding: a consistent pressure across time windows",
   "paper_date": "2026-11-24",
   "paper_category": "Physics-Informed ML",
-  "generated_at": "2026-11-26T18:13:33",
+  "generated_at": "2026-11-27T17:55:57",
   "generator": "openai"
 }

@@ -22,7 +22,7 @@
     <header>
       <div>
         <h1>AI Fluid Mechanics Research Papers - Daily Top 20</h1>
-        <p class="sub">Collected 2026-11-26. Ranked from recent arXiv AI Fluid Mechanics papers, with OpenAI infographic summaries where credentials are available.</p>
+        <p class="sub">Collected 2026-11-27. Ranked from recent arXiv AI Fluid Mechanics papers, with OpenAI infographic summaries where credentials are available.</p>
       </div>
       <nav class="actions">
         <a href="papers.json">Data JSON</a>
@@ -31,7 +31,7 @@
     </header>
     <section class="grid">
       <article class="paper">
-        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>85</strong></div>
+        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>80</strong></div>
         <p class="date">2026-11-24</p>
         <h2>Data-free continuous-time physics-informed neural networks for vortex shedding: a consistent pressure across time windows</h2>
         <p class="authors">Mickaël Delcey, Cyril Regan, Masaki Fuchiwaki, Yoann Cheny</p>
@@ -39,18 +39,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.33489v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.33489v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A data-free, continuous-time PINN generates cylinder vortex shedding, while enforcing pressure continuity and a hidden incompressibility constraint improves consistency across time windows.</p>
-          <p><b>Engineering relevance:</b> The approach supports reference-data-free prediction of unsteady wakes and aerodynamic loads, reducing artificial jumps in lift between training windows.</p>
-          <ul><li>Train a continuous-time PINN over successive time windows without temporal discretization.</li><li>Trigger shedding using an analytical, divergence-free initial condition that breaks wake symmetry.</li><li>Enforce junction pressure and add the hidden constraint ∇·∂ₜv = 0 to the loss.</li></ul>
-          <p><b>Evidence signal:</b> At Re=100, the Strouhal number and mean drag agree with same-domain OpenFOAM results within 0.5%; over five shedding periods, the remedy reduces lift jumps 20-fold.</p>
-          <p><b>Watch item:</b> Evidence is limited to the reported Re=100 cylinder case; pressure continuity alone does not ensure dynamically consistent window transitions.</p>
-          <div class="tags"><span>#PhysicsInformedML</span> <span>#FluidMechanics</span> <span>#VortexShedding</span> <span>#NavierStokes</span> <span>#ScientificMachineLearning</span></div>
+          <p><b>Key insight:</b> A data-free, continuous-time PINN produces cylinder vortex shedding, while pressure matching plus a hidden incompressibility constraint improves consistency across training windows.</p>
+          <p><b>Engineering relevance:</b> The approach supports physics-only prediction of unsteady wakes and smoother aerodynamic loads across successive training windows.</p>
+          <ul><li>Train over successive time windows without reference data or temporal discretization.</li><li>Break wake symmetry with an analytical, divergence-free initial condition.</li><li>Match junction pressure and penalize ∇·∂ₜv = 0, using the momentum equation to evaluate ∂ₜv.</li></ul>
+          <p><b>Evidence signal:</b> At Re=100, Strouhal number and mean drag agree with same-domain OpenFOAM results within 0.5%; the consistency remedy reduces lift-coefficient jumps 20-fold over five shedding periods.</p>
+          <p><b>Watch item:</b> Evidence is limited to the reported Re=100 cylinder case and five-period consistency evaluation; broader flow-regime robustness remains unestablished.</p>
+          <div class="tags"><span>#PhysicsInformedML</span> <span>#FluidMechanics</span> <span>#PINNs</span> <span>#VortexShedding</span> <span>#ScientificMachineLearning</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>81</strong></div>
+        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>76</strong></div>
         <p class="date">2026-11-24</p>
         <h2>SPARK: Spectral Preconditioned Analytic Residual Kolmogorov Arnold Networks for incompressible Navier Stokes equations</h2>
         <p class="authors">Dathi Rajasekhar, Thien-Tam Nguyen, Trung Bao Le</p>
@@ -58,18 +58,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.31834v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.31834v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> SJ-KAN analytically propagates spatial derivatives through a compact spectral network, achieving comparable or better flow-solution accuracy with up to 47× fewer parameters and 8.2× faster training per epoch than tested baselines.</p>
-          <p><b>Engineering relevance:</b> The approach could reduce the computational cost of physics-informed incompressible flow solvers, including high-Reynolds-number cavity simulations without reference data.</p>
-          <ul><li>Embed coordinates in Chebyshev bases and precompute their derivatives at collocation points.</li><li>Linearly compress the bases into latent features, then map them to flow variables with a single nonlinear CKAN layer.</li><li>Compute PDE spatial derivatives analytically; reserve automatic differentiation for loss gradients with respect to weights.</li></ul>
-          <p><b>Evidence signal:</b> Three SJ-KAN variants were evaluated on Taylor–Green vortex and lid-driven cavity benchmarks, including cavity Reynolds numbers of 100–10,000, against AD-based PIKAN and standard PINN baselines.</p>
-          <p><b>Watch item:</b> Evidence is limited to the reported benchmarks; performance on complex geometries and broader flow regimes remains unestablished.</p>
+          <p><b>Key insight:</b> SJ-KAN propagates spatial derivatives analytically through a compact spectral network, achieving comparable or better accuracy than PINN and PIKAN baselines with substantially lower computational cost.</p>
+          <p><b>Engineering relevance:</b> The approach could make physics-informed incompressible flow simulation more affordable, including high-Reynolds-number cavity flows without reference data.</p>
+          <ul><li>Embed coordinates in Chebyshev bases and precompute basis derivatives at collocation points.</li><li>Compress the bases linearly into latent features, then map them to physical variables with one nonlinear Chebyshev KAN layer.</li><li>Evaluate PDE derivatives analytically; use automatic differentiation only for loss gradients with respect to weights.</li></ul>
+          <p><b>Evidence signal:</b> Tests on the Taylor–Green vortex and lid-driven cavity at Re = 100–10,000 report up to 47× fewer parameters and 8.2× faster training per epoch than the baselines; the Re = 10,000 cavity was solved without reference data using fewer than 9,000 parameters.</p>
+          <p><b>Watch item:</b> The abstract does not establish performance on complex geometries or turbulent flows, and faster epochs do not necessarily imply shorter time to convergence.</p>
           <div class="tags"><span>#PhysicsInformedML</span> <span>#FluidMechanics</span> <span>#NavierStokes</span> <span>#KolmogorovArnoldNetworks</span> <span>#ScientificMachineLearning</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>73</strong></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>68</strong></div>
         <p class="date">2026-11-25</p>
         <h2>AI Buckingham: Agentic Discovery of Dimensionless Scaling Laws Across Physical Regimes</h2>
         <p class="authors">Ao Cheng, Lei Zhang, Guowei He</p>
@@ -77,18 +77,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.33961v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.33961v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> AI Buckingham discovers dominant dimensionless groups and regime-dependent scaling laws by combining LLM-guided reasoning with symbolic and numerical tools.</p>
-          <p><b>Engineering relevance:</b> The framework improves equivalent sand-grain roughness estimates through informative reparameterizations of surface statistics, supporting engineering-oriented turbulent drag modelling.</p>
-          <ul><li>Use literature retrieval and symbolic tools to check dimensional consistency.</li><li>Identify physical regimes with gradient-based clustering and dominant dimensionless groups using mutual information.</li><li>Apply explicit numerical criteria to select group count and assess simplification.</li></ul>
-          <p><b>Evidence signal:</b> Across ten physical systems spanning fluid dynamics, magnetohydrodynamics, thermal convection and additive manufacturing, the framework recovers established similarity representations and resolves regime-dependent scalings.</p>
-          <p><b>Watch item:</b> The abstract reports improved roughness estimates but provides no quantitative error reductions or details of out-of-sample validation.</p>
-          <div class="tags"><span>#AIFluidMechanics</span> <span>#DimensionalAnalysis</span> <span>#Turbulence</span> <span>#ScalingLaws</span> <span>#AgenticAI</span></div>
+          <p><b>Key insight:</b> AI Buckingham combines LLM-guided reasoning with numerical tools to discover dominant dimensionless groups and how their scaling changes across physical regimes.</p>
+          <p><b>Engineering relevance:</b> For turbulent flow over rough surfaces, informative reparameterizations of surface statistics improve equivalent sand-grain roughness estimates used in engineering drag models.</p>
+          <ul><li>Use literature retrieval and dimensional checks to constrain admissible representations.</li><li>Identify physical regimes with gradient-based clustering and rank dimensionless groups using mutual information.</li><li>Apply explicit numerical criteria to select group count and assess simplification.</li></ul>
+          <p><b>Evidence signal:</b> Across ten systems spanning fluid dynamics, magnetohydrodynamics, thermal convection and additive manufacturing, the framework recovers established similarity representations and resolves regime-dependent scalings.</p>
+          <p><b>Watch item:</b> The abstract does not quantify predictive gains or establish generalization to unseen roughness geometries and flow conditions.</p>
+          <div class="tags"><span>#AIFluidMechanics</span> <span>#DimensionalAnalysis</span> <span>#Turbulence</span> <span>#ScientificDiscovery</span> <span>#DragModeling</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>69</strong></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>64</strong></div>
         <p class="date">2026-11-24</p>
         <h2>Three-Dimensional Wake Reconstruction and Cross-Scale Transfer for Floating Offshore Wind Turbines via Physics-Informed Fourier Neural Operators</h2>
         <p class="authors">Guodan Dong, Qi Qian, Feifei Xue, Jianhua Qin, Chang Xu, Wenzhong Shen</p>
@@ -96,37 +96,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.31789v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.31789v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A physics-informed Fourier neural operator reconstructs unsteady 3D floating-turbine wakes from two observation planes and transfers learned wake dynamics from a 5 MW to a 22 MW turbine.</p>
-          <p><b>Engineering relevance:</b> Sparse-measurement wake reconstruction could support downstream-inflow assessment in floating wind farms.</p>
-          <ul><li>Generate fixed and coupled surge–pitch wakes using large-eddy simulation with an actuator line model.</li><li>Combine 4D spectral convolutions with continuity and rotor-forced momentum-residual regularization.</li><li>Train on 5 MW cases and fine-tune for cross-scale transfer to a 22 MW turbine.</li></ul>
-          <p><b>Evidence signal:</b> In simulation-based evaluation, 10% planar sampling nearly matched dense-input accuracy (relative L2 error 0.0689 versus 0.0684), while transfer learning reduced 22 MW streamwise-velocity error by 36% versus zero-shot inference at St = 0.6.</p>
-          <p><b>Watch item:</b> Fine-scale vortex breakdown remains damped, and the abstract reports simulation-based rather than field validation.</p>
+          <p><b>Key insight:</b> A physics-informed Fourier neural operator reconstructs unsteady 3D floating-wind-turbine wakes from two observation planes and transfers learned wake dynamics across turbine scales.</p>
+          <p><b>Engineering relevance:</b> The approach could support downstream-inflow assessment in floating wind farms with limited wake measurements.</p>
+          <ul><li>Generate fixed and surge–pitch wake data using large-eddy simulation coupled with an actuator line model.</li><li>Combine 4D spectral convolutions with incompressible continuity and rotor-forced momentum-residual regularization.</li><li>Train on 5 MW turbine cases and transfer-learn to a 22 MW turbine.</li></ul>
+          <p><b>Evidence signal:</b> In simulation-based tests, 10% planar sampling nearly matched dense-sampling accuracy (relative L2 error 0.0689 versus 0.0684), while transfer learning reduced 22 MW streamwise-velocity error at St = 0.6 by 36% versus zero-shot inference.</p>
+          <p><b>Watch item:</b> Fine-scale vortex breakdown remains damped, and the reported results establish performance on simulated rather than field-measured wakes.</p>
           <div class="tags"><span>#AIFluidMechanics</span> <span>#PhysicsInformedLearning</span> <span>#FourierNeuralOperator</span> <span>#FloatingOffshoreWind</span> <span>#WakeReconstruction</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>69</strong></div>
-        <p class="date">2026-11-20</p>
-        <h2>A 3D PINN-Based Framework for Patient-Specific Pulmonary Hemodynamics Using Windkessel Models</h2>
-        <p class="authors">Celia Taboada, Luis Nuñez, Angélica Casero, Pedro Navas</p>
-        <p class="abstract">Cardiovascular fluid dynamics modeling relies heavily on mesh-based numerical methods such as Computational Fluid Dynamics (CFD). While accurate, these methods entail significant computational costs and complex meshing workflows that limit their translation to clinical practice. Physics-Informed Neural Networks (PINNs) are a promising meshless alternative that embeds the governing equations directly into neural network training. In this work, we propose a PINN framework for pulsatile blood flow in patient-specific geometries with dynamic lumped-parameter Windkessel (RCR) outlet conditions representing distal vascular impedance. Coupling the Windkessel ODE to a 3D network raises two difficulties: the ODE alone does not fix the pressure level, and the local pressure variations that drive the flow are orders of magnitude smaller than the basal pressure imposed by the outlet. We address them by decomposing pressure into a time-dependent basal part and a spatially varying part, an initial condition and gauge for the Windkessel equation, a global mass-balance constraint, and a periodic Fourier embedding of time. Validated on 2D canonical channels (steady and pulsatile, with and without RCR outlet), the framework is then applied to a patient-specific right pulmonary artery, reproducing outlet flow, mean pressure, and the velocity and dynamic pressure fields with errors on the order of the data resolution. Finally, we solve the inverse problem of identifying the three Windkessel parameters of the outlet from synthetic data, recovering them with errors of about 0.3% from deliberately wrong initial values. Residual biases in the local pressure field and the need to test robustness to noisy clinical data remain open, but the results support PINNs as complementary tools for meshless hemodynamics and patient-specific digital twins.</p>
-        <div class="links"><a href="https://arxiv.org/abs/2611.27351v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.27351v1" target="_blank" rel="noreferrer">PDF</a></div>
-        <section class="info">
-          <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A 3D physics-informed neural network couples patient-specific pulmonary blood flow with Windkessel outlet dynamics by separating basal pressure from local pressure variations.</p>
-          <p><b>Engineering relevance:</b> The framework supports meshless hemodynamic modeling and outlet-parameter estimation toward patient-specific cardiovascular digital twins.</p>
-          <ul><li>Embed flow equations and Windkessel RCR outlet dynamics in PINN training.</li><li>Decompose pressure and impose a Windkessel initial condition, pressure gauge, and global mass balance.</li><li>Use periodic Fourier time embedding for pulsatile flow.</li></ul>
-          <p><b>Evidence signal:</b> Tests on 2D channels and a patient-specific right pulmonary artery showed flow-field errors on the order of data resolution; inverse tests recovered three Windkessel parameters from synthetic data with about 0.3% error.</p>
-          <p><b>Watch item:</b> Local pressure biases persist, and robustness to noisy clinical data remains untested.</p>
-          <div class="tags"><span>#PhysicsInformedML</span> <span>#FluidMechanics</span> <span>#Hemodynamics</span> <span>#Windkessel</span> <span>#DigitalTwins</span></div>
-        </section>
-      </article>
-    
-
-      <article class="paper">
-        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>65</strong></div>
+        <div class="meta"><span>Physics-Informed ML</span><span>arXiv</span><strong>60</strong></div>
         <p class="date">2026-11-24</p>
         <h2>Physics-informed neural networks for strong normal shocks in kinetic relaxation models and the hard-sphere Boltzmann equation</h2>
         <p class="authors">Ehsan Roohi</p>
@@ -134,18 +115,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.31996v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.31996v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Reference-free PINNs resolve strong kinetic shocks with high accuracy, while higher-order moments reveal errors that density, velocity and temperature can miss.</p>
-          <p><b>Engineering relevance:</b> The approach offers a route to computing strongly nonequilibrium shock structure in high-speed rarefied-gas flows.</p>
-          <ul><li>Correct an end-state Maxwellian mixture with an unbounded signed neural factor and exact inflow.</li><li>Train on kinetic residuals in three norms plus conservation terms, without reference data.</li><li>Use Adam, self-scaled quasi-Newton optimisation and Mach-number continuation.</li></ul>
-          <p><b>Evidence signal:</b> Across eight evaluated fields, the largest relative L2 difference from DSMC for hard-sphere Boltzmann shocks was 0.19% at Mach 8 and 0.34% at Mach 10.</p>
-          <p><b>Watch item:</b> BGK fourth-order moments required greater loss weight on a passive reduced distribution and longer optimisation; errors still reached 7.1% at Mach 100.</p>
+          <p><b>Key insight:</b> Reference-free PINNs resolve strong kinetic shock waves with high accuracy, but higher-order moments reveal errors that bulk flow fields can miss.</p>
+          <p><b>Engineering relevance:</b> The approach offers a promising route to predicting strongly nonequilibrium gas flows relevant to high-speed aerospace applications.</p>
+          <ul><li>Learn a signed correction to an end-state Maxwellian mixture with exact inflow conditions.</li><li>Minimise kinetic residuals in three norms plus conservation terms, without reference data in the loss.</li><li>Combine Adam, self-scaled quasi-Newton optimisation and Mach-number continuation.</li></ul>
+          <p><b>Evidence signal:</b> Across eight fields, the largest relative L2 difference from DSMC for hard-sphere Boltzmann shocks was 0.19% at Mach 8 and 0.34% at Mach 10.</p>
+          <p><b>Watch item:</b> High-Mach BGK fourth-order moments required loss reweighting and longer optimisation; their errors remained up to 7.1% at Mach 100.</p>
           <div class="tags"><span>#PhysicsInformedML</span> <span>#FluidMechanics</span> <span>#KineticTheory</span> <span>#ShockWaves</span> <span>#BoltzmannEquation</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>62</strong></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>57</strong></div>
         <p class="date">2026-11-21</p>
         <h2>Numerical Study of Flow and Cavitation in Single-Liquid Injectors with Sharp-Edged and Chamfered Orifice Inlets</h2>
         <p class="authors">Shreyash Gulati, Sven R. Walsberg, Timothy W. Nearhood, Jeffrey D. Moore</p>
@@ -153,18 +134,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.28527v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.28527v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Inlet geometry strongly affects cavitation: at L/D = 5 and pressure drops above 0.2 MPa, sharp-edged inlets showed strong cavitation while chamfered inlets showed cavitation inception.</p>
-          <p><b>Engineering relevance:</b> Inlet geometry and orifice length-to-diameter ratio are important design variables for managing cavitation and hydraulic flip in single-liquid injectors.</p>
-          <ul><li>CFD of water flow using k–ω SST turbulence, ZGB cavitation, and VOF models.</li><li>Compared sharp-edged and chamfered inlets over pressure drops of 0.07–0.59 MPa.</li><li>Investigated orifice length-to-diameter ratios of 2, 5, and 10.</li></ul>
-          <p><b>Evidence signal:</b> Volumetric flow predictions were validated against existing experiments, and hydraulic flip at L/D = 5 and a 0.59 MPa pressure drop for the sharp-edged inlet agreed with prior experimental findings.</p>
-          <p><b>Watch item:</b> The abstract reports flow-rate validation but does not quantify prediction errors or establish accuracy for local vapor distributions.</p>
+          <p><b>Key insight:</b> In CFD simulations at L/D = 5 and pressure drops above 0.2 MPa, sharp-edged inlets showed strong cavitation while chamfered inlets showed cavitation inception.</p>
+          <p><b>Engineering relevance:</b> Inlet geometry and orifice length-to-diameter ratio are important design considerations for controlling cavitation and hydraulic flip in liquid injectors.</p>
+          <ul><li>CFD using k–ω SST turbulence, Zwart–Gerber–Belamri cavitation, and Volume of Fluid models.</li><li>Compared sharp-edged and chamfered water-injector inlets.</li><li>Studied pressure drops of 0.07–0.59 MPa and L/D ratios of 2, 5, and 10.</li></ul>
+          <p><b>Evidence signal:</b> Volumetric flow predictions were validated against existing experiments, and hydraulic flip at L/D = 5 and 0.59 MPa for the sharp-edged inlet agreed with prior experimental findings.</p>
+          <p><b>Watch item:</b> The abstract provides no quantitative validation errors, limiting assessment of predictive accuracy beyond the reported agreement.</p>
           <div class="tags"><span>#FluidMechanics</span> <span>#CFD</span> <span>#Cavitation</span> <span>#InjectorDesign</span> <span>#Turbulence</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>58</strong></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>53</strong></div>
         <p class="date">2026-11-25</p>
         <h2>Dopamine: A Cartesian grid large-eddy-simulation framework for coastal ocean modelling of free-surface waves</h2>
         <p class="authors">Akshay Patil</p>
@@ -172,18 +153,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.34058v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.34058v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Dopamine combines Cartesian-grid large-eddy simulation, free-surface tracking, and particle tracking to study small-scale turbulent physics in coastal waves.</p>
+          <p><b>Key insight:</b> Dopamine combines Cartesian-grid large-eddy simulation with free-surface and particle modelling to study small-scale turbulent physics in coastal waves.</p>
           <p><b>Engineering relevance:</b> The framework supports investigation of wave interactions with seabeds, coastal obstacles, and heavy or buoyant particles.</p>
-          <ul><li>Geometric volume-of-fluid method on a staggered Cartesian grid tracks free-surface waves.</li><li>Ghost-cell immersed boundaries represent stationary solids; Vreman and AMD models represent sub-grid turbulence.</li><li>One-way-coupled Lagrangian tracking models heavy and buoyant point particles.</li></ul>
-          <p><b>Evidence signal:</b> Analytical, experimental, and numerical benchmarks assess waves and particle motion; two-fluid scaling efficiencies reach 77% strong and 73% weak at 512 CPU ranks relative to 64, with a single-GPU build verified against the CPU solver.</p>
-          <p><b>Watch item:</b> One-way particle coupling neglects particle feedback on the flow, limiting applicability when particle loading significantly alters fluid motion.</p>
-          <div class="tags"><span>#CoastalModelling</span> <span>#LargeEddySimulation</span> <span>#FreeSurfaceFlows</span> <span>#ParticleTracking</span> <span>#ComputationalFluidDynamics</span></div>
+          <ul><li>Geometric volume-of-fluid wave tracking on a staggered Cartesian grid.</li><li>Ghost-cell immersed boundaries for stationary solids and one-way-coupled Lagrangian point particles.</li><li>Vreman and anisotropic minimum-dissipation sub-grid-scale turbulence models.</li></ul>
+          <p><b>Evidence signal:</b> Analytical, experimental, and numerical comparisons support wave and particle predictions; two-fluid scaling efficiencies reach 77% strong and 73% weak at 512 CPU ranks relative to 64, and a single-GPGPU build was verified against the CPU solver.</p>
+          <p><b>Watch item:</b> One-way particle coupling omits particle feedback on the flow, limiting applicability when particle loading materially affects wave or turbulence dynamics.</p>
+          <div class="tags"><span>#CoastalModelling</span> <span>#LargeEddySimulation</span> <span>#FreeSurfaceFlows</span> <span>#ComputationalFluidDynamics</span> <span>#ParticleTracking</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>58</strong></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>53</strong></div>
         <p class="date">2026-11-25</p>
         <h2>Energy cascade spectrum in wave turbulence of a two-dimensional quantum fluid</h2>
         <p class="authors">Ying Zhu, Jason Laurie, Giorgio Krstulovic, Sergey Nazarenko</p>
@@ -191,18 +172,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.33944v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.33944v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A logarithmic correction with exponent 1/3 breaks the degeneracy between the 2D quantum-fluid energy-cascade spectrum and thermal equilibrium, enabling a positive, constant energy flux toward small scales.</p>
-          <p><b>Engineering relevance:</b> The corrected spectrum improves interpretation and benchmarking of energy transfer in simulations and experiments on two-dimensional Bose gases.</p>
-          <ul><li>Asymptotically expand the wave-kinetic collision integral to derive the logarithmic correction.</li><li>Set the logarithmic cutoff by the dissipation scale and regularize the infrared divergence at the forcing scale.</li><li>Test the predicted spectrum using Gross–Pitaevskii and wave-kinetic simulations.</li></ul>
-          <p><b>Evidence signal:</b> Both simulation approaches support the predicted spectral shape, while finite spectral ranges can exhibit apparent power laws steeper than the dimensional prediction.</p>
-          <p><b>Watch item:</b> The spectral-prefactor estimate assumes asymptotically well-separated forcing and dissipation scales, so finite-range applications require caution.</p>
-          <div class="tags"><span>#WaveTurbulence</span> <span>#QuantumFluids</span> <span>#BoseGases</span> <span>#EnergyCascade</span> <span>#ComputationalPhysics</span></div>
+          <p><b>Key insight:</b> A logarithmic correction with exponent 1/3 enables a constant, positive energy flux toward small scales in 2D quantum-fluid wave turbulence, where the naive power law instead describes thermal equilibrium.</p>
+          <p><b>Engineering relevance:</b> The corrected spectrum can guide interpretation and numerical modeling of energy transfer in two-dimensional Bose gases.</p>
+          <ul><li>Derive the logarithmic correction through an asymptotic expansion of the wave-kinetic collision integral.</li><li>Set the logarithmic upper cutoff using the small-scale dissipation scale.</li><li>Regularize the marginal infrared divergence at the forcing scale to estimate the spectral prefactor.</li></ul>
+          <p><b>Evidence signal:</b> Gross-Pitaevskii and wave-kinetic simulations support the predicted spectral shape, whose finite-range appearance may explain steep spectra observed in 2D Bose gas experiments.</p>
+          <p><b>Watch item:</b> The prefactor estimate assumes asymptotically well-separated forcing and dissipation scales, so finite-scale applications require caution.</p>
+          <div class="tags"><span>#QuantumTurbulence</span> <span>#WaveTurbulence</span> <span>#BoseGases</span> <span>#EnergyCascade</span> <span>#ComputationalPhysics</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>58</strong></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>53</strong></div>
         <p class="date">2026-11-25</p>
         <h2>BridgeSRDA: Efficient Probabilistic Super-Resolution Data Assimilation with Forecast-Informed Stochastic Interpolants</h2>
         <p class="authors">Aditya Sai Pranith Ayapilla, Yuki Yasuda, Ryo Onishi</p>
@@ -210,10 +191,10 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.33720v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.33720v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> BridgeSRDA combines low-resolution forecasts and sparse observations to generate high-resolution flow ensembles, approaching high-resolution filtering accuracy at lower computational cost.</p>
-          <p><b>Engineering relevance:</b> The framework could make probabilistic flow-state reconstruction more affordable by replacing repeated high-resolution ensemble forecasts with low-resolution forecasts and learned stochastic transport.</p>
-          <ul><li>Condition learned stochastic transport on low-resolution forecasts and sparse, noisy observations.</li><li>Sample high-resolution analysis ensembles, retrospective reconstructions, and short-range nowcasts.</li><li>Use each current analysis to initialize the next low-resolution forecast.</li></ul>
-          <p><b>Evidence signal:</b> Across ten independently initialized 3D quasi-geostrophic trajectories in a narrow-jet regime different from training, BridgeSRDA reduced the mean absolute error ratio by approximately 32.5% versus deterministic 4D SRDA and took approximately 17 s per 30-member analysis versus 31 s for a high-resolution ensemble filter.</p>
+          <p><b>Key insight:</b> BridgeSRDA combines low-resolution forecasts with sparse, noisy observations to generate probabilistic high-resolution flow reconstructions at lower cost than a high-resolution ensemble filter.</p>
+          <p><b>Engineering relevance:</b> The framework could make ensemble flow-state estimation more affordable while providing retrospective reconstructions and short-range nowcasts.</p>
+          <ul><li>Train a neural network to learn forecast-informed stochastic transport.</li><li>Sample high-resolution analysis ensembles conditioned on low-resolution forecasts and observations.</li><li>Use each current analysis to initialize the next low-resolution forecast.</li></ul>
+          <p><b>Evidence signal:</b> Across ten independently initialized 3D quasi-geostrophic trajectories in an unseen narrow-jet regime, BridgeSRDA reduced the mean absolute error ratio by approximately 32.5% versus deterministic 4D-SRDA at training observation spacing; 30-member analyses took approximately 17 s versus 31 s for the high-resolution filter.</p>
           <p><b>Watch item:</b> Uncertainty remains undercalibrated: nominal 90% intervals covered approximately 62% of reference values, with boundary spread artifacts and reduced skill under sparser observations.</p>
           <div class="tags"><span>#AIForFluidMechanics</span> <span>#DataAssimilation</span> <span>#SuperResolution</span> <span>#ProbabilisticModeling</span> <span>#Turbulence</span></div>
         </section>
@@ -221,7 +202,7 @@
     
 
       <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>58</strong></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>53</strong></div>
         <p class="date">2026-11-23</p>
         <h2>Scalable Modal Analysis of the Imperial Front Wing Flow Field</h2>
         <p class="authors">Parv Khurana, Benet Eiximeno, Alexandra Liosi, Spencer Sherwin, Athanasios Chatzopoulos, Julien Hoessler</p>
@@ -229,18 +210,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.29995v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.29995v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Scalable modal analysis identifies dominant coherent flow structures and their temporal dynamics around a Formula 1 front wing while compressing approximately 6 TB of snapshots into 200 GB of modal data.</p>
-          <p><b>Engineering relevance:</b> Linking aerodynamic structures to characteristic frequencies can help engineers interpret unsteady front-wing flow and manage large simulation datasets.</p>
-          <ul><li>Simulate the Imperial Front Wing at Re = 2.2 × 10^5 using Nektar++ spectral/hp-element LES with 49.72 million degrees of freedom.</li><li>Apply scalable POD and DMD through the open-source pyLOM framework.</li><li>Associate DMD modes with flow mechanisms using point-probe spectra.</li></ul>
-          <p><b>Evidence signal:</b> Mean lift and drag coefficients differ from reference data by 2.24% and 2.87%, respectively; modes at chord-based Strouhal numbers 5.1, 7.5 and 9.3 are associated with separation-bubble dynamics, canard-vortex pulsation and endplate-vortex meander.</p>
-          <p><b>Watch item:</b> The abstract demonstrates one geometry and Reynolds number; generalization to other operating conditions remains unestablished.</p>
-          <div class="tags"><span>#FluidMechanics</span> <span>#Formula1Aerodynamics</span> <span>#DynamicModeDecomposition</span> <span>#LargeEddySimulation</span> <span>#ReducedOrderModeling</span></div>
+          <p><b>Key insight:</b> Scalable modal decomposition reveals dominant coherent flow structures and their temporal dynamics around a Formula 1 front wing while compressing approximately 6 TB of snapshots into 200 GB of modal data.</p>
+          <p><b>Engineering relevance:</b> Identifying characteristic frequencies of wing-flow instabilities can support aerodynamic diagnosis and reduced-order modeling for motorsport design.</p>
+          <ul><li>Simulate the Imperial Front Wing at Re = 2.2 × 10^5 using spectral/hp-element LES in Nektar++.</li><li>Apply scalable POD and DMD through the open-source pyLOM framework.</li><li>Use point-probe spectra to associate DMD modes with specific flow mechanisms.</li></ul>
+          <p><b>Evidence signal:</b> The simulation uses 49.72 million degrees of freedom, reports lift and drag coefficient differences of 2.24% and 2.87% from reference data, and links chord-based Strouhal numbers 5.1, 7.5 and 9.3 to distinct flow mechanisms.</p>
+          <p><b>Watch item:</b> The abstract demonstrates one geometry and Reynolds number; transferability to other operating conditions and reduced-order predictive accuracy remain unestablished.</p>
+          <div class="tags"><span>#FluidMechanics</span> <span>#DynamicModeDecomposition</span> <span>#MotorsportAerodynamics</span> <span>#LargeEddySimulation</span> <span>#ReducedOrderModeling</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>CFD Surrogates</span><span>arXiv</span><strong>57</strong></div>
+        <div class="meta"><span>CFD Surrogates</span><span>arXiv</span><strong>52</strong></div>
         <p class="date">2026-11-25</p>
         <h2>Floquet Decomposition: Floquet Multipliers and Time-Periodic Modes from Period-Sampled Snapshot Data</h2>
         <p class="authors">John Mathew Quinlan</p>
@@ -248,18 +229,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.34901v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.34901v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Period-shifted DMD identifies Floquet multipliers and time-periodic modes, capturing stability in periodic systems that a single constant snapshot-to-snapshot operator cannot represent.</p>
-          <p><b>Engineering relevance:</b> The approach supports stability analysis of periodically varying flows and structures, including combustors observed through velocity, scalar, or acoustic measurements.</p>
-          <ul><li>FD applies DMD to snapshots subsampled once per period.</li><li>EFD stacks all snapshots within each period to recover shared multipliers and phase-resolved modes.</li><li>Both are exact for linear time-periodic systems when measurements determine the state: at one phase for FD, or across a period for EFD.</li></ul>
-          <p><b>Evidence signal:</b> The methods are verified against known multipliers and illustrated with velocity, scalar, and acoustic-pressure measurements from a swirl-stabilized combustor.</p>
-          <p><b>Watch item:</b> For nonlinear or noisy data, estimated multiplier moduli can be biased and should not be interpreted as decay rates; period, rank, and data scaling require care.</p>
-          <div class="tags"><span>#FluidMechanics</span> <span>#FloquetTheory</span> <span>#DynamicModeDecomposition</span> <span>#FlowStability</span> <span>#DataDrivenModeling</span></div>
+          <p><b>Key insight:</b> Period-shifted snapshot analysis recovers Floquet multipliers and time-periodic modes, revealing stability in systems that a single constant DMD operator cannot represent.</p>
+          <p><b>Engineering relevance:</b> The method supports stability analysis of periodically varying flows and measurements, including combustor dynamics and rotating structures.</p>
+          <ul><li>FD applies DMD to snapshots subsampled once per period.</li><li>EFD stacks each period’s snapshots to recover shared multipliers and phase-resolved modes.</li><li>EFD can handle partial measurements when observations over one period determine the state.</li></ul>
+          <p><b>Evidence signal:</b> The methods are verified against known multipliers and illustrated using velocity, scalar, and acoustic-pressure measurements from a swirl-stabilized combustor.</p>
+          <p><b>Watch item:</b> Exactness requires linear time-periodic dynamics and sufficient observability; nonlinear or noisy data can bias multiplier moduli, which should not be interpreted as decay rates.</p>
+          <div class="tags"><span>#FloquetAnalysis</span> <span>#DynamicModeDecomposition</span> <span>#FluidMechanics</span> <span>#FlowStability</span> <span>#DataDrivenModeling</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>55</strong></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>50</strong></div>
         <p class="date">2026-11-23</p>
         <h2>A centered finite-volume method with explicit pressure relaxation for weakly compressible single- and two-phase flows</h2>
         <p class="authors">Shintaro Matsushita, Suhas S. Jain, Andrei G. Fedorov, Tetsuya Suekane</p>
@@ -267,18 +248,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.31197v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.31197v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A centered finite-volume method combines near-lossless kinetic-energy transport with harmonic-density phase-mass fluxes and explicit pressure relaxation for weakly compressible single- and two-phase flows.</p>
-          <p><b>Engineering relevance:</b> The method supports low-dissipation multiphase turbulence simulation on collocated grids, with a formulation suited to future GPU and adaptive-mesh implementations.</p>
-          <ul><li>Couple kinetic-energy-preserving centered advection with conservative diffuse-interface regularization.</li><li>Use harmonic face densities to connect phase-volume and phase-mass transport and establish a sufficient positivity condition.</li><li>Apply pressure-increment relaxation with compatible cell and face operators.</li></ul>
-          <p><b>Evidence signal:</b> In inviscid turbulence on 128³ cells, relative kinetic-energy change stayed below 1.2×10⁻⁷ in magnitude at t*=8 for single-phase and density-ratio-1000 two-phase cases; matched upwind runs retained only 3.60% and 30.72% of initial energy, respectively.</p>
-          <p><b>Watch item:</b> Phase-mass positivity and pressure-iteration energy control are conditional; GPU and adaptive-mesh scalability remain future work.</p>
+          <p><b>Key insight:</b> Centered finite-volume transport with explicit pressure relaxation nearly preserves kinetic energy in weakly compressible single- and two-phase flows, while harmonic face densities help maintain positive phase masses.</p>
+          <p><b>Engineering relevance:</b> The method supports low-dissipation multiphase turbulence simulation and offers a foundation for future GPU-based large-eddy simulation with adaptive mesh refinement.</p>
+          <ul><li>Couple kinetic-energy-preserving centered advection with conservative diffuse-interface regularization.</li><li>Use harmonic face densities to connect phase-volume and phase-mass transport.</li><li>Apply pressure-increment relaxation with compatible cell and face operators on structured collocated grids.</li></ul>
+          <p><b>Evidence signal:</b> In inviscid turbulence on 128³ cells at t*=8, relative kinetic-energy changes stayed below 1.2×10⁻⁷ in magnitude for single-phase and density-ratio-1000 two-phase cases; matched upwind runs retained only 3.60% and 30.72% of initial energy, respectively.</p>
+          <p><b>Watch item:</b> Phase-mass positivity and the additional-pressure-iteration energy estimate are conditional; centered transport relies on a prescribed subgrid-scale stress for principal dissipation.</p>
           <div class="tags"><span>#ComputationalFluidDynamics</span> <span>#MultiphaseFlow</span> <span>#Turbulence</span> <span>#FiniteVolumeMethod</span> <span>#KineticEnergyPreservation</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>54</strong></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>49</strong></div>
         <p class="date">2026-11-24</p>
         <h2>Basin-Scale Nonlinear Dynamics of Thermohaline Ocean Circulation. Part I: Theory</h2>
         <p class="authors">Conner W. Lester, Dylan E. McNamara, Till J. W. Wagner</p>
@@ -286,18 +267,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.33383v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.33383v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A basin-scale tracer flux balance links thermohaline circulation tipping to competing advective and dissipative transport, unifying box-model and continuous-ocean dynamics.</p>
-          <p><b>Engineering relevance:</b> Tracking tracer gradients and transport efficiency could improve ocean-model diagnostics of tipping risk beyond monitoring overturning strength alone.</p>
-          <ul><li>Derive surface-flux balances from tracer conservation using large-scale gradients and transport efficiency.</li><li>Evaluate transport contributions in a three-dimensional ocean-basin model.</li><li>Apply a simple circulation closure to connect weak- and strong-flow regimes to box-model bifurcations.</li></ul>
-          <p><b>Evidence signal:</b> The basin-model results indicate that nonlinear salinity advection dominates the collapse threshold, while linear dissipation dominates recovery; tracer transport scales approximately quadratically with weak circulation and linearly with strong circulation.</p>
-          <p><b>Watch item:</b> Evidence here comes from an ocean-basin model, not observational validation, and tipping-point forecasting closures are deferred to Part II.</p>
-          <div class="tags"><span>#ThermohalineCirculation</span> <span>#OceanModeling</span> <span>#NonlinearDynamics</span> <span>#TippingPoints</span> <span>#TracerTransport</span></div>
+          <p><b>Key insight:</b> A basin-scale tracer-flux framework links thermohaline circulation tipping to the balance between nonlinear advection and linear dissipation.</p>
+          <p><b>Engineering relevance:</b> Transport-budget diagnostics could improve ocean-model stability assessment by revealing proximity to tipping that overturning strength alone cannot show.</p>
+          <ul><li>Derive a tracer-conservation balance between surface fluxes, dissipation, and advection.</li><li>Describe transport using large-scale tracer gradients and efficiency relative to a no-flow conductive state.</li><li>Evaluate a three-dimensional basin model and connect weak- and strong-flow regimes to box-model bifurcations.</li></ul>
+          <p><b>Evidence signal:</b> In the three-dimensional basin model, nonlinear salinity advection dominates the collapse threshold, while linear dissipation dominates recovery.</p>
+          <p><b>Watch item:</b> The abstract reports idealized basin-model results, not validation against observed ocean tipping; forecasting closures are deferred to Part II.</p>
+          <div class="tags"><span>#ThermohalineCirculation</span> <span>#OceanModeling</span> <span>#FluidMechanics</span> <span>#NonlinearDynamics</span> <span>#ClimateTippingPoints</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>54</strong></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>49</strong></div>
         <p class="date">2026-11-24</p>
         <h2>Self-arresting vortex rearrangements in pinned spinning-down superfluids</h2>
         <p class="authors">Anantharaman Sekharipuram Viswanathan, Dipankar Bhattacharya</p>
@@ -305,18 +286,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.33103v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.33103v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Collective vortex escape in a pinned, spinning-down superfluid weakens boundary flow until the escape self-arrests, limiting angular momentum transfer to the container.</p>
-          <p><b>Engineering relevance:</b> The findings identify how pinning thresholds, container size, and initial rotation can constrain sudden angular momentum transfer in rotating superfluid systems.</p>
-          <ul><li>Analyze collective vortex migration in a spinning-down container with pinning centres.</li><li>Identify the minimum opening angle of a near-wall vacated sector associated with the first vortex exodus.</li><li>Relate boundary-flow weakening and depletion-region dimensions to self-arrest.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports a minimum-angle onset condition and well-defined depletion-region dimensions, but provides no quantitative results or evaluation details.</p>
-          <p><b>Watch item:</b> Relevance to pulsar glitches is discussed, but the abstract does not establish validation under neutron-star conditions.</p>
+          <p><b>Key insight:</b> Collective vortex escape in a pinned, spinning-down superfluid weakens boundary flow until the escape self-arrests, limiting angular momentum transfer.</p>
+          <p><b>Engineering relevance:</b> The findings connect pinning thresholds, container size, and initial rotation to bounded angular momentum release in rotating superfluids.</p>
+          <ul><li>Identify the minimum opening angle of a near-wall sector vacated at the onset of collective vortex escape.</li><li>Track how vortex escape reduces boundary flow and arrests further exit.</li><li>Relate depletion-region dimensions to critical unpinning velocity, container size, and initial rotation.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports an onset criterion and well-defined depletion-region dimensions, but provides no quantitative results or validation details.</p>
+          <p><b>Watch item:</b> Relevance to pulsar glitches is discussed, but applicability beyond the studied container and pinning conditions is not established in the abstract.</p>
           <div class="tags"><span>#SuperfluidDynamics</span> <span>#QuantizedVortices</span> <span>#VortexPinning</span> <span>#AngularMomentum</span> <span>#PulsarGlitches</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>52</strong></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>47</strong></div>
         <p class="date">2026-11-25</p>
         <h2>Electrostatic effects on settling cloud droplets: from pair collisions to size distribution evolution</h2>
         <p class="authors">Pijush Patra, John S. Wettlaufer</p>
@@ -325,17 +306,17 @@
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
           <p><b>Key insight:</b> Droplet charge and vertical electric fields can accelerate collision-driven cloud droplet growth, potentially hastening warm rain initiation.</p>
-          <p><b>Engineering relevance:</b> Charge- and field-dependent collision kernels could improve cloud microphysics models where electrostatic effects influence droplet growth.</p>
-          <ul><li>Compute pair trajectories with droplet inertia, exact two-body hydrodynamics, electrostatics, and van der Waals forces.</li><li>Account for interfacial mobility and internal circulation in spherical, conducting droplets.</li><li>Evolve droplet mass and charge distributions using trajectory-derived collision kernels and a flux-method collection solver.</li></ul>
-          <p><b>Evidence signal:</b> For uncharged pairs with larger-droplet radii of 10 or 20 μm, increasing the field from 5×10⁴ to 3×10⁵ V/m can boost collision efficiency tenfold; at 40 minutes, every modeled electrified case produces a larger-radius large-droplet mass-spectrum mode than the hydrodynamic reference.</p>
-          <p><b>Watch item:</b> Results assume still air and a uniform vertical field; applicability to turbulent clouds with spatially varying electrical conditions requires validation.</p>
+          <p><b>Engineering relevance:</b> Charge- and field-dependent collision kernels could improve cloud microphysics models that predict droplet growth and rainfall onset.</p>
+          <ul><li>Compute pair trajectories with droplet inertia, exact hydrodynamic interactions, electrostatic forces, and van der Waals forces.</li><li>Derive collision efficiencies for conducting droplets across charge states and vertical electric fields.</li><li>Evolve droplet distributions using a stochastic collection equation on a mass–charge grid.</li></ul>
+          <p><b>Evidence signal:</b> Simulations show an order-of-magnitude increase in uncharged-pair collision efficiency as the field rises from 5×10⁴ to 3×10⁵ V/m for larger-droplet radii of 10 or 20 μm; by 40 minutes, every electrified case has a larger-radius large-droplet mode than the hydrodynamic reference.</p>
+          <p><b>Watch item:</b> The model considers spherical conducting droplets settling in still air, so applicability to turbulent clouds requires further validation.</p>
           <div class="tags"><span>#CloudMicrophysics</span> <span>#Electrohydrodynamics</span> <span>#DropletCollisions</span> <span>#ComputationalFluidDynamics</span> <span>#WarmRain</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>CFD Surrogates</span><span>arXiv</span><strong>52</strong></div>
+        <div class="meta"><span>CFD Surrogates</span><span>arXiv</span><strong>47</strong></div>
         <p class="date">2026-11-20</p>
         <h2>Failure Modes and Data-Efficient Remedies for Transformer-Based Prediction of Viscoplastic Flows</h2>
         <p class="authors">Maedeh Saberi, Hugo Franca, Maziyar Jalaal, Safa Jamali</p>
@@ -343,18 +324,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.28267v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.28267v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> RheOFormer’s failures in steady Bingham channel flow can be mitigated with logarithmic velocity representations, gradient-aware losses, and a few strategically selected training cases.</p>
-          <p><b>Engineering relevance:</b> These remedies support more reliable, data-efficient viscoplastic-flow surrogates, especially where low-gradient plug regions challenge prediction.</p>
-          <ul><li>Evaluate RheOFormer interpolation and extrapolation across dataset structures, value ranges, and input representations.</li><li>Introduce logarithmic velocity representations and gradient-aware losses to improve plug-region predictions.</li><li>Augment training with cases covering missing physical regimes and predict steady flow from a partially developed snapshot.</li></ul>
-          <p><b>Evidence signal:</b> The abstract reports improved accuracy in challenging regimes, reduced extrapolation error with a few added cases, and single-snapshot predictions that outperform copying the input throughout flow development.</p>
-          <p><b>Watch item:</b> Evidence is limited to steady Bingham channel flow; transfer to complex geometries or other constitutive models remains unestablished.</p>
-          <div class="tags"><span>#AIFluidMechanics</span> <span>#CFDSurrogates</span> <span>#NeuralOperators</span> <span>#ViscoplasticFlow</span> <span>#DataEfficientLearning</span></div>
+          <p><b>Key insight:</b> RheOFormer’s viscoplastic-flow prediction improves with logarithmic velocity representations, gradient-aware losses, and a few training cases covering missing physical regimes.</p>
+          <p><b>Engineering relevance:</b> These remedies support more reliable, data-efficient CFD surrogates for flows containing both yielded regions and low-gradient, unyielded plugs.</p>
+          <ul><li>Evaluate RheOFormer on steady Bingham channel flow across dataset structures, value ranges, and input representations.</li><li>Use logarithmic velocity representations and gradient-aware losses to improve plug-region predictions.</li><li>Add strategically selected training cases to reduce extrapolation errors.</li></ul>
+          <p><b>Evidence signal:</b> The abstract reports improved accuracy in challenging regimes and accurate steady-state prediction from one partially developed snapshot, outperforming simply copying the input.</p>
+          <p><b>Watch item:</b> Evidence is limited to a simple channel geometry and Bingham constitutive model; generalization to more complex flows remains unestablished.</p>
+          <div class="tags"><span>#AIFluidMechanics</span> <span>#CFDSurrogates</span> <span>#NeuralOperators</span> <span>#ViscoplasticFlows</span> <span>#DataEfficientLearning</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>CFD Surrogates</span><span>arXiv</span><strong>51</strong></div>
+        <div class="meta"><span>CFD Surrogates</span><span>arXiv</span><strong>46</strong></div>
         <p class="date">2026-11-25</p>
         <h2>Pressure demand and solute replacement in a collagen-plugged bioreactor</h2>
         <p class="authors">Mohammad Mehedi Hasan Akash, Mohammad Yeasin, Karl Van Horsen, Mithul Sathish, Susan Immanuel, Sanku Mallik</p>
@@ -362,18 +343,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.34582v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.34582v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Narrow, winding collagen pores drive pressure demand, while slowly exchanging side pockets can make outlet measurements overstate interior medium replacement.</p>
-          <p><b>Engineering relevance:</b> Bioreactor design should account for inlet–outlet geometry and pore connectivity to manage pumping pressure and verify effective medium renewal.</p>
-          <ul><li>Simulated flow and medium replacement in pores traced from a collagen image.</li><li>Used curved-channel theory and flow resistance to estimate plug permeability.</li><li>Compared pressure demands across feeding configurations and replacement times at the outlet versus inside the pores.</li></ul>
-          <p><b>Evidence signal:</b> Simulations found roughly sevenfold higher pressure demand with small-opening feeding than uniform face feeding; in the strongest side-pocket case, interior 99% replacement took nearly three times as long as outlet replacement.</p>
-          <p><b>Watch item:</b> Outlet breakthrough alone may not reliably indicate interior renewal, and image-derived pore results require validation for the target collagen plug.</p>
+          <p><b>Key insight:</b> Narrow, winding collagen pores drive pressure demand, while slowly exchanging side pockets can make outlet measurements overstate internal medium replacement.</p>
+          <p><b>Engineering relevance:</b> Bioreactor design should account for inlet–outlet geometry and pore-level retention when sizing pumps and assessing medium renewal.</p>
+          <ul><li>Simulated flow and medium replacement in pores traced from a collagen image.</li><li>Combined flow simulations with curved-channel theory to estimate resistance and plug permeability.</li><li>Compared small-opening versus uniform feeding and outlet versus interior replacement times.</li></ul>
+          <p><b>Evidence signal:</b> Small-opening feeding required about seven times the pressure of uniform feeding at the same flow rate; in the strongest side-pocket case, interior 99% replacement took nearly three times as long as outlet replacement.</p>
+          <p><b>Watch item:</b> Results reflect modeled image-derived pores; broader experimental validation is needed before applying these pressure and replacement ratios to other collagen plugs.</p>
           <div class="tags"><span>#ComputationalFluidDynamics</span> <span>#PerfusionBioreactor</span> <span>#PorousMedia</span> <span>#MassTransport</span> <span>#TissueEngineering</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>51</strong></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>46</strong></div>
         <p class="date">2026-11-25</p>
         <h2>Remote and Noncontact Acceleration and Suppression of Heat Convection on Object Surfaces using Intensity-Adjusted Acoustic Streaming</h2>
         <p class="authors">Yuki Yuzawa, Keisuke Hasegawa</p>
@@ -381,18 +362,18 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.33752v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.33752v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> Adjusting ultrasound intensity enables remote, noncontact switching between suppressing natural convection for heat retention and inducing forced convection for cooling.</p>
-          <p><b>Engineering relevance:</b> Target-selective acoustic airflow could provide virtual insulation or cooling for food, beverages, manufacturing processes, and laboratory systems.</p>
-          <ul><li>Direct an ultrasonic beam at a heat-source surface to generate acoustic streaming.</li><li>Adjust ultrasonic output intensity to accelerate or decelerate surface airflow.</li><li>Control convective heat escape without contacting the object.</li></ul>
-          <p><b>Evidence signal:</b> Experiments demonstrated switching between heat retention and cooling by changing ultrasonic output intensity, although the abstract reports no quantitative performance metrics.</p>
-          <p><b>Watch item:</b> Practical deployment requires validation of operating range, energy efficiency, and ultrasound exposure limits in room environments.</p>
-          <div class="tags"><span>#AcousticStreaming</span> <span>#HeatTransfer</span> <span>#ConvectionControl</span> <span>#Ultrasound</span> <span>#ThermalEngineering</span></div>
+          <p><b>Key insight:</b> Adjusting ultrasound-driven airflow can remotely switch a heated object&#x27;s surface between suppressed natural convection for heat retention and enhanced convection for cooling.</p>
+          <p><b>Engineering relevance:</b> Target-selective, noncontact convection control could enable localized temperature management for food, beverages, manufacturing, and laboratory processes.</p>
+          <ul><li>Direct an ultrasonic beam at a heat-source surface to generate acoustic streaming.</li><li>Adjust ultrasonic output intensity to accelerate or decelerate near-surface airflow.</li><li>Switch between heat-retaining and cooling conditions without contacting the object.</li></ul>
+          <p><b>Evidence signal:</b> Experiments demonstrated intensity-dependent switching between heat retention and cooling, though the abstract reports no quantitative performance metrics.</p>
+          <p><b>Watch item:</b> Practical operating ranges, energy efficiency, and robustness to ambient airflow remain unspecified in the abstract.</p>
+          <div class="tags"><span>#AcousticStreaming</span> <span>#HeatTransfer</span> <span>#ConvectionControl</span> <span>#Ultrasound</span> <span>#FluidMechanics</span></div>
         </section>
       </article>
     
 
       <article class="paper">
-        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>51</strong></div>
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>46</strong></div>
         <p class="date">2026-11-25</p>
         <h2>Azimuthally Resolved Energy Dissipation Rates in the Impingement Zone of Equal Free Impinging Liquid Jets: A Three-Dimensional Model</h2>
         <p class="authors">Robert J. Demyanovich</p>
@@ -400,12 +381,31 @@
         <div class="links"><a href="https://arxiv.org/abs/2611.33611v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.33611v1" target="_blank" rel="noreferrer">PDF</a></div>
         <section class="info">
           <h3>OpenAI Infographic Summary</h3>
-          <p><b>Key insight:</b> A three-dimensional collision-region model predicts substantial angular variation in energy dissipation for equal impinging liquid jets, even with uniform inlet and sheet mean velocities.</p>
-          <p><b>Engineering relevance:</b> Angularly resolved dissipation estimates could guide impinging-jet mixer design where local mixing intensity matters.</p>
-          <ul><li>Model collision-region thickness as varying linearly from the stagnation point to the outer boundary along each radial line.</li><li>Combine modeled volume with collision-induced kinetic energy loss to estimate mass-specific dissipation.</li><li>Calculate overall and narrow-angular-sector-averaged dissipation rates.</li></ul>
-          <p><b>Evidence signal:</b> The model recovers expected theoretical limits, including a cylindrical region for directly opposed jets, and preliminary micromixing results are consistent with its predicted angular variation.</p>
-          <p><b>Watch item:</b> The assumed collision-region geometry and the location of energy dissipation still require independent validation.</p>
+          <p><b>Key insight:</b> A three-dimensional model predicts substantial angular variation in energy dissipation within equal-jet collisions, even with uniform inlet and sheet mean velocities.</p>
+          <p><b>Engineering relevance:</b> Resolving angular differences in dissipation could help engineers assess mixing conditions in impinging-jet devices beyond a single overall dissipation rate.</p>
+          <ul><li>Model collision-region thickness as varying linearly along radial lines from the stagnation point to the boundary.</li><li>Combine modeled volume with collision-induced kinetic energy loss to calculate dissipation per unit mass.</li><li>Calculate overall and narrow-angular-sector-averaged dissipation rates.</li></ul>
+          <p><b>Evidence signal:</b> The model recovers expected theoretical limits, including a cylindrical collision region for directly opposed jets, and preliminary micromixing results are consistent with its predicted angular variation.</p>
+          <p><b>Watch item:</b> The assumed collision-region geometry and the actual location of energy dissipation still require independent validation.</p>
           <div class="tags"><span>#FluidMechanics</span> <span>#ImpingingJets</span> <span>#EnergyDissipation</span> <span>#Micromixing</span> <span>#Turbulence</span></div>
+        </section>
+      </article>
+    
+
+      <article class="paper">
+        <div class="meta"><span>Turbulence</span><span>arXiv</span><strong>46</strong></div>
+        <p class="date">2026-11-23</p>
+        <h2>Vortex rings shape the feeding-efficiency landscape of jellyfish</h2>
+        <p class="authors">Harry Walden, Ashutosh Tripathi, Teo Lara, Brandon Weissbourd, Jörn Dunkel</p>
+        <p class="abstract">Fluid flows enable and limit the feeding and locomotion of sea creatures across a wide range of scales. Although much is known about how microorganisms navigate life at low Reynolds numbers, the effect of inertial flows on the feeding-efficiency of larger marine organisms remains less well understood. Here, using jellyfish as an archetypal example, we study the trade-off between prey capture rate and energy expended to generate inertial flows by surface deformations. We develop a feeding-efficiency landscape that predicts an optimal feeding regime at the transition from Stokes pumping to inertial prey transport, mediated by a self-generated vortex ring. These predictions provide a unifying biophysical explanation of size and beat frequencies reported for jellyfish species from different taxa, with vortex-ring-dominated transport supported by our experimental observations for the moon jellyfish \textit{Aurelia aurita}. More broadly, our results demonstrate how centimetric marine predators can exploit inertial flows for efficient prey capture.</p>
+        <div class="links"><a href="https://arxiv.org/abs/2611.31170v1" target="_blank" rel="noreferrer">arXiv</a> <a href="https://arxiv.org/pdf/2611.31170v1" target="_blank" rel="noreferrer">PDF</a></div>
+        <section class="info">
+          <h3>OpenAI Infographic Summary</h3>
+          <p><b>Key insight:</b> Jellyfish feeding efficiency is predicted to peak at the transition from Stokes pumping to inertial prey transport, where self-generated vortex rings enhance prey capture.</p>
+          <p><b>Engineering relevance:</b> The findings could guide bioinspired underwater pumps and robots that use pulsating surfaces to transport particles efficiently.</p>
+          <ul><li>Study prey capture relative to the energy spent deforming the body surface.</li><li>Develop a feeding-efficiency landscape spanning Stokes pumping and inertial transport.</li><li>Compare predictions with reported jellyfish sizes and beat frequencies and observe flows around moon jellyfish.</li></ul>
+          <p><b>Evidence signal:</b> Predictions explain reported sizes and beat frequencies across jellyfish taxa, while experiments on Aurelia aurita support vortex-ring-dominated transport.</p>
+          <p><b>Watch item:</b> The abstract provides no quantitative efficiency gains or validation range, limiting direct engineering design guidance.</p>
+          <div class="tags"><span>#FluidMechanics</span> <span>#VortexRings</span> <span>#Jellyfish</span> <span>#BioinspiredEngineering</span> <span>#FeedingEfficiency</span></div>
         </section>
       </article>
     </section>
