@@ -1,13 +1,13 @@
 {
-  "key_insight": "A data-free, continuous-time PINN produces cylinder vortex shedding, while pressure matching plus a hidden incompressibility constraint improves consistency across training windows.",
-  "engineering_relevance": "The approach supports physics-only prediction of unsteady wakes and smoother aerodynamic loads across successive training windows.",
+  "key_insight": "Data-free continuous-time PINNs reproduce cylinder vortex shedding, while enforcing pressure continuity and a hidden incompressibility constraint improves consistency across training windows.",
+  "engineering_relevance": "The approach supports reference-data-free prediction of unsteady cylinder wakes and reduces artificial jumps in lift at time-window boundaries.",
   "method": [
-    "Train over successive time windows without reference data or temporal discretization.",
-    "Break wake symmetry with an analytical, divergence-free initial condition.",
-    "Match junction pressure and penalize ∇·∂ₜv = 0, using the momentum equation to evaluate ∂ₜv."
+    "Train continuous-time PINNs over successive time windows at Re=100, without reference data or temporal discretization.",
+    "Break wake symmetry using an analytical, divergence-free initial velocity field.",
+    "Impose junction pressure and add the hidden constraint ∇·∂ₜv=0 to the loss."
   ],
-  "evidence_signal": "At Re=100, Strouhal number and mean drag agree with same-domain OpenFOAM results within 0.5%; the consistency remedy reduces lift-coefficient jumps 20-fold over five shedding periods.",
-  "watch_item": "Evidence is limited to the reported Re=100 cylinder case and five-period consistency evaluation; broader flow-regime robustness remains unestablished.",
+  "evidence_signal": "Strouhal number and mean drag agree within 0.5% of an OpenFOAM solution on the same domain; the consistency remedy reduces lift jumps 20-fold over five shedding periods.",
+  "watch_item": "Evidence is limited to the reported Re=100 cylinder case; robustness across other Reynolds numbers, geometries, and longer time horizons remains unestablished.",
   "hashtags": [
     "#PhysicsInformedML",
     "#FluidMechanics",
@@ -21,6 +21,6 @@
   "paper_title": "Data-free continuous-time physics-informed neural networks for vortex shedding: a consistent pressure across time windows",
   "paper_date": "2026-11-24",
   "paper_category": "Physics-Informed ML",
-  "generated_at": "2026-11-27T17:55:57",
+  "generated_at": "2026-11-28T16:42:06",
   "generator": "openai"
 }

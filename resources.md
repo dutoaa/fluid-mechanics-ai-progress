@@ -1,6 +1,6 @@
 # AI Fluid Mechanics Progress Public Resources
 
-Generated: 2026-11-27
+Generated: 2026-11-28
 Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 
 ## 1. Data-free continuous-time physics-informed neural networks for vortex shedding: a consistent pressure across time windows
@@ -43,15 +43,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.31996v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-24-arxiv-physics_informed_neural_networks_for_strong_normal_shocks_in_kinetic_relaxation_models_and_infographic.json
 
-## 6. Numerical Study of Flow and Cavitation in Single-Liquid Injectors with Sharp-Edged and Chamfered Orifice Inlets
-
-- Date: 2026-11-21
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2611.28527v1
-- PDF: https://arxiv.org/pdf/2611.28527v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-21-arxiv-numerical_study_of_flow_and_cavitation_in_single_liquid_injectors_with_sharp_edged_and_cha_infographic.json
-
-## 7. Dopamine: A Cartesian grid large-eddy-simulation framework for coastal ocean modelling of free-surface waves
+## 6. Dopamine: A Cartesian grid large-eddy-simulation framework for coastal ocean modelling of free-surface waves
 
 - Date: 2026-11-25
 - Category: Turbulence
@@ -59,7 +51,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.34058v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-25-arxiv-dopamine_a_cartesian_grid_large_eddy_simulation_framework_for_coastal_ocean_modelling_of_f_infographic.json
 
-## 8. Energy cascade spectrum in wave turbulence of a two-dimensional quantum fluid
+## 7. Energy cascade spectrum in wave turbulence of a two-dimensional quantum fluid
 
 - Date: 2026-11-25
 - Category: Turbulence
@@ -67,7 +59,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.33944v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-25-arxiv-energy_cascade_spectrum_in_wave_turbulence_of_a_two_dimensional_quantum_fluid_infographic.json
 
-## 9. BridgeSRDA: Efficient Probabilistic Super-Resolution Data Assimilation with Forecast-Informed Stochastic Interpolants
+## 8. BridgeSRDA: Efficient Probabilistic Super-Resolution Data Assimilation with Forecast-Informed Stochastic Interpolants
 
 - Date: 2026-11-25
 - Category: Turbulence
@@ -75,7 +67,7 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.33720v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-25-arxiv-bridgesrda_efficient_probabilistic_super_resolution_data_assimilation_with_forecast_inform_infographic.json
 
-## 10. Scalable Modal Analysis of the Imperial Front Wing Flow Field
+## 9. Scalable Modal Analysis of the Imperial Front Wing Flow Field
 
 - Date: 2026-11-23
 - Category: Turbulence
@@ -83,13 +75,21 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.29995v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-23-arxiv-scalable_modal_analysis_of_the_imperial_front_wing_flow_field_infographic.json
 
-## 11. Floquet Decomposition: Floquet Multipliers and Time-Periodic Modes from Period-Sampled Snapshot Data
+## 10. Floquet Decomposition: Floquet Multipliers and Time-Periodic Modes from Period-Sampled Snapshot Data
 
 - Date: 2026-11-25
 - Category: CFD Surrogates
 - arXiv: https://arxiv.org/abs/2611.34901v1
 - PDF: https://arxiv.org/pdf/2611.34901v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-25-arxiv-floquet_decomposition_floquet_multipliers_and_time_periodic_modes_from_period_sampled_snap_infographic.json
+
+## 11. Stable eigenmodes of the Large-scale circulation in Turbulent Convection
+
+- Date: 2026-11-22
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2611.29636v1
+- PDF: https://arxiv.org/pdf/2611.29636v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-22-arxiv-stable_eigenmodes_of_the_large_scale_circulation_in_turbulent_convection_infographic.json
 
 ## 12. A centered finite-volume method with explicit pressure relaxation for weakly compressible single- and two-phase flows
 
@@ -123,13 +123,13 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.34676v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-25-arxiv-electrostatic_effects_on_settling_cloud_droplets_from_pair_collisions_to_size_distribution_infographic.json
 
-## 16. Failure Modes and Data-Efficient Remedies for Transformer-Based Prediction of Viscoplastic Flows
+## 16. Nonlinear non-modal stability and minimal perturbations in electroconvection driven by unipolar injection
 
-- Date: 2026-11-20
-- Category: CFD Surrogates
-- arXiv: https://arxiv.org/abs/2611.28267v1
-- PDF: https://arxiv.org/pdf/2611.28267v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-20-arxiv-failure_modes_and_data_efficient_remedies_for_transformer_based_prediction_of_viscoplastic_infographic.json
+- Date: 2026-11-24
+- Category: Turbulence
+- arXiv: https://arxiv.org/abs/2611.33049v1
+- PDF: https://arxiv.org/pdf/2611.33049v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-24-arxiv-nonlinear_non_modal_stability_and_minimal_perturbations_in_electroconvection_driven_by_uni_infographic.json
 
 ## 17. Pressure demand and solute replacement in a collagen-plugged bioreactor
 
@@ -155,10 +155,10 @@ Public site: https://dutoaa.github.io/fluid-mechanics-ai-progress/
 - PDF: https://arxiv.org/pdf/2611.33611v1
 - Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-25-arxiv-azimuthally_resolved_energy_dissipation_rates_in_the_impingement_zone_of_equal_free_imping_infographic.json
 
-## 20. Vortex rings shape the feeding-efficiency landscape of jellyfish
+## 20. Quantum-Inspired Tensor Train Spectral Solver for High-Resolution PDEs with Non-Periodic Boundary Conditions
 
-- Date: 2026-11-23
-- Category: Turbulence
-- arXiv: https://arxiv.org/abs/2611.31170v1
-- PDF: https://arxiv.org/pdf/2611.31170v1
-- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-23-arxiv-vortex_rings_shape_the_feeding_efficiency_landscape_of_jellyfish_infographic.json
+- Date: 2026-11-24
+- Category: CFD Surrogates
+- arXiv: https://arxiv.org/abs/2611.32968v1
+- PDF: https://arxiv.org/pdf/2611.32968v1
+- Infographic JSON: https://dutoaa.github.io/fluid-mechanics-ai-progress/infographics/2026-11-24-arxiv-quantum_inspired_tensor_train_spectral_solver_for_high_resolution_pdes_with_non_periodic_b_infographic.json

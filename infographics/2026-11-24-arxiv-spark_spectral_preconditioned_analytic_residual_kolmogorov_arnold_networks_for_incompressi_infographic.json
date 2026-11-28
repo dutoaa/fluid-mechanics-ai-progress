@@ -1,13 +1,13 @@
 {
-  "key_insight": "SJ-KAN propagates spatial derivatives analytically through a compact spectral network, achieving comparable or better accuracy than PINN and PIKAN baselines with substantially lower computational cost.",
-  "engineering_relevance": "The approach could make physics-informed incompressible flow simulation more affordable, including high-Reynolds-number cavity flows without reference data.",
+  "key_insight": "SJ-KAN analytically propagates spatial derivatives through a compact spectral network, achieving comparable or better Navier–Stokes solution accuracy with up to 47× fewer parameters and 8.2× faster training per epoch than the tested baselines.",
+  "engineering_relevance": "This approach could reduce physics-informed training costs for incompressible flow simulation, including high-Reynolds-number lid-driven cavity cases without reference data.",
   "method": [
-    "Embed coordinates in Chebyshev bases and precompute basis derivatives at collocation points.",
-    "Compress the bases linearly into latent features, then map them to physical variables with one nonlinear Chebyshev KAN layer.",
-    "Evaluate PDE derivatives analytically; use automatic differentiation only for loss gradients with respect to weights."
+    "Embed coordinates in Chebyshev bases and precompute their derivatives at collocation points.",
+    "Compress the bases into a few latent features using one linear layer, then predict physical variables with one nonlinear Chebyshev KAN layer.",
+    "Compute spatial derivatives analytically; use automatic differentiation only for weight-gradient backpropagation."
   ],
-  "evidence_signal": "Tests on the Taylor–Green vortex and lid-driven cavity at Re = 100–10,000 report up to 47× fewer parameters and 8.2× faster training per epoch than the baselines; the Re = 10,000 cavity was solved without reference data using fewer than 9,000 parameters.",
-  "watch_item": "The abstract does not establish performance on complex geometries or turbulent flows, and faster epochs do not necessarily imply shorter time to convergence.",
+  "evidence_signal": "Three variants were evaluated on the Taylor–Green vortex and lid-driven cavity benchmarks at Re = 100, 1,000, 5,000 and 10,000 against an AD-based PIKAN and a standard PINN; the Re = 10,000 cavity was solved without reference data using fewer than 9,000 trainable parameters.",
+  "watch_item": "The abstract establishes results on two benchmark flows; performance on complex geometries and broader flow regimes remains unverified.",
   "hashtags": [
     "#PhysicsInformedML",
     "#FluidMechanics",
@@ -21,6 +21,6 @@
   "paper_title": "SPARK: Spectral Preconditioned Analytic Residual Kolmogorov Arnold Networks for incompressible Navier Stokes equations",
   "paper_date": "2026-11-24",
   "paper_category": "Physics-Informed ML",
-  "generated_at": "2026-11-27T17:55:59",
+  "generated_at": "2026-11-28T16:42:10",
   "generator": "openai"
 }
